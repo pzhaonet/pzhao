@@ -1,0 +1,13 @@
+---
+title: dapengs test
+author: dapeng
+date: '2017-04-09'
+slug: dapengs-test
+categories: []
+tags: []
+---
+
+```{r}
+plot(cars)
+```
+

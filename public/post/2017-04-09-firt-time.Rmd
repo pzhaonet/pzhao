@@ -1,0 +1,14 @@
+---
+title: firt time
+author: '赵鹏'
+date: '2017-04-09'
+slug: firt-time
+categories:
+  - R
+tags: []
+---
+
+```{r}
+plot(co2)
+```
+
