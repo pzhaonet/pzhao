@@ -10,17 +10,6 @@
     <atom:link href="/categories/r/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>firt time</title>
-      <link>/post/firt-time/</link>
-      <pubDate>Sun, 09 Apr 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/post/firt-time/</guid>
-      <description>&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;plot(co2)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2017-04-09-firt-time_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Hello R Markdown</title>
       <link>/post/2015-07-23-r-rmarkdown/</link>
       <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>

@@ -19,13 +19,13 @@ defaultContentLanguageInSubdir = false
   hrefTargetBlank = true
 
 [params]
-  name = "Lena Smith"
-  role = "Professor of Artificial Intelligence"
-  organization = "Stanford University"
+  name = "赵鹏"
+  role = "地理生态学博士后"
+  organization = "因斯布鲁克大学"
   organization_url = ""
   avatar = "portrait.jpg"
-  email = "test@example.org"
-  address = "Building 1 Room 1, Stanford University, California, 90210, USA"
+  email = "peng dot zhao at uibk.ac.attest@example.org"
+  address = "Innsbruck Austria"
   office_hours = "Monday 10:00 to 13:00 or email for appointment"
   phone = "888 888 88 88"
   skype = "echo123"

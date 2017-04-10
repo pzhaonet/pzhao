@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "+++\nabstract = \"We present a mobile visual clothing search system whereby a smart phone user can either choose a social networking photo or take a new photo of a person wearing clothing of interest and search for similar clothing in a retail database. From the query image, the person is detected, clothing is segmented, and clothing features are extracted and quantized. The information is sent from the phone client to a server, where the feature vector of the query image is used to retrieve similar clothing products from online databases. The phone's GPS location is used to re-rank results by retail store location. State of the art work focuses primarily on the recognition of a diverse range of clothing offline and pays little attention to practical applications. Evaluated on a challenging dataset, the system is relatively fast and achieves promising results.\"\nabstract_short = \"A mobile visual clothing search system is presented whereby a smart phone user can either choose a social networking image or capture a new photo of a person wearing clothing of interest and search for similar clothing in a large cloud-based ecommerce database. The phone's GPS location is used to re-rank results by retail store location, to inform the user of local stores where similar clothing items can be tried on.\"\nauthors = [\"GA Cushen\", \"MS Nixon\"]\ndate = \"2013-07-01\"\nimage_preview = \"\"\nmath = true\npublication_types = [\"1\"]\npublication = \"In *International Conference on Multimedia and Expo Workshops (ICMEW)*, IEEE.\"\npublication_short = \"In *ICMEW*\"\nselected = true\ntitle = \"Mobile visual clothing search\"\nurl_code = \"#\"\nurl_dataset = \"#\"\nurl_pdf = \"http://eprints.soton.ac.uk/352095/1/Cushen-IMV2013.pdf\"\nurl_project = \"project/deep-learning/\"\nurl_slides = \"#\"\nurl_video = \"#\"\n\n[[url_custom]]\nname = \"Custom Link\"\nurl = \"http://www.example.org\"\n\n# Optional featured image (relative to `static/img/` folder).\n[header]\nimage = \"headers/bubbles-wide.jpg\"\ncaption = \"My caption :smile:\"\n\n+++\n\nMore detail can easily be written here using *Markdown* and $\\rm \\LaTeX$ math code.\n",
+    "created" : 1491768519428.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2487831017",
+    "id" : "4E513BED",
+    "lastKnownWriteTime" : 1491757274,
+    "last_content_update" : 1491757274,
+    "path" : "D:/googledrive/blog/netlify_zhao/content/publication/clothing-search.md",
+    "project_path" : "content/publication/clothing-search.md",
+    "properties" : {
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "markdown"
+}

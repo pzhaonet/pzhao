@@ -14,14 +14,8 @@ weight = 60
 
 +++
 
-This is an example of using the *custom* widget to create your own homepage section.
+我曾讲授过以下课程：
 
-I am a teaching instructor for the following courses at University X:
-
-- CS101: An intro to computer science
-- CS102: An intro to computer science
-- CS103: An intro to computer science
-- CS104: An intro to computer science
-- CS105: An intro to computer science
-- CS106: An intro to computer science
-- CS107: An intro to computer science
+- 2016，因斯布鲁克大学生态学院，协助讲授“生态学实验”。
+- 2005 – 2006	助教，在中国气象科学研究院协助讲授“大气成分观测”。
+- 2007 – 2009，在中国气象科学研究院，讲授“大气成分观测”。

@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "+++\ndate = \"2017-01-01T00:00:00\"\ntitle = \"Example Talk\"\nabstract = \"\"\nabstract_short = \"\"\nevent = \"Hugo Academic Theme Conference\"\nevent_url = \"https://example.org\"\nlocation = \"London, United Kingdom\"\n\nselected = false\nmath = true\n\nurl_pdf = \"\"\nurl_slides = \"\"\nurl_video = \"\"\n\n# Optional featured image (relative to `static/img/` folder).\n[header]\nimage = \"headers/bubbles-wide.jpg\"\ncaption = \"My caption :smile:\"\n\n+++\n\nEmbed your slides or video here using [shortcodes](https://gcushen.github.io/hugo-academic-demo/post/writing-markdown-latex/). Further details can easily be added using *Markdown* and $\\rm \\LaTeX$ math code. \n",
+    "created" : 1491768566637.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "861940732",
+    "id" : "81129B7D",
+    "lastKnownWriteTime" : 1491757274,
+    "last_content_update" : 1491757274,
+    "path" : "D:/googledrive/blog/netlify_zhao/content/talk/example-talk.md",
+    "project_path" : "content/talk/example-talk.md",
+    "properties" : {
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "markdown"
+}
