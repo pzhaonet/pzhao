@@ -1,19 +1,20 @@
-baseurl = "https://example.com"
-title = "Academic"
-copyright = "&copy; 2016 Your Name"
+baseurl = "/"
+relativeurls = true
+title = "赵鹏"
+copyright = "&copy; 2017 赵鹏"
 theme = "hugo-academic"
 enableEmoji = true
 footnotereturnlinkcontents = "<sup>^</sup>"
 
 # Enable comments by entering your Disqus shortname
-disqusShortname = ""
+disqusShortname = "dapengde"
 
 # Enable analytics by entering your Google Analytics tracking ID
 googleAnalytics = ""
 
 # Default language to use (if you setup multilingual support)
-defaultContentLanguage = "en"
-defaultContentLanguageInSubdir = false
+defaultContentLanguage = "zh"
+defaultContentLanguageInSubdir = true
 
 [blackfriday]
   hrefTargetBlank = true
@@ -23,13 +24,12 @@ defaultContentLanguageInSubdir = false
   role = "地理生态学博士后"
   organization = "因斯布鲁克大学"
   organization_url = ""
-  avatar = "portrait.jpg"
-  email = "peng dot zhao at uibk.ac.attest@example.org"
-  address = "Innsbruck Austria"
+  avatar = "zhao.jpg"
+  email = "peng dot zhao at uibk.ac.at"
+  address = "Sternwartestr. 15, Innsbruck Austria"
   office_hours = "Monday 10:00 to 13:00 or email for appointment"
-  phone = "888 888 88 88"
-  skype = "echo123"
-  telegram = ""
+  phone = "Sternwartestr. 15"
+  skype = ""
 
   # Enable Keybase in Contact section by entering your keybase.io username.
   keybase = ""
@@ -125,22 +125,22 @@ defaultContentLanguageInSubdir = false
   [[params.social]]
     icon = "envelope"
     icon_pack = "fa"
-    link = "mailto:test@example.org"
+    link = "mailto:dapengde@live.com"
 
   [[params.social]]
-    icon = "twitter"
+    icon = "youtube"
     icon_pack = "fa"
-    link = "//twitter.com/GeorgeCushen"
+    link = "https://www.youtube.com/channel/UCs76tyulNUTPSzagsuTA8UA"
 
   [[params.social]]
     icon = "google-scholar"
     icon_pack = "ai"
-    link = "https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ"
+    link = "https://scholar.google.at/citations?user=EFeUfDwAAAAJ&hl=zh-CN"
 
   [[params.social]]
     icon = "github"
     icon_pack = "fa"
-    link = "//github.com/gcushen"
+    link = "//github.com/baydap"
 
 
 # Navigation Links
@@ -190,3 +190,6 @@ defaultContentLanguageInSubdir = false
 # Configure the English version of the website.
 [languages.en]
   languageCode = "en-us"
+
+[languages.zh]
+  languageCode = "zh-cn"
