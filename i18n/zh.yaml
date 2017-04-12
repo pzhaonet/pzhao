@@ -29,10 +29,10 @@
 # About widget
 
 - id: interests
-  translation: 兴趣爱好
+  translation: 研究领域
 
 - id: education
-  translation: 教育经历
+  translation: 教育背景
 
 # Publications widget
 
@@ -91,7 +91,7 @@
 # Default node titles
 
 - id: posts
-  translation: 文章
+  translation: 新闻
 
 - id: publications
   translation: 出版物

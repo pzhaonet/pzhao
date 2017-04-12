@@ -7,7 +7,7 @@ enableEmoji = true
 footnotereturnlinkcontents = "<sup>^</sup>"
 
 # Enable comments by entering your Disqus shortname
-disqusShortname = "dapengde"
+disqusShortname = "pzhao"
 
 # Enable analytics by entering your Google Analytics tracking ID
 googleAnalytics = ""
@@ -25,10 +25,10 @@ defaultContentLanguageInSubdir = true
   organization = "因斯布鲁克大学"
   organization_url = ""
   avatar = "zhao.jpg"
-  email = "peng dot zhao at uibk.ac.at"
+  email = "peng.zhao@uibk.ac.at"
   address = "Sternwartestr. 15, Innsbruck Austria"
   office_hours = "Monday 10:00 to 13:00 or email for appointment"
-  phone = "Sternwartestr. 15"
+  phone = "+43 (0)512 507-51643"
   skype = ""
 
   # Enable Keybase in Contact section by entering your keybase.io username.
@@ -175,6 +175,36 @@ defaultContentLanguageInSubdir = true
 
 [[menu.main]]
   name = "Contact"
+  url = "#contact"
+  weight = 6
+
+[[languages.zh.menu.main]]
+  name = "主页"
+  url = "#about"
+  weight = 1
+
+[[languages.zh.menu.main]]
+  name = "作品"
+  url = "#publications_selected"
+  weight = 2
+
+[[languages.zh.menu.main]]
+  name = "新闻"
+  url = "#posts"
+  weight = 3
+
+[[languages.zh.menu.main]]
+  name = "项目"
+  url = "#projects"
+  weight = 4
+
+[[languages.zh.menu.main]]
+  name = "教学"
+  url = "#teaching"
+  weight = 5
+
+[[languages.zh.menu.main]]
+  name = "联系"
   url = "#contact"
   weight = 6
 

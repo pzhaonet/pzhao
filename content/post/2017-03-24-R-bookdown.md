@@ -1,7 +1,7 @@
 +++
 date = "2017-03-24T21:13:14"
 draft = false
-tags = ["academic", "hugo"]
+tags = ["R", "bookdown"]
 title = "R bookdown 写学术论文"
 math = true
 summary = """
