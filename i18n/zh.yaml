@@ -37,7 +37,7 @@
 # Publications widget
 
 - id: more_publications
-  translation: 更多出版物
+  translation: 更多论文
 
 # Posts widget
 
@@ -45,12 +45,12 @@
   translation: 继续阅读
 
 - id: more_posts
-  translation: 更多文章
+  translation: 历史新闻
 
 # Talks widget
 
 - id: more_talks
-  translation: 更多演讲
+  translation: 更多报告
 
 # Publication/Talk details
 

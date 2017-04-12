@@ -4,6 +4,22 @@
     
     
     <url>
+      <loc>/zh/talk/egu-2017/</loc>
+      <lastmod>2017-04-28T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+      <loc>/zh/post/2017-04-11_R-blogdown/</loc>
+      <lastmod>2017-04-11T21:13:14+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
       <loc>/zh/post/2017-03-24-R-bookdown/</loc>
       <lastmod>2017-03-24T21:13:14+00:00</lastmod>
     </url>
@@ -44,7 +60,7 @@
     
     
     <url>
-      <loc>/zh/talk/egu-2017/</loc>
+      <loc>/zh/talk/</loc>
       <lastmod>2017-01-01T00:00:00+00:00</lastmod>
     </url>
     
@@ -52,8 +68,16 @@
     
     
     <url>
-      <loc>/zh/talk/</loc>
-      <lastmod>2017-01-01T00:00:00+00:00</lastmod>
+      <loc>/zh/talk/sysu-2016/</loc>
+      <lastmod>2016-12-28T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+      <loc>/zh/talk/jnu-2016/</loc>
+      <lastmod>2016-12-27T00:00:00+00:00</lastmod>
     </url>
     
   
@@ -68,6 +92,38 @@
     
     
     <url>
+      <loc>/zh/publication/wohlfahrt2016/</loc>
+      <lastmod>2016-07-01T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+      <loc>/zh/publication/huang2016/</loc>
+      <lastmod>2016-07-01T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+      <loc>/zh/publication/lee2016/</loc>
+      <lastmod>2016-07-01T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+      <loc>/zh/talk/egu-2016/</loc>
+      <lastmod>2016-04-28T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
       <loc>/zh/project/scalex/</loc>
       <lastmod>2016-04-27T00:00:00+00:00</lastmod>
     </url>
@@ -76,40 +132,8 @@
     
     
     <url>
-      <loc>/zh/post/getting-started/</loc>
-      <lastmod>2016-04-20T12:00:00+00:00</lastmod>
-    </url>
-    
-  
-    
-    
-    <url>
-      <loc>/zh/post/widgets/</loc>
-      <lastmod>2016-04-20T11:00:00+00:00</lastmod>
-    </url>
-    
-  
-    
-    
-    <url>
-      <loc>/zh/post/managing-content/</loc>
-      <lastmod>2016-04-20T11:00:00+00:00</lastmod>
-    </url>
-    
-  
-    
-    
-    <url>
-      <loc>/zh/post/writing-markdown-latex/</loc>
-      <lastmod>2016-04-20T10:00:00+00:00</lastmod>
-    </url>
-    
-  
-    
-    
-    <url>
-      <loc>/zh/post/2015-07-23-r-rmarkdown/</loc>
-      <lastmod>2015-07-23T21:13:14-05:00</lastmod>
+      <loc>/zh/talk/egu-2015/</loc>
+      <lastmod>2015-04-28T00:00:00+00:00</lastmod>
     </url>
     
   
@@ -124,23 +148,122 @@
     
     
     <url>
-      <loc>/zh/post/migrate-from-jekyll/</loc>
-      <lastmod>2014-03-10T00:00:00+00:00</lastmod>
+      <loc>/zh/publication/lueers-2014/</loc>
+      <lastmod>2014-07-01T00:00:00+00:00</lastmod>
     </url>
     
   
     
     
     <url>
-      <loc>/zh/post/2017-04-11_R-blogdown/</loc>
+      <loc>/zh/publication/zhao-2014/</loc>
+      <lastmod>2014-07-01T00:00:00+00:00</lastmod>
     </url>
     
   
     
     
     <url>
-      <loc>/zh/publication_types/1/</loc>
+      <loc>/zh/publication/babel-2013/</loc>
+      <lastmod>2013-07-01T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+      <loc>/zh/publication/zhang_2012/</loc>
+      <lastmod>2012-07-01T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+      <loc>/zh/publication/zhao2012/</loc>
+      <lastmod>2012-07-01T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+      <loc>/zh/publication/zhang_2012c/</loc>
+      <lastmod>2012-07-01T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+      <loc>/zh/publication/zhang_2012b/</loc>
+      <lastmod>2011-07-01T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+      <loc>/zh/publication/zhao-2011/</loc>
+      <lastmod>2011-07-01T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+      <loc>/zh/publication/zhang_2011/</loc>
+      <lastmod>2011-07-01T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+      <loc>/zh/publication/zhang2008/</loc>
+      <lastmod>2008-07-01T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+      <loc>/zh/publication/zhao2007/</loc>
+      <lastmod>2007-07-01T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+      <loc>/zh/publication/zhao2006/</loc>
+      <lastmod>2006-07-01T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+      <loc>/zh/publication_types/2/</loc>
       <lastmod>2016-07-01T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+      <loc>/zh/publication_types/4/</loc>
+      <lastmod>2014-07-01T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+      <loc>/zh/publication_types/5/</loc>
+      <lastmod>2012-07-01T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -157,6 +280,15 @@
     
     
     <url>
+      <loc>/zh/tags/blogdown/</loc>
+      <lastmod>2017-04-11T21:13:14+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
       <loc>/zh/tags/bookdown/</loc>
       <lastmod>2017-03-24T21:13:14+00:00</lastmod>
       <priority>0</priority>
@@ -166,43 +298,8 @@
     
     
     <url>
-      <loc>/zh/categories/</loc>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
       <loc>/zh/tags/english/</loc>
       <lastmod>2017-01-14T21:13:14+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-      <loc>/zh/tags/hugo/</loc>
-      <lastmod>2016-04-20T12:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-      <loc>/zh/tags/jekyll/</loc>
-      <lastmod>2014-03-10T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-      <loc>/zh/tags/plot/</loc>
-      <lastmod>2015-07-23T21:13:14-05:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -228,34 +325,7 @@
     
     <url>
       <loc>/zh/tags/r/</loc>
-      <lastmod>2017-03-24T21:13:14+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-      <loc>/zh/categories/r/</loc>
-      <lastmod>2015-07-23T21:13:14-05:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-      <loc>/zh/tags/r-markdown/</loc>
-      <lastmod>2015-07-23T21:13:14-05:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-      <loc>/zh/tags/regression/</loc>
-      <lastmod>2015-07-23T21:13:14-05:00</lastmod>
+      <lastmod>2017-04-11T21:13:14+00:00</lastmod>
       <priority>0</priority>
     </url>
     

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>5 on 赵鹏</title>
+    <link>/zh/publication_types/5/index.xml</link>
+    <description>Recent content in 5 on 赵鹏</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>&amp;copy; 2017 赵鹏</copyright>
+    <atom:link href="/zh/publication_types/5/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Brewer 光谱仪观测臭氧柱总量的方法</title>
+      <link>/zh/publication/zhang_2012/</link>
+      <pubDate>Sun, 01 Jul 2012 00:00:00 +0000</pubDate>
+      
+      <guid>/zh/publication/zhang_2012/</guid>
+      <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt;&amp;rdquo;, &amp;ldquo;$\rm \LaTeX$ math code.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>大气成分站选址要求</title>
+      <link>/zh/publication/zhang_2012c/</link>
+      <pubDate>Sun, 01 Jul 2012 00:00:00 +0000</pubDate>
+      
+      <guid>/zh/publication/zhang_2012c/</guid>
+      <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt;&amp;rdquo;, &amp;ldquo;$\rm \LaTeX$ math code.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>GRIMM 180 测量PM10、PM2.5和PM1 的方法</title>
+      <link>/zh/publication/zhang_2012b/</link>
+      <pubDate>Fri, 01 Jul 2011 00:00:00 +0000</pubDate>
+      
+      <guid>/zh/publication/zhang_2012b/</guid>
+      <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt;&amp;rdquo;, &amp;ldquo;$\rm \LaTeX$ math code.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>大气成分观测资料分类与编码</title>
+      <link>/zh/publication/zhang_2011/</link>
+      <pubDate>Fri, 01 Jul 2011 00:00:00 +0000</pubDate>
+      
+      <guid>/zh/publication/zhang_2011/</guid>
+      <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt;&amp;rdquo;, &amp;ldquo;$\rm \LaTeX$ math code.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
