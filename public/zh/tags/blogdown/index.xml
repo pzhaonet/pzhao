@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blogdown on 赵鹏</title>
-    <link>/zh/tags/blogdown/index.xml</link>
+    <link>http://www.pzhao.org/zh/tags/blogdown/index.xml</link>
     <description>Recent content in Blogdown on 赵鹏</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
@@ -11,10 +11,10 @@
     
     <item>
       <title>Hugo 网站的 Disqus 加载问题</title>
-      <link>/zh/post/hogo-disques-problem/</link>
+      <link>http://www.pzhao.org/zh/post/hogo-disques-problem/</link>
       <pubDate>Fri, 14 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>/zh/post/hogo-disques-problem/</guid>
+      <guid>http://www.pzhao.org/zh/post/hogo-disques-problem/</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 
@@ -33,10 +33,10 @@
     
     <item>
       <title>R blogdown 搭建个人博客或科研网站</title>
-      <link>/zh/post/2017-04-11_R-blogdown/</link>
+      <link>http://www.pzhao.org/zh/post/2017-04-11_R-blogdown/</link>
       <pubDate>Tue, 11 Apr 2017 21:13:14 +0000</pubDate>
       
-      <guid>/zh/post/2017-04-11_R-blogdown/</guid>
+      <guid>http://www.pzhao.org/zh/post/2017-04-11_R-blogdown/</guid>
       <description>
 
 &lt;p&gt;互联网时代有个自己的网站，就好像真实世界里有了自己的房子（服务器）和固定地址（域名）；自我介绍时附上自己的网站，就像生活里邀请朋友来访或者职场上递上名片，都甚为方便。然而，建立一个网站并不容易，涉及诸多领域的知识和技能，门槛比较高。好在，我们有万能的R语言，搭建网站只需几分钟，而并不需要多少网络知识。你甚至不用懂 R 语言是什么，照我下面说的做就行，包教包会，学不会免费再教。&lt;/p&gt;
