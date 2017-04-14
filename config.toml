@@ -178,6 +178,11 @@ defaultContentLanguageInSubdir = true
   url = "#contact"
   weight = 6
 
+[[menu.main]]
+  name = "中文"
+  url = "../zh"
+  weight = 7
+
 [[languages.zh.menu.main]]
   name = "主页"
   url = "#about"
@@ -207,6 +212,11 @@ defaultContentLanguageInSubdir = true
   name = "联系"
   url = "#contact"
   weight = 6
+
+[[languages.zh.menu.main]]
+  name = "EN"
+  url = "../en"
+  weight = 7
 
 # Taxonomies.
 [taxonomies]
