@@ -1,5 +1,5 @@
-baseurl = "/"
-relativeurls = true
+baseurl = "http://www.pzhao.org"
+# relativeurls = true
 title = "赵鹏"
 copyright = "&copy; 2017 赵鹏"
 theme = "hugo-academic"
@@ -125,7 +125,7 @@ defaultContentLanguageInSubdir = true
   [[params.social]]
     icon = "envelope"
     icon_pack = "fa"
-    link = "mailto:dapengde@live.com"
+    link = "mailto:peng.zhao@uibk.ac.at"
 
   [[params.social]]
     icon = "youtube"
@@ -184,14 +184,14 @@ defaultContentLanguageInSubdir = true
   weight = 1
 
 [[languages.zh.menu.main]]
-  name = "作品"
-  url = "#publications_selected"
-  weight = 2
+  name = "论文"
+  url = "#publications"
+  weight = 3
 
 [[languages.zh.menu.main]]
-  name = "新闻"
+  name = "最新"
   url = "#posts"
-  weight = 3
+  weight = 2
 
 [[languages.zh.menu.main]]
   name = "项目"

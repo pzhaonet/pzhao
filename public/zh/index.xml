@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>赵鹏 on 赵鹏</title>
-    <link>/zh/index.xml</link>
+    <link>http://www.pzhao.org/zh/index.xml</link>
     <description>Recent content in 赵鹏 on 赵鹏</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
@@ -12,20 +12,20 @@
     
     <item>
       <title>Role of advection for the ecosystem-atmosphere CO2 exchange of alpine grasslands</title>
-      <link>/zh/talk/egu-2017/</link>
+      <link>http://www.pzhao.org/zh/talk/egu-2017/</link>
       <pubDate>Fri, 28 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>/zh/talk/egu-2017/</guid>
+      <guid>http://www.pzhao.org/zh/talk/egu-2017/</guid>
       <description>&lt;p&gt;2017-4-26， 欧洲地学年会。&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>R blogdown 搭建个人博客或科研网站</title>
-      <link>/zh/post/2017-04-11_R-blogdown/</link>
+      <link>http://www.pzhao.org/zh/post/2017-04-11_R-blogdown/</link>
       <pubDate>Tue, 11 Apr 2017 21:13:14 +0000</pubDate>
       
-      <guid>/zh/post/2017-04-11_R-blogdown/</guid>
+      <guid>http://www.pzhao.org/zh/post/2017-04-11_R-blogdown/</guid>
       <description>
 
 &lt;p&gt;互联网时代有个自己的网站，就好像真实世界里有了自己的房子（服务器）和固定地址（域名）；自我介绍时附上自己的网站，就像生活里邀请朋友来访或者职场上递上名片，都甚为方便。然而，建立一个网站并不容易，涉及诸多领域的知识和技能，门槛比较高。好在，我们有万能的R语言，搭建网站只需几分钟，而并不需要多少网络知识。你甚至不用懂 R 语言是什么，照我下面说的做就行，包教包会，学不会免费再教。&lt;/p&gt;
@@ -181,10 +181,10 @@ relativeurls = true
     
     <item>
       <title>R bookdown 写学术论文</title>
-      <link>/zh/post/2017-03-24-R-bookdown/</link>
+      <link>http://www.pzhao.org/zh/post/2017-03-24-R-bookdown/</link>
       <pubDate>Fri, 24 Mar 2017 21:13:14 +0000</pubDate>
       
-      <guid>/zh/post/2017-03-24-R-bookdown/</guid>
+      <guid>http://www.pzhao.org/zh/post/2017-03-24-R-bookdown/</guid>
       <description>&lt;p&gt;&lt;em&gt;1&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;最近，我使用 R 语言的 bookdown 扩展包接连做了三件事：先是整理出一本跟&lt;a href=&#34;http://dapengde.com/archives/19122&#34; target=&#34;_blank&#34;&gt; R 语言有关的书&lt;/a&gt;，然后把博客的帖子整理出一本&lt;a href=&#34;http://dapengde.com/archives/19150&#34; target=&#34;_blank&#34;&gt;纯文本的中文书&lt;/a&gt;，这两天我又在用它来写一篇打算投稿的学术期刊论文。&lt;/p&gt;
@@ -242,10 +242,10 @@ bookdown::html_document2: default
     
     <item>
       <title>English Grammar in Use</title>
-      <link>/zh/post/2017-01-14_English-Grammar-in-Use/</link>
+      <link>http://www.pzhao.org/zh/post/2017-01-14_English-Grammar-in-Use/</link>
       <pubDate>Sat, 14 Jan 2017 21:13:14 +0000</pubDate>
       
-      <guid>/zh/post/2017-01-14_English-Grammar-in-Use/</guid>
+      <guid>http://www.pzhao.org/zh/post/2017-01-14_English-Grammar-in-Use/</guid>
       <description>
 
 &lt;p&gt;2009年夏，我刚刚出国读书，被系里临时安排在交流学者的办公室。办公室书架上，竖着几本书无人认领，我就顺手牵羊拿走了唯一的一本英文书。此书叫做《English Grammar in Use》，作者是Raymond Murphy，剑桥大学出版社1985年第一版，1988年第八次印刷。扉页上还印着“仅在俄罗斯和乌克兰出售”。20年前的书，难怪闻起来一股古董味。&lt;/p&gt;
@@ -1020,30 +1020,30 @@ by Raymond Murphy&lt;/p&gt;
     
     <item>
       <title>农业生态系统-大气之间的二氧化碳和能量交换</title>
-      <link>/zh/talk/sysu-2016/</link>
+      <link>http://www.pzhao.org/zh/talk/sysu-2016/</link>
       <pubDate>Wed, 28 Dec 2016 00:00:00 +0000</pubDate>
       
-      <guid>/zh/talk/sysu-2016/</guid>
+      <guid>http://www.pzhao.org/zh/talk/sysu-2016/</guid>
       <description>&lt;p&gt;2016-12-26， 中山大学青年学者论坛。&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>暨南大学质谱仪器与大气环境研究所学术讲座暨110周年校庆学术活动</title>
-      <link>/zh/talk/jnu-2016/</link>
+      <link>http://www.pzhao.org/zh/talk/jnu-2016/</link>
       <pubDate>Tue, 27 Dec 2016 00:00:00 +0000</pubDate>
       
-      <guid>/zh/talk/jnu-2016/</guid>
+      <guid>http://www.pzhao.org/zh/talk/jnu-2016/</guid>
       <description>&lt;p&gt;2016-12-27， 暨南大学质谱仪器与大气环境研究所学术讲座暨110周年校庆学术活动。&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Improved data gap-filling schemes for estimation of net ecosystem exchange in typical East-Asian croplands</title>
-      <link>/zh/publication/zhao2016/</link>
+      <link>http://www.pzhao.org/zh/publication/zhao2016/</link>
       <pubDate>Fri, 01 Jul 2016 00:00:00 +0000</pubDate>
       
-      <guid>/zh/publication/zhao2016/</guid>
+      <guid>http://www.pzhao.org/zh/publication/zhao2016/</guid>
       <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
 </description>
     </item>

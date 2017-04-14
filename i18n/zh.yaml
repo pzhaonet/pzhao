@@ -91,10 +91,10 @@
 # Default node titles
 
 - id: posts
-  translation: 新闻
+  translation: 最新
 
 - id: publications
   translation: 出版物
 
 - id: talks
-  translation: 演讲
+  translation: 报告
