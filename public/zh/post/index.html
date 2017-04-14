@@ -211,7 +211,9 @@
 # relativeurls = true</code></pre>
 <p>然后运行R语言的建站函数：</p>
 <pre class="r"><code>blogdown::build_site(local=FALSE)</code></pre>
-<p>Disqus评论框就乖乖出现了。欢迎<a href="http://pzhao.org/zh/post/hogo-disques-problem/">来留言测试</a>。</p>
+<p>注意！此处千万不要运行<code>blogdown::serve_site()</code>，不然新生成的文件就又没法加载 Disqus 了。<a href="http://applyr.blogspot.co.at/2017/01/blogging-about-r-from-r-studio.html">网上说</a>是<code>serve_site()</code>忽略了<code>config.toml</code>里的某些设置而造成的。我不懂，总之就是建站函数运行完就直接上传。</p>
+<p>然后GitHub同步，几秒钟后，Netlify上完成了更新，Disqus评论框就乖乖出现了。</p>
+<p>欢迎<a href="http://pzhao.org/zh/post/hogo-disques-problem/">来留言测试</a>。</p>
 <p>啥，你看不见？嗯，听说好像是被墙了。</p>
 
       

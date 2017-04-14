@@ -37,7 +37,9 @@
 # relativeurls = true&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;然后运行R语言的建站函数：&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;blogdown::build_site(local=FALSE)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Disqus评论框就乖乖出现了。欢迎&lt;a href=&#34;http://pzhao.org/zh/post/hogo-disques-problem/&#34;&gt;来留言测试&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;注意！此处千万不要运行&lt;code&gt;blogdown::serve_site()&lt;/code&gt;，不然新生成的文件就又没法加载 Disqus 了。&lt;a href=&#34;http://applyr.blogspot.co.at/2017/01/blogging-about-r-from-r-studio.html&#34;&gt;网上说&lt;/a&gt;是&lt;code&gt;serve_site()&lt;/code&gt;忽略了&lt;code&gt;config.toml&lt;/code&gt;里的某些设置而造成的。我不懂，总之就是建站函数运行完就直接上传。&lt;/p&gt;
+&lt;p&gt;然后GitHub同步，几秒钟后，Netlify上完成了更新，Disqus评论框就乖乖出现了。&lt;/p&gt;
+&lt;p&gt;欢迎&lt;a href=&#34;http://pzhao.org/zh/post/hogo-disques-problem/&#34;&gt;来留言测试&lt;/a&gt;。&lt;/p&gt;
 &lt;p&gt;啥，你看不见？嗯，听说好像是被墙了。&lt;/p&gt;
 </description>
     </item>
