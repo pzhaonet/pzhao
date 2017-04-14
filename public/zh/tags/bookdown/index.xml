@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Bookdown on 赵鹏</title>
-    <link>http://www.pzhao.org/zh/tags/bookdown/index.xml</link>
+    <link>/zh/tags/bookdown/index.xml</link>
     <description>Recent content in Bookdown on 赵鹏</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
@@ -11,10 +11,10 @@
     
     <item>
       <title>R bookdown 写学术论文</title>
-      <link>http://www.pzhao.org/zh/post/2017-03-24-R-bookdown/</link>
+      <link>/zh/post/2017-03-24-R-bookdown/</link>
       <pubDate>Fri, 24 Mar 2017 21:13:14 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/zh/post/2017-03-24-R-bookdown/</guid>
+      <guid>/zh/post/2017-03-24-R-bookdown/</guid>
       <description>&lt;p&gt;&lt;em&gt;1&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;最近，我使用 R 语言的 bookdown 扩展包接连做了三件事：先是整理出一本跟&lt;a href=&#34;http://dapengde.com/archives/19122&#34; target=&#34;_blank&#34;&gt; R 语言有关的书&lt;/a&gt;，然后把博客的帖子整理出一本&lt;a href=&#34;http://dapengde.com/archives/19150&#34; target=&#34;_blank&#34;&gt;纯文本的中文书&lt;/a&gt;，这两天我又在用它来写一篇打算投稿的学术期刊论文。&lt;/p&gt;

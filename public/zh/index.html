@@ -28,13 +28,13 @@
   <link rel="stylesheet" href="/css/hugo-academic.css">
   
 
-  <link rel="alternate" href="http://www.pzhao.org/index.xml" type="application/rss+xml" title="赵鹏">
-  <link rel="feed" href="http://www.pzhao.org/index.xml" type="application/rss+xml" title="赵鹏">
+  <link rel="alternate" href="/index.xml" type="application/rss+xml" title="赵鹏">
+  <link rel="feed" href="/index.xml" type="application/rss+xml" title="赵鹏">
 
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/apple-touch-icon.png">
 
-  <link rel="canonical" href="http://www.pzhao.org/zh/">
+  <link rel="canonical" href="/zh/">
 
   
 
@@ -55,7 +55,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/zh/">赵鹏</a>
+      <a class="navbar-brand" href="/zh">赵鹏</a>
     </div>
 
     
@@ -321,7 +321,78 @@
   
   
   <h3 class="article-title" itemprop="name">
-    <a href="http://www.pzhao.org/zh/post/2017-04-11_R-blogdown/" itemprop="url">R blogdown 搭建个人博客或科研网站</a>
+    <a href="/zh/post/hogo-disques-problem/" itemprop="url">Hugo 网站的 Disqus 加载问题</a>
+  </h3>
+  
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    <time datetime="2017-04-14 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+      Fri, Apr 14, 2017
+    </time>
+  </span>
+
+  
+  
+  
+  
+
+  
+  
+  
+  <span class="article-tags">
+    <i class="fa fa-tags"></i>
+    
+    <a href="/zh/tags/r">R</a
+    >, 
+    
+    <a href="/zh/tags/blogdown">blogdown</a
+    >
+    
+  </span>
+  
+  
+
+  
+
+</div>
+
+  <div class="article-style" itemprop="articleBody">
+    
+    <!-- BLOGDOWN-HEAD -->
+<!-- /BLOGDOWN-HEAD -->
+
+<!-- BLOGDOWN-BODY-BEFORE -->
+<!-- /BLOGDOWN-BODY-BEFORE -->
+<p>今天，复活节假期前夕，同事们都休假了。我虽然在办公室，却无心上班，发了一会儿呆，想想与其痛苦地工作，不如快乐地解决一下<a href="http://pzhao.org">新网站</a>的一个小问题：disqus 评论框的加载。</p>
+<p>打建好站，disqus评论框就一直没成功加载过。后来听说是<code>config.toml</code>里 <code>disqus shortname</code>指的不是我的disqus ID，而是要<a href="https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-">专门设置</a>一下， 我说“啊,还有这事儿？”于是就设置了一下，但是仍然不能成功加载。这个问题放了几天，今天心血来潮<a href="http://applyr.blogspot.co.at/2017/01/blogging-about-r-from-r-studio.html">一搜</a>，嗯，兴许是路径的问题，于是就把<code>config.toml</code>开头的路径改为</p>
+<pre><code>baseurl = &quot;http://www.pzhao.org&quot;
+# relativeurls = true</code></pre>
+<p>然后运行R语言的建站函数：</p>
+<pre class="r"><code>blogdown::build_site(local=FALSE)</code></pre>
+<p>Disqus评论框就乖乖出现了。欢迎<a href="http://pzhao.org/zh/post/hogo-disques-problem/">来留言测试</a>。</p>
+<p>啥，你看不见？嗯，听说好像是被墙了。</p>
+
+    
+  </div>
+  <p class="read-more">
+    <a href="/zh/post/hogo-disques-problem/" class="btn btn-primary btn-outline">
+      继续阅读
+    </a>
+  </p>
+</div>
+
+      
+        
+        
+
+
+<div class="article-list-item" itemscope itemprop="blogPost">
+  
+  
+  <h3 class="article-title" itemprop="name">
+    <a href="/zh/post/2017-04-11_R-blogdown/" itemprop="url">R blogdown 搭建个人博客或科研网站</a>
   </h3>
   
 
@@ -361,7 +432,7 @@
     
   </div>
   <p class="read-more">
-    <a href="http://www.pzhao.org/zh/post/2017-04-11_R-blogdown/" class="btn btn-primary btn-outline">
+    <a href="/zh/post/2017-04-11_R-blogdown/" class="btn btn-primary btn-outline">
       继续阅读
     </a>
   </p>
@@ -376,7 +447,7 @@
   
   
   <h3 class="article-title" itemprop="name">
-    <a href="http://www.pzhao.org/zh/post/2017-03-24-R-bookdown/" itemprop="url">R bookdown 写学术论文</a>
+    <a href="/zh/post/2017-03-24-R-bookdown/" itemprop="url">R bookdown 写学术论文</a>
   </h3>
   
 
@@ -416,7 +487,7 @@
     
   </div>
   <p class="read-more">
-    <a href="http://www.pzhao.org/zh/post/2017-03-24-R-bookdown/" class="btn btn-primary btn-outline">
+    <a href="/zh/post/2017-03-24-R-bookdown/" class="btn btn-primary btn-outline">
       继续阅读
     </a>
   </p>
@@ -431,7 +502,7 @@
   
   
   <h3 class="article-title" itemprop="name">
-    <a href="http://www.pzhao.org/zh/post/2017-01-14_English-Grammar-in-Use/" itemprop="url">English Grammar in Use</a>
+    <a href="/zh/post/2017-01-14_English-Grammar-in-Use/" itemprop="url">English Grammar in Use</a>
   </h3>
   
 
@@ -471,7 +542,7 @@
     
   </div>
   <p class="read-more">
-    <a href="http://www.pzhao.org/zh/post/2017-01-14_English-Grammar-in-Use/" class="btn btn-primary btn-outline">
+    <a href="/zh/post/2017-01-14_English-Grammar-in-Use/" class="btn btn-primary btn-outline">
       继续阅读
     </a>
   </p>
@@ -521,7 +592,7 @@
 
 
 
-<a class="btn btn-primary btn-outline btn-xs" href="http://www.pzhao.org/zh/publication/zhao2016/">
+<a class="btn btn-primary btn-outline btn-xs" href="/zh/publication/zhao2016/">
   详情
 </a>
 
@@ -547,7 +618,7 @@
 
 
 
-<a class="btn btn-primary btn-outline btn-xs" href="http://www.pzhao.org/zh/publication/wohlfahrt2016/">
+<a class="btn btn-primary btn-outline btn-xs" href="/zh/publication/wohlfahrt2016/">
   详情
 </a>
 
@@ -573,7 +644,7 @@
 
 
 
-<a class="btn btn-primary btn-outline btn-xs" href="http://www.pzhao.org/zh/publication/huang2016/">
+<a class="btn btn-primary btn-outline btn-xs" href="/zh/publication/huang2016/">
   详情
 </a>
 
@@ -599,7 +670,7 @@
 
 
 
-<a class="btn btn-primary btn-outline btn-xs" href="http://www.pzhao.org/zh/publication/lee2016/">
+<a class="btn btn-primary btn-outline btn-xs" href="/zh/publication/lee2016/">
   详情
 </a>
 
@@ -625,7 +696,7 @@
 
 
 
-<a class="btn btn-primary btn-outline btn-xs" href="http://www.pzhao.org/zh/publication/lueers-2014/">
+<a class="btn btn-primary btn-outline btn-xs" href="/zh/publication/lueers-2014/">
   详情
 </a>
 
@@ -651,7 +722,7 @@
 
 
 
-<a class="btn btn-primary btn-outline btn-xs" href="http://www.pzhao.org/zh/publication/zhao-2014/">
+<a class="btn btn-primary btn-outline btn-xs" href="/zh/publication/zhao-2014/">
   详情
 </a>
 
@@ -702,7 +773,7 @@
       
       <li itemscope itemtype="http://schema.org/CreativeWork">
   <i class="fa-li fa fa-comment-o pub-icon" aria-hidden="true"></i>
-  <span itemprop="name"><a href="http://www.pzhao.org/zh/talk/egu-2017/">Role of advection for the ecosystem-atmosphere CO2 exchange of alpine grasslands</a></span>
+  <span itemprop="name"><a href="/zh/talk/egu-2017/">Role of advection for the ecosystem-atmosphere CO2 exchange of alpine grasslands</a></span>
   <p>
     Fri, Apr 28, 2017,
     
@@ -714,7 +785,7 @@
       
       <li itemscope itemtype="http://schema.org/CreativeWork">
   <i class="fa-li fa fa-comment-o pub-icon" aria-hidden="true"></i>
-  <span itemprop="name"><a href="http://www.pzhao.org/zh/talk/sysu-2016/">农业生态系统-大气之间的二氧化碳和能量交换</a></span>
+  <span itemprop="name"><a href="/zh/talk/sysu-2016/">农业生态系统-大气之间的二氧化碳和能量交换</a></span>
   <p>
     Wed, Dec 28, 2016,
     
@@ -726,7 +797,7 @@
       
       <li itemscope itemtype="http://schema.org/CreativeWork">
   <i class="fa-li fa fa-comment-o pub-icon" aria-hidden="true"></i>
-  <span itemprop="name"><a href="http://www.pzhao.org/zh/talk/jnu-2016/">暨南大学质谱仪器与大气环境研究所学术讲座暨110周年校庆学术活动</a></span>
+  <span itemprop="name"><a href="/zh/talk/jnu-2016/">暨南大学质谱仪器与大气环境研究所学术讲座暨110周年校庆学术活动</a></span>
   <p>
     Tue, Dec 27, 2016,
     
@@ -738,7 +809,7 @@
       
       <li itemscope itemtype="http://schema.org/CreativeWork">
   <i class="fa-li fa fa-comment-o pub-icon" aria-hidden="true"></i>
-  <span itemprop="name"><a href="http://www.pzhao.org/zh/talk/egu-2016/">The role of advection for CO2 exchange ﬂux over a mountainous grassland in the Alps</a></span>
+  <span itemprop="name"><a href="/zh/talk/egu-2016/">The role of advection for CO2 exchange ﬂux over a mountainous grassland in the Alps</a></span>
   <p>
     Thu, Apr 28, 2016,
     
@@ -750,7 +821,7 @@
       
       <li itemscope itemtype="http://schema.org/CreativeWork">
   <i class="fa-li fa fa-comment-o pub-icon" aria-hidden="true"></i>
-  <span itemprop="name"><a href="http://www.pzhao.org/zh/talk/egu-2015/">Measurement of advection of CO2 over grasslands in complex terrain in the Alps</a></span>
+  <span itemprop="name"><a href="/zh/talk/egu-2015/">Measurement of advection of CO2 over grasslands in complex terrain in the Alps</a></span>
   <p>
     Tue, Apr 28, 2015,
     

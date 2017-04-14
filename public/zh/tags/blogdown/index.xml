@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blogdown on 赵鹏</title>
-    <link>http://www.pzhao.org/zh/tags/blogdown/index.xml</link>
+    <link>/zh/tags/blogdown/index.xml</link>
     <description>Recent content in Blogdown on 赵鹏</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
@@ -10,11 +10,33 @@
     <atom:link href="/zh/tags/blogdown/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Hugo 网站的 Disqus 加载问题</title>
+      <link>/zh/post/hogo-disques-problem/</link>
+      <pubDate>Fri, 14 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/zh/post/hogo-disques-problem/</guid>
+      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
+&lt;!-- /BLOGDOWN-HEAD --&gt;
+
+&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
+&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
+&lt;p&gt;今天，复活节假期前夕，同事们都休假了。我虽然在办公室，却无心上班，发了一会儿呆，想想与其痛苦地工作，不如快乐地解决一下&lt;a href=&#34;http://pzhao.org&#34;&gt;新网站&lt;/a&gt;的一个小问题：disqus 评论框的加载。&lt;/p&gt;
+&lt;p&gt;打建好站，disqus评论框就一直没成功加载过。后来听说是&lt;code&gt;config.toml&lt;/code&gt;里 &lt;code&gt;disqus shortname&lt;/code&gt;指的不是我的disqus ID，而是要&lt;a href=&#34;https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-&#34;&gt;专门设置&lt;/a&gt;一下， 我说“啊,还有这事儿？”于是就设置了一下，但是仍然不能成功加载。这个问题放了几天，今天心血来潮&lt;a href=&#34;http://applyr.blogspot.co.at/2017/01/blogging-about-r-from-r-studio.html&#34;&gt;一搜&lt;/a&gt;，嗯，兴许是路径的问题，于是就把&lt;code&gt;config.toml&lt;/code&gt;开头的路径改为&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;baseurl = &amp;quot;http://www.pzhao.org&amp;quot;
+# relativeurls = true&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;然后运行R语言的建站函数：&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;blogdown::build_site(local=FALSE)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Disqus评论框就乖乖出现了。欢迎&lt;a href=&#34;http://pzhao.org/zh/post/hogo-disques-problem/&#34;&gt;来留言测试&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;啥，你看不见？嗯，听说好像是被墙了。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>R blogdown 搭建个人博客或科研网站</title>
-      <link>http://www.pzhao.org/zh/post/2017-04-11_R-blogdown/</link>
+      <link>/zh/post/2017-04-11_R-blogdown/</link>
       <pubDate>Tue, 11 Apr 2017 21:13:14 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/zh/post/2017-04-11_R-blogdown/</guid>
+      <guid>/zh/post/2017-04-11_R-blogdown/</guid>
       <description>
 
 &lt;p&gt;互联网时代有个自己的网站，就好像真实世界里有了自己的房子（服务器）和固定地址（域名）；自我介绍时附上自己的网站，就像生活里邀请朋友来访或者职场上递上名片，都甚为方便。然而，建立一个网站并不容易，涉及诸多领域的知识和技能，门槛比较高。好在，我们有万能的R语言，搭建网站只需几分钟，而并不需要多少网络知识。你甚至不用懂 R 语言是什么，照我下面说的做就行，包教包会，学不会免费再教。&lt;/p&gt;
