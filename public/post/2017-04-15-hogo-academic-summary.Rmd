@@ -20,6 +20,7 @@ summary: "我的文摘别太长。"
 
 就这么个小问题，让我走了点弯路。我发现问题后，首先观察了一下主题自带的示例文档，文件头是这样的：
 
+```
 +++
 date = "2016-04-20T11:00:00"
 draft = false
@@ -30,6 +31,7 @@ summary = """
 Enable/disable and configure widgets to customize your homepage.
 """
 +++
+```
 
 跟 R blogdown 生成的 .md 和 .Rmd 文件的文件头不同，这个文件头居然是用前后各三个加号表示的。里面的`summary`开始数三行，就是用来设置文摘的。
 

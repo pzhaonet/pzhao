@@ -99,7 +99,16 @@ defaultContentLanguageInSubdir = true
 &lt;pre&gt;&lt;code&gt;summary: &amp;quot;我的文摘别太长。&amp;quot;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;答案来自&lt;a href=&#34;https://github.com/rstudio/blogdown/issues/21#issuecomment-269555683&#34;&gt;blogdown 项目主页&lt;/a&gt;。&lt;/p&gt;
 &lt;p&gt;就这么个小问题，让我走了点弯路。我发现问题后，首先观察了一下主题自带的示例文档，文件头是这样的：&lt;/p&gt;
-&lt;p&gt;+++ date = “2016-04-20T11:00:00” draft = false tags = [“academic”, “hugo”] title = “Customizing the homepage with widgets” math = false summary = “”&amp;quot; Enable/disable and configure widgets to customize your homepage. “”&amp;quot; +++&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;+++
+date = &amp;quot;2016-04-20T11:00:00&amp;quot;
+draft = false
+tags = [&amp;quot;academic&amp;quot;, &amp;quot;hugo&amp;quot;]
+title = &amp;quot;Customizing the homepage with widgets&amp;quot;
+math = false
+summary = &amp;quot;&amp;quot;&amp;quot;
+Enable/disable and configure widgets to customize your homepage.
+&amp;quot;&amp;quot;&amp;quot;
++++&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;跟 R blogdown 生成的 .md 和 .Rmd 文件的文件头不同，这个文件头居然是用前后各三个加号表示的。里面的&lt;code&gt;summary&lt;/code&gt;开始数三行，就是用来设置文摘的。&lt;/p&gt;
 &lt;p&gt;于是我就把这三行拷贝粘贴到 .Rmd 文件里，当然是编译出错了。接着我想当然地把上面这段前后共六个加号的文件头拷贝粘贴到 .Rmd 里，仍然报错。问题搁置了几天，才想起去 blogdown 项目主页搜搜看，就找到了答案。&lt;/p&gt;
 &lt;p&gt;永远记不住的教训：遇到问题，别瞎试。上网搜，你绝不是第一个遇到这个问题的人。&lt;/p&gt;
