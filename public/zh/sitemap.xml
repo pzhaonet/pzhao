@@ -12,6 +12,22 @@
     
     
     <url>
+      <loc>http://www.pzhao.org/zh/post/hugo-multilingual/</loc>
+      <lastmod>2017-04-16T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+      <loc>http://www.pzhao.org/zh/post/hugo-academic-summary/</loc>
+      <lastmod>2017-04-15T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
       <loc>http://www.pzhao.org/zh/post/hogo-disques-problem/</loc>
       <lastmod>2017-04-14T00:00:00+00:00</lastmod>
     </url>
@@ -289,7 +305,7 @@
     
     <url>
       <loc>http://www.pzhao.org/zh/tags/blogdown/</loc>
-      <lastmod>2017-04-14T00:00:00+00:00</lastmod>
+      <lastmod>2017-04-16T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -333,7 +349,7 @@
     
     <url>
       <loc>http://www.pzhao.org/zh/tags/r/</loc>
-      <lastmod>2017-04-14T00:00:00+00:00</lastmod>
+      <lastmod>2017-04-16T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     

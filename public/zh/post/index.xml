@@ -11,6 +11,102 @@
     <atom:link href="/zh/post/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Hugo 网站 academic 主题的多语言界面</title>
+      <link>http://www.pzhao.org/zh/post/hugo-multilingual/</link>
+      <pubDate>Sun, 16 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.pzhao.org/zh/post/hugo-multilingual/</guid>
+      <description>&lt;p&gt;几年前我弄过&lt;a href=&#34;http://dapengde.com/archives/15265&#34; target=&#34;_blank&#34;&gt;双语博客&lt;/a&gt;， 后来放弃了，因为 WordPress 的双语方案有些遗留问题让我不爽，另外我没有精力写英文博客。现在，新网站是个科研网站，博客可以只出现在中文版里，而英文版只放自己的学术情况就行了，不用像博客更新那么频繁。所以，双语界面几乎是排在第一梯队的需求。&lt;/p&gt;
+
+&lt;p&gt;我对Hugo的架构并不熟悉，原以为会很麻烦，结果弄一会儿就搞定了，原来这么简单。有些步骤在&lt;a href=&#34;http://dapengde.com/blogdown_demo_academic/post/getting-started/&#34; target=&#34;_blank&#34;&gt;主题的说明文档里&lt;/a&gt;提到了，但不够全。完整的步骤是这样的(看起来长，是因为我啰嗦，其实很快就能设置完)：&lt;/p&gt;
+
+&lt;p&gt;1、开启双语。这需要在&lt;code&gt;config.toml&lt;/code&gt;里末尾找到：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[languages.en]
+  languageCode = &amp;quot;en-us&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这说明网站现在是英文的。在后面添加中文，也就是：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[languages.en]
+  languageCode = &amp;quot;en-us&amp;quot;
+
+[languages.zh]
+  languageCode = &amp;quot;zh-cn&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;2、设置默认语言。这需要在&lt;code&gt;config.toml&lt;/code&gt;里开头不远处找到：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# Default language to use (if you setup multilingual support)
+defaultContentLanguage = &amp;quot;zh&amp;quot;
+defaultContentLanguageInSubdir = true
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;原先是en，改成zh就可以让网站默认打开是中文。&lt;/p&gt;
+
+&lt;p&gt;3、菜单栏增加中文界面。菜单栏就是网页顶部那一排按钮。这需要在&lt;code&gt;config.toml&lt;/code&gt;里找到菜单栏的设定：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[[menu.main]]
+  name = &amp;quot;Home&amp;quot;
+  url = &amp;quot;#about&amp;quot;
+  weight = 1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;上面是默认语言英语的设置。在下面添加中文设置，格式是&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[[languages.zh.menu.main]]
+  name = &amp;quot;主页&amp;quot;
+  url = &amp;quot;#about&amp;quot;
+  weight = 1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这样，就把&lt;code&gt;Home&lt;/code&gt;按钮替换成了&lt;code&gt;主页&lt;/code&gt;按钮。其他按钮类似。&lt;/p&gt;
+
+&lt;p&gt;4、其他地方的翻译。这需要把&lt;code&gt;\themes\hugo-academic\i18n\&lt;/code&gt; 文件夹拷贝到根目录，然后删掉里边不需要的语言文件。我们只保留&lt;code&gt;en.yaml&lt;/code&gt;和&lt;code&gt;zh.yaml&lt;/code&gt;。用文本编辑器打开&lt;code&gt;zh.yaml&lt;/code&gt;，把里边翻译不当的地方修改一下，比如 interests 翻译成了“兴趣爱好”，我改成了“研究领域”。&lt;/p&gt;
+
+&lt;p&gt;5、新增帖子的双语。这个最好办，每次在&lt;code&gt;content\&lt;/code&gt;文件夹里新增文件时，如果要增加英文，就在文件扩展名前面加个&lt;code&gt;.en&lt;/code&gt;就行了。例如，我在&lt;code&gt;content\talk\&lt;/code&gt;下面新建了个&lt;code&gt;egu-2017.md&lt;/code&gt;，里面是中文，会出现在中文界面上。那么我想让这个项目也在英文版出现，只需把&lt;code&gt;egu-2017.md&lt;/code&gt;复制一份，命名为&lt;code&gt;egu-2017.en.md&lt;/code&gt;，那么这个项目就会在英文界面出现了。打开&lt;code&gt;egu-2017.en.md&lt;/code&gt;把里面的中文改成英文即可。&lt;/p&gt;
+
+&lt;p&gt;6、在菜单栏增加中英文界面切换的按钮。只需在&lt;code&gt;config.toml&lt;/code&gt;里的菜单设置出增加：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[[menu.main]]
+  name = &amp;quot;中文&amp;quot;
+  url = &amp;quot;../zh&amp;quot;
+  weight = 7
+  
+[[languages.zh.menu.main]]
+  name = &amp;quot;EN&amp;quot;
+  url = &amp;quot;../en&amp;quot;
+  weight = 7
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;至此，双语界面全部搞定。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Hugo 网站 academic 主题首页的文摘显示问题</title>
+      <link>http://www.pzhao.org/zh/post/hugo-academic-summary/</link>
+      <pubDate>Sat, 15 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.pzhao.org/zh/post/hugo-academic-summary/</guid>
+      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
+&lt;!-- /BLOGDOWN-HEAD --&gt;
+
+&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
+&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
+&lt;p&gt;在 RStudio 里用 R blogdown 来维护网站时，可以通过点击工具栏的 Addins - New Post 来创建新帖子，很方便。但是，如果用的是 Hugo 的 academic 主题，那么创建的新帖子在网站首页会显示全文，不大好看，尤其是全文很长的时候，根本就不像个首页了。这是因为，academic 首页的 posts 模块默认显示文摘。如果没有为每篇帖子设置文摘，就会显示全文。而上面说的创建新帖的方法里，并没有设置文摘的选项。那么，文摘在哪里设置呢？&lt;/p&gt;
+&lt;p&gt;直接说答案：手动在新帖的YAML文件头添加一行：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;summary: &amp;quot;我的文摘别太长。&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;答案来自&lt;a href=&#34;https://github.com/rstudio/blogdown/issues/21#issuecomment-269555683&#34;&gt;blogdown 项目主页&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;就这么个小问题，让我走了点弯路。我发现问题后，首先观察了一下主题自带的示例文档，文件头是这样的：&lt;/p&gt;
+&lt;p&gt;+++ date = “2016-04-20T11:00:00” draft = false tags = [“academic”, “hugo”] title = “Customizing the homepage with widgets” math = false summary = “”&amp;quot; Enable/disable and configure widgets to customize your homepage. “”&amp;quot; +++&lt;/p&gt;
+&lt;p&gt;跟 R blogdown 生成的 .md 和 .Rmd 文件的文件头不同，这个文件头居然是用前后各三个加号表示的。里面的&lt;code&gt;summary&lt;/code&gt;开始数三行，就是用来设置文摘的。&lt;/p&gt;
+&lt;p&gt;于是我就把这三行拷贝粘贴到 .Rmd 文件里，当然是编译出错了。接着我想当然地把上面这段前后共六个加号的文件头拷贝粘贴到 .Rmd 里，仍然报错。问题搁置了几天，才想起去 blogdown 项目主页搜搜看，就找到了答案。&lt;/p&gt;
+&lt;p&gt;永远记不住的教训：遇到问题，别瞎试。上网搜，你绝不是第一个遇到这个问题的人。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Hugo 网站的 Disqus 加载问题</title>
       <link>http://www.pzhao.org/zh/post/hogo-disques-problem/</link>
       <pubDate>Fri, 14 Apr 2017 00:00:00 +0000</pubDate>
