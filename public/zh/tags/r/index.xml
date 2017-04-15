@@ -21,7 +21,7 @@
 &lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
 &lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
 &lt;p&gt;今天，复活节假期前夕，同事们都休假了。我虽然在办公室，却无心上班，发了一会儿呆，想想与其痛苦地工作，不如快乐地解决一下&lt;a href=&#34;http://pzhao.org&#34;&gt;新网站&lt;/a&gt;的一个小问题：disqus 评论框的加载。&lt;/p&gt;
-&lt;p&gt;打建好站，disqus评论框就一直没成功加载过。后来听说是&lt;code&gt;config.toml&lt;/code&gt;里 &lt;code&gt;disqus shortname&lt;/code&gt;指的不是我的disqus ID，而是要&lt;a href=&#34;https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-&#34;&gt;专门设置&lt;/a&gt;一下， 我说“啊,还有这事儿？”于是就设置了一下，但是仍然不能成功加载。这个问题放了几天，今天心血来潮&lt;a href=&#34;http://applyr.blogspot.co.at/2017/01/blogging-about-r-from-r-studio.html&#34;&gt;一搜&lt;/a&gt;，嗯，兴许是路径的问题，于是就把&lt;code&gt;config.toml&lt;/code&gt;开头的路径改为&lt;/p&gt;
+&lt;p&gt;用 R blogdown 打建好站，disqus评论框就一直没成功加载过。后来听说是&lt;code&gt;config.toml&lt;/code&gt;里 &lt;code&gt;disqus shortname&lt;/code&gt;指的不是我的disqus ID，而是要&lt;a href=&#34;https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-&#34;&gt;专门设置&lt;/a&gt;一下， 我说“啊,还有这事儿？”于是就设置了一下，但是仍然不能成功加载。这个问题放了几天，今天心血来潮&lt;a href=&#34;http://applyr.blogspot.co.at/2017/01/blogging-about-r-from-r-studio.html&#34;&gt;一搜&lt;/a&gt;，嗯，兴许是路径的问题，于是就把&lt;code&gt;config.toml&lt;/code&gt;开头的路径改为&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;baseurl = &amp;quot;http://www.pzhao.org&amp;quot;
 # relativeurls = true&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;然后运行R语言的建站函数：&lt;/p&gt;
