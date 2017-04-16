@@ -20,9 +20,9 @@ defaultContentLanguageInSubdir = true
   hrefTargetBlank = true
 
 [params]
-  name = "赵鹏"
-  role = "地理生态学博士后"
-  organization = "因斯布鲁克大学"
+  name = "Peng Zhao"
+  role = "Post-doc in Geoecology"
+  organization = "University of Innsbruck"
   organization_url = ""
   avatar = "zhao.jpg"
   email = "peng.zhao@uibk.ac.at"
@@ -30,6 +30,7 @@ defaultContentLanguageInSubdir = true
   office_hours = "Monday 10:00 to 13:00 or email for appointment"
   phone = "+43 (0)512 507-51643"
   skype = ""
+  RSS = "http://www.pzhao.org/zh/index.xml"
 
   # Enable Keybase in Contact section by entering your keybase.io username.
   keybase = ""
@@ -142,6 +143,20 @@ defaultContentLanguageInSubdir = true
     icon_pack = "fa"
     link = "//github.com/dapengde"
 
+  [[params.social]]
+    icon = "rss"
+    icon_pack = "fa"
+    link = "http://www.pzhao.org/zh/index.xml"
+
+  [[params.social]]
+    icon = "music"
+    icon_pack = "fa"
+    link = "http://kg.qq.com/node/personal?uid=649d9d85212c3489"
+
+  [[params.social]]
+    icon = "video-camera"
+    icon_pack = "fa"
+    link = "http://v.qq.com/vplus/0f8190586a3f2f22a25e9827b38c171e"
 
 # Navigation Links
 #   To link a homepage widget, specify the URL as a hash `#` followed by the filename of the

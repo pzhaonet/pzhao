@@ -2,7 +2,7 @@
     "path" : "D:/googledrive/blog/netlify_zhao/content/post",
     "sortOrder" : [
         {
-            "ascending" : true,
+            "ascending" : false,
             "columnIndex" : 2
         }
     ]
