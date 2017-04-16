@@ -126,6 +126,35 @@ defaultContentLanguageInSubdir = true
     </item>
     
     <item>
+      <title>斜杠</title>
+      <link>http://www.pzhao.org/zh/post/slash/</link>
+      <pubDate>Sun, 16 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.pzhao.org/zh/post/slash/</guid>
+      <description>&lt;p&gt;在我的新书在线试读章节，益辉同学提出了&lt;a href=&#34;http://dapengde.com/xuer/post/2017-04-15_blogdown/#comment-3258130059&#34; target=&#34;_blank&#34;&gt;一个话题&lt;/a&gt;，那就是斜杠。这个小东西已经困扰我多年了，P大点儿事，我一直不想较真儿，怕被人瞧不起说我吃饱撑得，这回有益辉这么一位神级队友罩着，就趁机吐个槽。&lt;/p&gt;
+
+&lt;p&gt;斜杠就是&lt;code&gt;/&lt;/code&gt;，在英文叫做slash，或者叫forward slash，就是向前倾斜，而&lt;code&gt;\&lt;/code&gt;就是back slash，向后倾斜。只需想着&lt;code&gt;|&lt;/code&gt;是个直立的小人顺着文字的方向走，那么前倾
+后倾一目了然，名字跟形状是吻合的。或者用“吉他法”，吉他手*背*面对着我那就是&lt;em&gt;back&lt;/em&gt; slash（当然前提是右撇子）。无论如何，英文名称是合乎我的逻辑和理解力的。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://pbs.twimg.com/media/CvOSYNzVMAAgXh_.jpg&#34; alt=&#34;enter image description here&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;我不想提它的原因，是因为中文名字的翻译总让我糊涂。&lt;code&gt;/&lt;/code&gt;叫做斜杠或斜线，&lt;code&gt;\&lt;/code&gt;叫做反斜杠，我老是搞不清楚，写本帖的时候还要搜一下确认。凭什么呀？逻辑上这俩都是“斜”的啊？凭什么沿着从上往下从左往右的正常笔画顺序来写的&lt;code&gt;\&lt;/code&gt;叫做&lt;strong&gt;反&lt;/strong&gt;斜杠啊？人家反在哪里了？明明人家是顺的啊！我为&lt;code&gt;\&lt;/code&gt;叫屈。要是我翻译，就叫&lt;code&gt;/&lt;/code&gt;为“前俯”键，&lt;code&gt;\&lt;/code&gt;叫“后仰”键，信达雅兼顾。你们非要叫斜杠和反斜杠，不符合我的逻辑框架，老是得犹豫一下，还不确定谁正谁反，那干脆还是别提他们了。&lt;/p&gt;
+
+&lt;p&gt;R 语言里，表示路径的时候，两级文件夹之间要用&lt;code&gt;/&lt;/code&gt;或&lt;code&gt;\\&lt;/code&gt;分隔，否则就报错。这个问题初学者常遇见，我特意写进了新书的“答疑”一章。以前我跑 windows 和 Ubuntu 双系统时还会考虑正反斜杠，现在只用 windows，如果在 R 代码里需要本地路径，我都是在totalcommander 里 ctrl + 3 来获取完整路径到剪切板，再粘贴到代码里。要改成&lt;code&gt;\\&lt;/code&gt;，只需在原有的一个&lt;code&gt;\&lt;/code&gt;后面再添一个就行了。而改成&lt;code&gt;/&lt;/code&gt;，我得先删掉原有的&lt;code&gt;\&lt;/code&gt;，再敲一个&lt;code&gt;/&lt;/code&gt;，工作量加倍。我就是懒&amp;hellip;&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;我用&lt;code&gt;\&lt;/code&gt;的另一个理由就比较小众了，一般人可能难以理解：我人在德语国家，用的是德语键盘。不是系统设置成德语键盘，而是实体德语键盘，见下图：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://www.smartkeyboardsolutions.com/images/KB_50029UB_German_zoom.jpg&#34; alt=&#34;enter image description here&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;除了布局不同外，德语键盘比普通键盘多一个功能键叫 &lt;code&gt;AltGr&lt;/code&gt;，在空格键右边，用来输入更多特殊字符。德语键盘输入&lt;code&gt;/&lt;/code&gt;，需要双手互博，左手shift+右手7，或者找数字小键盘的除号，而输入&lt;code&gt;\&lt;/code&gt;只需一只手，右手拇指AltGr+中指ß就行了。那我当然倾向于&lt;code&gt;\&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;说到德语键盘，又有吐不完的槽，比如你会发现Z和Y两个键是跟英文键盘反着的。我对此不理解，就问德国人，德国人的回答是：你们英文键盘干嘛非要跟我们反着？你们英国人为啥非要靠左行驶？你们英国人为啥计量单位不用十进制？&amp;hellip;&amp;hellip;.&lt;/p&gt;
+
+&lt;p&gt;一扯就又扯到二战去了。本帖就此打住。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Hugo 网站 academic 主题首页的文摘显示问题</title>
       <link>http://www.pzhao.org/zh/post/hugo-academic-summary/</link>
       <pubDate>Sat, 15 Apr 2017 00:00:00 +0000</pubDate>
@@ -337,67 +366,6 @@ relativeurls = true
 &lt;li id=&#34;fn:Yihui-Xie-blogdo&#34;&gt;Yihui Xie. blogdown: Create Blogs and Websites with R Markdown. R package version 0.0.24. &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:Yihui-Xie-blogdo&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>R bookdown 写学术论文</title>
-      <link>http://www.pzhao.org/zh/post/2017-03-24-R-bookdown/</link>
-      <pubDate>Fri, 24 Mar 2017 21:13:14 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/zh/post/2017-03-24-R-bookdown/</guid>
-      <description>&lt;p&gt;&lt;em&gt;1&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;最近，我使用 R 语言的 bookdown 扩展包接连做了三件事：先是整理出一本跟&lt;a href=&#34;http://dapengde.com/archives/19122&#34; target=&#34;_blank&#34;&gt; R 语言有关的书&lt;/a&gt;，然后把博客的帖子整理出一本&lt;a href=&#34;http://dapengde.com/archives/19150&#34; target=&#34;_blank&#34;&gt;纯文本的中文书&lt;/a&gt;，这两天我又在用它来写一篇打算投稿的学术期刊论文。&lt;/p&gt;
-
-&lt;p&gt;用 bookdown 写英文的科研期刊论文，配置起来是很简单的，只需在bookdown提供的&lt;a href=&#34;https://github.com/rstudio/bookdown-demo&#34; target=&#34;_blank&#34;&gt;官方演示文档&lt;/a&gt;里做简单修改如下：&lt;/p&gt;
-
-&lt;p&gt;首先，index.Rmd 的文件头 yaml 部分，将 documentclass 设为 article，并关闭图表目录和文章目录即可：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;documentclass: article
-lof: no
-lot: no
-toc: no
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;然后，_output.yml 文件内容全部清空，然后添加指令生成 word_document2 文档、 pdf_document2 文档和 html_document2 文档，参数为default即可。也就是说，_output.yml 文件内容只需3行：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;bookdown::word_document2: default 
-bookdown::pdf_document2: default
-bookdown::html_document2: default
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;就能生成足够美观的三种格式的文档了。&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;2&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;写论文期间发生了一件事，让我饱受刺激。&lt;/p&gt;
-
-&lt;p&gt;我的科研论文有个计算公式，昨天发现其中一个数值不小心敲错了。后续计算都是建立在这个计算的基础上，所以后续计算全错。虽然不影响结论，但严格来讲，论文里所有的数据都得改。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://blogs.helmholtz.de/hejus/wp-content/uploads/sites/15/2014/10/writinghardwork.jpg&#34; alt=&#34;enter image description here&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;放在以前，这是让人崩溃的灾难。幸亏，这次我写论文用了 bookdown。&lt;/p&gt;
-
-&lt;p&gt;这篇研究论文是用 Rmd 格式写的，里面绝大部分数据不是手动敲进去的，而是调用了 R 代码，图表也是用 R 代码插入的，走的是“可重复性研究”的思路。现在，我只要把 R 代码里那个敲错的数据改过来，运行代码，后续计算就全部自动更新，而论文 Rmd 文件里调用代码的输出结果，会在导出的 pdf 或 word 文档也相应自动更新，节省了大量时间，还减少了敲数字或拷贝粘贴出错的可能，怎一个爽字了得！&lt;/p&gt;
-
-&lt;p&gt;在 bookdown 发布之前，其实 rmarkdown 也有这个功能，但因为公式、交叉引用、参考文献方面的欠缺， rmarkdown 对我来讲比较鸡肋，一直未能用在论文写作上。现在有了 bookdown ，可以甩开膀子使劲儿用。可以说， bookdown 把 rmarkdown 原有的价值做了更充分的挖掘。&lt;/p&gt;
-
-&lt;p&gt;写学术论文的过程比较煎熬，多年来我都不享受。而经过昨天的事件，我在写论文的过程里发现了很多快乐。我甚至有种变态心理，希望发现更多的计算错误，然后稍微一改，“叮！”论文全部自动更新。&lt;/p&gt;
-
-&lt;p&gt;老子陪你玩。好享受。&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;3&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;二娃德生前不久生病了，医生开了止咳糖浆。德生开始很拒绝，后来喜欢上了糖浆的味道。即使病好了，也经常要求喝止咳糖浆。&lt;/p&gt;
-
-&lt;p&gt;我问：“这是药，咳嗽才能喝。你咳嗽了吗？”&lt;/p&gt;
-
-&lt;p&gt;德生：“咳咳！咳咳！我咳嗽啦！”&lt;/p&gt;
-
-&lt;p&gt;学术论文写作使用 bookdown ，就是止咳药里添加的糖浆味道，让人不咳嗽的时候也想喝两盅，上瘾。&lt;/p&gt;
-
-&lt;p&gt;PS：今天在google.com以“bookdown”为关键词搜中文网页，我的博客已经出现在首页啦！&lt;/p&gt;
 </description>
     </item>
     
