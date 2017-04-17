@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hugo on Peng Zhao</title>
-    <link>http://www.pzhao.org/zh/tags/hugo/index.xml</link>
+    <link>/zh/tags/hugo/index.xml</link>
     <description>Recent content in Hugo on Peng Zhao</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
@@ -11,10 +11,10 @@
     
     <item>
       <title>Hugo 网站的RSS</title>
-      <link>http://www.pzhao.org/zh/post/hugo-rss/</link>
+      <link>/zh/post/hugo-rss/</link>
       <pubDate>Tue, 18 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/zh/post/hugo-rss/</guid>
+      <guid>/zh/post/hugo-rss/</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 
