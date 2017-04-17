@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Projects on Peng Zhao</title>
-    <link>/zh/project/index.xml</link>
+    <link>http://www.pzhao.org/zh/project/index.xml</link>
     <description>Recent content in Projects on Peng Zhao</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
@@ -12,10 +12,10 @@
     
     <item>
       <title>ScaleX</title>
-      <link>/zh/project/scalex/</link>
+      <link>http://www.pzhao.org/zh/project/scalex/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>/zh/project/scalex/</guid>
+      <guid>http://www.pzhao.org/zh/project/scalex/</guid>
       <description>&lt;p&gt;The TERENO (TERrestrial ENvironmental Observatories) network is a large-scale integrative observation program designed to determine the long-term ecological and climatic impact of global environmental change at regional scales.&lt;/p&gt;
 
 &lt;p&gt;The TERENO—preAlpine observatory in mountainous terrain of Bavaria, Germany, includes three core grassland sites at different elevations (600, 750 and 860 m a.s.l), at which surface exchange fluxes are observed by eddy-covariance, lysimeters and chamber system clusters. The site arrangement represents a climatic gradient. Specific to the Fendt site is the addition of a hydro-meteorological observation network.&lt;/p&gt;
@@ -26,10 +26,10 @@
     
     <item>
       <title>Advection</title>
-      <link>/zh/project/fwf-advection/</link>
+      <link>http://www.pzhao.org/zh/project/fwf-advection/</link>
       <pubDate>Mon, 01 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>/zh/project/fwf-advection/</guid>
+      <guid>http://www.pzhao.org/zh/project/fwf-advection/</guid>
       <description>&lt;p&gt;Austrian Science Fund (FWF): On the role of advection for the net carbon dioxide exchange of short-statured ecosystems in complex terrain.&lt;/p&gt;
 </description>
     </item>

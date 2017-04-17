@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>R on Peng Zhao</title>
-    <link>/zh/tags/r/index.xml</link>
+    <link>http://www.pzhao.org/zh/tags/r/index.xml</link>
     <description>Recent content in R on Peng Zhao</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
@@ -11,10 +11,10 @@
     
     <item>
       <title>Hugo 网站的RSS</title>
-      <link>/zh/post/hugo-rss/</link>
+      <link>http://www.pzhao.org/zh/post/hugo-rss/</link>
       <pubDate>Tue, 18 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>/zh/post/hugo-rss/</guid>
+      <guid>http://www.pzhao.org/zh/post/hugo-rss/</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 
@@ -52,10 +52,10 @@ http://pzhao.org/zh/talk/index.xml&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>Hugo 网站 academic 主题的多语言界面</title>
-      <link>/zh/post/hugo-multilingual/</link>
+      <link>http://www.pzhao.org/zh/post/hugo-multilingual/</link>
       <pubDate>Sun, 16 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>/zh/post/hugo-multilingual/</guid>
+      <guid>http://www.pzhao.org/zh/post/hugo-multilingual/</guid>
       <description>&lt;p&gt;几年前我弄过&lt;a href=&#34;http://dapengde.com/archives/15265&#34; target=&#34;_blank&#34;&gt;双语博客&lt;/a&gt;， 后来放弃了，因为 WordPress 的双语方案有些遗留问题让我不爽，另外我没有精力写英文博客。现在，新网站是个科研网站，博客可以只出现在中文版里，而英文版只放自己的学术情况就行了，不用像博客更新那么频繁。所以，双语界面几乎是排在第一梯队的需求。&lt;/p&gt;
 
 &lt;p&gt;我对Hugo的架构并不熟悉，原以为会很麻烦，结果弄一会儿就搞定了，原来这么简单。有些步骤在&lt;a href=&#34;http://dapengde.com/blogdown_demo_academic/post/getting-started/&#34; target=&#34;_blank&#34;&gt;主题的说明文档里&lt;/a&gt;提到了，但不够全。完整的步骤是这样的(看起来长，是因为我啰嗦，其实很快就能设置完)：&lt;/p&gt;
@@ -125,10 +125,10 @@ defaultContentLanguageInSubdir = true
     
     <item>
       <title>Word 永远转不成 Markdown</title>
-      <link>/zh/post/word-never-markdown/</link>
+      <link>http://www.pzhao.org/zh/post/word-never-markdown/</link>
       <pubDate>Sun, 16 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>/zh/post/word-never-markdown/</guid>
+      <guid>http://www.pzhao.org/zh/post/word-never-markdown/</guid>
       <description>&lt;p&gt;R bookdown 用扩展的 Markdown 语法来写书，可以很方便地导出 Word 格式，虽然不完美，但只需稍微调一下样式，就是一个漂漂亮亮的文档。但是，如果在 Word 里做了修改，想转回 Markdown 该怎么办？&lt;/p&gt;
 
 &lt;p&gt;多年来，我一直奢望能找到这样一款软件，哪怕是把 Word 转成 LaTeX 也行。随着时间的流逝，希望却是越来越渺茫; 我越来越深信，这样的软件过去不曾有，现在还没有，将来永远都不会有。因为，逻辑上是不可能实现的。&lt;/p&gt;
@@ -157,10 +157,10 @@ defaultContentLanguageInSubdir = true
     
     <item>
       <title>Hugo 网站 academic 主题首页的文摘显示问题</title>
-      <link>/zh/post/hugo-academic-summary/</link>
+      <link>http://www.pzhao.org/zh/post/hugo-academic-summary/</link>
       <pubDate>Sat, 15 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>/zh/post/hugo-academic-summary/</guid>
+      <guid>http://www.pzhao.org/zh/post/hugo-academic-summary/</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 
@@ -189,10 +189,10 @@ Enable/disable and configure widgets to customize your homepage.
     
     <item>
       <title>Hugo 网站的 Disqus 加载问题</title>
-      <link>/zh/post/hogo-disques-problem/</link>
+      <link>http://www.pzhao.org/zh/post/hogo-disques-problem/</link>
       <pubDate>Fri, 14 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>/zh/post/hogo-disques-problem/</guid>
+      <guid>http://www.pzhao.org/zh/post/hogo-disques-problem/</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 
@@ -213,10 +213,10 @@ Enable/disable and configure widgets to customize your homepage.
     
     <item>
       <title>R blogdown 搭建个人博客或科研网站</title>
-      <link>/zh/post/2017-04-11_R-blogdown/</link>
+      <link>http://www.pzhao.org/zh/post/2017-04-11_R-blogdown/</link>
       <pubDate>Tue, 11 Apr 2017 21:13:14 +0000</pubDate>
       
-      <guid>/zh/post/2017-04-11_R-blogdown/</guid>
+      <guid>http://www.pzhao.org/zh/post/2017-04-11_R-blogdown/</guid>
       <description>
 
 &lt;p&gt;互联网时代有个自己的网站，就好像真实世界里有了自己的房子（服务器）和固定地址（域名）；自我介绍时附上自己的网站，就像生活里邀请朋友来访或者职场上递上名片，都甚为方便。然而，建立一个网站并不容易，涉及诸多领域的知识和技能，门槛比较高。好在，我们有万能的R语言，搭建网站只需几分钟，而并不需要多少网络知识。你甚至不用懂 R 语言是什么，照我下面说的做就行，包教包会，学不会免费再教。&lt;/p&gt;
@@ -372,10 +372,10 @@ relativeurls = true
     
     <item>
       <title>R bookdown 写学术论文</title>
-      <link>/zh/post/2017-03-24-R-bookdown/</link>
+      <link>http://www.pzhao.org/zh/post/2017-03-24-R-bookdown/</link>
       <pubDate>Fri, 24 Mar 2017 21:13:14 +0000</pubDate>
       
-      <guid>/zh/post/2017-03-24-R-bookdown/</guid>
+      <guid>http://www.pzhao.org/zh/post/2017-03-24-R-bookdown/</guid>
       <description>&lt;p&gt;&lt;em&gt;1&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;最近，我使用 R 语言的 bookdown 扩展包接连做了三件事：先是整理出一本跟&lt;a href=&#34;http://dapengde.com/archives/19122&#34; target=&#34;_blank&#34;&gt; R 语言有关的书&lt;/a&gt;，然后把博客的帖子整理出一本&lt;a href=&#34;http://dapengde.com/archives/19150&#34; target=&#34;_blank&#34;&gt;纯文本的中文书&lt;/a&gt;，这两天我又在用它来写一篇打算投稿的学术期刊论文。&lt;/p&gt;
