@@ -1,7 +1,7 @@
 baseurl = "http://www.pzhao.org"
 # relativeurls = true
-title = "赵鹏"
-copyright = "&copy; 2017 赵鹏"
+title = "Peng Zhao"
+copyright = "&copy; 2017 Peng Zhao"
 theme = "hugo-academic"
 enableEmoji = true
 footnotereturnlinkcontents = "<sup>^</sup>"
@@ -227,6 +227,11 @@ defaultContentLanguageInSubdir = true
   name = "联系"
   url = "#contact"
   weight = 6
+
+[[languages.zh.menu.main]]
+  name = "搜索"
+  url = "https://cse.google.com/cse/publicurl?cx=006346710622437628329:nxozn9fijm0"
+  weight = 8
 
 [[languages.zh.menu.main]]
   name = "EN"

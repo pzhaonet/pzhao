@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>赵鹏 on 赵鹏</title>
+    <title>Peng Zhao on Peng Zhao</title>
     <link>http://www.pzhao.org/zh/index.xml</link>
-    <description>Recent content in 赵鹏 on 赵鹏</description>
+    <description>Recent content in Peng Zhao on Peng Zhao</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <copyright>&amp;copy; 2017 赵鹏</copyright>
+    <copyright>&amp;copy; 2017 Peng Zhao</copyright>
     <lastBuildDate>Wed, 20 Apr 2016 00:00:00 +0000</lastBuildDate>
     <atom:link href="/zh/index.xml" rel="self" type="application/rss+xml" />
     
@@ -36,10 +36,13 @@
 &lt;pre&gt;&lt;code&gt;http://pzhao.org/zh/&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;这个路径对应的本地文件夹下面，不仅有个&lt;code&gt;index.html&lt;/code&gt;，还有个&lt;code&gt;index.xml&lt;/code&gt;，后者就是 RSS 订阅的文件。所以，在feedly添加：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;http://pzhao.org/zh/index.xml&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;就把我的新网站添进去了。&lt;/p&gt;
+&lt;p&gt;就把我的新网站添进去了。这是订阅全站。如果只想订阅其中的博客，或新发表的学术文章，或新做的报告，那么：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;http://pzhao.org/zh/post/index.xml
+http://pzhao.org/zh/publication/index.xml
+http://pzhao.org/zh/talk/index.xml&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;这个RSS链接，我该放到主页的什么位置，来方便网友订阅呢？我决定放到我的头像下面的社交按钮里。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../img/social.png&#34; /&gt;&lt;!-- --&gt;&lt;/p&gt;
-&lt;p&gt;头像下的社交按钮是在&lt;code&gt;config.toml&lt;/code&gt;里设置的，只需添加个&lt;code&gt;[[params.social]]&lt;/code&gt;就可以了，图标去&lt;a href=&#34;https://fortawesome.github.io/Font-Awesome/icons/&#34;&gt;fa&lt;/a&gt;或&lt;a href=&#34;https://jpswalsh.github.io/academicons/&#34;&gt;ai&lt;/a&gt;两个包的主页找便是。 除了RSS，我顺便把自己卡拉OK的录音和腾讯视频也加进去了，代码如下：&lt;/p&gt;
+&lt;p&gt;头像下的社交按钮是在&lt;code&gt;config.toml&lt;/code&gt;里设置的，只需添加个&lt;code&gt;[[params.social]]&lt;/code&gt;就可以了，图标去&lt;a href=&#34;https://fortawesome.github.io/Font-Awesome/icons/&#34;&gt;fa&lt;/a&gt;或&lt;a href=&#34;https://jpswalsh.github.io/academicons/&#34;&gt;ai&lt;/a&gt;两个包的主页找便是。 实在缺乏社交，只好把自己卡拉OK的录音和腾讯视频加进去凑数，代码如下：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;  [[params.social]]
     icon = &amp;quot;rss&amp;quot;
     icon_pack = &amp;quot;fa&amp;quot;

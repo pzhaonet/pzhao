@@ -22,7 +22,14 @@ http://pzhao.org/zh/
 http://pzhao.org/zh/index.xml
 ```
 
-就把我的新网站添进去了。
+就把我的新网站添进去了。这是订阅全站。如果只想订阅其中的博客，或新发表的学术文章，或新做的报告，那么：
+
+```
+http://pzhao.org/zh/post/index.xml
+http://pzhao.org/zh/publication/index.xml
+http://pzhao.org/zh/talk/index.xml
+```
+
 
 这个RSS链接，我该放到主页的什么位置，来方便网友订阅呢？我决定放到我的头像下面的社交按钮里。
 
@@ -30,9 +37,8 @@ http://pzhao.org/zh/index.xml
 knitr::include_graphics("../img/social.png")
 ```
 
-头像下的社交按钮是在`config.toml`里设置的，只需添加个`[[params.social]]`就可以了，图标去[fa](https://fortawesome.github.io/Font-Awesome/icons/)或[ai](https://jpswalsh.github.io/academicons/)两个包的主页找便是。 除了RSS，我顺便把自己卡拉OK的录音和腾讯视频也加进去了，代码如下：
-
-
+头像下的社交按钮是在`config.toml`里设置的，只需添加个`[[params.social]]`就可以了，图标去[fa](https://fortawesome.github.io/Font-Awesome/icons/)或[ai](https://jpswalsh.github.io/academicons/)两个包的主页找便是。 
+实在缺乏社交，只好把自己卡拉OK的录音和腾讯视频加进去凑数，代码如下：
 
 ```
   [[params.social]]

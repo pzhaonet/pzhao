@@ -241,6 +241,15 @@
     
     
     <url>
+      <loc>http://www.pzhao.org/en/</loc>
+      <lastmod>2016-04-20T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
       <loc>http://www.pzhao.org/en/post/</loc>
       <lastmod>2017-01-14T21:13:14+00:00</lastmod>
       <priority>0</priority>
@@ -295,15 +304,6 @@
     <url>
       <loc>http://www.pzhao.org/en/tags/writing/</loc>
       <lastmod>2017-01-14T21:13:14+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-      <loc>http://www.pzhao.org/en/</loc>
-      <lastmod>2016-04-20T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     

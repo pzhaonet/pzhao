@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>近期报告 on 赵鹏</title>
+    <title>近期报告 on Peng Zhao</title>
     <link>http://www.pzhao.org/zh/talk/index.xml</link>
-    <description>Recent content in 近期报告 on 赵鹏</description>
+    <description>Recent content in 近期报告 on Peng Zhao</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <copyright>&amp;copy; 2017 赵鹏</copyright>
+    <copyright>&amp;copy; 2017 Peng Zhao</copyright>
     <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate>
     <atom:link href="/zh/talk/index.xml" rel="self" type="application/rss+xml" />
     
