@@ -25,12 +25,11 @@ defaultContentLanguageInSubdir = true
   organization = "University of Innsbruck"
   organization_url = ""
   avatar = "zhao.jpg"
-  email = "peng.zhao@uibk.ac.at"
-  address = "Sternwartestr. 15, Innsbruck Austria"
+  email = ""
+  address = ""
   office_hours = "Monday 10:00 to 13:00 or email for appointment"
-  phone = "+43 (0)512 507-51643"
+  phone = ""
   skype = ""
-  RSS = "http://www.pzhao.org/zh/index.xml"
 
   # Enable Keybase in Contact section by entering your keybase.io username.
   keybase = ""
@@ -126,12 +125,7 @@ defaultContentLanguageInSubdir = true
   [[params.social]]
     icon = "envelope"
     icon_pack = "fa"
-    link = "mailto:peng.zhao@uibk.ac.at"
-
-  [[params.social]]
-    icon = "youtube"
-    icon_pack = "fa"
-    link = "https://www.youtube.com/channel/UCs76tyulNUTPSzagsuTA8UA"
+    link = "mailto:dapengde@live.com"
 
   [[params.social]]
     icon = "google-scholar"
@@ -144,9 +138,9 @@ defaultContentLanguageInSubdir = true
     link = "//github.com/dapengde"
 
   [[params.social]]
-    icon = "rss"
+    icon = "youtube"
     icon_pack = "fa"
-    link = "http://www.pzhao.org/zh/index.xml"
+    link = "https://www.youtube.com/channel/UCs76tyulNUTPSzagsuTA8UA"
 
   [[params.social]]
     icon = "music"
@@ -157,6 +151,11 @@ defaultContentLanguageInSubdir = true
     icon = "video-camera"
     icon_pack = "fa"
     link = "http://v.qq.com/vplus/0f8190586a3f2f22a25e9827b38c171e"
+
+  [[params.social]]
+    icon = "rss"
+    icon_pack = "fa"
+    link = "http://www.pzhao.org/zh/index.xml"
 
 # Navigation Links
 #   To link a homepage widget, specify the URL as a hash `#` followed by the filename of the
@@ -189,10 +188,10 @@ defaultContentLanguageInSubdir = true
   weight = 5
 
 [[menu.main]]
-  name = "Contact"
-  url = "#contact"
+  name = "Search"
+  url = "https://cse.google.com/cse/publicurl?cx=006346710622437628329:tdbwt2rsqrs"
   weight = 6
-
+  
 [[menu.main]]
   name = "中文"
   url = "../zh"
@@ -224,14 +223,9 @@ defaultContentLanguageInSubdir = true
   weight = 5
 
 [[languages.zh.menu.main]]
-  name = "联系"
-  url = "#contact"
-  weight = 6
-
-[[languages.zh.menu.main]]
   name = "搜索"
   url = "https://cse.google.com/cse/publicurl?cx=006346710622437628329:nxozn9fijm0"
-  weight = 8
+  weight = 6
 
 [[languages.zh.menu.main]]
   name = "EN"

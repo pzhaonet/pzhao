@@ -10,6 +10,23 @@
     <atom:link href="/zh/tags/blogdown/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Hugo 网站的浏览器小图标</title>
+      <link>http://www.pzhao.org/zh/post/hugo-icon/</link>
+      <pubDate>Wed, 19 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.pzhao.org/zh/post/hugo-icon/</guid>
+      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
+&lt;!-- /BLOGDOWN-HEAD --&gt;
+
+&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
+&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
+&lt;p&gt;&lt;img src=&#34;../img/icon.png&#34; /&gt;&lt;!-- --&gt;&lt;/p&gt;
+&lt;p&gt;网站图标，就是上图的这些东东，用浏览器打开网站时显示在地址栏的顶端。R blogdown安装的hugo-academic主题，默认图标是个蓝色学位帽，挺好看的，不改也行，只是如果大家都用的话，泯然众人，识别度就低了。&lt;/p&gt;
+&lt;p&gt;改的方式很简单：将你自己的图标图片保存为.png格式，并命名为icon.png，替换&lt;code&gt;\themes\hugo-academic\static\img\icon.png&lt;/code&gt;即可。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Hugo 网站的RSS</title>
       <link>http://www.pzhao.org/zh/post/hugo-rss/</link>
       <pubDate>Tue, 18 Apr 2017 00:00:00 +0000</pubDate>
