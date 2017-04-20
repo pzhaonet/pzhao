@@ -12,6 +12,14 @@
     
     
     <url>
+      <loc>http://www.pzhao.org/zh/post/egu2017/</loc>
+      <lastmod>2017-04-20T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
       <loc>http://www.pzhao.org/zh/post/hugo-icon/</loc>
       <lastmod>2017-04-19T00:00:00+00:00</lastmod>
     </url>
@@ -354,6 +362,15 @@
     
     
     <url>
+      <loc>http://www.pzhao.org/zh/tags/egu/</loc>
+      <lastmod>2017-04-20T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
       <loc>http://www.pzhao.org/zh/tags/english/</loc>
       <lastmod>2017-01-14T21:13:14+00:00</lastmod>
       <priority>0</priority>
@@ -407,8 +424,17 @@
     
     
     <url>
+      <loc>http://www.pzhao.org/zh/tags/python/</loc>
+      <lastmod>2017-04-20T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
       <loc>http://www.pzhao.org/zh/tags/r/</loc>
-      <lastmod>2017-04-19T00:00:00+00:00</lastmod>
+      <lastmod>2017-04-20T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
