@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "setwd('D:\\\\googledrive\\\\blog\\\\blogdown_academic')\nblogdown::serve_site()\n",
+    "created" : 1492782360395.000,
+    "dirty" : true,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "1217941590",
+    "id" : "618EC236",
+    "lastKnownWriteTime" : 30399795707576430,
+    "last_content_update" : 1492782396304,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
