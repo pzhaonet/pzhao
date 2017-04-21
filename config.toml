@@ -1,5 +1,5 @@
 baseurl = "http://www.pzhao.org"
-relativeurls = true
+# relativeurls = true
 title = "Peng Zhao"
 copyright = "&copy; 2017 Peng Zhao"
 theme = "hugo-academic"

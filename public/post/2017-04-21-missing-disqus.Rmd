@@ -2,7 +2,7 @@
 title: '丢失的 Disqus 评论'
 author: 赵鹏
 date: '2017-04-21'
-slug: r-blogdown
+slug: r_blogdown
 categories: []
 tags: ["R", "blogdown", "Hugo"]
 summary: "一个误操作，把网友的一条评论给弄丢了。"
