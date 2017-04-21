@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "---\ntitle: '丢失的 Disqus 评论'\nauthor: 赵鹏\ndate: '2017-04-21'\nslug: r-blogdown\ncategories: []\ntags: [\"R\", \"blogdown\", \"Hugo\"]\nsummary: \"一个误操作，把网友的一条评论给弄丢了。\"\n---\n\n点开本篇看看，丢失的Disqus评论是不是找回来了？",
+    "created" : 1492781173232.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1189917950",
+    "id" : "84845595",
+    "lastKnownWriteTime" : 1492781196,
+    "last_content_update" : 1492781196443,
+    "path" : "D:/googledrive/blog/netlify_zhao/content/post/2017-04-21-missing-disqus.Rmd",
+    "project_path" : "content/post/2017-04-21-missing-disqus.Rmd",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

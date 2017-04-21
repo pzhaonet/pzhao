@@ -1,5 +1,5 @@
 baseurl = "http://www.pzhao.org"
-# relativeurls = true
+relativeurls = true
 title = "Peng Zhao"
 copyright = "&copy; 2017 Peng Zhao"
 theme = "hugo-academic"
@@ -141,6 +141,11 @@ defaultContentLanguageInSubdir = true
     icon = "youtube"
     icon_pack = "fa"
     link = "https://www.youtube.com/channel/UCs76tyulNUTPSzagsuTA8UA"
+
+  [[params.social]]
+    icon = "commenting"
+    icon_pack = "fa"
+    link = "https://disqus.com/by/pzhao/"
 
   [[params.social]]
     icon = "music"
