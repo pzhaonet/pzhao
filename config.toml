@@ -16,8 +16,6 @@ googleAnalytics = ""
 defaultContentLanguage = "zh"
 defaultContentLanguageInSubdir = true
 
-alwaysShowLanguageChooser = true
-
 [blackfriday]
   hrefTargetBlank = true
 
@@ -169,37 +167,37 @@ alwaysShowLanguageChooser = true
 #     desired widget in your `content/home/` folder.
 #   The weight parameter defines the order that the links will appear in.
 
-[[Languages.en.menu.main]]
+[[menu.main]]
   name = "Home"
   url = "#about"
   weight = 1
 
-[[Languages.en.menu.main]]
+[[menu.main]]
   name = "Publications"
   url = "#publications_selected"
   weight = 2
 
-[[Languages.en.menu.main]]
+[[menu.main]]
   name = "Posts"
   url = "#posts"
   weight = 3
 
-[[Languages.en.menu.main]]
+[[menu.main]]
   name = "Projects"
   url = "#projects"
   weight = 4
 
-[[Languages.en.menu.main]]
+[[menu.main]]
   name = "Teaching"
   url = "#teaching"
   weight = 5
 
-[[Languages.en.menu.main]]
+[[menu.main]]
   name = "Search"
   url = "https://cse.google.com/cse/publicurl?cx=006346710622437628329:tdbwt2rsqrs"
   weight = 6
   
-[[Languages.en.menu.main]]
+[[menu.main]]
   name = "中文"
   url = "../zh"
   weight = 7

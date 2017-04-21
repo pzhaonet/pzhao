@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on Peng Zhao</title>
+    <link>http://www.pzhao.org/zh/tags/python/index.xml</link>
+    <description>Recent content in Python on Peng Zhao</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>&amp;copy; 2017 Peng Zhao</copyright>
+    <atom:link href="/zh/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>R vs Python: 2017年欧洲地学年会</title>
+      <link>http://www.pzhao.org/zh/post/egu2017/</link>
+      <pubDate>Thu, 20 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.pzhao.org/zh/post/egu2017/</guid>
+      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
+&lt;!-- /BLOGDOWN-HEAD --&gt;
+
+&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
+&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
+&lt;p&gt;&lt;a href=&#34;http://dapengde.com/archives/17969&#34;&gt;欧洲地学学会EGU年会&lt;/a&gt;每年一次，都在维也纳国际会议中心举办，原因是别的地方很难找到这样一个会场，能容得下这么大的规模。为期一周的会议，参加人数上万，分会场有五百个以上。因为离得近，乘火车4小时，我们组年年都参加。去年我申请到一个口头报告，今年再次申请，会议协调人说：你们组申请了两个口头报告，但只能给你们组一个名额，你们内部定吧。我和同事商量了一下，决定他做口头报告，我做海报。&lt;/p&gt;
+&lt;p&gt;这两天，准备海报和年会日程时，我发现个有趣的新现象。一打开“短期课程”类日程表，就感到一股杀气扑面而来。年会擂台的两位选手即将上阵，一个叫R，一个叫Python。&lt;/p&gt;
+&lt;p&gt;首先亮相的是Python。第一天的第一批分会场，Python先发制人，发起个课程叫做&lt;a href=&#34;http://meetingorganizer.copernicus.org/EGU2017/session/25679&#34;&gt;“使用Python和Jupiter做数据分析”&lt;/a&gt;，一个半小时，要求携带笔记本电脑，手把手教你用Python语言读取不同格式数据、分析和作图，并使用 Jupyter Notebook 来记录和分享工作。Python语言就相当于R语言，Jupyter Notebook就相当于 R markdown。这是明摆着对R的挑衅啊！我决定放弃另外一个感兴趣的学术分会场，来参加这一个。&lt;/p&gt;
+&lt;p&gt;R当然不甘示弱，见招拆招。当天下午有个课程，叫做&lt;a href=&#34;http://meetingorganizer.copernicus.org/EGU2017/session/25731&#34;&gt;“水文学中使用R”&lt;/a&gt;，内容是学习用R语言进行水文学的时间序列分析和地理信息系统GIS数据处理、水文建模。水文学不是我的专业，但是有关联。好想参加，可惜跟我必须参加的另一个会场时间冲突了，只能忍痛割爱，暗暗希望R在这个回合打败Python。&lt;/p&gt;
+&lt;p&gt;问题是Python还有后招。星期四，Python有个课程叫做&lt;a href=&#34;http://meetingorganizer.copernicus.org/EGU2017/session/25651&#34;&gt;“Python处理多维度地理科学大数据：xarray扩展包入门教程”&lt;/a&gt;。课程将介绍Python处理数据的基本用法，包括下标系统、选择、分组、作图、计算、自定义函数，并演示如何用 Python+xarry+Jupyter来轻松教没有编程经验的硕士生处理气候模型数据。这课听起来好诱人。一看行程表，我到时候没安排，那必须去了。&lt;/p&gt;
+&lt;p&gt;R会如何应战？我发现还有个课程，叫做&lt;a href=&#34;http://meetingorganizer.copernicus.org/EGU2017/session/25726&#34;&gt;“出版流程里的可重复计算研究”&lt;/a&gt;——这是R markdown的强项啊。此课时长3小时，前1.5小时是手把手教你用R, Python和ReproZip对地理空间数据进行分析，并撰写可重复性报告：后1.5小时是讨论，参与者有出版方、审稿人、教育工作者等各个领域的专家学者。看这架势，不知R跟Python是要对决还是要合作呢？真想去目睹这一盛况，但是，又跟我专业的分会场冲突了。真难取舍。&lt;/p&gt;
+&lt;p&gt;除了明争，还有暗斗。星期四晚上有一门课程叫做&lt;a href=&#34;http://meetingorganizer.copernicus.org/EGU2017/session/25343&#34;&gt;“一图胜千言：利用数据可视化进行科学交流”&lt;/a&gt;，讲的是如何制作高效精辟的数据图表，没有明说，但暗藏玄机，不知主角是R，还是Python，还是Matlab，还是别的新秀？&lt;/p&gt;
+&lt;p&gt;除了R语言这种跟科研密切相关的技术活，居然还有一门课程叫做&lt;a href=&#34;http://meetingorganizer.copernicus.org/EGU2017/session/25170&#34;&gt;“WordPress写博客详解”&lt;/a&gt;，居然还有一门课程&lt;a href=&#34;http://meetingorganizer.copernicus.org/EGU2017/session/25580&#34;&gt;教你写诗&lt;/a&gt;，说什么博客和诗都能更好地传播科学……&lt;/p&gt;
+&lt;p&gt;回头一看我的私人日程表，乖乖，这哪像个学术会议呀……&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
