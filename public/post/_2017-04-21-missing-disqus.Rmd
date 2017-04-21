@@ -8,9 +8,4 @@ tags: ["R", "blogdown", "Hugo"]
 summary: "一个误操作，把网友的一条评论给弄丢了。"
 ---
 
-<!-- BLOGDOWN-HEAD -->
-<!-- /BLOGDOWN-HEAD -->
-
-<!-- BLOGDOWN-BODY-BEFORE -->
-<!-- /BLOGDOWN-BODY-BEFORE -->
-<p>点开本篇看看，丢失的Disqus评论是不是找回来了？</p>
+点开本篇看看，丢失的Disqus评论是不是找回来了？

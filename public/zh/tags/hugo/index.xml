@@ -10,21 +10,6 @@
     <atom:link href="/zh/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>丢失的 Disqus 评论</title>
-      <link>http://www.pzhao.org/zh/post/r_blogdown/</link>
-      <pubDate>Fri, 21 Apr 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/zh/post/r_blogdown/</guid>
-      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
-&lt;!-- /BLOGDOWN-HEAD --&gt;
-
-&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
-&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
-&lt;p&gt;点开本篇看看，丢失的Disqus评论是不是找回来了？&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Hugo 网站的浏览器小图标</title>
       <link>http://www.pzhao.org/zh/post/hugo-icon/</link>
       <pubDate>Wed, 19 Apr 2017 00:00:00 +0000</pubDate>
