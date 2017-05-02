@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Talks on Peng Zhao</title>
-    <link>/en/talk/index.xml</link>
+    <link>http://www.pzhao.org/en/talk/index.xml</link>
     <description>Recent content in Talks on Peng Zhao</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -12,50 +12,50 @@
     
     <item>
       <title>Role of advection for the ecosystem-atmosphere CO2 exchange of alpine grasslands</title>
-      <link>/en/talk/egu-2017/</link>
+      <link>http://www.pzhao.org/en/talk/egu-2017/</link>
       <pubDate>Fri, 28 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>/en/talk/egu-2017/</guid>
+      <guid>http://www.pzhao.org/en/talk/egu-2017/</guid>
       <description>&lt;p&gt;2017-4-26, EGU.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>农业生态系统-大气之间的二氧化碳和能量交换</title>
-      <link>/en/talk/sysu-2016/</link>
-      <pubDate>Wed, 28 Dec 2016 00:00:00 +0000</pubDate>
-      
-      <guid>/en/talk/sysu-2016/</guid>
-      <description>&lt;p&gt;2016-12-26， 中山大学青年学者论坛。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>暨南大学质谱仪器与大气环境研究所学术讲座暨110周年校庆学术活动</title>
-      <link>/en/talk/jnu-2016/</link>
+      <link>http://www.pzhao.org/en/talk/jnu-2016/</link>
       <pubDate>Tue, 27 Dec 2016 00:00:00 +0000</pubDate>
       
-      <guid>/en/talk/jnu-2016/</guid>
+      <guid>http://www.pzhao.org/en/talk/jnu-2016/</guid>
       <description>&lt;p&gt;2016-12-27， 暨南大学质谱仪器与大气环境研究所学术讲座暨110周年校庆学术活动。&lt;/p&gt;
 </description>
     </item>
     
     <item>
+      <title>农业生态系统-大气之间的二氧化碳和能量交换</title>
+      <link>http://www.pzhao.org/en/talk/sysu-2016/</link>
+      <pubDate>Mon, 26 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.pzhao.org/en/talk/sysu-2016/</guid>
+      <description>&lt;p&gt;2016-12-26， 中山大学青年学者论坛。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>The role of advection for CO2 exchange ﬂux over a mountainous grassland in the Alps</title>
-      <link>/en/talk/egu-2016/</link>
+      <link>http://www.pzhao.org/en/talk/egu-2016/</link>
       <pubDate>Thu, 28 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>/en/talk/egu-2016/</guid>
+      <guid>http://www.pzhao.org/en/talk/egu-2016/</guid>
       <description>&lt;p&gt;2016-4-21, EGU.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Measurement of advection of CO2 over grasslands in complex terrain in the Alps</title>
-      <link>/en/talk/egu-2015/</link>
+      <link>http://www.pzhao.org/en/talk/egu-2015/</link>
       <pubDate>Tue, 28 Apr 2015 00:00:00 +0000</pubDate>
       
-      <guid>/en/talk/egu-2015/</guid>
+      <guid>http://www.pzhao.org/en/talk/egu-2015/</guid>
       <description>&lt;p&gt;2015-4-21, EGU.&lt;/p&gt;
 </description>
     </item>

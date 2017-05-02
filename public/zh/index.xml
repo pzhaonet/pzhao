@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Peng Zhao on Peng Zhao</title>
-    <link>/zh/index.xml</link>
+    <link>http://www.pzhao.org/zh/index.xml</link>
     <description>Recent content in Peng Zhao on Peng Zhao</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
@@ -11,21 +11,43 @@
     <atom:link href="/zh/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>2017年欧洲地学年会留影</title>
+      <link>http://www.pzhao.org/zh/post/egu2017photo/</link>
+      <pubDate>Tue, 02 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.pzhao.org/zh/post/egu2017photo/</guid>
+      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
+&lt;!-- /BLOGDOWN-HEAD --&gt;
+
+&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
+&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;http://www.biomet.co.at/wp/wp-content/uploads/2017/04/IMG_19351.jpeg&#34; /&gt;
+
+&lt;/div&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;http://www.biomet.co.at/wp/wp-content/uploads/2017/04/IMG_1938-e1493284916944.jpeg&#34; /&gt;
+
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Role of advection for the ecosystem-atmosphere CO2 exchange of alpine grasslands</title>
-      <link>/zh/talk/egu-2017/</link>
+      <link>http://www.pzhao.org/zh/talk/egu-2017/</link>
       <pubDate>Fri, 28 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>/zh/talk/egu-2017/</guid>
-      <description>&lt;p&gt;2017-4-26， 欧洲地学年会。&lt;/p&gt;
+      <guid>http://www.pzhao.org/zh/talk/egu-2017/</guid>
+      <description>&lt;p&gt;2017-4-24， 欧洲地学年会。&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>R vs Python: 2017年欧洲地学年会</title>
-      <link>/zh/post/egu2017/</link>
+      <link>http://www.pzhao.org/zh/post/egu2017/</link>
       <pubDate>Thu, 20 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>/zh/post/egu2017/</guid>
+      <guid>http://www.pzhao.org/zh/post/egu2017/</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 
@@ -45,10 +67,10 @@
     
     <item>
       <title>Hugo 网站的浏览器小图标</title>
-      <link>/zh/post/hugo-icon/</link>
+      <link>http://www.pzhao.org/zh/post/hugo-icon/</link>
       <pubDate>Wed, 19 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>/zh/post/hugo-icon/</guid>
+      <guid>http://www.pzhao.org/zh/post/hugo-icon/</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 
@@ -62,10 +84,10 @@
     
     <item>
       <title>Hugo 网站的RSS</title>
-      <link>/zh/post/hugo-rss/</link>
+      <link>http://www.pzhao.org/zh/post/hugo-rss/</link>
       <pubDate>Tue, 18 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>/zh/post/hugo-rss/</guid>
+      <guid>http://www.pzhao.org/zh/post/hugo-rss/</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 
@@ -103,11 +125,11 @@ http://pzhao.org/zh/talk/index.xml&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>斜杠</title>
-      <link>/zh/post/slash/</link>
+      <link>http://www.pzhao.org/zh/post/slash/</link>
       <pubDate>Mon, 17 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>/zh/post/slash/</guid>
-      <description>&lt;p&gt;在我的新书在线试读章节，益辉同学提出了&lt;a href=&#34;http://dapengde.com/xuer/post/2017-04-15_blogdown/#comment-3258130059&#34; target=&#34;_blank&#34;&gt;一个话题&lt;/a&gt;，那就是斜杠。这个小东西已经困扰我多年了，我憋着一直没敢说，P大点儿事，怕被人瞧不起说我吃饱撑得，这回有益辉这么一位神级人肉盾牌罩着，就趁机吐个槽。&lt;/p&gt;
+      <guid>http://www.pzhao.org/zh/post/slash/</guid>
+      <description>&lt;p&gt;在我的新书在线试读章节，益辉同学提出了&lt;a href=&#34;http://dapengde.com/xuer/post/2017-04-15_blogdown/#comment-3258130059&#34; target=&#34;_blank&#34;&gt;一个话题&lt;/a&gt;，那就是斜杠。这个小东西已经困扰我多年了，我憋着一直没敢说，事儿不大，怕被人说我吃饱撑得，这回有益辉这么一位神级人肉盾牌罩着，就趁机吐个槽。&lt;/p&gt;
 
 &lt;p&gt;斜杠就是&lt;code&gt;/&lt;/code&gt;，在英文叫做slash，或者叫forward slash，就是向前倾斜，而&lt;code&gt;\&lt;/code&gt;就是back slash，向后倾斜。只需想着&lt;code&gt;|&lt;/code&gt;是个直立的小人顺着文字的方向走，那么前倾
 后倾一目了然，名字跟形状是吻合的。或者用“吉他法”，吉他手 &lt;em&gt;背&lt;/em&gt; 面对着我那就是&lt;em&gt;back&lt;/em&gt; slash（当然前提是右撇子）。无论如何，英文名称是合乎我的逻辑和理解力的。&lt;/p&gt;
@@ -134,10 +156,10 @@ http://pzhao.org/zh/talk/index.xml&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>Hugo 网站 academic 主题的多语言界面</title>
-      <link>/zh/post/hugo-multilingual/</link>
+      <link>http://www.pzhao.org/zh/post/hugo-multilingual/</link>
       <pubDate>Sun, 16 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>/zh/post/hugo-multilingual/</guid>
+      <guid>http://www.pzhao.org/zh/post/hugo-multilingual/</guid>
       <description>&lt;p&gt;几年前我弄过&lt;a href=&#34;http://dapengde.com/archives/15265&#34; target=&#34;_blank&#34;&gt;双语博客&lt;/a&gt;， 后来放弃了，因为 WordPress 的双语方案有些遗留问题让我不爽，另外我没有精力写英文博客。现在，新网站是个科研网站，博客可以只出现在中文版里，而英文版只放自己的学术情况就行了，不用像博客更新那么频繁。所以，双语界面几乎是排在第一梯队的需求。&lt;/p&gt;
 
 &lt;p&gt;我对Hugo的架构并不熟悉，原以为会很麻烦，结果弄一会儿就搞定了，原来这么简单。有些步骤在&lt;a href=&#34;http://dapengde.com/blogdown_demo_academic/post/getting-started/&#34; target=&#34;_blank&#34;&gt;主题的说明文档里&lt;/a&gt;提到了，但不够全。完整的步骤是这样的(看起来长，是因为我啰嗦，其实很快就能设置完)：&lt;/p&gt;
@@ -202,70 +224,6 @@ defaultContentLanguageInSubdir = true
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;至此，双语界面全部搞定。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Word 永远转不成 Markdown</title>
-      <link>/zh/post/word-never-markdown/</link>
-      <pubDate>Sun, 16 Apr 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/zh/post/word-never-markdown/</guid>
-      <description>&lt;p&gt;R bookdown 用扩展的 Markdown 语法来写书，可以很方便地导出 Word 格式，虽然不完美，但只需稍微调一下样式，就是一个漂漂亮亮的文档。但是，如果在 Word 里做了修改，想转回 Markdown 该怎么办？&lt;/p&gt;
-
-&lt;p&gt;多年来，我一直奢望能找到这样一款软件，哪怕是把 Word 转成 LaTeX 也行。随着时间的流逝，希望却是越来越渺茫; 我越来越深信，这样的软件过去不曾有，现在还没有，将来永远都不会有。因为，逻辑上是不可能实现的。&lt;/p&gt;
-
-&lt;p&gt;Markdown 和 LaTeX 能相互转换，是因为两者都是标记语言，是逻辑上有对应关系的。Markdown 里的标题标记&lt;code&gt;#&lt;/code&gt;，翻译成 LaTeX 标记就是&lt;code&gt;\section{}&lt;/code&gt;; Markdown里的粗体标记&lt;code&gt;** **&lt;/code&gt;，翻译成 LaTeX 标记就是&lt;code&gt;\textbf{}&lt;/code&gt;。这就是所想即所得，大家虽然你说英语我说德语，但想法是一样的，只要有本字典，以词为单位互换，那么大体意思就能通。想完美的话，根据各自的语法规则调整调整就行了。&lt;/p&gt;
-
-&lt;p&gt;但是 Word 不是这样的。你看见一个大字体加粗的词，看上去像是标题，乐观一点可能是用 Word 的标题样式设置的，一般情况下是用户把正文样式的文字直接点加粗换字号得到的，悲观一点说不定是插入的文本框或图片&amp;hellip;&amp;hellip;所见即所得，你永远猜不透一个大字体背后的逻辑是什么。这就好比你说英语而我画了一幅水墨山水画，你猜我是什么意思？你猜我大量的留白该翻译成那句英语？就像小说《三体》里说的：&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;教授挂出了两幅大图片，一幅是画面庞杂精细的《清明上河图》，另一幅是一张空旷的天空照片，空荡荡的蓝天上只有一缕似有似无的白云。教授问这两幅画中哪一幅所包含的信息量更大，答案是后者要比前者大一至两个数量级!&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Word 的一个简单格式背后，藏着的信息量比 Markdown 大几个数量级，你怎么转换？&lt;/p&gt;
-
-&lt;p&gt;Markdown 跟 LaTeX 对话，就像男人跟男人对话，说什么就是什么; Markdown 跟 Word 对话，就像男人跟女人对话，男人永远猜不透女人到底是哪层意思。所以还是歇了吧。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://s-media-cache-ak0.pinimg.com/564x/11/3c/a3/113ca3e206ea97715c6aff9133368f5b.jpg&#34; alt=&#34;enter image description here&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;那么，难道 Markdown 永远理解不了 Word 吗？&lt;/p&gt;
-
-&lt;p&gt;也不是。我觉得等人工智能成熟的时候就可以了。你只需吩咐一句“小A，把这篇Word 书稿转换成 Markdown，我要在 R bookdown 里修改”就行了。&lt;/p&gt;
-
-&lt;p&gt;但人工智能可能会回答你：“主人，我已经全部帮你把书改好并且已经出版了。”&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Hugo 网站 academic 主题首页的文摘显示问题</title>
-      <link>/zh/post/hugo-academic-summary/</link>
-      <pubDate>Sat, 15 Apr 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/zh/post/hugo-academic-summary/</guid>
-      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
-&lt;!-- /BLOGDOWN-HEAD --&gt;
-
-&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
-&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
-&lt;p&gt;在 RStudio 里用 R blogdown 来维护网站时，可以通过点击工具栏的 Addins - New Post 来创建新帖子，很方便。但是，如果用的是 Hugo 的 academic 主题，那么创建的新帖子在网站首页会显示全文，不大好看，尤其是全文很长的时候，根本就不像个首页了。这是因为，academic 首页的 posts 模块默认显示文摘。如果没有为每篇帖子设置文摘，就会显示全文。而上面说的创建新帖的方法里，并没有设置文摘的选项。那么，文摘在哪里设置呢？&lt;/p&gt;
-&lt;p&gt;直接说答案：手动在新帖的YAML文件头添加一行：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;summary: &amp;quot;我的文摘别太长。&amp;quot;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;答案来自&lt;a href=&#34;https://github.com/rstudio/blogdown/issues/21#issuecomment-269555683&#34;&gt;blogdown 项目主页&lt;/a&gt;。&lt;/p&gt;
-&lt;p&gt;就这么个小问题，让我走了点弯路。我发现问题后，首先观察了一下主题自带的示例文档，文件头是这样的：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;+++
-date = &amp;quot;2016-04-20T11:00:00&amp;quot;
-draft = false
-tags = [&amp;quot;academic&amp;quot;, &amp;quot;hugo&amp;quot;]
-title = &amp;quot;Customizing the homepage with widgets&amp;quot;
-math = false
-summary = &amp;quot;&amp;quot;&amp;quot;
-Enable/disable and configure widgets to customize your homepage.
-&amp;quot;&amp;quot;&amp;quot;
-+++&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;跟 R blogdown 生成的 .md 和 .Rmd 文件的文件头不同，这个文件头居然是用前后各三个加号表示的。里面的&lt;code&gt;summary&lt;/code&gt;开始数三行，就是用来设置文摘的。&lt;/p&gt;
-&lt;p&gt;于是我就把这三行拷贝粘贴到 .Rmd 文件里，当然是编译出错了。接着我想当然地把上面这段前后共六个加号的文件头拷贝粘贴到 .Rmd 里，仍然报错。问题搁置了几天，才想起去 blogdown 项目主页搜搜看，就找到了答案。&lt;/p&gt;
-&lt;p&gt;永远记不住的教训：遇到问题，别瞎试。上网搜，你绝不是第一个遇到这个问题的人。&lt;/p&gt;
 </description>
     </item>
     

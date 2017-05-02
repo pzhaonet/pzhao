@@ -4,7 +4,7 @@ author: 赵鹏
 date: '2017-04-11'
 slug: 2017-04-11_r-blogdown
 categories: []
-tags: ["R", "blogdown", "Hugo"]
+tags: ["R", "blogdown", "Hugo", "post"]
 summary: "我正在撰写新书《学R —— 零基础学习R语言》，新书预计今年下半年出版。本文是其中一个章节。"
 ---
 

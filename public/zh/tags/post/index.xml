@@ -1,0 +1,1233 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Post on Peng Zhao</title>
+    <link>http://www.pzhao.org/zh/tags/post/index.xml</link>
+    <description>Recent content in Post on Peng Zhao</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>&amp;copy; 2017 Peng Zhao</copyright>
+    <atom:link href="/zh/tags/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>R vs Python: 2017年欧洲地学年会</title>
+      <link>http://www.pzhao.org/zh/post/egu2017/</link>
+      <pubDate>Thu, 20 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.pzhao.org/zh/post/egu2017/</guid>
+      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
+&lt;!-- /BLOGDOWN-HEAD --&gt;
+
+&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
+&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
+&lt;p&gt;&lt;a href=&#34;http://dapengde.com/archives/17969&#34;&gt;欧洲地学学会EGU年会&lt;/a&gt;每年一次，都在维也纳国际会议中心举办，原因是别的地方很难找到这样一个会场，能容得下这么大的规模。为期一周的会议，参加人数上万，分会场有五百个以上。因为离得近，乘火车4小时，我们组年年都参加。去年我申请到一个口头报告，今年再次申请，会议协调人说：你们组申请了两个口头报告，但只能给你们组一个名额，你们内部定吧。我和同事商量了一下，决定他做口头报告，我做海报。&lt;/p&gt;
+&lt;p&gt;这两天，准备海报和年会日程时，我发现个有趣的新现象。一打开“短期课程”类日程表，就感到一股杀气扑面而来。年会擂台的两位选手即将上阵，一个叫R，一个叫Python。&lt;/p&gt;
+&lt;p&gt;首先亮相的是Python。第一天的第一批分会场，Python先发制人，发起个课程叫做&lt;a href=&#34;http://meetingorganizer.copernicus.org/EGU2017/session/25679&#34;&gt;“使用Python和Jupiter做数据分析”&lt;/a&gt;，一个半小时，要求携带笔记本电脑，手把手教你用Python语言读取不同格式数据、分析和作图，并使用 Jupyter Notebook 来记录和分享工作。Python语言就相当于R语言，Jupyter Notebook就相当于 R markdown。这是明摆着对R的挑衅啊！我决定放弃另外一个感兴趣的学术分会场，来参加这一个。&lt;/p&gt;
+&lt;p&gt;R当然不甘示弱，见招拆招。当天下午有个课程，叫做&lt;a href=&#34;http://meetingorganizer.copernicus.org/EGU2017/session/25731&#34;&gt;“水文学中使用R”&lt;/a&gt;，内容是学习用R语言进行水文学的时间序列分析和地理信息系统GIS数据处理、水文建模。水文学不是我的专业，但是有关联。好想参加，可惜跟我必须参加的另一个会场时间冲突了，只能忍痛割爱，暗暗希望R在这个回合打败Python。&lt;/p&gt;
+&lt;p&gt;问题是Python还有后招。星期四，Python有个课程叫做&lt;a href=&#34;http://meetingorganizer.copernicus.org/EGU2017/session/25651&#34;&gt;“Python处理多维度地理科学大数据：xarray扩展包入门教程”&lt;/a&gt;。课程将介绍Python处理数据的基本用法，包括下标系统、选择、分组、作图、计算、自定义函数，并演示如何用 Python+xarry+Jupyter来轻松教没有编程经验的硕士生处理气候模型数据。这课听起来好诱人。一看行程表，我到时候没安排，那必须去了。&lt;/p&gt;
+&lt;p&gt;R会如何应战？我发现还有个课程，叫做&lt;a href=&#34;http://meetingorganizer.copernicus.org/EGU2017/session/25726&#34;&gt;“出版流程里的可重复计算研究”&lt;/a&gt;——这是R markdown的强项啊。此课时长3小时，前1.5小时是手把手教你用R, Python和ReproZip对地理空间数据进行分析，并撰写可重复性报告：后1.5小时是讨论，参与者有出版方、审稿人、教育工作者等各个领域的专家学者。看这架势，不知R跟Python是要对决还是要合作呢？真想去目睹这一盛况，但是，又跟我专业的分会场冲突了。真难取舍。&lt;/p&gt;
+&lt;p&gt;除了明争，还有暗斗。星期四晚上有一门课程叫做&lt;a href=&#34;http://meetingorganizer.copernicus.org/EGU2017/session/25343&#34;&gt;“一图胜千言：利用数据可视化进行科学交流”&lt;/a&gt;，讲的是如何制作高效精辟的数据图表，没有明说，但暗藏玄机，不知主角是R，还是Python，还是Matlab，还是别的新秀？&lt;/p&gt;
+&lt;p&gt;除了R语言这种跟科研密切相关的技术活，居然还有一门课程叫做&lt;a href=&#34;http://meetingorganizer.copernicus.org/EGU2017/session/25170&#34;&gt;“WordPress写博客详解”&lt;/a&gt;，居然还有一门课程&lt;a href=&#34;http://meetingorganizer.copernicus.org/EGU2017/session/25580&#34;&gt;教你写诗&lt;/a&gt;，说什么博客和诗都能更好地传播科学……&lt;/p&gt;
+&lt;p&gt;回头一看我的私人日程表，乖乖，这哪像个学术会议呀……&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Hugo 网站的浏览器小图标</title>
+      <link>http://www.pzhao.org/zh/post/hugo-icon/</link>
+      <pubDate>Wed, 19 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.pzhao.org/zh/post/hugo-icon/</guid>
+      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
+&lt;!-- /BLOGDOWN-HEAD --&gt;
+
+&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
+&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
+&lt;p&gt;&lt;img src=&#34;../img/icon.png&#34; /&gt;&lt;!-- --&gt;&lt;/p&gt;
+&lt;p&gt;网站图标，就是上图的这些东东，用浏览器打开网站时显示在地址栏的顶端。R blogdown安装的hugo-academic主题，默认图标是个蓝色学位帽，挺好看的，不改也行，只是如果大家都用的话，泯然众人，识别度就低了。&lt;/p&gt;
+&lt;p&gt;改的方式很简单：将你自己的图标图片保存为.png格式，并命名为icon.png，替换&lt;code&gt;\themes\hugo-academic\static\img\icon.png&lt;/code&gt;即可。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Hugo 网站的RSS</title>
+      <link>http://www.pzhao.org/zh/post/hugo-rss/</link>
+      <pubDate>Tue, 18 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.pzhao.org/zh/post/hugo-rss/</guid>
+      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
+&lt;!-- /BLOGDOWN-HEAD --&gt;
+
+&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
+&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
+&lt;p&gt;R blogdown 搭建的 Hugo 网站，小细节很多，可以一点一点完善，好在都不难搞定。今天添加了个RSS订阅按钮。&lt;/p&gt;
+&lt;p&gt;自从 Google Reader 死后，我就觉得 RSS 没有多大趣味，就好像子期死后伯牙摔琴一样。但是，没有 RSS 提醒的话，还真不知道谁的博客更新了，于是就勉强用 feedly 凑合。眼看我的新网站构架基本完成，就在 feedly 里订阅了一下自己的网站，输入 &lt;code&gt;pzhao.org&lt;/code&gt;，发现没找到。嗯？研究一下才明白，我的主页完整地址是：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;http://pzhao.org/zh/&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这个路径对应的本地文件夹下面，不仅有个&lt;code&gt;index.html&lt;/code&gt;，还有个&lt;code&gt;index.xml&lt;/code&gt;，后者就是 RSS 订阅的文件。所以，在feedly添加：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;http://pzhao.org/zh/index.xml&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;就把我的新网站添进去了。这是订阅全站。如果只想订阅其中的博客，或新发表的学术文章，或新做的报告，那么：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;http://pzhao.org/zh/post/index.xml
+http://pzhao.org/zh/publication/index.xml
+http://pzhao.org/zh/talk/index.xml&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这个RSS链接，我该放到主页的什么位置，来方便网友订阅呢？我决定放到我的头像下面的社交按钮里。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../img/social.png&#34; /&gt;&lt;!-- --&gt;&lt;/p&gt;
+&lt;p&gt;头像下的社交按钮是在&lt;code&gt;config.toml&lt;/code&gt;里设置的，只需添加个&lt;code&gt;[[params.social]]&lt;/code&gt;就可以了，图标去&lt;a href=&#34;https://fortawesome.github.io/Font-Awesome/icons/&#34;&gt;fa&lt;/a&gt;或&lt;a href=&#34;https://jpswalsh.github.io/academicons/&#34;&gt;ai&lt;/a&gt;两个包的主页找便是。 实在缺乏社交，只好把自己卡拉OK的录音和腾讯视频加进去凑数，代码如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;  [[params.social]]
+    icon = &amp;quot;rss&amp;quot;
+    icon_pack = &amp;quot;fa&amp;quot;
+    link = &amp;quot;http://www.pzhao.org/zh/index.xml&amp;quot;
+
+  [[params.social]]
+    icon = &amp;quot;music&amp;quot;
+    icon_pack = &amp;quot;fa&amp;quot;
+    link = &amp;quot;http://kg.qq.com/node/personal?uid=649d9d85212c3489&amp;quot;
+
+  [[params.social]]
+    icon = &amp;quot;video-camera&amp;quot;
+    icon_pack = &amp;quot;fa&amp;quot;
+    link = &amp;quot;http://v.qq.com/vplus/0f8190586a3f2f22a25e9827b38c171e&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>斜杠</title>
+      <link>http://www.pzhao.org/zh/post/slash/</link>
+      <pubDate>Mon, 17 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.pzhao.org/zh/post/slash/</guid>
+      <description>&lt;p&gt;在我的新书在线试读章节，益辉同学提出了&lt;a href=&#34;http://dapengde.com/xuer/post/2017-04-15_blogdown/#comment-3258130059&#34; target=&#34;_blank&#34;&gt;一个话题&lt;/a&gt;，那就是斜杠。这个小东西已经困扰我多年了，我憋着一直没敢说，事儿不大，怕被人说我吃饱撑得，这回有益辉这么一位神级人肉盾牌罩着，就趁机吐个槽。&lt;/p&gt;
+
+&lt;p&gt;斜杠就是&lt;code&gt;/&lt;/code&gt;，在英文叫做slash，或者叫forward slash，就是向前倾斜，而&lt;code&gt;\&lt;/code&gt;就是back slash，向后倾斜。只需想着&lt;code&gt;|&lt;/code&gt;是个直立的小人顺着文字的方向走，那么前倾
+后倾一目了然，名字跟形状是吻合的。或者用“吉他法”，吉他手 &lt;em&gt;背&lt;/em&gt; 面对着我那就是&lt;em&gt;back&lt;/em&gt; slash（当然前提是右撇子）。无论如何，英文名称是合乎我的逻辑和理解力的。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://pbs.twimg.com/media/CvOSYNzVMAAgXh_.jpg&#34; alt=&#34;enter image description here&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;我不想提它的原因，是因为中文名字的翻译总让我糊涂。&lt;code&gt;/&lt;/code&gt;叫做斜杠或斜线，&lt;code&gt;\&lt;/code&gt;叫做反斜杠，我老是搞不清楚，写本帖的时候还要搜一下确认。凭什么呀？逻辑上这俩都是“斜”的啊？凭什么沿着从上往下从左往右的正常笔画顺序来写的&lt;code&gt;\&lt;/code&gt;叫做&lt;strong&gt;反&lt;/strong&gt;斜杠啊？人家反在哪里了？明明人家是顺的啊！我为&lt;code&gt;\&lt;/code&gt;叫屈。要是我翻译，就叫&lt;code&gt;/&lt;/code&gt;为“前俯”键，&lt;code&gt;\&lt;/code&gt;叫“后仰”键，信达雅兼顾。或者叫“右倾”键和“左倾”键更直接。但是怕被误会成政治倾向，那就叫“东倒”键“西歪”键，左西右东嘛。你们非要叫斜杠和反斜杠，不符合我的逻辑框架，老是得犹豫一下，还不确定谁正谁反，那干脆还是别提他们了。&lt;/p&gt;
+
+&lt;p&gt;R 语言里，表示路径的时候，两级文件夹之间要用&lt;code&gt;/&lt;/code&gt;或&lt;code&gt;\\&lt;/code&gt;分隔，否则就报错。这个问题初学者常遇见，我特意写进了新书的“答疑”一章。以前我跑 windows 和 Ubuntu 双系统时还会考虑正反斜杠，现在只用 windows，如果在 R 代码里需要本地路径，我都是在totalcommander 里 ctrl + 3 来获取完整路径到剪切板，再粘贴到代码里。要改成&lt;code&gt;\\&lt;/code&gt;，只需在原有的一个&lt;code&gt;\&lt;/code&gt;后面再添一个就行了。而改成&lt;code&gt;/&lt;/code&gt;，我得先删掉原有的&lt;code&gt;\&lt;/code&gt;，再敲一个&lt;code&gt;/&lt;/code&gt;，工作量加倍。我就是懒&amp;hellip;&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;我用&lt;code&gt;\&lt;/code&gt;的另一个理由就比较小众了，一般人可能难以理解：我人在德语国家，用的是德语键盘。不是系统设置成德语键盘，而是实体德语键盘，见下图：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://www.smartkeyboardsolutions.com/images/KB_50029UB_German_zoom.jpg&#34; alt=&#34;enter image description here&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;除了布局不同外，德语键盘比普通键盘多一个功能键叫 &lt;code&gt;AltGr&lt;/code&gt;，在空格键右边，用来输入更多特殊字符。德语键盘输入&lt;code&gt;/&lt;/code&gt;，需要双手互博，左手shift+右手7，或者找数字小键盘的除号，而输入&lt;code&gt;\&lt;/code&gt;只需一只手，右手拇指AltGr+中指ß就行了。那我当然倾向于&lt;code&gt;\&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;这回亮出德语键盘，顺便解释一下为何我是R语言的箭头党。因为，德语键盘如果用等号&lt;code&gt;=&lt;/code&gt;作为赋值号，那么得按shift+0。为了代码整洁，前后还得各敲个空格。而箭头呢，在RStudio里按Alt+_，就是箭头，同时自动附送两个空格。那我当然用箭头，更不用提箭头是雄性的标志了。&lt;/p&gt;
+
+&lt;p&gt;你瞧，一说起德语键盘，又有吐不完的槽，比如你会发现Z和Y两个键是跟英文键盘反着的。我对此不理解，就问德国人，德国人的回答是：你们英文键盘干嘛非要跟我们反着？你们英国人为啥非要靠左行驶？你们英国人为啥计量单位不用十进制？&amp;hellip;&amp;hellip;.&lt;/p&gt;
+
+&lt;p&gt;一扯就又扯到二战去了。本帖就此打住。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Hugo 网站 academic 主题的多语言界面</title>
+      <link>http://www.pzhao.org/zh/post/hugo-multilingual/</link>
+      <pubDate>Sun, 16 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.pzhao.org/zh/post/hugo-multilingual/</guid>
+      <description>&lt;p&gt;几年前我弄过&lt;a href=&#34;http://dapengde.com/archives/15265&#34; target=&#34;_blank&#34;&gt;双语博客&lt;/a&gt;， 后来放弃了，因为 WordPress 的双语方案有些遗留问题让我不爽，另外我没有精力写英文博客。现在，新网站是个科研网站，博客可以只出现在中文版里，而英文版只放自己的学术情况就行了，不用像博客更新那么频繁。所以，双语界面几乎是排在第一梯队的需求。&lt;/p&gt;
+
+&lt;p&gt;我对Hugo的架构并不熟悉，原以为会很麻烦，结果弄一会儿就搞定了，原来这么简单。有些步骤在&lt;a href=&#34;http://dapengde.com/blogdown_demo_academic/post/getting-started/&#34; target=&#34;_blank&#34;&gt;主题的说明文档里&lt;/a&gt;提到了，但不够全。完整的步骤是这样的(看起来长，是因为我啰嗦，其实很快就能设置完)：&lt;/p&gt;
+
+&lt;p&gt;1、开启双语。这需要在&lt;code&gt;config.toml&lt;/code&gt;里末尾找到：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[languages.en]
+  languageCode = &amp;quot;en-us&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这说明网站现在是英文的。在后面添加中文，也就是：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[languages.en]
+  languageCode = &amp;quot;en-us&amp;quot;
+
+[languages.zh]
+  languageCode = &amp;quot;zh-cn&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;2、设置默认语言。这需要在&lt;code&gt;config.toml&lt;/code&gt;里开头不远处找到：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# Default language to use (if you setup multilingual support)
+defaultContentLanguage = &amp;quot;zh&amp;quot;
+defaultContentLanguageInSubdir = true
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;原先是en，改成zh就可以让网站默认打开是中文。&lt;/p&gt;
+
+&lt;p&gt;3、菜单栏增加中文界面。菜单栏就是网页顶部那一排按钮。这需要在&lt;code&gt;config.toml&lt;/code&gt;里找到菜单栏的设定：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[[menu.main]]
+  name = &amp;quot;Home&amp;quot;
+  url = &amp;quot;#about&amp;quot;
+  weight = 1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;上面是默认语言英语的设置。在下面添加中文设置，格式是&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[[languages.zh.menu.main]]
+  name = &amp;quot;主页&amp;quot;
+  url = &amp;quot;#about&amp;quot;
+  weight = 1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这样，就把&lt;code&gt;Home&lt;/code&gt;按钮替换成了&lt;code&gt;主页&lt;/code&gt;按钮。其他按钮类似。&lt;/p&gt;
+
+&lt;p&gt;4、其他地方的翻译。这需要把&lt;code&gt;\themes\hugo-academic\i18n\&lt;/code&gt; 文件夹拷贝到根目录，然后删掉里边不需要的语言文件。我们只保留&lt;code&gt;en.yaml&lt;/code&gt;和&lt;code&gt;zh.yaml&lt;/code&gt;。用文本编辑器打开&lt;code&gt;zh.yaml&lt;/code&gt;，把里边翻译不当的地方修改一下，比如 interests 翻译成了“兴趣爱好”，我改成了“研究领域”。&lt;/p&gt;
+
+&lt;p&gt;5、新增帖子的双语。这个最好办，每次在&lt;code&gt;content\&lt;/code&gt;文件夹里新增文件时，如果要增加英文，就在文件扩展名前面加个&lt;code&gt;.en&lt;/code&gt;就行了。例如，我在&lt;code&gt;content\talk\&lt;/code&gt;下面新建了个&lt;code&gt;egu-2017.md&lt;/code&gt;，里面是中文，会出现在中文界面上。那么我想让这个项目也在英文版出现，只需把&lt;code&gt;egu-2017.md&lt;/code&gt;复制一份，命名为&lt;code&gt;egu-2017.en.md&lt;/code&gt;，那么这个项目就会在英文界面出现了。打开&lt;code&gt;egu-2017.en.md&lt;/code&gt;把里面的中文改成英文即可。&lt;/p&gt;
+
+&lt;p&gt;6、在菜单栏增加中英文界面切换的按钮。只需在&lt;code&gt;config.toml&lt;/code&gt;里的菜单设置出增加：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[[menu.main]]
+  name = &amp;quot;中文&amp;quot;
+  url = &amp;quot;../zh&amp;quot;
+  weight = 7
+  
+[[languages.zh.menu.main]]
+  name = &amp;quot;EN&amp;quot;
+  url = &amp;quot;../en&amp;quot;
+  weight = 7
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;至此，双语界面全部搞定。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Word 永远转不成 Markdown</title>
+      <link>http://www.pzhao.org/zh/post/word-never-markdown/</link>
+      <pubDate>Sun, 16 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.pzhao.org/zh/post/word-never-markdown/</guid>
+      <description>&lt;p&gt;R bookdown 用扩展的 Markdown 语法来写书，可以很方便地导出 Word 格式，虽然不完美，但只需稍微调一下样式，就是一个漂漂亮亮的文档。但是，如果在 Word 里做了修改，想转回 Markdown 该怎么办？&lt;/p&gt;
+
+&lt;p&gt;多年来，我一直奢望能找到这样一款软件，哪怕是把 Word 转成 LaTeX 也行。随着时间的流逝，希望却是越来越渺茫; 我越来越深信，这样的软件过去不曾有，现在还没有，将来永远都不会有。因为，逻辑上是不可能实现的。&lt;/p&gt;
+
+&lt;p&gt;Markdown 和 LaTeX 能相互转换，是因为两者都是标记语言，是逻辑上有对应关系的。Markdown 里的标题标记&lt;code&gt;#&lt;/code&gt;，翻译成 LaTeX 标记就是&lt;code&gt;\section{}&lt;/code&gt;; Markdown里的粗体标记&lt;code&gt;** **&lt;/code&gt;，翻译成 LaTeX 标记就是&lt;code&gt;\textbf{}&lt;/code&gt;。这就是所想即所得，大家虽然你说英语我说德语，但想法是一样的，只要有本字典，以词为单位互换，那么大体意思就能通。想完美的话，根据各自的语法规则调整调整就行了。&lt;/p&gt;
+
+&lt;p&gt;但是 Word 不是这样的。你看见一个大字体加粗的词，看上去像是标题，乐观一点可能是用 Word 的标题样式设置的，一般情况下是用户把正文样式的文字直接点加粗换字号得到的，悲观一点说不定是插入的文本框或图片&amp;hellip;&amp;hellip;所见即所得，你永远猜不透一个大字体背后的逻辑是什么。这就好比你说英语而我画了一幅水墨山水画，你猜我是什么意思？你猜我大量的留白该翻译成那句英语？就像小说《三体》里说的：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;教授挂出了两幅大图片，一幅是画面庞杂精细的《清明上河图》，另一幅是一张空旷的天空照片，空荡荡的蓝天上只有一缕似有似无的白云。教授问这两幅画中哪一幅所包含的信息量更大，答案是后者要比前者大一至两个数量级!&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Word 的一个简单格式背后，藏着的信息量比 Markdown 大几个数量级，你怎么转换？&lt;/p&gt;
+
+&lt;p&gt;Markdown 跟 LaTeX 对话，就像男人跟男人对话，说什么就是什么; Markdown 跟 Word 对话，就像男人跟女人对话，男人永远猜不透女人到底是哪层意思。所以还是歇了吧。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://s-media-cache-ak0.pinimg.com/564x/11/3c/a3/113ca3e206ea97715c6aff9133368f5b.jpg&#34; alt=&#34;enter image description here&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;那么，难道 Markdown 永远理解不了 Word 吗？&lt;/p&gt;
+
+&lt;p&gt;也不是。我觉得等人工智能成熟的时候就可以了。你只需吩咐一句“小A，把这篇Word 书稿转换成 Markdown，我要在 R bookdown 里修改”就行了。&lt;/p&gt;
+
+&lt;p&gt;但人工智能可能会回答你：“主人，我已经全部帮你把书改好并且已经出版了。”&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Hugo 网站 academic 主题首页的文摘显示问题</title>
+      <link>http://www.pzhao.org/zh/post/hugo-academic-summary/</link>
+      <pubDate>Sat, 15 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.pzhao.org/zh/post/hugo-academic-summary/</guid>
+      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
+&lt;!-- /BLOGDOWN-HEAD --&gt;
+
+&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
+&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
+&lt;p&gt;在 RStudio 里用 R blogdown 来维护网站时，可以通过点击工具栏的 Addins - New Post 来创建新帖子，很方便。但是，如果用的是 Hugo 的 academic 主题，那么创建的新帖子在网站首页会显示全文，不大好看，尤其是全文很长的时候，根本就不像个首页了。这是因为，academic 首页的 posts 模块默认显示文摘。如果没有为每篇帖子设置文摘，就会显示全文。而上面说的创建新帖的方法里，并没有设置文摘的选项。那么，文摘在哪里设置呢？&lt;/p&gt;
+&lt;p&gt;直接说答案：手动在新帖的YAML文件头添加一行：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;summary: &amp;quot;我的文摘别太长。&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;答案来自&lt;a href=&#34;https://github.com/rstudio/blogdown/issues/21#issuecomment-269555683&#34;&gt;blogdown 项目主页&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;就这么个小问题，让我走了点弯路。我发现问题后，首先观察了一下主题自带的示例文档，文件头是这样的：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;+++
+date = &amp;quot;2016-04-20T11:00:00&amp;quot;
+draft = false
+tags = [&amp;quot;academic&amp;quot;, &amp;quot;hugo&amp;quot;]
+title = &amp;quot;Customizing the homepage with widgets&amp;quot;
+math = false
+summary = &amp;quot;&amp;quot;&amp;quot;
+Enable/disable and configure widgets to customize your homepage.
+&amp;quot;&amp;quot;&amp;quot;
++++&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;跟 R blogdown 生成的 .md 和 .Rmd 文件的文件头不同，这个文件头居然是用前后各三个加号表示的。里面的&lt;code&gt;summary&lt;/code&gt;开始数三行，就是用来设置文摘的。&lt;/p&gt;
+&lt;p&gt;于是我就把这三行拷贝粘贴到 .Rmd 文件里，当然是编译出错了。接着我想当然地把上面这段前后共六个加号的文件头拷贝粘贴到 .Rmd 里，仍然报错。问题搁置了几天，才想起去 blogdown 项目主页搜搜看，就找到了答案。&lt;/p&gt;
+&lt;p&gt;永远记不住的教训：遇到问题，别瞎试。上网搜，你绝不是第一个遇到这个问题的人。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Hugo 网站的 Disqus 加载问题</title>
+      <link>http://www.pzhao.org/zh/post/hogo-disques-problem/</link>
+      <pubDate>Fri, 14 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.pzhao.org/zh/post/hogo-disques-problem/</guid>
+      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
+&lt;!-- /BLOGDOWN-HEAD --&gt;
+
+&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
+&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
+&lt;p&gt;今天，复活节假期前夕，同事们都休假了。我虽然在办公室，却无心上班，发了一会儿呆，想想与其痛苦地工作，不如快乐地解决一下&lt;a href=&#34;http://pzhao.org&#34;&gt;新网站&lt;/a&gt;的一个小问题：disqus 评论框的加载。&lt;/p&gt;
+&lt;p&gt;用 R blogdown 打建好站，disqus评论框就一直没成功加载过。后来听说是&lt;code&gt;config.toml&lt;/code&gt;里 &lt;code&gt;disqus shortname&lt;/code&gt;指的不是我的disqus ID，而是要&lt;a href=&#34;https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-&#34;&gt;专门设置&lt;/a&gt;一下， 我说“啊,还有这事儿？”于是就设置了一下，但是仍然不能成功加载。这个问题放了几天，今天心血来潮&lt;a href=&#34;http://applyr.blogspot.co.at/2017/01/blogging-about-r-from-r-studio.html&#34;&gt;一搜&lt;/a&gt;，嗯，兴许是路径的问题，于是就把&lt;code&gt;config.toml&lt;/code&gt;开头的路径改为&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;baseurl = &amp;quot;http://www.pzhao.org&amp;quot;
+# relativeurls = true&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;然后运行R语言的建站函数：&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;blogdown::build_site(local=FALSE)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;注意！此处千万不要运行&lt;code&gt;blogdown::serve_site()&lt;/code&gt;，不然新生成的文件就又没法加载 Disqus 了。&lt;a href=&#34;http://applyr.blogspot.co.at/2017/01/blogging-about-r-from-r-studio.html&#34;&gt;网上说&lt;/a&gt;是&lt;code&gt;serve_site()&lt;/code&gt;忽略了&lt;code&gt;config.toml&lt;/code&gt;里的某些设置而造成的。我不懂，总之就是建站函数运行完就直接上传。&lt;/p&gt;
+&lt;p&gt;然后GitHub同步，几秒钟后，Netlify上完成了更新，Disqus评论框就乖乖出现了。&lt;/p&gt;
+&lt;p&gt;欢迎&lt;a href=&#34;http://pzhao.org/zh/post/hogo-disques-problem/&#34;&gt;来留言测试&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;啥，你看不见？嗯，听说好像是被墙了。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>R blogdown 搭建个人博客或科研网站</title>
+      <link>http://www.pzhao.org/zh/post/2017-04-11_r-blogdown/</link>
+      <pubDate>Tue, 11 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.pzhao.org/zh/post/2017-04-11_r-blogdown/</guid>
+      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
+&lt;!-- /BLOGDOWN-HEAD --&gt;
+
+&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
+&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
+&lt;p&gt;本文收录在《学 R 》一书的附录中。&lt;/p&gt;
+&lt;p&gt;互联网时代有个自己的网站，就好像真实世界里有了自己的房子（服务器）和固定地址（域名）；自我介绍时附上自己的网站，就像生活里邀请朋友来访或者职场上递上名片，都甚为方便。然而，建立一个网站并不容易，涉及诸多领域的知识和技能，门槛比较高。好在，我们有万能的R语言，搭建网站只需几分钟，而并不需要多少网络知识。你甚至不用懂 R 语言是什么，照我下面说的做就行，包教包会，学不会免费再教。&lt;/p&gt;
+&lt;p&gt;这里，我提供两个示范，演示如何使用 R 语言的 blogdown 扩展包&lt;a href=&#34;#fn1&#34; class=&#34;footnoteRef&#34; id=&#34;fnref1&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;，用来搭建一个&lt;a href=&#34;http://dapengde.com/blogdown_demo_default/&#34;&gt;个人博客&lt;/a&gt;和一个&lt;a href=&#34;http://dapengde.com/blogdown_demo_academic/&#34;&gt;科研小组网站&lt;/a&gt;。截至本文成稿之日，blogdown 含苞待放，尚未正式发布，但是已经能够正常安装使用了。我们来尝尝鲜，提前一睹她的芳容。&lt;/p&gt;
+&lt;div id=&#34;r-blogdown-&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;R blogdown 简介和安装&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;R blogdown 是什么&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;R语言的一个扩展包，用来制作网站的工具。&lt;/li&gt;
+&lt;li&gt;可以用非常简洁的方式快速搭建静态网页构成的网站。&lt;/li&gt;
+&lt;li&gt;虽然名字里有“博客”（blog）字样，但并不仅限于博客。非常适合搭建一个科研小组的展示窗口。&lt;/li&gt;
+&lt;li&gt;基于 markdown 扩展语法，可以在网页中方便地插入图表、脚注、数学公式、R 代码等元素。&lt;/li&gt;
+&lt;li&gt;非常容易将 bookdown 生成的论文转化成网页展示。&lt;/li&gt;
+&lt;li&gt;非常易于维护，迁移，备份。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;本书的官方网站就是用 R blogdown 搭建的。网站里给大家提供的 R 示例代码、试读章节、勘误表等，都是直接从书稿中拷贝粘贴到文本文件里，然后运行一下 blogdown 的指令，网站就自动更新了。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;安装&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;blogdown 的背景平台是 R 语言，用户界面首选 RStudio ，产生的网站框架是 Hugo ，掰手指头数一数，要安装4样东西，略显繁琐，但并不难，一劳永逸。安装方式如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;R。去R的服务器&lt;a href=&#34;https://cran.r-project.org/&#34;&gt;CRAN&lt;/a&gt;，点击Download R for Windows（其他操作系统的用户请自便），在打开的新网页最上方点击&lt;code&gt;base&lt;/code&gt;，就找到下载链接了。下载完毕后安装，一路“下一步”的傻瓜式安装即可。&lt;/li&gt;
+&lt;li&gt;RStudio。去&lt;a href=&#34;https://www.rstudio.com/&#34;&gt;官网&lt;/a&gt;下载安装文件运行即可。&lt;/li&gt;
+&lt;li&gt;blogdown。运行RStudio，在左上面板的代码窗口输入并运行以下代码：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;if(!require(devtools)) install.packages(&amp;#39;devtools&amp;#39;)
+devtools::install_github(&amp;#39;rstudio/blogdown&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;解释一下：由于 blogdown 目前只发布到了 GitHub 服务器上，尚未发布到CRAN，所以上面第一条代码先安装开发工具 &lt;code&gt;devtools&lt;/code&gt; 包，第二行用这个包的&lt;code&gt;install_github()&lt;/code&gt; 函数从 GitHub 安装。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Hugo 框架。在 RStudio 左上面板的代码窗口输入并运行以下代码：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;blogdown::install_hugo()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;安装完毕。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;-r-blogdown-&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;用 R blogdown 搭建个人博客&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;创建示例网站&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;我在自己博客建立了个子站，作为 R blogdown &lt;a href=&#34;http://dapengde.com/blogdown_demo_default/&#34;&gt;个人博客的示例&lt;/a&gt;。下面我们看看这个博客是如何创建的。&lt;/p&gt;
+&lt;p&gt;首先，在你的电脑里新建一个文件夹，准备存放网站文件，假定是&lt;code&gt;c:\blogdown_default&lt;/code&gt;，那么创建网站只需在RStudio里运行两行代码：&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;setwd(&amp;#39;c:\\blogdown_default&amp;#39;)
+blogdown::new_site()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;示例网站搭建完毕。对，就这么简单！&lt;/p&gt;
+&lt;p&gt;去&lt;code&gt;c:\blogdown_default&lt;/code&gt;看看吧，出现了好多新文件夹。别的不用管也不用动，只注意&lt;code&gt;content\&lt;/code&gt; 和&lt;code&gt;public\&lt;/code&gt; 这两个就行了。打开 &lt;code&gt;public\index.html&lt;/code&gt;，这就是网站的主页。随便点开上面的几个链接试试看。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;发布到网上&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;上面搭建的网站，目前只存在于本地电脑里，下面我们发布到网上。&lt;/p&gt;
+&lt;p&gt;如果你像我一样，已经有了自己租用的服务器，上面有了WordPress博客，那最简单，在服务器的&lt;code&gt;public_html\&lt;/code&gt;文件夹下面创建一个新文件夹，例如叫做&lt;code&gt;test&lt;/code&gt;，那么只需将刚刚在本地新建的博客或科研网站的 &lt;code&gt;public&lt;/code&gt;文件夹里所有文件上传到服务器的&lt;code&gt;test&lt;/code&gt; 文件夹即可。访问&lt;code&gt;你的域名/test&lt;/code&gt;，就可以看到新网站了！&lt;/p&gt;
+&lt;p&gt;如果你没有自己的服务器，那么最简单的是在 &lt;a href=&#34;https://www.netlify.com/&#34;&gt;netlify&lt;/a&gt; 免费注册个账号，然后按提示将你本地的 &lt;code&gt;public\&lt;/code&gt; 文件夹拖进去，会自动布署，等几分钟，就可以访问了。你可以免费申请个子域名，也可以买个自己的域名绑定上去。我已经申请了一个，打算作为&lt;a href=&#34;http://zhao.netlify.com/&#34;&gt;自己的科研主页&lt;/a&gt;。这是从blogdown 创建的科研网站示例（创建方法见下文）修改而来的，而且还没改完，里面的英文内容都是示例里别人的工作。&lt;/p&gt;
+&lt;p&gt;那么，如何将自动生成的网站更新成自己的，并添加新内容呢？&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;网站更新&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;前文提醒你注意，新建的网站文件夹里有个&lt;code&gt;content\&lt;/code&gt;文件夹。这里就是更新网站内容的地方。你只需用记事本或RStudio，打开其中的&lt;code&gt;.md&lt;/code&gt;或 &lt;code&gt;.Rmd&lt;/code&gt; 文件，修改成自己的内容后保存，然后运行建站函数：&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;blogdown::build_site()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这样，&lt;code&gt;public\&lt;/code&gt; 就自动更新了，再发布到网上即可。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;.md&lt;/code&gt;或 &lt;code&gt;.Rmd&lt;/code&gt; 文件使用 markdown语法，见我以前写的帖子：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://dapengde.com/archives/17033&#34;&gt;九分钟学会 Markdown&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://dapengde.com/archives/17712&#34;&gt;精品网络应用：Markdown篇&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://dapengde.com/archives/19141&#34;&gt;R bookdown 快速入门和语法速查&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如果要发表新帖子，那么有两种方式最简单：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;方法一：将原有的&lt;code&gt;.md&lt;/code&gt;或 &lt;code&gt;.Rmd&lt;/code&gt;拷贝粘贴，改一下标题和内容即可；&lt;/li&gt;
+&lt;li&gt;方法二：在RSudio代码窗口点击 Addins- New Post， 按提示填写即可。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;写完保存，运行建站函数，上传。完毕。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;自动同步&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;也许你嫌每次更新上传太麻烦。我们当然可以选择自动同步。&lt;/p&gt;
+&lt;p&gt;如果网站搭建在Netlify，那么只需做三件事：&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;下载并安装 GitHub 客户端，申请个免费账号，并创建一个项目，例如叫做myweb，将前面我们举例的&lt;code&gt;c:\blogdown_default&lt;/code&gt; 文件夹设为项目的文件夹，并同步到云端。&lt;/li&gt;
+&lt;li&gt;在你的Netlify设置里，设为自动跟你的GitHub里的myweb项目同步，同步内容是 &lt;code&gt;public&lt;/code&gt;文件夹。&lt;/li&gt;
+&lt;li&gt;以后每次更新并运行完建站函数后，在GitHub客户端同步一下即可。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div id=&#34;-r-blogdown-&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;用 R blogdown 搭建科研网站&lt;/h2&gt;
+&lt;p&gt;上文说到，我申请了一个Netlify免费账号，并且创建了&lt;a href=&#34;http://zhao.netlify.com/&#34;&gt;自己的科研主页&lt;/a&gt;，是从blogdown 创建的科研网站示例修改而来的。这个示例的本来面貌可以来我博客上看：&lt;a href=&#34;http://dapengde.com/blogdown_demo_academic/&#34;&gt;科研网站的示例&lt;/a&gt;。这个科研网站的构架比个人博客复杂，有简介、新闻、发表论文、科研项目等基本模块，还可以根据需要新增，非常适合作为科研小组的展示窗口。&lt;/p&gt;
+&lt;p&gt;这个网站的搭建也很简单，跟个人博客类似。在你的电脑里新建文件夹，比如 &lt;code&gt;c:\blogdown_academic&lt;/code&gt;，在RStudio里运行两行代码：&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;setwd(&amp;#39;c:\\blogdown_default&amp;#39;)
+blogdown::new_site(theme=&amp;#39;gcushen/hugo-academic&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;去&lt;code&gt;c:\blogdown_academic&lt;/code&gt; 看看吧，科研网站搭建完毕！&lt;/p&gt;
+&lt;p&gt;但是，如果你这时双击打开&lt;code&gt;c:\blogdown_academic\public\index.html&lt;/code&gt; 的话，会发现界面并不好看（css未载入），并且点击页面的那些链接也无效。别急，我们再做个小改动就行了。&lt;/p&gt;
+&lt;p&gt;用记事本将&lt;code&gt;c:\blogdown_academic\config.toml&lt;/code&gt; 打开，删掉第一行，然后添加下面两行并保存文件。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;baseurl = &amp;quot;/&amp;quot;
+relativeurls = true&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;然后在RStudio运行建站函数&lt;code&gt;build_site()&lt;/code&gt;：&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;blogdown::build_site()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;好了，现在可以打开&lt;code&gt;c:\blogdown_academic\public\index.html&lt;/code&gt; 正常浏览了！&lt;/p&gt;
+&lt;p&gt;解释一下：config.toml 文件里的默认设置不支持本地浏览，而且发布到网上时需要布署。这里改成相对路径&lt;code&gt;relativeurls = true&lt;/code&gt;，就可以直接在本地打开 index.html 浏览了。&lt;/p&gt;
+&lt;p&gt;其他的发布、更新、同步，跟前文讲述的一致，这里不再赘述。需要特别指出的是，&lt;strong&gt;科研网站&lt;/strong&gt;示例的首页，个人信息需要在前面提到的&lt;code&gt;config.toml&lt;/code&gt;里的&lt;code&gt;[params]&lt;/code&gt; 修改。&lt;/p&gt;
+&lt;p&gt;这里的科研网站示例，使用的是Hugo-academic主题。Hugo还有很多其他主题可以使用。我们相信，只要深入研究一下，一定可以搭建让人更合心意的网站。同时，blogdown也在进一步完善中，让我们期待她的盛装绽放吧！&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn1&#34;&gt;&lt;p&gt;Yihui Xie. blogdown: Create Blogs and Websites with R Markdown. R package version 0.0.24.&lt;a href=&#34;#fnref1&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>R bookdown 写学术论文</title>
+      <link>http://www.pzhao.org/zh/post/2017-03-24-R-bookdown/</link>
+      <pubDate>Fri, 24 Mar 2017 21:13:14 +0000</pubDate>
+      
+      <guid>http://www.pzhao.org/zh/post/2017-03-24-R-bookdown/</guid>
+      <description>&lt;p&gt;&lt;em&gt;1&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;最近，我使用 R 语言的 bookdown 扩展包接连做了三件事：先是整理出一本跟&lt;a href=&#34;http://dapengde.com/archives/19122&#34; target=&#34;_blank&#34;&gt; R 语言有关的书&lt;/a&gt;，然后把博客的帖子整理出一本&lt;a href=&#34;http://dapengde.com/archives/19150&#34; target=&#34;_blank&#34;&gt;纯文本的中文书&lt;/a&gt;，这两天我又在用它来写一篇打算投稿的学术期刊论文。&lt;/p&gt;
+
+&lt;p&gt;用 bookdown 写英文的科研期刊论文，配置起来是很简单的，只需在bookdown提供的&lt;a href=&#34;https://github.com/rstudio/bookdown-demo&#34; target=&#34;_blank&#34;&gt;官方演示文档&lt;/a&gt;里做简单修改如下：&lt;/p&gt;
+
+&lt;p&gt;首先，index.Rmd 的文件头 yaml 部分，将 documentclass 设为 article，并关闭图表目录和文章目录即可：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;documentclass: article
+lof: no
+lot: no
+toc: no
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;然后，_output.yml 文件内容全部清空，然后添加指令生成 word_document2 文档、 pdf_document2 文档和 html_document2 文档，参数为default即可。也就是说，_output.yml 文件内容只需3行：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;bookdown::word_document2: default 
+bookdown::pdf_document2: default
+bookdown::html_document2: default
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;就能生成足够美观的三种格式的文档了。&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;2&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;写论文期间发生了一件事，让我饱受刺激。&lt;/p&gt;
+
+&lt;p&gt;我的科研论文有个计算公式，昨天发现其中一个数值不小心敲错了。后续计算都是建立在这个计算的基础上，所以后续计算全错。虽然不影响结论，但严格来讲，论文里所有的数据都得改。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://blogs.helmholtz.de/hejus/wp-content/uploads/sites/15/2014/10/writinghardwork.jpg&#34; alt=&#34;enter image description here&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;放在以前，这是让人崩溃的灾难。幸亏，这次我写论文用了 bookdown。&lt;/p&gt;
+
+&lt;p&gt;这篇研究论文是用 Rmd 格式写的，里面绝大部分数据不是手动敲进去的，而是调用了 R 代码，图表也是用 R 代码插入的，走的是“可重复性研究”的思路。现在，我只要把 R 代码里那个敲错的数据改过来，运行代码，后续计算就全部自动更新，而论文 Rmd 文件里调用代码的输出结果，会在导出的 pdf 或 word 文档也相应自动更新，节省了大量时间，还减少了敲数字或拷贝粘贴出错的可能，怎一个爽字了得！&lt;/p&gt;
+
+&lt;p&gt;在 bookdown 发布之前，其实 rmarkdown 也有这个功能，但因为公式、交叉引用、参考文献方面的欠缺， rmarkdown 对我来讲比较鸡肋，一直未能用在论文写作上。现在有了 bookdown ，可以甩开膀子使劲儿用。可以说， bookdown 把 rmarkdown 原有的价值做了更充分的挖掘。&lt;/p&gt;
+
+&lt;p&gt;写学术论文的过程比较煎熬，多年来我都不享受。而经过昨天的事件，我在写论文的过程里发现了很多快乐。我甚至有种变态心理，希望发现更多的计算错误，然后稍微一改，“叮！”论文全部自动更新。&lt;/p&gt;
+
+&lt;p&gt;老子陪你玩。好享受。&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;3&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;二娃德生前不久生病了，医生开了止咳糖浆。德生开始很拒绝，后来喜欢上了糖浆的味道。即使病好了，也经常要求喝止咳糖浆。&lt;/p&gt;
+
+&lt;p&gt;我问：“这是药，咳嗽才能喝。你咳嗽了吗？”&lt;/p&gt;
+
+&lt;p&gt;德生：“咳咳！咳咳！我咳嗽啦！”&lt;/p&gt;
+
+&lt;p&gt;学术论文写作使用 bookdown ，就是止咳药里添加的糖浆味道，让人不咳嗽的时候也想喝两盅，上瘾。&lt;/p&gt;
+
+&lt;p&gt;PS：今天在google.com以“bookdown”为关键词搜中文网页，我的博客已经出现在首页啦！&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>English Grammar in Use</title>
+      <link>http://www.pzhao.org/zh/post/2017-01-14_English-Grammar-in-Use/</link>
+      <pubDate>Sat, 14 Jan 2017 21:13:14 +0000</pubDate>
+      
+      <guid>http://www.pzhao.org/zh/post/2017-01-14_English-Grammar-in-Use/</guid>
+      <description>
+
+&lt;p&gt;2009年夏，我刚刚出国读书，被系里临时安排在交流学者的办公室。办公室书架上，竖着几本书无人认领，我就顺手牵羊拿走了唯一的一本英文书。此书叫做《English Grammar in Use》，作者是Raymond Murphy，剑桥大学出版社1985年第一版，1988年第八次印刷。扉页上还印着“仅在俄罗斯和乌克兰出售”。20年前的书，难怪闻起来一股古董味。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://dapengde.com/wp-content/uploads/2017/01/20170119_090819.jpg&#34; alt=&#34;enter image description here&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;随手翻了一下，我立刻被吸引住了。这本全部用英文写的语法书，我竟能轻松读懂，顿时很有成就感。书的副标题是“给中级学生的自学参考和练习书”，我不知道自己的水平算不算得上中级，但里面很多小语法点是我的弱项，值得好好学习。此书对语法点没有过多解释，主要是举例子，点到为止，甚合我意。随便摊开，左面一页是语法点和示例，右面一页是习题，两页就是一个单元。每个单元独立成篇，全书共130个单元。前15个单元的习题已经被人用笔写满了，从第16单元，字迹戛然而止。&lt;/p&gt;
+
+&lt;p&gt;“虎头蛇尾的家伙。”我暗笑。当时我想，每天做一个单元，5分钟都用不了，那么四个月之后就全部搞定。书从印刷到现在都20年了，书的主人竟然没做完？真瞧不起这种没有自制力的人。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://dapengde.com/wp-content/uploads/2017/01/20170119_1114012.jpg&#34; alt=&#34;enter image description here&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;2016年冬，7年多过去了，我……我总算把这本外语书吭哧吭哧读完了。比较一下，大娃京生，7年前只会中文叫“爸爸”，现在能流利地用中文和德语进行日常交流；二娃德生，7年前还在这世上不存在，现在能用中文说“爸爸，你走开，我喜欢妈妈”。而我读一本外语书花了7年多。好吧，自己正是自己瞧不起的那种缺乏自制力的人。&lt;/p&gt;
+
+&lt;p&gt;据说，这本书是世界上最受欢迎的中级英语自学语法书。多年来一版再版，甚至还出了配套光盘以及手机上的app。最新版是&lt;a href=&#34;http://www.cambridge.org/us/cambridgeenglish/catalog/grammar-vocabulary-and-pronunciation/english-grammar-use-4th-edition&#34; target=&#34;_blank&#34;&gt;第四版&lt;/a&gt;，共145个单元，彩色，比我手头这本上世纪80年代黑白印刷的、印刷错误比比皆是的旧书帅多了。我们来感受一下21世纪的时代气息：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://dapengde.com/wp-content/uploads/2017/01/EGU_cover_9780521189392.jpg&#34; alt=&#34;enter image description here&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://dapengde.com/wp-content/uploads/2017/01/EnglishGrammarInUse_Unit2.jpg&#34; alt=&#34;enter image description here&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;而且，网上竟然可以下载得到（点击下载&lt;a href=&#34;https://drive.google.com/file/d/0B1UPVH99Sq1hQ0VDbWVKU2RNU00/view?usp=sharing&#34; target=&#34;_blank&#34;&gt;pdf版&lt;/a&gt;、&lt;a href=&#34;https://drive.google.com/open?id=0B1UPVH99Sq1hcXRvVkhkU3ZaTDA&#34; target=&#34;_blank&#34;&gt;含光盘版&lt;/a&gt;）。此外，该书作者为这本中级语法书写了个姊妹篇给初级用户，叫Essential Grammar in Use（&lt;a href=&#34;https://www.google.at/url?sa=t&amp;amp;rct=j&amp;amp;q=&amp;amp;esrc=s&amp;amp;source=web&amp;amp;cd=3&amp;amp;ved=0ahUKEwifiJ-N-s3RAhVHbhQKHSRSBPIQFggwMAI&amp;amp;url=http://ilsclasses.com/Essential%2520Grammar%2520in%2520Use.pdf&amp;amp;usg=AFQjCNGatetwHPdmIiGvotqxbR70mWcgBg&amp;amp;sig2=kguQWj2oCGx8uLaVkOVwkA&amp;amp;bvm=bv.144224172,d.bGs&#34; target=&#34;_blank&#34;&gt;点击下载&lt;/a&gt;）。&lt;/p&gt;
+
+&lt;p&gt;这么好的英语书，为什么我年轻时没有接触到？&lt;/p&gt;
+
+&lt;p&gt;下面，是我摘录的难点笔记，加上了我的简单注解。一边做笔记一边想，什么中级英语，难度不及我国高考，跟入门级德语的难度相比，更是被完爆……&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;#English Grammar in Use
+by Raymond Murphy&lt;/p&gt;
+
+&lt;h3 id=&#34;present-tense-with-a-future-meaning-现在时表将来&#34;&gt;Present tense with a future meaning 现在时表将来&lt;/h3&gt;
+
+&lt;p&gt;When you are talking about what you have already arranged to do, use the present continuous (&lt;strong&gt;I am doing&lt;/strong&gt;) or &lt;strong&gt;going to do&lt;/strong&gt;. Do not use &lt;strong&gt;will&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;What are you &lt;strong&gt;doing&lt;/strong&gt; tomorrow? (&lt;em&gt;not&lt;/em&gt; &amp;lsquo;what will you do&amp;rsquo;)&lt;/li&gt;
+&lt;li&gt;What are you &lt;strong&gt;going to do&lt;/strong&gt; tomorrow?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We use the present simple when talking about timetables, programs etc. (for public transportation, cinemas)&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The concert this evening &lt;strong&gt;starts&lt;/strong&gt; at 7:30.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;going-to-will&#34;&gt;Going to, will&lt;/h3&gt;
+
+&lt;p&gt;We use &lt;strong&gt;going to&lt;/strong&gt; in this way when we say what we think will happen. 确定将要发生的事情。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Look at those black clouds! It&amp;rsquo;s going to rain.&lt;/li&gt;
+&lt;li&gt;Oh, I feel terrible. I think I am going to be sick.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We use &lt;strong&gt;will&lt;/strong&gt; when we decide to do something at the time of speaking.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Oh, I&amp;rsquo;ve left the door open. I&amp;rsquo;ll go and shut it.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Do not use &lt;strong&gt;will&lt;/strong&gt; to say what someone has already decided to do or arranged to do.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;I can&amp;rsquo;t meet you tomorrow because my parents are coming to see me. (&lt;em&gt;not&lt;/em&gt; &amp;lsquo;my parents will come&amp;rsquo;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;临时起意的计划用will，有“愿意”的意思；蓄谋已久的计划用going to。&lt;/p&gt;
+
+&lt;p&gt;We often use &lt;strong&gt;will (you) be doing&lt;/strong&gt; to ask about people&amp;rsquo;s plan, especially when we want something or want someone to do something.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&amp;lsquo;Will you be using your bicycle this evening?&amp;rsquo; &amp;lsquo;No, you can take it.&amp;rsquo;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;present-perfect-现在完成时&#34;&gt;Present perfect 现在完成时&lt;/h3&gt;
+
+&lt;p&gt;We often use the present perfect (&lt;strong&gt;I have done&lt;/strong&gt;) to give new information or to announce a recent happening.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;I&amp;rsquo;ve lost my key. Can you help me look for it?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Yet&lt;/strong&gt; shows that the speaker is ecpecting sth. to hapen.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Has it stopped raining yet?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;present-perfect-continuous-现在完成进行时&#34;&gt;Present perfect continuous 现在完成进行时&lt;/h3&gt;
+
+&lt;p&gt;We use the present perfect continuous (&lt;strong&gt;I have been doing&lt;/strong&gt;) when we talk about an action which began in the past and has recently stopped or just stopped or is still happening. 过去开始，最近刚刚结束，或者尚未结束、尚在进行。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;You&amp;rsquo;re out of breath. Have you been running?&lt;/li&gt;
+&lt;li&gt;It is still raining. It has been raining for two hours. (how long, for, since)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We use the present perfect continuous (&lt;strong&gt;I have been doing&lt;/strong&gt;) when we are interested in the action. It does not matter whether something has been finished or not. We use the present perfect (&lt;strong&gt;I have done&lt;/strong&gt;) when we are interested in the result of the action, not in the action itself. 现在完成进行时关注动作本身，不关心动作是否结束。相反，现在完成时关注动作的结果，不关注动作本身。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Tom&amp;rsquo;s hands are very dirty. He has been repairing the car.&lt;/li&gt;
+&lt;li&gt;The car is going again now. Tom has repaired it.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We use the present perfect continuous (&lt;strong&gt;I have been doing&lt;/strong&gt;) for situations over a short time. We use the present perfect (&lt;strong&gt;I have done&lt;/strong&gt;) for situations that exist for a longer time. 现在完成进行时用在短时间的情况，现在完成时用于长时间的情况。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;John has been living in London since January.&lt;/li&gt;
+&lt;li&gt;John has always lived in London.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Do not use the present simple (&lt;strong&gt;I do&lt;/strong&gt;) or continuous (&lt;strong&gt;I am doing&lt;/strong&gt;) to say how long something has been happening. 表述某件事情发生了多久时，用完成时，不用一般时或进行时。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;I have been waiting here for an hour. (&lt;em&gt;not&lt;/em&gt; &amp;lsquo;I am waiting&amp;rsquo;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;But:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;How long is it since&lt;/strong&gt; you had a holiday?&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;It is ages since&lt;/strong&gt; Tom visited us.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;may-might-can-need-should-would-will&#34;&gt;May, might, can, need, should, would, will&lt;/h3&gt;
+
+&lt;p&gt;We use &lt;strong&gt;may/might as well&lt;/strong&gt; to say that we should do something but only because there is no reason not to do it and because there is nothing better to do. 我觉得相当于had better。中文可以翻译成“还是”。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;You&amp;rsquo;ll have to wait an hour for the next bus, so you might as well walk.&lt;/li&gt;
+&lt;li&gt;We may as well go to the party. We&amp;rsquo;ve nothing else to do.&lt;/li&gt;
+&lt;li&gt;&amp;lsquo;Shall we have dinner now?&amp;rsquo; &amp;lsquo;We might as well.&amp;rsquo;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;To give permission, we use &lt;strong&gt;can&lt;/strong&gt; or &lt;strong&gt;may&lt;/strong&gt; (but &lt;em&gt;not&lt;/em&gt; &lt;strong&gt;could&lt;/strong&gt;).&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;You can/may smoke if you like.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Can&lt;/strong&gt; has only two forms: &lt;strong&gt;can&lt;/strong&gt; and &lt;strong&gt;could&lt;/strong&gt;. So sometimes you have to use &lt;strong&gt;be able to&lt;/strong&gt; instead.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;I haven&amp;rsquo;t been able to sleep recently. (&lt;strong&gt;can&lt;/strong&gt; has no present perfect)&lt;/li&gt;
+&lt;li&gt;Tom might not be able to come tomorrow. (&lt;strong&gt;can&lt;/strong&gt; has no infinitive)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If you mean that someone managed to do something in one particular situation, you have to use &lt;strong&gt;was/were able to&lt;/strong&gt; (not &lt;strong&gt;could&lt;/strong&gt;).&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The fire spread through the building very quickly but everyone was able to escape. (&lt;em&gt;not&lt;/em&gt; &lt;strong&gt;could escape&lt;/strong&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We use &lt;strong&gt;needn&amp;rsquo;t have&lt;/strong&gt; to say that someone did something but it wasn&amp;rsquo;t necessary.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Thank you for doing the washing-up but you needn&amp;rsquo;t have done it really. I was going to do it later.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Need doing&lt;/strong&gt; = &lt;strong&gt;need to be done&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The batteries in this radio need changing.&lt;/li&gt;
+&lt;li&gt;The grass needs cutting.&lt;/li&gt;
+&lt;li&gt;The jacket needs cleaning.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Be careful with &lt;strong&gt;suggest&lt;/strong&gt;. You cannot use the infinitive (to do) after &lt;strong&gt;suggest&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;What do you suggest we should do? &lt;em&gt;or&lt;/em&gt;  what do you suggest we do? (but &lt;em&gt;not&lt;/em&gt; &amp;lsquo;what do you suggest us to do&amp;rsquo;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;However, you can use &lt;strong&gt;doing&lt;/strong&gt; after &lt;strong&gt;suggest&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Tom suggested going to the cinema.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;When you imagine something not really possible, you use a &lt;em&gt;past&lt;/em&gt; tense after &lt;strong&gt;if&lt;/strong&gt;. But the meaning is &lt;em&gt;not&lt;/em&gt; past. 过去时表达假想一件不可能发生的事情。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&amp;lsquo;Are you going to catch the 10:30 train?&amp;rsquo; &amp;lsquo;No. If we caught the 10:30 train, we would arrive too early.&amp;rsquo;&lt;/li&gt;
+&lt;li&gt;If I found 100 Euro in the street, I would keep it.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We use &lt;strong&gt;I wish &amp;hellip; would&amp;hellip;&lt;/strong&gt; when we want something to happen or somebody to do something. The speaker is complaining about the present situation. So you cannot say &amp;lsquo;I wish I would &amp;hellip;&amp;rsquo;. 抱怨&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;I want to go out. I wish it would stop raining.&lt;/li&gt;
+&lt;li&gt;I wish someone would answer that telephone. It&amp;rsquo;s been ringing for about five minutes.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;You can use &lt;strong&gt;would&lt;/strong&gt; when you look back on the past and remember things that often happened (= &lt;strong&gt;used to&lt;/strong&gt;).&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;When we were children, we lived by the sea. In summer, if the weather was fine, we would all get up early and go for a swim.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Do not use &lt;strong&gt;will&lt;/strong&gt; after &lt;strong&gt;in case&lt;/strong&gt;. Use a present tense when you are talking about the future.  以防&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;John might phone tonight. I don&amp;rsquo;t want to go out in case he phones.&lt;/li&gt;
+&lt;li&gt;Wait. I&amp;rsquo;ll draw a map for you in case you cannot find our house.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;In case of&lt;/strong&gt; ( = if there is/are) is different from &lt;strong&gt;in case&lt;/strong&gt; ( = because it is possible that).  万一&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;In case of fire, please leave the building as quickly as possible.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;if-provided-ing-unless&#34;&gt;if, provided/-ing, unless&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Unless&lt;/strong&gt; = &lt;strong&gt;except if&lt;/strong&gt; 除非&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;not &amp;hellip; unless&lt;/strong&gt; = &lt;strong&gt;only if&lt;/strong&gt;. 只有&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;As/so long as&lt;/strong&gt; = &lt;strong&gt;provided that&lt;/strong&gt; = &lt;strong&gt;providing that&lt;/strong&gt; = &lt;strong&gt;but only if&lt;/strong&gt; 只要&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Joe cannot hear unless you shout. (Joe can hear only if you shout.)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;You can use my car as long as you drive carefully.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;supposed-to&#34;&gt;supposed to&lt;/h3&gt;
+
+&lt;p&gt;Sometimes &lt;strong&gt;supposed to&lt;/strong&gt; means &lt;strong&gt;said to&lt;/strong&gt;. 据说&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Let&amp;rsquo;s go and see that film. It&amp;rsquo;s supposed to be very good.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;But sometimes you can use &lt;strong&gt;supposed to&lt;/strong&gt; to say what is planned or arranged. 计划&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The train was supposed to arrive at 11:30 but it was 40 minutes late.&lt;/li&gt;
+&lt;li&gt;You were supposed to clean the windows. Why didn&amp;rsquo;t you do it?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We use &lt;strong&gt;not supposed to&lt;/strong&gt; to say what is not allowed or not advisable. 不允许，不建议&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;You are not supposed to park here.&lt;/li&gt;
+&lt;li&gt;He is much better after his illness but he&amp;rsquo;s still not supposed to do any heavy work.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;dare&#34;&gt;dare&lt;/h3&gt;
+
+&lt;p&gt;After &lt;strong&gt;dare&lt;/strong&gt; you can use the infinitive with or without &lt;strong&gt;to&lt;/strong&gt;. But after &lt;strong&gt;daren&amp;rsquo;t&lt;/strong&gt; you must use the infinitive without &lt;strong&gt;to&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;-I wouldn&amp;rsquo;t dare (to) ask him.
+- I daren&amp;rsquo;t tell him what happened.&lt;/p&gt;
+
+&lt;h3 id=&#34;be-afraid&#34;&gt;be afraid&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;Be afraid to do&lt;/strong&gt; = do not want to do because the result could be unpleasant. 不敢&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Be afraid of doing&lt;/strong&gt; = there is a possibility that something bad will happen. 不想&lt;/p&gt;
+
+&lt;p&gt;You are afraid to do something because you are afraid of something happening as a result.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The boys were afraid to play football in the garden because they were afraid of braking a window.&lt;/li&gt;
+&lt;li&gt;I was afraid to stay in the sun because I was afraid of getting burnt.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;verb-preposition-doing&#34;&gt;Verb + preposition + doing&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;I don&amp;rsquo;t &lt;strong&gt;feel like&lt;/strong&gt; going out tonight. (= would not like to do) 不愿意&lt;/li&gt;
+&lt;li&gt;I&amp;rsquo;ve always &lt;strong&gt;dreamed of&lt;/strong&gt; being rich.&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;We &lt;strong&gt;decided against&lt;/strong&gt; moving to London.&lt;/li&gt;
+&lt;li&gt;They &lt;strong&gt;accused me of&lt;/strong&gt; telling lies.&lt;/li&gt;
+&lt;li&gt;They &lt;strong&gt;suspected the man of&lt;/strong&gt; being a spy.&lt;/li&gt;
+&lt;li&gt;I &lt;strong&gt;congratulated her on&lt;/strong&gt; Passing the exam.&lt;/li&gt;
+&lt;li&gt;What &lt;strong&gt;prevented him from&lt;/strong&gt; coming to the wedding?&lt;/li&gt;
+&lt;li&gt;We &lt;strong&gt;stopped everyone (from) leaving&lt;/strong&gt; the building.&lt;/li&gt;
+&lt;li&gt;I &lt;strong&gt;thanked her for&lt;/strong&gt; being so helpful.&lt;/li&gt;
+&lt;li&gt;Please &lt;strong&gt;forgive me for&lt;/strong&gt; not writing to you.&lt;/li&gt;
+&lt;li&gt;They &lt;strong&gt;warned us against&lt;/strong&gt; buying the car.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;expressions-doing&#34;&gt;Expressions + doing&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;It is no use/good worrying&lt;/strong&gt; about it. There is nothing you can do.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;There&amp;rsquo;s no point in buying&lt;/strong&gt; a car if you don&amp;rsquo;t want to drive it.&lt;/li&gt;
+&lt;li&gt;My house is only a short walk from here. &lt;strong&gt;It&amp;rsquo;s not worth taking&lt;/strong&gt; a taxi.&lt;/li&gt;
+&lt;li&gt;This book &lt;strong&gt;is worth reading&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;I had &lt;strong&gt;difficulty (in) finding&lt;/strong&gt; a place to live.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;It&amp;rsquo;s a waste of time/money buying&lt;/strong&gt; things you don&amp;rsquo;t need.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;rather&#34;&gt;Rather&lt;/h3&gt;
+
+&lt;p&gt;When you want someone else to do something, you can say &lt;strong&gt;I&amp;rsquo;d rather you did&amp;hellip;&lt;/strong&gt;. We use the past in this structure but the meaning is present or future.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;I&amp;rsquo;d rather you cooked the dinner now.&lt;/li&gt;
+&lt;li&gt;&amp;lsquo;Do you mind if I smoke?&amp;rsquo; &amp;lsquo;I&amp;rsquo;d rather you didn&amp;rsquo;t.&amp;rsquo;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;it-s-time-someone-did&#34;&gt;It&amp;rsquo;s time someone did&lt;/h3&gt;
+
+&lt;p&gt;We use &lt;strong&gt;it&amp;rsquo;s time someone did something&lt;/strong&gt; especially when we are complaining or criticizing or when we think someone should have already done something. 抱怨&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;It&amp;rsquo;s time the children were in bed. It&amp;rsquo;s long after their bedtime.&lt;/li&gt;
+&lt;li&gt;I think it&amp;rsquo;s (about/high) time the government did something about pollution.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;see-hear-watch-listen-to-feel-notice-smell-find&#34;&gt;See, hear, watch, listen to, feel, notice, smell, find&lt;/h3&gt;
+
+&lt;p&gt;Verb + someone + do/doing&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;I &lt;strong&gt;saw her go out&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;She was &lt;strong&gt;seen to go out&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;I &lt;strong&gt;saw him walking&lt;/strong&gt; along the street.&lt;/li&gt;
+&lt;li&gt;I didn&amp;rsquo;t &lt;strong&gt;hear you come&lt;/strong&gt; in.&lt;/li&gt;
+&lt;li&gt;She suddenly &lt;strong&gt;felt someone touch&lt;/strong&gt; her on the shoulder.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Listen to&lt;/strong&gt; the birds &lt;strong&gt;singing&lt;/strong&gt;!&lt;/li&gt;
+&lt;li&gt;Did you &lt;strong&gt;notice anyone go&lt;/strong&gt; out?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;You can only use &lt;strong&gt;doing&lt;/strong&gt; after &lt;strong&gt;smell&lt;/strong&gt; and &lt;strong&gt;find&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Can you &lt;strong&gt;smell something burning&lt;/strong&gt;?&lt;/li&gt;
+&lt;li&gt;She &lt;strong&gt;found him reading&lt;/strong&gt; her letters.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;chance-and-opportunity&#34;&gt;Chance and opportunity&lt;/h3&gt;
+
+&lt;p&gt;Someone has/stands &lt;strong&gt;a/any/no/little/much chance of doing&lt;/strong&gt; something. 有可能。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;We have a very good chance of winning the match.&lt;/li&gt;
+&lt;li&gt;He stands no chance of passing the examination.&lt;/li&gt;
+&lt;li&gt;What are the chances of success?&lt;/li&gt;
+&lt;li&gt;Is there any chance of you lending me some money until tomorrow?&lt;/li&gt;
+&lt;li&gt;There is a chance that I&amp;rsquo;ll be late home this evening.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Someone has &lt;strong&gt;a chance/an opportunity to do&lt;/strong&gt; something. (= time) 有机会，有时间。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&amp;lsquo;Have you read the book I lent you?&amp;rsquo; &amp;lsquo;No, I haven&amp;rsquo;t had a/much/any chance to look at it yet.&amp;rsquo;&lt;/li&gt;
+&lt;li&gt;These days I don&amp;rsquo;t get much chance to watch TV. I&amp;rsquo;m too busy.&lt;/li&gt;
+&lt;li&gt;I have the opportunity to study in Germany for a year.&lt;/li&gt;
+&lt;li&gt;After the lecture there will be an apportunity to ask questions.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;You can also say &lt;strong&gt;any/no/little/much/plenty of/more opportunity&lt;/strong&gt;. &lt;strong&gt;Opportunity of doing&lt;/strong&gt; is also possible. Do not say &amp;lsquo;possibility to do something&amp;rsquo;.&lt;/p&gt;
+
+&lt;h3 id=&#34;uncountable-nouns-不可数名词&#34;&gt;Uncountable nouns 不可数名词&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;You need experience fro this job. (= knowledge of something because you have done it before &amp;ndash; &lt;em&gt;uncountable&lt;/em&gt;) 经验&lt;/li&gt;
+&lt;li&gt;We had &lt;strong&gt;many experiences&lt;/strong&gt; during our holiday. (= things that happened to us &amp;ndash; &lt;em&gt;countable&lt;/em&gt;) 经历&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Some nouns are usually uncountable in English but often countable in other languages. &lt;strong&gt;accommodation, behavior, trouble, advice, baggage, luggage, progress&lt;/strong&gt; &amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;Do not use &lt;strong&gt;travel&lt;/strong&gt; to mean &lt;strong&gt;journey/trip&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;We had a good journey. (&lt;em&gt;not&lt;/em&gt;  a good travel)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;the&#34;&gt;The&lt;/h3&gt;
+
+&lt;p&gt;We say &lt;strong&gt;the sea, the sky, the ground, the countryside&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Would you rather live in &lt;strong&gt;a town&lt;/strong&gt; or in &lt;strong&gt;the country&lt;/strong&gt;?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We say &lt;strong&gt;go to sea/be at sea&lt;/strong&gt; when the meaning is &lt;strong&gt;go/be on a voyage&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;He is a seaman. He spends most of his life &lt;strong&gt;at sea&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;I would love to live &lt;strong&gt;near the sea&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We say &lt;strong&gt;space&lt;/strong&gt; when we mean space in the universe. 太空&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;There are millions of stars &lt;strong&gt;in space&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;He tried to park his car but &lt;strong&gt;the space&lt;/strong&gt; wasn&amp;rsquo;t big enough.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We say &lt;strong&gt;the cinema, the theater, the radio&lt;/strong&gt;, but &lt;strong&gt;television&lt;/strong&gt; (without &lt;strong&gt;the&lt;/strong&gt;).&lt;/p&gt;
+
+&lt;p&gt;We do not normally use &lt;strong&gt;the&lt;/strong&gt; with &lt;strong&gt;breakfast, lunch, dinner&lt;/strong&gt;, but we say &lt;strong&gt;a nice lunch&lt;/strong&gt;. We also say &lt;strong&gt;a meal&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;We had lunch in a restaurant.&lt;/li&gt;
+&lt;li&gt;We had a meal in a restaurant.&lt;/li&gt;
+&lt;li&gt;Thank you. That was a very nice lunch.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We use &lt;strong&gt;the&lt;/strong&gt; + &lt;em&gt;a singular countable noun&lt;/em&gt; or a plural noun without &lt;strong&gt;the&lt;/strong&gt; to talk about a plant, animal etc. 动植物&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The rose is my favorite flower.&lt;/li&gt;
+&lt;li&gt;Roses are my favorite flowers.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We use &lt;strong&gt;the&lt;/strong&gt; + &lt;em&gt;a singular countable noun&lt;/em&gt; when talking about a type of machine, an invention, a musical instrument etc. 机器，发明，乐器&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;When was &lt;strong&gt;the telephone&lt;/strong&gt; invented?&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;The bicycle&lt;/strong&gt; is an excellent means of transport.&lt;/li&gt;
+&lt;li&gt;Can you &lt;strong&gt;play the guitar&lt;/strong&gt;?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;When we use &lt;strong&gt;the&lt;/strong&gt; with some adjectives (without a noun), the meaning is always plural.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Do you think &lt;strong&gt;the rich&lt;/strong&gt; should pay more taxes?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We do not usually say &lt;strong&gt;the&lt;/strong&gt; withe the names of countries and states. But we say &lt;strong&gt;the&lt;/strong&gt; with names which include words like &amp;lsquo;republic&amp;rsquo;, &amp;lsquo;union&amp;rsquo;, &amp;lsquo;kingdom&amp;rsquo;, &amp;lsquo;states&amp;rsquo;. We also use &lt;strong&gt;the&lt;/strong&gt; with plural names. 国家&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;France. West Germany. Texas.&lt;/li&gt;
+&lt;li&gt;the German Federal Republic. the Soviet Union. the United Kingdom. the United States of America.&lt;/li&gt;
+&lt;li&gt;the Netherlands. the Philippines.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Islands groups and mountain ranges usually have &lt;em&gt;plural&lt;/em&gt; names with &lt;strong&gt;the&lt;/strong&gt;. Individual islands and mountains usually have singular names without &lt;strong&gt;the&lt;/strong&gt;. 岛，山&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;the Bahamas. the Canaries. the British Isles. the Rocky Mountains. the Rockies. the Alps&lt;/li&gt;
+&lt;li&gt;Corfu. Sicily. Bermuda. Easter Island. (Mount) Everest.  (Mount) Etna.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Lakes usually have names without &lt;strong&gt;the&lt;/strong&gt;. 湖&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Lake Superior. Lake Constance.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Names of oceans/seas/river/canals have &lt;strong&gt;the&lt;/strong&gt;. 海，河，海峡&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;the Atlantic. the Mediterranean. the English Channel. the Nile.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Regions. 地区&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The Middle East. The Far East. The north of England.&lt;/li&gt;
+&lt;li&gt;northern England. western Canada (without &lt;strong&gt;the&lt;/strong&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We do not normally use &lt;strong&gt;the&lt;/strong&gt; with names of streets/roads/squares etc. 街道，广场&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Regent Street. Fifth Avenue. Broadway. Red Square.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Many names are two words, such as Kennedy Airport, Cambridge University. The first word is usually the name of a person or place. We do not usually say &lt;strong&gt;the&lt;/strong&gt; with names like these.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Victoria Station. Peking University. Hyde Park. Buckingham Palace.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We usually say &lt;strong&gt;the&lt;/strong&gt; before the names of hotels, restaurants, pubs, theaters, cinemas, museums, galleries. 旅馆，餐馆，酒吧，剧院，影院，博物馆，画廊&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;the Hilton. the Bombay Restaurant. the National Theater. the British Museum.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We say &lt;strong&gt;all day&lt;/strong&gt; (without &lt;strong&gt;the&lt;/strong&gt;) or &lt;strong&gt;the whole day&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;We spent &lt;strong&gt;all day / the whole day&lt;/strong&gt; on the beach.&lt;/li&gt;
+&lt;li&gt;I&amp;rsquo;ve been trying to find you &lt;strong&gt;all morning / the whole morning&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;singular-or-plural-单复数&#34;&gt;Singular or plural? 单复数&lt;/h3&gt;
+
+&lt;p&gt;We do not often use the plural of &lt;strong&gt;person&lt;/strong&gt; (&amp;lsquo;persons&amp;rsquo;). Instead we use &lt;strong&gt;people&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Some words end in &lt;strong&gt;-s&lt;/strong&gt; and can be singular &lt;em&gt;or&lt;/em&gt; plural, such as &lt;strong&gt;means&lt;/strong&gt; (a/many means of transport), &lt;strong&gt;series&lt;/strong&gt; (a/two TV series), &lt;strong&gt;species&lt;/strong&gt; (a/two species of bird).&lt;/p&gt;
+
+&lt;p&gt;Some singular nouns are often used with a plural verb, such as &lt;strong&gt;government, staff, team, family, audience, commitee, police&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;We normally use a plural verb with the names of sports teams.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Scotland &lt;strong&gt;are&lt;/strong&gt; playing France in a football match next week.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We say &amp;lsquo;a holiday of three &lt;strong&gt;weeks&lt;/strong&gt;&amp;rsquo; but &amp;lsquo;a three-&lt;strong&gt;week&lt;/strong&gt; holiday&amp;rsquo;, or &amp;ldquo;three &lt;strong&gt;weeks&amp;rsquo;&lt;/strong&gt; holiday&amp;rsquo;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Someone/anyone/nobody/everyone&lt;/strong&gt; are singular words, but we often use &lt;strong&gt;they&lt;/strong&gt; after these words.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;If anyone wants to leave early, they can.&lt;/li&gt;
+&lt;li&gt;Someone has spilt their coffee on the carpet.&lt;/li&gt;
+&lt;li&gt;No one in the class did their homework.&lt;/li&gt;
+&lt;li&gt;Everyone has got their tickets.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;After &lt;strong&gt;none of&lt;/strong&gt; + a &lt;em&gt;plural&lt;/em&gt; word we can use a singular or a plural verb. A plural verb is more usual.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;None of the people I met were English.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;s-apostrophe-s-and-of-所有格&#34;&gt;&amp;hellip;&amp;rsquo;s (apostrophe s) and &amp;hellip;of&amp;hellip; 所有格&lt;/h3&gt;
+
+&lt;p&gt;We normally use &lt;strong&gt;&amp;rsquo;s&lt;/strong&gt; when the first noun is a person, an animal, an organisation, a place, a time word. Otherwise (with things) we normally use &lt;strong&gt;&amp;hellip;of&amp;hellip;&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;a policeman&amp;rsquo;s hat. the horse&amp;rsquo;s tail.&lt;/li&gt;
+&lt;li&gt;the government&amp;rsquo;s decision &lt;em&gt;or&lt;/em&gt; the decision of the government. the company&amp;rsquo;s success &lt;em&gt;or&lt;/em&gt; the success of the company.&lt;/li&gt;
+&lt;li&gt;the city&amp;rsquo;s new theater. the world&amp;rsquo;s population.&lt;/li&gt;
+&lt;li&gt;tomorrow&amp;rsquo;s meeting. last Monday&amp;rsquo;s newspaper.&lt;/li&gt;
+&lt;li&gt;the door of the room (&lt;em&gt;not&lt;/em&gt; the room&amp;rsquo;s door). the beginning of the story (&lt;em&gt;not&lt;/em&gt; the story&amp;rsquo;s beginning&amp;rsquo;).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;reason&#34;&gt;Reason&lt;/h3&gt;
+
+&lt;p&gt;We say &lt;strong&gt;the reason why&lt;/strong&gt; or &lt;strong&gt;the reason that&lt;/strong&gt; or leave out &lt;strong&gt;why&lt;/strong&gt; and &lt;strong&gt;that&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The reason (why/that) I&amp;rsquo;m phoning you is to invite you to a party.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;adjectives-word-order-形容词词序&#34;&gt;Adjectives: word order 形容词词序&lt;/h3&gt;
+
+&lt;p&gt;&lt;em&gt;Opinion&lt;/em&gt; adjectives usually go before &lt;em&gt;fact&lt;/em&gt; adjectives. 态度 - 事实&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;a nice sunny day&lt;/li&gt;
+&lt;li&gt;delicious hot soup&lt;/li&gt;
+&lt;li&gt;an intelligent young man&lt;/li&gt;
+&lt;li&gt;a beautiful large round wooden table&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;When there are two or more &lt;em&gt;fact&lt;/em&gt; adjectives. Very often we put them in this order:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;how big &amp;ndash; how old &amp;ndash; what color &amp;ndash; where from &amp;ndash; what is it made of&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;a tall young man. a large wooden table. big blue eyes. an old Russian song. a small black plastic bag. an old white cotton shirt.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Adjectives of size and length usually go before adjectives of shape and width.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;a large round table. a tall thin girl. a long narrow street.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;superlatives&#34;&gt;Superlatives&lt;/h3&gt;
+
+&lt;p&gt;We use &lt;strong&gt;eldest&lt;/strong&gt; (&lt;em&gt;not&lt;/em&gt; oldest) when we are talking about the members of a family.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;My eldest son is 13 years old.&lt;/li&gt;
+&lt;li&gt;Are you the eldest in your family?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;After superlatives, we use &lt;strong&gt;in&lt;/strong&gt; with places (towns, buildings etc.), but we use &lt;strong&gt;of&lt;/strong&gt; with time.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;the longest river &lt;strong&gt;in the world&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;the nicest rooms &lt;strong&gt;in the hotel&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;the happiest day &lt;strong&gt;of my life&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;the hottest day &lt;strong&gt;of the year&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;quite-and-rather&#34;&gt;Quite and rather&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;Rather&lt;/strong&gt; is similar to &lt;strong&gt;quite&lt;/strong&gt; but we use &lt;strong&gt;rather&lt;/strong&gt; mainly with negative words and negative ideas. &lt;strong&gt;Quite&lt;/strong&gt; is also possible in these examples.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;It&amp;rsquo;s rather/quite cold, so you&amp;rsquo;d better wear your coat.&lt;/li&gt;
+&lt;li&gt;&amp;lsquo;What was the examination like?&amp;rsquo; &amp;lsquo;Rather/quite difficult, I&amp;rsquo;m afraid.&amp;rsquo;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;When we use &lt;strong&gt;rather&lt;/strong&gt; with positive words, it means &amp;lsquo;unusually&amp;rsquo; or &amp;lsquo;surprisingly&amp;rsquo;.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;These oranges are rather nice. Where did you get them?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We often use &lt;strong&gt;quite&lt;/strong&gt; with  a positive idea.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;She is quite intelligent but rather lazy.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Quite&lt;/strong&gt; can also mean &amp;lsquo;completely&amp;rsquo; with a number of adjectives or verbs, especially &lt;strong&gt;sure, right, true, unnecessary, different, amazing, certain, wrong, safe, extraordinary, impossible, amazed, agree, finish, understand&lt;/strong&gt;. 完全&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&amp;lsquo;Are you sure?&amp;rsquo; &amp;lsquo;Yes, quite sure.&amp;rsquo;&lt;/li&gt;
+&lt;li&gt;Everything they said was quite true.&lt;/li&gt;
+&lt;li&gt;I quite agree with you.&lt;/li&gt;
+&lt;li&gt;They haven&amp;rsquo;t quite finished their dinner yet.&lt;/li&gt;
+&lt;li&gt;I don&amp;rsquo;t quite understand what you mean.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;although-though-even-though-in-spite-of-despite-虽然&#34;&gt;Although, though, even though, in spite of, despite 虽然&lt;/h3&gt;
+
+&lt;p&gt;Compare &lt;strong&gt;although&lt;/strong&gt; and &lt;strong&gt;in spite of / despite&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Although the traffic was bad, I arrived on time.&lt;/li&gt;
+&lt;li&gt;In spite of the traffic, I arrived on time.&lt;/li&gt;
+&lt;li&gt;I couldn&amp;rsquo;t sleep although I was very tired.&lt;/li&gt;
+&lt;li&gt;I couldn&amp;rsquo;t sleep despite being very tired.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In spoken English we often use &lt;strong&gt;though&lt;/strong&gt; at the end of a sentence ( = but).&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The house isn&amp;rsquo;t very nice. I like the garden though. (= but I like the garden)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;at-on-in-time-position&#34;&gt;At/on/in (time, position)&lt;/h3&gt;
+
+&lt;p&gt;We use &lt;strong&gt;on&lt;/strong&gt; with dates and days, but:
+- &lt;strong&gt;at&lt;/strong&gt; the weekend / &lt;strong&gt;at&lt;/strong&gt; weekends, &lt;strong&gt;at&lt;/strong&gt; Christmas (but  &lt;strong&gt;on&lt;/strong&gt; Christmas Day)&lt;/p&gt;
+
+&lt;p&gt;We use &lt;strong&gt;in&lt;/strong&gt; to say how long it takes to do something.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;I learnt to drive &lt;strong&gt;in&lt;/strong&gt; four weeks.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;In&lt;/strong&gt; + position.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;He lives &lt;strong&gt;in&lt;/strong&gt; a small village &lt;strong&gt;in&lt;/strong&gt; the mountains.&lt;/li&gt;
+&lt;li&gt;When we were &lt;strong&gt;in&lt;/strong&gt; Italy, we spent a few days &lt;strong&gt;in&lt;/strong&gt; Venice. (&lt;em&gt;not&lt;/em&gt; &amp;lsquo;at Venice&amp;rsquo;)&lt;/li&gt;
+&lt;li&gt;Have you read this article &lt;strong&gt;in&lt;/strong&gt; the newspaper? (&lt;em&gt;not&lt;/em&gt; &amp;lsquo;on the newspaper&amp;rsquo;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;On&lt;/strong&gt; + position&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;London is &lt;strong&gt;on the river&lt;/strong&gt; Thames.&lt;/li&gt;
+&lt;li&gt;Portsmouth is &lt;strong&gt;on the&lt;/strong&gt; south &lt;strong&gt;coast&lt;/strong&gt; of England.&lt;/li&gt;
+&lt;li&gt;Have you ever worked &lt;strong&gt;on a farm&lt;/strong&gt;?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We say &lt;strong&gt;in the corner of a room&lt;/strong&gt;, but &lt;strong&gt;at/on the corner of a street&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;We say &lt;strong&gt;in the front/back of a car&lt;/strong&gt;, but we say &lt;strong&gt;at the front/back of a building/hall/cinema/group of people&lt;/strong&gt;, and we say &lt;strong&gt;on the front/back of a letter/piece of paper&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;At&lt;/strong&gt; + position&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;at university&lt;/li&gt;
+&lt;li&gt;at a station&lt;/li&gt;
+&lt;li&gt;at an airport&lt;/li&gt;
+&lt;li&gt;at the seaside&lt;/li&gt;
+&lt;li&gt;at sea (on a voyage)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;At&lt;/strong&gt; + event&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;at a party/concert/conference/football match&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;In time&lt;/strong&gt; (for something / to do something) = soon enough. The opposite of &lt;strong&gt;in time&lt;/strong&gt; is &lt;strong&gt;too late&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;noun-preposition&#34;&gt;Noun + preposition&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;They sent me &lt;strong&gt;a cheque for&lt;/strong&gt; 50 USD.&lt;/li&gt;
+&lt;li&gt;That firm closed down because there wasn&amp;rsquo;t enough &lt;strong&gt;demand/need for&lt;/strong&gt; its product. (countable)&lt;/li&gt;
+&lt;li&gt;The train was late but no one knew the &lt;strong&gt;reason for&lt;/strong&gt; the delay.&lt;/li&gt;
+&lt;li&gt;No one knew what the &lt;strong&gt;cause of&lt;/strong&gt; the delay was.&lt;/li&gt;
+&lt;li&gt;There has been an &lt;strong&gt;increase in&lt;/strong&gt; road accidents recently.&lt;/li&gt;
+&lt;li&gt;The &lt;strong&gt;advantage of&lt;/strong&gt; living alone is that you can do what you like.&lt;/li&gt;
+&lt;li&gt;There are many &lt;strong&gt;advantages in&lt;/strong&gt; living alone.&lt;/li&gt;
+&lt;li&gt;He always keeps a &lt;strong&gt;photo of&lt;/strong&gt; his wife in his wallet.&lt;/li&gt;
+&lt;li&gt;The accident was my fault, so I paid for the &lt;strong&gt;damage to&lt;/strong&gt; the other car.&lt;/li&gt;
+&lt;li&gt;I was surprised at his &lt;strong&gt;reaction to&lt;/strong&gt; what I said.&lt;/li&gt;
+&lt;li&gt;His &lt;strong&gt;attitude to/towards&lt;/strong&gt; his job is very negative.&lt;/li&gt;
+&lt;li&gt;Do you have a good &lt;strong&gt;relationship with&lt;/strong&gt; your parents?&lt;/li&gt;
+&lt;li&gt;Police want to question a man in &lt;strong&gt;connection with&lt;/strong&gt; the robbery.&lt;/li&gt;
+&lt;li&gt;Police have said that there is no &lt;strong&gt;connection between&lt;/strong&gt; the two murders.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;preposition-noun&#34;&gt;Preposition + noun&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Did you pay &lt;strong&gt;by cheque&lt;/strong&gt; or &lt;strong&gt;in cash&lt;/strong&gt;?&lt;/li&gt;
+&lt;li&gt;We hadn&amp;rsquo;t arranged to meet. We met &lt;strong&gt;by chance&lt;/strong&gt;. (by mistake, by accident)&lt;/li&gt;
+&lt;li&gt;Look! The car is &lt;strong&gt;on fire&lt;/strong&gt;!&lt;/li&gt;
+&lt;li&gt;I didn&amp;rsquo;t watch the match &lt;strong&gt;on TV&lt;/strong&gt;. I listen to it &lt;strong&gt;on the radio&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;I&amp;rsquo;ve put on a lot of weight. I&amp;rsquo;ll have to go &lt;strong&gt;on a diet&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Did you go to Paris &lt;strong&gt;on business&lt;/strong&gt; or &lt;strong&gt;on holiday&lt;/strong&gt;? (on a trip/tour/excursion/cruise/expedition)&lt;/li&gt;
+&lt;li&gt;Tom has gone to France &lt;strong&gt;for a holiday&lt;/strong&gt;.&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;adjective-preposition&#34;&gt;Adjective + preposition&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;She is &lt;strong&gt;excited/worried/upset about&lt;/strong&gt; his plan.&lt;/li&gt;
+&lt;li&gt;What are you so &lt;strong&gt;angry/annoyed/furious about&lt;/strong&gt;?&lt;/li&gt;
+&lt;li&gt;They were &lt;strong&gt;angry/annoyed/furious with&lt;/strong&gt; me &lt;strong&gt;for&lt;/strong&gt; not inviting them to the party.&lt;/li&gt;
+&lt;li&gt;I was &lt;strong&gt;delighted/pleased/satisfied/disappointed with&lt;/strong&gt; my examination results.&lt;/li&gt;
+&lt;li&gt;He gets &lt;strong&gt;bored/fed up with&lt;/strong&gt; doing the same thing every day.&lt;/li&gt;
+&lt;li&gt;Everyone was &lt;strong&gt;surprised/shocked/amazed/astonished at/by&lt;/strong&gt; the news.&lt;/li&gt;
+&lt;li&gt;I am &lt;strong&gt;good/bad/excellent/brilliant/hopeless at&lt;/strong&gt; repairing things.&lt;/li&gt;
+&lt;li&gt;I am &lt;strong&gt;afraid/frightened/terrified/scared of&lt;/strong&gt; dogs.&lt;/li&gt;
+&lt;li&gt;I am &lt;strong&gt;proud/ashamed of&lt;/strong&gt; what I did.&lt;/li&gt;
+&lt;li&gt;She is always &lt;strong&gt;jealous/envious of&lt;/strong&gt; other people.&lt;/li&gt;
+&lt;li&gt;He was &lt;strong&gt;suspicious of&lt;/strong&gt; my intentions.&lt;/li&gt;
+&lt;li&gt;I wasn&amp;rsquo;t &lt;strong&gt;aware/conscious of&lt;/strong&gt; their marriage.&lt;/li&gt;
+&lt;li&gt;I am &lt;strong&gt;sorry about&lt;/strong&gt; the noise.&lt;/li&gt;
+&lt;li&gt;I am &lt;strong&gt;sorry for shouting&lt;/strong&gt; at you yesterday. (= I am sorry I shouted at you.)&lt;/li&gt;
+&lt;li&gt;He wasn&amp;rsquo;t &lt;strong&gt;keen on&lt;/strong&gt; going out in the rain. 喜爱&lt;/li&gt;
+&lt;li&gt;The city center was &lt;strong&gt;crowded with&lt;/strong&gt; tourists.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;verb-preposition&#34;&gt;Verb + preposition&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;He is selfish. He doesn&amp;rsquo;t &lt;strong&gt;care about&lt;/strong&gt; other people. 关心&lt;/li&gt;
+&lt;li&gt;Would you &lt;strong&gt;care for&lt;/strong&gt; a cup of coffee? (= like) 喜欢&lt;/li&gt;
+&lt;li&gt;She is old. She needs someone to &lt;strong&gt;care for&lt;/strong&gt; her. (= look after) 照料&lt;/li&gt;
+&lt;li&gt;There was an accident this morning. A bus &lt;strong&gt;collided with&lt;/strong&gt; a car.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Concentrate on&lt;/strong&gt; your work!&lt;/li&gt;
+&lt;li&gt;He lost control of the car and &lt;strong&gt;crashed/drove/bumped/ran into&lt;/strong&gt; a wall.&lt;/li&gt;
+&lt;li&gt;I &lt;strong&gt;dreamed about&lt;/strong&gt; you last night. 做梦&lt;/li&gt;
+&lt;li&gt;I often &lt;strong&gt;dream of&lt;/strong&gt; being rich. (= imagine)  梦想&lt;/li&gt;
+&lt;li&gt;&amp;lsquo;Don&amp;rsquo;t tell anyone what I said.&amp;rsquo; &amp;lsquo;No, I &lt;strong&gt;wouldn&amp;rsquo;t dream of&lt;/strong&gt; it.&amp;rsquo;&lt;/li&gt;
+&lt;li&gt;Did you &lt;strong&gt;hear about&lt;/strong&gt; the fight in the club on Monday?&lt;/li&gt;
+&lt;li&gt;Have you &lt;strong&gt;heard about&lt;/strong&gt; Jane? She&amp;rsquo;s getting married. 听说某件事&lt;/li&gt;
+&lt;li&gt;&amp;lsquo;Have you &lt;strong&gt;heard from&lt;/strong&gt; Jane recently?&amp;rsquo; &amp;lsquo;Yes, she wrote to me last week.&amp;rsquo; 有消息&lt;/li&gt;
+&lt;li&gt;&amp;lsquo;Who is Jane?&amp;rsquo; &amp;lsquo;I have no idea. I have never &lt;strong&gt;heard of&lt;/strong&gt; her.&amp;rsquo; 听说某个人&lt;/li&gt;
+&lt;li&gt;He was angry and started &lt;strong&gt;shouting at&lt;/strong&gt; me. (when angry)&lt;/li&gt;
+&lt;li&gt;He &lt;strong&gt;shouted to&lt;/strong&gt; me from the other side of the street.&lt;/li&gt;
+&lt;li&gt;You are quite. What are you &lt;strong&gt;thinking about&lt;/strong&gt;? (= consider) 思考&lt;/li&gt;
+&lt;li&gt;He told me his name but I can&amp;rsquo;t &lt;strong&gt;think of&lt;/strong&gt; it now. (= remember) 回想&lt;/li&gt;
+&lt;li&gt;Good idea. Why didn&amp;rsquo;t I &lt;strong&gt;think of&lt;/strong&gt; that? (have an idea)&lt;/li&gt;
+&lt;li&gt;&amp;lsquo;What did you &lt;strong&gt;think of&lt;/strong&gt; the film?&amp;rsquo; &amp;lsquo;I didn&amp;rsquo;t think much of it.&amp;rsquo; (give an opinion) 看法&lt;/li&gt;
+&lt;li&gt;He &lt;strong&gt;accused her of&lt;/strong&gt; being selfish. 谴责&lt;/li&gt;
+&lt;li&gt;Everyone &lt;strong&gt;blamed me for&lt;/strong&gt; the accident. 责怪&lt;/li&gt;
+&lt;li&gt;Everyone &lt;strong&gt;blamed the accident on&lt;/strong&gt; me.&lt;/li&gt;
+&lt;li&gt;Everyone said that I was &lt;strong&gt;to blame for&lt;/strong&gt; the accident.&lt;/li&gt;
+&lt;li&gt;Three men were arrested and &lt;strong&gt;charged with&lt;/strong&gt; robbery. 控告&lt;/li&gt;
+&lt;li&gt;The economic situation is getting worse and worse. The government ought to &lt;strong&gt;do something about&lt;/strong&gt; it.&lt;/li&gt;
+&lt;li&gt;The school &lt;strong&gt;provides&lt;/strong&gt; all its students &lt;strong&gt;with&lt;/strong&gt; books.&lt;/li&gt;
+&lt;li&gt;This house &lt;strong&gt;reminds me of&lt;/strong&gt; the one I lived in when I was a child. (cause someone to remember) 令回忆&lt;/li&gt;
+&lt;li&gt;I&amp;rsquo;m glad you &lt;strong&gt;reminded me about&lt;/strong&gt; the party. (tell someone not to forget) 提醒&lt;/li&gt;
+&lt;li&gt;Everyone has been &lt;strong&gt;warned about/of&lt;/strong&gt; the dangers of smoking.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;useful-expressions&#34;&gt;Useful expressions&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Can you change a pound? 找零钱&lt;/li&gt;
+&lt;li&gt;I arranged to meet him after work but he didn&amp;rsquo;t &lt;strong&gt;turn up&lt;/strong&gt;. (appear)&lt;/li&gt;
+&lt;li&gt;We all know how wonderful you are. There&amp;rsquo;s no need to &lt;strong&gt;show off&lt;/strong&gt;. (show how good you are at something)&lt;/li&gt;
+&lt;li&gt;I can&amp;rsquo;t hear you very well. Can you &lt;strong&gt;speak up&lt;/strong&gt; a bit? (speak louder)&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
