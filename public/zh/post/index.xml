@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Peng Zhao</title>
-    <link>http://www.pzhao.org/zh/post/index.xml</link>
+    <link>/zh/post/index.xml</link>
     <description>Recent content in Posts on Peng Zhao</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
@@ -12,10 +12,10 @@
     
     <item>
       <title>R vs Python: 2017年欧洲地学年会</title>
-      <link>http://www.pzhao.org/zh/post/egu2017/</link>
+      <link>/zh/post/egu2017/</link>
       <pubDate>Thu, 20 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/zh/post/egu2017/</guid>
+      <guid>/zh/post/egu2017/</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 
@@ -35,10 +35,10 @@
     
     <item>
       <title>Hugo 网站的浏览器小图标</title>
-      <link>http://www.pzhao.org/zh/post/hugo-icon/</link>
+      <link>/zh/post/hugo-icon/</link>
       <pubDate>Wed, 19 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/zh/post/hugo-icon/</guid>
+      <guid>/zh/post/hugo-icon/</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 
@@ -52,10 +52,10 @@
     
     <item>
       <title>Hugo 网站的RSS</title>
-      <link>http://www.pzhao.org/zh/post/hugo-rss/</link>
+      <link>/zh/post/hugo-rss/</link>
       <pubDate>Tue, 18 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/zh/post/hugo-rss/</guid>
+      <guid>/zh/post/hugo-rss/</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 
@@ -93,10 +93,10 @@ http://pzhao.org/zh/talk/index.xml&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>斜杠</title>
-      <link>http://www.pzhao.org/zh/post/slash/</link>
+      <link>/zh/post/slash/</link>
       <pubDate>Mon, 17 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/zh/post/slash/</guid>
+      <guid>/zh/post/slash/</guid>
       <description>&lt;p&gt;在我的新书在线试读章节，益辉同学提出了&lt;a href=&#34;http://dapengde.com/xuer/post/2017-04-15_blogdown/#comment-3258130059&#34; target=&#34;_blank&#34;&gt;一个话题&lt;/a&gt;，那就是斜杠。这个小东西已经困扰我多年了，我憋着一直没敢说，P大点儿事，怕被人瞧不起说我吃饱撑得，这回有益辉这么一位神级人肉盾牌罩着，就趁机吐个槽。&lt;/p&gt;
 
 &lt;p&gt;斜杠就是&lt;code&gt;/&lt;/code&gt;，在英文叫做slash，或者叫forward slash，就是向前倾斜，而&lt;code&gt;\&lt;/code&gt;就是back slash，向后倾斜。只需想着&lt;code&gt;|&lt;/code&gt;是个直立的小人顺着文字的方向走，那么前倾
@@ -124,10 +124,10 @@ http://pzhao.org/zh/talk/index.xml&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>Hugo 网站 academic 主题的多语言界面</title>
-      <link>http://www.pzhao.org/zh/post/hugo-multilingual/</link>
+      <link>/zh/post/hugo-multilingual/</link>
       <pubDate>Sun, 16 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/zh/post/hugo-multilingual/</guid>
+      <guid>/zh/post/hugo-multilingual/</guid>
       <description>&lt;p&gt;几年前我弄过&lt;a href=&#34;http://dapengde.com/archives/15265&#34; target=&#34;_blank&#34;&gt;双语博客&lt;/a&gt;， 后来放弃了，因为 WordPress 的双语方案有些遗留问题让我不爽，另外我没有精力写英文博客。现在，新网站是个科研网站，博客可以只出现在中文版里，而英文版只放自己的学术情况就行了，不用像博客更新那么频繁。所以，双语界面几乎是排在第一梯队的需求。&lt;/p&gt;
 
 &lt;p&gt;我对Hugo的架构并不熟悉，原以为会很麻烦，结果弄一会儿就搞定了，原来这么简单。有些步骤在&lt;a href=&#34;http://dapengde.com/blogdown_demo_academic/post/getting-started/&#34; target=&#34;_blank&#34;&gt;主题的说明文档里&lt;/a&gt;提到了，但不够全。完整的步骤是这样的(看起来长，是因为我啰嗦，其实很快就能设置完)：&lt;/p&gt;
@@ -197,10 +197,10 @@ defaultContentLanguageInSubdir = true
     
     <item>
       <title>Word 永远转不成 Markdown</title>
-      <link>http://www.pzhao.org/zh/post/word-never-markdown/</link>
+      <link>/zh/post/word-never-markdown/</link>
       <pubDate>Sun, 16 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/zh/post/word-never-markdown/</guid>
+      <guid>/zh/post/word-never-markdown/</guid>
       <description>&lt;p&gt;R bookdown 用扩展的 Markdown 语法来写书，可以很方便地导出 Word 格式，虽然不完美，但只需稍微调一下样式，就是一个漂漂亮亮的文档。但是，如果在 Word 里做了修改，想转回 Markdown 该怎么办？&lt;/p&gt;
 
 &lt;p&gt;多年来，我一直奢望能找到这样一款软件，哪怕是把 Word 转成 LaTeX 也行。随着时间的流逝，希望却是越来越渺茫; 我越来越深信，这样的软件过去不曾有，现在还没有，将来永远都不会有。因为，逻辑上是不可能实现的。&lt;/p&gt;
@@ -229,10 +229,10 @@ defaultContentLanguageInSubdir = true
     
     <item>
       <title>Hugo 网站 academic 主题首页的文摘显示问题</title>
-      <link>http://www.pzhao.org/zh/post/hugo-academic-summary/</link>
+      <link>/zh/post/hugo-academic-summary/</link>
       <pubDate>Sat, 15 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/zh/post/hugo-academic-summary/</guid>
+      <guid>/zh/post/hugo-academic-summary/</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 
@@ -261,10 +261,10 @@ Enable/disable and configure widgets to customize your homepage.
     
     <item>
       <title>Hugo 网站的 Disqus 加载问题</title>
-      <link>http://www.pzhao.org/zh/post/hogo-disques-problem/</link>
+      <link>/zh/post/hogo-disques-problem/</link>
       <pubDate>Fri, 14 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/zh/post/hogo-disques-problem/</guid>
+      <guid>/zh/post/hogo-disques-problem/</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 
@@ -285,10 +285,10 @@ Enable/disable and configure widgets to customize your homepage.
     
     <item>
       <title>R blogdown 搭建个人博客或科研网站</title>
-      <link>http://www.pzhao.org/zh/post/2017-04-11_r-blogdown/</link>
+      <link>/zh/post/2017-04-11_r-blogdown/</link>
       <pubDate>Tue, 11 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/zh/post/2017-04-11_r-blogdown/</guid>
+      <guid>/zh/post/2017-04-11_r-blogdown/</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 
@@ -393,10 +393,10 @@ relativeurls = true&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>R bookdown 写学术论文</title>
-      <link>http://www.pzhao.org/zh/post/2017-03-24-R-bookdown/</link>
+      <link>/zh/post/2017-03-24-R-bookdown/</link>
       <pubDate>Fri, 24 Mar 2017 21:13:14 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/zh/post/2017-03-24-R-bookdown/</guid>
+      <guid>/zh/post/2017-03-24-R-bookdown/</guid>
       <description>&lt;p&gt;&lt;em&gt;1&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;最近，我使用 R 语言的 bookdown 扩展包接连做了三件事：先是整理出一本跟&lt;a href=&#34;http://dapengde.com/archives/19122&#34; target=&#34;_blank&#34;&gt; R 语言有关的书&lt;/a&gt;，然后把博客的帖子整理出一本&lt;a href=&#34;http://dapengde.com/archives/19150&#34; target=&#34;_blank&#34;&gt;纯文本的中文书&lt;/a&gt;，这两天我又在用它来写一篇打算投稿的学术期刊论文。&lt;/p&gt;
@@ -454,10 +454,10 @@ bookdown::html_document2: default
     
     <item>
       <title>English Grammar in Use</title>
-      <link>http://www.pzhao.org/zh/post/2017-01-14_English-Grammar-in-Use/</link>
+      <link>/zh/post/2017-01-14_English-Grammar-in-Use/</link>
       <pubDate>Sat, 14 Jan 2017 21:13:14 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/zh/post/2017-01-14_English-Grammar-in-Use/</guid>
+      <guid>/zh/post/2017-01-14_English-Grammar-in-Use/</guid>
       <description>
 
 &lt;p&gt;2009年夏，我刚刚出国读书，被系里临时安排在交流学者的办公室。办公室书架上，竖着几本书无人认领，我就顺手牵羊拿走了唯一的一本英文书。此书叫做《English Grammar in Use》，作者是Raymond Murphy，剑桥大学出版社1985年第一版，1988年第八次印刷。扉页上还印着“仅在俄罗斯和乌克兰出售”。20年前的书，难怪闻起来一股古董味。&lt;/p&gt;
