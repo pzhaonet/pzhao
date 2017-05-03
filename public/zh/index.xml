@@ -11,6 +11,55 @@
     <atom:link href="/zh/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>初恋</title>
+      <link>http://www.pzhao.org/zh/post/cawas/</link>
+      <pubDate>Wed, 03 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.pzhao.org/zh/post/cawas/</guid>
+      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
+&lt;!-- /BLOGDOWN-HEAD --&gt;
+
+&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
+&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
+&lt;p&gt;有一次回乡，见到我的中学老师范先生，谈起当年种种情形，范先生说，我们班是他作为班主任带过的第一个班。我们班之后的十几年来，他也带过很多个班，对他们不可谓不爱，但那份感情在微妙之处却总有不同。我们班让他刻骨铭心，他对我们班的感情，“宛若初恋”。&lt;/p&gt;
+&lt;p&gt;我不由得笑道：范先生把工作热情与爱情相比，真有可歌可泣的幽默感。&lt;/p&gt;
+&lt;p&gt;转眼间，范先生关于初恋的比喻已是几年前的旧事。前两日，整理移动硬盘里的旧文件，在一个多年没碰过的文件夹里，我发现了一些跟以前的工作单位有关的旧物，已遗忘多年，打开一看——&lt;/p&gt;
+&lt;p&gt;旧物里有入职满一年时，我为单位设计的logo。&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;../img/cawastech.png&#34; /&gt;
+
+&lt;/div&gt;
+&lt;p&gt;这个工作单位属于国家气象局，于是我加入了气象元素；我所在的部门主要职责是对全国大气成分观测站提供技术支持，具体来说就是安装、维修和标校仪器，于是我画了个扳手。当时，我们要编写大量的技术手册和办公文档，于是我就很单纯地想，有这样一个logo会显得好看一点。我们还要对来自全国各地的同行进行培训，于是我配套设计了几个颜色渐变动画版，打算在培训幻灯片里用。&lt;/p&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;th&amp;gt;
+&amp;lt;img src=&amp;quot;../img/cawastech1.gif&amp;quot; /&amp;gt; 
+ &amp;lt;/th&amp;gt;
+&amp;lt;th&amp;gt;
+&amp;lt;img src=&amp;quot;../img/cawastech2.gif&amp;quot; /&amp;gt; 
+&amp;lt;/th&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;p&gt;可惜做完之后也并未派上用场。而现在，我连源文件是怎么打开的都忘了。&lt;/p&gt;
+&lt;p&gt;旧物里有入职第二年，我制作的电子贺卡。&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;../img/cawas_214.png&#34; /&gt;
+
+&lt;/div&gt;
+&lt;p&gt;那时，春节和情人节接踵而至。刚刚学了一点编程的我，用visual basic制作了一张&lt;a href=&#34;../download/bainian.exe&#34;&gt;电子卡片&lt;/a&gt;，以我部门的名义，发给同单位其他部门的同事联络感情。在这张卡片上，有“喜欢”和“不喜欢”两个按钮，但是有个小把戏：鼠标永远追不上“不喜欢”；鼠标一放上去，它就跳到别的地方去了。所以，你对我们部门只能喜欢，别无选择。&lt;/p&gt;
+&lt;p&gt;我就从没想过，贸然发给同事个exe文件，说不定讨人嫌吧？&lt;/p&gt;
+&lt;p&gt;旧物里有入职第三年，我做的合唱伴奏音乐。&lt;/p&gt;
+&lt;p&gt;那时，我们单位举办春节联欢会，节目的演员是各所职工。我们中心表演的节目是大合唱。提前一个多月，我们就开始着手准备，指导老师请好了，演员也动员好了，排练时间也安排好了，曲目也选好了，是刘欢原唱的《在路上》。这时却发现，原唱音频文件的消声效果不够好，而专门的伴奏又找不到。我自告奋勇，连熬两个通宵，用Guitar Pro软件把&lt;a href=&#34;../download/on_the_way.mid&#34;&gt;伴奏音乐&lt;/a&gt;硬生生做了出来。这里面，除了主旋律是在网上找到的简谱外，其他音轨都是我从原唱里一个音一个音听写下来，记在纸上，再输入电脑，反复调整才得来的。我记得，做完的时候已是凌晨5点，躺下眯了两小时，就翻身起来挤公交上班，到单位继续修仪器。&lt;/p&gt;
+&lt;EMBED SRC=&#34;../download/on_the_way.mid&#34; hidden=true autostart=true loop=1&gt;
+&lt;p&gt;回望这段往事，我感到不可思议。logo并没有领导要求我做，电子贺卡的编程完全属于自愿，而合唱伴奏的制作弄得通宵不睡，更是自作自受——你不做又会怎么样呢？节目照演，春节照过。我问问自己：你为她投入的这份热忱，是她需要的吗？她要求你做到的事情，你做到了吗？你的所谓付出，哪些是出于爱她，哪些是出于爱自己，哪些是二者兼有？&lt;/p&gt;
+&lt;p&gt;此情可待成追忆，只是当时已惘然。入职第四年，我辞职出国深造，与旧单位分道扬镳。&lt;/p&gt;
+&lt;p&gt;如今翻起旧物，我清楚地知道，为工作单位设计logo、制作贺卡、制作伴奏这样的事情，今后恐怕再也不会自发自愿地发生在我身上；即使发生，也难以倾注当年那么大的热情。那份热情不计付出，熊熊燃烧，那是青春的见证。&lt;/p&gt;
+&lt;p&gt;那是我的第一份工作。&lt;/p&gt;
+&lt;p&gt;宛若初恋。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>2017年欧洲地学年会留影</title>
       <link>http://www.pzhao.org/zh/post/egu2017photo/</link>
       <pubDate>Tue, 02 May 2017 00:00:00 +0000</pubDate>
@@ -129,7 +178,7 @@ http://pzhao.org/zh/talk/index.xml&lt;/code&gt;&lt;/pre&gt;
       <pubDate>Mon, 17 Apr 2017 00:00:00 +0000</pubDate>
       
       <guid>http://www.pzhao.org/zh/post/slash/</guid>
-      <description>&lt;p&gt;在我的新书在线试读章节，益辉同学提出了&lt;a href=&#34;http://dapengde.com/xuer/post/2017-04-15_blogdown/#comment-3258130059&#34; target=&#34;_blank&#34;&gt;一个话题&lt;/a&gt;，那就是斜杠。这个小东西已经困扰我多年了，我憋着一直没敢说，事儿不大，怕被人说我吃饱撑得，这回有益辉这么一位神级人肉盾牌罩着，就趁机吐个槽。&lt;/p&gt;
+      <description>&lt;p&gt;在我的新书在线试读章节，益辉同学提出了&lt;a href=&#34;http://dapengde.com/xuer/post/2017-04-15_blogdown/#comment-3258130059&#34; target=&#34;_blank&#34;&gt;一个话题&lt;/a&gt;，那就是斜杠。这个小东西已经困扰我多年了，事儿不大，我憋着一直没敢说，这回有益辉这么一位神级人肉盾牌罩着，就趁机吐个槽。&lt;/p&gt;
 
 &lt;p&gt;斜杠就是&lt;code&gt;/&lt;/code&gt;，在英文叫做slash，或者叫forward slash，就是向前倾斜，而&lt;code&gt;\&lt;/code&gt;就是back slash，向后倾斜。只需想着&lt;code&gt;|&lt;/code&gt;是个直立的小人顺着文字的方向走，那么前倾
 后倾一目了然，名字跟形状是吻合的。或者用“吉他法”，吉他手 &lt;em&gt;背&lt;/em&gt; 面对着我那就是&lt;em&gt;back&lt;/em&gt; slash（当然前提是右撇子）。无论如何，英文名称是合乎我的逻辑和理解力的。&lt;/p&gt;
@@ -151,79 +200,6 @@ http://pzhao.org/zh/talk/index.xml&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;你瞧，一说起德语键盘，又有吐不完的槽，比如你会发现Z和Y两个键是跟英文键盘反着的。我对此不理解，就问德国人，德国人的回答是：你们英文键盘干嘛非要跟我们反着？你们英国人为啥非要靠左行驶？你们英国人为啥计量单位不用十进制？&amp;hellip;&amp;hellip;.&lt;/p&gt;
 
 &lt;p&gt;一扯就又扯到二战去了。本帖就此打住。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Hugo 网站 academic 主题的多语言界面</title>
-      <link>http://www.pzhao.org/zh/post/hugo-multilingual/</link>
-      <pubDate>Sun, 16 Apr 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/zh/post/hugo-multilingual/</guid>
-      <description>&lt;p&gt;几年前我弄过&lt;a href=&#34;http://dapengde.com/archives/15265&#34; target=&#34;_blank&#34;&gt;双语博客&lt;/a&gt;， 后来放弃了，因为 WordPress 的双语方案有些遗留问题让我不爽，另外我没有精力写英文博客。现在，新网站是个科研网站，博客可以只出现在中文版里，而英文版只放自己的学术情况就行了，不用像博客更新那么频繁。所以，双语界面几乎是排在第一梯队的需求。&lt;/p&gt;
-
-&lt;p&gt;我对Hugo的架构并不熟悉，原以为会很麻烦，结果弄一会儿就搞定了，原来这么简单。有些步骤在&lt;a href=&#34;http://dapengde.com/blogdown_demo_academic/post/getting-started/&#34; target=&#34;_blank&#34;&gt;主题的说明文档里&lt;/a&gt;提到了，但不够全。完整的步骤是这样的(看起来长，是因为我啰嗦，其实很快就能设置完)：&lt;/p&gt;
-
-&lt;p&gt;1、开启双语。这需要在&lt;code&gt;config.toml&lt;/code&gt;里末尾找到：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;[languages.en]
-  languageCode = &amp;quot;en-us&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;这说明网站现在是英文的。在后面添加中文，也就是：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;[languages.en]
-  languageCode = &amp;quot;en-us&amp;quot;
-
-[languages.zh]
-  languageCode = &amp;quot;zh-cn&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;2、设置默认语言。这需要在&lt;code&gt;config.toml&lt;/code&gt;里开头不远处找到：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# Default language to use (if you setup multilingual support)
-defaultContentLanguage = &amp;quot;zh&amp;quot;
-defaultContentLanguageInSubdir = true
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;原先是en，改成zh就可以让网站默认打开是中文。&lt;/p&gt;
-
-&lt;p&gt;3、菜单栏增加中文界面。菜单栏就是网页顶部那一排按钮。这需要在&lt;code&gt;config.toml&lt;/code&gt;里找到菜单栏的设定：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;[[menu.main]]
-  name = &amp;quot;Home&amp;quot;
-  url = &amp;quot;#about&amp;quot;
-  weight = 1
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;上面是默认语言英语的设置。在下面添加中文设置，格式是&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;[[languages.zh.menu.main]]
-  name = &amp;quot;主页&amp;quot;
-  url = &amp;quot;#about&amp;quot;
-  weight = 1
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;这样，就把&lt;code&gt;Home&lt;/code&gt;按钮替换成了&lt;code&gt;主页&lt;/code&gt;按钮。其他按钮类似。&lt;/p&gt;
-
-&lt;p&gt;4、其他地方的翻译。这需要把&lt;code&gt;\themes\hugo-academic\i18n\&lt;/code&gt; 文件夹拷贝到根目录，然后删掉里边不需要的语言文件。我们只保留&lt;code&gt;en.yaml&lt;/code&gt;和&lt;code&gt;zh.yaml&lt;/code&gt;。用文本编辑器打开&lt;code&gt;zh.yaml&lt;/code&gt;，把里边翻译不当的地方修改一下，比如 interests 翻译成了“兴趣爱好”，我改成了“研究领域”。&lt;/p&gt;
-
-&lt;p&gt;5、新增帖子的双语。这个最好办，每次在&lt;code&gt;content\&lt;/code&gt;文件夹里新增文件时，如果要增加英文，就在文件扩展名前面加个&lt;code&gt;.en&lt;/code&gt;就行了。例如，我在&lt;code&gt;content\talk\&lt;/code&gt;下面新建了个&lt;code&gt;egu-2017.md&lt;/code&gt;，里面是中文，会出现在中文界面上。那么我想让这个项目也在英文版出现，只需把&lt;code&gt;egu-2017.md&lt;/code&gt;复制一份，命名为&lt;code&gt;egu-2017.en.md&lt;/code&gt;，那么这个项目就会在英文界面出现了。打开&lt;code&gt;egu-2017.en.md&lt;/code&gt;把里面的中文改成英文即可。&lt;/p&gt;
-
-&lt;p&gt;6、在菜单栏增加中英文界面切换的按钮。只需在&lt;code&gt;config.toml&lt;/code&gt;里的菜单设置出增加：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;[[menu.main]]
-  name = &amp;quot;中文&amp;quot;
-  url = &amp;quot;../zh&amp;quot;
-  weight = 7
-  
-[[languages.zh.menu.main]]
-  name = &amp;quot;EN&amp;quot;
-  url = &amp;quot;../en&amp;quot;
-  weight = 7
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;至此，双语界面全部搞定。&lt;/p&gt;
 </description>
     </item>
     

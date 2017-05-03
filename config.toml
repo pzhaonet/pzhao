@@ -208,34 +208,39 @@ defaultContentLanguageInSubdir = true
   weight = 1
 
 [[languages.zh.menu.main]]
-  name = "论文"
-  url = "#publications"
+  name = "新闻"
+  url = "#news"
+  weight = 2
+
+[[languages.zh.menu.main]]
+  name = "日志"
+  url = "#posts"
   weight = 3
 
 [[languages.zh.menu.main]]
-  name = "最新"
-  url = "#posts"
-  weight = 2
+  name = "论文"
+  url = "#publications"
+  weight = 4
 
 [[languages.zh.menu.main]]
   name = "项目"
   url = "#projects"
-  weight = 4
+  weight = 5
 
 [[languages.zh.menu.main]]
   name = "教学"
   url = "#teaching"
-  weight = 5
+  weight = 6
 
 [[languages.zh.menu.main]]
   name = "搜索"
   url = "https://cse.google.com/cse/publicurl?cx=006346710622437628329:nxozn9fijm0"
-  weight = 6
+  weight = 7
 
 [[languages.zh.menu.main]]
   name = "EN"
   url = "../en"
-  weight = 7
+  weight = 8
 
 # Taxonomies.
 [taxonomies]

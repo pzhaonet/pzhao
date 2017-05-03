@@ -5,7 +5,7 @@ date: '2017-05-02'
 slug: egu2017photo
 categories: []
 tags: ["EGU", "news"]
-summary: ""
+summary: "![](http://www.biomet.co.at/wp/wp-content/uploads/2017/04/IMG_19351.jpeg)"
 ---
 
 ![](http://www.biomet.co.at/wp/wp-content/uploads/2017/04/IMG_19351.jpeg)
