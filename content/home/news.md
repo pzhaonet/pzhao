@@ -16,7 +16,7 @@ weight = 5
 tags = ['news']
 
 # Number of posts to list.
-count = 6
+count = 2
 
 +++
 
