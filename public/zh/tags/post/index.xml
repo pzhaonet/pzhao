@@ -104,9 +104,10 @@
 
 &lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
 &lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
-&lt;p&gt;&lt;img src=&#34;../img/icon.png&#34; /&gt;&lt;!-- --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/img/myicon.png&#34; /&gt;&lt;!-- --&gt;&lt;/p&gt;
 &lt;p&gt;网站图标，就是上图的这些东东，用浏览器打开网站时显示在地址栏的顶端。R blogdown安装的hugo-academic主题，默认图标是个蓝色学位帽，挺好看的，不改也行，只是如果大家都用的话，泯然众人，识别度就低了。&lt;/p&gt;
 &lt;p&gt;改的方式很简单：将你自己的图标图片保存为.png格式，并命名为icon.png，替换&lt;code&gt;\themes\hugo-academic\static\img\icon.png&lt;/code&gt;即可。&lt;/p&gt;
+&lt;p&gt;update: 更好的方案来自&lt;a href=&#34;https://disqus.com/home/discussion/pzhao/hugo/#comment-3287700912&#34;&gt;yang Cao的提议&lt;/a&gt;：把icon.png放在&lt;code&gt;static/img/&lt;/code&gt;，避免在更新themes时将自定义图标覆盖。&lt;/p&gt;
 </description>
     </item>
     
@@ -131,7 +132,7 @@
 http://pzhao.org/zh/publication/index.xml
 http://pzhao.org/zh/talk/index.xml&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;这个RSS链接，我该放到主页的什么位置，来方便网友订阅呢？我决定放到我的头像下面的社交按钮里。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../img/social.png&#34; /&gt;&lt;!-- --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/img/social.png&#34; /&gt;&lt;!-- --&gt;&lt;/p&gt;
 &lt;p&gt;头像下的社交按钮是在&lt;code&gt;config.toml&lt;/code&gt;里设置的，只需添加个&lt;code&gt;[[params.social]]&lt;/code&gt;就可以了，图标去&lt;a href=&#34;https://fortawesome.github.io/Font-Awesome/icons/&#34;&gt;fa&lt;/a&gt;或&lt;a href=&#34;https://jpswalsh.github.io/academicons/&#34;&gt;ai&lt;/a&gt;两个包的主页找便是。 实在缺乏社交，只好把自己卡拉OK的录音和腾讯视频加进去凑数，代码如下：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;  [[params.social]]
     icon = &amp;quot;rss&amp;quot;
@@ -345,10 +346,10 @@ Enable/disable and configure widgets to customize your homepage.
     
     <item>
       <title>R blogdown 搭建个人博客或科研网站</title>
-      <link>http://www.pzhao.org/zh/post/2017-04-11_r-blogdown/</link>
+      <link>http://www.pzhao.org/zh/post/r-blogdown/</link>
       <pubDate>Tue, 11 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/zh/post/2017-04-11_r-blogdown/</guid>
+      <guid>http://www.pzhao.org/zh/post/r-blogdown/</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 
@@ -453,10 +454,10 @@ relativeurls = true&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>R bookdown 写学术论文</title>
-      <link>http://www.pzhao.org/zh/post/2017-03-24-R-bookdown/</link>
-      <pubDate>Fri, 24 Mar 2017 21:13:14 +0000</pubDate>
+      <link>http://www.pzhao.org/zh/post/r-bookdown/</link>
+      <pubDate>Fri, 24 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/zh/post/2017-03-24-R-bookdown/</guid>
+      <guid>http://www.pzhao.org/zh/post/r-bookdown/</guid>
       <description>&lt;p&gt;&lt;em&gt;1&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;最近，我使用 R 语言的 bookdown 扩展包接连做了三件事：先是整理出一本跟&lt;a href=&#34;http://dapengde.com/archives/19122&#34; target=&#34;_blank&#34;&gt; R 语言有关的书&lt;/a&gt;，然后把博客的帖子整理出一本&lt;a href=&#34;http://dapengde.com/archives/19150&#34; target=&#34;_blank&#34;&gt;纯文本的中文书&lt;/a&gt;，这两天我又在用它来写一篇打算投稿的学术期刊论文。&lt;/p&gt;
@@ -514,10 +515,10 @@ bookdown::html_document2: default
     
     <item>
       <title>English Grammar in Use</title>
-      <link>http://www.pzhao.org/zh/post/2017-01-14_English-Grammar-in-Use/</link>
-      <pubDate>Sat, 14 Jan 2017 21:13:14 +0000</pubDate>
+      <link>http://www.pzhao.org/zh/post/english-grammar-in-use/</link>
+      <pubDate>Sat, 14 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/zh/post/2017-01-14_English-Grammar-in-Use/</guid>
+      <guid>http://www.pzhao.org/zh/post/english-grammar-in-use/</guid>
       <description>
 
 &lt;p&gt;2009年夏，我刚刚出国读书，被系里临时安排在交流学者的办公室。办公室书架上，竖着几本书无人认领，我就顺手牵羊拿走了唯一的一本英文书。此书叫做《English Grammar in Use》，作者是Raymond Murphy，剑桥大学出版社1985年第一版，1988年第八次印刷。扉页上还印着“仅在俄罗斯和乌克兰出售”。20年前的书，难怪闻起来一股古董味。&lt;/p&gt;

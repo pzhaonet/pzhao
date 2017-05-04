@@ -1,13 +1,15 @@
-+++
-date = "2017-01-14T21:13:14"
-draft = false
-tags = ["English", "writing", "post"]
-title = "English Grammar in Use"
-math = true
-summary = """
-这么好的英语书，为什么我年轻时没有接触到？
-"""
-+++
+---
+title: English Grammar in Use
+author: 赵鹏
+date: '2017-01-14'
+slug: english-grammar-in-use
+categories: []
+tags:
+  - English
+  - writing
+  - post
+summary: "这么好的英语书，为什么我年轻时没有接触到？"
+---
 
 2009年夏，我刚刚出国读书，被系里临时安排在交流学者的办公室。办公室书架上，竖着几本书无人认领，我就顺手牵羊拿走了唯一的一本英文书。此书叫做《English Grammar in Use》，作者是Raymond Murphy，剑桥大学出版社1985年第一版，1988年第八次印刷。扉页上还印着“仅在俄罗斯和乌克兰出售”。20年前的书，难怪闻起来一股古董味。
 

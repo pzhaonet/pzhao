@@ -1,14 +1,16 @@
-+++
-date = "2017-03-24T21:13:14"
-draft = false
-tags = ["R", "bookdown", "post"]
-title = "R bookdown 写学术论文"
-math = true
-summary = """
-用 bookdown 写英文的科研期刊论文，配置起来是很简单的，只需在bookdown提供的[官方演示文档](https://github.com/rstudio/bookdown-demo)里做简单修改即可。
-"""
-+++
-
+---
+title: R bookdown 写学术论文
+author: 赵鹏
+date: '2017-03-24'
+slug: r-bookdown
+categories: []
+tags:
+  - R
+  - markdown
+  - bookdown
+  - post
+summary: "用 bookdown 写英文的科研期刊论文，配置起来是很简单的，只需在bookdown提供的[官方演示文档](https://github.com/rstudio/bookdown-demo)里做简单修改即可。"
+---
 
 *1*
 

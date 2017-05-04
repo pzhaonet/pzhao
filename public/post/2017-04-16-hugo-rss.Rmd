@@ -34,7 +34,7 @@ http://pzhao.org/zh/talk/index.xml
 这个RSS链接，我该放到主页的什么位置，来方便网友订阅呢？我决定放到我的头像下面的社交按钮里。
 
 ```{r, echo=FALSE}
-knitr::include_graphics("../img/social.png")
+knitr::include_graphics("/img/social.png")
 ```
 
 头像下的社交按钮是在`config.toml`里设置的，只需添加个`[[params.social]]`就可以了，图标去[fa](https://fortawesome.github.io/Font-Awesome/icons/)或[ai](https://jpswalsh.github.io/academicons/)两个包的主页找便是。 
