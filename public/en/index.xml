@@ -11,16 +11,6 @@
     <atom:link href="/en/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Role of advection for the ecosystem-atmosphere CO2 exchange of alpine grasslands</title>
-      <link>http://www.pzhao.org/en/talk/2017-04-27-egu/</link>
-      <pubDate>Fri, 28 Apr 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/en/talk/2017-04-27-egu/</guid>
-      <description>&lt;p&gt;2017-4-26, EGU.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>English Grammar in Use</title>
       <link>http://www.pzhao.org/en/post/2017-01-14-English-Grammar-in-Use/</link>
       <pubDate>Sat, 14 Jan 2017 21:13:14 +0000</pubDate>
@@ -799,26 +789,6 @@ by Raymond Murphy&lt;/p&gt;
     </item>
     
     <item>
-      <title>农业生态系统-大气之间的二氧化碳和能量交换</title>
-      <link>http://www.pzhao.org/en/talk/2016-12-00-jnu/</link>
-      <pubDate>Tue, 27 Dec 2016 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/en/talk/2016-12-00-jnu/</guid>
-      <description>&lt;p&gt;2016-12-27， 暨南大学质谱仪器与大气环境研究所学术讲座暨110周年校庆学术活动。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>农业生态系统-大气之间的二氧化碳和能量交换</title>
-      <link>http://www.pzhao.org/en/talk/2016-12-00-sysu/</link>
-      <pubDate>Mon, 26 Dec 2016 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/en/talk/2016-12-00-sysu/</guid>
-      <description>&lt;p&gt;2016-12-26， 中山大学青年学者论坛。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Improved data gap-filling schemes for estimation of net ecosystem exchange in typical East-Asian croplands</title>
       <link>http://www.pzhao.org/en/publication/zhao2016/</link>
       <pubDate>Fri, 01 Jul 2016 00:00:00 +0000</pubDate>
@@ -859,16 +829,6 @@ by Raymond Murphy&lt;/p&gt;
     </item>
     
     <item>
-      <title>The role of advection for CO2 exchange ﬂux over a mountainous grassland in the Alps</title>
-      <link>http://www.pzhao.org/en/talk/2016-04-00-egu/</link>
-      <pubDate>Thu, 28 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/en/talk/2016-04-00-egu/</guid>
-      <description>&lt;p&gt;2016-4-21, EGU.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>ScaleX</title>
       <link>http://www.pzhao.org/en/project/scalex/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
@@ -879,6 +839,46 @@ by Raymond Murphy&lt;/p&gt;
 &lt;p&gt;The TERENO—preAlpine observatory in mountainous terrain of Bavaria, Germany, includes three core grassland sites at different elevations (600, 750 and 860 m a.s.l), at which surface exchange fluxes are observed by eddy-covariance, lysimeters and chamber system clusters. The site arrangement represents a climatic gradient. Specific to the Fendt site is the addition of a hydro-meteorological observation network.&lt;/p&gt;
 
 &lt;p&gt;ScaleX was initiated by KIT IMK-IFU under direction of HaPe Schmid. Benjamin Wolf coordinated ScaleX until Feb 2016.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Advection</title>
+      <link>http://www.pzhao.org/en/project/fwf-advection/</link>
+      <pubDate>Mon, 01 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.pzhao.org/en/project/fwf-advection/</guid>
+      <description>&lt;p&gt;Austrian Science Fund (FWF): On the role of advection for the net carbon dioxide exchange of short-statured ecosystems in complex terrain.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Application of a multi-step error filter for post-processing atmospheric flux and meteorological basic data</title>
+      <link>http://www.pzhao.org/en/publication/lueers-2014/</link>
+      <pubDate>Tue, 01 Jul 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.pzhao.org/en/publication/lueers-2014/</guid>
+      <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt;&amp;rdquo;, &amp;ldquo;$\rm \LaTeX$ math code.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>GaFiR: a gap-filling package for ecosystem-atmosphere carbon dioxide flux and evapotranspiration data</title>
+      <link>http://www.pzhao.org/en/publication/zhao-2014/</link>
+      <pubDate>Tue, 01 Jul 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.pzhao.org/en/publication/zhao-2014/</guid>
+      <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt;&amp;rdquo;, &amp;ldquo;$\rm \LaTeX$ math code.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Documentation of the EVENT-HMMS experiment 2012: microclimatological effects of rain-out shelters within EVENT II. </title>
+      <link>http://www.pzhao.org/en/publication/babel-2013/</link>
+      <pubDate>Mon, 01 Jul 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.pzhao.org/en/publication/babel-2013/</guid>
+      <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt;&amp;rdquo;, &amp;ldquo;$\rm \LaTeX$ math code.&lt;/p&gt;
 </description>
     </item>
     
