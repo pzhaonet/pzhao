@@ -1,0 +1,6 @@
+@dapengde There is no need to push the public/ directory to Github. Actually I recommend you to ignore it in GIT: https://github.com/rbind/yihui/blob/master/.gitignore#L5 You can sepcify the build command on Netlify and your website will be automatically built: https://bookdown.org/yihui/blogdown/deployment.html
+
+
+public/; Netlify will build it for you using, say, hugo_0.19
+
+ I save my post figures in static/img/post
