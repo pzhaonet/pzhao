@@ -209,12 +209,12 @@ defaultContentLanguageInSubdir = true
 
 [[languages.zh.menu.main]]
   name = "新闻"
-  url = "http://www.pzhao.org/zh/tags/news"
+  url = "/tags/news"
   weight = 20
 
 [[languages.zh.menu.main]]
   name = "日志"
-  url = "http://www.pzhao.org/zh/tags/post"
+  url = "/tags/post"
   weight = 30
 
 [[languages.zh.menu.main]]
