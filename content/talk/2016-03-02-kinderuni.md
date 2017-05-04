@@ -1,17 +1,17 @@
-+++
+ï»¿+++
 date = "2016-03-02T00:00:00"
-title = "ÉúÌ¬Ñ§¼ÒµÄÒ°Íâ¹¤×÷"
+title = "ç”Ÿæ€å­¦å®¶çš„é‡å¤–å·¥ä½œ"
 abstract = ""
 abstract_short = ""
-event = "Ä³Ğ¡Çø¶ùÍ¯¿ÆÆÕ½²×ù"
+event = "æŸå°åŒºå„¿ç«¥ç§‘æ™®è®²åº§"
 event_url = ""
-location = "±±¾©"
+location = "åŒ—äº¬"
 
 selected = false
 math = true
 
-url_pdf = "/talk/2016-03-02-kinderuni-en.pdf"
-url_slides = ""
+url_pdf = ""
+url_slides = "/talk/2016-03-02-kinderuni-en.pdf"
 url_video = ""
 
 # Optional featured image (relative to `static/img/` folder).

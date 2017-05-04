@@ -1,0 +1,13 @@
+---
+title: "First advection campaign completed "
+author: 赵鹏
+date: '2015-11-13'
+slug: advection-mb1
+categories: []
+tags: ["pj-advection", "news"]
+summary: "![](http://www.biomet.co.at/wp/wp-content/uploads/2015/11/DSC06005-300x225.jpg)"
+---
+
+![](http://www.biomet.co.at/wp/wp-content/uploads/2015/11/DSC06005.jpg)
+
+Last week Peng, Albin, Kathi and Felix went back to Monte Bondone to dismantle the equipment of our first grassland advection campaign- looking forward to some exciting data!

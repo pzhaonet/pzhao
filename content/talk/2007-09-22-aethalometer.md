@@ -1,17 +1,17 @@
-+++
+ï»¿+++
 date = "2007-09-22T00:00:00"
-title = "AethalometerµÄ²Ù×÷¡¢Î¬»¤ºÍÎ¬ĞŞ"
+title = "Aethalometerçš„æ“ä½œã€ç»´æŠ¤å’Œç»´ä¿®"
 abstract = ""
 abstract_short = ""
-event = "ÖĞ¹úÆøÏó¾Ö´óÆø³É·Ö¹Û²âÍøÅàÑµ°à"
-event_url = ""
-location = "±±¾©"
+event = "ä¸­å›½æ°”è±¡å±€å¤§æ°”æˆåˆ†è§‚æµ‹ç½‘åŸ¹è®­ç­"
+event_url = "http://cadata.camscma.cn/news2/show.aspx?id=40&cid=5"
+location = "åŒ—äº¬"
 
 selected = false
 math = true
 
-url_pdf = "/talk/2007-09-22-aethalometer-en.pdf"
-url_slides = ""
+url_pdf = ""
+url_slides = "/talk/2007-09-22-aethalometer-en.pdf"
 url_video = ""
 
 # Optional featured image (relative to `static/img/` folder).

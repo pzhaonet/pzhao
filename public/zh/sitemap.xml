@@ -172,6 +172,22 @@
     
     
     <url>
+      <loc>http://www.pzhao.org/zh/post/advection-ns/</loc>
+      <lastmod>2016-10-08T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+      <loc>http://www.pzhao.org/zh/post/ecobot-ft/</loc>
+      <lastmod>2016-07-08T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
       <loc>http://www.pzhao.org/zh/publication/zhao2016/</loc>
       <lastmod>2016-07-01T00:00:00+00:00</lastmod>
     </url>
@@ -204,6 +220,14 @@
     
     
     <url>
+      <loc>http://www.pzhao.org/zh/post/advection-ft/</loc>
+      <lastmod>2016-06-30T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
       <loc>http://www.pzhao.org/zh/project/scalex/</loc>
       <lastmod>2016-04-27T00:00:00+00:00</lastmod>
     </url>
@@ -230,6 +254,38 @@
     <url>
       <loc>http://www.pzhao.org/zh/talk/2016-02-15-scalex/</loc>
       <lastmod>2016-02-15T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+      <loc>http://www.pzhao.org/zh/post/advection-mb1/</loc>
+      <lastmod>2015-11-13T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+      <loc>http://www.pzhao.org/zh/post/advection-mb/</loc>
+      <lastmod>2015-09-24T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+      <loc>http://www.pzhao.org/zh/post/biomet-hike/</loc>
+      <lastmod>2015-07-01T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+      <loc>http://www.pzhao.org/zh/post/egu-2015-photo/</loc>
+      <lastmod>2015-04-22T00:00:00+00:00</lastmod>
     </url>
     
   
@@ -332,14 +388,6 @@
     
     
     <url>
-      <loc>http://www.pzhao.org/zh/talk/2012-05-06-egu/</loc>
-      <lastmod>2012-05-06T00:00:00+00:00</lastmod>
-    </url>
-    
-  
-    
-    
-    <url>
       <loc>http://www.pzhao.org/zh/talk/2012-01-13-terreco/</loc>
       <lastmod>2012-01-13T00:00:00+00:00</lastmod>
     </url>
@@ -412,6 +460,22 @@
     
     
     <url>
+      <loc>http://www.pzhao.org/zh/talk/2010-08-06-haean/</loc>
+      <lastmod>2010-08-06T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+      <loc>http://www.pzhao.org/zh/talk/2010-05-06-egu/</loc>
+      <lastmod>2010-05-06T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
       <loc>http://www.pzhao.org/zh/talk/2010-04-12-terrecoworkshop/</loc>
       <lastmod>2010-04-12T00:00:00+00:00</lastmod>
     </url>
@@ -430,6 +494,14 @@
     <url>
       <loc>http://www.pzhao.org/zh/talk/2009-09-04-haeanaws/</loc>
       <lastmod>2009-09-04T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+      <loc>http://www.pzhao.org/zh/project/terreco/</loc>
+      <lastmod>2009-07-01T00:00:00+00:00</lastmod>
     </url>
     
   
@@ -502,6 +574,15 @@
     <url>
       <loc>http://www.pzhao.org/zh/talk/2005-06-16-defence/</loc>
       <lastmod>2005-06-16T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+      <loc>http://www.pzhao.org/zh/tags/</loc>
+      <lastmod>2009-07-01T00:00:00+00:00</lastmod>
+      <priority>0</priority>
     </url>
     
   
@@ -609,6 +690,15 @@
     <url>
       <loc>http://www.pzhao.org/zh/</loc>
       <lastmod>2016-04-20T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+      <loc>http://www.pzhao.org/zh/tags/pj-advection/</loc>
+      <lastmod>2016-10-08T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     

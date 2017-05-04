@@ -205,42 +205,52 @@ defaultContentLanguageInSubdir = true
 [[languages.zh.menu.main]]
   name = "主页"
   url = "#about"
-  weight = 1
+  weight = 10
 
 [[languages.zh.menu.main]]
   name = "新闻"
-  url = "#news"
-  weight = 2
+  url = "http://www.pzhao.org/zh/tags/news"
+  weight = 20
 
 [[languages.zh.menu.main]]
   name = "日志"
-  url = "#posts"
-  weight = 3
+  url = "http://www.pzhao.org/zh/tags/post"
+  weight = 30
 
 [[languages.zh.menu.main]]
   name = "论文"
   url = "#publications"
-  weight = 4
+  weight = 40
 
+[[languages.zh.menu.main]]
+  name = "报告"
+  url = "#talks"
+  weight = 45
+  
 [[languages.zh.menu.main]]
   name = "项目"
   url = "#projects"
-  weight = 5
+  weight = 50
 
 [[languages.zh.menu.main]]
   name = "教学"
   url = "#teaching"
-  weight = 6
+  weight = 60
 
+[[languages.zh.menu.main]]
+  name = "其他"
+  url = "#unclassified"
+  weight = 65
+  
 [[languages.zh.menu.main]]
   name = "搜索"
   url = "https://cse.google.com/cse/publicurl?cx=006346710622437628329:nxozn9fijm0"
-  weight = 7
+  weight = 70
 
 [[languages.zh.menu.main]]
   name = "EN"
   url = "../en"
-  weight = 8
+  weight = 80
 
 # Taxonomies.
 [taxonomies]

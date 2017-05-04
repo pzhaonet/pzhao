@@ -5,7 +5,7 @@
 date = "2016-04-20T00:00:00"
 draft = false
 
-title = "业余作品"
+title = "其他"
 subtitle = ""
 widget = "custom"
 
@@ -31,3 +31,9 @@ weight = 65
 - [Guitar bookdown](https://bookdown.org/baydap/bdguitar/)
 
 - [群英谱](https://bookdown.org/baydap/qyp/)
+
+### 下载区
+
+- [北京大学硕士博士学位论文模板(word)](/download/template_thesis.dot)
+
+- [拜罗伊特大学硕士博士学位论文模板(LaTeX)](/download/template_thesis.zip)
