@@ -34,10 +34,10 @@ weight = 65
 
 ### 下载区
 
-- [硕士博士学位论文模板(word，中文)](/download/template_thesis_word.dot)
+- [硕士博士学位论文模板 (word，中文)](/download/template_thesis_word.dot)
 
-- [硕士博士学位论文模板(LaTeX，英文)](/download/template_thesis_tex.zip)
+- [硕士博士学位论文模板 (LaTeX，英文)](/download/template_thesis_tex.zip)
 
-- [硕士博士学位论文模板(R bookdown，中文)](https://github.com/dapengde/bookdown-thesis/archive/master.zip)
+- [硕士博士学位论文模板 (R bookdown，中文)](https://github.com/dapengde/bookdown-thesis/archive/master.zip)
 
-- [“告别德国”明信片模板(LaTeX)](/download/template_postcard.potx)
+- [“告别德国”明信片模板 (LaTeX)](/download/template_postcard.potx)
