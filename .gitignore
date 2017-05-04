@@ -2,7 +2,7 @@
 .Rhistory
 .RData
 .Ruserdata
-public
+public/
 
 # Windows image file caches
 Thumbs.db
