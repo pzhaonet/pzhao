@@ -1,1 +1,0 @@
-"D:\Program Files\R\bin\R.exe" CMD BATCH --vanilla --slave ".\start.R"

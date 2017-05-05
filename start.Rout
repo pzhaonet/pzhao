@@ -1,7 +1,0 @@
-Error: pandoc version 1.12.3 or higher is required and was not found (see the help page ?rmarkdown::pandoc_available).
-Execution halted
-Error in render_page(f) : Failed to render '2017-04-11_r-blogdown.Rmd'
-Calls: <Anonymous> -> build_rmds -> in_dir -> render_page
-In addition: Warning message:
-running command '"D:/PROGRA~1/R/bin/x64/Rscript" "D:/Program Files/R/library/blogdown/scripts/render_page.R" "2017-04-11_r-blogdown.Rmd"' had status 1 
-Execution halted
