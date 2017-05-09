@@ -10,6 +10,131 @@
     <atom:link href="/zh/tags/r/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>bookdown&#43;: 用 R bookdown 写期刊论文、日记、信件、日历、吉他书、化学方程式</title>
+      <link>http://www.pzhao.org/zh/post/bookdown-plus/</link>
+      <pubDate>Tue, 09 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.pzhao.org/zh/post/bookdown-plus/</guid>
+      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
+&lt;!-- /BLOGDOWN-HEAD --&gt;
+
+&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
+&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
+&lt;p&gt;R bookdown 能做的事情很多，可是那些功能迟迟不来，我只好自己动手，写了个 &lt;a href=&#34;https://github.com/dapengde/bookdown-plus&#34;&gt;bookdown+&lt;/a&gt;，目前大体实现了用 bookdown 写期刊论文、化学分子式、信件、日记、日历等功能。当然，有些还没完全实现，革命不够彻底，带着浓重的&lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt;旧社会的气息。革命尚未成功，同志仍需努力。&lt;/p&gt;
+&lt;p&gt;下面是 &lt;a href=&#34;https://github.com/dapengde/bookdown-plus&#34;&gt;bookdown+&lt;/a&gt; 的简介和快速使用方法，目前我只写了个英文版。择吉日再翻译成中文。&lt;/p&gt;
+&lt;div id=&#34;introduction&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/dapengde/bookdown-plus&#34;&gt;bookdown+&lt;/a&gt;? Hmm…sounds like something related to the R package &lt;code&gt;bookdown&lt;/code&gt;?&lt;/p&gt;
+&lt;p&gt;Yes, you &lt;em&gt;R&lt;/em&gt; right. Everyone knows that &lt;code&gt;bookdown&lt;/code&gt; is an excellent package for authoring books on programming languages. But it is only one side of the coin. It can do more. &lt;code&gt;bookdown&lt;/code&gt; smells like a tasty cake. I have been waiting and waiting, but nobody cuts it for me. Fine. Now I am helping myself. Therefore I am developing &lt;a href=&#34;https://github.com/dapengde/bookdown-plus&#34;&gt;bookdown+&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/dapengde/bookdown-plus&#34;&gt;bookdown+&lt;/a&gt; is an extension of &lt;code&gt;bookdown&lt;/code&gt;. It is a collection of multiple templates, which I collected years ago on the basis of &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt;, and have been tailoring them so that I can work happily under the umbrella of &lt;code&gt;bookdown&lt;/code&gt;. &lt;a href=&#34;https://github.com/dapengde/bookdown-plus&#34;&gt;bookdown+&lt;/a&gt; shows you the other side of the coin, which helps you write academic journal articles, guitar books, chemical equations, mails, calendars, and diaries.&lt;/p&gt;
+&lt;p&gt;I believe some official bookdown templates will be available in the near future, but I cannot wait. Can you?&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;showcase&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Showcase&lt;/h1&gt;
+&lt;p&gt;With &lt;a href=&#34;https://github.com/dapengde/bookdown-plus&#34;&gt;bookdown+&lt;/a&gt; you can&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;record guitar chords,&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://github.com/dapengde/bookdown-plus/raw/master/showcase/bookdown+guitar.png&#34; /&gt;
+
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;write a mail in an elegant layout,&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://github.com/dapengde/bookdown-plus/raw/master/showcase/bookdown+mail.png&#34; /&gt;
+
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;write a laboratory journal, or a personal diary,&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://github.com/dapengde/bookdown-plus/raw/master/showcase/bookdown+journal.png&#34; /&gt;
+
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;draw a monthly or weekly or conference calendar,&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://github.com/dapengde/bookdown-plus/raw/master/showcase/bookdown+calendar.png&#34; /&gt;
+
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;and, of course, write academic articles in your favourite way,&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://github.com/dapengde/bookdown-plus/raw/master/showcase/bookdown+article.png&#34; /&gt;
+
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;with chemical molecular formulae and equations,&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://github.com/dapengde/bookdown-plus/raw/master/showcase/bookdown+chem.png&#34; /&gt;
+
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;even in Chinese,&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://github.com/dapengde/bookdown-plus/raw/master/showcase/bookdown+articlezh.png&#34; /&gt;
+
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;and more wonders will come soon.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;quick-start&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Quick start&lt;/h1&gt;
+&lt;div id=&#34;step-0.-preparation&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Step 0. Preparation&lt;/h2&gt;
+&lt;p&gt;Before starting, you have to install R, RStudio, bookdown package, and other software and packages (i.e. &lt;code&gt;Pandoc&lt;/code&gt;, &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt;, &lt;code&gt;rmarkdown&lt;/code&gt;, &lt;code&gt;rticle&lt;/code&gt;, &lt;code&gt;knitr&lt;/code&gt;, etc.) which bookdown depends on. See the &lt;a href=&#34;https://bookdown.org/yihui/bookdown/&#34;&gt;official manual of bookdown&lt;/a&gt; for details.&lt;/p&gt;
+&lt;p&gt;If you are ready, &lt;a href=&#34;https://github.com/dapengde/bookdown-plus/archive/master.zip&#34;&gt;download &lt;code&gt;bookdown+&lt;/code&gt;&lt;/a&gt; package as a zip file from Github. Unzip it to a folder in your PC. You will find a file named &lt;code&gt;start.Rproj&lt;/code&gt;. Double click it, and it will be opened by RStudio.&lt;/p&gt;
+&lt;p&gt;OK, now you can see a &lt;code&gt;_runme.R&lt;/code&gt; file as well. Open it and run the script, or follow my explanation as follows,&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;step-1.-title-and-author&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Step 1. Title and author&lt;/h2&gt;
+&lt;p&gt;Specify the title and the author of your book, article, guitar book, or whatever.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;title &amp;lt;- &amp;#39;bookdown+: Authoring Articles, Mails, Guitar books, Chemical Molecular Formulae and Equations with R bookdown&amp;#39;
+author &amp;lt;- &amp;#39;Peng Zhao&amp;#39;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;step-2-template&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Step 2: Template&lt;/h2&gt;
+&lt;p&gt;Choose a template out of the available templates.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;templates  &amp;lt;- c(&amp;#39;article&amp;#39;,     #1, academic article
+                &amp;#39;article_zh&amp;#39;,  #2, academic article in Chinese
+                &amp;#39;calendar&amp;#39;,    #3, calendar, in progress
+                &amp;#39;chemistry&amp;#39;,   #4, chemical molecular formulae and equations
+                &amp;#39;chemistry_zh&amp;#39;,#5, in Chinese,
+                &amp;#39;guitar&amp;#39;,      #6, guitar book
+                &amp;#39;mail&amp;#39;,        #7, mail, in progress
+                &amp;#39;journal&amp;#39;,     #8, laboratory journal, or personal diary
+                &amp;#39;mini&amp;#39;,        #9, a mini demo by Yihui
+                &amp;#39;original&amp;#39;,    #10, the original demo by Yihui
+                &amp;#39;book_zh&amp;#39;      #11, the demo in Chinese by Yihui
+)
+template &amp;lt;- templates[8]&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Run &lt;code&gt;fun/build.R&lt;/code&gt;, and you will get necessary files for further editing.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;source(&amp;#39;fun/build.R&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;step-3-write-and-build&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Step 3: Write and Build&lt;/h2&gt;
+&lt;p&gt;Now you can press &lt;code&gt;ctrl+shift+b&lt;/code&gt; to build a template book, which you can find in &lt;code&gt;book/&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Write your own text in &lt;code&gt;body.Rmd&lt;/code&gt;, and build your own lovely book.&lt;/p&gt;
+&lt;p&gt;Have fun!&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;updates&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Updates&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;2017-05-09, Version 0.1. A very preliminary version. This package is based on many other people’s excellent contributions, which I have not cited yet.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>R vs Python: 2017年欧洲地学年会</title>
       <link>http://www.pzhao.org/zh/post/egu2017/</link>
       <pubDate>Thu, 20 Apr 2017 00:00:00 +0000</pubDate>
