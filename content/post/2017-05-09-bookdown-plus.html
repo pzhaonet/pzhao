@@ -1,9 +1,9 @@
 ---
-title: 'bookdown+: 用 R bookdown 写期刊论文、日记、信件、日历、吉他书、化学方程式'
+title: 'R bookdown+: 用 R bookdown 写期刊论文、日记、信件、日历、吉他书、化学方程式'
 author: "赵鹏"
 date: '2017-05-09'
 slug: bookdown-plus
-summary: "R bookdown 能做的事情很多，可是那些功能迟迟不来，我只好自己动手，写了个 bookdown+."
+summary: "我对R bookdown做了两件事：功能上增强，操作上简化, 这就是R bookdown+。"
 tags:
 - R
 - bookdown
@@ -17,87 +17,40 @@ categories: []
 <!-- BLOGDOWN-BODY-BEFORE -->
 <!-- /BLOGDOWN-BODY-BEFORE -->
 <p>R bookdown 能做的事情很多，可是那些功能迟迟不来，我只好自己动手，写了个 <a href="https://github.com/dapengde/bookdown-plus">bookdown+</a>，目前大体实现了用 bookdown 写期刊论文、化学分子式、信件、日记、日历等功能。当然，有些还没完全实现，革命不够彻底，带着浓重的<span class="math inline">\(\LaTeX\)</span>旧社会的气息。革命尚未成功，同志仍需努力。</p>
-<p>下面是 <a href="https://github.com/dapengde/bookdown-plus">bookdown+</a> 的简介和快速使用方法，目前我只写了个英文版。择吉日再翻译成中文。</p>
-<div id="introduction" class="section level1">
-<h1>Introduction</h1>
-<p><a href="https://github.com/dapengde/bookdown-plus">bookdown+</a>? Hmm…sounds like something related to the R package <code>bookdown</code>?</p>
-<p>Yes, you <em>R</em> right. Everyone knows that <code>bookdown</code> is an excellent package for authoring books on programming languages. But it is only one side of the coin. It can do more. <code>bookdown</code> smells like a tasty cake. I have been waiting and waiting, but nobody cuts it for me. Fine. Now I am helping myself. Therefore I am developing <a href="https://github.com/dapengde/bookdown-plus">bookdown+</a>.</p>
-<p><a href="https://github.com/dapengde/bookdown-plus">bookdown+</a> is an extension of <code>bookdown</code>. It is a collection of multiple templates, which I collected years ago on the basis of <span class="math inline">\(\LaTeX\)</span>, and have been tailoring them so that I can work happily under the umbrella of <code>bookdown</code>. <a href="https://github.com/dapengde/bookdown-plus">bookdown+</a> shows you the other side of the coin, which helps you write academic journal articles, guitar books, chemical equations, mails, calendars, and diaries.</p>
-<p>I believe some official bookdown templates will be available in the near future, but I cannot wait. Can you?</p>
-</div>
-<div id="showcase" class="section level1">
-<h1>Showcase</h1>
-<p>With <a href="https://github.com/dapengde/bookdown-plus">bookdown+</a> you can</p>
+<p>下面是 <a href="https://github.com/dapengde/bookdown-plus">bookdown+</a> 的简介和快速使用方法。</p>
+<div id="-intro" class="section level1">
+<h1>背景 {intro}</h1>
+<p><a href="https://github.com/dapengde/bookdown-plus">R bookdown+</a>，听起来像是跟R<span class="citation">[@R-base]</span>的扩展包<code>bookdown</code><span class="citation">[@R-bookdown]</span>有关吧?</p>
+<p>一点没错！我们知道，<code>bookdown</code>天生是个用来写编程书籍的称手工具。只是，这仅仅是硬币的一面。<code>bookdown</code>的功能远远不止如此。它就像一个美味的蛋糕，我等啊等啊，等着谁把它切开，实在等不及了，就自己下手吧。所以，我弄了个<a href="https://github.com/dapengde/bookdown-plus">bookdown+</a>。</p>
+<p><a href="https://github.com/dapengde/bookdown-plus">bookdown+</a>是<code>bookdown</code>的扩展。我数年前收集了一些<span class="math inline">\(\LaTeX\)</span>模板，现在我把他们整理到<a href="https://github.com/dapengde/bookdown-plus">bookdown+</a>里，这样就可以开开心心在<code>bookdown</code>的环境里做喜欢的事情。<a href="https://github.com/dapengde/bookdown-plus">bookdown+</a> 展示了硬币的另一面：你可以用它来写写期刊论文、化学分子式、信件、日历、甚至日记。</p>
+<p>另一方面，我从个人角度对<code>bookdown</code>的使用做了简化。官方提供的<code>bookdown</code>模板虽然很好用，但对新手来说略显繁琐，需要：</p>
 <ul>
-<li>record guitar chords,</li>
+<li>在<code>index.Rmd</code>和<code>_output.yml</code>两个文件里设置yaml，</li>
+<li>需要在<code>_bookdown.yml</code>里设置文件名；</li>
+<li>对中文用户来说，还得跟LaTeX打交道，需要考虑<code>before_body.tex</code>, <code>after_body</code>, <code>preamble.tex</code>里面的设置。</li>
 </ul>
-<div class="figure">
-<img src="https://github.com/dapengde/bookdown-plus/raw/master/showcase/bookdown+guitar.png" />
-
+<p>这些操作可能让新手望而生畏。</p>
+<p><a href="https://github.com/dapengde/bookdown-plus">R bookdown+</a>用起来就容易多了，只需在一个叫做<code>_runme.R</code>的文件里设置好书名、作者，选好模板，binggo！就可以开始放心写自己的文字了。</p>
+<p>功能扩展，操作简化，这就是<a href="https://github.com/dapengde/bookdown-plus">R bookdown+</a>。</p>
+<p>在不久的未来，肯定会出现很多官方的bookdown模板，但是我不想等了。你要是也等不及，就跟我来一起使用或开发[bookdown+]吧！</p>
 </div>
-<ul>
-<li>write a mail in an elegant layout,</li>
-</ul>
-<div class="figure">
-<img src="https://github.com/dapengde/bookdown-plus/raw/master/showcase/bookdown+mail.png" />
-
+<div id="-quick" class="section level1">
+<h1>快速入门 {quick}</h1>
+<div id="-step0" class="section level2">
+<h2>预备 {step0}</h2>
+<p>在开始前，你需要安装 R, RStudio, bookdown，和其他依赖的软件和包(例如 <code>Pandoc</code>, <span class="math inline">\(\LaTeX\)</span>, <code>rmarkdown</code>, <code>rticle</code>, <code>knitr</code>等)。详见<a href="https://bookdown.org/yihui/bookdown/">bookdown官方手册</a>.</p>
+<p>准备好后，从Github<a href="https://github.com/dapengde/bookdown-plus/archive/master.zip">下载<code>bookdown+</code></a>压缩文件。解压缩到你的电脑里，在得到的文件夹里找到 <code>_start.Rproj</code>文件，双击就会在RStudio里打开一个项目。</p>
+<p>文件夹里还有个<code>_runme.R</code>文件。你可以双击打开并运行。下面是对这个文件里代码的详细解释。</p>
 </div>
-<ul>
-<li>write a laboratory journal, or a personal diary,</li>
-</ul>
-<div class="figure">
-<img src="https://github.com/dapengde/bookdown-plus/raw/master/showcase/bookdown+journal.png" />
-
-</div>
-<ul>
-<li>draw a monthly or weekly or conference calendar,</li>
-</ul>
-<div class="figure">
-<img src="https://github.com/dapengde/bookdown-plus/raw/master/showcase/bookdown+calendar.png" />
-
-</div>
-<ul>
-<li>and, of course, write academic articles in your favourite way,</li>
-</ul>
-<div class="figure">
-<img src="https://github.com/dapengde/bookdown-plus/raw/master/showcase/bookdown+article.png" />
-
-</div>
-<ul>
-<li>with chemical molecular formulae and equations,</li>
-</ul>
-<div class="figure">
-<img src="https://github.com/dapengde/bookdown-plus/raw/master/showcase/bookdown+chem.png" />
-
-</div>
-<ul>
-<li>even in Chinese,</li>
-</ul>
-<div class="figure">
-<img src="https://github.com/dapengde/bookdown-plus/raw/master/showcase/bookdown+articlezh.png" />
-
-</div>
-<ul>
-<li>and more wonders will come soon.</li>
-</ul>
-</div>
-<div id="quick-start" class="section level1">
-<h1>Quick start</h1>
-<div id="step-0.-preparation" class="section level2">
-<h2>Step 0. Preparation</h2>
-<p>Before starting, you have to install R, RStudio, bookdown package, and other software and packages (i.e. <code>Pandoc</code>, <span class="math inline">\(\LaTeX\)</span>, <code>rmarkdown</code>, <code>rticle</code>, <code>knitr</code>, etc.) which bookdown depends on. See the <a href="https://bookdown.org/yihui/bookdown/">official manual of bookdown</a> for details.</p>
-<p>If you are ready, <a href="https://github.com/dapengde/bookdown-plus/archive/master.zip">download <code>bookdown+</code></a> package as a zip file from Github. Unzip it to a folder in your PC. You will find a file named <code>start.Rproj</code>. Double click it, and it will be opened by RStudio.</p>
-<p>OK, now you can see a <code>_runme.R</code> file as well. Open it and run the script, or follow my explanation as follows,</p>
-</div>
-<div id="step-1.-title-and-author" class="section level2">
-<h2>Step 1. Title and author</h2>
-<p>Specify the title and the author of your book, article, guitar book, or whatever.</p>
+<div id="1-step1" class="section level2">
+<h2>第1步：标题和作者 {step1}</h2>
+<p>改成你自己书的标题和作者名。</p>
 <pre class="r"><code>title &lt;- &#39;bookdown+: Authoring Articles, Mails, Guitar books, Chemical Molecular Formulae and Equations with R bookdown&#39;
 author &lt;- &#39;Peng Zhao&#39;</code></pre>
 </div>
-<div id="step-2-template" class="section level2">
-<h2>Step 2: Template</h2>
-<p>Choose a template out of the available templates.</p>
+<div id="2--step2" class="section level2">
+<h2>第2步: 模板 {step2}</h2>
+<p>在给定的可用模板里选择你想要的。这里我们选第8个。</p>
 <pre class="r"><code>templates  &lt;- c(&#39;article&#39;,     #1, academic article
                 &#39;article_zh&#39;,  #2, academic article in Chinese
                 &#39;calendar&#39;,    #3, calendar, in progress
@@ -111,19 +64,44 @@ author &lt;- &#39;Peng Zhao&#39;</code></pre>
                 &#39;book_zh&#39;      #11, the demo in Chinese by Yihui
 )
 template &lt;- templates[8]</code></pre>
-<p>Run <code>fun/build.R</code>, and you will get necessary files for further editing.</p>
+<p>运行 <code>fun/build.R</code>。</p>
 <pre class="r"><code>source(&#39;fun/build.R&#39;)</code></pre>
 </div>
-<div id="step-3-write-and-build" class="section level2">
-<h2>Step 3: Write and Build</h2>
-<p>Now you can press <code>ctrl+shift+b</code> to build a template book, which you can find in <code>book/</code>.</p>
-<p>Write your own text in <code>body.Rmd</code>, and build your own lovely book.</p>
-<p>Have fun!</p>
+<div id="3--step3" class="section level2">
+<h2>第3步: 成书 {step3}</h2>
+<p>现在按下 <code>ctrl+shift+b</code> 快捷键，你就会在新生成的<code>book/</code>文件里找到一本示例书。打开看看吧！</p>
+<p>你自己的文字只需在<code>body.Rmd</code>修改，写完后重复本步即可。</p>
+<p>祝你玩得愉快！</p>
 </div>
 </div>
-<div id="updates" class="section level1">
-<h1>Updates</h1>
-<ul>
-<li>2017-05-09, Version 0.1. A very preliminary version. This package is based on many other people’s excellent contributions, which I have not cited yet.</li>
-</ul>
+<div id="-ss" class="section level1">
+<h1>截图 {ss}</h1>
+<div class="figure">
+<img src="https://github.com/dapengde/bookdown-plus/raw/master/showcase/bookdown+guitar.png" />
+
+</div>
+<div class="figure">
+<img src="https://github.com/dapengde/bookdown-plus/raw/master/showcase/bookdown+mail.png" />
+
+</div>
+<div class="figure">
+<img src="https://github.com/dapengde/bookdown-plus/raw/master/showcase/bookdown+journal.png" />
+
+</div>
+<div class="figure">
+<img src="https://github.com/dapengde/bookdown-plus/raw/master/showcase/bookdown+calendar.png" />
+
+</div>
+<div class="figure">
+<img src="https://github.com/dapengde/bookdown-plus/raw/master/showcase/bookdown+article.png" />
+
+</div>
+<div class="figure">
+<img src="https://github.com/dapengde/bookdown-plus/raw/master/showcase/bookdown+chem.png" />
+
+</div>
+<div class="figure">
+<img src="https://github.com/dapengde/bookdown-plus/raw/master/showcase/bookdown+articlezh.png" />
+
+</div>
 </div>
