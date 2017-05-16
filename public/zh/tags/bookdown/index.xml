@@ -20,11 +20,11 @@
 
 &lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
 &lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
-&lt;p&gt;&lt;strong&gt;注意：本文所述的&lt;code&gt;bookdown+&lt;/code&gt;这个项目已经停止开发，继承者是我新开的R包项目&lt;a href=&#34;https://github.com/pzhaonet/bookdownplus&#34;&gt;bookdownplus&lt;/a&gt; 这是因为我学会了写R包。当然，说不定有些朋友不喜欢安装R包，喜欢下载个文件夹直接免安装用，那么本文所述的方法仍然可以继续使用，只是我不再更新了而已。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注意：本文所述的&lt;code&gt;bookdown+&lt;/code&gt;这个项目已经停止开发，继承者是我新开的R包项目&lt;a href=&#34;https://github.com/pzhaonet/bookdownplus&#34;&gt;bookdownplus&lt;/a&gt; ，这是因为我学会了写R包。当然，说不定有些朋友不喜欢安装R包，喜欢下载个文件夹直接免安装用，那么本文所述的方法仍然可以继续使用，只是我不再更新了而已。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;R bookdown 能做的事情很多，可是那些功能迟迟不来，我只好自己动手，写了个 &lt;a href=&#34;https://github.com/pzhaonet/bookdown-plus&#34;&gt;bookdown+&lt;/a&gt;，目前大体实现了用 bookdown 写期刊论文、化学分子式、信件、日记、日历等功能。当然，有些还没完全实现，革命不够彻底，带着浓重的&lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt;旧社会的气息。革命尚未成功，同志仍需努力。&lt;/p&gt;
 &lt;p&gt;下面是 &lt;a href=&#34;https://github.com/pzhaonet/bookdown-plus&#34;&gt;bookdown+&lt;/a&gt; 的简介和快速使用方法。&lt;/p&gt;
-&lt;div id=&#34;-intro&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;背景 {intro}&lt;/h1&gt;
+&lt;div class=&#34;section level1&#34;&gt;
+&lt;h1&gt;背景&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/pzhaonet/bookdown-plus&#34;&gt;R bookdown+&lt;/a&gt;，听起来像是跟R&lt;span class=&#34;citation&#34;&gt;[@R-base]&lt;/span&gt;的扩展包&lt;code&gt;bookdown&lt;/code&gt;&lt;span class=&#34;citation&#34;&gt;[@R-bookdown]&lt;/span&gt;有关吧?&lt;/p&gt;
 &lt;p&gt;一点没错！我们知道，&lt;code&gt;bookdown&lt;/code&gt;天生是个用来写编程书籍的称手工具。只是，这仅仅是硬币的一面。&lt;code&gt;bookdown&lt;/code&gt;的功能远远不止如此。它就像一个美味的蛋糕，我等啊等啊，等着谁把它切开，实在等不及了，就自己下手吧。所以，我弄了个&lt;a href=&#34;https://github.com/pzhaonet/bookdown-plus&#34;&gt;bookdown+&lt;/a&gt;。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/pzhaonet/bookdown-plus&#34;&gt;bookdown+&lt;/a&gt;是&lt;code&gt;bookdown&lt;/code&gt;的扩展。我数年前收集了一些&lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt;模板，现在我把他们整理到&lt;a href=&#34;https://github.com/pzhaonet/bookdown-plus&#34;&gt;bookdown+&lt;/a&gt;里，这样就可以开开心心在&lt;code&gt;bookdown&lt;/code&gt;的环境里做喜欢的事情。&lt;a href=&#34;https://github.com/pzhaonet/bookdown-plus&#34;&gt;bookdown+&lt;/a&gt; 展示了硬币的另一面：你可以用它来写写期刊论文、化学分子式、信件、日历、甚至日记。&lt;/p&gt;
@@ -39,10 +39,10 @@
 &lt;p&gt;功能扩展，操作简化，这就是&lt;a href=&#34;https://github.com/pzhaonet/bookdown-plus&#34;&gt;R bookdown+&lt;/a&gt;。&lt;/p&gt;
 &lt;p&gt;在不久的未来，肯定会出现很多官方的bookdown模板，但是我不想等了。你要是也等不及，就跟我来一起使用或开发[bookdown+]吧！&lt;/p&gt;
 &lt;/div&gt;
-&lt;div id=&#34;-quick&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;快速入门 {quick}&lt;/h1&gt;
-&lt;div id=&#34;-step0&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;预备 {step0}&lt;/h2&gt;
+&lt;div class=&#34;section level1&#34;&gt;
+&lt;h1&gt;快速入门&lt;/h1&gt;
+&lt;div class=&#34;section level2&#34;&gt;
+&lt;h2&gt;预备&lt;/h2&gt;
 &lt;p&gt;在开始前，你需要安装 R, RStudio, bookdown，和其他依赖的软件和包(例如 &lt;code&gt;Pandoc&lt;/code&gt;, &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt;, &lt;code&gt;rmarkdown&lt;/code&gt;, &lt;code&gt;rticle&lt;/code&gt;, &lt;code&gt;knitr&lt;/code&gt;等)。详见&lt;a href=&#34;https://bookdown.org/yihui/bookdown/&#34;&gt;bookdown官方手册&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;准备好后，从Github&lt;a href=&#34;https://github.com/pzhaonet/bookdown-plus/archive/master.zip&#34;&gt;下载&lt;code&gt;bookdown+&lt;/code&gt;&lt;/a&gt;压缩文件。解压缩到你的电脑里，在得到的文件夹里找到 &lt;code&gt;_start.Rproj&lt;/code&gt;文件，双击就会在RStudio里打开一个项目。&lt;/p&gt;
 &lt;p&gt;文件夹里还有个&lt;code&gt;_runme.R&lt;/code&gt;文件。你可以双击打开并运行。下面是对这个文件里代码的详细解释。&lt;/p&gt;
@@ -80,125 +80,125 @@ template &amp;lt;- templates[8]&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;section level1&#34;&gt;
-&lt;h1&gt;效果展示&lt;/h1&gt;
+&lt;h1&gt;模板效果展示&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;article&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;showcase/bookdown+article.jpg&#34; /&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+article.jpg&#34; /&gt;
 
 &lt;/div&gt;
 &lt;ul&gt;
 &lt;li&gt;article_mdpi1&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;showcase/bookdown+article_mdpi.jpg&#34; /&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+article_mdpi.jpg&#34; /&gt;
 
 &lt;/div&gt;
 &lt;ul&gt;
 &lt;li&gt;article_zh&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;showcase/bookdown+article_zh.jpg&#34; /&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+article_zh.jpg&#34; /&gt;
 
 &lt;/div&gt;
 &lt;ul&gt;
 &lt;li&gt;calendar&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;showcase/bookdown+calendar.jpg&#34; /&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+calendar.jpg&#34; /&gt;
 
 &lt;/div&gt;
 &lt;ul&gt;
 &lt;li&gt;chemistry&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;showcase/bookdown+chemistry.jpg&#34; /&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+chemistry.jpg&#34; /&gt;
 
 &lt;/div&gt;
 &lt;ul&gt;
 &lt;li&gt;guitar&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;showcase/bookdown+guitar.jpg&#34; /&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+guitar.jpg&#34; /&gt;
 
 &lt;/div&gt;
 &lt;ul&gt;
 &lt;li&gt;journal&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;showcase/bookdown+journal.jpg&#34; /&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+journal.jpg&#34; /&gt;
 
 &lt;/div&gt;
 &lt;ul&gt;
 &lt;li&gt;mail&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;showcase/bookdown+mail.jpg&#34; /&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+mail.jpg&#34; /&gt;
 
 &lt;/div&gt;
 &lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;showcase/bookdown+mail2.png&#34; /&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+mail2.png&#34; /&gt;
 
 &lt;/div&gt;
 &lt;ul&gt;
 &lt;li&gt;poem&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;showcase/bookdown+poem.jpg&#34; /&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+poem.jpg&#34; /&gt;
 
 &lt;/div&gt;
 &lt;ul&gt;
 &lt;li&gt;thesis_classic&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;showcase/bookdown+thesis_classic.jpg&#34; /&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+thesis_classic.jpg&#34; /&gt;
 
 &lt;/div&gt;
 &lt;ul&gt;
 &lt;li&gt;thesis_ubt&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;showcase/bookdown+thesis_ubt.jpg&#34; /&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+thesis_ubt.jpg&#34; /&gt;
 
 &lt;/div&gt;
 &lt;ul&gt;
 &lt;li&gt;thesis_zju&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;showcase/bookdown+thesis_zju.jpg&#34; /&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+thesis_zju.jpg&#34; /&gt;
 
 &lt;/div&gt;
 &lt;ul&gt;
 &lt;li&gt;yihui_demo&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;showcase/bookdown+yihui_demo.jpg&#34; /&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+yihui_demo.jpg&#34; /&gt;
 
 &lt;/div&gt;
 &lt;ul&gt;
 &lt;li&gt;yihui_mini&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;showcase/bookdown+yihui_mini.jpg&#34; /&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+yihui_mini.jpg&#34; /&gt;
 
 &lt;/div&gt;
 &lt;ul&gt;
 &lt;li&gt;yihui_zh&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;showcase/bookdown+yihui_zh.jpg&#34; /&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+yihui_zh.jpg&#34; /&gt;
 
 &lt;/div&gt;
 &lt;ul&gt;
 &lt;li&gt;poster&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;showcase/bookdown+poster_ocean.jpg&#34; /&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+poster_ocean.jpg&#34; /&gt;
 
 &lt;/div&gt;
 &lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;showcase/bookdown+poster_eco.jpg&#34; /&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+poster_eco.jpg&#34; /&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;

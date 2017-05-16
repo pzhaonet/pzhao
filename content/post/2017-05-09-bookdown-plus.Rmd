@@ -11,13 +11,13 @@ tags:
 categories: []
 ---
 
-**注意：本文所述的`bookdown+`这个项目已经停止开发，继承者是我新开的R包项目[bookdownplus](https://github.com/pzhaonet/bookdownplus) 这是因为我学会了写R包。当然，说不定有些朋友不喜欢安装R包，喜欢下载个文件夹直接免安装用，那么本文所述的方法仍然可以继续使用，只是我不再更新了而已。**
+**注意：本文所述的`bookdown+`这个项目已经停止开发，继承者是我新开的R包项目[bookdownplus](https://github.com/pzhaonet/bookdownplus) ，这是因为我学会了写R包。当然，说不定有些朋友不喜欢安装R包，喜欢下载个文件夹直接免安装用，那么本文所述的方法仍然可以继续使用，只是我不再更新了而已。**
 
 R bookdown 能做的事情很多，可是那些功能迟迟不来，我只好自己动手，写了个 [bookdown+](https://github.com/pzhaonet/bookdown-plus)，目前大体实现了用 bookdown 写期刊论文、化学分子式、信件、日记、日历等功能。当然，有些还没完全实现，革命不够彻底，带着浓重的$\LaTeX$旧社会的气息。革命尚未成功，同志仍需努力。
 
 下面是 [bookdown+](https://github.com/pzhaonet/bookdown-plus) 的简介和快速使用方法。
 
-# 背景 {intro}
+# 背景
 
 [R bookdown+](https://github.com/pzhaonet/bookdown-plus)，听起来像是跟R[@R-base]的扩展包`bookdown`[@R-bookdown]有关吧? 
 
@@ -39,9 +39,9 @@ R bookdown 能做的事情很多，可是那些功能迟迟不来，我只好自
 
 在不久的未来，肯定会出现很多官方的bookdown模板，但是我不想等了。你要是也等不及，就跟我来一起使用或开发[bookdown+]吧！
 
-# 快速入门 {quick}
+# 快速入门
 
-## 预备 {step0}
+## 预备
 
 在开始前，你需要安装 R, RStudio, bookdown，和其他依赖的软件和包(例如 `Pandoc`, \(\LaTeX\), `rmarkdown`, `rticle`, `knitr`等)。详见[bookdown官方手册](https://bookdown.org/yihui/bookdown/).
 
@@ -92,72 +92,72 @@ source('fun/build.R')
 
 祝你玩得愉快！
 
-# 效果展示
+# 模板效果展示
 
 - article
 
-![](showcase/bookdown+article.jpg)
+![](https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+article.jpg)
 
 - article_mdpi1
 
-![](showcase/bookdown+article_mdpi.jpg)
+![](https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+article_mdpi.jpg)
 
 - article_zh
 
-![](showcase/bookdown+article_zh.jpg)
+![](https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+article_zh.jpg)
 
 - calendar
 
-![](showcase/bookdown+calendar.jpg)
+![](https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+calendar.jpg)
 
 - chemistry
 
-![](showcase/bookdown+chemistry.jpg)
+![](https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+chemistry.jpg)
 
 - guitar
 
-![](showcase/bookdown+guitar.jpg)
+![](https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+guitar.jpg)
 
 - journal
 
-![](showcase/bookdown+journal.jpg)
+![](https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+journal.jpg)
 
 - mail
 
-![](showcase/bookdown+mail.jpg)
+![](https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+mail.jpg)
 
-![](showcase/bookdown+mail2.png)
+![](https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+mail2.png)
 
 - poem
 
-![](showcase/bookdown+poem.jpg)
+![](https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+poem.jpg)
 
 - thesis_classic
 
-![](showcase/bookdown+thesis_classic.jpg)
+![](https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+thesis_classic.jpg)
 
 - thesis_ubt
 
-![](showcase/bookdown+thesis_ubt.jpg)
+![](https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+thesis_ubt.jpg)
 
 - thesis_zju
 
-![](showcase/bookdown+thesis_zju.jpg)
+![](https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+thesis_zju.jpg)
 
 - yihui_demo
 
-![](showcase/bookdown+yihui_demo.jpg)
+![](https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+yihui_demo.jpg)
 
 - yihui_mini
 
-![](showcase/bookdown+yihui_mini.jpg)
+![](https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+yihui_mini.jpg)
 
 - yihui_zh
 
-![](showcase/bookdown+yihui_zh.jpg)
+![](https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+yihui_zh.jpg)
 
 - poster
 
-![](showcase/bookdown+poster_ocean.jpg)
+![](https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+poster_ocean.jpg)
 
-![](showcase/bookdown+poster_eco.jpg)
+![](https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+poster_eco.jpg)
