@@ -40,7 +40,7 @@
 &lt;li&gt;现在可以在帖子里引用 .bib 里的文献条目了，例如 &lt;code&gt;[@R-blogdown]&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;运行建站函数 &lt;code&gt;blogdown::build_site()&lt;/code&gt;.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;上面的引用，会在帖子里显示 &lt;span class=&#34;citation&#34;&gt;(Xie 2017)&lt;/span&gt; ，而帖子末尾显示参考文献列表。&lt;/p&gt;
+&lt;p&gt;就这样，说时迟那时快，只见Duang！帖子里的引用就显示成了 &lt;span class=&#34;citation&#34;&gt;(Xie 2017)&lt;/span&gt; ！而帖子末尾的参考文献列表就自动出来了！&lt;/p&gt;
 &lt;p&gt;blogdown 可以如此方便地往帖子里插入计算代码、图表、公式、参考文献，我实在找不出第二个这样的工具。建科研网站，非 blogdown 莫属！&lt;/p&gt;
 &lt;p&gt;最后顺便提一下：虽然最新正式版的 RStudio 1.0.143 并 没有 blogdown 和 bookdown 的入口，但是我欣喜地发现，在 &lt;a href=&#34;http://dailies.rstudio.com&#34;&gt;RStudio 的开发版&lt;/a&gt; 1.1.233 里已经加入了这个入口了！菜单 File - New Project - New Directory，就能看到 blogdown 和 bookdown 项目。跟 shiny 和 R package 并列，可见 RStudio 公司对这两个项目的重视程度。&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;
