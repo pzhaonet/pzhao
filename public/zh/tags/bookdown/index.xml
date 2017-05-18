@@ -266,5 +266,337 @@ bookdown::html_document2: default
 </description>
     </item>
     
+    <item>
+      <title>R bookdown 语法标记速查</title>
+      <link>http://www.pzhao.org/zh/post/bookdown-cheatsheet/</link>
+      <pubDate>Tue, 14 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.pzhao.org/zh/post/bookdown-cheatsheet/</guid>
+      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
+&lt;!-- /BLOGDOWN-HEAD --&gt;
+
+&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
+&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
+&lt;div class=&#34;section level2&#34;&gt;
+&lt;h2&gt;快速开始&lt;/h2&gt;
+&lt;div id=&#34;r-bookdown-&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;R bookdown 是什么&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;一个用来写书写文章的软件。&lt;/li&gt;
+&lt;li&gt;比Word更美观，比LaTeX更易用，比Markdown格式更丰富。&lt;/li&gt;
+&lt;li&gt;可以方便地插入目录、图表、交叉引用、脚注、索引。&lt;/li&gt;
+&lt;li&gt;可以方便地插入公式、参考文献、R代码。&lt;/li&gt;
+&lt;li&gt;可以生成漂亮的pdf、word和网页文件。&lt;/li&gt;
+&lt;li&gt;撰写可重复性报告的不二之选。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;section level3&#34;&gt;
+&lt;h3&gt;安装&lt;/h3&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;&lt;a href=&#34;https://cran.r-project.org/bin/windows/base/&#34;&gt;下载R&lt;/a&gt;并安装。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.rstudio.com/products/rstudio/download/&#34;&gt;下载RStudio&lt;/a&gt;并安装。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.ctex.org/CTeXDownload&#34;&gt;下载CTEX&lt;/a&gt;并安装。建议安装完整版。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://pandoc.org/installing.html&#34;&gt;下载Pandoc&lt;/a&gt;并安装。&lt;/li&gt;
+&lt;li&gt;运行RStudio。在左上面板的代码窗口输入并运行以下代码（安装bookdown扩展包）：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;install.packages(&amp;quot;bookdown&amp;quot;)
+install.packages(&amp;#39;servr&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;好了，安装完毕。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;section level3&#34;&gt;
+&lt;h3&gt;从模板开始&lt;/h3&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;下载模板文档（到下载页面点击&lt;code&gt;Clone or download&lt;/code&gt; - &lt;code&gt;Download ZIP&lt;/code&gt;）：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;如果你要写英文文档，那么下载&lt;a href=&#34;https://github.com/rstudio/bookdown-demo&#34;&gt;通用模板&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;如果你要写中文文档，那么下载&lt;a href=&#34;https://github.com/yihui/bookdown-chinese&#34;&gt;中文模板&lt;/a&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34; style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;&lt;p&gt;将模板文档解压缩到任意文件夹。&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;在解压缩后得到的文件里找到扩展名为.Rproj的文件。双击，默认会用RSudio打开。&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;在RStudio右上面板点击&lt;code&gt;Build&lt;/code&gt;标签，再点击&lt;code&gt;build book&lt;/code&gt;。好了，模板书出现在名为&lt;code&gt;_book&lt;/code&gt;的子文件夹里。&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;在RStudio右下面板里会看到该文件夹里的文件，其中有一些扩展名为.Rmd的文件。逐个点击打开，把其中的内容修改成你自己的内容。除了index.Rm外，不需要的.Rmd文件可以删掉。&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;重复第4步，就得到了你自己的书。&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;对照一下.Rmd的文件内容和生成的文档，体会两者之间是如何对应的。&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;section level2&#34;&gt;
+&lt;h2&gt;基本标记&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr class=&#34;header&#34;&gt;
+&lt;th align=&#34;left&#34;&gt;标记&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;输出&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;*斜体*&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;em&gt;斜体&lt;/em&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;**粗体**&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;strong&gt;粗体&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;CO~2~&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;CO&lt;sub&gt;2&lt;/sub&gt;下标&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;R^2^&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;R&lt;sup&gt;2&lt;/sup&gt;上标&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;$E = mc^2$&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;span class=&#34;math inline&#34;&gt;\(E = mc^2\)&lt;/span&gt; 行内公式（双美元符号为行间公式）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;[大鹏志](http://dapengde.com)&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;http://dapengde.com&#34;&gt;大鹏志&lt;/a&gt;超级链接&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;&amp;lt;dapengde@live.com&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;mailto:dapengde@live.com&#34;&gt;dapengde@live.com&lt;/a&gt; 邮件链接&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;![](http图片链接)&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;插入图片&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;&amp;gt; 引用文字&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;引用&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;`代码`&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;代码&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;# 第一章&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;章节标题&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;1. 首先，...&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;带编号的列表&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;- 首先&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;不带编号的列表&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;^[脚注]&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;脚注&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;section level2&#34;&gt;
+&lt;h2&gt;章节划分、编号和交叉引用&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;# (PART) Part I {-} 
+# (APPENDIX) Appendix {-} 
+# References {-}
+# chapter {#ID}
+## section {#ID}
+# chapter {#ID .unnumbered}
+
+\@ref(ID)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class=&#34;section level2&#34;&gt;
+&lt;h2&gt;图表&lt;/h2&gt;
+&lt;p&gt;第一种插图：嵌入的R代码作图：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;```{r, fig.cap=&amp;#39;caption&amp;#39;, out.width=&amp;#39;80%&amp;#39;, fig.align=&amp;#39;center&amp;#39;, echo=FALSE}
+plot(1:10)
+```&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;\@ref(fig:fig1)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;第二种插图：将现成的图片文件插进来：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;```{r img1, fig.cap=&amp;#39;caption&amp;#39;, out.width=&amp;#39;80%&amp;#39;, fig.align=&amp;#39;center&amp;#39;, echo=FALSE}
+knitr::include_graphics(&amp;quot;images/img1.png&amp;quot;)
+```&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;\@ref(fig:img1)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;第三种插图：用markdown基础语法：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;![caption](images/img1.png)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;第一种表格：直接用markdown语法画表格。输入：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;第一列标题  第二列标题
+----------- ----------
+第一行1     第一行2
+第二行1     第二行2&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;输出：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr class=&#34;header&#34;&gt;
+&lt;th align=&#34;left&#34;&gt;第一列标题&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;第二列标题&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;第一行1&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;第一行2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;第二行1&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;第二行2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;第二种表格：用R函数展示表格：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;```{r tab1, tidy=FALSE, echo=FALSE}
+knitr::kable(
+  head(iris, 20), caption = &amp;#39;Here is a nice table!&amp;#39;,
+  booktabs = TRUE
+)
+```&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;\@ref(tab:tab1)&lt;/code&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;section level2&#34;&gt;
+&lt;h2&gt;参考文献&lt;/h2&gt;
+&lt;p&gt;参考文献信息需要保存在.bib文件里。&lt;/p&gt;
+&lt;p&gt;引用文献条目：&lt;code&gt;[@R-bookdown]&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;参考文献列表：&lt;code&gt;# References {-}&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;生成R包参考文献库：&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;knitr::write_bib(c(&amp;quot;knitr&amp;quot;, &amp;quot;stringr&amp;quot;), &amp;quot;&amp;quot;, width = 60)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class=&#34;section level2&#34;&gt;
+&lt;h2&gt;定义、定理、示例等环境&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;环境全称：theorems   lemma   definition  corollary   proposition example
+引用简称：thm          lem   def         cor         prp         ex&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;```{环境全称, label=&amp;#39;&amp;#39;, name=&amp;quot;&amp;quot;}
+内容
+```&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;\@ref(引用简称:label)&lt;/code&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;word&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;输出word文档&lt;/h2&gt;
+&lt;p&gt;在_output.yml里添加一行：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;bookdown::word_document2: default &lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;注意，&lt;code&gt;default&lt;/code&gt;这个词是不能少的。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;section level2&#34;&gt;
+&lt;h2&gt;公式编号和引用&lt;/h2&gt;
+&lt;p&gt;word文档里的公式的编号和交叉引用，可以使用行内公式，公式前用圆括号里加公式标签。例如，输入：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;(@eq-mc) $E = mc^2$
+
+I like Eq. (@eq-mc) so much that I am falling love with her.&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;得到：&lt;/p&gt;
+&lt;ol class=&#34;example&#34; style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;&lt;span class=&#34;math inline&#34;&gt;\(E = mc^2\)&lt;/span&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;I like Eq. (1) so much that I am falling love with her.&lt;/p&gt;
+&lt;p&gt;pdf文档里的公式编号和交叉引用，建议使用公式环境。例如，输入：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;\begin{equation} 
+E = mc^2
+  (\#eq:mc2)
+\end{equation} 
+
+I like Eq. \@ref(eq:mc2) so much that I am falling love with her.&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class=&#34;section level2&#34;&gt;
+&lt;h2&gt;更进一步&lt;/h2&gt;
+&lt;p&gt;bookdown的详细介绍见&lt;a href=&#34;https://bookdown.org/yihui/bookdown/&#34;&gt;使用手册&lt;/a&gt;。我的使用体验写成了三篇帖子：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://dapengde.com/archives/19122&#34;&gt;用bookdown写书&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://dapengde.com/archives/19190&#34;&gt;用bookdown写学术论文&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://dapengde.com/archives/19150&#34;&gt;用bookdown写文学作品&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>不可挡的bookdown</title>
+      <link>http://www.pzhao.org/zh/post/inresistible-bookdown/</link>
+      <pubDate>Mon, 13 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.pzhao.org/zh/post/inresistible-bookdown/</guid>
+      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
+&lt;!-- /BLOGDOWN-HEAD --&gt;
+
+&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
+&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
+&lt;p&gt;最近，我打算把博客上关于R语言的帖子整理成一本书，希望弄得帅气一点，整齐一点，将来容易维护一点。涌进脑子的第一个念头是 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; ，第二个念头是想吐。&lt;/p&gt;
+&lt;p&gt;是的，虽然我推崇 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; ，觉得这个工具排出来的文档很漂亮，但自从弄完博士论文 &lt;a href=&#34;#fn1&#34; class=&#34;footnoteRef&#34; id=&#34;fnref1&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; 之后，除了帮别人备份一下博客 &lt;a href=&#34;#fn2&#34; class=&#34;footnoteRef&#34; id=&#34;fnref2&#34;&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt; 、往论文里插几个公式和玩玩吉他谱 &lt;a href=&#34;#fn3&#34; class=&#34;footnoteRef&#34; id=&#34;fnref3&#34;&gt;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt;，我再也没碰过她。惰性开始代替折腾，我宁可点点鼠标写出一份不太美观的Word文档，也不想面对 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; 那让人头疼的代码。大概我是真上了岁数罢。&lt;/p&gt;
+&lt;p&gt;对于 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt;，我想自己的内心深处是怀有恐惧的。她的美丽让我着迷，她的复杂令人生畏。&lt;/p&gt;
+&lt;p&gt;所以，这次整理博客，我决定在Word里做。用了这么多年，对Word的秉性我算是略知一二，从一开始就用主控文档和子文档的方式管理，以防单个文档太大而死机；从标题到R代码，我预先都设置好了样式以及样式的快捷键，方便调整格式；每写几句话，就左手抽筋一样ctrl+s一下，以防万一。其间，发现帖子里有些R代码要修改调试，我就咬牙忍着在RStudio和Word之间频繁拷贝粘贴的煎熬。反正换回 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; 也是一样想吐，既来之则安之，嫁鸡随鸡嫁狗随狗吧。&lt;/p&gt;
+&lt;p&gt;我天真地以为，这样就万无一失了。&lt;/p&gt;
+&lt;p&gt;有一天，我正在Word里改某篇帖子，改之前我留意了一下总页数是160多页。改了几个段落之后，我惊奇地发现，总页数成了220多页。再仔细找，发现有些代码区的文字无缘无故变成了乱码，一乱就新增几十页。进而测试发现，我正在好端端敲字，Word左下角的页数突然就刷刷地增加了，翻回去看，乱码已经被填进去了。试了好几次，都是这样。我甚至给文档权限设置为凭密码修订，仍然挡不住Word疯狂的脚步。&lt;/p&gt;
+&lt;p&gt;对着那自动呼呼上涨的页码，我想：认识十来年，想不到对你依然不了解。&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; 的倩影再度闪现在我脑海。她虽然复杂，但至少源文件是纯文本，不会胡来，不像Word这么没有底线。&lt;/p&gt;
+&lt;p&gt;为什么就没有个像Word那么界面简单，像 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; 那么源码单纯的两全其美方案呢？&lt;/p&gt;
+&lt;p&gt;“叮”的一声，脑子里冒出刚刚发布不久的bookdown&lt;span class=&#34;citation&#34;&gt;[@R-bookdown1]&lt;/span&gt;&lt;span class=&#34;citation&#34;&gt;[@R-bookdown2]&lt;/span&gt;。这是R语言的一个扩展包，专门用来写书，可以看作是R markdown的升级版。我的博客原文都是以markdown写成的，弄到bookdown里应当是顺理成章的事。只是大约因为上了岁数，我近几年对新工具越来越排斥，所以一直懒得尝试。这次被逼无奈，要不就试试吧。反正都是折腾，与其把精力花在让人心碎的Word里或让人心焦的 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; 里，还不如花在崭新的bookdown里。就算是有缺点，还能比Word和 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; 更不能忍么？&lt;/p&gt;
+&lt;p&gt;然后，刷！一晃十来天。春宵苦短日高起，从此君王不早朝。&lt;/p&gt;
+&lt;p&gt;这大半个月，我陶醉在bookdown的魅力里不可自拔。bookdown秉承拿来主义，把一大串工具链里的精华整合起来，让以前繁琐的步骤无比简化，怎一个爽快了得！她近乎完美地解决了我遇到的所有问题：纯文本操作，满足了我的控制欲；在导出完美的网页格式同时，还能导出为pdf和word文档，足够拿出来跟依赖Word的人交流；公式、脚注、交叉引用、目录、参考文献，功能齐全而不臃肿，格式标记简洁而优雅。我不再需要为Word的自以为是而抑郁，也不再需要为 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; 的纷繁复杂而烦恼了。&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;http://dapengde.com/wp-content/uploads/2017/03/2017-03-14.png&#34; alt=&#34;我用bookdown生成的书稿&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;我用bookdown生成的书稿&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;一种亲切之美扑面而来，我感到无法抗拒无法阻挡。有了bookdown在手，写东西我还需要别的什么呢？想来想去，我不需要别的了。在Word和&lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; 之间摇摆了十来年，到头来才发现bookdown才是真爱。&lt;/p&gt;
+&lt;p&gt;不过，bookdown绝非完美。如果不了解rmarkdown&lt;span class=&#34;citation&#34;&gt;[@R-rmarkdown]&lt;/span&gt;，没见过 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; ，没听过pandoc，没用过knitr &lt;span class=&#34;citation&#34;&gt;[@R-knitr1]&lt;/span&gt;&lt;span class=&#34;citation&#34;&gt;[@R-knitr2]&lt;/span&gt;&lt;span class=&#34;citation&#34;&gt;[@R-knitr3]&lt;/span&gt;，那么bookdown对新手来说，门槛仍然有点高。幸运的是，这几样工具我都用过，那么投入bookdown的怀抱就属于水到渠成了。即便如此，在使用初期仍然遇到了一些难以解决的问题，好在有bookdown的开发者益辉同学 &lt;a href=&#34;#fn4&#34; class=&#34;footnoteRef&#34; id=&#34;fnref4&#34;&gt;&lt;sup&gt;4&lt;/sup&gt;&lt;/a&gt; 和其他同道中人热心地提供帮助，才能一路披荆斩棘，最后走上了幸福的康庄大道。&lt;/p&gt;
+&lt;p&gt;下面，我把我那些散落在各处的提问和解决方法汇总在这里。&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;编译&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;起初我连bookdown的界面都没搞清楚，想编译却不知该点哪儿。益辉一直说build，build，我一直以为是菜单栏的build，后来才看到是在RStudio右上面板的build按钮。&lt;/p&gt;
+&lt;p&gt;bookdown是可以直接导出为word文档的。这么重要的功能，却隐藏得很深，在官方文档里都没有强调。导出方法是，在_output.yml里添加一行：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;bookdown::word_document2: default &lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;注意，&lt;code&gt;default&lt;/code&gt;这个词是不能少的，不管它是不是默认。我也不知道为什么。&lt;/p&gt;
+&lt;p&gt;导出的word文档相当令人满意，参考文献的版式、图表的交叉引用都堪称完美。唯一不足之处，是公式的编号和交叉引用。bookdown的官方文档&lt;a href=&#34;#fn5&#34; class=&#34;footnoteRef&#34; id=&#34;fnref5&#34;&gt;&lt;sup&gt;5&lt;/sup&gt;&lt;/a&gt;给出的公式书写方案是，利用 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; 的公式环境来编号和引用，这一点在生成pdf时没问题，但生成word时，会发现别说编号，连公式本身都消失了。这大概是因为pandoc未能将公式环境正确转换的缘故。解决办法是，不使用公式环境，而使用行内公式（即公式前后有一个美元符号），公式前面用圆括号里加公式标签就可以了。例如，输入：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;(@eq-mc) $E = mc^2$
+
+I like Eq. (@eq-mc) so much that I am falling love with her.&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;得到：&lt;/p&gt;
+&lt;ol class=&#34;example&#34; style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;&lt;span class=&#34;math inline&#34;&gt;\(E = mc^2\)&lt;/span&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;I like Eq. (1) so much that I am falling love with her.&lt;/p&gt;
+&lt;ol start=&#34;2&#34; style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;中文支持&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;益辉专门为中文弄了个bookdown的中文示例文档&lt;a href=&#34;#fn6&#34; class=&#34;footnoteRef&#34; id=&#34;fnref6&#34;&gt;&lt;sup&gt;6&lt;/sup&gt;&lt;/a&gt;，编译需要的tex文件全都写好了，简直太体贴。我照猫画虎，却意外出现了编译错误，后来把preamble.tex的15到27行删掉，把index.Rmd里的 &lt;code&gt;colorlinks: yes&lt;/code&gt; 改为 no，中文文档就华丽丽地编译出来了。&lt;/p&gt;
+&lt;p&gt;其间还出过其他的意外。我Windows的区域设置是German(Austria)，导致导出的文档里有乱码，只要把区域设置改为Chinese(PRC)就解决了大部分的乱码问题了。如果仍然有没解决的，那么将所有能设置编码的地方就全部设置成UTF-8，例如&lt;code&gt;readLines()&lt;/code&gt;函数的encoding参数，&lt;code&gt;writeLines()&lt;/code&gt;的useBytes参数等。&lt;/p&gt;
+&lt;p&gt;bookdown默认是按章节标题来生成网页文件名称，纯英文标题和纯中文标题都没问题，但对中英混合的标题，bookdown会只取其中的英文部分为html文件命名。如果每个章节标题里都有个R字母，那么生成的html文件就都叫R.html，编译时就会报错。解决办法是给heading添加{#ID}，让编译生成的html文件以此ID命名。解决是解决了，但又出现无编号章节标题{#ID} 和{-}共存问题。这就不知道怎么搜了，只好继续骚扰益辉，得到的答案是 &lt;code&gt;{#identifier .unnumbered}&lt;/code&gt;。我就拿这个答案一搜，原来这一条明明白白写在pandoc的技术文档里，惭愧。&lt;/p&gt;
+&lt;ol start=&#34;3&#34; style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;参考文献&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;导出的网页格式文件里，参考文献的默认风格是apalike，方法是在index.Rmd的文件头用yaml声明&lt;code&gt;biblio-style&lt;/code&gt;，得到的引用格式是“作者-年份”。我想改为数字编号引用，于是把上面改为plain或者ieeetr，但编译出来的网页文件仍然是apalike格式。益辉的答复是biblio-style仅对pdf生效；其他格式的文件需要用YAML或pandoc_args的csl选项——这个我懒得折腾了，按下不表。但即使是pdf文档，biblio-style设为plain或者ieeetr却编译失败。我忘了错误信息是什么了，好像大概是我的 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; 出了点问题，后来改为unsrt风格就全好了。&lt;/p&gt;
+&lt;p&gt;如果要引用R的扩展包，knitr提供了函数&lt;code&gt;write_bib()&lt;/code&gt;，用来生成指定扩展包的文献库，但是跟&lt;code&gt;citation()&lt;/code&gt;函数得到的经常不一致。例如：&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;knitr::write_bib(c(.packages(), &amp;#39;lattice&amp;#39;, &amp;#39;ggplot2&amp;#39;), &amp;#39;packages.bib&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;得到的参考文献是扩展包在CRAN上的链接和版本信息，并且只能得到一个条目，这一点在bookdown的官方文档有说明。而&lt;code&gt;citation()&lt;/code&gt;函数得到的是扩展包作者建议的参考文献条目，例如&lt;code&gt;citation(&#39;lattice&#39;)&lt;/code&gt;就得到跟上面不同的返回结果。从尊重作者的角度来讲，我倾向于使用&lt;code&gt;citation()&lt;/code&gt;函数，所以自己写了个函数来代替&lt;code&gt;write_bib()&lt;/code&gt;：&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;mf_bib &amp;lt;- function(pkg = c(&amp;#39;base&amp;#39;), bibfile = &amp;#39;packages.bib&amp;#39;){
+  pkg &amp;lt;- unique(pkg[order(pkg)])
+  for (i in pkg){
+    # if (class(try(citation(i))) == &amp;#39;try-error&amp;#39;) install.packages(i)
+    cti &amp;lt;- toBibtex(citation(i))
+    entryloc &amp;lt;- grep(pattern = &amp;#39;^@&amp;#39;, cti)
+    cti[entryloc] &amp;lt;- gsub(&amp;#39;,&amp;#39;, paste(&amp;#39;R-&amp;#39;,i, &amp;#39;,&amp;#39;, sep =&amp;#39;&amp;#39;), cti[entryloc])
+    symbol6loc &amp;lt;- grep(&amp;#39;&amp;amp;&amp;#39;, cti)
+    for (j in symbol6loc) {
+      cti[j] &amp;lt;- gsub(pattern = &amp;#39; &amp;amp;&amp;#39;, replacement = &amp;#39; \\\\&amp;amp;&amp;#39;, cti[j])
+    }
+    if (length(entryloc) &amp;gt; 1)  cti[entryloc] &amp;lt;- paste(substr(cti[entryloc], 1, nchar(cti[entryloc])-1), 1:length(entryloc), &amp;#39;,&amp;#39;, sep =&amp;#39;&amp;#39;)
+    cat(cti, sep = &amp;#39;\n&amp;#39;, file = bibfile, append = TRUE)
+  }
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;运行这个函数，就能生成个bib格式的文献库文件。但这也有麻烦，就是有的扩展包作者建议的文献条目信息不齐全，还得我手动编辑；有的作者建议的条目太多，弄得参考文献列表很长，并且没必要。看来只能这两个函数搭配使用了。&lt;/p&gt;
+&lt;p&gt;解决了上面这些问题，基本上就走上了正轨。对我来说，bookdown是个素颜版的 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; ，满足了99%的需求，而使用难度大概只有 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; 的1%，性价比极高。这个“价”指的是弄懂她所花的精力和时间，bookdown本身当然是开源和免费的。想来是人上了岁数，不再看脸和身材，而是看重是否合得来吧。&lt;/p&gt;
+&lt;p&gt;更重要的一点是，bookdown还在不断完善和发展中，作者益辉同学年富力强，将来有的是机会把bookdown弄得更好（得盯住他不要为求完美而歪到 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; 的老路上）。只盼早日把R + RStudio + bookdown + Dropbox + Github + Google LaTeX lab都整合到云端，到时候只需把输入数据一上传，打开个网页就写论文，别的什么都不用管，那么连剩下那&lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt;%1的难度也都省了，天下太平。到了那个时候，使用bookdown就没有门槛，大家就会乐意用她来写诗集和小说了。&lt;/p&gt;
+&lt;p&gt;这时问题又来了：称手的兵刃有了，然而妖精在哪里？&lt;/p&gt;
+&lt;p&gt;注：本文是在R markdown环境下写成的。&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;参考文献：&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn1&#34;&gt;&lt;p&gt;&lt;a href=&#34;http://dapengde.com/archives/17095&#34; class=&#34;uri&#34;&gt;http://dapengde.com/archives/17095&lt;/a&gt;&lt;a href=&#34;#fnref1&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id=&#34;fn2&#34;&gt;&lt;p&gt;&lt;a href=&#34;http://dapengde.com/archives/16906&#34; class=&#34;uri&#34;&gt;http://dapengde.com/archives/16906&lt;/a&gt;&lt;a href=&#34;#fnref2&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id=&#34;fn3&#34;&gt;&lt;p&gt;&lt;a href=&#34;http://dapengde.com/archives/18230&#34; class=&#34;uri&#34;&gt;http://dapengde.com/archives/18230&lt;/a&gt;&lt;a href=&#34;#fnref3&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id=&#34;fn4&#34;&gt;&lt;p&gt;&lt;a href=&#34;https://yihui.name/cn/&#34; class=&#34;uri&#34;&gt;https://yihui.name/cn/&lt;/a&gt;&lt;a href=&#34;#fnref4&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id=&#34;fn5&#34;&gt;&lt;p&gt;&lt;a href=&#34;https://bookdown.org/yihui/bookdown/&#34; class=&#34;uri&#34;&gt;https://bookdown.org/yihui/bookdown/&lt;/a&gt;&lt;a href=&#34;#fnref5&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id=&#34;fn6&#34;&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/yihui/bookdown-chinese&#34; class=&#34;uri&#34;&gt;https://github.com/yihui/bookdown-chinese&lt;/a&gt;&lt;a href=&#34;#fnref6&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
   </channel>
 </rss>
