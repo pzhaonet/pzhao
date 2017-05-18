@@ -10,6 +10,59 @@
     <atom:link href="/zh/tags/post/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>R blogdown 科研网站的公式和参考文献</title>
+      <link>http://www.pzhao.org/zh/post/rblogdown-bib/</link>
+      <pubDate>Thu, 18 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.pzhao.org/zh/post/rblogdown-bib/</guid>
+      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
+&lt;!-- /BLOGDOWN-HEAD --&gt;
+
+&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
+&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
+&lt;p&gt;本网站的公式和参考文献一直未能正常显示，直到今天我才把这两个问题解决。&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;&lt;strong&gt;公式&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;公式的问题迟迟未解决，是因为我看到人们在讨论往html文件里加 &lt;code&gt;Load mathjax&lt;/code&gt; 代码这种解决方案，一看就头大，不想做。今天突然灵光一现，在 &lt;code&gt;config.toml&lt;/code&gt; 里设置 &lt;code&gt;math = true&lt;/code&gt;，然后运行 &lt;code&gt;blogdown::serve_site()&lt;/code&gt;，Duang！帖子里的公式就都可以正常显示了！这里秀一个：&lt;/p&gt;
+&lt;p&gt;帖子里输入 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; 符号：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$$\int_0^\infty e^{-x^2} dx=\frac{\sqrt{\pi}}{2}$$&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;网页就会显示：&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\int_0^\infty e^{-x^2} dx=\frac{\sqrt{\pi}}{2}\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;需要注意的是，如果运行 &lt;code&gt;serve_site()&lt;/code&gt; 来预览网页，那么 RStudio 的内置浏览器并不能正常显示公式，但是点击浏览器左上角的 &lt;code&gt;Show in new window&lt;/code&gt; 按钮，用外部浏览器打开，就可以正常显示了。&lt;/p&gt;
+&lt;ol start=&#34;2&#34; style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;&lt;strong&gt;参考文献&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;两个多月前，就&lt;a href=&#34;https://github.com/rstudio/blogdown/issues/66&#34;&gt;有个哥们儿问&lt;/a&gt;“有没有可能在blogdown创建的网站里添加参考文献?”作者回答得干脆：“有。”两人对话就终止了，让我目瞪口呆。由于在&lt;a href=&#34;http://bookdown.org/yihui/blogdown&#34;&gt;blogdown 官方手册&lt;/a&gt;里并未看到添加参考文献的方法，我一直以为这个功能尚在开发中，直到今天也没见动静，有些起疑，就随便试了一下，步骤跟在 bookdown 里一样：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;把参考文献库 .bib 文件考到 &lt;code&gt;content\post\&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;在帖子 &lt;code&gt;.Rmd&lt;/code&gt; 文档的 yml 头里声明 .bib 文件的名称和路径。这里我设成 &lt;code&gt;bibliography: [book.bib, packages.bib]&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;现在可以在帖子里引用 .bib 里的文献条目了，例如 &lt;code&gt;[@R-blogdown]&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;运行建站函数 &lt;code&gt;blogdown::build_site()&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;上面的引用，会在帖子里显示 &lt;span class=&#34;citation&#34;&gt;(Xie 2017)&lt;/span&gt; ，而帖子末尾显示参考文献列表。&lt;/p&gt;
+&lt;p&gt;blogdown 可以如此方便地往帖子里插入计算代码、图表、公式、参考文献，我实在找不出第二个这样的工具。建科研网站，非 blogdown 莫属！&lt;/p&gt;
+&lt;p&gt;最后顺便提一下：虽然最新正式版的 RStudio 1.0.143 并 没有 blogdown 和 bookdown 的入口，但是我欣喜地发现，在 &lt;a href=&#34;http://dailies.rstudio.com&#34;&gt;RStudio 的开发版&lt;/a&gt; 1.1.233 里已经加入了这个入口了！菜单 File - New Project - New Directory，就能看到 blogdown 和 bookdown 项目。跟 shiny 和 R package 并列，可见 RStudio 公司对这两个项目的重视程度。&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;http://www.pzhao.org/image/rstudiobookdown.jpg&#34; /&gt;
+
+&lt;/div&gt;
+&lt;p&gt;有幸尝试了 blogdown 和 bookdown &lt;span class=&#34;citation&#34;&gt;(Xie 2016)&lt;/span&gt; 项目，并且也做过 &lt;a href=&#34;http://sciwis.com/&#34;&gt;shiny&lt;/a&gt; 和 &lt;a href=&#34;http://www.pzhao.org/zh/post/rmickey/&#34;&gt;R package&lt;/a&gt;，我模模糊糊有种异样的感觉，就像埋头赶路时猛一抬头，隐隐约约眺见了走在时代前面的先知们的背影。&lt;/p&gt;
+&lt;div class=&#34;section level2 unnumbered&#34;&gt;
+&lt;h2&gt;参考文献&lt;/h2&gt;
+&lt;div id=&#34;refs&#34; class=&#34;references&#34;&gt;
+&lt;div id=&#34;ref-R-bookdown&#34;&gt;
+&lt;p&gt;Xie, Yihui. 2016. &lt;em&gt;Bookdown: Authoring Books and Technical Documents with R Markdown&lt;/em&gt;. &lt;a href=&#34;https://github.com/rstudio/bookdown&#34; class=&#34;uri&#34;&gt;https://github.com/rstudio/bookdown&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-R-blogdown&#34;&gt;
+&lt;p&gt;———. 2017. &lt;em&gt;Blogdown: Create Blogs and Websites with R Markdown&lt;/em&gt;. &lt;a href=&#34;https://github.com/rstudio/blogdown&#34; class=&#34;uri&#34;&gt;https://github.com/rstudio/blogdown&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>9分钟写个R语言包：菜鸟致简速成</title>
       <link>http://www.pzhao.org/zh/post/rmickey/</link>
       <pubDate>Tue, 16 May 2017 00:00:00 +0000</pubDate>
@@ -797,67 +850,6 @@ relativeurls = true&lt;/code&gt;&lt;/pre&gt;
 &lt;li id=&#34;fn1&#34;&gt;&lt;p&gt;Yihui Xie. blogdown: Create Blogs and Websites with R Markdown. R package version 0.0.24.&lt;a href=&#34;#fnref1&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>R bookdown 写学术论文</title>
-      <link>http://www.pzhao.org/zh/post/r-bookdown/</link>
-      <pubDate>Fri, 24 Mar 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/zh/post/r-bookdown/</guid>
-      <description>&lt;p&gt;&lt;em&gt;1&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;最近，我使用 R 语言的 bookdown 扩展包接连做了三件事：先是整理出一本跟&lt;a href=&#34;http://dapengde.com/archives/19122&#34; target=&#34;_blank&#34;&gt; R 语言有关的书&lt;/a&gt;，然后把博客的帖子整理出一本&lt;a href=&#34;http://dapengde.com/archives/19150&#34; target=&#34;_blank&#34;&gt;纯文本的中文书&lt;/a&gt;，这两天我又在用它来写一篇打算投稿的学术期刊论文。&lt;/p&gt;
-
-&lt;p&gt;用 bookdown 写英文的科研期刊论文，配置起来是很简单的，只需在bookdown提供的&lt;a href=&#34;https://github.com/rstudio/bookdown-demo&#34; target=&#34;_blank&#34;&gt;官方演示文档&lt;/a&gt;里做简单修改如下：&lt;/p&gt;
-
-&lt;p&gt;首先，index.Rmd 的文件头 yaml 部分，将 documentclass 设为 article，并关闭图表目录和文章目录即可：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;documentclass: article
-lof: no
-lot: no
-toc: no
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;然后，_output.yml 文件内容全部清空，然后添加指令生成 word_document2 文档、 pdf_document2 文档和 html_document2 文档，参数为default即可。也就是说，_output.yml 文件内容只需3行：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;bookdown::word_document2: default 
-bookdown::pdf_document2: default
-bookdown::html_document2: default
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;就能生成足够美观的三种格式的文档了。&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;2&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;写论文期间发生了一件事，让我饱受刺激。&lt;/p&gt;
-
-&lt;p&gt;我的科研论文有个计算公式，昨天发现其中一个数值不小心敲错了。后续计算都是建立在这个计算的基础上，所以后续计算全错。虽然不影响结论，但严格来讲，论文里所有的数据都得改。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://blogs.helmholtz.de/hejus/wp-content/uploads/sites/15/2014/10/writinghardwork.jpg&#34; alt=&#34;enter image description here&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;放在以前，这是让人崩溃的灾难。幸亏，这次我写论文用了 bookdown。&lt;/p&gt;
-
-&lt;p&gt;这篇研究论文是用 Rmd 格式写的，里面绝大部分数据不是手动敲进去的，而是调用了 R 代码，图表也是用 R 代码插入的，走的是“可重复性研究”的思路。现在，我只要把 R 代码里那个敲错的数据改过来，运行代码，后续计算就全部自动更新，而论文 Rmd 文件里调用代码的输出结果，会在导出的 pdf 或 word 文档也相应自动更新，节省了大量时间，还减少了敲数字或拷贝粘贴出错的可能，怎一个爽字了得！&lt;/p&gt;
-
-&lt;p&gt;在 bookdown 发布之前，其实 rmarkdown 也有这个功能，但因为公式、交叉引用、参考文献方面的欠缺， rmarkdown 对我来讲比较鸡肋，一直未能用在论文写作上。现在有了 bookdown ，可以甩开膀子使劲儿用。可以说， bookdown 把 rmarkdown 原有的价值做了更充分的挖掘。&lt;/p&gt;
-
-&lt;p&gt;写学术论文的过程比较煎熬，多年来我都不享受。而经过昨天的事件，我在写论文的过程里发现了很多快乐。我甚至有种变态心理，希望发现更多的计算错误，然后稍微一改，“叮！”论文全部自动更新。&lt;/p&gt;
-
-&lt;p&gt;老子陪你玩。好享受。&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;3&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;二娃德生前不久生病了，医生开了止咳糖浆。德生开始很拒绝，后来喜欢上了糖浆的味道。即使病好了，也经常要求喝止咳糖浆。&lt;/p&gt;
-
-&lt;p&gt;我问：“这是药，咳嗽才能喝。你咳嗽了吗？”&lt;/p&gt;
-
-&lt;p&gt;德生：“咳咳！咳咳！我咳嗽啦！”&lt;/p&gt;
-
-&lt;p&gt;学术论文写作使用 bookdown ，就是止咳药里添加的糖浆味道，让人不咳嗽的时候也想喝两盅，上瘾。&lt;/p&gt;
-
-&lt;p&gt;PS：今天在google.com以“bookdown”为关键词搜中文网页，我的博客已经出现在首页啦！&lt;/p&gt;
 </description>
     </item>
     
