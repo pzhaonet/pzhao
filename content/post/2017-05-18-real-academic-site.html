@@ -23,20 +23,21 @@ categories: []
 <ol style="list-style-type: decimal">
 <li><strong>公式</strong></li>
 </ol>
-<p>公式的问题迟迟未解决，是因为我看到人们在讨论往html文件里加 <code>Load mathjax</code> 代码这种解决方案，一看就头大，不想做。今天突然灵光一现，在 <code>config.toml</code> 里设置 <code>math = true</code>，然后运行 <code>blogdown::serve_site()</code>，Duang！帖子里的公式就都可以正常显示了！这里秀一个：</p>
-<p>帖子里输入 <span class="math inline">\(\LaTeX\)</span> 符号：</p>
+<p>公式的问题迟迟未解决，是因为我看到人们在讨论往html文件里加 <code>Load mathjax</code> 代码这种解决方案，一看就头大，不想做。</p>
+<p>其实，我用的hugo-academic主题，据说是支持数学环境的，据说在 <code>config.toml</code> 里设置 <code>math = true</code>就开启全站支持，在单篇post的yml头里这样设置就开启单篇支持。可是我两样都试过，然后运行 <code>blogdown::serve_site()</code>测试，在RStudio的Viewer里都不能成功显示公式。</p>
+<p>今天突然灵光一现，心想不会是RStudio Viewer的问题吧？于是点击Viewer左上角的 <code>Show in new window</code> 按钮，用外部浏览器打开一看，Duang！帖子里的公式就都可以正常显示了！这里秀一个：</p>
+<p>帖子里输入下面的 <span class="math inline">\(\LaTeX\)</span> 公式：</p>
 <pre><code>$$\int_0^\infty e^{-x^2} dx=\frac{\sqrt{\pi}}{2}$$</code></pre>
 <p>网页就会显示：</p>
 <p><span class="math display">\[\int_0^\infty e^{-x^2} dx=\frac{\sqrt{\pi}}{2}\]</span></p>
-<p>需要注意的是，如果运行 <code>serve_site()</code> 来预览网页，那么 RStudio 的内置浏览器并不能正常显示公式，但是点击浏览器左上角的 <code>Show in new window</code> 按钮，用外部浏览器打开，就可以正常显示了。</p>
 <ol start="2" style="list-style-type: decimal">
 <li><strong>参考文献</strong></li>
 </ol>
-<p>两个多月前，就<a href="https://github.com/rstudio/blogdown/issues/66">有个哥们儿问</a>“有没有可能在blogdown创建的网站里添加参考文献?”作者回答得干脆：“有。”两人对话就终止了，让我目瞪口呆。由于在<a href="http://bookdown.org/yihui/blogdown">blogdown 官方手册</a>里并未看到添加参考文献的方法，我一直以为这个功能尚在开发中，直到今天也没见动静，有些起疑，就随便试了一下，步骤跟在 bookdown 里一样：</p>
+<p>两个多月前，就<a href="https://github.com/rstudio/blogdown/issues/66">有个哥们儿问</a>“有没有可能在blogdown创建的网站里添加参考文献?”作者回答得干脆：“有。”两人对话戛然而止，让我目瞪口呆。由于在<a href="http://bookdown.org/yihui/blogdown">blogdown 官方手册</a>里并未看到添加参考文献的方法，我一直以为这个功能尚在开发中，直到今天也没见动静，有些起疑，就随便试了一下，步骤跟在 bookdown 里一样：</p>
 <ul>
 <li>把参考文献库 .bib 文件考到 <code>content\post\</code>.</li>
 <li>在帖子 <code>.Rmd</code> 文档的 yml 头里声明 .bib 文件的名称和路径。这里我设成 <code>bibliography: [book.bib, packages.bib]</code>.</li>
-<li>现在可以在帖子里引用 .bib 里的文献条目了，例如 <code>[@R-blogdown]</code>.</li>
+<li>在帖子里引用 .bib 里的文献条目，例如 <code>[@R-blogdown]</code>.</li>
 <li>运行建站函数 <code>blogdown::build_site()</code>.</li>
 </ul>
 <p>就这样，说时迟那时快，只见Duang！帖子里的引用就显示成了 <span class="citation">(Xie 2017)</span> ！而帖子末尾的参考文献列表就自动出来了！</p>

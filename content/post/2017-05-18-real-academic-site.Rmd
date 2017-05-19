@@ -18,9 +18,13 @@ categories: []
 
 1. **公式**
 
-公式的问题迟迟未解决，是因为我看到人们在讨论往html文件里加 `Load mathjax` 代码这种解决方案，一看就头大，不想做。今天突然灵光一现，在 `config.toml` 里设置 `math = true`，然后运行 `blogdown::serve_site()`，Duang！帖子里的公式就都可以正常显示了！这里秀一个：
+公式的问题迟迟未解决，是因为我看到人们在讨论往html文件里加 `Load mathjax` 代码这种解决方案，一看就头大，不想做。
 
-帖子里输入 \(\LaTeX\) 符号：
+其实，我用的hugo-academic主题，据说是支持数学环境的，据说在 `config.toml` 里设置 `math = true`就开启全站支持，在单篇post的yml头里这样设置就开启单篇支持。可是我两样都试过，然后运行 `blogdown::serve_site()`测试，在RStudio的Viewer里都不能成功显示公式。
+
+今天突然灵光一现，心想不会是RStudio Viewer的问题吧？于是点击Viewer左上角的 `Show in new window` 按钮，用外部浏览器打开一看，Duang！帖子里的公式就都可以正常显示了！这里秀一个：
+
+帖子里输入下面的 \(\LaTeX\) 公式：
 
 ```
 $$\int_0^\infty e^{-x^2} dx=\frac{\sqrt{\pi}}{2}$$
@@ -31,15 +35,13 @@ $$\int_0^\infty e^{-x^2} dx=\frac{\sqrt{\pi}}{2}$$
 $$\int_0^\infty e^{-x^2} dx=\frac{\sqrt{\pi}}{2}$$
 
 
-需要注意的是，如果运行 `serve_site()` 来预览网页，那么 RStudio 的内置浏览器并不能正常显示公式，但是点击浏览器左上角的 `Show in new window` 按钮，用外部浏览器打开，就可以正常显示了。
-
 2. **参考文献**
 
-两个多月前，就[有个哥们儿问](https://github.com/rstudio/blogdown/issues/66)“有没有可能在blogdown创建的网站里添加参考文献?”作者回答得干脆：“有。”两人对话就终止了，让我目瞪口呆。由于在[ blogdown 官方手册](http://bookdown.org/yihui/blogdown)里并未看到添加参考文献的方法，我一直以为这个功能尚在开发中，直到今天也没见动静，有些起疑，就随便试了一下，步骤跟在 bookdown 里一样：
+两个多月前，就[有个哥们儿问](https://github.com/rstudio/blogdown/issues/66)“有没有可能在blogdown创建的网站里添加参考文献?”作者回答得干脆：“有。”两人对话戛然而止，让我目瞪口呆。由于在[ blogdown 官方手册](http://bookdown.org/yihui/blogdown)里并未看到添加参考文献的方法，我一直以为这个功能尚在开发中，直到今天也没见动静，有些起疑，就随便试了一下，步骤跟在 bookdown 里一样：
 
 - 把参考文献库 .bib 文件考到 `content\post\`.
 - 在帖子 `.Rmd` 文档的 yml 头里声明 .bib 文件的名称和路径。这里我设成 `bibliography: [book.bib, packages.bib]`.
-- 现在可以在帖子里引用 .bib 里的文献条目了，例如 `[@R-blogdown]`.
+- 在帖子里引用 .bib 里的文献条目，例如 `[@R-blogdown]`.
 - 运行建站函数 `blogdown::build_site()`.
 
 就这样，说时迟那时快，只见Duang！帖子里的引用就显示成了 [@R-blogdown] ！而帖子末尾的参考文献列表就自动出来了！
