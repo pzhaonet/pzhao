@@ -1,0 +1,51 @@
+---
+title: 'R mindr: 把 Markdown 转成思维导图'
+author: "赵鹏"
+date: '2017-05-19'
+slug: mindr
+summary: "我开发的第 5 个 R 语言扩展包。欢迎测试。"
+tags:
+- R
+- mindr
+- markdown
+- post
+categories: []
+---
+
+将 markdown (.md, .Rmd) 文件转换成思维导图的 R 扩展包 [mindr](https://github.com/pzhaonet/mindr) 是我写的第五个 R 包，安装方法如下：
+
+```{r, eval=FALSE}
+devtools::install_github("pzhaonet/mindr")
+```
+
+使用方法：
+
+在R的工作目录创建个名叫 `mm/` 的文件夹，丢进去一堆 markdown 文件 (.md, .Rmd)，然后运行：
+
+```{r, eval=FALSE}
+mindr::mindr()
+```
+
+就得到个 `mm.mm` 的思维导图文件，用免费的思维导图软件 [freemind](http://freemind.sourceforge.net/wiki/index.php/Download) 可以直接打开。界面比较简陋。或者用漂亮的免费软件 [Xmind](http://www.xmind.net/download/win/)，需要选择`导入 freemind 导图`。
+
+-------
+
+我的书稿《学R》最初是先用思维导图拟定框架，然后在 Word 里写，后来转到 bookdown 里完成的。今天下午，我在书稿的旧思维导图里照着新稿修改，想把两者统一了。改着改着，觉得不对劲儿呀，R markdown 的思路是维护一份文档，导出多个格式，我怎么又开始维护两份内容相同的文档了？
+
+这肯定不是什么新问题，肯定有办法直接把 markdown 转成思维导图的工具。于是我搜。我搜搜搜，竟然没搜到！
+
+真烦，心想，不如自己写一个。
+
+晚上，写好了。
+
+先拿 [bookdown 书稿](https://github.com/rstudio/bookdown/tree/master/inst/examples)练手，用 freemind 直接打开：
+
+![](/img/mindr_bookdown.jpeg)
+
+freemind 确实简陋。再拿 [blogdown 书稿](https://github.com/rstudio/blogdown/tree/master/docs) 试试，导入 Xmind 看看：
+
+![](/img/mindr_blogdown.jpg)
+
+还不错。好了，实验成熟了，放心地用在自己的书稿上：
+
+![](/img/mindr_xuer.jpg)
