@@ -28,23 +28,24 @@
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;mindr::mindr()&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;就得到个 &lt;code&gt;mm.mm&lt;/code&gt; 的思维导图文件，用免费的思维导图软件 &lt;a href=&#34;http://freemind.sourceforge.net/wiki/index.php/Download&#34;&gt;freemind&lt;/a&gt; 可以直接打开。界面比较简陋。或者用漂亮的免费软件 &lt;a href=&#34;http://www.xmind.net/download/win/&#34;&gt;Xmind&lt;/a&gt;，需要选择&lt;code&gt;导入 freemind 导图&lt;/code&gt;。&lt;/p&gt;
 &lt;hr /&gt;
-&lt;p&gt;我的书稿《学R》最初是先用思维导图拟定框架，然后在 Word 里写，后来转到 bookdown 里完成的。今天下午，我在书稿的旧思维导图里照着新稿修改，想把两者统一了。改着改着，觉得不对劲儿呀，R markdown 的思路是维护一份文档，导出多个格式，我怎么又开始维护两份内容相同的文档了？&lt;/p&gt;
-&lt;p&gt;这肯定不是什么新问题，肯定有办法直接把 markdown 转成思维导图的工具。于是我搜。我搜搜搜，竟然没搜到！&lt;/p&gt;
-&lt;p&gt;真烦，心想，不如自己写一个。&lt;/p&gt;
+&lt;p&gt;我的书稿《学R》最初是先用思维导图拟定框架，然后在 Word 里写，后来转到 bookdown 里完成的。今天下午，我在书稿的旧思维导图里照着新稿修改，想把两者统一了。改着改着，觉得不对劲儿呀，R markdown 的哲学是维护一份文档，导出多个格式，我怎么又开始维护两份内容相同只是格式不同的文档了？&lt;/p&gt;
+&lt;p&gt;这肯定不是什么新问题，肯定有办法直接把 markdown 转成思维导图。于是我搜。我搜搜搜，竟然没搜到！&lt;/p&gt;
+&lt;p&gt;这就怪了。从常识上判断，我认为这个工具肯定有，说不定藏在某个 R 包里，只是太隐蔽了。&lt;/p&gt;
+&lt;p&gt;是应该继续搜呢，还是自己动手？有时候真是难以权衡。我掂量了一下轻重，选择了后者。&lt;/p&gt;
 &lt;p&gt;晚上，写好了。&lt;/p&gt;
-&lt;p&gt;先拿 &lt;a href=&#34;https://github.com/rstudio/bookdown/tree/master/inst/examples&#34;&gt;bookdown 书稿&lt;/a&gt;练手，用 freemind 直接打开：&lt;/p&gt;
+&lt;p&gt;先拿 &lt;a href=&#34;https://github.com/rstudio/bookdown/tree/master/inst/examples&#34;&gt;bookdown 书稿&lt;/a&gt;当小白鼠练手，用 freemind 直接打开：&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;http://www.pzhao.org/img/mindr_bookdown.jpeg&#34; /&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/mindr/master/showcase/mindr_bookdown.jpeg&#34; /&gt;
 
 &lt;/div&gt;
 &lt;p&gt;freemind 确实简陋。再拿 &lt;a href=&#34;https://github.com/rstudio/blogdown/tree/master/docs&#34;&gt;blogdown 书稿&lt;/a&gt; 试试，导入 Xmind 看看：&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;http://www.pzhao.org/img/mindr_blogdown.jpg&#34; /&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/mindr/master/showcase/mindr_blogdown.jpg&#34; /&gt;
 
 &lt;/div&gt;
-&lt;p&gt;还不错。好了，实验成熟了，放心地用在自己的书稿上：&lt;/p&gt;
+&lt;p&gt;还不错。好了，实验成熟了，放心地用在自己的书稿上，并且挑个最漂亮的款式：&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;http://www.pzhao.org/img/mindr_xuer.jpg&#34; /&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/mindr/master/showcase/mindr_xuer.jpg&#34; /&gt;
 
 &lt;/div&gt;
 </description>
@@ -126,7 +127,7 @@
 &lt;/ul&gt;
 &lt;p&gt;有了这3份很好的资料，那我还写本篇帖子做什么？&lt;/p&gt;
 &lt;p&gt;这是因为，他们都是高手中的高手，只是我觉得他们写得，就好比教授写幼儿园教材，仍然不太合小朋友的胃口，不足以让我等菜鸟快速入门。比如读到roxygen2是多么美妙，我起初完全没体验，不知道“举头望文档，低头思函数”到底说的是什么（what the hell was Yihui talking about? 当然，一天之后我就体会到了静夜思的精妙），再一看Emacs就被吓得河水倒流，当年光一个vim就把我折腾个半死。而极简篇里，我觉得既然是极简，能减掉的步骤尽量减，所以还能继续剪。可能当年是极简，时过境迁，人类进步，现在可以比极简更简。&lt;/p&gt;
-&lt;p&gt;下面，我试试写个减到不能再减的一剑封喉致简版，让你只需小改两个文本文件，不出十分钟就写出一个能用的R包。&lt;/p&gt;
+&lt;p&gt;下面，我试试写个减到不能再减的一剑封喉致简版，只需小改两个文本文件，不出十分钟就写出一个能用的R包。&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;section level2&#34;&gt;
 &lt;h2&gt;准备&lt;/h2&gt;
@@ -142,7 +143,7 @@
 &lt;div class=&#34;section level2&#34;&gt;
 &lt;h2&gt;致简四部曲&lt;/h2&gt;
 &lt;ol style=&#34;list-style-type: decimal&#34;&gt;
-&lt;li&gt;&lt;p&gt;参照益辉的&lt;a href=&#34;https://github.com/yihui/rmini&#34;&gt;rmini&lt;/a&gt;，我做了个更简单的模板，叫做rmickey。&lt;a href=&#34;https://github.com/pzhaonet/rmickey/archive/master.zip&#34;&gt;点击下载&lt;/a&gt;并解压缩，得到个名叫rmickey文件夹。这个文件夹名字可以随便改。&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;参照益辉的&lt;a href=&#34;https://github.com/yihui/rmini&#34;&gt;rmini&lt;/a&gt;，我做了个更简单的模板（Update：根据&lt;a href=&#34;http://www.pzhao.org/zh/post/rmickey/#comment-3312847859&#34;&gt;Dong的建议&lt;/a&gt;，也可以RStudio - File - New project - New directory - R package），叫做rmickey。&lt;a href=&#34;https://github.com/pzhaonet/rmickey/archive/master.zip&#34;&gt;点击下载&lt;/a&gt;并解压缩，得到个名叫rmickey文件夹。这个文件夹名字可以随便改。&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;双击&lt;code&gt;rmickey.Rproj&lt;/code&gt;（这个文件名也可以随便改），就会用RStudio打开这个项目。后续步骤全部在RStudio里操作。&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;点击打开RStudio右下窗口Files下的&lt;code&gt;DESCRIPTION&lt;/code&gt;文件（这个文件名千万别改）和&lt;code&gt;R/foo.R&lt;/code&gt;文件（这个文件名可以随便改）。&lt;code&gt;DESCRIPTION&lt;/code&gt;里是你的包的描述信息。可以看到包名称，版本，日期，包标题，包作者，维护者，依赖性，描述等信息。把其中每一条冒号后面的信息改成你自己的信息，比如把第一行包的名称改成mymickey，保存。&lt;code&gt;R/foo.R&lt;/code&gt;里是你的包里包含的自定义函数，模板里只列了一条做示例。函数的写法跟平时没区别。而函数前面的几行，就是所谓的说明文档，都以&lt;code&gt;#&#39;&lt;/code&gt;开头，第一行是简要介绍，以&lt;code&gt;@param&lt;/code&gt;开头的行逐个介绍函数的自变量（懒得介绍的话就像示例里的x2那一行一样空着，但x2后面必须有一个空格），&lt;code&gt;@return&lt;/code&gt;开头的行介绍因变量（必填），&lt;code&gt;@export&lt;/code&gt; &lt;code&gt;@examples&lt;/code&gt;两行可以不修改。有更多函数的话，照葫芦画瓢在文件里往下继续写就是了。保存。&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;点击RStudio右上窗口的&lt;code&gt;Build&lt;/code&gt;标签下的&lt;code&gt;Build &amp;amp; Reload&lt;/code&gt;按钮，包就编译并自动安装好了！&lt;/p&gt;&lt;/li&gt;
@@ -201,7 +202,7 @@ foo()&lt;/code&gt;&lt;/pre&gt;
 &lt;img src=&#34;http://dapengde.com/wp-content/uploads/2017/03/2017-03-19.jpg&#34; /&gt;
 
 &lt;/div&gt;
-&lt;p&gt;PS. 星期三下午，我壮着胆子把Emacs装上，战战兢兢试了一下就惊呆了。这个ctrl+coo快捷键(可以读作“control 酷”，太好记了)来维护R包简直不要太逆天。昨天我花了四五个小时来为我那51个函数写文档，要是用Emacs，估计最多一小时就够了。省事的话，可能不到10分钟就能写出个包含这51个函数的能用的致简包。最让我受刺激的还不是这个。自打学了vim之后，我就坚信，我永远用不着，也永远学不会Emacs，而实际上，学会上面这个办法，只用了三五分钟……Emacs我不打算学更多，光这一招就够酷……&lt;/p&gt;
+&lt;p&gt;PS. 星期三下午，我壮着胆子把Emacs装上，战战兢兢试了一下就惊呆了。这个ctrl+coo快捷键(可以读作“control 酷”，太好记了)来维护R包简直不要太逆天。昨天我花了四五个小时来为我那51个函数写文档，要是用Emacs，估计最多一小时就够了。省事的话，可能不到10分钟就能写出个包含这51个函数的能用的致简包。最让我受刺激的还不是这个。自打学了vim之后，我就坚信，我永远用不着，也永远学不会Emacs，而实际上，学会上面这个办法，只用了三五分钟……Emacs我不打算学更多，光这一招就够酷……(Update: 根据 &lt;a href=&#34;http://www.pzhao.org/zh/post/rmickey/#comment-3314475182&#34;&gt;Yihui Xie&lt;/a&gt;的留言，RStudio 里 ctrl+shift+alt+r也能同样实现)&lt;/p&gt;
 &lt;p&gt;到底是什么阻挡了尝试新事物的可能？&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;
 &lt;img src=&#34;http://www.pzhao.org/img/emacs-coo.gif&#34; /&gt;

@@ -26,7 +26,7 @@ categories: []
 </ul>
 <p>有了这3份很好的资料，那我还写本篇帖子做什么？</p>
 <p>这是因为，他们都是高手中的高手，只是我觉得他们写得，就好比教授写幼儿园教材，仍然不太合小朋友的胃口，不足以让我等菜鸟快速入门。比如读到roxygen2是多么美妙，我起初完全没体验，不知道“举头望文档，低头思函数”到底说的是什么（what the hell was Yihui talking about? 当然，一天之后我就体会到了静夜思的精妙），再一看Emacs就被吓得河水倒流，当年光一个vim就把我折腾个半死。而极简篇里，我觉得既然是极简，能减掉的步骤尽量减，所以还能继续剪。可能当年是极简，时过境迁，人类进步，现在可以比极简更简。</p>
-<p>下面，我试试写个减到不能再减的一剑封喉致简版，让你只需小改两个文本文件，不出十分钟就写出一个能用的R包。</p>
+<p>下面，我试试写个减到不能再减的一剑封喉致简版，只需小改两个文本文件，不出十分钟就写出一个能用的R包。</p>
 </div>
 <div class="section level2">
 <h2>准备</h2>
@@ -42,7 +42,7 @@ categories: []
 <div class="section level2">
 <h2>致简四部曲</h2>
 <ol style="list-style-type: decimal">
-<li><p>参照益辉的<a href="https://github.com/yihui/rmini">rmini</a>，我做了个更简单的模板，叫做rmickey。<a href="https://github.com/pzhaonet/rmickey/archive/master.zip">点击下载</a>并解压缩，得到个名叫rmickey文件夹。这个文件夹名字可以随便改。</p></li>
+<li><p>参照益辉的<a href="https://github.com/yihui/rmini">rmini</a>，我做了个更简单的模板（Update：根据<a href="http://www.pzhao.org/zh/post/rmickey/#comment-3312847859">Dong的建议</a>，也可以RStudio - File - New project - New directory - R package），叫做rmickey。<a href="https://github.com/pzhaonet/rmickey/archive/master.zip">点击下载</a>并解压缩，得到个名叫rmickey文件夹。这个文件夹名字可以随便改。</p></li>
 <li><p>双击<code>rmickey.Rproj</code>（这个文件名也可以随便改），就会用RStudio打开这个项目。后续步骤全部在RStudio里操作。</p></li>
 <li><p>点击打开RStudio右下窗口Files下的<code>DESCRIPTION</code>文件（这个文件名千万别改）和<code>R/foo.R</code>文件（这个文件名可以随便改）。<code>DESCRIPTION</code>里是你的包的描述信息。可以看到包名称，版本，日期，包标题，包作者，维护者，依赖性，描述等信息。把其中每一条冒号后面的信息改成你自己的信息，比如把第一行包的名称改成mymickey，保存。<code>R/foo.R</code>里是你的包里包含的自定义函数，模板里只列了一条做示例。函数的写法跟平时没区别。而函数前面的几行，就是所谓的说明文档，都以<code>#'</code>开头，第一行是简要介绍，以<code>@param</code>开头的行逐个介绍函数的自变量（懒得介绍的话就像示例里的x2那一行一样空着，但x2后面必须有一个空格），<code>@return</code>开头的行介绍因变量（必填），<code>@export</code> <code>@examples</code>两行可以不修改。有更多函数的话，照葫芦画瓢在文件里往下继续写就是了。保存。</p></li>
 <li><p>点击RStudio右上窗口的<code>Build</code>标签下的<code>Build &amp; Reload</code>按钮，包就编译并自动安装好了！</p></li>
@@ -101,7 +101,7 @@ foo()</code></pre>
 <img src="http://dapengde.com/wp-content/uploads/2017/03/2017-03-19.jpg" />
 
 </div>
-<p>PS. 星期三下午，我壮着胆子把Emacs装上，战战兢兢试了一下就惊呆了。这个ctrl+coo快捷键(可以读作“control 酷”，太好记了)来维护R包简直不要太逆天。昨天我花了四五个小时来为我那51个函数写文档，要是用Emacs，估计最多一小时就够了。省事的话，可能不到10分钟就能写出个包含这51个函数的能用的致简包。最让我受刺激的还不是这个。自打学了vim之后，我就坚信，我永远用不着，也永远学不会Emacs，而实际上，学会上面这个办法，只用了三五分钟……Emacs我不打算学更多，光这一招就够酷……</p>
+<p>PS. 星期三下午，我壮着胆子把Emacs装上，战战兢兢试了一下就惊呆了。这个ctrl+coo快捷键(可以读作“control 酷”，太好记了)来维护R包简直不要太逆天。昨天我花了四五个小时来为我那51个函数写文档，要是用Emacs，估计最多一小时就够了。省事的话，可能不到10分钟就能写出个包含这51个函数的能用的致简包。最让我受刺激的还不是这个。自打学了vim之后，我就坚信，我永远用不着，也永远学不会Emacs，而实际上，学会上面这个办法，只用了三五分钟……Emacs我不打算学更多，光这一招就够酷……(Update: 根据 <a href="http://www.pzhao.org/zh/post/rmickey/#comment-3314475182">Yihui Xie</a>的留言，RStudio 里 ctrl+shift+alt+r也能同样实现)</p>
 <p>到底是什么阻挡了尝试新事物的可能？</p>
 <div class="figure">
 <img src="/img/emacs-coo.gif" />

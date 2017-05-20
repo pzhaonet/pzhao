@@ -30,22 +30,24 @@ mindr::mindr()
 
 -------
 
-我的书稿《学R》最初是先用思维导图拟定框架，然后在 Word 里写，后来转到 bookdown 里完成的。今天下午，我在书稿的旧思维导图里照着新稿修改，想把两者统一了。改着改着，觉得不对劲儿呀，R markdown 的思路是维护一份文档，导出多个格式，我怎么又开始维护两份内容相同的文档了？
+我的书稿《学R》最初是先用思维导图拟定框架，然后在 Word 里写，后来转到 bookdown 里完成的。今天下午，我在书稿的旧思维导图里照着新稿修改，想把两者统一了。改着改着，觉得不对劲儿呀，R markdown 的哲学是维护一份文档，导出多个格式，我怎么又开始维护两份内容相同只是格式不同的文档了？
 
-这肯定不是什么新问题，肯定有办法直接把 markdown 转成思维导图的工具。于是我搜。我搜搜搜，竟然没搜到！
+这肯定不是什么新问题，肯定有办法直接把 markdown 转成思维导图。于是我搜。我搜搜搜，竟然没搜到！
 
-真烦，心想，不如自己写一个。
+这就怪了。从常识上判断，我认为这个工具肯定有，说不定藏在某个 R 包里，只是太隐蔽了。
+
+是应该继续搜呢，还是自己动手？有时候真是难以权衡。我掂量了一下轻重，选择了后者。
 
 晚上，写好了。
 
-先拿 [bookdown 书稿](https://github.com/rstudio/bookdown/tree/master/inst/examples)练手，用 freemind 直接打开：
+先拿 [bookdown 书稿](https://github.com/rstudio/bookdown/tree/master/inst/examples)当小白鼠练手，用 freemind 直接打开：
 
-![](/img/mindr_bookdown.jpeg)
+![](https://raw.githubusercontent.com/pzhaonet/mindr/master/showcase/mindr_bookdown.jpeg)
 
 freemind 确实简陋。再拿 [blogdown 书稿](https://github.com/rstudio/blogdown/tree/master/docs) 试试，导入 Xmind 看看：
 
-![](/img/mindr_blogdown.jpg)
+![](https://raw.githubusercontent.com/pzhaonet/mindr/master/showcase/mindr_blogdown.jpg)
 
-还不错。好了，实验成熟了，放心地用在自己的书稿上：
+还不错。好了，实验成熟了，放心地用在自己的书稿上，并且挑个最漂亮的款式：
 
-![](/img/mindr_xuer.jpg)
+![](https://raw.githubusercontent.com/pzhaonet/mindr/master/showcase/mindr_xuer.jpg)
