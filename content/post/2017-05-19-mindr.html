@@ -21,8 +21,9 @@ categories: []
 <pre class="r"><code>devtools::install_github(&quot;pzhaonet/mindr&quot;)</code></pre>
 <p>使用方法：</p>
 <p>在R的工作目录创建个名叫 <code>mm/</code> 的文件夹，丢进去一堆 markdown 文件 (.md, .Rmd)，然后运行：</p>
-<pre class="r"><code>mindr::mindr()</code></pre>
+<pre class="r"><code>mindr::md2mm()</code></pre>
 <p>就得到个 <code>mm.mm</code> 的思维导图文件，用免费的思维导图软件 <a href="http://freemind.sourceforge.net/wiki/index.php/Download">freemind</a> 可以直接打开。界面比较简陋。或者用漂亮的免费软件 <a href="http://www.xmind.net/download/win/">Xmind</a>，需要选择<code>导入 freemind 导图</code>。</p>
+<p>mindr包还有另外两个函数：<code>mm2md()</code>是反向操作，将思维导图转换成markdown;<code>outline()</code>是从markdown文件里提取出各级标题生成大纲。</p>
 <hr />
 <p>我的书稿《学R》最初是先用思维导图拟定框架，然后在 Word 里写，后来转到 bookdown 里完成的。今天下午，我在书稿的旧思维导图里照着新稿修改，想把两者统一了。改着改着，觉得不对劲儿呀，R markdown 的哲学是维护一份文档，导出多个格式，我怎么又开始维护两份内容相同只是格式不同的文档了？</p>
 <p>这肯定不是什么新问题，肯定有办法直接把 markdown 转成思维导图。于是我搜。我搜搜搜，竟然没搜到！</p>
