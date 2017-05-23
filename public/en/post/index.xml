@@ -21,8 +21,8 @@
 
 &lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
 &lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
-&lt;p&gt;I have collected plenty of equations in my research in recent years. Most of them were typed by my own hands. For convenience, I organized them in a ASCII file named eq.tex as an equation library, side by side with a compiled file named eq.pdf. When I needed an equation, I searched eq.pdf, and looked for the codes in eq.tex, and then copied and posted it to my working document. A little annoying, but much better than retyping.&lt;/p&gt;
-&lt;p&gt;Now comes blogdown and Hugo-academic theme. Everything has changed. I pasted all the texts from eq.tex to an .Rmd file and left it in blogdown. which produced this post。Right click your mouse on an equation in this post - Show Math As - TeX Commands, and I get the LaTeX code of the equation immediately.&lt;/p&gt;
+&lt;p&gt;I have collected plenty of equations in my research in recent years. Most of them were typed by my own hands. For convenience, I organized them in an ASCII file named eq.tex as an equation library, side by side with a compiled file named eq.pdf. When I needed an equation, I searched eq.pdf, and looked for the codes in eq.tex, and then copied and posted it to my working document. A little annoying, but much better than retyping.&lt;/p&gt;
+&lt;p&gt;Now comes blogdown and Hugo-academic theme. Everything has changed. I pasted all the texts from eq.tex to an .Rmd file and left it in blogdown. which produced this post. Right click your mouse on an equation in this post - Show Math As - TeX Commands, and I get the LaTeX code of the equation immediately.&lt;/p&gt;
 &lt;p&gt;Farewell, &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt;. I guess I would never go back to the old fashioned way of&lt;span class=&#34;math inline&#34;&gt;\(\TeX\)&lt;/span&gt; - pdf couple any more.&lt;/p&gt;
 &lt;div id=&#34;meteorology&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Meteorology&lt;/h2&gt;
