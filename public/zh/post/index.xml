@@ -11,6 +11,330 @@
     <atom:link href="/zh/post/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>微气象学常用的 LaTeX 公式</title>
+      <link>http://www.pzhao.org/zh/post/equations/</link>
+      <pubDate>Tue, 23 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.pzhao.org/zh/post/equations/</guid>
+      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
+&lt;!-- /BLOGDOWN-HEAD --&gt;
+
+&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
+&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
+&lt;p&gt;这些年，论文发得不多，公式却攒了不少，大部分都是自己亲手敲的 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; 代码。我把他们整理在一个 eq.tex 文档里，配合一个编译好的 eq.pdf 文件。每次需要的时候，在 eq.pdf 里找到需要的公式，然后去 eq.tex 找公式代码，拷到目标文档里完事儿。稍微有点小麻烦，但总比重新敲一遍代码要省事、准确。&lt;/p&gt;
+&lt;p&gt;然而，现在有了 blogdown 和 Hugo-academic 主题，一切都变得不一样了。我把 eq.tex 里的文本全部拷贝粘贴到一个 .Rmd 文件，扔进网站里，就得到了现在这个帖子。鼠标放在公式上点右键- Show Math As - &lt;span class=&#34;math inline&#34;&gt;\(\TeX\)&lt;/span&gt; Commands，就得到了公式的 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; 代码。直接拷贝就行了，再也不用在两个文档里切换以及找来找去。&lt;/p&gt;
+&lt;p&gt;我觉得，我再也回不去了。&lt;/p&gt;
+&lt;div id=&#34;meteorology&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Meteorology&lt;/h2&gt;
+&lt;div id=&#34;atmpspheric-pressure&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Atmpspheric pressure&lt;/h3&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+P=101.325 \cdot (\frac{293-0.0065z}{293}) ^ {5.26} = 86.838\,\text{kPa}
+\end{equation}\]&lt;/span&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(z\)&lt;/span&gt;: elevation above sea level in m.&lt;/p&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+-\text{d} p =\rho g \text{d}z
+\end{equation}\]&lt;/span&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+\ln \frac{p_2}{p_1} = - \int_{z_1}^{z_2} \frac{g}{RT}\text{d}z
+\end{equation}\]&lt;/span&gt;
+&lt;/div&gt;
+&lt;div id=&#34;psychrometric-constant&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Psychrometric constant&lt;/h3&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+\gamma =\frac{c_p P}{\varepsilon \lambda} = 0.665 \times 10 ^ {-3} P
+\end{equation}\]&lt;/span&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+\lambda = -0.0000614342 T^3 + 0.00158927 T^2 - 2.36418T + 2500.79
+\end{equation}\]&lt;/span&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(P\)&lt;/span&gt;: atmospheric pressure.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(\lambda\)&lt;/span&gt;: latent heat of vaporization (2.46 MJ kg&lt;span class=&#34;math inline&#34;&gt;\(^{-1}\)&lt;/span&gt;)&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(c_p\)&lt;/span&gt;: specific heat of the air (at constant pressure &lt;span class=&#34;math inline&#34;&gt;\(1.013 \times 10 ^{-3}\)&lt;/span&gt; MJ kg&lt;span class=&#34;math inline&#34;&gt;\(^{-1}\)&lt;/span&gt;K&lt;span class=&#34;math inline&#34;&gt;\(^{-1}\)&lt;/span&gt;)&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;humidity&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Humidity&lt;/h3&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+    e_{\text s}=6.112\exp\frac {17.62t}{243.12+t}
+\end{equation}\]&lt;/span&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(e_s\)&lt;/span&gt;: saturated vapor pressure over water at &lt;span class=&#34;math inline&#34;&gt;\(-45\)&lt;/span&gt; to 60 &lt;span class=&#34;math inline&#34;&gt;\(^{\circ}\)&lt;/span&gt;C (sonntag1990)&lt;/p&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+    s_{\text c}=\frac {4284e_{\text s}}{(243.12+t)^2}
+\end{equation}\]&lt;/span&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(s_c\)&lt;/span&gt;: slope of the saturation vapor pressure temperature relationship.&lt;/p&gt;
+&lt;p&gt;or&lt;/p&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+    e_{\text s} = 0.6108\exp\frac {17.27T}{237.3 + T}
+\end{equation}\]&lt;/span&gt;
+&lt;p&gt;and&lt;/p&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+    s_{\text c}=\frac {4098 \cdot 0.6108\exp\frac {17.27T}{237.3 + T}}{(237.3 + T)^2}
+\end{equation}\]&lt;/span&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;carbon&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Carbon&lt;/h2&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+    \text {GPP} = \frac{\alpha R_{\mathrm g}\beta }{\alpha R_{\mathrm g}+\beta }
+\end{equation}\]&lt;/span&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+    \frac{\text {GPP}}{\text {LAI}_\text{act}}\ = \frac{\alpha&amp;#39; R_{\mathrm g}\beta&amp;#39; }{\alpha&amp;#39; R_{\mathrm g}+\beta&amp;#39; }
+\end{equation}\]&lt;/span&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}\label{eGPPLRg}
+    \text{GPP} = \text{LAI}_\text{act}\frac{\alpha&amp;#39; R_{\mathrm g}\beta&amp;#39; }{\alpha&amp;#39; R_{\mathrm g}+\beta&amp;#39; }, 
+\end{equation}\]&lt;/span&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}\label{eGPPL}
+    \text {GPP} = a_\text {LAI}\text{LAI}_\text {act}.
+\end{equation}\]&lt;/span&gt;
+&lt;p&gt;Chamber flux calculation:&lt;/p&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+    F_c = \frac{10 V P_0 (1 - \frac{W_0}{1000})}{RS  (T_0 + 273.15)} \frac{\partial  C&amp;#39;}{\partial t}
+\end{equation}\]&lt;/span&gt;
+&lt;p&gt;flux in μmol m s, p in kpa, volume in cm, w0 in 0.001, t in °C, t in s, c in ppm.&lt;/p&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+    C&amp;#39; = C&amp;#39;_x + (C&amp;#39;_0 - C&amp;#39;_x) e ^ {-a(t-t_0)}
+\end{equation}\]&lt;/span&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+\frac{\partial C&amp;#39;}{\partial t} | _{t = t_0} = a(C&amp;#39;_x - C&amp;#39;_0)
+\end{equation}\]&lt;/span&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+    C&amp;#39; = (C&amp;#39;_x + kt) + (C&amp;#39;_0 - C&amp;#39;_x) e ^ {-a(t-t_0)}
+\end{equation}\]&lt;/span&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+    \frac{\partial C&amp;#39;}{\partial t} | _{t = t_0} = a(C&amp;#39;_x - C&amp;#39;_0) + k
+\end{equation}\]&lt;/span&gt;
+&lt;/div&gt;
+&lt;div id=&#34;energy&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Energy&lt;/h2&gt;
+&lt;div id=&#34;evaporation-from-water-by-energy-balance&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Evaporation from water by energy balance&lt;/h3&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+E_r = \frac{R_n}{l_v \rho_w} \times 1000 \times 86400
+\end{equation}\]&lt;/span&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+l_v = 2.501 \times 10^6 - 2370T
+\end{equation}\]&lt;/span&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(E_r\)&lt;/span&gt; in mm d&lt;span class=&#34;math inline&#34;&gt;\(^{-1}\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(R_n\)&lt;/span&gt;: net radiation (hourly mean - WRCC).&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(l_v\)&lt;/span&gt;: latent heat of vaporization (J/kg).&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(\rho_w\)&lt;/span&gt;: mean water density at constant pressure (999.8 kg m&lt;span class=&#34;math inline&#34;&gt;\(^{-3}\)&lt;/span&gt;)&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;penman-monteith-equation-for-latent-heat-flux&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Penman Monteith equation for latent heat flux&lt;/h3&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+Q ^\text {PM}_{\text E}=\frac {s_{\text c} \frac{-R_{\text n}-Q_{\text G}}{86400\text{s}} + \frac{\rho_a c_{\text p}  (e_{\text s} - e_{\text a})}{r_{\text a}}}{s_{\text c} + \gamma (1 + \frac{r_{\text s}}{r_{\text a}})}
+\end{equation}\]&lt;/span&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Q ^\text {PM}_{\text E}\)&lt;/span&gt;: latent heat flux representing ET fraction (day 4.55 MJ m&lt;span class=&#34;math inline&#34;&gt;\(^{-2}\)&lt;/span&gt;d&lt;span class=&#34;math inline&#34;&gt;\(^{-1}\)&lt;/span&gt;, night 4.43 MJ m&lt;span class=&#34;math inline&#34;&gt;\(^{-2}\)&lt;/span&gt;d&lt;span class=&#34;math inline&#34;&gt;\(^{-1}\)&lt;/span&gt;)&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(R_n\)&lt;/span&gt;: (0.957 MJ m&lt;span class=&#34;math inline&#34;&gt;\(^{-2}\)&lt;/span&gt;d&lt;span class=&#34;math inline&#34;&gt;\(^{-1}\)&lt;/span&gt;)&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(G_{hrday}\)&lt;/span&gt;: 0.0957 MJ m&lt;span class=&#34;math inline&#34;&gt;\(^{-2}\)&lt;/span&gt;d&lt;span class=&#34;math inline&#34;&gt;\(^{-1}\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(G_{hrnight}\)&lt;/span&gt;: 0.4789 MJ m&lt;span class=&#34;math inline&#34;&gt;\(^{-2}\)&lt;/span&gt;d&lt;span class=&#34;math inline&#34;&gt;\(^{-1}\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(e_s-e_a\)&lt;/span&gt;: vapor pressure deficit of the air (1.9484 kPa - 0.439 kPa = 1.509 kPa)&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(\rho_a\)&lt;/span&gt;: mean air density at constant pressure (1.040 kg m&lt;span class=&#34;math inline&#34;&gt;\(^{-3}\)&lt;/span&gt;)&lt;/p&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+\rho_{adry} = \frac{p}{RT} = 1.229 \text {\,kg\,m}^{-3}
+\end{equation}\]&lt;/span&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+\rho_{ahumid} = \frac{p_d}{R_d T} + \frac{p_v}{R_v T}= 1.040 \text {\,kg\,m}^{-3}
+\end{equation}\]&lt;/span&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+p_v = RH \times p_{sat} = 1.142 \text{kPa}
+\end{equation}\]&lt;/span&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+p_{sat} = 6.1078 \cdot 10 ^{\frac{7.5T-2048.625}{T-35.85}} \cdot 100 = 1.84 \text {\,kPa}
+\end{equation}\]&lt;/span&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+p_d = p_{abs} - p_v = 85.696 \text{\,kPa}
+\end{equation}\]&lt;/span&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(c_p\)&lt;/span&gt;: specific heat of the air (at constant pressure &lt;span class=&#34;math inline&#34;&gt;\(1.013 \times 10 ^{-3}\)&lt;/span&gt; MJ kg&lt;span class=&#34;math inline&#34;&gt;\(^{-1}\)&lt;/span&gt;K&lt;span class=&#34;math inline&#34;&gt;\(^{-1}\)&lt;/span&gt;)&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(s_c\)&lt;/span&gt;: slope of the saturation vapor pressure remperature relationship (0.117 kPa K&lt;span class=&#34;math inline&#34;&gt;\(^{-1}\)&lt;/span&gt;)&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(\gamma\)&lt;/span&gt;: psychrometric constant (0.0577 kPa K&lt;span class=&#34;math inline&#34;&gt;\(^{-1}\)&lt;/span&gt;)&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(r_s\)&lt;/span&gt;: bulk surface resistance (20.83 s m&lt;span class=&#34;math inline&#34;&gt;\(^{-1}\)&lt;/span&gt;)&lt;/p&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+r_\text s=\frac{r_\text {si}}{\text {LAI}_\text {active}},
+\end{equation}\]&lt;/span&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(r_\text {si}\)&lt;/span&gt;: bulk stomatal resistance well illuminated leaf (100 s m&lt;span class=&#34;math inline&#34;&gt;\(^{-1}\)&lt;/span&gt;)&lt;/p&gt;
+&lt;p&gt;LAI&lt;span class=&#34;math inline&#34;&gt;\(_{active}\)&lt;/span&gt;: active sulit leaf area index. It differs widely for crops but 3 – 5 common for most mature crops. Changes through season and normally reaches max before flowering. Depends on plant density and crop variety. Generally 0.5LAI, i.e. only top half of dense clipped grass is active in surface heat and vapor transfer. For clipped grass LAI&lt;span class=&#34;math inline&#34;&gt;\(=24h\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(r_a\)&lt;/span&gt;: aerodynamic resistence (155.33 s m&lt;span class=&#34;math inline&#34;&gt;\(^{-1}\)&lt;/span&gt;)&lt;/p&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+r_{\text a}= \frac{\ln \frac{z-d}{z_{\textrm{om}}} \ln \frac {z-d}{z_{\textrm{oh}}}}{\kappa ^2 u_z} = \frac{124.264}{u_z}=155.33\text {\,s\,m}^{-1}
+\end{equation}\]&lt;/span&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(z_m\)&lt;/span&gt;: height of wind measurements (2 m)&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(z_h\)&lt;/span&gt;: height of humidity measurements (2 m)&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(h\)&lt;/span&gt;: constant vegetation height (0.4 m)&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(d\)&lt;/span&gt;: zero plane desplacement height (&lt;span class=&#34;math inline&#34;&gt;\(\frac{2}{3}h\)&lt;/span&gt;, 0.27 m)&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(z_{om}\)&lt;/span&gt;: roughness length governing momentum transfer (&lt;span class=&#34;math inline&#34;&gt;\(0.123h\)&lt;/span&gt;, 0.0492 m)&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(z_{oh}\)&lt;/span&gt;: roughness length governing transfer of heat and vapor (&lt;span class=&#34;math inline&#34;&gt;\(0.1z_{om}\)&lt;/span&gt;, 0.00492 m)&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(u_z\)&lt;/span&gt;: wind speed at 2 m height (mean 0.8 m s&lt;span class=&#34;math inline&#34;&gt;\(^{-1}\)&lt;/span&gt;)&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;fao-penman-monteith-equation-for-et-rate-from-reference-surface-et_0&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;FAO Penman Monteith equation for ET rate from reference surface (ET&lt;span class=&#34;math inline&#34;&gt;\(_0\)&lt;/span&gt;)&lt;/h3&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+ET_0 = \frac {0.408 s_{\text c} \frac{-R_{\text n}-Q_{\text G}}{86400\text{s}} + \frac{\gamma 900 u_z (e_{\text s} - e_{\text a})}{T+273}}{s_{\text c} + \gamma (1 + 0.34u_z)}
+\end{equation}\]&lt;/span&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(ET_0\)&lt;/span&gt;: reference evapotraspiration (day 1.109 mm day&lt;span class=&#34;math inline&#34;&gt;\(^{-1}\)&lt;/span&gt;, night 1.064 mm day&lt;span class=&#34;math inline&#34;&gt;\(^{-1}\)&lt;/span&gt;)&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(ET_0\)&lt;/span&gt;: reference evapotraspiration (day 2.72 MJ m&lt;span class=&#34;math inline&#34;&gt;\(^{-2}\)&lt;/span&gt;d&lt;span class=&#34;math inline&#34;&gt;\(^{-1}\)&lt;/span&gt;, night 2.61 MJ m&lt;span class=&#34;math inline&#34;&gt;\(^{-2}\)&lt;/span&gt;d&lt;span class=&#34;math inline&#34;&gt;\(^{-1}\)&lt;/span&gt;)&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(R_n\)&lt;/span&gt;: net radiation (0.445 MJ m&lt;span class=&#34;math inline&#34;&gt;\(^{-2}\)&lt;/span&gt;d&lt;span class=&#34;math inline&#34;&gt;\(^{-1}\)&lt;/span&gt;)&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(G_{hrday}\)&lt;/span&gt;: 0.0445 MJ m&lt;span class=&#34;math inline&#34;&gt;\(^{-2}\)&lt;/span&gt;d&lt;span class=&#34;math inline&#34;&gt;\(^{-1}\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(G_{hrnight}\)&lt;/span&gt;: 0.2227 MJ m&lt;span class=&#34;math inline&#34;&gt;\(^{-2}\)&lt;/span&gt;d&lt;span class=&#34;math inline&#34;&gt;\(^{-1}\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(e_s-e_a\)&lt;/span&gt;: vapor pressure deficit of the air (1.9484 kPa - 0.439 kPa = 1.509 kPa)&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(T\)&lt;/span&gt;: mean daily air temperature at 2 m height (16.2&lt;span class=&#34;math inline&#34;&gt;\(^\circ\)&lt;/span&gt;C)&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;equations-in-gafir-documentation&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Equations in GaFiR documentation&lt;/h3&gt;
+&lt;p&gt;Eq. &lt;a href=&#34;#eq:eNEE&#34;&gt;(1)&lt;/a&gt;&lt;/p&gt;
+&lt;span class=&#34;math display&#34; id=&#34;eq:eNEE&#34;&gt;\[\begin{equation}
+\text{NEE = GPP} + R_\text{eco}
+\tag{1}
+\end{equation}\]&lt;/span&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}\label{ePM}
+Q ^\text {PM}_{\text E}=\frac {s_{\text c} (-R_{\text n}-Q_{\text G}) + \frac{\rho c_{\text p}  (e_{\text s} - e_{\text a})}{r_{\text a}}}{s_{\text c} + \gamma (1 + \frac{r_{\text s}}{r_{\text a}})},
+\end{equation}\]&lt;/span&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}\label{era}
+r_{\text a}= \frac{\ln \frac{z-d}{z_{\textrm{om}}} \ln \frac {z-d}{z_{\textrm{oh}}}}{\kappa ^2 u},
+\end{equation}\]&lt;/span&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}\label{eRl}
+%r^{\text {LAI}}_\text s=\frac{r_\text {si}}{0.5\text {LAI}},
+r_\text s=\frac{r_\text {si}}{\text {LAI}_\text {active}},
+\end{equation}\]&lt;/span&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}\label{eKP}
+%\frac{r^{\text {KP}}_\text s}{r_\text a} = a \frac{r^*}{r_\text a} + b,
+\frac{r_\text s}{r_\text a} = a \frac{r^*}{r_\text a} + b,
+\end{equation}\]&lt;/span&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+r^*=\frac{(s_\text c + \gamma)\rho c_\text p (e_{\text s} - e_{\text a})}{s_\text c \gamma (-R_{\text n}-Q_{\text G})},
+\end{equation}\]&lt;/span&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}\label{eRs}
+r_{\text s}= \frac {r_{\text a}s_{\text c} (-R_{\text n}-Q_{\text G}) + \rho c_{\text p}  (e_{\text s} - e_{\text a}) - r_{\text a}Q_{\text E}(s_{\text c} + \gamma)}
+{\gamma Q_{\text E}}.
+\end{equation}\]&lt;/span&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}\label{ePT}
+E=\alpha_{\text {PT}} \frac {s_{\text c}}{s_{\text c} + \gamma}(-Q_{\text A})
+\end{equation}\]&lt;/span&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;model-evaluation&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Model evaluation&lt;/h2&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+ \text{ME}=\frac{1}{N}\sum_{i=1}^{N}|P_i-O_i|
+ \end{equation}\]&lt;/span&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+ \text{MAE}=\frac{1}{N}\sum_{i=1}^{N}(P_i-O_i)
+ \end{equation}\]&lt;/span&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation} 
+\text{MSE}=\frac{1}{N}\sum_{i=1}^{N}(P_i-O_i)^2
+\end{equation}\]&lt;/span&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation} 
+\text{RMSE}=\sqrt{\frac{1}{N}\sum_{i=1}^{N}(P_i-O_i)^2}
+\end{equation}\]&lt;/span&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation} 
+\text{NRMSE}=100\frac{\text{RMSE}}{O_\text{max} - O_\text{min}}
+\end{equation}\]&lt;/span&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation} 
+\text{PBIAS} =100\frac{\sum_{i=1}^{n}(P_i-O_i)}{\sum_{i=1}^{n}O_i}
+\end{equation}\]&lt;/span&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation} 
+\text{RSR} =\frac{\text{RMSE}}{\sigma_O}
+\end{equation}\]&lt;/span&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation} 
+\text{rSD} =\frac{\sigma_P}{\sigma_O}
+\end{equation}\]&lt;/span&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation} 
+\text{NSE} =1-\frac{\sum_{i=1}^{n}(O_i-P_i)^2}{\sum_{i=1}^{n}(O_i - \overline{O})^2}
+\end{equation}\]&lt;/span&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation} 
+\text{mNSE} =1-\frac{\sum_{i=1}^{n}|O_i-P_i||^j}{\sum_{i=1}^{n}|O_i - \overline{O}|^j}
+\end{equation}\]&lt;/span&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation} 
+\text{rNSE} =1-\frac{\sum_{i=1}^{n}(\frac{O_i-P_i}{\overline{O}})^2}{\sum_{i=1}^{n}(\frac{O_i - \overline{O}}{\overline{O}})^2}
+\end{equation}\]&lt;/span&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation} 
+d =1-\frac{\sum_{i=1}^{n}(P_i-O_i)^2}{\sum_{i=1}^{n}(|P_i-O_i|+|P_i+O_i|)^2}
+\end{equation}\]&lt;/span&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation} 
+md =1 - \frac{\sum_{i=1}^{n}(P_i-O_i)^j}{\sum_{i=1}^{n}(|P_i-O_i|+|P_i+O_i|)^j}
+\end{equation}\]&lt;/span&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation} 
+rd =1-\frac{\sum_{i=1}^{n}(\frac{P_i-O_i}{\overline{O}})^2}{\sum_{i=1}^{n}(\frac{|P_i-O_i|+|P_i+O_i|}{\overline{O}})^2}
+\end{equation}\]&lt;/span&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation} 
+\text{cp} =1-\frac{\sum_{i=2}^{n}(O_i-P_i)^2}{\sum_{i=1}^{n-1}(O_{i+1} - O_i)^2}
+\end{equation}\]&lt;/span&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation} 
+R =\frac{\sum_{i=1}^{n}(O_i-\overline{O})(P_i-\overline{P})}{\sqrt{\sum_{i=1}^{n}(O_i-\overline{O})^2}\sqrt{\sum_{i=1}^{n}(P_i-\overline{P})^2}) }
+\end{equation}\]&lt;/span&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation} 
+R^2 =(\frac{\sum_{i=1}^{n}(O_i-\overline{O})(P_i-\overline{P})}{\sqrt{\sum_{i=1}^{n}(O_i-\overline{O})^2}\sqrt{\sum_{i=1}^{n}(P_i-\overline{P})^2}) })^2
+\end{equation}\]&lt;/span&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation} 
+\text{bR2} =bR^2
+\end{equation}\]&lt;/span&gt;
+&lt;/div&gt;
+&lt;div id=&#34;mathematics&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Mathematics&lt;/h2&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+\frac{\text {d} x^\mu}{\text {d} x} = \mu x ^{\mu - 1}\\
+\end{equation}\]&lt;/span&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+\frac{\text {d} e^x}{\text {d} x} = e^x\\
+\end{equation}\]&lt;/span&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+\frac{\text {d} a^x}{\text {d} x} = a^x \ln a \\
+\end{equation}\]&lt;/span&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+\frac{\text {d} \ln x}{\text {d} x} = \frac{1}{x}\\
+\end{equation}\]&lt;/span&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+\frac{\text {d} \log _a x}{\text {d} x} = \frac{1}{x\ln a}\\
+\end{equation}\]&lt;/span&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+\frac{\text {d} \sin x}{\text {d} x} = \cos x\\
+\end{equation}\]&lt;/span&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+\frac{\text {d} \cos x}{\text {d} x} = - \sin x\\
+\end{equation}\]&lt;/span&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+\int k \text {d} x = kx + C
+\end{equation}\]&lt;/span&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+\int x ^ \mu \text {d} x = \frac{x^{\mu + 1}}{\mu + 1} + C\ (\mu \neq -1)
+\end{equation}\]&lt;/span&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+\int \frac{1}{x}\text {d} x = \ln \left | x \right | + C
+\end{equation}\]&lt;/span&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+\int \text {e} ^x \text {d} x = \text {e} ^x + C\\
+\end{equation}\]&lt;/span&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+\int a ^x \text {d} x = \frac{a^x}{\ln a}+ C\\
+\end{equation}\]&lt;/span&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+\int \frac{1}{1+x^2}\text {d} x = \arctan x + C\\
+\end{equation}\]&lt;/span&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+\int \frac{1}{1-x^2}\text {d} x = \arcsin x + C\\
+\end{equation}\]&lt;/span&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+\int \cos x \text {d} x = \sin x + C\\
+\end{equation}\]&lt;/span&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+\int \sin x \text {d} x = -\cos x + C\\
+\end{equation}\]&lt;/span&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+\int \frac{1}{\cos^2 x} \text {d} x = \tan x + C\\
+\end{equation}\]&lt;/span&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+\int \frac{1}{\sin^2 x} \text {d} x = -\cot x + C\\
+\end{equation}\]&lt;/span&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+\int \sec x \tan x \text {d} x = \sec x + C\\
+\end{equation}\]&lt;/span&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+\int \csc x \cot x \text {d} x = -\csc x + C\\
+\end{equation}\]&lt;/span&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>R mindr: 把 Markdown 转成思维导图</title>
       <link>http://www.pzhao.org/zh/post/mindr/</link>
       <pubDate>Fri, 19 May 2017 00:00:00 +0000</pubDate>
@@ -788,30 +1112,6 @@ Enable/disable and configure widgets to customize your homepage.
 &lt;p&gt;跟 R blogdown 生成的 .md 和 .Rmd 文件的文件头不同，这个文件头居然是用前后各三个加号表示的。里面的&lt;code&gt;summary&lt;/code&gt;开始数三行，就是用来设置文摘的。&lt;/p&gt;
 &lt;p&gt;于是我就把这三行拷贝粘贴到 .Rmd 文件里，当然是编译出错了。接着我想当然地把上面这段前后共六个加号的文件头拷贝粘贴到 .Rmd 里，仍然报错。问题搁置了几天，才想起去 blogdown 项目主页搜搜看，就找到了答案。&lt;/p&gt;
 &lt;p&gt;永远记不住的教训：遇到问题，别瞎试。上网搜，你绝不是第一个遇到这个问题的人。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Hugo 网站的 Disqus 加载问题</title>
-      <link>http://www.pzhao.org/zh/post/hogo-disques-problem/</link>
-      <pubDate>Fri, 14 Apr 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/zh/post/hogo-disques-problem/</guid>
-      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
-&lt;!-- /BLOGDOWN-HEAD --&gt;
-
-&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
-&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
-&lt;p&gt;今天，复活节假期前夕，同事们都休假了。我虽然在办公室，却无心上班，发了一会儿呆，想想与其痛苦地工作，不如快乐地解决一下&lt;a href=&#34;http://pzhao.org&#34;&gt;新网站&lt;/a&gt;的一个小问题：disqus 评论框的加载。&lt;/p&gt;
-&lt;p&gt;用 R blogdown 打建好站，disqus评论框就一直没成功加载过。后来听说是&lt;code&gt;config.toml&lt;/code&gt;里 &lt;code&gt;disqus shortname&lt;/code&gt;指的不是我的disqus ID，而是要&lt;a href=&#34;https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-&#34;&gt;专门设置&lt;/a&gt;一下， 我说“啊,还有这事儿？”于是就设置了一下，但是仍然不能成功加载。这个问题放了几天，今天心血来潮&lt;a href=&#34;http://applyr.blogspot.co.at/2017/01/blogging-about-r-from-r-studio.html&#34;&gt;一搜&lt;/a&gt;，嗯，兴许是路径的问题，于是就把&lt;code&gt;config.toml&lt;/code&gt;开头的路径改为&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;baseurl = &amp;quot;http://www.pzhao.org&amp;quot;
-# relativeurls = true&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;然后运行R语言的建站函数：&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;blogdown::build_site(local=FALSE)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;注意！此处千万不要运行&lt;code&gt;blogdown::serve_site()&lt;/code&gt;，不然新生成的文件就又没法加载 Disqus 了。&lt;a href=&#34;http://applyr.blogspot.co.at/2017/01/blogging-about-r-from-r-studio.html&#34;&gt;网上说&lt;/a&gt;是&lt;code&gt;serve_site()&lt;/code&gt;忽略了&lt;code&gt;config.toml&lt;/code&gt;里的某些设置而造成的。我不懂，总之就是建站函数运行完就直接上传。&lt;/p&gt;
-&lt;p&gt;然后GitHub同步，几秒钟后，Netlify上完成了更新，Disqus评论框就乖乖出现了。&lt;/p&gt;
-&lt;p&gt;欢迎&lt;a href=&#34;http://pzhao.org/zh/post/hogo-disques-problem/&#34;&gt;来留言测试&lt;/a&gt;。&lt;/p&gt;
-&lt;p&gt;啥，你看不见？嗯，听说好像是被墙了。&lt;/p&gt;
 </description>
     </item>
     
