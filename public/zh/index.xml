@@ -11,6 +11,63 @@
     <atom:link href="/zh/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>pinyin: 把汉字转换成拼音的R包</title>
+      <link>http://www.pzhao.org/zh/post/pinyin/</link>
+      <pubDate>Fri, 26 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.pzhao.org/zh/post/pinyin/</guid>
+      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
+&lt;!-- /BLOGDOWN-HEAD --&gt;
+
+&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
+&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
+&lt;p&gt;今天新写了个R包，粗暴地取名为 &lt;a href=&#34;https://github.com/pzhaonet/pinyin/&#34;&gt;pinyin&lt;/a&gt;，作用是把汉字转换成拼音。&lt;/p&gt;
+&lt;p&gt;安装方法：&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;devtools::install_github(&amp;quot;pzhaonet/pinyin&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;安装时可能会出现一些关于 locale 的警告，净吓唬人，无视。&lt;/p&gt;
+&lt;p&gt;使用方法：&lt;/p&gt;
+&lt;p&gt;pinyin 0.0.0版包含3个函数.&lt;code&gt;zh2py()&lt;/code&gt;是主函数，可以把一个带汉字的字符串转换成拼音。可以选择:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;转换成标准的全拼 (默认 &lt;code&gt;method = &#39;quanpin&#39;&lt;/code&gt;)，或&lt;/li&gt;
+&lt;li&gt;以数字表示声调 (&lt;code&gt;method = &#39;tone&#39;&lt;/code&gt;) , 或&lt;/li&gt;
+&lt;li&gt;不含声调(&lt;code&gt;method = &#39;toneless&#39;&lt;/code&gt;),&lt;/li&gt;
+&lt;li&gt;也可以选择仅保留每个字的首字母(&lt;code&gt;only_first_letter = TRUE&lt;/code&gt;),&lt;/li&gt;
+&lt;li&gt;可以自定义相邻两字拼音的分隔符号(&lt;code&gt;sep = &#39;_&#39;&lt;/code&gt;),&lt;/li&gt;
+&lt;li&gt;如果汉字字符串里边包含非汉字字符，可以选择将这些字符保留原样(&lt;code&gt;nonezh_replace = NULL&lt;/code&gt;)还是转换成指定字符(如&lt;code&gt;nonezh_replace = &#39;-&#39;&lt;/code&gt;)。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;举例如下：&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(&amp;#39;pinyin&amp;#39;)
+zh2py(&amp;#39;羌笛何须怨杨柳春风不度玉门关&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;qiānɡ_dí_hé_xū_yuàn_yánɡ_liǔ_chūn_fēnɡ_bú_dù_yù_mén_ɡuān&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;zh2py(&amp;#39;羌笛何须怨杨柳春风不度玉门关&amp;#39;, sep = &amp;#39; &amp;#39;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;qiānɡ dí hé xū yuàn yánɡ liǔ chūn fēnɡ bú dù yù mén ɡuān&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;zh2py(&amp;#39;羌笛何须怨杨柳春风不度玉门关&amp;#39;, sep = &amp;#39; &amp;#39;, method = &amp;#39;tone&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;qiang1 di2 he2 xu1 yuan4 yang2 liu3 chun1 feng1 bu2 du4 yu4 men2 guan1&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;zh2py(&amp;#39;羌笛何须怨杨柳春风不度玉门关&amp;#39;, sep = &amp;#39; &amp;#39;, method = &amp;#39;toneless&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;qiang di he xu yuan yang liu chun feng bu du yu men guan&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;zh2py(&amp;#39;羌笛何须怨杨柳春风不度玉门关&amp;#39;, sep = &amp;#39;&amp;#39;, only_first_letter = TRUE)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;qdhxyylcfbdymɡ&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;zh2py(&amp;#39;羌笛何须怨?杨柳春风,不度玉门关.&amp;#39;, sep = &amp;#39;&amp;#39;, nonezh_replace = &amp;#39;-&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;qiānɡdíhéxūyuàn-yánɡliǔchūnfēnɡ-búdùyùménɡuān-&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如果自变量是多个字符串的向量，那么只会转换第一个字符串：&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;zh2py(c(&amp;#39;羌笛何须怨杨柳&amp;#39;, &amp;#39;春风不度玉门关&amp;#39;))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;qiānɡ_dí_hé_xū_yuàn_yánɡ_liǔ&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这怎么行？哎，用 &lt;code&gt;sapply()&lt;/code&gt; 嘛：&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;sapply(c(&amp;#39;羌笛何须怨杨柳&amp;#39;, &amp;#39;春风不度玉门关&amp;#39;), zh2py)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##                 羌笛何须怨杨柳                 春风不度玉门关 
+## &amp;quot;qiānɡ_dí_hé_xū_yuàn_yánɡ_liǔ&amp;quot;  &amp;quot;chūn_fēnɡ_bú_dù_yù_mén_ɡuān&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;其他两个函数，其实是 &lt;code&gt;zh2py()&lt;/code&gt; 的延伸和示例：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;file.rename2py()&lt;/code&gt;用来将文件名里的汉字转换成拼音。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;bookdown2py()&lt;/code&gt;是专门为 bookdown 包服务的，作用是为章节的中文标题自动添加个对应的拼音ID &lt;code&gt;{#biaotipinyin}&lt;/code&gt;，避免在生成网页文件时文件名里出现一大堆乱码，并且解决&lt;a href=&#34;https://disqus.com/home/discussion/yihui/_yihui_xie_679/#comment-3175332429&#34;&gt;标题里中英文混合的问题&lt;/a&gt;。这事儿已经让我惦记三个月了。— 当然这事儿手动完全可以处理，只是手动处理的过程毫无乐趣可言罢了。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;拼音库我试了好几个，最后选定了&lt;a href=&#34;http://bbs.unispim.com/forum.php?mod=viewthread&amp;amp;tid=31644&#34;&gt;wangyanhan整理制作的42856字拼音表&lt;/a&gt;，直接处理文本文件，简单粗暴，转换起来可能有点慢，会顿一下，但已经够我自用了。&lt;/p&gt;
+&lt;p&gt;我写这个包的环境是 windows 7 下区域设置为中国，别的环境没测试，估计会有不少坑。我这里就有一些，比如不知道哪里设置有问题，包的函数里居然不能出现中文字符，弄得我自变量的默认值和example部分只好空着。再比如多音字的问题，目前完全没处理。所以，转换&lt;code&gt;春眠不觉晓&lt;/code&gt;的结果会让人愣一下，再转换&lt;code&gt;处处闻啼鸟&lt;/code&gt;……&lt;/p&gt;
+&lt;p&gt;结果好尴尬。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>微气象学常用的 LaTeX 公式</title>
       <link>http://www.pzhao.org/zh/post/equations/</link>
       <pubDate>Tue, 23 May 2017 00:00:00 +0000</pubDate>
@@ -778,67 +835,6 @@ template &amp;lt;- templates[8]&lt;/code&gt;&lt;/pre&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>初恋</title>
-      <link>http://www.pzhao.org/zh/post/cawas/</link>
-      <pubDate>Wed, 03 May 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/zh/post/cawas/</guid>
-      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
-&lt;!-- /BLOGDOWN-HEAD --&gt;
-
-&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
-&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
-&lt;p&gt;有一次回乡，见到我的中学老师范先生，谈起当年种种情形，范先生说，我们班是他作为班主任带过的第一个班。我们班之后的十几年来，他也带过很多个班，对他们不可谓不爱，但那份感情在微妙之处却总有不同。我们班让他刻骨铭心，他对我们班的感情，“宛若初恋”。&lt;/p&gt;
-&lt;p&gt;我不由得笑道：范先生把工作热情与爱情相比，其中的幽默感当真是可歌可泣。&lt;/p&gt;
-&lt;p&gt;转眼间，范先生关于初恋的比喻已是几年前的旧事。前两日，整理移动硬盘里的旧文件，在一个多年没碰过的文件夹里，我发现了一些跟以前的工作单位有关的旧物，已遗忘多年，打开一看——&lt;/p&gt;
-&lt;p&gt;旧物里有入职满一年时，我为单位设计的logo。&lt;/p&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;http://www.pzhao.org/img/cawastech.jpg&#34; /&gt;
-
-&lt;/div&gt;
-&lt;p&gt;那年，我们要编写大量的技术手册和办公文档，我很单纯地想，为他们设计一个logo会显得好看一点。说是“设计”，我哪里懂呢，只是把学到的一点flash技术使劲往上靠。这个工作单位属于国家气象局，那就往里加气象元素呗；我所在的部门主要职责是安装、维修和标校仪器，那就画个扳手呗。我们还要对来自全国各地的同行进行培训，于是我配套设计了几个颜色渐变动画版，打算在培训幻灯片里用。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/img/cawastech1.gif&#34; /&gt; &lt;img src=&#34;http://www.pzhao.org/img/cawastech2.gif&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;可惜做完之后并未派上用场。如今，我连源文件都打不开了。&lt;/p&gt;
-&lt;p&gt;旧物里有入职第二年，我制作的电子贺卡。&lt;/p&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;http://www.pzhao.org/img/cawas_214.jpg&#34; /&gt;
-
-&lt;/div&gt;
-&lt;p&gt;那年，春节和情人节接踵而至。刚刚学了一点编程的我，绞尽脑汁把用我学到的所有visual basic技术全都用上，制作了一张&lt;a href=&#34;http://www.pzhao.org/download/bainian.exe&#34;&gt;电子卡片(点击下载)&lt;/a&gt;，以部门的名义，发给同单位其他部门的同事联络感情。在这张卡片上，有“喜欢”和“不喜欢”两个按钮，但是有个小把戏：鼠标永远追不上“不喜欢”；鼠标一放上去，它就跳到别的地方去了。所以，你对我们部门只能喜欢，别无选择。&lt;/p&gt;
-&lt;p&gt;我就从没想过，贸然发给同事个exe文件，说不定讨人嫌吧？如今，我已经把visual basic忘得一干二净，代码读都读不懂了。&lt;/p&gt;
-&lt;p&gt;旧物里有入职第三年，我做的合唱伴奏音乐。&lt;/p&gt;
-&lt;p&gt;那时，我们单位举办春节联欢会，节目的演员是各所职工。我们中心表演的节目是大合唱。提前一个多月，我们就开始着手准备，指导老师请好了，演员也动员好了，排练时间也安排好了，曲目也选好了，是刘欢原唱的《在路上》。这时却发现，原唱音频文件的消声效果不够好，而专门的伴奏又找不到。我自告奋勇，连熬两个通宵，使出浑身解数，愣是用一个吉他谱制作软件把&lt;a href=&#34;http://www.pzhao.org/download/on_the_way.mid&#34;&gt;伴奏音乐(点击下载)&lt;/a&gt;硬生生做了出来。这里面，除了主旋律是在网上找到的简谱外，其他音轨都是我从原唱里一个音一个音听写下来，记在纸上，再输入电脑，反复调整才得来的。我记得，做完的时候已是凌晨5点，躺下眯了两小时，就跳起来挤公交上班，到单位继续亢奋地修仪器。&lt;/p&gt;
-&lt;p&gt;回望这段往事，我感到不可思议。logo并没有领导要求我做，电子贺卡的编程完全属于自愿，而合唱伴奏的制作弄得通宵不睡，更是自作自受——你不做又会怎么样呢？节目照演，春节照过。我问问自己：你为她投入的这份热忱，是她需要的吗？她要求你做到的事情，你做到了吗？你的所谓付出，哪些是出于爱她，哪些是出于爱自己，哪些是二者兼有？&lt;/p&gt;
-&lt;p&gt;此情可待成追忆，只是当时已惘然。入职第四年，我辞职出国深造，与旧单位分道扬镳。&lt;/p&gt;
-&lt;p&gt;如今翻起旧物，我清楚地知道，为工作单位设计logo、制作贺卡、制作伴奏这样的事情，今后恐怕再也不会自发自愿地发生在我身上；即使发生，也难以倾注当年那么大的热情。那份热情不计付出，熊熊燃烧，那是青春的见证。&lt;/p&gt;
-&lt;p&gt;宛若初恋。&lt;/p&gt;
-&lt;hr /&gt;
-&lt;p&gt;正值&lt;a href=&#34;http://www.goosetown.cn/?thread-21.htm&#34;&gt;鹅城话题博文活动举办第二期&lt;/a&gt;，本文恰巧契合主题，顺便报名参加。&lt;/p&gt;
-&lt;p&gt;
-感谢本次活动赞助者：&lt;a href=&#34;https://www.9doe.com&#34; target=&#34;_blank&#34;&gt;小懿&lt;/a&gt;、&lt;a href=&#34;http://cctv.com.im&#34; target=&#34;_blank&#34;&gt;醉卧烟雨&lt;/a&gt;、&lt;a href=&#34;https://chinr.net&#34; target=&#34;_blank&#34;&gt;忘想&lt;/a&gt;、&lt;a href=&#34;http://www.munanzi.com&#34; target=&#34;_blank&#34;&gt;牧南子&lt;/a&gt;
-&lt;/p&gt;
-&lt;p&gt;
-本次活动由&lt;a href=&#34;http://storeweb.cn/&#34;&gt;个站商店&lt;/a&gt;提供冠名支持。
-&lt;/p&gt;
-&lt;p&gt;
-参加本次话题博文活动的还有：
-&lt;/p&gt;
-&lt;p&gt;
-&lt;a href=&#34;https://pewae.com/2017/04/phenix_on_hairpin_reunion.html&#34; target=&#34;_blank&#34;&gt;大致：钗头凤·重逢&lt;/a&gt;
-&lt;/p&gt;
-&lt;p&gt;
-&lt;a href=&#34;http://blog.cctv.com.im/2068.html&#34; target=&#34;_blank&#34;&gt;醉卧烟雨：写给儿时的火烈鸟&lt;/a&gt;
-&lt;/p&gt;
-&lt;p&gt;
-&lt;a href=&#34;https://www.mhcf.net/577.html&#34; target=&#34;_blank&#34;&gt;姜辰：雨中客，送伞人&lt;/a&gt;
-&lt;/p&gt;
-&lt;p&gt;
-&lt;a href=&#34;http://quluwei.com/archives/1476&#34; target=&#34;_blank&#34;&gt;曲曲：老爸的柔情&lt;/a&gt;
-&lt;/p&gt;
 </description>
     </item>
     

@@ -675,6 +675,233 @@ bookdownplus::bookdownplus()&lt;/code&gt;&lt;/pre&gt;
     </item>
     
     <item>
+      <title>R bookdown cheatsheet</title>
+      <link>http://www.pzhao.org/en/post/bookdown-cheatsheet/</link>
+      <pubDate>Tue, 14 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.pzhao.org/en/post/bookdown-cheatsheet/</guid>
+      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
+&lt;!-- /BLOGDOWN-HEAD --&gt;
+
+&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
+&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
+&lt;div id=&#34;quick-start&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Quick Start&lt;/h2&gt;
+&lt;div id=&#34;what-is-r-bookdown&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;What is R bookdown&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;A software for writing books or documents.&lt;/li&gt;
+&lt;li&gt;More elegant than MS Word. Much easier than &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt;.&lt;/li&gt;
+&lt;li&gt;Users can easily insert table of contents, figures and tables with cross-reference, footnotes, and index.&lt;/li&gt;
+&lt;li&gt;Users can easily embed equations, citations, R scripts.&lt;/li&gt;
+&lt;li&gt;pdf, word and html files can be exported.&lt;/li&gt;
+&lt;li&gt;best choice to write reproducible documents.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;installation&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Installation&lt;/h3&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;&lt;a href=&#34;https://cran.r-project.org/bin/windows/base/&#34;&gt;Download R&lt;/a&gt; and install it.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.rstudio.com/products/rstudio/download/&#34;&gt;Download RStudio&lt;/a&gt; and install it.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.ctex.org/CTeXDownload&#34;&gt;Download LaTeX&lt;/a&gt; and install it.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://pandoc.org/installing.html&#34;&gt;Download Pandoc&lt;/a&gt; and install it.&lt;/li&gt;
+&lt;li&gt;Run RStudio. Type the following codes in the top-left panel:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;install.packages(&amp;quot;bookdown&amp;quot;)
+install.packages(&amp;#39;servr&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;templates&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Templates&lt;/h3&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;Download a template (Open the following webpage and click &lt;code&gt;Clone or download&lt;/code&gt; - &lt;code&gt;Download ZIP&lt;/code&gt;):&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;If writing in English, download &lt;a href=&#34;https://github.com/rstudio/bookdown-demo&#34;&gt;the common template&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;If writing in Chinese, download &lt;a href=&#34;https://github.com/yihui/bookdown-chinese&#34;&gt;the Chinese template&lt;/a&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34; style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;&lt;p&gt;Unzip the template to a folder.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Find an .Rproj file. Double click it and open it with RSudio.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Click the &lt;code&gt;Build&lt;/code&gt; label in the top-right panel, and click &lt;code&gt;build book&lt;/code&gt;. Done. Find your demo book in &lt;code&gt;_book/&lt;/code&gt; folder.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;In the bottom-right panel you can see some files. Open those .Rmd file, and modify them into your own book. You can remove unnecessary .Rmd files except index.Rmd.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Repeat Step 4, and you will get your own book.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Compare your .Rmd files with the files in &lt;code&gt;_book/&lt;/code&gt;, and you will understand how they are connected.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;basic-syntax&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Basic syntax&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr class=&#34;header&#34;&gt;
+&lt;th align=&#34;left&#34;&gt;marks&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;output&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;*Italic*&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;&lt;em&gt;Italic&lt;/em&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;**bold**&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;&lt;strong&gt;bold&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;CO~2~&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;subscript&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;R^2^&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;superscript&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;$E = mc^2$&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;&lt;span class=&#34;math inline&#34;&gt;\(E = mc^2\)&lt;/span&gt; inline equation ($$ for displayed)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;`[hyperlink](&lt;a href=&#34;http://bookdown.org&#34; class=&#34;uri&#34;&gt;http://bookdown.org&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;)` &lt;a href=&#34;http://bookdown.org&#34;&gt;hyperlink&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;&amp;lt;dapengde@live.com&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;&lt;a href=&#34;mailto:dapengde@live.com&#34;&gt;dapengde@live.com&lt;/a&gt; email&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;![](hyperlink of figure)&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;insert a figure&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;&amp;gt; quote&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;quote&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;`code`&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;&lt;code&gt;code&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;# Chapter One&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;chapter title&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;1. First，...&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;numbered list&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;- First&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;unnumbered list&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;^[footnote]&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;footnote&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div id=&#34;chapters&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Chapters&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;# (PART) Part I {-} 
+# (APPENDIX) Appendix {-} 
+# References {-}
+# chapter {#ID}
+## section {#ID}
+# chapter {#ID .unnumbered}
+
+\@ref(ID)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;figures-and-tables&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Figures and tables&lt;/h2&gt;
+&lt;p&gt;A figure can be inserted with R plotting codes:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;```{r, fig.cap=&amp;#39;caption&amp;#39;, out.width=&amp;#39;80%&amp;#39;, fig.align=&amp;#39;center&amp;#39;, echo=FALSE}
+plot(1:10)
+```&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;\@ref(fig:fig1)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;or with R inserting codes:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;```{r img1, fig.cap=&amp;#39;caption&amp;#39;, out.width=&amp;#39;80%&amp;#39;, fig.align=&amp;#39;center&amp;#39;, echo=FALSE}
+knitr::include_graphics(&amp;quot;images/img1.png&amp;quot;)
+```&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;\@ref(fig:img1)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;or with markdown basic syntax：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;![caption](images/img1.png)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;A table can be inserted with basic markdown syntax:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;col one      col two
+----------- ----------
+row 1.1     row 1.2
+row 2.1     row 2.2&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;and you will get:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr class=&#34;header&#34;&gt;
+&lt;th align=&#34;left&#34;&gt;col one&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;col two&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;row 1.1&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;row 1.2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;row 2.1&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;row 2.2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;or with R codes:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;```{r tab1, tidy=FALSE, echo=FALSE}
+knitr::kable(
+  head(iris, 20), caption = &amp;#39;Here is a nice table!&amp;#39;,
+  booktabs = TRUE
+)
+```&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;\@ref(tab:tab1)&lt;/code&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;bibliography&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Bibliography&lt;/h2&gt;
+&lt;p&gt;Bibliography entries must be saved in .bib.&lt;/p&gt;
+&lt;p&gt;Citation: &lt;code&gt;[@R-bookdown]&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Bibliography: &lt;code&gt;# References {-}&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Created a library of R packages for bibliography:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;knitr::write_bib(c(&amp;quot;knitr&amp;quot;, &amp;quot;stringr&amp;quot;), &amp;quot;&amp;quot;, width = 60)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;theorems-lemma-definitions-etc.&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Theorems, lemma, definitions, etc.&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;Full name: theorems lemma   definition  corollary   proposition example
+Abbreviations:thm         lem   def         cor         prp         ex&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;```{Full name, label=&amp;#39;&amp;#39;, name=&amp;quot;&amp;quot;}
+
+```&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;\@ref(Abbreviation:label)&lt;/code&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;export-word-document&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Export Word document&lt;/h2&gt;
+&lt;p&gt;Insert the following line into _output.yml:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;bookdown::word_document2: default &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;equations-numbering&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Equations numbering&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;(@eq-mc) $E = mc^2$
+
+I like Eq. (@eq-mc) so much that I am falling love with her.&lt;/code&gt;&lt;/pre&gt;
+&lt;ol class=&#34;example&#34; style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;&lt;span class=&#34;math inline&#34;&gt;\(E = mc^2\)&lt;/span&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;I like Eq. (1) so much that I am falling love with her.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;\begin{equation} 
+E = mc^2
+  (\#eq:mc2)
+\end{equation} 
+
+I like Eq. \@ref(eq:mc2) so much that I am falling love with her.&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;further&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Further&lt;/h2&gt;
+&lt;p&gt;See &lt;a href=&#34;https://bookdown.org/yihui/bookdown/&#34;&gt;bookdown manual&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Advection campaign at Neustift started </title>
       <link>http://www.pzhao.org/en/post/advection-ns/</link>
       <pubDate>Sat, 08 Oct 2016 00:00:00 +0000</pubDate>

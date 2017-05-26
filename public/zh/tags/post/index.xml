@@ -10,6 +10,63 @@
     <atom:link href="/zh/tags/post/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>pinyin: 把汉字转换成拼音的R包</title>
+      <link>http://www.pzhao.org/zh/post/pinyin/</link>
+      <pubDate>Fri, 26 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.pzhao.org/zh/post/pinyin/</guid>
+      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
+&lt;!-- /BLOGDOWN-HEAD --&gt;
+
+&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
+&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
+&lt;p&gt;今天新写了个R包，粗暴地取名为 &lt;a href=&#34;https://github.com/pzhaonet/pinyin/&#34;&gt;pinyin&lt;/a&gt;，作用是把汉字转换成拼音。&lt;/p&gt;
+&lt;p&gt;安装方法：&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;devtools::install_github(&amp;quot;pzhaonet/pinyin&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;安装时可能会出现一些关于 locale 的警告，净吓唬人，无视。&lt;/p&gt;
+&lt;p&gt;使用方法：&lt;/p&gt;
+&lt;p&gt;pinyin 0.0.0版包含3个函数.&lt;code&gt;zh2py()&lt;/code&gt;是主函数，可以把一个带汉字的字符串转换成拼音。可以选择:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;转换成标准的全拼 (默认 &lt;code&gt;method = &#39;quanpin&#39;&lt;/code&gt;)，或&lt;/li&gt;
+&lt;li&gt;以数字表示声调 (&lt;code&gt;method = &#39;tone&#39;&lt;/code&gt;) , 或&lt;/li&gt;
+&lt;li&gt;不含声调(&lt;code&gt;method = &#39;toneless&#39;&lt;/code&gt;),&lt;/li&gt;
+&lt;li&gt;也可以选择仅保留每个字的首字母(&lt;code&gt;only_first_letter = TRUE&lt;/code&gt;),&lt;/li&gt;
+&lt;li&gt;可以自定义相邻两字拼音的分隔符号(&lt;code&gt;sep = &#39;_&#39;&lt;/code&gt;),&lt;/li&gt;
+&lt;li&gt;如果汉字字符串里边包含非汉字字符，可以选择将这些字符保留原样(&lt;code&gt;nonezh_replace = NULL&lt;/code&gt;)还是转换成指定字符(如&lt;code&gt;nonezh_replace = &#39;-&#39;&lt;/code&gt;)。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;举例如下：&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(&amp;#39;pinyin&amp;#39;)
+zh2py(&amp;#39;羌笛何须怨杨柳春风不度玉门关&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;qiānɡ_dí_hé_xū_yuàn_yánɡ_liǔ_chūn_fēnɡ_bú_dù_yù_mén_ɡuān&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;zh2py(&amp;#39;羌笛何须怨杨柳春风不度玉门关&amp;#39;, sep = &amp;#39; &amp;#39;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;qiānɡ dí hé xū yuàn yánɡ liǔ chūn fēnɡ bú dù yù mén ɡuān&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;zh2py(&amp;#39;羌笛何须怨杨柳春风不度玉门关&amp;#39;, sep = &amp;#39; &amp;#39;, method = &amp;#39;tone&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;qiang1 di2 he2 xu1 yuan4 yang2 liu3 chun1 feng1 bu2 du4 yu4 men2 guan1&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;zh2py(&amp;#39;羌笛何须怨杨柳春风不度玉门关&amp;#39;, sep = &amp;#39; &amp;#39;, method = &amp;#39;toneless&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;qiang di he xu yuan yang liu chun feng bu du yu men guan&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;zh2py(&amp;#39;羌笛何须怨杨柳春风不度玉门关&amp;#39;, sep = &amp;#39;&amp;#39;, only_first_letter = TRUE)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;qdhxyylcfbdymɡ&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;zh2py(&amp;#39;羌笛何须怨?杨柳春风,不度玉门关.&amp;#39;, sep = &amp;#39;&amp;#39;, nonezh_replace = &amp;#39;-&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;qiānɡdíhéxūyuàn-yánɡliǔchūnfēnɡ-búdùyùménɡuān-&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如果自变量是多个字符串的向量，那么只会转换第一个字符串：&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;zh2py(c(&amp;#39;羌笛何须怨杨柳&amp;#39;, &amp;#39;春风不度玉门关&amp;#39;))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;qiānɡ_dí_hé_xū_yuàn_yánɡ_liǔ&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这怎么行？哎，用 &lt;code&gt;sapply()&lt;/code&gt; 嘛：&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;sapply(c(&amp;#39;羌笛何须怨杨柳&amp;#39;, &amp;#39;春风不度玉门关&amp;#39;), zh2py)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##                 羌笛何须怨杨柳                 春风不度玉门关 
+## &amp;quot;qiānɡ_dí_hé_xū_yuàn_yánɡ_liǔ&amp;quot;  &amp;quot;chūn_fēnɡ_bú_dù_yù_mén_ɡuān&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;其他两个函数，其实是 &lt;code&gt;zh2py()&lt;/code&gt; 的延伸和示例：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;file.rename2py()&lt;/code&gt;用来将文件名里的汉字转换成拼音。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;bookdown2py()&lt;/code&gt;是专门为 bookdown 包服务的，作用是为章节的中文标题自动添加个对应的拼音ID &lt;code&gt;{#biaotipinyin}&lt;/code&gt;，避免在生成网页文件时文件名里出现一大堆乱码，并且解决&lt;a href=&#34;https://disqus.com/home/discussion/yihui/_yihui_xie_679/#comment-3175332429&#34;&gt;标题里中英文混合的问题&lt;/a&gt;。这事儿已经让我惦记三个月了。— 当然这事儿手动完全可以处理，只是手动处理的过程毫无乐趣可言罢了。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;拼音库我试了好几个，最后选定了&lt;a href=&#34;http://bbs.unispim.com/forum.php?mod=viewthread&amp;amp;tid=31644&#34;&gt;wangyanhan整理制作的42856字拼音表&lt;/a&gt;，直接处理文本文件，简单粗暴，转换起来可能有点慢，会顿一下，但已经够我自用了。&lt;/p&gt;
+&lt;p&gt;我写这个包的环境是 windows 7 下区域设置为中国，别的环境没测试，估计会有不少坑。我这里就有一些，比如不知道哪里设置有问题，包的函数里居然不能出现中文字符，弄得我自变量的默认值和example部分只好空着。再比如多音字的问题，目前完全没处理。所以，转换&lt;code&gt;春眠不觉晓&lt;/code&gt;的结果会让人愣一下，再转换&lt;code&gt;处处闻啼鸟&lt;/code&gt;……&lt;/p&gt;
+&lt;p&gt;结果好尴尬。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>微气象学常用的 LaTeX 公式</title>
       <link>http://www.pzhao.org/zh/post/equations/</link>
       <pubDate>Tue, 23 May 2017 00:00:00 +0000</pubDate>
@@ -1056,38 +1113,6 @@ defaultContentLanguageInSubdir = true
 &lt;p&gt;也不是。我觉得等人工智能成熟的时候就可以了。你只需吩咐一句“小A，把这篇Word 书稿转换成 Markdown，我要在 R bookdown 里修改”就行了。&lt;/p&gt;
 
 &lt;p&gt;但人工智能可能会回答你：“主人，我已经全部帮你把书改好并且已经出版了。”&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Hugo 网站 academic 主题首页的文摘显示问题</title>
-      <link>http://www.pzhao.org/zh/post/hugo-academic-summary/</link>
-      <pubDate>Sat, 15 Apr 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/zh/post/hugo-academic-summary/</guid>
-      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
-&lt;!-- /BLOGDOWN-HEAD --&gt;
-
-&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
-&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
-&lt;p&gt;在 RStudio 里用 R blogdown 来维护网站时，可以通过点击工具栏的 Addins - New Post 来创建新帖子，很方便。但是，如果用的是 Hugo 的 academic 主题，那么创建的新帖子在网站首页会显示全文，不大好看，尤其是全文很长的时候，根本就不像个首页了。这是因为，academic 首页的 posts 模块默认显示文摘。如果没有为每篇帖子设置文摘，就会显示全文。而上面说的创建新帖的方法里，并没有设置文摘的选项。那么，文摘在哪里设置呢？&lt;/p&gt;
-&lt;p&gt;直接说答案：手动在新帖的YAML文件头添加一行：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;summary: &amp;quot;我的文摘别太长。&amp;quot;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;答案来自&lt;a href=&#34;https://github.com/rstudio/blogdown/issues/21#issuecomment-269555683&#34;&gt;blogdown 项目主页&lt;/a&gt;。&lt;/p&gt;
-&lt;p&gt;就这么个小问题，让我走了点弯路。我发现问题后，首先观察了一下主题自带的示例文档，文件头是这样的：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;+++
-date = &amp;quot;2016-04-20T11:00:00&amp;quot;
-draft = false
-tags = [&amp;quot;academic&amp;quot;, &amp;quot;hugo&amp;quot;]
-title = &amp;quot;Customizing the homepage with widgets&amp;quot;
-math = false
-summary = &amp;quot;&amp;quot;&amp;quot;
-Enable/disable and configure widgets to customize your homepage.
-&amp;quot;&amp;quot;&amp;quot;
-+++&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;跟 R blogdown 生成的 .md 和 .Rmd 文件的文件头不同，这个文件头居然是用前后各三个加号表示的。里面的&lt;code&gt;summary&lt;/code&gt;开始数三行，就是用来设置文摘的。&lt;/p&gt;
-&lt;p&gt;于是我就把这三行拷贝粘贴到 .Rmd 文件里，当然是编译出错了。接着我想当然地把上面这段前后共六个加号的文件头拷贝粘贴到 .Rmd 里，仍然报错。问题搁置了几天，才想起去 blogdown 项目主页搜搜看，就找到了答案。&lt;/p&gt;
-&lt;p&gt;永远记不住的教训：遇到问题，别瞎试。上网搜，你绝不是第一个遇到这个问题的人。&lt;/p&gt;
 </description>
     </item>
     
