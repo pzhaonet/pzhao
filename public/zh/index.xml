@@ -11,6 +11,30 @@
     <atom:link href="/zh/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>《学R》序（朱彤）</title>
+      <link>http://www.pzhao.org/zh/post/preface_zhu/</link>
+      <pubDate>Wed, 14 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.pzhao.org/zh/post/preface_zhu/</guid>
+      <description>&lt;p&gt;我读硕士研究生时的导师是朱彤教授。在朱老师科研小组 ZTGroup 学习的三年如沐春风，我从中得到的收获受益终生。正值北京大学环境大楼落成不久，又逢毕业季，作为环境科学与工程学院的院长，朱老师在极其繁忙的工作中抽出时间来为本书欣然作序，实属不易，仅凭“感激”二字岂能表达我们的谢意？&lt;/p&gt;
+
+&lt;p&gt;下面是朱老师为本书写的序言。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;受作者邀请为此书写序，感到惶恐和高兴。两名作者分别是我以前的硕士和博士生，多年来我们小组很多同学都在学习和使用R语言，作为老师的我却从来没有用过，要为一本关于R语言的书写序，自然感到很惶恐。而当我打开这本书，没有看到晦涩难懂的概念、公式，在风趣易懂的语言、引人入胜的描述下，很快阅读完了前几章，不仅迅速跨越了零基础的障碍，更为两名作者为广大的数据统计分析和R语言学习人员提供这样一本独特、有趣的入门书而感到高兴。&lt;/p&gt;
+
+&lt;p&gt;随着科技的高速发展，对大量数据的处理和分析已成为科研甚至日常生活的必需，掌握一门强大的数据分析工具非常必要。作为一种开源、免费且不断更新的语言，R不仅拥有数据分析、统计、作图等强大功能，其应用范围还在不断扩大：赵鹏博士可以用它来撰写学术论文、做备忘录、制作幻灯片、整理读书笔记、整理照片、写书、记录吉他谱、写博客、做网站等。R语言拥有越来越多的使用者和爱好者，也使得其功能越来越广泛、强大。&lt;/p&gt;
+
+&lt;p&gt;与其它介绍R语言的书籍不同，这本书以两名作者自身学习的经验娓娓道来，没有多少枯燥的术语和公式，是一本非常适合自学R语言和统计学的入门书，尤其适合零基础和不懂统计学的读者。这本书可作为大学本科生和研究生自学用，也可作为高校教师教案。相信这读者们不仅会发现这本书很有用，更会发现关于R语言和统计学的书可以写的很有趣。&lt;/p&gt;
+
+&lt;p&gt;&amp;mdash; 朱彤，2017年6月13日&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
+    
+    <item>
       <title>pinyin: 把汉字转换成拼音的R包</title>
       <link>http://www.pzhao.org/zh/post/pinyin/</link>
       <pubDate>Fri, 26 May 2017 00:00:00 +0000</pubDate>
@@ -26,7 +50,7 @@
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;devtools::install_github(&amp;quot;pzhaonet/pinyin&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;安装时可能会出现一些关于 locale 的警告，净吓唬人，无视。&lt;/p&gt;
 &lt;p&gt;使用方法：&lt;/p&gt;
-&lt;p&gt;pinyin 0.0.0版包含3个函数.&lt;code&gt;zh2py()&lt;/code&gt;是主函数，可以把一个带汉字的字符串转换成拼音。可以选择:&lt;/p&gt;
+&lt;p&gt;pinyin 0.0.0版包含3个函数.&lt;code&gt;pinyin()&lt;/code&gt;是主函数，可以把一个带汉字的字符串转换成拼音。可以选择:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;转换成标准的全拼 (默认 &lt;code&gt;method = &#39;quanpin&#39;&lt;/code&gt;)，或&lt;/li&gt;
 &lt;li&gt;以数字表示声调 (&lt;code&gt;method = &#39;tone&#39;&lt;/code&gt;) , 或&lt;/li&gt;
@@ -37,26 +61,26 @@
 &lt;/ul&gt;
 &lt;p&gt;举例如下：&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(&amp;#39;pinyin&amp;#39;)
-zh2py(&amp;#39;羌笛何须怨杨柳春风不度玉门关&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
+pinyin(&amp;#39;羌笛何须怨杨柳春风不度玉门关&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## [1] &amp;quot;qiānɡ_dí_hé_xū_yuàn_yánɡ_liǔ_chūn_fēnɡ_bú_dù_yù_mén_ɡuān&amp;quot;&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;zh2py(&amp;#39;羌笛何须怨杨柳春风不度玉门关&amp;#39;, sep = &amp;#39; &amp;#39;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;pinyin(&amp;#39;羌笛何须怨杨柳春风不度玉门关&amp;#39;, sep = &amp;#39; &amp;#39;)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## [1] &amp;quot;qiānɡ dí hé xū yuàn yánɡ liǔ chūn fēnɡ bú dù yù mén ɡuān&amp;quot;&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;zh2py(&amp;#39;羌笛何须怨杨柳春风不度玉门关&amp;#39;, sep = &amp;#39; &amp;#39;, method = &amp;#39;tone&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;pinyin(&amp;#39;羌笛何须怨杨柳春风不度玉门关&amp;#39;, sep = &amp;#39; &amp;#39;, method = &amp;#39;tone&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## [1] &amp;quot;qiang1 di2 he2 xu1 yuan4 yang2 liu3 chun1 feng1 bu2 du4 yu4 men2 guan1&amp;quot;&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;zh2py(&amp;#39;羌笛何须怨杨柳春风不度玉门关&amp;#39;, sep = &amp;#39; &amp;#39;, method = &amp;#39;toneless&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;pinyin(&amp;#39;羌笛何须怨杨柳春风不度玉门关&amp;#39;, sep = &amp;#39; &amp;#39;, method = &amp;#39;toneless&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## [1] &amp;quot;qiang di he xu yuan yang liu chun feng bu du yu men guan&amp;quot;&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;zh2py(&amp;#39;羌笛何须怨杨柳春风不度玉门关&amp;#39;, sep = &amp;#39;&amp;#39;, only_first_letter = TRUE)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;pinyin(&amp;#39;羌笛何须怨杨柳春风不度玉门关&amp;#39;, sep = &amp;#39;&amp;#39;, only_first_letter = TRUE)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## [1] &amp;quot;qdhxyylcfbdymɡ&amp;quot;&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;zh2py(&amp;#39;羌笛何须怨?杨柳春风,不度玉门关.&amp;#39;, sep = &amp;#39;&amp;#39;, nonezh_replace = &amp;#39;-&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;pinyin(&amp;#39;羌笛何须怨?杨柳春风,不度玉门关.&amp;#39;, sep = &amp;#39;&amp;#39;, nonezh_replace = &amp;#39;-&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## [1] &amp;quot;qiānɡdíhéxūyuàn-yánɡliǔchūnfēnɡ-búdùyùménɡuān-&amp;quot;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;如果自变量是多个字符串的向量，那么只会转换第一个字符串：&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;zh2py(c(&amp;#39;羌笛何须怨杨柳&amp;#39;, &amp;#39;春风不度玉门关&amp;#39;))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;pinyin(c(&amp;#39;羌笛何须怨杨柳&amp;#39;, &amp;#39;春风不度玉门关&amp;#39;))&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## [1] &amp;quot;qiānɡ_dí_hé_xū_yuàn_yánɡ_liǔ&amp;quot;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;这怎么行？哎，用 &lt;code&gt;sapply()&lt;/code&gt; 嘛：&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;sapply(c(&amp;#39;羌笛何须怨杨柳&amp;#39;, &amp;#39;春风不度玉门关&amp;#39;), zh2py)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;sapply(c(&amp;#39;羌笛何须怨杨柳&amp;#39;, &amp;#39;春风不度玉门关&amp;#39;), pinyin)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;##                 羌笛何须怨杨柳                 春风不度玉门关 
 ## &amp;quot;qiānɡ_dí_hé_xū_yuàn_yánɡ_liǔ&amp;quot;  &amp;quot;chūn_fēnɡ_bú_dù_yù_mén_ɡuān&amp;quot;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;其他两个函数，其实是 &lt;code&gt;zh2py()&lt;/code&gt; 的延伸和示例：&lt;/p&gt;
+&lt;p&gt;其他两个函数，其实是 &lt;code&gt;pinyin()&lt;/code&gt; 的延伸和示例：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;file.rename2py()&lt;/code&gt;用来将文件名里的汉字转换成拼音。&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;bookdown2py()&lt;/code&gt;是专门为 bookdown 包服务的，作用是为章节的中文标题自动添加个对应的拼音ID &lt;code&gt;{#biaotipinyin}&lt;/code&gt;，避免在生成网页文件时文件名里出现一大堆乱码，并且解决&lt;a href=&#34;https://disqus.com/home/discussion/yihui/_yihui_xie_679/#comment-3175332429&#34;&gt;标题里中英文混合的问题&lt;/a&gt;。这事儿已经让我惦记三个月了。— 当然这事儿手动完全可以处理，只是手动处理的过程毫无乐趣可言罢了。&lt;/li&gt;
@@ -638,202 +662,6 @@ postr::postr()&lt;/code&gt;&lt;/pre&gt;
 &lt;div class=&#34;figure&#34;&gt;
 &lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+poster_night.jpg&#34; /&gt;
 
-&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>R bookdown&#43;: 用 R bookdown 写期刊论文、日记、信件、日历、吉他书、化学方程式</title>
-      <link>http://www.pzhao.org/zh/post/bookdown-plus/</link>
-      <pubDate>Tue, 09 May 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/zh/post/bookdown-plus/</guid>
-      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
-&lt;!-- /BLOGDOWN-HEAD --&gt;
-
-&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
-&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
-&lt;p&gt;&lt;strong&gt;注意：本文所述的&lt;code&gt;bookdown+&lt;/code&gt;这个项目已经停止开发，继承者是我新开的R包项目&lt;a href=&#34;https://github.com/pzhaonet/bookdownplus&#34;&gt;bookdownplus&lt;/a&gt; ，这是因为我学会了写R包。当然，说不定有些朋友不喜欢安装R包，喜欢下载个文件夹直接免安装用，那么本文所述的方法仍然可以继续使用，只是我不再更新了而已。&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;R bookdown 能做的事情很多，可是那些功能迟迟不来，我只好自己动手，写了个 &lt;a href=&#34;https://github.com/pzhaonet/bookdown-plus&#34;&gt;bookdown+&lt;/a&gt;，目前大体实现了用 bookdown 写期刊论文、化学分子式、信件、日记、日历等功能。当然，有些还没完全实现，革命不够彻底，带着浓重的&lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt;旧社会的气息。革命尚未成功，同志仍需努力。&lt;/p&gt;
-&lt;p&gt;下面是 &lt;a href=&#34;https://github.com/pzhaonet/bookdown-plus&#34;&gt;bookdown+&lt;/a&gt; 的简介和快速使用方法。&lt;/p&gt;
-&lt;div class=&#34;section level1&#34;&gt;
-&lt;h1&gt;背景&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/pzhaonet/bookdown-plus&#34;&gt;R bookdown+&lt;/a&gt;，听起来像是跟R&lt;span class=&#34;citation&#34;&gt;[@R-base]&lt;/span&gt;的扩展包&lt;code&gt;bookdown&lt;/code&gt;&lt;span class=&#34;citation&#34;&gt;[@R-bookdown]&lt;/span&gt;有关吧?&lt;/p&gt;
-&lt;p&gt;一点没错！我们知道，&lt;code&gt;bookdown&lt;/code&gt;天生是个用来写编程书籍的称手工具。只是，这仅仅是硬币的一面。&lt;code&gt;bookdown&lt;/code&gt;的功能远远不止如此。它就像一个美味的蛋糕，我等啊等啊，等着谁把它切开，实在等不及了，就自己下手吧。所以，我弄了个&lt;a href=&#34;https://github.com/pzhaonet/bookdown-plus&#34;&gt;bookdown+&lt;/a&gt;。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/pzhaonet/bookdown-plus&#34;&gt;bookdown+&lt;/a&gt;是&lt;code&gt;bookdown&lt;/code&gt;的扩展。我数年前收集了一些&lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt;模板，现在我把他们整理到&lt;a href=&#34;https://github.com/pzhaonet/bookdown-plus&#34;&gt;bookdown+&lt;/a&gt;里，这样就可以开开心心在&lt;code&gt;bookdown&lt;/code&gt;的环境里做喜欢的事情。&lt;a href=&#34;https://github.com/pzhaonet/bookdown-plus&#34;&gt;bookdown+&lt;/a&gt; 展示了硬币的另一面：你可以用它来写写期刊论文、化学分子式、信件、日历、甚至日记。&lt;/p&gt;
-&lt;p&gt;另一方面，我从个人角度对&lt;code&gt;bookdown&lt;/code&gt;的使用做了简化。官方提供的&lt;code&gt;bookdown&lt;/code&gt;模板虽然很好用，但对新手来说略显繁琐，需要：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;在&lt;code&gt;index.Rmd&lt;/code&gt;和&lt;code&gt;_output.yml&lt;/code&gt;两个文件里设置yaml，&lt;/li&gt;
-&lt;li&gt;需要在&lt;code&gt;_bookdown.yml&lt;/code&gt;里设置文件名；&lt;/li&gt;
-&lt;li&gt;对中文用户来说，还得跟LaTeX打交道，需要考虑&lt;code&gt;before_body.tex&lt;/code&gt;, &lt;code&gt;after_body&lt;/code&gt;, &lt;code&gt;preamble.tex&lt;/code&gt;里面的设置。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;这些操作可能让新手望而生畏。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/pzhaonet/bookdown-plus&#34;&gt;R bookdown+&lt;/a&gt;用起来就容易多了，只需在一个叫做&lt;code&gt;_runme.R&lt;/code&gt;的文件里设置好书名、作者，选好模板，binggo！就可以开始放心写自己的文字了。&lt;/p&gt;
-&lt;p&gt;功能扩展，操作简化，这就是&lt;a href=&#34;https://github.com/pzhaonet/bookdown-plus&#34;&gt;R bookdown+&lt;/a&gt;。&lt;/p&gt;
-&lt;p&gt;在不久的未来，肯定会出现很多官方的bookdown模板，但是我不想等了。你要是也等不及，就跟我来一起使用或开发[bookdown+]吧！&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;section level1&#34;&gt;
-&lt;h1&gt;快速入门&lt;/h1&gt;
-&lt;div class=&#34;section level2&#34;&gt;
-&lt;h2&gt;预备&lt;/h2&gt;
-&lt;p&gt;在开始前，你需要安装 R, RStudio, bookdown，和其他依赖的软件和包(例如 &lt;code&gt;Pandoc&lt;/code&gt;, &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt;, &lt;code&gt;rmarkdown&lt;/code&gt;, &lt;code&gt;rticle&lt;/code&gt;, &lt;code&gt;knitr&lt;/code&gt;等)。详见&lt;a href=&#34;https://bookdown.org/yihui/bookdown/&#34;&gt;bookdown官方手册&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;准备好后，从Github&lt;a href=&#34;https://github.com/pzhaonet/bookdown-plus/archive/master.zip&#34;&gt;下载&lt;code&gt;bookdown+&lt;/code&gt;&lt;/a&gt;压缩文件。解压缩到你的电脑里，在得到的文件夹里找到 &lt;code&gt;_start.Rproj&lt;/code&gt;文件，双击就会在RStudio里打开一个项目。&lt;/p&gt;
-&lt;p&gt;文件夹里还有个&lt;code&gt;_runme.R&lt;/code&gt;文件。你可以双击打开并运行。下面是对这个文件里代码的详细解释。&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;1&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;第1步：标题和作者&lt;/h2&gt;
-&lt;p&gt;改成你自己书的标题和作者名。&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;title &amp;lt;- &amp;#39;bookdown+: Authoring Articles, Mails, Guitar books, Chemical Molecular Formulae and Equations with R bookdown&amp;#39;
-author &amp;lt;- &amp;#39;Peng Zhao&amp;#39;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div id=&#34;2-&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;第2步: 模板&lt;/h2&gt;
-&lt;p&gt;在给定的可用模板里选择你想要的。这里我们选第8个。&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;templates  &amp;lt;- c(&amp;#39;article&amp;#39;,     #1, academic article
-                &amp;#39;article_zh&amp;#39;,  #2, academic article in Chinese
-                &amp;#39;calendar&amp;#39;,    #3, calendar, in progress
-                &amp;#39;chemistry&amp;#39;,   #4, chemical molecular formulae and equations
-                &amp;#39;chemistry_zh&amp;#39;,#5, in Chinese,
-                &amp;#39;guitar&amp;#39;,      #6, guitar book
-                &amp;#39;mail&amp;#39;,        #7, mail, in progress
-                &amp;#39;journal&amp;#39;,     #8, laboratory journal, or personal diary
-                &amp;#39;mini&amp;#39;,        #9, a mini demo by Yihui
-                &amp;#39;original&amp;#39;,    #10, the original demo by Yihui
-                &amp;#39;book_zh&amp;#39;      #11, the demo in Chinese by Yihui
-)
-template &amp;lt;- templates[8]&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;运行 &lt;code&gt;fun/build.R&lt;/code&gt;。&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;source(&amp;#39;fun/build.R&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div id=&#34;3-&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;第3步: 成书&lt;/h2&gt;
-&lt;p&gt;现在按下 &lt;code&gt;ctrl+shift+b&lt;/code&gt; 快捷键，你就会在新生成的&lt;code&gt;book/&lt;/code&gt;文件里找到一本示例书。打开看看吧！&lt;/p&gt;
-&lt;p&gt;你自己的文字只需在&lt;code&gt;body.Rmd&lt;/code&gt;修改，写完后重复本步即可。&lt;/p&gt;
-&lt;p&gt;祝你玩得愉快！&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;section level1&#34;&gt;
-&lt;h1&gt;模板效果展示&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;article&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+article.jpg&#34; /&gt;
-
-&lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;article_mdpi1&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+article_mdpi.jpg&#34; /&gt;
-
-&lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;article_zh&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+article_zh.jpg&#34; /&gt;
-
-&lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;calendar&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+calendar.jpg&#34; /&gt;
-
-&lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;chemistry&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+chemistry.jpg&#34; /&gt;
-
-&lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;guitar&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+guitar.jpg&#34; /&gt;
-
-&lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;journal&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+journal.jpg&#34; /&gt;
-
-&lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;mail&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+mail.jpg&#34; /&gt;
-
-&lt;/div&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+mail2.png&#34; /&gt;
-
-&lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;poem&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+poem.jpg&#34; /&gt;
-
-&lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;thesis_classic&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+thesis_classic.jpg&#34; /&gt;
-
-&lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;thesis_ubt&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+thesis_ubt.jpg&#34; /&gt;
-
-&lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;thesis_zju&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+thesis_zju.jpg&#34; /&gt;
-
-&lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;yihui_demo&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+yihui_demo.jpg&#34; /&gt;
-
-&lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;yihui_mini&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+yihui_mini.jpg&#34; /&gt;
-
-&lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;yihui_zh&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+yihui_zh.jpg&#34; /&gt;
-
-&lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;poster&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+poster_ocean.jpg&#34; /&gt;
-
-&lt;/div&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+poster_eco.jpg&#34; /&gt;
-
-&lt;/div&gt;
 &lt;/div&gt;
 </description>
     </item>

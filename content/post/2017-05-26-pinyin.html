@@ -24,7 +24,7 @@ output:
 <pre class="r"><code>devtools::install_github(&quot;pzhaonet/pinyin&quot;)</code></pre>
 <p>安装时可能会出现一些关于 locale 的警告，净吓唬人，无视。</p>
 <p>使用方法：</p>
-<p>pinyin 0.0.0版包含3个函数.<code>zh2py()</code>是主函数，可以把一个带汉字的字符串转换成拼音。可以选择:</p>
+<p>pinyin 0.0.0版包含3个函数.<code>pinyin()</code>是主函数，可以把一个带汉字的字符串转换成拼音。可以选择:</p>
 <ul>
 <li>转换成标准的全拼 (默认 <code>method = 'quanpin'</code>)，或</li>
 <li>以数字表示声调 (<code>method = 'tone'</code>) , 或</li>
@@ -35,26 +35,26 @@ output:
 </ul>
 <p>举例如下：</p>
 <pre class="r"><code>library(&#39;pinyin&#39;)
-zh2py(&#39;羌笛何须怨杨柳春风不度玉门关&#39;)</code></pre>
+pinyin(&#39;羌笛何须怨杨柳春风不度玉门关&#39;)</code></pre>
 <pre><code>## [1] &quot;qiānɡ_dí_hé_xū_yuàn_yánɡ_liǔ_chūn_fēnɡ_bú_dù_yù_mén_ɡuān&quot;</code></pre>
-<pre class="r"><code>zh2py(&#39;羌笛何须怨杨柳春风不度玉门关&#39;, sep = &#39; &#39;)</code></pre>
+<pre class="r"><code>pinyin(&#39;羌笛何须怨杨柳春风不度玉门关&#39;, sep = &#39; &#39;)</code></pre>
 <pre><code>## [1] &quot;qiānɡ dí hé xū yuàn yánɡ liǔ chūn fēnɡ bú dù yù mén ɡuān&quot;</code></pre>
-<pre class="r"><code>zh2py(&#39;羌笛何须怨杨柳春风不度玉门关&#39;, sep = &#39; &#39;, method = &#39;tone&#39;)</code></pre>
+<pre class="r"><code>pinyin(&#39;羌笛何须怨杨柳春风不度玉门关&#39;, sep = &#39; &#39;, method = &#39;tone&#39;)</code></pre>
 <pre><code>## [1] &quot;qiang1 di2 he2 xu1 yuan4 yang2 liu3 chun1 feng1 bu2 du4 yu4 men2 guan1&quot;</code></pre>
-<pre class="r"><code>zh2py(&#39;羌笛何须怨杨柳春风不度玉门关&#39;, sep = &#39; &#39;, method = &#39;toneless&#39;)</code></pre>
+<pre class="r"><code>pinyin(&#39;羌笛何须怨杨柳春风不度玉门关&#39;, sep = &#39; &#39;, method = &#39;toneless&#39;)</code></pre>
 <pre><code>## [1] &quot;qiang di he xu yuan yang liu chun feng bu du yu men guan&quot;</code></pre>
-<pre class="r"><code>zh2py(&#39;羌笛何须怨杨柳春风不度玉门关&#39;, sep = &#39;&#39;, only_first_letter = TRUE)</code></pre>
+<pre class="r"><code>pinyin(&#39;羌笛何须怨杨柳春风不度玉门关&#39;, sep = &#39;&#39;, only_first_letter = TRUE)</code></pre>
 <pre><code>## [1] &quot;qdhxyylcfbdymɡ&quot;</code></pre>
-<pre class="r"><code>zh2py(&#39;羌笛何须怨?杨柳春风,不度玉门关.&#39;, sep = &#39;&#39;, nonezh_replace = &#39;-&#39;)</code></pre>
+<pre class="r"><code>pinyin(&#39;羌笛何须怨?杨柳春风,不度玉门关.&#39;, sep = &#39;&#39;, nonezh_replace = &#39;-&#39;)</code></pre>
 <pre><code>## [1] &quot;qiānɡdíhéxūyuàn-yánɡliǔchūnfēnɡ-búdùyùménɡuān-&quot;</code></pre>
 <p>如果自变量是多个字符串的向量，那么只会转换第一个字符串：</p>
-<pre class="r"><code>zh2py(c(&#39;羌笛何须怨杨柳&#39;, &#39;春风不度玉门关&#39;))</code></pre>
+<pre class="r"><code>pinyin(c(&#39;羌笛何须怨杨柳&#39;, &#39;春风不度玉门关&#39;))</code></pre>
 <pre><code>## [1] &quot;qiānɡ_dí_hé_xū_yuàn_yánɡ_liǔ&quot;</code></pre>
 <p>这怎么行？哎，用 <code>sapply()</code> 嘛：</p>
-<pre class="r"><code>sapply(c(&#39;羌笛何须怨杨柳&#39;, &#39;春风不度玉门关&#39;), zh2py)</code></pre>
+<pre class="r"><code>sapply(c(&#39;羌笛何须怨杨柳&#39;, &#39;春风不度玉门关&#39;), pinyin)</code></pre>
 <pre><code>##                 羌笛何须怨杨柳                 春风不度玉门关 
 ## &quot;qiānɡ_dí_hé_xū_yuàn_yánɡ_liǔ&quot;  &quot;chūn_fēnɡ_bú_dù_yù_mén_ɡuān&quot;</code></pre>
-<p>其他两个函数，其实是 <code>zh2py()</code> 的延伸和示例：</p>
+<p>其他两个函数，其实是 <code>pinyin()</code> 的延伸和示例：</p>
 <ul>
 <li><code>file.rename2py()</code>用来将文件名里的汉字转换成拼音。</li>
 <li><code>bookdown2py()</code>是专门为 bookdown 包服务的，作用是为章节的中文标题自动添加个对应的拼音ID <code>{#biaotipinyin}</code>，避免在生成网页文件时文件名里出现一大堆乱码，并且解决<a href="https://disqus.com/home/discussion/yihui/_yihui_xie_679/#comment-3175332429">标题里中英文混合的问题</a>。这事儿已经让我惦记三个月了。— 当然这事儿手动完全可以处理，只是手动处理的过程毫无乐趣可言罢了。</li>
