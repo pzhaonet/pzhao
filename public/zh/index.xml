@@ -42,6 +42,15 @@
     </item>
     
     <item>
+      <title>Parameterization of Evapotranspiration Estimation for Two Typical East Asian Crops</title>
+      <link>http://www.pzhao.org/zh/publication/zhao2017/</link>
+      <pubDate>Tue, 20 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.pzhao.org/zh/publication/zhao2017/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>R包发布记</title>
       <link>http://www.pzhao.org/zh/post/publish-r-packages/</link>
       <pubDate>Mon, 19 Jun 2017 00:00:00 +0000</pubDate>
@@ -548,60 +557,6 @@ R^2 =(\frac{\sum_{i=1}^{n}(O_i-\overline{O})(P_i-\overline{P})}{\sqrt{\sum_{i=1}
 &lt;div class=&#34;figure&#34;&gt;
 &lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/mindr/master/showcase/mindr_xuer.jpg&#34; /&gt;
 
-&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>R blogdown 科研网站的公式和参考文献</title>
-      <link>http://www.pzhao.org/zh/post/rblogdown-bib/</link>
-      <pubDate>Thu, 18 May 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/zh/post/rblogdown-bib/</guid>
-      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
-&lt;!-- /BLOGDOWN-HEAD --&gt;
-
-&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
-&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
-&lt;p&gt;本网站的公式和参考文献一直未能正常显示，直到今天我才把这两个问题解决。&lt;/p&gt;
-&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
-&lt;li&gt;&lt;strong&gt;公式&lt;/strong&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;公式的问题迟迟未解决，是因为我看到人们在讨论往html文件里加 &lt;code&gt;Load mathjax&lt;/code&gt; 代码这种解决方案，一看就头大，不想做。&lt;/p&gt;
-&lt;p&gt;其实，我用的hugo-academic主题，据说是支持数学环境的，据说在 &lt;code&gt;config.toml&lt;/code&gt; 里设置 &lt;code&gt;math = true&lt;/code&gt;就开启全站支持，在单篇post的yml头里这样设置就开启单篇支持。可是我两样都试过，然后运行 &lt;code&gt;blogdown::serve_site()&lt;/code&gt;测试，在RStudio的Viewer里都不能成功显示公式。&lt;/p&gt;
-&lt;p&gt;今天突然灵光一现，心想不会是RStudio Viewer的问题吧？于是点击Viewer左上角的 &lt;code&gt;Show in new window&lt;/code&gt; 按钮，用外部浏览器打开一看，Duang！帖子里的公式就都可以正常显示了！这里秀一个：&lt;/p&gt;
-&lt;p&gt;帖子里输入下面的 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; 公式：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$$\int_0^\infty e^{-x^2} dx=\frac{\sqrt{\pi}}{2}$$&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;网页就会显示：&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\int_0^\infty e^{-x^2} dx=\frac{\sqrt{\pi}}{2}\]&lt;/span&gt;&lt;/p&gt;
-&lt;ol start=&#34;2&#34; style=&#34;list-style-type: decimal&#34;&gt;
-&lt;li&gt;&lt;strong&gt;参考文献&lt;/strong&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;两个多月前，就&lt;a href=&#34;https://github.com/rstudio/blogdown/issues/66&#34;&gt;有个哥们儿问&lt;/a&gt;“有没有可能在blogdown创建的网站里添加参考文献?”作者回答得干脆：“有。”两人对话戛然而止，让我目瞪口呆。由于在&lt;a href=&#34;http://bookdown.org/yihui/blogdown&#34;&gt;blogdown 官方手册&lt;/a&gt;里并未看到添加参考文献的方法，我一直以为这个功能尚在开发中，直到今天也没见动静，有些起疑，就随便试了一下，步骤跟在 bookdown 里一样：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;把参考文献库 .bib 文件考到 &lt;code&gt;content\post\&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;在帖子 &lt;code&gt;.Rmd&lt;/code&gt; 文档的 yml 头里声明 .bib 文件的名称和路径。这里我设成 &lt;code&gt;bibliography: [book.bib, packages.bib]&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;在帖子里引用 .bib 里的文献条目，例如 &lt;code&gt;[@R-blogdown]&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;运行建站函数 &lt;code&gt;blogdown::build_site()&lt;/code&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;就这样，说时迟那时快，只见Duang！帖子里的引用就显示成了 &lt;span class=&#34;citation&#34;&gt;(Xie 2017)&lt;/span&gt; ！而帖子末尾的参考文献列表就自动出来了！&lt;/p&gt;
-&lt;p&gt;blogdown 可以如此方便地往帖子里插入计算代码、图表、公式、参考文献，我实在找不出第二个这样的工具。建科研网站，非 blogdown 莫属！&lt;/p&gt;
-&lt;p&gt;最后顺便提一下：虽然最新正式版的 RStudio 1.0.143 并 没有 blogdown 和 bookdown 的入口，但是我欣喜地发现，在 &lt;a href=&#34;http://dailies.rstudio.com&#34;&gt;RStudio 的开发版&lt;/a&gt; 1.1.233 里已经加入了这个入口了！菜单 File - New Project - New Directory，就能看到 blogdown 和 bookdown 项目。跟 shiny 和 R package 并列，可见 RStudio 公司对这两个项目的重视程度。&lt;/p&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;http://www.pzhao.org/img/rstudiobookdown.jpg&#34; /&gt;
-
-&lt;/div&gt;
-&lt;p&gt;有幸尝试了 blogdown 和 bookdown &lt;span class=&#34;citation&#34;&gt;(Xie 2016)&lt;/span&gt; 项目，并且也做过 &lt;a href=&#34;http://sciwis.com/&#34;&gt;shiny&lt;/a&gt; 和 &lt;a href=&#34;http://www.pzhao.org/zh/post/rmickey/&#34;&gt;R package&lt;/a&gt;，我模模糊糊有种异样的感觉，就像埋头赶路时猛一抬头，隐隐约约眺见了走在时代前面的先知们的背影。&lt;/p&gt;
-&lt;div class=&#34;section level2 unnumbered&#34;&gt;
-&lt;h2&gt;参考文献&lt;/h2&gt;
-&lt;div id=&#34;refs&#34; class=&#34;references&#34;&gt;
-&lt;div id=&#34;ref-R-bookdown&#34;&gt;
-&lt;p&gt;Xie, Yihui. 2016. &lt;em&gt;Bookdown: Authoring Books and Technical Documents with R Markdown&lt;/em&gt;. &lt;a href=&#34;https://github.com/rstudio/bookdown&#34; class=&#34;uri&#34;&gt;https://github.com/rstudio/bookdown&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;ref-R-blogdown&#34;&gt;
-&lt;p&gt;———. 2017. &lt;em&gt;Blogdown: Create Blogs and Websites with R Markdown&lt;/em&gt;. &lt;a href=&#34;https://github.com/rstudio/blogdown&#34; class=&#34;uri&#34;&gt;https://github.com/rstudio/blogdown&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
 &lt;/div&gt;
 </description>
     </item>

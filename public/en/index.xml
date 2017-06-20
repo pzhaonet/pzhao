@@ -11,6 +11,15 @@
     <atom:link href="/en/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Parameterization of Evapotranspiration Estimation for Two Typical East Asian Crops</title>
+      <link>http://www.pzhao.org/en/publication/zhao2017/</link>
+      <pubDate>Tue, 20 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.pzhao.org/en/publication/zhao2017/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>LaTeX equations in micrometeorology</title>
       <link>http://www.pzhao.org/en/post/equations/</link>
       <pubDate>Tue, 23 May 2017 00:00:00 +0000</pubDate>
@@ -927,16 +936,6 @@ I like Eq. \@ref(eq:mc2) so much that I am falling love with her.&lt;/code&gt;&l
       
       <guid>http://www.pzhao.org/en/talk/2016-12-00-jnu/</guid>
       <description></description>
-    </item>
-    
-    <item>
-      <title>农业生态系统-大气之间的二氧化碳和能量交换</title>
-      <link>http://www.pzhao.org/en/talk/2016-12-00-sysu/</link>
-      <pubDate>Mon, 26 Dec 2016 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/en/talk/2016-12-00-sysu/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;http://atmos.sysu.edu.cn/UploadFiles/Image/201612/63618708353243573082339.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-</description>
     </item>
     
   </channel>
