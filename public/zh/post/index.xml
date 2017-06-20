@@ -11,6 +11,102 @@
     <atom:link href="/zh/post/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>LaTeX 公式转换成 Word 公式</title>
+      <link>http://www.pzhao.org/zh/post/latex-equations-to-word/</link>
+      <pubDate>Tue, 20 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.pzhao.org/zh/post/latex-equations-to-word/</guid>
+      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
+&lt;!-- /BLOGDOWN-HEAD --&gt;
+
+&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
+&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
+&lt;p&gt;最近写了篇论文，投往一家学术期刊。投稿时，Word 格式和 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; 格式可以任选，我选了 Word，是因为合作作者用 Word。可是，文稿里的公式是我输入的，而那些公式在我的博士论文里是用 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; 写的。为了图省事，我就用了 Word 的插件&lt;a href=&#34;http://www.appinn.com/aurora/&#34;&gt;Aurora&lt;/a&gt;，这样，只需把公式的 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; 代码往 Word 文档的 Aurora 域里拷贝粘贴，bingo！公式就渲染好了，比 Word 的自带公式漂亮一些。&lt;/p&gt;
+&lt;p&gt;这篇论文很顺利，很快被接收了。到了最后一步的时候，编辑部要我把文档里的公式修改成可编辑的格式。——本来就是可编辑的呀。嗯，大概是编辑部不使用Aurora，那么他们的 Word 打开我的文档里看到的公式自然就是没法编辑的了。我懒得解释，最后决定把公式全部转换成 Word 公式。&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; 公式转成 Word 公式并不难，只需三步：&lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; –&amp;gt; MathML –&amp;gt; 修改 –&amp;gt; Word.&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; 公式转成 MathML公式。这可以在 &lt;a href=&#34;http://www.pzhao.org/zh/post/r-blogdown/&#34;&gt;blogdown&lt;/a&gt; 里操作，只需把 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; 公式代码扔进一个帖子里，运行建站函数，在生成的&lt;a href=&#34;http://www.pzhao.org/zh/post/equations/&#34;&gt;网页&lt;/a&gt;里获取公式的 MathML 代码即可（在公式上点右键 - Show Math As - MathML Code）。&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;修改 MathML 代码。将上一步得到的 MathML 代码拷贝粘贴到文本编辑器，然后在开头添上一行：&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot;?&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&#34;3&#34; style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;将修改的 MathML 代码全部选中，拷贝粘贴到 Word 里，就自动变成公式了。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;当然，上面第一步也可以用&lt;a href=&#34;https://www.latex4technics.com/&#34;&gt;别的软件&lt;/a&gt;来完成，下图是个示例。&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;http://www.pzhao.org/img/latex-equations-to-word.gif&#34; /&gt;
+
+&lt;/div&gt;
+&lt;p&gt;以后在合作里再也不用Aurora这种把 Word 和 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; 混在一起的工具了。不是不好，而是太小众。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>R包发布记</title>
+      <link>http://www.pzhao.org/zh/post/publish-r-packages/</link>
+      <pubDate>Mon, 19 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.pzhao.org/zh/post/publish-r-packages/</guid>
+      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
+&lt;!-- /BLOGDOWN-HEAD --&gt;
+
+&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
+&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
+&lt;p&gt;最近，我把&lt;a href=&#34;http://www.pzhao.org/zh/post/mindr/&#34;&gt;mindr&lt;/a&gt;和&lt;a href=&#34;http://www.pzhao.org/zh/post/pinyin/&#34;&gt;pinyin&lt;/a&gt;两个包提交到了 CRAN。这两个包都很简单，我就是想体验一下发布R包的流程，免得将来&lt;a href=&#34;http://xuer.pzhao.org/&#34;&gt;学R&lt;/a&gt;那本书出版了被问起来，答不上来就丢人了，另外也算是承接&lt;a href=&#34;http://www.pzhao.org/zh/post/rmickey/&#34;&gt;菜鸟致简速成&lt;/a&gt;那篇帖子，里面只谈了野包的发布分享，而只有提交到了 CRAN，野包才算转正。&lt;/p&gt;
+&lt;p&gt;昨天，这两个包都成功转正，可以正常安装了：&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;install.packages(&amp;#39;mindr&amp;#39;)
+install.packages(&amp;#39;pinyin&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这里说说发布的过程和我遇到的一些问题。&lt;/p&gt;
+&lt;div class=&#34;section level2&#34;&gt;
+&lt;h2&gt;自查&lt;/h2&gt;
+&lt;p&gt;包发布之前，先自查有没有错误。只需用RStudio打开待发布的R包的&lt;code&gt;.Rproj&lt;/code&gt;文件，然后点击右上方面板的 Build - Check 按钮，就可以看到自查结果。&lt;/p&gt;
+&lt;p&gt;这里要注意：&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;&lt;p&gt;结果里尽量不要包含任何 Notes 和 Warnings。如果有，就去找到问题修改，不然在提交的时候会被退回。&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;关于&lt;code&gt;author &amp;lt;author&#39;s email&amp;gt;&lt;/code&gt;的那一条 Note 是可以忽略的，只是提醒你再次看看作者信息有没有填错。&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;我最初的自查结果有些 Notes 我原以为可以无视。比如，&lt;code&gt;DESCRIPTION&lt;/code&gt; 文件里 &lt;code&gt;Title&lt;/code&gt; 字段有些词要求首字母大写，我心想，这也算错误？就没理。再比如，告诉我 “no example. no test. no vignette.” 我心想，好像很多包都没有这几样，不也都发布了么？所以我同样无视。结果就是……&lt;/p&gt;
+&lt;p&gt;下面接着讲。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;section level2&#34;&gt;
+&lt;h2&gt;提交&lt;/h2&gt;
+&lt;p&gt;把包的压缩文件在 &lt;a href=&#34;https://cran.r-project.org/submit.html&#34;&gt;CRAN 的网页&lt;/a&gt;上传即可。成功上传后会收到 email 通知，需要点击里面的链接进行确认。&lt;/p&gt;
+&lt;p&gt;我这两个宝贝儿的1.0.0版是六一那天上传并确认的，之后我就等，一直等到6月16号，我才想起来这事儿，就发信给 CRAN &lt;a href=&#34;mailto:cran@r-project.org&#34;&gt;cran@r-project.org&lt;/a&gt; 催了一下，当天就得到了 Dr. Uwe Ligges 的回复，说：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;你那两个包在提交当天就被系统自动拒收了，因为系统自动检查时发现了两个 Notes。系统自动发信通知你了，如果没收到，请翻翻垃圾邮件。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;我一翻邮箱的 spam，果然，拒信早就在里面了。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;section level2&#34;&gt;
+&lt;h2&gt;修改&lt;/h2&gt;
+&lt;p&gt;乖乖地修改大小写，添加 vignette 和 examples，把版本号修改成 1.0.1 后再次上传。这回通过系统自检了，但是先后收到好几封 Uwe Ligges 和 Kurt Hornik 发来的修改意见，要求修改&lt;code&gt;DESCRIPTION&lt;/code&gt;文件，主要有：&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;&lt;p&gt;删除不必要的文字，比如我对包的描述是“An R package for converting Chinese characters into Pinyin”， 要求我把“An R package for”几个字删掉。&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;用单引号把文件扩展名引起来。比如我说 &lt;code&gt;.md files&lt;/code&gt;，要求改成&lt;code&gt;&#39;.md&#39; files&lt;/code&gt;。&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;软件名称也要用单引号引起来，并且给出链接。比如我说思维导图可以用 FreeMind打开，要改成&lt;code&gt;&#39;FreeMind&#39;(&amp;lt;http://freemind.sourceforge.net/wiki/index.php/Main_Page&amp;gt;)&lt;/code&gt;。&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;对特殊的概念要简要解释。pinyin 包得解释一下什么是“pinyin”，mindr 包要求解释一下什么是“common mindmap software”。&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;这两位挺有耐心的，来来回回给了我好几次意见，我就先拿 mindr 开刀，改一点就提交个新版本，最后 mindr 的提交版本是1.0.4，算是没什么问题了，我才大体知道是个什么路子，回头修改 pinyin 包，提交的版本是1.0.2。&lt;/p&gt;
+&lt;p&gt;最后的最后，收到 Kurt Hornik 发来的邮件：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Thanks, on CRAN now.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class=&#34;section level2&#34;&gt;
+&lt;h2&gt;不难&lt;/h2&gt;
+&lt;p&gt;我觉得提交R包并不像Hadley Wickham 在 &lt;a href=&#34;http://r-pkgs.had.co.nz/release.html&#34;&gt;R packages&lt;/a&gt;一书里写得那么可怕：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;失败令人沮丧，你得到的反馈可能简单粗暴，你可能觉得遭到了羞辱。与其跟 CRAN 的维护者争辩而可能浪费双方的时间，倒不如：&lt;/p&gt;
+&lt;p&gt;深呼吸。R包被拒并非世界末日。谁都会遇见。甚至连 R 核心成员都得走同样的流程，享受同等待遇。我被CRAN拒绝的包多了去了。我曾被禁止两周提交东西到CRAN，因为我已有的包里有太多的小问题。&lt;/p&gt;
+&lt;p&gt;如果你得到的回复让你恼火不堪，那就歇几天，冷静下来再回复。忽略任何人身攻击，努力只做技术上的答复。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;说得挺吓人。我这次的体验挺轻松愉快的，两位维护者的答复带领我这个新手学会了下回怎么正确地写 R 包。虽然有些意见我觉得有些吹毛求疵，但是跟向学术期刊投稿比起来算个啥呀。&lt;/p&gt;
+&lt;p&gt;而且，R包发布之后，立刻就在Github上得到了pull request，我一看，人家的修改意见提得真好，这是提高 R 水平的好办法。&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>《学R》序（朱彤）</title>
       <link>http://www.pzhao.org/zh/post/preface_zhu/</link>
       <pubDate>Wed, 14 Jun 2017 00:00:00 +0000</pubDate>
@@ -1024,110 +1120,6 @@ http://pzhao.org/zh/talk/index.xml&lt;/code&gt;&lt;/pre&gt;
     icon_pack = &amp;quot;fa&amp;quot;
     link = &amp;quot;http://v.qq.com/vplus/0f8190586a3f2f22a25e9827b38c171e&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>斜杠</title>
-      <link>http://www.pzhao.org/zh/post/slash/</link>
-      <pubDate>Mon, 17 Apr 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/zh/post/slash/</guid>
-      <description>&lt;p&gt;在我的新书在线试读章节，益辉同学提出了&lt;a href=&#34;http://dapengde.com/xuer/post/2017-04-15_blogdown/#comment-3258130059&#34; target=&#34;_blank&#34;&gt;一个话题&lt;/a&gt;，那就是斜杠。这个小东西已经困扰我多年了，事儿不大，我憋着一直没敢说，这回有益辉这么一位神级人肉盾牌罩着，就趁机吐个槽。&lt;/p&gt;
-
-&lt;p&gt;斜杠就是&lt;code&gt;/&lt;/code&gt;，在英文叫做slash，或者叫forward slash，就是向前倾斜，而&lt;code&gt;\&lt;/code&gt;就是back slash，向后倾斜。只需想着&lt;code&gt;|&lt;/code&gt;是个直立的小人顺着文字的方向走，那么前倾
-后倾一目了然，名字跟形状是吻合的。或者用“吉他法”，吉他手 &lt;em&gt;背&lt;/em&gt; 面对着我那就是&lt;em&gt;back&lt;/em&gt; slash（当然前提是右撇子）。无论如何，英文名称是合乎我的逻辑和理解力的。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://pbs.twimg.com/media/CvOSYNzVMAAgXh_.jpg&#34; alt=&#34;enter image description here&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;我不想提它的原因，是因为中文名字的翻译总让我糊涂。&lt;code&gt;/&lt;/code&gt;叫做斜杠或斜线，&lt;code&gt;\&lt;/code&gt;叫做反斜杠，我老是搞不清楚，写本帖的时候还要搜一下确认。凭什么呀？逻辑上这俩都是“斜”的啊？凭什么沿着从上往下从左往右的正常笔画顺序来写的&lt;code&gt;\&lt;/code&gt;叫做&lt;strong&gt;反&lt;/strong&gt;斜杠啊？人家反在哪里了？明明人家是顺的啊！我为&lt;code&gt;\&lt;/code&gt;叫屈。要是我翻译，就叫&lt;code&gt;/&lt;/code&gt;为“前俯”键，&lt;code&gt;\&lt;/code&gt;叫“后仰”键，信达雅兼顾。或者叫“右倾”键和“左倾”键更直接。但是怕被误会成政治倾向，那就叫“东倒”键“西歪”键，左西右东嘛。你们非要叫斜杠和反斜杠，不符合我的逻辑框架，老是得犹豫一下，还不确定谁正谁反，那干脆还是别提他们了。&lt;/p&gt;
-
-&lt;p&gt;R 语言里，表示路径的时候，两级文件夹之间要用&lt;code&gt;/&lt;/code&gt;或&lt;code&gt;\\&lt;/code&gt;分隔，否则就报错。这个问题初学者常遇见，我特意写进了新书的“答疑”一章。以前我跑 windows 和 Ubuntu 双系统时还会考虑正反斜杠，现在只用 windows，如果在 R 代码里需要本地路径，我都是在totalcommander 里 ctrl + 3 来获取完整路径到剪切板，再粘贴到代码里。要改成&lt;code&gt;\\&lt;/code&gt;，只需在原有的一个&lt;code&gt;\&lt;/code&gt;后面再添一个就行了。而改成&lt;code&gt;/&lt;/code&gt;，我得先删掉原有的&lt;code&gt;\&lt;/code&gt;，再敲一个&lt;code&gt;/&lt;/code&gt;，工作量加倍。我就是懒&amp;hellip;&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;我用&lt;code&gt;\&lt;/code&gt;的另一个理由就比较小众了，一般人可能难以理解：我人在德语国家，用的是德语键盘。不是系统设置成德语键盘，而是实体德语键盘，见下图：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://www.smartkeyboardsolutions.com/images/KB_50029UB_German_zoom.jpg&#34; alt=&#34;enter image description here&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;除了布局不同外，德语键盘比普通键盘多一个功能键叫 &lt;code&gt;AltGr&lt;/code&gt;，在空格键右边，用来输入更多特殊字符。德语键盘输入&lt;code&gt;/&lt;/code&gt;，需要双手互博，左手shift+右手7，或者找数字小键盘的除号，而输入&lt;code&gt;\&lt;/code&gt;只需一只手，右手拇指AltGr+中指ß就行了。那我当然倾向于&lt;code&gt;\&lt;/code&gt;。&lt;/p&gt;
-
-&lt;p&gt;这回亮出德语键盘，顺便解释一下为何我是R语言的箭头党。因为，德语键盘如果用等号&lt;code&gt;=&lt;/code&gt;作为赋值号，那么得按shift+0。为了代码整洁，前后还得各敲个空格。而箭头呢，在RStudio里按Alt+_，就是箭头，同时自动附送两个空格。那我当然用箭头，更不用提箭头是雄性的标志了。&lt;/p&gt;
-
-&lt;p&gt;你瞧，一说起德语键盘，又有吐不完的槽，比如你会发现Z和Y两个键是跟英文键盘反着的。我对此不理解，就问德国人，德国人的回答是：你们英文键盘干嘛非要跟我们反着？你们英国人为啥非要靠左行驶？你们英国人为啥计量单位不用十进制？&amp;hellip;&amp;hellip;.&lt;/p&gt;
-
-&lt;p&gt;一扯就又扯到二战去了。本帖就此打住。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Hugo 网站 academic 主题的多语言界面</title>
-      <link>http://www.pzhao.org/zh/post/hugo-multilingual/</link>
-      <pubDate>Sun, 16 Apr 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/zh/post/hugo-multilingual/</guid>
-      <description>&lt;p&gt;几年前我弄过&lt;a href=&#34;http://dapengde.com/archives/15265&#34; target=&#34;_blank&#34;&gt;双语博客&lt;/a&gt;， 后来放弃了，因为 WordPress 的双语方案有些遗留问题让我不爽，另外我没有精力写英文博客。现在，新网站是个科研网站，博客可以只出现在中文版里，而英文版只放自己的学术情况就行了，不用像博客更新那么频繁。所以，双语界面几乎是排在第一梯队的需求。&lt;/p&gt;
-
-&lt;p&gt;我对Hugo的架构并不熟悉，原以为会很麻烦，结果弄一会儿就搞定了，原来这么简单。有些步骤在&lt;a href=&#34;http://dapengde.com/blogdown_demo_academic/post/getting-started/&#34; target=&#34;_blank&#34;&gt;主题的说明文档里&lt;/a&gt;提到了，但不够全。完整的步骤是这样的(看起来长，是因为我啰嗦，其实很快就能设置完)：&lt;/p&gt;
-
-&lt;p&gt;1、开启双语。这需要在&lt;code&gt;config.toml&lt;/code&gt;里末尾找到：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;[languages.en]
-  languageCode = &amp;quot;en-us&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;这说明网站现在是英文的。在后面添加中文，也就是：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;[languages.en]
-  languageCode = &amp;quot;en-us&amp;quot;
-
-[languages.zh]
-  languageCode = &amp;quot;zh-cn&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;2、设置默认语言。这需要在&lt;code&gt;config.toml&lt;/code&gt;里开头不远处找到：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# Default language to use (if you setup multilingual support)
-defaultContentLanguage = &amp;quot;zh&amp;quot;
-defaultContentLanguageInSubdir = true
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;原先是en，改成zh就可以让网站默认打开是中文。&lt;/p&gt;
-
-&lt;p&gt;3、菜单栏增加中文界面。菜单栏就是网页顶部那一排按钮。这需要在&lt;code&gt;config.toml&lt;/code&gt;里找到菜单栏的设定：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;[[menu.main]]
-  name = &amp;quot;Home&amp;quot;
-  url = &amp;quot;#about&amp;quot;
-  weight = 1
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;上面是默认语言英语的设置。在下面添加中文设置，格式是&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;[[languages.zh.menu.main]]
-  name = &amp;quot;主页&amp;quot;
-  url = &amp;quot;#about&amp;quot;
-  weight = 1
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;这样，就把&lt;code&gt;Home&lt;/code&gt;按钮替换成了&lt;code&gt;主页&lt;/code&gt;按钮。其他按钮类似。&lt;/p&gt;
-
-&lt;p&gt;4、其他地方的翻译。这需要把&lt;code&gt;\themes\hugo-academic\i18n\&lt;/code&gt; 文件夹拷贝到根目录，然后删掉里边不需要的语言文件。我们只保留&lt;code&gt;en.yaml&lt;/code&gt;和&lt;code&gt;zh.yaml&lt;/code&gt;。用文本编辑器打开&lt;code&gt;zh.yaml&lt;/code&gt;，把里边翻译不当的地方修改一下，比如 interests 翻译成了“兴趣爱好”，我改成了“研究领域”。&lt;/p&gt;
-
-&lt;p&gt;5、新增帖子的双语。这个最好办，每次在&lt;code&gt;content\&lt;/code&gt;文件夹里新增文件时，如果要增加英文，就在文件扩展名前面加个&lt;code&gt;.en&lt;/code&gt;就行了。例如，我在&lt;code&gt;content\talk\&lt;/code&gt;下面新建了个&lt;code&gt;egu-2017.md&lt;/code&gt;，里面是中文，会出现在中文界面上。那么我想让这个项目也在英文版出现，只需把&lt;code&gt;egu-2017.md&lt;/code&gt;复制一份，命名为&lt;code&gt;egu-2017.en.md&lt;/code&gt;，那么这个项目就会在英文界面出现了。打开&lt;code&gt;egu-2017.en.md&lt;/code&gt;把里面的中文改成英文即可。&lt;/p&gt;
-
-&lt;p&gt;6、在菜单栏增加中英文界面切换的按钮。只需在&lt;code&gt;config.toml&lt;/code&gt;里的菜单设置出增加：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;[[menu.main]]
-  name = &amp;quot;中文&amp;quot;
-  url = &amp;quot;../zh&amp;quot;
-  weight = 7
-  
-[[languages.zh.menu.main]]
-  name = &amp;quot;EN&amp;quot;
-  url = &amp;quot;../en&amp;quot;
-  weight = 7
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;至此，双语界面全部搞定。&lt;/p&gt;
 </description>
     </item>
     

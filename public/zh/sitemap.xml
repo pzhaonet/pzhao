@@ -4,6 +4,22 @@
     
     
     <url>
+      <loc>http://www.pzhao.org/zh/post/latex-equations-to-word/</loc>
+      <lastmod>2017-06-20T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+      <loc>http://www.pzhao.org/zh/post/publish-r-packages/</loc>
+      <lastmod>2017-06-19T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
       <loc>http://www.pzhao.org/zh/post/preface_zhu/</loc>
       <lastmod>2017-06-14T00:00:00+00:00</lastmod>
     </url>
@@ -750,6 +766,15 @@
     
     
     <url>
+      <loc>http://www.pzhao.org/zh/tags/latex/</loc>
+      <lastmod>2017-06-20T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
       <loc>http://www.pzhao.org/zh/tags/markdown/</loc>
       <lastmod>2017-05-19T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -760,7 +785,7 @@
     
     <url>
       <loc>http://www.pzhao.org/zh/tags/mindr/</loc>
-      <lastmod>2017-05-19T00:00:00+00:00</lastmod>
+      <lastmod>2017-06-19T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -787,7 +812,7 @@
     
     <url>
       <loc>http://www.pzhao.org/zh/tags/pinyin/</loc>
-      <lastmod>2017-05-26T00:00:00+00:00</lastmod>
+      <lastmod>2017-06-19T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -849,7 +874,7 @@
     
     <url>
       <loc>http://www.pzhao.org/zh/tags/r/</loc>
-      <lastmod>2017-06-14T00:00:00+00:00</lastmod>
+      <lastmod>2017-06-19T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -858,6 +883,15 @@
     
     <url>
       <loc>http://www.pzhao.org/zh/tags/</loc>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+      <loc>http://www.pzhao.org/zh/tags/word/</loc>
+      <lastmod>2017-06-20T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
