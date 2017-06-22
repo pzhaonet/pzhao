@@ -12,13 +12,14 @@ tags:
 categories: []
 ---
 
-最近，我把[mindr](http://www.pzhao.org/zh/post/mindr/)和[pinyin](http://www.pzhao.org/zh/post/pinyin/)两个包提交到了 CRAN。这两个包都很简单，我就是想体验一下发布R包的流程，免得将来[学R](http://xuer.pzhao.org/)那本书出版了被问起来，答不上来就丢人了，另外也算是承接[菜鸟致简速成](http://www.pzhao.org/zh/post/rmickey/)那篇帖子，里面只谈了野包的发布分享，而只有提交到了 CRAN，野包才算转正。
+最近，我把[mindr](http://www.pzhao.org/zh/post/mindr/)，[pinyin](http://www.pzhao.org/zh/post/pinyin/) 和 [bookdownplus](http://www.pzhao.org/zh/post/bookdown-plus/) 三个包都提交到了 CRAN。这三个包都很简单，我就是想体验一下发布R包的流程，免得将来[学R](http://xuer.pzhao.org/)那本书出版了被问起来，答不上来就丢人了，另外也算是承接[菜鸟致简速成](http://www.pzhao.org/zh/post/rmickey/)那篇帖子，里面只谈了野包的发布分享，而只有提交到了 CRAN，野包才算转正。
 
-昨天，这两个包都成功转正，可以正常安装了：
+很快，这三个包都成功转正，可以正常安装了：
 
 ```{r, eval=FALSE}
 install.packages('mindr')
 install.packages('pinyin')
+install.packages('bookdownplus')
 ```
 
 这里说说发布的过程和我遇到的一些问题。
@@ -41,7 +42,7 @@ install.packages('pinyin')
 
 把包的压缩文件在 [CRAN 的网页](https://cran.r-project.org/submit.html)上传即可。成功上传后会收到 email 通知，需要点击里面的链接进行确认。
 
-我这两个宝贝儿的1.0.0版是六一那天上传并确认的，之后我就等，一直等到6月16号，我才想起来这事儿，就发信给	CRAN <cran@r-project.org> 催了一下，当天就得到了 Dr. Uwe Ligges 的回复，说：
+我两个宝贝儿 mindr 和 pinyin 的1.0.0版是六一那天上传并确认的，之后我就等，一直等到6月16号，我才想起来这事儿，就发信给	CRAN <cran@r-project.org> 催了一下，当天就得到了 Dr. Uwe Ligges 的回复，说：
 
 > 你那两个包在提交当天就被系统自动拒收了，因为系统自动检查时发现了两个 Notes。系统自动发信通知你了，如果没收到，请翻翻垃圾邮件。
 
@@ -60,7 +61,12 @@ install.packages('pinyin')
 
 4. 对特殊的概念要简要解释。pinyin 包得解释一下什么是"pinyin"，mindr 包要求解释一下什么是"common mindmap software"。
 
-这两位挺有耐心的，来来回回给了我好几次意见，我就先拿 mindr 开刀，改一点就提交个新版本，最后 mindr 的提交版本是1.0.4，算是没什么问题了，我才大体知道是个什么路子，回头修改 pinyin 包，提交的版本是1.0.2。
+5. 没用的字段要删掉。比如`VignetteBuilder: knitr`字段，我有个包并没有写 vignette，这个字段就不要出现在 DESCRIPTION 里，虽然没出错。
+
+6. 标题和描述里不要用 grave accent (`) 号，要改成单引号。我也觉得自己有滥用代码格式标记的趋势，是个专有名词就想用。这个毛病不好，要改。
+
+
+这两位挺有耐心的，来来回回给了我好几次意见，我就先拿 mindr 开刀，改一点就提交个新版本，最后 mindr 的提交版本是1.0.4，算是没什么问题了，我才大体知道是个什么路子，回头修改 pinyin 包 和 bookdownplus 包，提交的版本都是1.0.2。
 
 最后的最后，收到 Kurt Hornik 发来的邮件：
 

@@ -10,6 +10,183 @@
     <atom:link href="/zh/tags/r/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>R 包 bookdownplus 正式发布</title>
+      <link>http://www.pzhao.org/zh/post/bookdownplus-released/</link>
+      <pubDate>Thu, 22 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.pzhao.org/zh/post/bookdownplus-released/</guid>
+      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
+&lt;!-- /BLOGDOWN-HEAD --&gt;
+
+&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
+&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
+&lt;p&gt;很高兴地宣布，我的 R 语言扩展包 ‘bookdownplus’ &lt;span class=&#34;citation&#34;&gt;(Zhao 2017)&lt;/span&gt; 在 CRAN &lt;a href=&#34;https://cran.r-project.org/web/packages/bookdownplus/&#34;&gt;正式发布&lt;/a&gt;了。&lt;/p&gt;
+&lt;p&gt;bookdownplus 是对 bookdown 包 &lt;span class=&#34;citation&#34;&gt;(Xie 2016)&lt;/span&gt; 的增强和简化。bookdown 就好比 Microsoft Word 或 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt;，可以用来写文档，而 bookdownplus 提供了很多有用的模板，可以很方便地在 bookdown 平台写期刊论文、学位论文、学术海报、化学分子式、信件、日记、日历、诗集、吉他谱等各种常用文档和书籍。这是功能上的增强（+）。&lt;/p&gt;
+&lt;p&gt;bookdownplus 使用时只需指定一个模板，给定作者和书名，就可以一键生成模板文件，用户在模板文件里照猫画虎写自己的文字就可以了，不必再花力气上网找模板、设置 YAML 和 LaTeX。这是操作上的简化（-）。&lt;/p&gt;
+&lt;p&gt;bookdownplus 各个模板的使用方法详见 &lt;a href=&#34;https://bookdown.org/baydap/bookdownplus&#34;&gt;R bookdownplus Textbook&lt;/a&gt;。这本电子书本身就是用 bookdownplus 生成的，尤其是它的 &lt;a href=&#34;https://bookdown.org/baydap/bookdownplus/bookdownplus.pdf&#34;&gt;pdf 版本&lt;/a&gt;很美观。此书的源码开放，可以作为使用 bookdownplu s写书的示例。&lt;/p&gt;
+&lt;p&gt;下面是 &lt;a href=&#34;https://github.com/pzhaonet/bookdownplus&#34;&gt;bookdownplus&lt;/a&gt; 的简介和快速使用方法。&lt;/p&gt;
+&lt;div class=&#34;section level1&#34;&gt;
+&lt;h1&gt;快速入门&lt;/h1&gt;
+&lt;p&gt;在开始前，需要安装 R, RStudio, bookdown，和其他依赖的软件和包(例如 &lt;code&gt;Pandoc&lt;/code&gt;, &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt;, &lt;code&gt;rmarkdown&lt;/code&gt;, &lt;code&gt;rticle&lt;/code&gt;, &lt;code&gt;knitr&lt;/code&gt;等)，作为准备。详见 &lt;a href=&#34;https://bookdown.org/yihui/bookdown/&#34;&gt;bookdown 官方手册&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;准备完毕后，就可以安装 bookdownplus 了。可以安装稳定版：&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;install.packages(&amp;quot;bookdownplus&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;或开发版：&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;devtools::install_github(&amp;quot;pzhaonet/bookdownplus&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;接着，在 R 中运行下面的代码：&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;bookdownplus::bookdownplus()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这时，在你的工作目录（&lt;code&gt;getwd()&lt;/code&gt;），会得到一些模板文件（如 &lt;code&gt;index.Rmd&lt;/code&gt;，&lt;code&gt;body.Rmd&lt;/code&gt;， &lt;code&gt;bookdownplus.Rproj&lt;/code&gt;） 和文件夹。&lt;/p&gt;
+&lt;p&gt;用 RStudio 打开 &lt;code&gt;bookdownplus.Rproj&lt;/code&gt;文件，然后按 &lt;code&gt;ctrl+shift+b&lt;/code&gt;，Duang！你就得到模板书 &lt;code&gt;*.pdf&lt;/code&gt;了！保存在 &lt;code&gt;_book/&lt;/code&gt; 文件夹里。&lt;/p&gt;
+&lt;p&gt;在 &lt;code&gt;index.Rmd&lt;/code&gt; 和 &lt;code&gt;body.Rmd&lt;/code&gt; 里写你自己的文字，享受写书的快乐吧！自古皆死，不朽者文！&lt;/p&gt;
+&lt;div class=&#34;section level2&#34;&gt;
+&lt;h2&gt;更改模板&lt;/h2&gt;
+&lt;p&gt;上述快速入门得到的模板文档是默认的论文文档。只需在上述步骤里为 &lt;code&gt;bookdownplus()&lt;/code&gt; 函数指定模板名称，就可以用类似的操作得到其他模板的示范文档，如：&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;bookdownplus::bookdownplus(template = &amp;#39;poem&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;下面展示一些模板。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;article&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+article.jpg&#34; /&gt;
+
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;article_mdpi1&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+article_mdpi.jpg&#34; /&gt;
+
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;article_zh&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+article_zh.jpg&#34; /&gt;
+
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;calendar&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+calendar.jpg&#34; /&gt;
+
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;chemistry&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+chemistry.jpg&#34; /&gt;
+
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;guitar&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+guitar.jpg&#34; /&gt;
+
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;journal&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+journal.jpg&#34; /&gt;
+
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;mail&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+mail.jpg&#34; /&gt;
+
+&lt;/div&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+mail2.png&#34; /&gt;
+
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;poem&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+poem.jpg&#34; /&gt;
+
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;thesis_classic&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+thesis_classic.jpg&#34; /&gt;
+
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;thesis_ubt&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+thesis_ubt.jpg&#34; /&gt;
+
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;thesis_zju&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+thesis_zju.jpg&#34; /&gt;
+
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;yihui_demo&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+yihui_demo.jpg&#34; /&gt;
+
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;yihui_mini&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+yihui_mini.jpg&#34; /&gt;
+
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;yihui_zh&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+yihui_zh.jpg&#34; /&gt;
+
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;poster&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+poster_ocean.jpg&#34; /&gt;
+
+&lt;/div&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+poster_eco.jpg&#34; /&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;section level2&#34;&gt;
+&lt;h2&gt;更新记录&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;2017-06-21. &lt;a href=&#34;https://cran.r-project.org/web/packages/bookdownplus/index.html&#34;&gt;Released on CRAN&lt;/a&gt;!&lt;/li&gt;
+&lt;li&gt;2017-06-21. &lt;strong&gt;Version 1.0.2.&lt;/strong&gt; Resubmitted to CRAN!&lt;/li&gt;
+&lt;li&gt;2017-06-21. &lt;strong&gt;Version 1.0.2.&lt;/strong&gt; Resubmitted to CRAN!&lt;/li&gt;
+&lt;li&gt;2017-06-21. &lt;strong&gt;Version 1.0.1.&lt;/strong&gt; Submitted to CRAN!&lt;/li&gt;
+&lt;li&gt;2017-06-14. &lt;strong&gt;Version 0.0.1.&lt;/strong&gt; A bug fixed.&lt;/li&gt;
+&lt;li&gt;2017-05-15. &lt;strong&gt;Version 0.0.0.&lt;/strong&gt; A very preliminary version.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div id=&#34;refs&#34; class=&#34;references&#34;&gt;
+&lt;div id=&#34;ref-R-bookdown&#34;&gt;
+&lt;p&gt;Xie, Yihui. 2016. &lt;em&gt;Bookdown: Authoring Books and Technical Documents with R Markdown&lt;/em&gt;. Boca Raton, Florida: Chapman; Hall/CRC. &lt;a href=&#34;https://github.com/rstudio/bookdown&#34; class=&#34;uri&#34;&gt;https://github.com/rstudio/bookdown&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-R-bookdownplus&#34;&gt;
+&lt;p&gt;Zhao, Peng. 2017. &lt;em&gt;Bookdownplus: Generate Varied Books and Documents with R ’Bookdown’ Package&lt;/em&gt;. &lt;a href=&#34;https://CRAN.R-project.org/package=bookdownplus&#34; class=&#34;uri&#34;&gt;https://CRAN.R-project.org/package=bookdownplus&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>R包发布记</title>
       <link>http://www.pzhao.org/zh/post/publish-r-packages/</link>
       <pubDate>Mon, 19 Jun 2017 00:00:00 +0000</pubDate>
@@ -20,10 +197,11 @@
 
 &lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
 &lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
-&lt;p&gt;最近，我把&lt;a href=&#34;http://www.pzhao.org/zh/post/mindr/&#34;&gt;mindr&lt;/a&gt;和&lt;a href=&#34;http://www.pzhao.org/zh/post/pinyin/&#34;&gt;pinyin&lt;/a&gt;两个包提交到了 CRAN。这两个包都很简单，我就是想体验一下发布R包的流程，免得将来&lt;a href=&#34;http://xuer.pzhao.org/&#34;&gt;学R&lt;/a&gt;那本书出版了被问起来，答不上来就丢人了，另外也算是承接&lt;a href=&#34;http://www.pzhao.org/zh/post/rmickey/&#34;&gt;菜鸟致简速成&lt;/a&gt;那篇帖子，里面只谈了野包的发布分享，而只有提交到了 CRAN，野包才算转正。&lt;/p&gt;
-&lt;p&gt;昨天，这两个包都成功转正，可以正常安装了：&lt;/p&gt;
+&lt;p&gt;最近，我把&lt;a href=&#34;http://www.pzhao.org/zh/post/mindr/&#34;&gt;mindr&lt;/a&gt;，&lt;a href=&#34;http://www.pzhao.org/zh/post/pinyin/&#34;&gt;pinyin&lt;/a&gt; 和 &lt;a href=&#34;http://www.pzhao.org/zh/post/bookdown-plus/&#34;&gt;bookdownplus&lt;/a&gt; 三个包都提交到了 CRAN。这三个包都很简单，我就是想体验一下发布R包的流程，免得将来&lt;a href=&#34;http://xuer.pzhao.org/&#34;&gt;学R&lt;/a&gt;那本书出版了被问起来，答不上来就丢人了，另外也算是承接&lt;a href=&#34;http://www.pzhao.org/zh/post/rmickey/&#34;&gt;菜鸟致简速成&lt;/a&gt;那篇帖子，里面只谈了野包的发布分享，而只有提交到了 CRAN，野包才算转正。&lt;/p&gt;
+&lt;p&gt;很快，这三个包都成功转正，可以正常安装了：&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;install.packages(&amp;#39;mindr&amp;#39;)
-install.packages(&amp;#39;pinyin&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
+install.packages(&amp;#39;pinyin&amp;#39;)
+install.packages(&amp;#39;bookdownplus&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;这里说说发布的过程和我遇到的一些问题。&lt;/p&gt;
 &lt;div class=&#34;section level2&#34;&gt;
 &lt;h2&gt;自查&lt;/h2&gt;
@@ -39,7 +217,7 @@ install.packages(&amp;#39;pinyin&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
 &lt;div class=&#34;section level2&#34;&gt;
 &lt;h2&gt;提交&lt;/h2&gt;
 &lt;p&gt;把包的压缩文件在 &lt;a href=&#34;https://cran.r-project.org/submit.html&#34;&gt;CRAN 的网页&lt;/a&gt;上传即可。成功上传后会收到 email 通知，需要点击里面的链接进行确认。&lt;/p&gt;
-&lt;p&gt;我这两个宝贝儿的1.0.0版是六一那天上传并确认的，之后我就等，一直等到6月16号，我才想起来这事儿，就发信给 CRAN &lt;a href=&#34;mailto:cran@r-project.org&#34;&gt;cran@r-project.org&lt;/a&gt; 催了一下，当天就得到了 Dr. Uwe Ligges 的回复，说：&lt;/p&gt;
+&lt;p&gt;我两个宝贝儿 mindr 和 pinyin 的1.0.0版是六一那天上传并确认的，之后我就等，一直等到6月16号，我才想起来这事儿，就发信给 CRAN &lt;a href=&#34;mailto:cran@r-project.org&#34;&gt;cran@r-project.org&lt;/a&gt; 催了一下，当天就得到了 Dr. Uwe Ligges 的回复，说：&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;你那两个包在提交当天就被系统自动拒收了，因为系统自动检查时发现了两个 Notes。系统自动发信通知你了，如果没收到，请翻翻垃圾邮件。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -53,8 +231,10 @@ install.packages(&amp;#39;pinyin&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
 &lt;li&gt;&lt;p&gt;用单引号把文件扩展名引起来。比如我说 &lt;code&gt;.md files&lt;/code&gt;，要求改成&lt;code&gt;&#39;.md&#39; files&lt;/code&gt;。&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;软件名称也要用单引号引起来，并且给出链接。比如我说思维导图可以用 FreeMind打开，要改成&lt;code&gt;&#39;FreeMind&#39;(&amp;lt;http://freemind.sourceforge.net/wiki/index.php/Main_Page&amp;gt;)&lt;/code&gt;。&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;对特殊的概念要简要解释。pinyin 包得解释一下什么是“pinyin”，mindr 包要求解释一下什么是“common mindmap software”。&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;没用的字段要删掉。比如&lt;code&gt;VignetteBuilder: knitr&lt;/code&gt;字段，我有个包并没有写 vignette，这个字段就不要出现在 DESCRIPTION 里，虽然没出错。&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;标题和描述里不要用 grave accent (`) 号，要改成单引号。我也觉得自己有滥用代码格式标记的趋势，是个专有名词就想用。这个毛病不好，要改。&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;这两位挺有耐心的，来来回回给了我好几次意见，我就先拿 mindr 开刀，改一点就提交个新版本，最后 mindr 的提交版本是1.0.4，算是没什么问题了，我才大体知道是个什么路子，回头修改 pinyin 包，提交的版本是1.0.2。&lt;/p&gt;
+&lt;p&gt;这两位挺有耐心的，来来回回给了我好几次意见，我就先拿 mindr 开刀，改一点就提交个新版本，最后 mindr 的提交版本是1.0.4，算是没什么问题了，我才大体知道是个什么路子，回头修改 pinyin 包 和 bookdownplus 包，提交的版本都是1.0.2。&lt;/p&gt;
 &lt;p&gt;最后的最后，收到 Kurt Hornik 发来的邮件：&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Thanks, on CRAN now.&lt;/p&gt;
@@ -109,8 +289,11 @@ install.packages(&amp;#39;pinyin&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
 
 &lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
 &lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
+&lt;p&gt;&lt;strong&gt;更新：2017-06-19，&lt;a href=&#34;https://cran.r-project.org/web/packages/mindr/index.html&#34;&gt;‘pinyin 1.0.2’&lt;/a&gt; 在 CRAN 正式发布。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;今天新写了个R包，粗暴地取名为 &lt;a href=&#34;https://github.com/pzhaonet/pinyin/&#34;&gt;pinyin&lt;/a&gt;，作用是把汉字转换成拼音。&lt;/p&gt;
 &lt;p&gt;安装方法：&lt;/p&gt;
+&lt;p&gt;稳定版：&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;install.packages(&amp;quot;pinyin&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;devtools::install_github(&amp;quot;pzhaonet/pinyin&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;安装时可能会出现一些关于 locale 的警告，净吓唬人，无视。&lt;/p&gt;
 &lt;p&gt;使用方法：&lt;/p&gt;
@@ -166,7 +349,11 @@ pinyin(&amp;#39;羌笛何须怨杨柳春风不度玉门关&amp;#39;)&lt;/code&gt
 
 &lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
 &lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
+&lt;p&gt;&lt;strong&gt;更新：2017-06-19，&lt;a href=&#34;https://cran.r-project.org/web/packages/mindr/index.html&#34;&gt;‘mindr 1.0.4’&lt;/a&gt; 在 CRAN 正式发布。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;将 markdown (.md, .Rmd) 文件转换成思维导图的 R 扩展包 &lt;a href=&#34;https://github.com/pzhaonet/mindr&#34;&gt;mindr&lt;/a&gt; 是我写的第五个 R 包，安装方法如下：&lt;/p&gt;
+&lt;p&gt;稳定版：&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;install.packages(&amp;quot;mindr&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;开发版：&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;devtools::install_github(&amp;quot;pzhaonet/mindr&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;使用方法：&lt;/p&gt;
 &lt;p&gt;在R的工作目录创建个名叫 &lt;code&gt;mm/&lt;/code&gt; 的文件夹，丢进去一堆 markdown 文件 (.md, .Rmd)，然后运行：&lt;/p&gt;
@@ -819,30 +1006,6 @@ Enable/disable and configure widgets to customize your homepage.
 &lt;p&gt;跟 R blogdown 生成的 .md 和 .Rmd 文件的文件头不同，这个文件头居然是用前后各三个加号表示的。里面的&lt;code&gt;summary&lt;/code&gt;开始数三行，就是用来设置文摘的。&lt;/p&gt;
 &lt;p&gt;于是我就把这三行拷贝粘贴到 .Rmd 文件里，当然是编译出错了。接着我想当然地把上面这段前后共六个加号的文件头拷贝粘贴到 .Rmd 里，仍然报错。问题搁置了几天，才想起去 blogdown 项目主页搜搜看，就找到了答案。&lt;/p&gt;
 &lt;p&gt;永远记不住的教训：遇到问题，别瞎试。上网搜，你绝不是第一个遇到这个问题的人。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Hugo 网站的 Disqus 加载问题</title>
-      <link>http://www.pzhao.org/zh/post/hogo-disques-problem/</link>
-      <pubDate>Fri, 14 Apr 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/zh/post/hogo-disques-problem/</guid>
-      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
-&lt;!-- /BLOGDOWN-HEAD --&gt;
-
-&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
-&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
-&lt;p&gt;今天，复活节假期前夕，同事们都休假了。我虽然在办公室，却无心上班，发了一会儿呆，想想与其痛苦地工作，不如快乐地解决一下&lt;a href=&#34;http://pzhao.org&#34;&gt;新网站&lt;/a&gt;的一个小问题：disqus 评论框的加载。&lt;/p&gt;
-&lt;p&gt;用 R blogdown 打建好站，disqus评论框就一直没成功加载过。后来听说是&lt;code&gt;config.toml&lt;/code&gt;里 &lt;code&gt;disqus shortname&lt;/code&gt;指的不是我的disqus ID，而是要&lt;a href=&#34;https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-&#34;&gt;专门设置&lt;/a&gt;一下， 我说“啊,还有这事儿？”于是就设置了一下，但是仍然不能成功加载。这个问题放了几天，今天心血来潮&lt;a href=&#34;http://applyr.blogspot.co.at/2017/01/blogging-about-r-from-r-studio.html&#34;&gt;一搜&lt;/a&gt;，嗯，兴许是路径的问题，于是就把&lt;code&gt;config.toml&lt;/code&gt;开头的路径改为&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;baseurl = &amp;quot;http://www.pzhao.org&amp;quot;
-# relativeurls = true&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;然后运行R语言的建站函数：&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;blogdown::build_site(local=FALSE)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;注意！此处千万不要运行&lt;code&gt;blogdown::serve_site()&lt;/code&gt;，不然新生成的文件就又没法加载 Disqus 了。&lt;a href=&#34;http://applyr.blogspot.co.at/2017/01/blogging-about-r-from-r-studio.html&#34;&gt;网上说&lt;/a&gt;是&lt;code&gt;serve_site()&lt;/code&gt;忽略了&lt;code&gt;config.toml&lt;/code&gt;里的某些设置而造成的。我不懂，总之就是建站函数运行完就直接上传。&lt;/p&gt;
-&lt;p&gt;然后GitHub同步，几秒钟后，Netlify上完成了更新，Disqus评论框就乖乖出现了。&lt;/p&gt;
-&lt;p&gt;欢迎&lt;a href=&#34;http://pzhao.org/zh/post/hogo-disques-problem/&#34;&gt;来留言测试&lt;/a&gt;。&lt;/p&gt;
-&lt;p&gt;啥，你看不见？嗯，听说好像是被墙了。&lt;/p&gt;
 </description>
     </item>
     

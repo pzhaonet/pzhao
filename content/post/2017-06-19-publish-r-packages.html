@@ -17,10 +17,11 @@ categories: []
 
 <!-- BLOGDOWN-BODY-BEFORE -->
 <!-- /BLOGDOWN-BODY-BEFORE -->
-<p>最近，我把<a href="http://www.pzhao.org/zh/post/mindr/">mindr</a>和<a href="http://www.pzhao.org/zh/post/pinyin/">pinyin</a>两个包提交到了 CRAN。这两个包都很简单，我就是想体验一下发布R包的流程，免得将来<a href="http://xuer.pzhao.org/">学R</a>那本书出版了被问起来，答不上来就丢人了，另外也算是承接<a href="http://www.pzhao.org/zh/post/rmickey/">菜鸟致简速成</a>那篇帖子，里面只谈了野包的发布分享，而只有提交到了 CRAN，野包才算转正。</p>
-<p>昨天，这两个包都成功转正，可以正常安装了：</p>
+<p>最近，我把<a href="http://www.pzhao.org/zh/post/mindr/">mindr</a>，<a href="http://www.pzhao.org/zh/post/pinyin/">pinyin</a> 和 <a href="http://www.pzhao.org/zh/post/bookdown-plus/">bookdownplus</a> 三个包都提交到了 CRAN。这三个包都很简单，我就是想体验一下发布R包的流程，免得将来<a href="http://xuer.pzhao.org/">学R</a>那本书出版了被问起来，答不上来就丢人了，另外也算是承接<a href="http://www.pzhao.org/zh/post/rmickey/">菜鸟致简速成</a>那篇帖子，里面只谈了野包的发布分享，而只有提交到了 CRAN，野包才算转正。</p>
+<p>很快，这三个包都成功转正，可以正常安装了：</p>
 <pre class="r"><code>install.packages(&#39;mindr&#39;)
-install.packages(&#39;pinyin&#39;)</code></pre>
+install.packages(&#39;pinyin&#39;)
+install.packages(&#39;bookdownplus&#39;)</code></pre>
 <p>这里说说发布的过程和我遇到的一些问题。</p>
 <div class="section level2">
 <h2>自查</h2>
@@ -36,7 +37,7 @@ install.packages(&#39;pinyin&#39;)</code></pre>
 <div class="section level2">
 <h2>提交</h2>
 <p>把包的压缩文件在 <a href="https://cran.r-project.org/submit.html">CRAN 的网页</a>上传即可。成功上传后会收到 email 通知，需要点击里面的链接进行确认。</p>
-<p>我这两个宝贝儿的1.0.0版是六一那天上传并确认的，之后我就等，一直等到6月16号，我才想起来这事儿，就发信给 CRAN <a href="mailto:cran@r-project.org">cran@r-project.org</a> 催了一下，当天就得到了 Dr. Uwe Ligges 的回复，说：</p>
+<p>我两个宝贝儿 mindr 和 pinyin 的1.0.0版是六一那天上传并确认的，之后我就等，一直等到6月16号，我才想起来这事儿，就发信给 CRAN <a href="mailto:cran@r-project.org">cran@r-project.org</a> 催了一下，当天就得到了 Dr. Uwe Ligges 的回复，说：</p>
 <blockquote>
 <p>你那两个包在提交当天就被系统自动拒收了，因为系统自动检查时发现了两个 Notes。系统自动发信通知你了，如果没收到，请翻翻垃圾邮件。</p>
 </blockquote>
@@ -50,8 +51,10 @@ install.packages(&#39;pinyin&#39;)</code></pre>
 <li><p>用单引号把文件扩展名引起来。比如我说 <code>.md files</code>，要求改成<code>'.md' files</code>。</p></li>
 <li><p>软件名称也要用单引号引起来，并且给出链接。比如我说思维导图可以用 FreeMind打开，要改成<code>'FreeMind'(&lt;http://freemind.sourceforge.net/wiki/index.php/Main_Page&gt;)</code>。</p></li>
 <li><p>对特殊的概念要简要解释。pinyin 包得解释一下什么是“pinyin”，mindr 包要求解释一下什么是“common mindmap software”。</p></li>
+<li><p>没用的字段要删掉。比如<code>VignetteBuilder: knitr</code>字段，我有个包并没有写 vignette，这个字段就不要出现在 DESCRIPTION 里，虽然没出错。</p></li>
+<li><p>标题和描述里不要用 grave accent (`) 号，要改成单引号。我也觉得自己有滥用代码格式标记的趋势，是个专有名词就想用。这个毛病不好，要改。</p></li>
 </ol>
-<p>这两位挺有耐心的，来来回回给了我好几次意见，我就先拿 mindr 开刀，改一点就提交个新版本，最后 mindr 的提交版本是1.0.4，算是没什么问题了，我才大体知道是个什么路子，回头修改 pinyin 包，提交的版本是1.0.2。</p>
+<p>这两位挺有耐心的，来来回回给了我好几次意见，我就先拿 mindr 开刀，改一点就提交个新版本，最后 mindr 的提交版本是1.0.4，算是没什么问题了，我才大体知道是个什么路子，回头修改 pinyin 包 和 bookdownplus 包，提交的版本都是1.0.2。</p>
 <p>最后的最后，收到 Kurt Hornik 发来的邮件：</p>
 <blockquote>
 <p>Thanks, on CRAN now.</p>

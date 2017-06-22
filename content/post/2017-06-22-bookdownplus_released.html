@@ -1,0 +1,183 @@
+---
+title: 'R 包 bookdownplus 正式发布'
+author: "赵鹏"
+date: '2017-06-22'
+slug: bookdownplus-released
+summary: "bookdownplus 对 bookdown 做了两件事：+功能，-操作。"
+tags:
+- R
+- bookdown
+- bookdownplus
+- post
+bibliography: [zhaor.bib]
+categories: []
+---
+
+<!-- BLOGDOWN-HEAD -->
+<!-- /BLOGDOWN-HEAD -->
+
+<!-- BLOGDOWN-BODY-BEFORE -->
+<!-- /BLOGDOWN-BODY-BEFORE -->
+<p>很高兴地宣布，我的 R 语言扩展包 ‘bookdownplus’ <span class="citation">(Zhao 2017)</span> 在 CRAN <a href="https://cran.r-project.org/web/packages/bookdownplus/">正式发布</a>了。</p>
+<p>bookdownplus 是对 bookdown 包 <span class="citation">(Xie 2016)</span> 的增强和简化。bookdown 就好比 Microsoft Word 或 <span class="math inline">\(\LaTeX\)</span>，可以用来写文档，而 bookdownplus 提供了很多有用的模板，可以很方便地在 bookdown 平台写期刊论文、学位论文、学术海报、化学分子式、信件、日记、日历、诗集、吉他谱等各种常用文档和书籍。这是功能上的增强（+）。</p>
+<p>bookdownplus 使用时只需指定一个模板，给定作者和书名，就可以一键生成模板文件，用户在模板文件里照猫画虎写自己的文字就可以了，不必再花力气上网找模板、设置 YAML 和 LaTeX。这是操作上的简化（-）。</p>
+<p>bookdownplus 各个模板的使用方法详见 <a href="https://bookdown.org/baydap/bookdownplus">R bookdownplus Textbook</a>。这本电子书本身就是用 bookdownplus 生成的，尤其是它的 <a href="https://bookdown.org/baydap/bookdownplus/bookdownplus.pdf">pdf 版本</a>很美观。此书的源码开放，可以作为使用 bookdownplu s写书的示例。</p>
+<p>下面是 <a href="https://github.com/pzhaonet/bookdownplus">bookdownplus</a> 的简介和快速使用方法。</p>
+<div class="section level1">
+<h1>快速入门</h1>
+<p>在开始前，需要安装 R, RStudio, bookdown，和其他依赖的软件和包(例如 <code>Pandoc</code>, <span class="math inline">\(\LaTeX\)</span>, <code>rmarkdown</code>, <code>rticle</code>, <code>knitr</code>等)，作为准备。详见 <a href="https://bookdown.org/yihui/bookdown/">bookdown 官方手册</a>。</p>
+<p>准备完毕后，就可以安装 bookdownplus 了。可以安装稳定版：</p>
+<pre class="r"><code>install.packages(&quot;bookdownplus&quot;)</code></pre>
+<p>或开发版：</p>
+<pre class="r"><code>devtools::install_github(&quot;pzhaonet/bookdownplus&quot;)</code></pre>
+<p>接着，在 R 中运行下面的代码：</p>
+<pre class="r"><code>bookdownplus::bookdownplus()</code></pre>
+<p>这时，在你的工作目录（<code>getwd()</code>），会得到一些模板文件（如 <code>index.Rmd</code>，<code>body.Rmd</code>， <code>bookdownplus.Rproj</code>） 和文件夹。</p>
+<p>用 RStudio 打开 <code>bookdownplus.Rproj</code>文件，然后按 <code>ctrl+shift+b</code>，Duang！你就得到模板书 <code>*.pdf</code>了！保存在 <code>_book/</code> 文件夹里。</p>
+<p>在 <code>index.Rmd</code> 和 <code>body.Rmd</code> 里写你自己的文字，享受写书的快乐吧！自古皆死，不朽者文！</p>
+<div class="section level2">
+<h2>更改模板</h2>
+<p>上述快速入门得到的模板文档是默认的论文文档。只需在上述步骤里为 <code>bookdownplus()</code> 函数指定模板名称，就可以用类似的操作得到其他模板的示范文档，如：</p>
+<pre class="r"><code>bookdownplus::bookdownplus(template = &#39;poem&#39;)</code></pre>
+<p>下面展示一些模板。</p>
+<ul>
+<li>article</li>
+</ul>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+article.jpg" />
+
+</div>
+<ul>
+<li>article_mdpi1</li>
+</ul>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+article_mdpi.jpg" />
+
+</div>
+<ul>
+<li>article_zh</li>
+</ul>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+article_zh.jpg" />
+
+</div>
+<ul>
+<li>calendar</li>
+</ul>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+calendar.jpg" />
+
+</div>
+<ul>
+<li>chemistry</li>
+</ul>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+chemistry.jpg" />
+
+</div>
+<ul>
+<li>guitar</li>
+</ul>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+guitar.jpg" />
+
+</div>
+<ul>
+<li>journal</li>
+</ul>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+journal.jpg" />
+
+</div>
+<ul>
+<li>mail</li>
+</ul>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+mail.jpg" />
+
+</div>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+mail2.png" />
+
+</div>
+<ul>
+<li>poem</li>
+</ul>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+poem.jpg" />
+
+</div>
+<ul>
+<li>thesis_classic</li>
+</ul>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+thesis_classic.jpg" />
+
+</div>
+<ul>
+<li>thesis_ubt</li>
+</ul>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+thesis_ubt.jpg" />
+
+</div>
+<ul>
+<li>thesis_zju</li>
+</ul>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+thesis_zju.jpg" />
+
+</div>
+<ul>
+<li>yihui_demo</li>
+</ul>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+yihui_demo.jpg" />
+
+</div>
+<ul>
+<li>yihui_mini</li>
+</ul>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+yihui_mini.jpg" />
+
+</div>
+<ul>
+<li>yihui_zh</li>
+</ul>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+yihui_zh.jpg" />
+
+</div>
+<ul>
+<li>poster</li>
+</ul>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+poster_ocean.jpg" />
+
+</div>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+poster_eco.jpg" />
+
+</div>
+</div>
+<div class="section level2">
+<h2>更新记录</h2>
+<ul>
+<li>2017-06-21. <a href="https://cran.r-project.org/web/packages/bookdownplus/index.html">Released on CRAN</a>!</li>
+<li>2017-06-21. <strong>Version 1.0.2.</strong> Resubmitted to CRAN!</li>
+<li>2017-06-21. <strong>Version 1.0.2.</strong> Resubmitted to CRAN!</li>
+<li>2017-06-21. <strong>Version 1.0.1.</strong> Submitted to CRAN!</li>
+<li>2017-06-14. <strong>Version 0.0.1.</strong> A bug fixed.</li>
+<li>2017-05-15. <strong>Version 0.0.0.</strong> A very preliminary version.</li>
+</ul>
+<div id="refs" class="references">
+<div id="ref-R-bookdown">
+<p>Xie, Yihui. 2016. <em>Bookdown: Authoring Books and Technical Documents with R Markdown</em>. Boca Raton, Florida: Chapman; Hall/CRC. <a href="https://github.com/rstudio/bookdown" class="uri">https://github.com/rstudio/bookdown</a>.</p>
+</div>
+<div id="ref-R-bookdownplus">
+<p>Zhao, Peng. 2017. <em>Bookdownplus: Generate Varied Books and Documents with R ’Bookdown’ Package</em>. <a href="https://CRAN.R-project.org/package=bookdownplus" class="uri">https://CRAN.R-project.org/package=bookdownplus</a>.</p>
+</div>
+</div>
+</div>
+</div>

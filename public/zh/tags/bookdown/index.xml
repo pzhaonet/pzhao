@@ -10,6 +10,183 @@
     <atom:link href="/zh/tags/bookdown/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>R 包 bookdownplus 正式发布</title>
+      <link>http://www.pzhao.org/zh/post/bookdownplus-released/</link>
+      <pubDate>Thu, 22 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.pzhao.org/zh/post/bookdownplus-released/</guid>
+      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
+&lt;!-- /BLOGDOWN-HEAD --&gt;
+
+&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
+&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
+&lt;p&gt;很高兴地宣布，我的 R 语言扩展包 ‘bookdownplus’ &lt;span class=&#34;citation&#34;&gt;(Zhao 2017)&lt;/span&gt; 在 CRAN &lt;a href=&#34;https://cran.r-project.org/web/packages/bookdownplus/&#34;&gt;正式发布&lt;/a&gt;了。&lt;/p&gt;
+&lt;p&gt;bookdownplus 是对 bookdown 包 &lt;span class=&#34;citation&#34;&gt;(Xie 2016)&lt;/span&gt; 的增强和简化。bookdown 就好比 Microsoft Word 或 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt;，可以用来写文档，而 bookdownplus 提供了很多有用的模板，可以很方便地在 bookdown 平台写期刊论文、学位论文、学术海报、化学分子式、信件、日记、日历、诗集、吉他谱等各种常用文档和书籍。这是功能上的增强（+）。&lt;/p&gt;
+&lt;p&gt;bookdownplus 使用时只需指定一个模板，给定作者和书名，就可以一键生成模板文件，用户在模板文件里照猫画虎写自己的文字就可以了，不必再花力气上网找模板、设置 YAML 和 LaTeX。这是操作上的简化（-）。&lt;/p&gt;
+&lt;p&gt;bookdownplus 各个模板的使用方法详见 &lt;a href=&#34;https://bookdown.org/baydap/bookdownplus&#34;&gt;R bookdownplus Textbook&lt;/a&gt;。这本电子书本身就是用 bookdownplus 生成的，尤其是它的 &lt;a href=&#34;https://bookdown.org/baydap/bookdownplus/bookdownplus.pdf&#34;&gt;pdf 版本&lt;/a&gt;很美观。此书的源码开放，可以作为使用 bookdownplu s写书的示例。&lt;/p&gt;
+&lt;p&gt;下面是 &lt;a href=&#34;https://github.com/pzhaonet/bookdownplus&#34;&gt;bookdownplus&lt;/a&gt; 的简介和快速使用方法。&lt;/p&gt;
+&lt;div class=&#34;section level1&#34;&gt;
+&lt;h1&gt;快速入门&lt;/h1&gt;
+&lt;p&gt;在开始前，需要安装 R, RStudio, bookdown，和其他依赖的软件和包(例如 &lt;code&gt;Pandoc&lt;/code&gt;, &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt;, &lt;code&gt;rmarkdown&lt;/code&gt;, &lt;code&gt;rticle&lt;/code&gt;, &lt;code&gt;knitr&lt;/code&gt;等)，作为准备。详见 &lt;a href=&#34;https://bookdown.org/yihui/bookdown/&#34;&gt;bookdown 官方手册&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;准备完毕后，就可以安装 bookdownplus 了。可以安装稳定版：&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;install.packages(&amp;quot;bookdownplus&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;或开发版：&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;devtools::install_github(&amp;quot;pzhaonet/bookdownplus&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;接着，在 R 中运行下面的代码：&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;bookdownplus::bookdownplus()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这时，在你的工作目录（&lt;code&gt;getwd()&lt;/code&gt;），会得到一些模板文件（如 &lt;code&gt;index.Rmd&lt;/code&gt;，&lt;code&gt;body.Rmd&lt;/code&gt;， &lt;code&gt;bookdownplus.Rproj&lt;/code&gt;） 和文件夹。&lt;/p&gt;
+&lt;p&gt;用 RStudio 打开 &lt;code&gt;bookdownplus.Rproj&lt;/code&gt;文件，然后按 &lt;code&gt;ctrl+shift+b&lt;/code&gt;，Duang！你就得到模板书 &lt;code&gt;*.pdf&lt;/code&gt;了！保存在 &lt;code&gt;_book/&lt;/code&gt; 文件夹里。&lt;/p&gt;
+&lt;p&gt;在 &lt;code&gt;index.Rmd&lt;/code&gt; 和 &lt;code&gt;body.Rmd&lt;/code&gt; 里写你自己的文字，享受写书的快乐吧！自古皆死，不朽者文！&lt;/p&gt;
+&lt;div class=&#34;section level2&#34;&gt;
+&lt;h2&gt;更改模板&lt;/h2&gt;
+&lt;p&gt;上述快速入门得到的模板文档是默认的论文文档。只需在上述步骤里为 &lt;code&gt;bookdownplus()&lt;/code&gt; 函数指定模板名称，就可以用类似的操作得到其他模板的示范文档，如：&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;bookdownplus::bookdownplus(template = &amp;#39;poem&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;下面展示一些模板。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;article&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+article.jpg&#34; /&gt;
+
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;article_mdpi1&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+article_mdpi.jpg&#34; /&gt;
+
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;article_zh&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+article_zh.jpg&#34; /&gt;
+
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;calendar&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+calendar.jpg&#34; /&gt;
+
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;chemistry&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+chemistry.jpg&#34; /&gt;
+
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;guitar&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+guitar.jpg&#34; /&gt;
+
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;journal&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+journal.jpg&#34; /&gt;
+
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;mail&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+mail.jpg&#34; /&gt;
+
+&lt;/div&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+mail2.png&#34; /&gt;
+
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;poem&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+poem.jpg&#34; /&gt;
+
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;thesis_classic&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+thesis_classic.jpg&#34; /&gt;
+
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;thesis_ubt&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+thesis_ubt.jpg&#34; /&gt;
+
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;thesis_zju&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+thesis_zju.jpg&#34; /&gt;
+
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;yihui_demo&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+yihui_demo.jpg&#34; /&gt;
+
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;yihui_mini&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+yihui_mini.jpg&#34; /&gt;
+
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;yihui_zh&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+yihui_zh.jpg&#34; /&gt;
+
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;poster&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+poster_ocean.jpg&#34; /&gt;
+
+&lt;/div&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+poster_eco.jpg&#34; /&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;section level2&#34;&gt;
+&lt;h2&gt;更新记录&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;2017-06-21. &lt;a href=&#34;https://cran.r-project.org/web/packages/bookdownplus/index.html&#34;&gt;Released on CRAN&lt;/a&gt;!&lt;/li&gt;
+&lt;li&gt;2017-06-21. &lt;strong&gt;Version 1.0.2.&lt;/strong&gt; Resubmitted to CRAN!&lt;/li&gt;
+&lt;li&gt;2017-06-21. &lt;strong&gt;Version 1.0.2.&lt;/strong&gt; Resubmitted to CRAN!&lt;/li&gt;
+&lt;li&gt;2017-06-21. &lt;strong&gt;Version 1.0.1.&lt;/strong&gt; Submitted to CRAN!&lt;/li&gt;
+&lt;li&gt;2017-06-14. &lt;strong&gt;Version 0.0.1.&lt;/strong&gt; A bug fixed.&lt;/li&gt;
+&lt;li&gt;2017-05-15. &lt;strong&gt;Version 0.0.0.&lt;/strong&gt; A very preliminary version.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div id=&#34;refs&#34; class=&#34;references&#34;&gt;
+&lt;div id=&#34;ref-R-bookdown&#34;&gt;
+&lt;p&gt;Xie, Yihui. 2016. &lt;em&gt;Bookdown: Authoring Books and Technical Documents with R Markdown&lt;/em&gt;. Boca Raton, Florida: Chapman; Hall/CRC. &lt;a href=&#34;https://github.com/rstudio/bookdown&#34; class=&#34;uri&#34;&gt;https://github.com/rstudio/bookdown&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-R-bookdownplus&#34;&gt;
+&lt;p&gt;Zhao, Peng. 2017. &lt;em&gt;Bookdownplus: Generate Varied Books and Documents with R ’Bookdown’ Package&lt;/em&gt;. &lt;a href=&#34;https://CRAN.R-project.org/package=bookdownplus&#34; class=&#34;uri&#34;&gt;https://CRAN.R-project.org/package=bookdownplus&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>R bookdown&#43;: 用 R bookdown 写期刊论文、日记、信件、日历、吉他书、化学方程式</title>
       <link>http://www.pzhao.org/zh/post/bookdown-plus/</link>
       <pubDate>Tue, 09 May 2017 00:00:00 +0000</pubDate>

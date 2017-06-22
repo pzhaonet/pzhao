@@ -4,6 +4,14 @@
     
     
     <url>
+      <loc>http://www.pzhao.org/en/post/bookdownplus-released/</loc>
+      <lastmod>2017-06-22T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
       <loc>http://www.pzhao.org/en/publication/zhao2017/</loc>
       <lastmod>2017-06-20T00:00:00+00:00</lastmod>
     </url>
@@ -538,7 +546,16 @@
     
     <url>
       <loc>http://www.pzhao.org/en/tags/bookdown/</loc>
-      <lastmod>2017-05-09T00:00:00+00:00</lastmod>
+      <lastmod>2017-06-22T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+      <loc>http://www.pzhao.org/en/tags/bookdownplus/</loc>
+      <lastmod>2017-06-22T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -601,7 +618,7 @@
     
     <url>
       <loc>http://www.pzhao.org/en/tags/post/</loc>
-      <lastmod>2017-05-23T00:00:00+00:00</lastmod>
+      <lastmod>2017-06-22T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -619,7 +636,7 @@
     
     <url>
       <loc>http://www.pzhao.org/en/post/</loc>
-      <lastmod>2017-05-23T00:00:00+00:00</lastmod>
+      <lastmod>2017-06-22T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -654,7 +671,7 @@
     
     <url>
       <loc>http://www.pzhao.org/en/tags/r/</loc>
-      <lastmod>2017-05-19T00:00:00+00:00</lastmod>
+      <lastmod>2017-06-22T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     

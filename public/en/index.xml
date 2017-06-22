@@ -11,6 +11,202 @@
     <atom:link href="/en/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>R package bookdownplus 1.0.2 released on CRAN</title>
+      <link>http://www.pzhao.org/en/post/bookdownplus-released/</link>
+      <pubDate>Thu, 22 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.pzhao.org/en/post/bookdownplus-released/</guid>
+      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
+&lt;!-- /BLOGDOWN-HEAD --&gt;
+
+&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
+&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
+&lt;p&gt;I’m glad to announce that bookdownplus 1.0.2 &lt;span class=&#34;citation&#34;&gt;(Zhao 2017)&lt;/span&gt; is now on &lt;a href=&#34;(https://cran.r-project.org/web/packages/bookdownplus/)&#34;&gt;CRAN&lt;/a&gt;.&lt;/p&gt;
+&lt;div id=&#34;introduction&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;&lt;code&gt;R bookdownplus&lt;/code&gt; is an extension of &lt;code&gt;R bookdown&lt;/code&gt; &lt;span class=&#34;citation&#34;&gt;(Xie 2016)&lt;/span&gt;. It is a collection of multiple templates on the basis of LaTeX, which are tailored so that I can work happily under the umbrella of &lt;code&gt;bookdown&lt;/code&gt;. &lt;code&gt;bookdownplus&lt;/code&gt; helps you write academic journal articles, guitar books, chemical equations, mails, calendars, and diaries.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;features&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Features&lt;/h1&gt;
+&lt;p&gt;&lt;code&gt;R bookdownplus&lt;/code&gt; extends the features of &lt;code&gt;bookdown&lt;/code&gt;, and simplifies the procedure. Users only have to choose a template, clarify the book title and author name, and then focus on writing the text. No need to struggle in YAML and LaTeX.&lt;/p&gt;
+&lt;p&gt;With &lt;code&gt;R bookdownplus&lt;/code&gt; users can&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;record guitar chords,&lt;/li&gt;
+&lt;li&gt;write a mail in an elegant layout,&lt;/li&gt;
+&lt;li&gt;write a laboratory journal, or a personal diary,&lt;/li&gt;
+&lt;li&gt;draw a monthly or weekly or conference calendar,&lt;/li&gt;
+&lt;li&gt;and, of course, write academic articles in your favourite way,&lt;/li&gt;
+&lt;li&gt;with chemical molecular formulae and equations,&lt;/li&gt;
+&lt;li&gt;even in Chinese,&lt;/li&gt;
+&lt;li&gt;and more wonders will come soon.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Full documentation can be found in the book &lt;a href=&#34;https://bookdown.org/baydap/bookdownplus&#34;&gt;R bookdownplus Textbook&lt;/a&gt;. The webpage looks so-so, while the &lt;a href=&#34;https://bookdown.org/baydap/bookdownplus/bookdownplus.pdf&#34;&gt;pdf file&lt;/a&gt; might give you a little surprise.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;quick-start&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Quick start&lt;/h1&gt;
+&lt;p&gt;Although this section might not be the latest version, the general idea won’t change. Please see &lt;a href=&#34;https://bookdown.org/baydap/bookdownplus&#34;&gt;R bookdownplus Textbook&lt;/a&gt; to keep up with the update.&lt;/p&gt;
+&lt;div id=&#34;preparation&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Preparation&lt;/h2&gt;
+&lt;p&gt;Before starting, you have to install R, RStudio, bookdown package, and other software and packages (i.e. Pandoc, LaTeX, rmarkdown, rticle, knitr, etc.) which bookdown depends on. See the official &lt;a href=&#34;https://bookdown.org/yihui/bookdown/&#34;&gt;manual&lt;/a&gt; of bookdown for details. Additionall, if you want to produce a poster, phython must be installed before using, and the path of phython might have to be added to the environmental variables for Windows users.&lt;/p&gt;
+&lt;p&gt;Installation:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;install.package(&amp;quot;bookdownplus&amp;quot;)
+# or
+devtools::install_github(&amp;quot;pzhaonet/bookdownplus&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Run the following codes, and you will get some files (e.g. &lt;code&gt;index.Rmd&lt;/code&gt;, &lt;code&gt;body.Rmd&lt;/code&gt;, &lt;code&gt;bookdownplus.Rproj&lt;/code&gt;) and folders in your working directory.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;getwd() # this is your working directory. run setwd() to change it.
+bookdownplus::bookdownplus()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now open &lt;code&gt;bookdownplus.Rproj&lt;/code&gt; with RStudio, and press &lt;code&gt;ctrl+shift+b&lt;/code&gt; to compile it. Your will get a book file named &lt;code&gt;*.pdf&lt;/code&gt; in &lt;code&gt;_book/&lt;/code&gt;folder.&lt;/p&gt;
+&lt;p&gt;Write your own text in &lt;code&gt;index.Rmd&lt;/code&gt; and &lt;code&gt;body.Rmd&lt;/code&gt;, and build your own lovely book.&lt;/p&gt;
+&lt;p&gt;Have fun!&lt;/p&gt;
+&lt;p&gt;Still being developed. Feel free to give your feedback to me!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;showcase&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Showcase&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;article&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+article.jpg&#34; /&gt;
+
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;article_mdpi1&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+article_mdpi.jpg&#34; /&gt;
+
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;article_zh&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+article_zh.jpg&#34; /&gt;
+
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;calendar&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+calendar.jpg&#34; /&gt;
+
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;chemistry&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+chemistry.jpg&#34; /&gt;
+
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;guitar&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+guitar.jpg&#34; /&gt;
+
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;journal&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+journal.jpg&#34; /&gt;
+
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;mail&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+mail.jpg&#34; /&gt;
+
+&lt;/div&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+mail2.png&#34; /&gt;
+
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;poem&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+poem.jpg&#34; /&gt;
+
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;thesis_classic&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+thesis_classic.jpg&#34; /&gt;
+
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;thesis_ubt&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+thesis_ubt.jpg&#34; /&gt;
+
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;thesis_zju&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+thesis_zju.jpg&#34; /&gt;
+
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;yihui_demo&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+yihui_demo.jpg&#34; /&gt;
+
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;yihui_mini&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+yihui_mini.jpg&#34; /&gt;
+
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;yihui_zh&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+yihui_zh.jpg&#34; /&gt;
+
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;poster&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+poster_ocean.jpg&#34; /&gt;
+
+&lt;/div&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+poster_eco.jpg&#34; /&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;updates&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Updates&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;2017-06-21. &lt;a href=&#34;https://cran.r-project.org/web/packages/bookdownplus/index.html&#34;&gt;Released on CRAN&lt;/a&gt;!&lt;/li&gt;
+&lt;li&gt;2017-06-21. &lt;strong&gt;Version 1.0.2.&lt;/strong&gt; Resubmitted to CRAN!&lt;/li&gt;
+&lt;li&gt;2017-06-21. &lt;strong&gt;Version 1.0.2.&lt;/strong&gt; Resubmitted to CRAN!&lt;/li&gt;
+&lt;li&gt;2017-06-21. &lt;strong&gt;Version 1.0.1.&lt;/strong&gt; Submitted to CRAN!&lt;/li&gt;
+&lt;li&gt;2017-06-14. &lt;strong&gt;Version 0.0.1.&lt;/strong&gt; A bug fixed.&lt;/li&gt;
+&lt;li&gt;2017-05-15. &lt;strong&gt;Version 0.0.0&lt;/strong&gt;. A very preliminary version.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div id=&#34;refs&#34; class=&#34;references&#34;&gt;
+&lt;div id=&#34;ref-R-bookdown&#34;&gt;
+&lt;p&gt;Xie, Yihui. 2016. &lt;em&gt;Bookdown: Authoring Books and Technical Documents with R Markdown&lt;/em&gt;. Boca Raton, Florida: Chapman; Hall/CRC. &lt;a href=&#34;https://github.com/rstudio/bookdown&#34; class=&#34;uri&#34;&gt;https://github.com/rstudio/bookdown&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-R-bookdownplus&#34;&gt;
+&lt;p&gt;Zhao, Peng. 2017. &lt;em&gt;Bookdownplus: Generate Varied Books and Documents with R ’Bookdown’ Package&lt;/em&gt;. &lt;a href=&#34;https://CRAN.R-project.org/package=bookdownplus&#34; class=&#34;uri&#34;&gt;https://CRAN.R-project.org/package=bookdownplus&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Parameterization of Evapotranspiration Estimation for Two Typical East Asian Crops</title>
       <link>http://www.pzhao.org/en/publication/zhao2017/</link>
       <pubDate>Tue, 20 Jun 2017 00:00:00 +0000</pubDate>
@@ -927,15 +1123,6 @@ I like Eq. \@ref(eq:mc2) so much that I am falling love with her.&lt;/code&gt;&l
 &lt;p&gt;See &lt;a href=&#34;https://bookdown.org/yihui/bookdown/&#34;&gt;bookdown manual&lt;/a&gt; for more details.&lt;/p&gt;
 &lt;/div&gt;
 </description>
-    </item>
-    
-    <item>
-      <title>农业生态系统-大气之间的二氧化碳和能量交换</title>
-      <link>http://www.pzhao.org/en/talk/2016-12-00-jnu/</link>
-      <pubDate>Tue, 27 Dec 2016 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/en/talk/2016-12-00-jnu/</guid>
-      <description></description>
     </item>
     
   </channel>

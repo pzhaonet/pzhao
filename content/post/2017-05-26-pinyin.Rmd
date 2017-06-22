@@ -14,9 +14,19 @@ output:
     variant: markdown_github
 ---
 
+**更新：2017-06-19，['pinyin 1.0.2'](https://cran.r-project.org/web/packages/mindr/index.html) 在 CRAN 正式发布。**
+
+
 今天新写了个R包，粗暴地取名为 [pinyin](https://github.com/pzhaonet/pinyin/)，作用是把汉字转换成拼音。
 
 安装方法：
+
+稳定版：
+
+
+```{r, eval=FALSE}
+install.packages("pinyin")
+```
 
 ```{r, eval=FALSE}
 devtools::install_github("pzhaonet/pinyin")
