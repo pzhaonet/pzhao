@@ -4,6 +4,14 @@
     
     
     <url>
+      <loc>/zh/post/beginr-released/</loc>
+      <lastmod>2017-06-23T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
       <loc>/zh/post/bookdownplus-released/</loc>
       <lastmod>2017-06-22T00:00:00+00:00</lastmod>
     </url>
@@ -737,6 +745,15 @@
     
     
     <url>
+      <loc>/zh/tags/beginr/</loc>
+      <lastmod>2017-06-23T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
       <loc>/zh/tags/blogdown/</loc>
       <lastmod>2017-05-18T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -899,7 +916,7 @@
     
     <url>
       <loc>/zh/tags/r/</loc>
-      <lastmod>2017-06-22T00:00:00+00:00</lastmod>
+      <lastmod>2017-06-23T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     

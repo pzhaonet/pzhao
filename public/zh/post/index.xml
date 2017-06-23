@@ -11,6 +11,169 @@
     <atom:link href="/zh/post/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>R 初学者包 beginr 在 CRAN 正式发布</title>
+      <link>/zh/post/beginr-released/</link>
+      <pubDate>Fri, 23 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/zh/post/beginr-released/</guid>
+      <description>&lt;div class=&#34;section level1&#34;&gt;
+&lt;h1&gt;简介&lt;/h1&gt;
+&lt;p&gt;又一次高兴地宣布, 我的 R 语言扩展包 ‘beginr’ &lt;span class=&#34;citation&#34;&gt;(Zhao 2017a)&lt;/span&gt; 在 CRAN &lt;a href=&#34;https://cran.r-project.org/web/packages/beginr/&#34;&gt;正式发布&lt;/a&gt;了.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;beginr&lt;/code&gt;是我为 R 语言初学者和自己写的工具包, 可能对中级用户也有帮助, 是我这些年来收集和自己编写的一些简化操作的函数和备忘录. 其实这个包的文档我写得不够详细, 有些函数还没来及整理进去, 之所以匆匆发布, 是想先把 ‘beginr’ 这个名字给占住. 毕竟, 我中意的名字如 ‘learnr’, ’startr’都被别人用过了.&lt;/p&gt;
+&lt;p&gt;安装方法：&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# 稳定版：
+install.packages(&amp;#39;beginr&amp;#39;)
+# 开发版：
+devtools::install_github(&amp;quot;pzhaonet/beginr&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;下面分类介绍一下其中的函数.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;section level1&#34;&gt;
+&lt;h1&gt;备忘函数&lt;/h1&gt;
+&lt;p&gt;我初学 R 的时候用 &lt;code&gt;plot()&lt;/code&gt; 作图时, 常常忘记不同形状数据点(&lt;code&gt;pch&lt;/code&gt;)对应的编号, 实线虚线(&lt;code&gt;lty&lt;/code&gt;)的编号, 散点图类型(&lt;code&gt;type&lt;/code&gt;)的代码, 以及最难选择的颜色代码. 每次忘了都要上网搜一下. 现在, beginr 里提供了 &lt;code&gt;plotpch()&lt;/code&gt;, &lt;code&gt;plotlty()&lt;/code&gt;, &lt;code&gt;plottype()&lt;/code&gt;, &lt;code&gt;plotcolors()&lt;/code&gt;等函数, 想不起来的时候运行一下就行了.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::plotpch()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::plotlty()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-1-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::plottype()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-1-3.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::plotcolors()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-1-4.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;section level1&#34;&gt;
+&lt;h1&gt;快速作图函数&lt;/h1&gt;
+&lt;p&gt;我常常需要做线性拟合, 每次又是作图又是添加拟合方程, 繁琐. 现在, beginr 里的一个 &lt;code&gt;plotlm()&lt;/code&gt;函数就搞定.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;x &amp;lt;- 1:10
+y &amp;lt;- 1:10 + rnorm(10)
+beginr::plotlm(x, y)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;## [[1]]
+##              Estimate Std. Error   t value     Pr(&amp;gt;|t|)
+## (Intercept) 0.4159901  0.6289426 0.6614119 0.5269346876
+## x           0.9033416  0.1013633 8.9119225 0.0000199195
+## 
+## [[2]]
+## [1] 0.9084902&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;经常需要了解一组数据的分布, 看看是不是正态分布. beginr 里的 &lt;code&gt;plothist()&lt;/code&gt; 函数不仅做出直方图和平滑曲线, 并且标出中值, 中位数, 四分位数, 标准偏差, 样本数, 以及用来判断是否正态分布的 skewness 值.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;x &amp;lt;- rnorm(10000)
+beginr::plothist(x)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;##     para       value
+## 1    min -3.76996026
+## 2     1q -0.69121344
+## 3 median -0.01363909
+## 4     3q  0.65530341
+## 5    max  3.77244746
+## 6  lower -2.71056150
+## 7  upper  2.67465147
+## 8   mean -0.01694626
+## 9     sd  1.00395114&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;我很喜欢系统自带的成对儿散点图函数&lt;code&gt;pairs()&lt;/code&gt;, 只是功能再强大一点就好了. beginr 里的 &lt;code&gt;plotpairs()&lt;/code&gt; 和 &lt;code&gt;plotpairs2()&lt;/code&gt; 可以实现.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df &amp;lt;- data.frame(a = 1:10, b = 1:10 + rnorm(10), c = 1:10 + rnorm(10))
+beginr::plotpairs(df)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::plotpairs2(df)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;p&amp;lt;0.01&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;p&amp;lt;0.01&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;p&amp;lt;0.01&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-4-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;我经常需要将一组自变量 (x) 和多组因变量 (y&lt;sub&gt;1&lt;/sub&gt;, y&lt;sub&gt;2&lt;/sub&gt;, …, y&lt;sub&gt;n&lt;/sub&gt;) 作在同一个坐标系, 或者一组因变量 (y) 对多组自变量 ((x&lt;sub&gt;1&lt;/sub&gt;, x&lt;sub&gt;2&lt;/sub&gt;, …, x&lt;sub&gt;n&lt;/sub&gt;)), 并且画上各自的误差线. beginr 里一条 &lt;code&gt;dfplot()&lt;/code&gt; 或 &lt;code&gt;dfplot2()&lt;/code&gt; 函数就能完成.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;x &amp;lt;- seq(0, 2 * pi, length.out = 100)
+y &amp;lt;- data.frame(sin(x), cos(x))
+yerror &amp;lt;- data.frame(abs(rnorm(100, sd = 0.3)), abs(rnorm(100, sd = 0.1)))
+beginr::dfplot(x, y, yerror = yerror)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::dfplot2(y, x, xerror = yerror)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-5-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;如果只是想简单添加误差线, 那就用 &lt;code&gt;errorbar()&lt;/code&gt; 函数.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;x &amp;lt;- seq(0, 2 * pi, length.out = 100)
+y &amp;lt;- sin(x)
+plot(x, y, type = &amp;quot;l&amp;quot;)
+beginr::errorbar(x, y, yupper = 0.1, ylower = 0.1)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;section level1&#34;&gt;
+&lt;h1&gt;数据框操作&lt;/h1&gt;
+&lt;p&gt;beginr 提供了一些对数据框计算的函数, 例如计算多列数据两两的相关性和线性拟合结果, 可以用 &lt;code&gt;lmdf()&lt;/code&gt; 函数.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df &amp;lt;- data.frame(a = 1:10, b = 1:10 + rnorm(10), c = 1:10 + rnorm(10))
+beginr::lmdf(df)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##   x y r.squared adj.r.squared  intercept     slope Std.Error.intercept
+## 1 a b 0.9133257     0.9024914 -0.8552049 1.1068170           0.7479861
+## 2 a c 0.9564644     0.9510225  0.4109244 0.9939429           0.4651945
+## 3 b a 0.9133257     0.9024914  1.1824085 0.8251822           0.5572414
+## 4 b c 0.8405828     0.8206557  1.6679602 0.8045523           0.7680559
+## 5 c a 0.9564644     0.9510225 -0.1559840 0.9622931           0.4763496
+## 6 c b 0.8405828     0.8206557 -0.9085403 1.0447833           1.0556844
+##   Std.Error.slope t.intercept   t.slope Pr.intercept     Pr.slope
+## 1      0.12054888  -1.1433432  9.181479   0.28595427 1.599783e-05
+## 2      0.07497289   0.8833389 13.257364   0.40281690 9.998673e-07
+## 3      0.08987464   2.1218961  9.181479   0.06662826 1.599783e-05
+## 4      0.12387583   2.1716653  6.494829   0.06165829 1.891323e-04
+## 5      0.07258556  -0.3274570 13.257364   0.75172684 9.998673e-07
+## 6      0.16086388  -0.8606174  6.494829   0.41449570 1.891323e-04&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;还有两个函数对&lt;code&gt;tapply()&lt;/code&gt;进行了改善, 用来进行因子计算.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::tapplydf()
+beginr::tapplydfv()&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class=&#34;section level1&#34;&gt;
+&lt;h1&gt;文件读写函数&lt;/h1&gt;
+&lt;p&gt;经常需要同时对多个数据文件进行处理, 逐个读入 R 里太麻烦. beginr 提供了个 &lt;code&gt;readdir()&lt;/code&gt; 函数, 可以一次性把指定文件夹里所有数据读入, 保存在一个列表 (list) 里.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::readdir()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;R 自带的 write 系列文件保存函数, 一不小心就把原有同名文件给覆盖了. beginr 提供了个安全的函数 &lt;code&gt;writefile()&lt;/code&gt;, 避免一失足成千古恨.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::writefile()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;list2ascii()&lt;/code&gt; 函数可以把一个列表原样保存成文本文件.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;alist &amp;lt;- list(a = 1:10, b = letters)
+beginr::list2ascii(alist)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;很多人引用了别人的工作却往往不列出参考文献. 不仅初学者常常如此, 很多学术论文里有些插图一眼就能看出是 R 的某个扩展包作出来的, 但参考文献里却没有列出来, 这往小了说是不尊重别人的工作,往大了说是缺乏学术道德. 对开源社区的生态圈是不利的. beginr 为初学者提供了 &lt;code&gt;bib()&lt;/code&gt; 函数, 可以为指定的 R 扩展包生成文献引用信息, 既可以打印出结果, 也可以直接保存为 ‘.bib’文件方便为’&lt;a href=&#34;http://www.pzhao.org/zh/post/bookdownplus-released/&#34;&gt;bookdownplus&lt;/a&gt;‘&lt;span class=&#34;citation&#34;&gt;(Zhao 2017b)&lt;/span&gt; 或’&lt;a href=&#34;http://www.pzhao.org/zh/post/r-blogdown/&#34;&gt;blogdown&lt;/a&gt;’ &lt;span class=&#34;citation&#34;&gt;(Xie 2017)&lt;/span&gt; 调用.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::bib(pkg = c(&amp;quot;mindr&amp;quot;, &amp;quot;bookdownplus&amp;quot;, &amp;quot;pinyin&amp;quot;))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## @Manual{R-bookdownplus,
+##   title = {bookdownplus: Generate Varied Books and Documents with R &amp;#39;bookdown&amp;#39; Package},
+##   author = {Peng Zhao},
+##   year = {2017},
+##   note = {R package version 1.0.3},
+##   url = {https://github.com/pzhaonet/bookdownplus},
+## }
+## @Manual{R-mindr,
+##   title = {mindr: Convert Files Between Markdown or Rmarkdown Files and Mindmaps},
+##   author = {Peng Zhao},
+##   year = {2017},
+##   note = {R package version 1.0.4},
+##   url = {https://CRAN.R-project.org/package=mindr},
+## }
+## @Manual{R-pinyin,
+##   title = {pinyin: Convert Chinese Characters into Pinyin},
+##   author = {Peng Zhao},
+##   year = {2017},
+##   note = {R package version 1.0.3},
+##   url = {https://github.com/pzhaonet/pinyin},
+## }&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;好啦, 以后我还会把更多有用的工具添加到 beginr 包里. 欢迎关注 beginr的&lt;a href=&#34;https://github.com/pzhaonet/beginr&#34;&gt;项目主页&lt;/a&gt;. 另外, 使用beginr的地方请记得列出参考文献哦.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::bib(pkg = c(&amp;quot;beginr&amp;quot;))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## @Manual{R-beginr,
+##   title = {beginr: Functions for R Beginners},
+##   author = {Peng Zhao},
+##   year = {2017},
+##   note = {R package version 0.0.1},
+##   url = {https://github.com/pzhaonet/beginr},
+## }&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;section level2 unnumbered&#34;&gt;
+&lt;h2&gt;参考文献&lt;/h2&gt;
+&lt;div id=&#34;refs&#34; class=&#34;references&#34;&gt;
+&lt;div id=&#34;ref-R-blogdown&#34;&gt;
+&lt;p&gt;Xie, Yihui. 2017. &lt;em&gt;Blogdown: Create Blogs and Websites with R Markdown&lt;/em&gt;. &lt;a href=&#34;https://github.com/rstudio/blogdown&#34; class=&#34;uri&#34;&gt;https://github.com/rstudio/blogdown&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-R-beginr&#34;&gt;
+&lt;p&gt;Zhao, Peng. 2017a. &lt;em&gt;Beginr: Functions for R Beginners&lt;/em&gt;. &lt;a href=&#34;https://github.com/pzhaonet/beginr&#34; class=&#34;uri&#34;&gt;https://github.com/pzhaonet/beginr&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-R-bookdownplus&#34;&gt;
+&lt;p&gt;———. 2017b. &lt;em&gt;Bookdownplus: Generate Varied Books and Documents with R ’Bookdown’ Package&lt;/em&gt;. &lt;a href=&#34;https://CRAN.R-project.org/package=bookdownplus&#34; class=&#34;uri&#34;&gt;https://CRAN.R-project.org/package=bookdownplus&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>R 包 bookdownplus 正式发布</title>
       <link>/zh/post/bookdownplus-released/</link>
       <pubDate>Thu, 22 Jun 2017 00:00:00 +0000</pubDate>
@@ -1292,24 +1455,6 @@ template &amp;lt;- templates[8]&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;除了明争，还有暗斗。星期四晚上有一门课程叫做&lt;a href=&#34;http://meetingorganizer.copernicus.org/EGU2017/session/25343&#34;&gt;“一图胜千言：利用数据可视化进行科学交流”&lt;/a&gt;，讲的是如何制作高效精辟的数据图表，没有明说，但暗藏玄机，不知主角是R，还是Python，还是Matlab，还是别的新秀？&lt;/p&gt;
 &lt;p&gt;除了R语言这种跟科研密切相关的技术活，居然还有一门课程叫做&lt;a href=&#34;http://meetingorganizer.copernicus.org/EGU2017/session/25170&#34;&gt;“WordPress写博客详解”&lt;/a&gt;，居然还有一门课程&lt;a href=&#34;http://meetingorganizer.copernicus.org/EGU2017/session/25580&#34;&gt;教你写诗&lt;/a&gt;，说什么博客和诗都能更好地传播科学……&lt;/p&gt;
 &lt;p&gt;回头一看我的私人日程表，乖乖，这哪像个学术会议呀……&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Hugo 网站的浏览器小图标</title>
-      <link>/zh/post/hugo-icon/</link>
-      <pubDate>Wed, 19 Apr 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/zh/post/hugo-icon/</guid>
-      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
-&lt;!-- /BLOGDOWN-HEAD --&gt;
-
-&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
-&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
-&lt;p&gt;&lt;img src=&#34;/img/myicon.png&#34; /&gt;&lt;!-- --&gt;&lt;/p&gt;
-&lt;p&gt;网站图标，就是上图的这些东东，用浏览器打开网站时显示在地址栏的顶端。R blogdown安装的hugo-academic主题，默认图标是个蓝色学位帽，挺好看的，不改也行，只是如果大家都用的话，泯然众人，识别度就低了。&lt;/p&gt;
-&lt;p&gt;改的方式很简单：将你自己的图标图片保存为.png格式，并命名为icon.png，替换&lt;code&gt;\themes\hugo-academic\static\img\icon.png&lt;/code&gt;即可。&lt;/p&gt;
-&lt;p&gt;update: 更好的方案来自&lt;a href=&#34;https://disqus.com/home/discussion/pzhao/hugo/#comment-3287700912&#34;&gt;yang Cao的提议&lt;/a&gt;：把icon.png放在&lt;code&gt;static/img/&lt;/code&gt;，避免在更新themes时将自定义图标覆盖。&lt;/p&gt;
 </description>
     </item>
     

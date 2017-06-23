@@ -11,6 +11,169 @@
     <atom:link href="/zh/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>R 初学者包 beginr 在 CRAN 正式发布</title>
+      <link>/zh/post/beginr-released/</link>
+      <pubDate>Fri, 23 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/zh/post/beginr-released/</guid>
+      <description>&lt;div class=&#34;section level1&#34;&gt;
+&lt;h1&gt;简介&lt;/h1&gt;
+&lt;p&gt;又一次高兴地宣布, 我的 R 语言扩展包 ‘beginr’ &lt;span class=&#34;citation&#34;&gt;(Zhao 2017a)&lt;/span&gt; 在 CRAN &lt;a href=&#34;https://cran.r-project.org/web/packages/beginr/&#34;&gt;正式发布&lt;/a&gt;了.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;beginr&lt;/code&gt;是我为 R 语言初学者和自己写的工具包, 可能对中级用户也有帮助, 是我这些年来收集和自己编写的一些简化操作的函数和备忘录. 其实这个包的文档我写得不够详细, 有些函数还没来及整理进去, 之所以匆匆发布, 是想先把 ‘beginr’ 这个名字给占住. 毕竟, 我中意的名字如 ‘learnr’, ’startr’都被别人用过了.&lt;/p&gt;
+&lt;p&gt;安装方法：&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# 稳定版：
+install.packages(&amp;#39;beginr&amp;#39;)
+# 开发版：
+devtools::install_github(&amp;quot;pzhaonet/beginr&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;下面分类介绍一下其中的函数.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;section level1&#34;&gt;
+&lt;h1&gt;备忘函数&lt;/h1&gt;
+&lt;p&gt;我初学 R 的时候用 &lt;code&gt;plot()&lt;/code&gt; 作图时, 常常忘记不同形状数据点(&lt;code&gt;pch&lt;/code&gt;)对应的编号, 实线虚线(&lt;code&gt;lty&lt;/code&gt;)的编号, 散点图类型(&lt;code&gt;type&lt;/code&gt;)的代码, 以及最难选择的颜色代码. 每次忘了都要上网搜一下. 现在, beginr 里提供了 &lt;code&gt;plotpch()&lt;/code&gt;, &lt;code&gt;plotlty()&lt;/code&gt;, &lt;code&gt;plottype()&lt;/code&gt;, &lt;code&gt;plotcolors()&lt;/code&gt;等函数, 想不起来的时候运行一下就行了.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::plotpch()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::plotlty()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-1-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::plottype()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-1-3.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::plotcolors()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-1-4.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;section level1&#34;&gt;
+&lt;h1&gt;快速作图函数&lt;/h1&gt;
+&lt;p&gt;我常常需要做线性拟合, 每次又是作图又是添加拟合方程, 繁琐. 现在, beginr 里的一个 &lt;code&gt;plotlm()&lt;/code&gt;函数就搞定.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;x &amp;lt;- 1:10
+y &amp;lt;- 1:10 + rnorm(10)
+beginr::plotlm(x, y)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;## [[1]]
+##              Estimate Std. Error   t value     Pr(&amp;gt;|t|)
+## (Intercept) 0.4159901  0.6289426 0.6614119 0.5269346876
+## x           0.9033416  0.1013633 8.9119225 0.0000199195
+## 
+## [[2]]
+## [1] 0.9084902&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;经常需要了解一组数据的分布, 看看是不是正态分布. beginr 里的 &lt;code&gt;plothist()&lt;/code&gt; 函数不仅做出直方图和平滑曲线, 并且标出中值, 中位数, 四分位数, 标准偏差, 样本数, 以及用来判断是否正态分布的 skewness 值.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;x &amp;lt;- rnorm(10000)
+beginr::plothist(x)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;##     para       value
+## 1    min -3.76996026
+## 2     1q -0.69121344
+## 3 median -0.01363909
+## 4     3q  0.65530341
+## 5    max  3.77244746
+## 6  lower -2.71056150
+## 7  upper  2.67465147
+## 8   mean -0.01694626
+## 9     sd  1.00395114&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;我很喜欢系统自带的成对儿散点图函数&lt;code&gt;pairs()&lt;/code&gt;, 只是功能再强大一点就好了. beginr 里的 &lt;code&gt;plotpairs()&lt;/code&gt; 和 &lt;code&gt;plotpairs2()&lt;/code&gt; 可以实现.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df &amp;lt;- data.frame(a = 1:10, b = 1:10 + rnorm(10), c = 1:10 + rnorm(10))
+beginr::plotpairs(df)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::plotpairs2(df)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;p&amp;lt;0.01&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;p&amp;lt;0.01&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;p&amp;lt;0.01&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-4-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;我经常需要将一组自变量 (x) 和多组因变量 (y&lt;sub&gt;1&lt;/sub&gt;, y&lt;sub&gt;2&lt;/sub&gt;, …, y&lt;sub&gt;n&lt;/sub&gt;) 作在同一个坐标系, 或者一组因变量 (y) 对多组自变量 ((x&lt;sub&gt;1&lt;/sub&gt;, x&lt;sub&gt;2&lt;/sub&gt;, …, x&lt;sub&gt;n&lt;/sub&gt;)), 并且画上各自的误差线. beginr 里一条 &lt;code&gt;dfplot()&lt;/code&gt; 或 &lt;code&gt;dfplot2()&lt;/code&gt; 函数就能完成.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;x &amp;lt;- seq(0, 2 * pi, length.out = 100)
+y &amp;lt;- data.frame(sin(x), cos(x))
+yerror &amp;lt;- data.frame(abs(rnorm(100, sd = 0.3)), abs(rnorm(100, sd = 0.1)))
+beginr::dfplot(x, y, yerror = yerror)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::dfplot2(y, x, xerror = yerror)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-5-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;如果只是想简单添加误差线, 那就用 &lt;code&gt;errorbar()&lt;/code&gt; 函数.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;x &amp;lt;- seq(0, 2 * pi, length.out = 100)
+y &amp;lt;- sin(x)
+plot(x, y, type = &amp;quot;l&amp;quot;)
+beginr::errorbar(x, y, yupper = 0.1, ylower = 0.1)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;section level1&#34;&gt;
+&lt;h1&gt;数据框操作&lt;/h1&gt;
+&lt;p&gt;beginr 提供了一些对数据框计算的函数, 例如计算多列数据两两的相关性和线性拟合结果, 可以用 &lt;code&gt;lmdf()&lt;/code&gt; 函数.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df &amp;lt;- data.frame(a = 1:10, b = 1:10 + rnorm(10), c = 1:10 + rnorm(10))
+beginr::lmdf(df)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##   x y r.squared adj.r.squared  intercept     slope Std.Error.intercept
+## 1 a b 0.9133257     0.9024914 -0.8552049 1.1068170           0.7479861
+## 2 a c 0.9564644     0.9510225  0.4109244 0.9939429           0.4651945
+## 3 b a 0.9133257     0.9024914  1.1824085 0.8251822           0.5572414
+## 4 b c 0.8405828     0.8206557  1.6679602 0.8045523           0.7680559
+## 5 c a 0.9564644     0.9510225 -0.1559840 0.9622931           0.4763496
+## 6 c b 0.8405828     0.8206557 -0.9085403 1.0447833           1.0556844
+##   Std.Error.slope t.intercept   t.slope Pr.intercept     Pr.slope
+## 1      0.12054888  -1.1433432  9.181479   0.28595427 1.599783e-05
+## 2      0.07497289   0.8833389 13.257364   0.40281690 9.998673e-07
+## 3      0.08987464   2.1218961  9.181479   0.06662826 1.599783e-05
+## 4      0.12387583   2.1716653  6.494829   0.06165829 1.891323e-04
+## 5      0.07258556  -0.3274570 13.257364   0.75172684 9.998673e-07
+## 6      0.16086388  -0.8606174  6.494829   0.41449570 1.891323e-04&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;还有两个函数对&lt;code&gt;tapply()&lt;/code&gt;进行了改善, 用来进行因子计算.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::tapplydf()
+beginr::tapplydfv()&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class=&#34;section level1&#34;&gt;
+&lt;h1&gt;文件读写函数&lt;/h1&gt;
+&lt;p&gt;经常需要同时对多个数据文件进行处理, 逐个读入 R 里太麻烦. beginr 提供了个 &lt;code&gt;readdir()&lt;/code&gt; 函数, 可以一次性把指定文件夹里所有数据读入, 保存在一个列表 (list) 里.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::readdir()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;R 自带的 write 系列文件保存函数, 一不小心就把原有同名文件给覆盖了. beginr 提供了个安全的函数 &lt;code&gt;writefile()&lt;/code&gt;, 避免一失足成千古恨.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::writefile()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;list2ascii()&lt;/code&gt; 函数可以把一个列表原样保存成文本文件.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;alist &amp;lt;- list(a = 1:10, b = letters)
+beginr::list2ascii(alist)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;很多人引用了别人的工作却往往不列出参考文献. 不仅初学者常常如此, 很多学术论文里有些插图一眼就能看出是 R 的某个扩展包作出来的, 但参考文献里却没有列出来, 这往小了说是不尊重别人的工作,往大了说是缺乏学术道德. 对开源社区的生态圈是不利的. beginr 为初学者提供了 &lt;code&gt;bib()&lt;/code&gt; 函数, 可以为指定的 R 扩展包生成文献引用信息, 既可以打印出结果, 也可以直接保存为 ‘.bib’文件方便为’&lt;a href=&#34;http://www.pzhao.org/zh/post/bookdownplus-released/&#34;&gt;bookdownplus&lt;/a&gt;‘&lt;span class=&#34;citation&#34;&gt;(Zhao 2017b)&lt;/span&gt; 或’&lt;a href=&#34;http://www.pzhao.org/zh/post/r-blogdown/&#34;&gt;blogdown&lt;/a&gt;’ &lt;span class=&#34;citation&#34;&gt;(Xie 2017)&lt;/span&gt; 调用.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::bib(pkg = c(&amp;quot;mindr&amp;quot;, &amp;quot;bookdownplus&amp;quot;, &amp;quot;pinyin&amp;quot;))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## @Manual{R-bookdownplus,
+##   title = {bookdownplus: Generate Varied Books and Documents with R &amp;#39;bookdown&amp;#39; Package},
+##   author = {Peng Zhao},
+##   year = {2017},
+##   note = {R package version 1.0.3},
+##   url = {https://github.com/pzhaonet/bookdownplus},
+## }
+## @Manual{R-mindr,
+##   title = {mindr: Convert Files Between Markdown or Rmarkdown Files and Mindmaps},
+##   author = {Peng Zhao},
+##   year = {2017},
+##   note = {R package version 1.0.4},
+##   url = {https://CRAN.R-project.org/package=mindr},
+## }
+## @Manual{R-pinyin,
+##   title = {pinyin: Convert Chinese Characters into Pinyin},
+##   author = {Peng Zhao},
+##   year = {2017},
+##   note = {R package version 1.0.3},
+##   url = {https://github.com/pzhaonet/pinyin},
+## }&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;好啦, 以后我还会把更多有用的工具添加到 beginr 包里. 欢迎关注 beginr的&lt;a href=&#34;https://github.com/pzhaonet/beginr&#34;&gt;项目主页&lt;/a&gt;. 另外, 使用beginr的地方请记得列出参考文献哦.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::bib(pkg = c(&amp;quot;beginr&amp;quot;))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## @Manual{R-beginr,
+##   title = {beginr: Functions for R Beginners},
+##   author = {Peng Zhao},
+##   year = {2017},
+##   note = {R package version 0.0.1},
+##   url = {https://github.com/pzhaonet/beginr},
+## }&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;section level2 unnumbered&#34;&gt;
+&lt;h2&gt;参考文献&lt;/h2&gt;
+&lt;div id=&#34;refs&#34; class=&#34;references&#34;&gt;
+&lt;div id=&#34;ref-R-blogdown&#34;&gt;
+&lt;p&gt;Xie, Yihui. 2017. &lt;em&gt;Blogdown: Create Blogs and Websites with R Markdown&lt;/em&gt;. &lt;a href=&#34;https://github.com/rstudio/blogdown&#34; class=&#34;uri&#34;&gt;https://github.com/rstudio/blogdown&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-R-beginr&#34;&gt;
+&lt;p&gt;Zhao, Peng. 2017a. &lt;em&gt;Beginr: Functions for R Beginners&lt;/em&gt;. &lt;a href=&#34;https://github.com/pzhaonet/beginr&#34; class=&#34;uri&#34;&gt;https://github.com/pzhaonet/beginr&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-R-bookdownplus&#34;&gt;
+&lt;p&gt;———. 2017b. &lt;em&gt;Bookdownplus: Generate Varied Books and Documents with R ’Bookdown’ Package&lt;/em&gt;. &lt;a href=&#34;https://CRAN.R-project.org/package=bookdownplus&#34; class=&#34;uri&#34;&gt;https://CRAN.R-project.org/package=bookdownplus&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>R 包 bookdownplus 正式发布</title>
       <link>/zh/post/bookdownplus-released/</link>
       <pubDate>Thu, 22 Jun 2017 00:00:00 +0000</pubDate>
@@ -420,329 +583,6 @@ pinyin(&amp;#39;羌笛何须怨杨柳春风不度玉门关&amp;#39;)&lt;/code&gt
 &lt;p&gt;拼音库我试了好几个，最后选定了&lt;a href=&#34;http://bbs.unispim.com/forum.php?mod=viewthread&amp;amp;tid=31644&#34;&gt;wangyanhan整理制作的42856字拼音表&lt;/a&gt;，直接处理文本文件，简单粗暴，转换起来可能有点慢，会顿一下，但已经够我自用了。&lt;/p&gt;
 &lt;p&gt;我写这个包的环境是 windows 7 下区域设置为中国，别的环境没测试，估计会有不少坑。我这里就有一些，比如不知道哪里设置有问题，包的函数里居然不能出现中文字符，弄得我自变量的默认值和example部分只好空着。再比如多音字的问题，目前完全没处理。所以，转换&lt;code&gt;春眠不觉晓&lt;/code&gt;的结果会让人愣一下，再转换&lt;code&gt;处处闻啼鸟&lt;/code&gt;……&lt;/p&gt;
 &lt;p&gt;结果好尴尬。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>微气象学常用的 LaTeX 公式</title>
-      <link>/zh/post/equations/</link>
-      <pubDate>Tue, 23 May 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/zh/post/equations/</guid>
-      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
-&lt;!-- /BLOGDOWN-HEAD --&gt;
-
-&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
-&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
-&lt;p&gt;这些年，论文发得不多，公式却攒了不少，大部分都是自己亲手敲的 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; 代码。我把他们整理在一个 eq.tex 文档里，配合一个编译好的 eq.pdf 文件。每次需要的时候，在 eq.pdf 里找到需要的公式，然后去 eq.tex 找公式代码，拷到目标文档里完事儿。稍微有点小麻烦，但总比重新敲一遍代码要省事、准确。&lt;/p&gt;
-&lt;p&gt;然而，现在有了 blogdown 和 Hugo-academic 主题，一切都变得不一样了。我把 eq.tex 里的文本全部拷贝粘贴到一个 .Rmd 文件，扔进网站里，就得到了现在这个帖子。鼠标放在公式上点右键- Show Math As - &lt;span class=&#34;math inline&#34;&gt;\(\TeX\)&lt;/span&gt; Commands，就得到了公式的 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; 代码。直接拷贝就行了，再也不用在两个文档里切换以及找来找去。&lt;/p&gt;
-&lt;p&gt;我觉得，我再也回不去了。&lt;/p&gt;
-&lt;div id=&#34;meteorology&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Meteorology&lt;/h2&gt;
-&lt;div id=&#34;atmpspheric-pressure&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Atmpspheric pressure&lt;/h3&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
-P=101.325 \cdot (\frac{293-0.0065z}{293}) ^ {5.26} = 86.838\,\text{kPa}
-\end{equation}\]&lt;/span&gt;
-&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(z\)&lt;/span&gt;: elevation above sea level in m.&lt;/p&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
--\text{d} p =\rho g \text{d}z
-\end{equation}\]&lt;/span&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
-\ln \frac{p_2}{p_1} = - \int_{z_1}^{z_2} \frac{g}{RT}\text{d}z
-\end{equation}\]&lt;/span&gt;
-&lt;/div&gt;
-&lt;div id=&#34;psychrometric-constant&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Psychrometric constant&lt;/h3&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
-\gamma =\frac{c_p P}{\varepsilon \lambda} = 0.665 \times 10 ^ {-3} P
-\end{equation}\]&lt;/span&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
-\lambda = -0.0000614342 T^3 + 0.00158927 T^2 - 2.36418T + 2500.79
-\end{equation}\]&lt;/span&gt;
-&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(P\)&lt;/span&gt;: atmospheric pressure.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(\lambda\)&lt;/span&gt;: latent heat of vaporization (2.46 MJ kg&lt;span class=&#34;math inline&#34;&gt;\(^{-1}\)&lt;/span&gt;)&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(c_p\)&lt;/span&gt;: specific heat of the air (at constant pressure &lt;span class=&#34;math inline&#34;&gt;\(1.013 \times 10 ^{-3}\)&lt;/span&gt; MJ kg&lt;span class=&#34;math inline&#34;&gt;\(^{-1}\)&lt;/span&gt;K&lt;span class=&#34;math inline&#34;&gt;\(^{-1}\)&lt;/span&gt;)&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;humidity&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Humidity&lt;/h3&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
-    e_{\text s}=6.112\exp\frac {17.62t}{243.12+t}
-\end{equation}\]&lt;/span&gt;
-&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(e_s\)&lt;/span&gt;: saturated vapor pressure over water at &lt;span class=&#34;math inline&#34;&gt;\(-45\)&lt;/span&gt; to 60 &lt;span class=&#34;math inline&#34;&gt;\(^{\circ}\)&lt;/span&gt;C (sonntag1990)&lt;/p&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
-    s_{\text c}=\frac {4284e_{\text s}}{(243.12+t)^2}
-\end{equation}\]&lt;/span&gt;
-&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(s_c\)&lt;/span&gt;: slope of the saturation vapor pressure temperature relationship.&lt;/p&gt;
-&lt;p&gt;or&lt;/p&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
-    e_{\text s} = 0.6108\exp\frac {17.27T}{237.3 + T}
-\end{equation}\]&lt;/span&gt;
-&lt;p&gt;and&lt;/p&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
-    s_{\text c}=\frac {4098 \cdot 0.6108\exp\frac {17.27T}{237.3 + T}}{(237.3 + T)^2}
-\end{equation}\]&lt;/span&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&#34;carbon&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Carbon&lt;/h2&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
-    \text {GPP} = \frac{\alpha R_{\mathrm g}\beta }{\alpha R_{\mathrm g}+\beta }
-\end{equation}\]&lt;/span&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
-    \frac{\text {GPP}}{\text {LAI}_\text{act}}\ = \frac{\alpha&amp;#39; R_{\mathrm g}\beta&amp;#39; }{\alpha&amp;#39; R_{\mathrm g}+\beta&amp;#39; }
-\end{equation}\]&lt;/span&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}\label{eGPPLRg}
-    \text{GPP} = \text{LAI}_\text{act}\frac{\alpha&amp;#39; R_{\mathrm g}\beta&amp;#39; }{\alpha&amp;#39; R_{\mathrm g}+\beta&amp;#39; }, 
-\end{equation}\]&lt;/span&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}\label{eGPPL}
-    \text {GPP} = a_\text {LAI}\text{LAI}_\text {act}.
-\end{equation}\]&lt;/span&gt;
-&lt;p&gt;Chamber flux calculation:&lt;/p&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
-    F_c = \frac{10 V P_0 (1 - \frac{W_0}{1000})}{RS  (T_0 + 273.15)} \frac{\partial  C&amp;#39;}{\partial t}
-\end{equation}\]&lt;/span&gt;
-&lt;p&gt;flux in μmol m s, p in kpa, volume in cm, w0 in 0.001, t in °C, t in s, c in ppm.&lt;/p&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
-    C&amp;#39; = C&amp;#39;_x + (C&amp;#39;_0 - C&amp;#39;_x) e ^ {-a(t-t_0)}
-\end{equation}\]&lt;/span&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
-\frac{\partial C&amp;#39;}{\partial t} | _{t = t_0} = a(C&amp;#39;_x - C&amp;#39;_0)
-\end{equation}\]&lt;/span&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
-    C&amp;#39; = (C&amp;#39;_x + kt) + (C&amp;#39;_0 - C&amp;#39;_x) e ^ {-a(t-t_0)}
-\end{equation}\]&lt;/span&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
-    \frac{\partial C&amp;#39;}{\partial t} | _{t = t_0} = a(C&amp;#39;_x - C&amp;#39;_0) + k
-\end{equation}\]&lt;/span&gt;
-&lt;/div&gt;
-&lt;div id=&#34;energy&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Energy&lt;/h2&gt;
-&lt;div id=&#34;evaporation-from-water-by-energy-balance&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Evaporation from water by energy balance&lt;/h3&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
-E_r = \frac{R_n}{l_v \rho_w} \times 1000 \times 86400
-\end{equation}\]&lt;/span&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
-l_v = 2.501 \times 10^6 - 2370T
-\end{equation}\]&lt;/span&gt;
-&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(E_r\)&lt;/span&gt; in mm d&lt;span class=&#34;math inline&#34;&gt;\(^{-1}\)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(R_n\)&lt;/span&gt;: net radiation (hourly mean - WRCC).&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(l_v\)&lt;/span&gt;: latent heat of vaporization (J/kg).&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(\rho_w\)&lt;/span&gt;: mean water density at constant pressure (999.8 kg m&lt;span class=&#34;math inline&#34;&gt;\(^{-3}\)&lt;/span&gt;)&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;penman-monteith-equation-for-latent-heat-flux&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Penman Monteith equation for latent heat flux&lt;/h3&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
-Q ^\text {PM}_{\text E}=\frac {s_{\text c} \frac{-R_{\text n}-Q_{\text G}}{86400\text{s}} + \frac{\rho_a c_{\text p}  (e_{\text s} - e_{\text a})}{r_{\text a}}}{s_{\text c} + \gamma (1 + \frac{r_{\text s}}{r_{\text a}})}
-\end{equation}\]&lt;/span&gt;
-&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Q ^\text {PM}_{\text E}\)&lt;/span&gt;: latent heat flux representing ET fraction (day 4.55 MJ m&lt;span class=&#34;math inline&#34;&gt;\(^{-2}\)&lt;/span&gt;d&lt;span class=&#34;math inline&#34;&gt;\(^{-1}\)&lt;/span&gt;, night 4.43 MJ m&lt;span class=&#34;math inline&#34;&gt;\(^{-2}\)&lt;/span&gt;d&lt;span class=&#34;math inline&#34;&gt;\(^{-1}\)&lt;/span&gt;)&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(R_n\)&lt;/span&gt;: (0.957 MJ m&lt;span class=&#34;math inline&#34;&gt;\(^{-2}\)&lt;/span&gt;d&lt;span class=&#34;math inline&#34;&gt;\(^{-1}\)&lt;/span&gt;)&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(G_{hrday}\)&lt;/span&gt;: 0.0957 MJ m&lt;span class=&#34;math inline&#34;&gt;\(^{-2}\)&lt;/span&gt;d&lt;span class=&#34;math inline&#34;&gt;\(^{-1}\)&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(G_{hrnight}\)&lt;/span&gt;: 0.4789 MJ m&lt;span class=&#34;math inline&#34;&gt;\(^{-2}\)&lt;/span&gt;d&lt;span class=&#34;math inline&#34;&gt;\(^{-1}\)&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(e_s-e_a\)&lt;/span&gt;: vapor pressure deficit of the air (1.9484 kPa - 0.439 kPa = 1.509 kPa)&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(\rho_a\)&lt;/span&gt;: mean air density at constant pressure (1.040 kg m&lt;span class=&#34;math inline&#34;&gt;\(^{-3}\)&lt;/span&gt;)&lt;/p&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
-\rho_{adry} = \frac{p}{RT} = 1.229 \text { kg m}^{-3}
-\end{equation}\]&lt;/span&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
-\rho_{ahumid} = \frac{p_d}{R_d T} + \frac{p_v}{R_v T}= 1.040 \text { kg m}^{-3}
-\end{equation}\]&lt;/span&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
-p_v = RH \times p_{sat} = 1.142 \text{kPa}
-\end{equation}\]&lt;/span&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
-p_{sat} = 6.1078 \cdot 10 ^{\frac{7.5T-2048.625}{T-35.85}} \cdot 100 = 1.84 \text { kPa}
-\end{equation}\]&lt;/span&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
-p_d = p_{abs} - p_v = 85.696 \text{ kPa}
-\end{equation}\]&lt;/span&gt;
-&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(c_p\)&lt;/span&gt;: specific heat of the air (at constant pressure &lt;span class=&#34;math inline&#34;&gt;\(1.013 \times 10 ^{-3}\)&lt;/span&gt; MJ kg&lt;span class=&#34;math inline&#34;&gt;\(^{-1}\)&lt;/span&gt;K&lt;span class=&#34;math inline&#34;&gt;\(^{-1}\)&lt;/span&gt;)&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(s_c\)&lt;/span&gt;: slope of the saturation vapor pressure remperature relationship (0.117 kPa K&lt;span class=&#34;math inline&#34;&gt;\(^{-1}\)&lt;/span&gt;)&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(\gamma\)&lt;/span&gt;: psychrometric constant (0.0577 kPa K&lt;span class=&#34;math inline&#34;&gt;\(^{-1}\)&lt;/span&gt;)&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(r_s\)&lt;/span&gt;: bulk surface resistance (20.83 s m&lt;span class=&#34;math inline&#34;&gt;\(^{-1}\)&lt;/span&gt;)&lt;/p&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
-r_\text s=\frac{r_\text {si}}{\text {LAI}_\text {active}},
-\end{equation}\]&lt;/span&gt;
-&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(r_\text {si}\)&lt;/span&gt;: bulk stomatal resistance well illuminated leaf (100 s m&lt;span class=&#34;math inline&#34;&gt;\(^{-1}\)&lt;/span&gt;)&lt;/p&gt;
-&lt;p&gt;LAI&lt;span class=&#34;math inline&#34;&gt;\(_{active}\)&lt;/span&gt;: active sulit leaf area index. It differs widely for crops but 3 – 5 common for most mature crops. Changes through season and normally reaches max before flowering. Depends on plant density and crop variety. Generally 0.5LAI, i.e. only top half of dense clipped grass is active in surface heat and vapor transfer. For clipped grass LAI&lt;span class=&#34;math inline&#34;&gt;\(=24h\)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(r_a\)&lt;/span&gt;: aerodynamic resistence (155.33 s m&lt;span class=&#34;math inline&#34;&gt;\(^{-1}\)&lt;/span&gt;)&lt;/p&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
-r_{\text a}= \frac{\ln \frac{z-d}{z_{\textrm{om}}} \ln \frac {z-d}{z_{\textrm{oh}}}}{\kappa ^2 u_z} = \frac{124.264}{u_z}=155.33\text { s m}^{-1}
-\end{equation}\]&lt;/span&gt;
-&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(z_m\)&lt;/span&gt;: height of wind measurements (2 m)&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(z_h\)&lt;/span&gt;: height of humidity measurements (2 m)&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(h\)&lt;/span&gt;: constant vegetation height (0.4 m)&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(d\)&lt;/span&gt;: zero plane desplacement height (&lt;span class=&#34;math inline&#34;&gt;\(\frac{2}{3}h\)&lt;/span&gt;, 0.27 m)&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(z_{om}\)&lt;/span&gt;: roughness length governing momentum transfer (&lt;span class=&#34;math inline&#34;&gt;\(0.123h\)&lt;/span&gt;, 0.0492 m)&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(z_{oh}\)&lt;/span&gt;: roughness length governing transfer of heat and vapor (&lt;span class=&#34;math inline&#34;&gt;\(0.1z_{om}\)&lt;/span&gt;, 0.00492 m)&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(u_z\)&lt;/span&gt;: wind speed at 2 m height (mean 0.8 m s&lt;span class=&#34;math inline&#34;&gt;\(^{-1}\)&lt;/span&gt;)&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;fao-penman-monteith-equation-for-et-rate-from-reference-surface-et_0&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;FAO Penman Monteith equation for ET rate from reference surface (ET&lt;span class=&#34;math inline&#34;&gt;\(_0\)&lt;/span&gt;)&lt;/h3&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
-ET_0 = \frac {0.408 s_{\text c} \frac{-R_{\text n}-Q_{\text G}}{86400\text{s}} + \frac{\gamma 900 u_z (e_{\text s} - e_{\text a})}{T+273}}{s_{\text c} + \gamma (1 + 0.34u_z)}
-\end{equation}\]&lt;/span&gt;
-&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(ET_0\)&lt;/span&gt;: reference evapotraspiration (day 1.109 mm day&lt;span class=&#34;math inline&#34;&gt;\(^{-1}\)&lt;/span&gt;, night 1.064 mm day&lt;span class=&#34;math inline&#34;&gt;\(^{-1}\)&lt;/span&gt;)&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(ET_0\)&lt;/span&gt;: reference evapotraspiration (day 2.72 MJ m&lt;span class=&#34;math inline&#34;&gt;\(^{-2}\)&lt;/span&gt;d&lt;span class=&#34;math inline&#34;&gt;\(^{-1}\)&lt;/span&gt;, night 2.61 MJ m&lt;span class=&#34;math inline&#34;&gt;\(^{-2}\)&lt;/span&gt;d&lt;span class=&#34;math inline&#34;&gt;\(^{-1}\)&lt;/span&gt;)&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(R_n\)&lt;/span&gt;: net radiation (0.445 MJ m&lt;span class=&#34;math inline&#34;&gt;\(^{-2}\)&lt;/span&gt;d&lt;span class=&#34;math inline&#34;&gt;\(^{-1}\)&lt;/span&gt;)&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(G_{hrday}\)&lt;/span&gt;: 0.0445 MJ m&lt;span class=&#34;math inline&#34;&gt;\(^{-2}\)&lt;/span&gt;d&lt;span class=&#34;math inline&#34;&gt;\(^{-1}\)&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(G_{hrnight}\)&lt;/span&gt;: 0.2227 MJ m&lt;span class=&#34;math inline&#34;&gt;\(^{-2}\)&lt;/span&gt;d&lt;span class=&#34;math inline&#34;&gt;\(^{-1}\)&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(e_s-e_a\)&lt;/span&gt;: vapor pressure deficit of the air (1.9484 kPa - 0.439 kPa = 1.509 kPa)&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(T\)&lt;/span&gt;: mean daily air temperature at 2 m height (16.2&lt;span class=&#34;math inline&#34;&gt;\(^\circ\)&lt;/span&gt;C)&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;equations-in-gafir-documentation&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Equations in GaFiR documentation&lt;/h3&gt;
-&lt;span class=&#34;math display&#34; id=&#34;eq:eNEE&#34;&gt;\[\begin{equation}
-\text{NEE = GPP} + R_\text{eco}
-\tag{1}
-\end{equation}\]&lt;/span&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}\label{ePM}
-Q ^\text {PM}_{\text E}=\frac {s_{\text c} (-R_{\text n}-Q_{\text G}) + \frac{\rho c_{\text p}  (e_{\text s} - e_{\text a})}{r_{\text a}}}{s_{\text c} + \gamma (1 + \frac{r_{\text s}}{r_{\text a}})},
-\end{equation}\]&lt;/span&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}\label{era}
-r_{\text a}= \frac{\ln \frac{z-d}{z_{\textrm{om}}} \ln \frac {z-d}{z_{\textrm{oh}}}}{\kappa ^2 u},
-\end{equation}\]&lt;/span&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}\label{eRl}
-%r^{\text {LAI}}_\text s=\frac{r_\text {si}}{0.5\text {LAI}},
-r_\text s=\frac{r_\text {si}}{\text {LAI}_\text {active}},
-\end{equation}\]&lt;/span&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}\label{eKP}
-%\frac{r^{\text {KP}}_\text s}{r_\text a} = a \frac{r^*}{r_\text a} + b,
-\frac{r_\text s}{r_\text a} = a \frac{r^*}{r_\text a} + b,
-\end{equation}\]&lt;/span&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
-r^*=\frac{(s_\text c + \gamma)\rho c_\text p (e_{\text s} - e_{\text a})}{s_\text c \gamma (-R_{\text n}-Q_{\text G})},
-\end{equation}\]&lt;/span&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}\label{eRs}
-r_{\text s}= \frac {r_{\text a}s_{\text c} (-R_{\text n}-Q_{\text G}) + \rho c_{\text p}  (e_{\text s} - e_{\text a}) - r_{\text a}Q_{\text E}(s_{\text c} + \gamma)}
-{\gamma Q_{\text E}}.
-\end{equation}\]&lt;/span&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}\label{ePT}
-E=\alpha_{\text {PT}} \frac {s_{\text c}}{s_{\text c} + \gamma}(-Q_{\text A})
-\end{equation}\]&lt;/span&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&#34;model-evaluation&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Model evaluation&lt;/h2&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
- \text{ME}=\frac{1}{N}\sum_{i=1}^{N}|P_i-O_i|
- \end{equation}\]&lt;/span&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
- \text{MAE}=\frac{1}{N}\sum_{i=1}^{N}(P_i-O_i)
- \end{equation}\]&lt;/span&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation} 
-\text{MSE}=\frac{1}{N}\sum_{i=1}^{N}(P_i-O_i)^2
-\end{equation}\]&lt;/span&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation} 
-\text{RMSE}=\sqrt{\frac{1}{N}\sum_{i=1}^{N}(P_i-O_i)^2}
-\end{equation}\]&lt;/span&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation} 
-\text{NRMSE}=100\frac{\text{RMSE}}{O_\text{max} - O_\text{min}}
-\end{equation}\]&lt;/span&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation} 
-\text{PBIAS} =100\frac{\sum_{i=1}^{n}(P_i-O_i)}{\sum_{i=1}^{n}O_i}
-\end{equation}\]&lt;/span&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation} 
-\text{RSR} =\frac{\text{RMSE}}{\sigma_O}
-\end{equation}\]&lt;/span&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation} 
-\text{rSD} =\frac{\sigma_P}{\sigma_O}
-\end{equation}\]&lt;/span&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation} 
-\text{NSE} =1-\frac{\sum_{i=1}^{n}(O_i-P_i)^2}{\sum_{i=1}^{n}(O_i - \overline{O})^2}
-\end{equation}\]&lt;/span&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation} 
-\text{mNSE} =1-\frac{\sum_{i=1}^{n}|O_i-P_i||^j}{\sum_{i=1}^{n}|O_i - \overline{O}|^j}
-\end{equation}\]&lt;/span&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation} 
-\text{rNSE} =1-\frac{\sum_{i=1}^{n}(\frac{O_i-P_i}{\overline{O}})^2}{\sum_{i=1}^{n}(\frac{O_i - \overline{O}}{\overline{O}})^2}
-\end{equation}\]&lt;/span&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation} 
-d =1-\frac{\sum_{i=1}^{n}(P_i-O_i)^2}{\sum_{i=1}^{n}(|P_i-O_i|+|P_i+O_i|)^2}
-\end{equation}\]&lt;/span&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation} 
-md =1 - \frac{\sum_{i=1}^{n}(P_i-O_i)^j}{\sum_{i=1}^{n}(|P_i-O_i|+|P_i+O_i|)^j}
-\end{equation}\]&lt;/span&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation} 
-rd =1-\frac{\sum_{i=1}^{n}(\frac{P_i-O_i}{\overline{O}})^2}{\sum_{i=1}^{n}(\frac{|P_i-O_i|+|P_i+O_i|}{\overline{O}})^2}
-\end{equation}\]&lt;/span&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation} 
-\text{cp} =1-\frac{\sum_{i=2}^{n}(O_i-P_i)^2}{\sum_{i=1}^{n-1}(O_{i+1} - O_i)^2}
-\end{equation}\]&lt;/span&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation} 
-R =\frac{\sum_{i=1}^{n}(O_i-\overline{O})(P_i-\overline{P})}{\sqrt{\sum_{i=1}^{n}(O_i-\overline{O})^2}\sqrt{\sum_{i=1}^{n}(P_i-\overline{P})^2}) }
-\end{equation}\]&lt;/span&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation} 
-R^2 =(\frac{\sum_{i=1}^{n}(O_i-\overline{O})(P_i-\overline{P})}{\sqrt{\sum_{i=1}^{n}(O_i-\overline{O})^2}\sqrt{\sum_{i=1}^{n}(P_i-\overline{P})^2}) })^2
-\end{equation}\]&lt;/span&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation} 
-\text{bR2} =bR^2
-\end{equation}\]&lt;/span&gt;
-&lt;/div&gt;
-&lt;div id=&#34;mathematics&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Mathematics&lt;/h2&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
-\frac{\text {d} x^\mu}{\text {d} x} = \mu x ^{\mu - 1}\\
-\end{equation}\]&lt;/span&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
-\frac{\text {d} e^x}{\text {d} x} = e^x\\
-\end{equation}\]&lt;/span&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
-\frac{\text {d} a^x}{\text {d} x} = a^x \ln a \\
-\end{equation}\]&lt;/span&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
-\frac{\text {d} \ln x}{\text {d} x} = \frac{1}{x}\\
-\end{equation}\]&lt;/span&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
-\frac{\text {d} \log _a x}{\text {d} x} = \frac{1}{x\ln a}\\
-\end{equation}\]&lt;/span&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
-\frac{\text {d} \sin x}{\text {d} x} = \cos x\\
-\end{equation}\]&lt;/span&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
-\frac{\text {d} \cos x}{\text {d} x} = - \sin x\\
-\end{equation}\]&lt;/span&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
-\int k \text {d} x = kx + C
-\end{equation}\]&lt;/span&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
-\int x ^ \mu \text {d} x = \frac{x^{\mu + 1}}{\mu + 1} + C\ (\mu \neq -1)
-\end{equation}\]&lt;/span&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
-\int \frac{1}{x}\text {d} x = \ln \left | x \right | + C
-\end{equation}\]&lt;/span&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
-\int \text {e} ^x \text {d} x = \text {e} ^x + C\\
-\end{equation}\]&lt;/span&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
-\int a ^x \text {d} x = \frac{a^x}{\ln a}+ C\\
-\end{equation}\]&lt;/span&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
-\int \frac{1}{1+x^2}\text {d} x = \arctan x + C\\
-\end{equation}\]&lt;/span&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
-\int \frac{1}{1-x^2}\text {d} x = \arcsin x + C\\
-\end{equation}\]&lt;/span&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
-\int \cos x \text {d} x = \sin x + C\\
-\end{equation}\]&lt;/span&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
-\int \sin x \text {d} x = -\cos x + C\\
-\end{equation}\]&lt;/span&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
-\int \frac{1}{\cos^2 x} \text {d} x = \tan x + C\\
-\end{equation}\]&lt;/span&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
-\int \frac{1}{\sin^2 x} \text {d} x = -\cot x + C\\
-\end{equation}\]&lt;/span&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
-\int \sec x \tan x \text {d} x = \sec x + C\\
-\end{equation}\]&lt;/span&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
-\int \csc x \cot x \text {d} x = -\csc x + C\\
-\end{equation}\]&lt;/span&gt;
-&lt;/div&gt;
 </description>
     </item>
     
