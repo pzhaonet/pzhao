@@ -27,22 +27,27 @@ weight = 65
 
 ### 电子书
 
-- [R 菜鸟入门](https://github.com/pzhaonet/R4Dummies)
-- [爸爸三定律](https://bookdown.org/baydap/papasdiary/)
-- [**G**u**it**a**R** bookdown](https://bookdown.org/baydap/bdguitar/)
-- [群英谱](https://bookdown.org/baydap/qyp/)
-- [R bookdownplus Textbook](https://bookdown.org/baydap/bookdown-plus/)
-- [Journey to the West](https://bookdown.org/baydap/jttw/)
+- [R 菜鸟入门](https://github.com/pzhaonet/R4Dummies)：一些R入门帖子合集。
+- [爸爸三定律](https://bookdown.org/baydap/papasdiary/)：我的育儿帖子合集。
+- [**G**u**it**a**R** bookdown](https://bookdown.org/baydap/bdguitar/)：用bookdown制作的吉他书。
+- [群英谱](https://bookdown.org/baydap/qyp/)：我和中学班主任写的校园回忆。
+- [R bookdownplus Textbook](https://bookdown.org/baydap/bookdownplus/)：bookdownplus 使用说明。
+- [Journey to the West](https://bookdown.org/baydap/jttw/)：我的影集。
 
 #### R 语言扩展包
 
-- [rmickey](https://github.com/pzhaonet/rmickey): 一个简易的R包模板，在其基础上可以快速编写自己的R包.
+发布在 CRAN:
+
+- [bookdownplus](https://cran.r-project.org/web/packages/bookdownplus): 用来创建各种不同格式的 bookdown 书稿.
+- [mindr](https://cran.r-project.org/web/packages/mindr): 用来将 markdown 文件与思维导图相互转换.
+- [pinyin](https://cran.r-project.org/web/packages/pinyin): 用来将中文字符转换成拼音.
+- [beginr](https://cran.r-project.org/web/beginr): 一个帮助R语言初学者的工具集.
+
+发布在 GitHub:
+
+- [postr](https://github.com/pzhaonet/postr): 用来创建 markdown 海报.
 - [mf](https://github.com/pzhaonet/mf): 我自用的自定义函数集，比较杂.
-- [postr](https://github.com/pzhaonet/postr): 可以创建 markdown 海报.
-- [bookdownplus](https://github.com/pzhaonet/bookdownplus): 可以创建各种不同格式的 bookdown 书稿.
-- [mindr](https://github.com/pzhaonet/mindr): 可以将 markdown 文件与思维导图相互转换.
-- [pinyin](https://github.com/pzhaonet/pinyin): 可以将中文字符转换成拼音.
-- [beginr](https://github.com/pzhaonet/beginr): 一个帮助R语言初学者的工具集.
+- [rmickey](https://github.com/pzhaonet/rmickey): 一个简易的R包模板，用作展示 R 包的编写和发布方法.
 
 ### 下载区
 
@@ -52,4 +57,3 @@ weight = 65
 - [硕士博士学位论文模板 (LaTeX，英文/德文，University of Bayreuth)](https://github.com/dapengde/ubt_thesis_latex/archive/master.zip)
 - [硕士博士学位论文模板 (R bookdown，中文)](https://github.com/dapengde/bookdown-thesis/archive/master.zip)
 - [“告别德国”明信片模板 (ppt)](https://github.com/dapengde/postcard/archive/master.zip)
-

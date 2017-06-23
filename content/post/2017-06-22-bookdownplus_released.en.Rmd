@@ -13,7 +13,7 @@ bibliography: [zhaor.bib]
 categories: []
 ---
 
-I’m glad to announce that bookdownplus 1.0.2 [@R-bookdownplus] is now on [CRAN]((https://cran.r-project.org/web/packages/bookdownplus/)).
+I’m glad to announce that bookdownplus 1.0.2 [@R-bookdownplus] is now on [CRAN](https://cran.r-project.org/web/packages/bookdownplus/).
 
 # Introduction
 
@@ -35,7 +35,7 @@ With `R bookdownplus` users can
 -   even in Chinese,
 -   and more wonders will come soon.
 
-Full documentation can be found in the book [R bookdownplus Textbook](https://bookdown.org/baydap/bookdownplus). The webpage looks so-so, while the [pdf file](https://bookdown.org/baydap/bookdownplus/bookdownplus.pdf) might give you a little surprise.  
+Full documentation can be found in the book [R bookdownplus Textbook](https://bookdown.org/baydap/bookdownplus). The webpage looks as good as other books, while the [pdf file](https://bookdown.org/baydap/bookdownplus/bookdownplus.pdf) might give you a little surprise.  
 
 # Quick start
 

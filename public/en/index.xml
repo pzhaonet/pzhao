@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Peng Zhao on Peng Zhao</title>
-    <link>http://www.pzhao.org/en/index.xml</link>
+    <link>/en/index.xml</link>
     <description>Recent content in Peng Zhao on Peng Zhao</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -12,16 +12,16 @@
     
     <item>
       <title>R package bookdownplus 1.0.2 released on CRAN</title>
-      <link>http://www.pzhao.org/en/post/bookdownplus-released/</link>
+      <link>/en/post/bookdownplus-released/</link>
       <pubDate>Thu, 22 Jun 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/en/post/bookdownplus-released/</guid>
+      <guid>/en/post/bookdownplus-released/</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 
 &lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
 &lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
-&lt;p&gt;I’m glad to announce that bookdownplus 1.0.2 &lt;span class=&#34;citation&#34;&gt;(Zhao 2017)&lt;/span&gt; is now on &lt;a href=&#34;(https://cran.r-project.org/web/packages/bookdownplus/)&#34;&gt;CRAN&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I’m glad to announce that bookdownplus 1.0.2 &lt;span class=&#34;citation&#34;&gt;(Zhao 2017)&lt;/span&gt; is now on &lt;a href=&#34;https://cran.r-project.org/web/packages/bookdownplus/&#34;&gt;CRAN&lt;/a&gt;.&lt;/p&gt;
 &lt;div id=&#34;introduction&#34; class=&#34;section level1&#34;&gt;
 &lt;h1&gt;Introduction&lt;/h1&gt;
 &lt;p&gt;&lt;code&gt;R bookdownplus&lt;/code&gt; is an extension of &lt;code&gt;R bookdown&lt;/code&gt; &lt;span class=&#34;citation&#34;&gt;(Xie 2016)&lt;/span&gt;. It is a collection of multiple templates on the basis of LaTeX, which are tailored so that I can work happily under the umbrella of &lt;code&gt;bookdown&lt;/code&gt;. &lt;code&gt;bookdownplus&lt;/code&gt; helps you write academic journal articles, guitar books, chemical equations, mails, calendars, and diaries.&lt;/p&gt;
@@ -40,7 +40,7 @@
 &lt;li&gt;even in Chinese,&lt;/li&gt;
 &lt;li&gt;and more wonders will come soon.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Full documentation can be found in the book &lt;a href=&#34;https://bookdown.org/baydap/bookdownplus&#34;&gt;R bookdownplus Textbook&lt;/a&gt;. The webpage looks so-so, while the &lt;a href=&#34;https://bookdown.org/baydap/bookdownplus/bookdownplus.pdf&#34;&gt;pdf file&lt;/a&gt; might give you a little surprise.&lt;/p&gt;
+&lt;p&gt;Full documentation can be found in the book &lt;a href=&#34;https://bookdown.org/baydap/bookdownplus&#34;&gt;R bookdownplus Textbook&lt;/a&gt;. The webpage looks as good as other books, while the &lt;a href=&#34;https://bookdown.org/baydap/bookdownplus/bookdownplus.pdf&#34;&gt;pdf file&lt;/a&gt; might give you a little surprise.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;quick-start&#34; class=&#34;section level1&#34;&gt;
 &lt;h1&gt;Quick start&lt;/h1&gt;
@@ -208,19 +208,19 @@ bookdownplus::bookdownplus()&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>Parameterization of Evapotranspiration Estimation for Two Typical East Asian Crops</title>
-      <link>http://www.pzhao.org/en/publication/zhao2017/</link>
+      <link>/en/publication/zhao2017/</link>
       <pubDate>Tue, 20 Jun 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/en/publication/zhao2017/</guid>
+      <guid>/en/publication/zhao2017/</guid>
       <description></description>
     </item>
     
     <item>
       <title>LaTeX equations in micrometeorology</title>
-      <link>http://www.pzhao.org/en/post/equations/</link>
+      <link>/en/post/equations/</link>
       <pubDate>Tue, 23 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/en/post/equations/</guid>
+      <guid>/en/post/equations/</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 
@@ -540,10 +540,10 @@ R^2 =(\frac{\sum_{i=1}^{n}(O_i-\overline{O})(P_i-\overline{P})}{\sqrt{\sum_{i=1}
     
     <item>
       <title>R package mindr: convert markdown files to mind maps, and vice versa</title>
-      <link>http://www.pzhao.org/en/post/mindr/</link>
+      <link>/en/post/mindr/</link>
       <pubDate>Fri, 19 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/en/post/mindr/</guid>
+      <guid>/en/post/mindr/</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 
@@ -612,10 +612,10 @@ R^2 =(\frac{\sum_{i=1}^{n}(O_i-\overline{O})(P_i-\overline{P})}{\sqrt{\sum_{i=1}
     
     <item>
       <title>R package postr: created posters with R markdown</title>
-      <link>http://www.pzhao.org/en/post/postr/</link>
+      <link>/en/post/postr/</link>
       <pubDate>Tue, 16 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/en/post/postr/</guid>
+      <guid>/en/post/postr/</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 
@@ -679,10 +679,10 @@ postr::postr()&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>bookdownplus: an R package for writing Articles, Mails, Guitar Chords, Chemical Molecular Formulae and Equations with R bookdown</title>
-      <link>http://www.pzhao.org/en/post/bookdownplus/</link>
+      <link>/en/post/bookdownplus/</link>
       <pubDate>Tue, 09 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/en/post/bookdownplus/</guid>
+      <guid>/en/post/bookdownplus/</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 
@@ -859,10 +859,10 @@ bookdownplus::bookdownplus()&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>EGU 2017</title>
-      <link>http://www.pzhao.org/en/post/egu2017photo/</link>
+      <link>/en/post/egu2017photo/</link>
       <pubDate>Tue, 02 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/en/post/egu2017photo/</guid>
+      <guid>/en/post/egu2017photo/</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 
@@ -881,29 +881,29 @@ bookdownplus::bookdownplus()&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>Role of advection for the ecosystem-atmosphere CO2 exchange of alpine grasslands</title>
-      <link>http://www.pzhao.org/en/talk/2017-04-27-egu/</link>
+      <link>/en/talk/2017-04-27-egu/</link>
       <pubDate>Mon, 24 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/en/talk/2017-04-27-egu/</guid>
+      <guid>/en/talk/2017-04-27-egu/</guid>
       <description>&lt;p&gt;&lt;img src=&#34;http://www.biomet.co.at/wp/wp-content/uploads/2017/04/IMG_19351.jpeg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Contribution of the advection terms for NEE in short-statured ecosystems</title>
-      <link>http://www.pzhao.org/en/talk/2017-03-29-scalex/</link>
+      <link>/en/talk/2017-03-29-scalex/</link>
       <pubDate>Wed, 29 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/en/talk/2017-03-29-scalex/</guid>
+      <guid>/en/talk/2017-03-29-scalex/</guid>
       <description></description>
     </item>
     
     <item>
       <title>R bookdown cheatsheet</title>
-      <link>http://www.pzhao.org/en/post/bookdown-cheatsheet/</link>
+      <link>/en/post/bookdown-cheatsheet/</link>
       <pubDate>Tue, 14 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/en/post/bookdown-cheatsheet/</guid>
+      <guid>/en/post/bookdown-cheatsheet/</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 
