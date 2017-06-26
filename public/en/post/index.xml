@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Peng Zhao</title>
-    <link>/en/post/index.xml</link>
+    <link>http://www.pzhao.org/en/post/index.xml</link>
     <description>Recent content in Posts on Peng Zhao</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -12,16 +12,16 @@
     
     <item>
       <title>R package bookdownplus 1.0.2 released on CRAN</title>
-      <link>/en/post/bookdownplus-released/</link>
+      <link>http://www.pzhao.org/en/post/bookdownplus-released/</link>
       <pubDate>Thu, 22 Jun 2017 00:00:00 +0000</pubDate>
       
-      <guid>/en/post/bookdownplus-released/</guid>
+      <guid>http://www.pzhao.org/en/post/bookdownplus-released/</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 
 &lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
 &lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
-&lt;p&gt;I’m glad to announce that bookdownplus 1.0.2 &lt;span class=&#34;citation&#34;&gt;(Zhao 2017)&lt;/span&gt; is now on &lt;a href=&#34;https://cran.r-project.org/web/packages/bookdownplus/&#34;&gt;CRAN&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I’m glad to announce that ‘bookdownplus 1.0.2’ &lt;span class=&#34;citation&#34;&gt;(Zhao 2017)&lt;/span&gt; is now on &lt;a href=&#34;https://cran.r-project.org/web/packages/bookdownplus/&#34;&gt;CRAN&lt;/a&gt;. This post is a brief documentation of ‘bookdownplus 1.0.2’. However, I have been updating ‘bookdownplus’ frequently and the new version is more powerful and even easier. Please go to the &lt;a href=&#34;http://github.com/pzhaonet/bookdownplus&#34;&gt;GitHub site of bookdownplus&lt;/a&gt;.&lt;/p&gt;
 &lt;div id=&#34;introduction&#34; class=&#34;section level1&#34;&gt;
 &lt;h1&gt;Introduction&lt;/h1&gt;
 &lt;p&gt;The R package &lt;code&gt;bookdownplus&lt;/code&gt; is an extension of &lt;code&gt;bookdown&lt;/code&gt; &lt;span class=&#34;citation&#34;&gt;(Xie 2016)&lt;/span&gt;. It is a collection of multiple templates on the basis of LaTeX, which are tailored so that I can work happily under the umbrella of &lt;code&gt;bookdown&lt;/code&gt;. &lt;code&gt;bookdownplus&lt;/code&gt; helps you write academic journal articles, guitar books, chemical equations, mails, calendars, and diaries.&lt;/p&gt;
@@ -236,10 +236,10 @@ bookdownplus::bookdownplus()&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>LaTeX equations in micrometeorology</title>
-      <link>/en/post/equations/</link>
+      <link>http://www.pzhao.org/en/post/equations/</link>
       <pubDate>Tue, 23 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>/en/post/equations/</guid>
+      <guid>http://www.pzhao.org/en/post/equations/</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 
@@ -559,10 +559,10 @@ R^2 =(\frac{\sum_{i=1}^{n}(O_i-\overline{O})(P_i-\overline{P})}{\sqrt{\sum_{i=1}
     
     <item>
       <title>R package mindr: convert markdown files to mind maps, and vice versa</title>
-      <link>/en/post/mindr/</link>
+      <link>http://www.pzhao.org/en/post/mindr/</link>
       <pubDate>Fri, 19 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>/en/post/mindr/</guid>
+      <guid>http://www.pzhao.org/en/post/mindr/</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 
@@ -631,10 +631,10 @@ R^2 =(\frac{\sum_{i=1}^{n}(O_i-\overline{O})(P_i-\overline{P})}{\sqrt{\sum_{i=1}
     
     <item>
       <title>R package postr: created posters with R markdown</title>
-      <link>/en/post/postr/</link>
+      <link>http://www.pzhao.org/en/post/postr/</link>
       <pubDate>Tue, 16 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>/en/post/postr/</guid>
+      <guid>http://www.pzhao.org/en/post/postr/</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 
@@ -698,10 +698,10 @@ postr::postr()&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>bookdownplus: an R package for writing Articles, Mails, Guitar Chords, Chemical Molecular Formulae and Equations with R bookdown</title>
-      <link>/en/post/bookdownplus/</link>
+      <link>http://www.pzhao.org/en/post/bookdownplus/</link>
       <pubDate>Tue, 09 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>/en/post/bookdownplus/</guid>
+      <guid>http://www.pzhao.org/en/post/bookdownplus/</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 
@@ -878,10 +878,10 @@ bookdownplus::bookdownplus()&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>EGU 2017</title>
-      <link>/en/post/egu2017photo/</link>
+      <link>http://www.pzhao.org/en/post/egu2017photo/</link>
       <pubDate>Tue, 02 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>/en/post/egu2017photo/</guid>
+      <guid>http://www.pzhao.org/en/post/egu2017photo/</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 
@@ -900,10 +900,10 @@ bookdownplus::bookdownplus()&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>R bookdown cheatsheet</title>
-      <link>/en/post/bookdown-cheatsheet/</link>
+      <link>http://www.pzhao.org/en/post/bookdown-cheatsheet/</link>
       <pubDate>Tue, 14 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>/en/post/bookdown-cheatsheet/</guid>
+      <guid>http://www.pzhao.org/en/post/bookdown-cheatsheet/</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 
@@ -1127,10 +1127,10 @@ I like Eq. \@ref(eq:mc2) so much that I am falling love with her.&lt;/code&gt;&l
     
     <item>
       <title>Advection campaign at Neustift started </title>
-      <link>/en/post/advection-ns/</link>
+      <link>http://www.pzhao.org/en/post/advection-ns/</link>
       <pubDate>Sat, 08 Oct 2016 00:00:00 +0000</pubDate>
       
-      <guid>/en/post/advection-ns/</guid>
+      <guid>http://www.pzhao.org/en/post/advection-ns/</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 
@@ -1148,10 +1148,10 @@ I like Eq. \@ref(eq:mc2) so much that I am falling love with her.&lt;/code&gt;&l
     
     <item>
       <title>EcoBot measurements during ScaleX 2016 </title>
-      <link>/en/post/ecobot-ft/</link>
+      <link>http://www.pzhao.org/en/post/ecobot-ft/</link>
       <pubDate>Fri, 08 Jul 2016 00:00:00 +0000</pubDate>
       
-      <guid>/en/post/ecobot-ft/</guid>
+      <guid>http://www.pzhao.org/en/post/ecobot-ft/</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 
@@ -1167,10 +1167,10 @@ I like Eq. \@ref(eq:mc2) so much that I am falling love with her.&lt;/code&gt;&l
     
     <item>
       <title>Advection campaign within ScaleX 2016</title>
-      <link>/en/post/advection-ft/</link>
+      <link>http://www.pzhao.org/en/post/advection-ft/</link>
       <pubDate>Thu, 30 Jun 2016 00:00:00 +0000</pubDate>
       
-      <guid>/en/post/advection-ft/</guid>
+      <guid>http://www.pzhao.org/en/post/advection-ft/</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 
@@ -1186,10 +1186,10 @@ I like Eq. \@ref(eq:mc2) so much that I am falling love with her.&lt;/code&gt;&l
     
     <item>
       <title>First advection campaign completed </title>
-      <link>/en/post/advection-mb1/</link>
+      <link>http://www.pzhao.org/en/post/advection-mb1/</link>
       <pubDate>Fri, 13 Nov 2015 00:00:00 +0000</pubDate>
       
-      <guid>/en/post/advection-mb1/</guid>
+      <guid>http://www.pzhao.org/en/post/advection-mb1/</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 
@@ -1205,10 +1205,10 @@ I like Eq. \@ref(eq:mc2) so much that I am falling love with her.&lt;/code&gt;&l
     
     <item>
       <title>Advection experiment at Monte Bondone started</title>
-      <link>/en/post/advection-mb/</link>
+      <link>http://www.pzhao.org/en/post/advection-mb/</link>
       <pubDate>Thu, 24 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>/en/post/advection-mb/</guid>
+      <guid>http://www.pzhao.org/en/post/advection-mb/</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 
@@ -1246,10 +1246,10 @@ I like Eq. \@ref(eq:mc2) so much that I am falling love with her.&lt;/code&gt;&l
     
     <item>
       <title>Biomet hike</title>
-      <link>/en/post/biomet-hike/</link>
+      <link>http://www.pzhao.org/en/post/biomet-hike/</link>
       <pubDate>Wed, 01 Jul 2015 00:00:00 +0000</pubDate>
       
-      <guid>/en/post/biomet-hike/</guid>
+      <guid>http://www.pzhao.org/en/post/biomet-hike/</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 
@@ -1301,10 +1301,10 @@ I like Eq. \@ref(eq:mc2) so much that I am falling love with her.&lt;/code&gt;&l
     
     <item>
       <title>EGU 2015</title>
-      <link>/en/post/egu-2015-photo/</link>
+      <link>http://www.pzhao.org/en/post/egu-2015-photo/</link>
       <pubDate>Wed, 22 Apr 2015 00:00:00 +0000</pubDate>
       
-      <guid>/en/post/egu-2015-photo/</guid>
+      <guid>http://www.pzhao.org/en/post/egu-2015-photo/</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 
