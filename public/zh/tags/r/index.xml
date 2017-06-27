@@ -10,6 +10,58 @@
     <atom:link href="/zh/tags/r/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>bookdownplus 的两个魔法</title>
+      <link>http://www.pzhao.org/zh/post/bookdownplus-magic/</link>
+      <pubDate>Tue, 27 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.pzhao.org/zh/post/bookdownplus-magic/</guid>
+      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
+&lt;!-- /BLOGDOWN-HEAD --&gt;
+
+&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
+&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
+&lt;p&gt;bookdown 是个好东西，只是入手有点难，酒香巷深。&lt;/p&gt;
+&lt;p&gt;对于 R 初学者来说，如果身边没有人指导，使用者可能需要花大量精力应付 LaTeX，YAML，Pandoc，而很多初学者可能从来没听说过这些，站在 bookdown 的门口往里张望了一下，说不定就被吓跑了，从而错过了门里的精彩世界。&lt;/p&gt;
+&lt;p&gt;bookdownplus 扩展包，可以让新手对 bookdown 快速上手。从此，bookdown 这坛好酒就不必去深巷苦寻，它就放在你手边。&lt;/p&gt;
+&lt;p&gt;从 v1.2.0 开始，bookdownplus 增加了两个魔法，更是让新手对 bookdown 一见钟情。如果你对 bookdown 感兴趣却苦于入门的烦恼，那么可以试试这两个魔法。&lt;/p&gt;
+&lt;div class=&#34;section level2&#34;&gt;
+&lt;h2&gt;准备工作&lt;/h2&gt;
+&lt;p&gt;首先，安装好必需的软件，包括 R, RStudio, &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt;等。详见 &lt;a href=&#34;https://bookdown.org/yihui/bookdown/&#34;&gt;bookdown 官方手册&lt;/a&gt;。然后，安装开发版的bookdownplus：&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;devtools::install_github(&amp;quot;pzhaonet/bookdownplus&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;再用 &lt;code&gt;setwd()&lt;/code&gt; 将R的工作目录设置到一个空文件夹里。&lt;/p&gt;
+&lt;p&gt;一切准备就绪后，接下来就是见证奇迹的时刻。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;section level2&#34;&gt;
+&lt;h2&gt;第一个魔法&lt;/h2&gt;
+&lt;p&gt;在 R 里运行下面的代码，然后去喝个茶：&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;for (i in template()[1:19])
+  bookdownplus(template = i, 
+               more_output = more_output()[1:3])&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;回来以后，你会在工作目录里看到很多文件和文件夹。打开那个叫做 &lt;code&gt;_book/&lt;/code&gt;的文件夹，Duang！19个示例文档，每个都以 pdf、Word、网页和电子书格式乖乖地等在那里，等你打开了。其中，电子书 epub 格式可以在手机上阅读，也可以在台式机用免费的Calibre软件打开阅读。&lt;/p&gt;
+&lt;p&gt;这些示例文档，从学术论文到诗歌乐谱，从中文到英文，展示了 bookdown 能胜任的工作。是不是动心了？&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;section level2&#34;&gt;
+&lt;h2&gt;第二个魔法&lt;/h2&gt;
+&lt;p&gt;运行下面的代码，然后看两眼窗外的风景，bookdownplus 就把事情做完了：&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;for (mf in mail_font()) {
+  for (ms in mail_style()) {
+    for (mt in mail_theme()) {
+      outputname &amp;lt;- paste(&amp;#39;mail&amp;#39;, ms, mf, mt, sep = &amp;#39;_&amp;#39;)
+      bookdownplus(template = &amp;#39;mail&amp;#39;, 
+                   mail_style = ms, 
+                   mail_font = mf, 
+                   mail_theme = mt, 
+                   output_name = outputname)
+    }
+  }
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;仍然打开那个叫做 &lt;code&gt;_book/&lt;/code&gt;的文件夹，Duang！ 不同字体、不同主题、不同布局的信件示例文档就全部在那里了。&lt;/p&gt;
+&lt;p&gt;如果看了这个你还没动心，那么只能说明跟 bookdown 没缘分，趁早放手吧！&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>R 初学者包 beginr 在 CRAN 正式发布</title>
       <link>http://www.pzhao.org/zh/post/beginr-released/</link>
       <pubDate>Fri, 23 Jun 2017 00:00:00 +0000</pubDate>
@@ -46,26 +98,26 @@ y &amp;lt;- 1:10 + rnorm(10)
 beginr::plotlm(x, y)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;## [[1]]
-##              Estimate Std. Error    t value     Pr(&amp;gt;|t|)
-## (Intercept) 0.3730170 0.44596876  0.8364197 4.271945e-01
-## x           0.9795876 0.07187437 13.6291636 8.081949e-07
+##               Estimate Std. Error   t value     Pr(&amp;gt;|t|)
+## (Intercept) -0.8753512  0.6523182 -1.341908 2.164643e-01
+## x            1.1719596  0.1051306 11.147656 3.751082e-06
 ## 
 ## [[2]]
-## [1] 0.9587106&lt;/code&gt;&lt;/pre&gt;
+## [1] 0.9395178&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;经常需要了解一组数据的分布, 看看是不是正态分布. beginr 里的 &lt;code&gt;plothist()&lt;/code&gt; 函数不仅做出直方图和平滑曲线, 并且标出中值, 中位数, 四分位数, 标准偏差, 样本数, 以及用来判断是否正态分布的 skewness 值.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;x &amp;lt;- rnorm(10000)
 beginr::plothist(x)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;##     para       value
-## 1    min -3.84510625
-## 2     1q -0.68695790
-## 3 median -0.02073184
-## 4     3q  0.66527788
-## 5    max  3.65644218
-## 6  lower -2.71516474
-## 7  upper  2.69348472
-## 8   mean -0.01751641
-## 9     sd  1.00245129&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##     para        value
+## 1    min -3.567752111
+## 2     1q -0.679557351
+## 3 median  0.003262603
+## 4     3q  0.687494217
+## 5    max  3.640584438
+## 6  lower -2.729658163
+## 7  upper  2.737595028
+## 8   mean -0.002349189
+## 9     sd  1.002261548&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;我很喜欢系统自带的成对儿散点图函数&lt;code&gt;pairs()&lt;/code&gt;, 只是功能再强大一点就好了. beginr 里的 &lt;code&gt;plotpairs()&lt;/code&gt; 和 &lt;code&gt;plotpairs2()&lt;/code&gt; 可以实现.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df &amp;lt;- data.frame(a = 1:10, b = 1:10 + rnorm(10), c = 1:10 + rnorm(10))
 beginr::plotpairs(df)&lt;/code&gt;&lt;/pre&gt;
@@ -96,19 +148,19 @@ beginr::errorbar(x, y, yupper = 0.1, ylower = 0.1)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df &amp;lt;- data.frame(a = 1:10, b = 1:10 + rnorm(10), c = 1:10 + rnorm(10))
 beginr::lmdf(df)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;##   x y r.squared adj.r.squared   intercept     slope Std.Error.intercept
-## 1 a b 0.9305131     0.9218272 -0.67303594 1.0477111           0.6280832
-## 2 a c 0.9762500     0.9732813 -0.91600636 1.1261855           0.3853419
-## 3 b a 0.9305131     0.9218272  0.97992749 0.8881390           0.5122224
-## 4 b c 0.9453327     0.9384993  0.08516237 1.0203319           0.5178455
-## 5 c a 0.9762500     0.9732813  0.92467800 0.8668643           0.2969014
-## 6 c b 0.9453327     0.9384993  0.19931967 0.9264953           0.4892432
-##   Std.Error.slope t.intercept  t.slope Pr.intercept     Pr.slope
-## 1      0.10122477  -1.0715713 10.35034   0.31517196 6.560138e-06
-## 2      0.06210347  -2.3771264 18.13402   0.04474592 8.783702e-08
-## 3      0.08580769   1.9130897 10.35034   0.09209156 6.560138e-06
-## 4      0.08674966   0.1644552 11.76180   0.87345208 2.497423e-06
-## 5      0.04780321   3.1144275 18.13402   0.01434908 8.783702e-08
-## 6      0.07877158   0.4074040 11.76180   0.69439503 2.497423e-06&lt;/code&gt;&lt;/pre&gt;
+## 1 a b 0.9292110     0.9203624 -0.26551435 1.0052797           0.6086926
+## 2 a c 0.8863158     0.8721053  0.43133175 0.8645735           0.6792711
+## 3 b a 0.9292110     0.9203624  0.63476259 0.9243308           0.5462685
+## 4 b c 0.8285812     0.8071538  0.96736403 0.8015774           0.7806569
+## 5 c a 0.8863158     0.8721053  0.18308437 1.0251479           0.7553082
+## 6 c b 0.8285812     0.8071538 -0.09768585 1.0336883           0.9672374
+##   Std.Error.slope t.intercept   t.slope Pr.intercept     Pr.slope
+## 1      0.09809969  -0.4362044 10.247532    0.6742207 7.069759e-06
+## 2      0.10947446   0.6349920  7.897491    0.5431636 4.791054e-05
+## 3      0.09020033   1.1619975 10.247532    0.2787281 7.069759e-06
+## 4      0.12890275   1.2391667  6.218467    0.2504039 2.542655e-04
+## 5      0.12980679   0.2423969  7.897491    0.8145713 4.791054e-05
+## 6      0.16622881  -0.1009947  6.218467    0.9220400 2.542655e-04&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;还有两个函数对&lt;code&gt;tapply()&lt;/code&gt;进行了改善, 用来进行因子计算.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::tapplydf()
 beginr::tapplydfv()&lt;/code&gt;&lt;/pre&gt;
@@ -128,7 +180,7 @@ beginr::list2ascii(alist)&lt;/code&gt;&lt;/pre&gt;
 ##   title = {bookdownplus: Generate Varied Books and Documents with R &amp;#39;bookdown&amp;#39; Package},
 ##   author = {Peng Zhao},
 ##   year = {2017},
-##   note = {R package version 1.2.0},
+##   note = {R package version 1.2.1},
 ##   url = {https://github.com/pzhaonet/bookdownplus},
 ## }
 ## @Manual{R-mindr,
@@ -1149,38 +1201,6 @@ defaultContentLanguageInSubdir = true
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;至此，双语界面全部搞定。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Word 永远转不成 Markdown</title>
-      <link>http://www.pzhao.org/zh/post/word-never-markdown/</link>
-      <pubDate>Sun, 16 Apr 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/zh/post/word-never-markdown/</guid>
-      <description>&lt;p&gt;R bookdown 用扩展的 Markdown 语法来写书，可以很方便地导出 Word 格式，虽然不完美，但只需稍微调一下样式，就是一个漂漂亮亮的文档。但是，如果在 Word 里做了修改，想转回 Markdown 该怎么办？&lt;/p&gt;
-
-&lt;p&gt;多年来，我一直奢望能找到这样一款软件，哪怕是把 Word 转成 LaTeX 也行。随着时间的流逝，希望却是越来越渺茫; 我越来越深信，这样的软件过去不曾有，现在还没有，将来永远都不会有。因为，逻辑上是不可能实现的。&lt;/p&gt;
-
-&lt;p&gt;Markdown 和 LaTeX 能相互转换，是因为两者都是标记语言，是逻辑上有对应关系的。Markdown 里的标题标记&lt;code&gt;#&lt;/code&gt;，翻译成 LaTeX 标记就是&lt;code&gt;\section{}&lt;/code&gt;; Markdown里的粗体标记&lt;code&gt;** **&lt;/code&gt;，翻译成 LaTeX 标记就是&lt;code&gt;\textbf{}&lt;/code&gt;。这就是所想即所得，大家虽然你说英语我说德语，但想法是一样的，只要有本字典，以词为单位互换，那么大体意思就能通。想完美的话，根据各自的语法规则调整调整就行了。&lt;/p&gt;
-
-&lt;p&gt;但是 Word 不是这样的。你看见一个大字体加粗的词，看上去像是标题，乐观一点可能是用 Word 的标题样式设置的，一般情况下是用户把正文样式的文字直接点加粗换字号得到的，悲观一点说不定是插入的文本框或图片&amp;hellip;&amp;hellip;所见即所得，你永远猜不透一个大字体背后的逻辑是什么。这就好比你说英语而我画了一幅水墨山水画，你猜我是什么意思？你猜我大量的留白该翻译成那句英语？就像小说《三体》里说的：&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;教授挂出了两幅大图片，一幅是画面庞杂精细的《清明上河图》，另一幅是一张空旷的天空照片，空荡荡的蓝天上只有一缕似有似无的白云。教授问这两幅画中哪一幅所包含的信息量更大，答案是后者要比前者大一至两个数量级!&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Word 的一个简单格式背后，藏着的信息量比 Markdown 大几个数量级，你怎么转换？&lt;/p&gt;
-
-&lt;p&gt;Markdown 跟 LaTeX 对话，就像男人跟男人对话，说什么就是什么; Markdown 跟 Word 对话，就像男人跟女人对话，男人永远猜不透女人到底是哪层意思。所以还是歇了吧。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://s-media-cache-ak0.pinimg.com/564x/11/3c/a3/113ca3e206ea97715c6aff9133368f5b.jpg&#34; alt=&#34;enter image description here&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;那么，难道 Markdown 永远理解不了 Word 吗？&lt;/p&gt;
-
-&lt;p&gt;也不是。我觉得等人工智能成熟的时候就可以了。你只需吩咐一句“小A，把这篇Word 书稿转换成 Markdown，我要在 R bookdown 里修改”就行了。&lt;/p&gt;
-
-&lt;p&gt;但人工智能可能会回答你：“主人，我已经全部帮你把书改好并且已经出版了。”&lt;/p&gt;
 </description>
     </item>
     

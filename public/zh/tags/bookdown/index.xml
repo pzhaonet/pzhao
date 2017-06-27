@@ -10,6 +10,58 @@
     <atom:link href="/zh/tags/bookdown/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>bookdownplus 的两个魔法</title>
+      <link>http://www.pzhao.org/zh/post/bookdownplus-magic/</link>
+      <pubDate>Tue, 27 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.pzhao.org/zh/post/bookdownplus-magic/</guid>
+      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
+&lt;!-- /BLOGDOWN-HEAD --&gt;
+
+&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
+&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
+&lt;p&gt;bookdown 是个好东西，只是入手有点难，酒香巷深。&lt;/p&gt;
+&lt;p&gt;对于 R 初学者来说，如果身边没有人指导，使用者可能需要花大量精力应付 LaTeX，YAML，Pandoc，而很多初学者可能从来没听说过这些，站在 bookdown 的门口往里张望了一下，说不定就被吓跑了，从而错过了门里的精彩世界。&lt;/p&gt;
+&lt;p&gt;bookdownplus 扩展包，可以让新手对 bookdown 快速上手。从此，bookdown 这坛好酒就不必去深巷苦寻，它就放在你手边。&lt;/p&gt;
+&lt;p&gt;从 v1.2.0 开始，bookdownplus 增加了两个魔法，更是让新手对 bookdown 一见钟情。如果你对 bookdown 感兴趣却苦于入门的烦恼，那么可以试试这两个魔法。&lt;/p&gt;
+&lt;div class=&#34;section level2&#34;&gt;
+&lt;h2&gt;准备工作&lt;/h2&gt;
+&lt;p&gt;首先，安装好必需的软件，包括 R, RStudio, &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt;等。详见 &lt;a href=&#34;https://bookdown.org/yihui/bookdown/&#34;&gt;bookdown 官方手册&lt;/a&gt;。然后，安装开发版的bookdownplus：&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;devtools::install_github(&amp;quot;pzhaonet/bookdownplus&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;再用 &lt;code&gt;setwd()&lt;/code&gt; 将R的工作目录设置到一个空文件夹里。&lt;/p&gt;
+&lt;p&gt;一切准备就绪后，接下来就是见证奇迹的时刻。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;section level2&#34;&gt;
+&lt;h2&gt;第一个魔法&lt;/h2&gt;
+&lt;p&gt;在 R 里运行下面的代码，然后去喝个茶：&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;for (i in template()[1:19])
+  bookdownplus(template = i, 
+               more_output = more_output()[1:3])&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;回来以后，你会在工作目录里看到很多文件和文件夹。打开那个叫做 &lt;code&gt;_book/&lt;/code&gt;的文件夹，Duang！19个示例文档，每个都以 pdf、Word、网页和电子书格式乖乖地等在那里，等你打开了。其中，电子书 epub 格式可以在手机上阅读，也可以在台式机用免费的Calibre软件打开阅读。&lt;/p&gt;
+&lt;p&gt;这些示例文档，从学术论文到诗歌乐谱，从中文到英文，展示了 bookdown 能胜任的工作。是不是动心了？&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;section level2&#34;&gt;
+&lt;h2&gt;第二个魔法&lt;/h2&gt;
+&lt;p&gt;运行下面的代码，然后看两眼窗外的风景，bookdownplus 就把事情做完了：&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;for (mf in mail_font()) {
+  for (ms in mail_style()) {
+    for (mt in mail_theme()) {
+      outputname &amp;lt;- paste(&amp;#39;mail&amp;#39;, ms, mf, mt, sep = &amp;#39;_&amp;#39;)
+      bookdownplus(template = &amp;#39;mail&amp;#39;, 
+                   mail_style = ms, 
+                   mail_font = mf, 
+                   mail_theme = mt, 
+                   output_name = outputname)
+    }
+  }
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;仍然打开那个叫做 &lt;code&gt;_book/&lt;/code&gt;的文件夹，Duang！ 不同字体、不同主题、不同布局的信件示例文档就全部在那里了。&lt;/p&gt;
+&lt;p&gt;如果看了这个你还没动心，那么只能说明跟 bookdown 没缘分，趁早放手吧！&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>R 包 bookdownplus 正式发布</title>
       <link>http://www.pzhao.org/zh/post/bookdownplus-released/</link>
       <pubDate>Thu, 22 Jun 2017 00:00:00 +0000</pubDate>

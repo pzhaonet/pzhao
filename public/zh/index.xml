@@ -11,6 +11,58 @@
     <atom:link href="/zh/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>bookdownplus 的两个魔法</title>
+      <link>http://www.pzhao.org/zh/post/bookdownplus-magic/</link>
+      <pubDate>Tue, 27 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.pzhao.org/zh/post/bookdownplus-magic/</guid>
+      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
+&lt;!-- /BLOGDOWN-HEAD --&gt;
+
+&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
+&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
+&lt;p&gt;bookdown 是个好东西，只是入手有点难，酒香巷深。&lt;/p&gt;
+&lt;p&gt;对于 R 初学者来说，如果身边没有人指导，使用者可能需要花大量精力应付 LaTeX，YAML，Pandoc，而很多初学者可能从来没听说过这些，站在 bookdown 的门口往里张望了一下，说不定就被吓跑了，从而错过了门里的精彩世界。&lt;/p&gt;
+&lt;p&gt;bookdownplus 扩展包，可以让新手对 bookdown 快速上手。从此，bookdown 这坛好酒就不必去深巷苦寻，它就放在你手边。&lt;/p&gt;
+&lt;p&gt;从 v1.2.0 开始，bookdownplus 增加了两个魔法，更是让新手对 bookdown 一见钟情。如果你对 bookdown 感兴趣却苦于入门的烦恼，那么可以试试这两个魔法。&lt;/p&gt;
+&lt;div class=&#34;section level2&#34;&gt;
+&lt;h2&gt;准备工作&lt;/h2&gt;
+&lt;p&gt;首先，安装好必需的软件，包括 R, RStudio, &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt;等。详见 &lt;a href=&#34;https://bookdown.org/yihui/bookdown/&#34;&gt;bookdown 官方手册&lt;/a&gt;。然后，安装开发版的bookdownplus：&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;devtools::install_github(&amp;quot;pzhaonet/bookdownplus&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;再用 &lt;code&gt;setwd()&lt;/code&gt; 将R的工作目录设置到一个空文件夹里。&lt;/p&gt;
+&lt;p&gt;一切准备就绪后，接下来就是见证奇迹的时刻。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;section level2&#34;&gt;
+&lt;h2&gt;第一个魔法&lt;/h2&gt;
+&lt;p&gt;在 R 里运行下面的代码，然后去喝个茶：&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;for (i in template()[1:19])
+  bookdownplus(template = i, 
+               more_output = more_output()[1:3])&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;回来以后，你会在工作目录里看到很多文件和文件夹。打开那个叫做 &lt;code&gt;_book/&lt;/code&gt;的文件夹，Duang！19个示例文档，每个都以 pdf、Word、网页和电子书格式乖乖地等在那里，等你打开了。其中，电子书 epub 格式可以在手机上阅读，也可以在台式机用免费的Calibre软件打开阅读。&lt;/p&gt;
+&lt;p&gt;这些示例文档，从学术论文到诗歌乐谱，从中文到英文，展示了 bookdown 能胜任的工作。是不是动心了？&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;section level2&#34;&gt;
+&lt;h2&gt;第二个魔法&lt;/h2&gt;
+&lt;p&gt;运行下面的代码，然后看两眼窗外的风景，bookdownplus 就把事情做完了：&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;for (mf in mail_font()) {
+  for (ms in mail_style()) {
+    for (mt in mail_theme()) {
+      outputname &amp;lt;- paste(&amp;#39;mail&amp;#39;, ms, mf, mt, sep = &amp;#39;_&amp;#39;)
+      bookdownplus(template = &amp;#39;mail&amp;#39;, 
+                   mail_style = ms, 
+                   mail_font = mf, 
+                   mail_theme = mt, 
+                   output_name = outputname)
+    }
+  }
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;仍然打开那个叫做 &lt;code&gt;_book/&lt;/code&gt;的文件夹，Duang！ 不同字体、不同主题、不同布局的信件示例文档就全部在那里了。&lt;/p&gt;
+&lt;p&gt;如果看了这个你还没动心，那么只能说明跟 bookdown 没缘分，趁早放手吧！&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>R 初学者包 beginr 在 CRAN 正式发布</title>
       <link>http://www.pzhao.org/zh/post/beginr-released/</link>
       <pubDate>Fri, 23 Jun 2017 00:00:00 +0000</pubDate>
@@ -47,26 +99,26 @@ y &amp;lt;- 1:10 + rnorm(10)
 beginr::plotlm(x, y)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;## [[1]]
-##              Estimate Std. Error    t value     Pr(&amp;gt;|t|)
-## (Intercept) 0.3730170 0.44596876  0.8364197 4.271945e-01
-## x           0.9795876 0.07187437 13.6291636 8.081949e-07
+##               Estimate Std. Error   t value     Pr(&amp;gt;|t|)
+## (Intercept) -0.8753512  0.6523182 -1.341908 2.164643e-01
+## x            1.1719596  0.1051306 11.147656 3.751082e-06
 ## 
 ## [[2]]
-## [1] 0.9587106&lt;/code&gt;&lt;/pre&gt;
+## [1] 0.9395178&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;经常需要了解一组数据的分布, 看看是不是正态分布. beginr 里的 &lt;code&gt;plothist()&lt;/code&gt; 函数不仅做出直方图和平滑曲线, 并且标出中值, 中位数, 四分位数, 标准偏差, 样本数, 以及用来判断是否正态分布的 skewness 值.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;x &amp;lt;- rnorm(10000)
 beginr::plothist(x)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;##     para       value
-## 1    min -3.84510625
-## 2     1q -0.68695790
-## 3 median -0.02073184
-## 4     3q  0.66527788
-## 5    max  3.65644218
-## 6  lower -2.71516474
-## 7  upper  2.69348472
-## 8   mean -0.01751641
-## 9     sd  1.00245129&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##     para        value
+## 1    min -3.567752111
+## 2     1q -0.679557351
+## 3 median  0.003262603
+## 4     3q  0.687494217
+## 5    max  3.640584438
+## 6  lower -2.729658163
+## 7  upper  2.737595028
+## 8   mean -0.002349189
+## 9     sd  1.002261548&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;我很喜欢系统自带的成对儿散点图函数&lt;code&gt;pairs()&lt;/code&gt;, 只是功能再强大一点就好了. beginr 里的 &lt;code&gt;plotpairs()&lt;/code&gt; 和 &lt;code&gt;plotpairs2()&lt;/code&gt; 可以实现.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df &amp;lt;- data.frame(a = 1:10, b = 1:10 + rnorm(10), c = 1:10 + rnorm(10))
 beginr::plotpairs(df)&lt;/code&gt;&lt;/pre&gt;
@@ -97,19 +149,19 @@ beginr::errorbar(x, y, yupper = 0.1, ylower = 0.1)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df &amp;lt;- data.frame(a = 1:10, b = 1:10 + rnorm(10), c = 1:10 + rnorm(10))
 beginr::lmdf(df)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;##   x y r.squared adj.r.squared   intercept     slope Std.Error.intercept
-## 1 a b 0.9305131     0.9218272 -0.67303594 1.0477111           0.6280832
-## 2 a c 0.9762500     0.9732813 -0.91600636 1.1261855           0.3853419
-## 3 b a 0.9305131     0.9218272  0.97992749 0.8881390           0.5122224
-## 4 b c 0.9453327     0.9384993  0.08516237 1.0203319           0.5178455
-## 5 c a 0.9762500     0.9732813  0.92467800 0.8668643           0.2969014
-## 6 c b 0.9453327     0.9384993  0.19931967 0.9264953           0.4892432
-##   Std.Error.slope t.intercept  t.slope Pr.intercept     Pr.slope
-## 1      0.10122477  -1.0715713 10.35034   0.31517196 6.560138e-06
-## 2      0.06210347  -2.3771264 18.13402   0.04474592 8.783702e-08
-## 3      0.08580769   1.9130897 10.35034   0.09209156 6.560138e-06
-## 4      0.08674966   0.1644552 11.76180   0.87345208 2.497423e-06
-## 5      0.04780321   3.1144275 18.13402   0.01434908 8.783702e-08
-## 6      0.07877158   0.4074040 11.76180   0.69439503 2.497423e-06&lt;/code&gt;&lt;/pre&gt;
+## 1 a b 0.9292110     0.9203624 -0.26551435 1.0052797           0.6086926
+## 2 a c 0.8863158     0.8721053  0.43133175 0.8645735           0.6792711
+## 3 b a 0.9292110     0.9203624  0.63476259 0.9243308           0.5462685
+## 4 b c 0.8285812     0.8071538  0.96736403 0.8015774           0.7806569
+## 5 c a 0.8863158     0.8721053  0.18308437 1.0251479           0.7553082
+## 6 c b 0.8285812     0.8071538 -0.09768585 1.0336883           0.9672374
+##   Std.Error.slope t.intercept   t.slope Pr.intercept     Pr.slope
+## 1      0.09809969  -0.4362044 10.247532    0.6742207 7.069759e-06
+## 2      0.10947446   0.6349920  7.897491    0.5431636 4.791054e-05
+## 3      0.09020033   1.1619975 10.247532    0.2787281 7.069759e-06
+## 4      0.12890275   1.2391667  6.218467    0.2504039 2.542655e-04
+## 5      0.12980679   0.2423969  7.897491    0.8145713 4.791054e-05
+## 6      0.16622881  -0.1009947  6.218467    0.9220400 2.542655e-04&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;还有两个函数对&lt;code&gt;tapply()&lt;/code&gt;进行了改善, 用来进行因子计算.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::tapplydf()
 beginr::tapplydfv()&lt;/code&gt;&lt;/pre&gt;
@@ -129,7 +181,7 @@ beginr::list2ascii(alist)&lt;/code&gt;&lt;/pre&gt;
 ##   title = {bookdownplus: Generate Varied Books and Documents with R &amp;#39;bookdown&amp;#39; Package},
 ##   author = {Peng Zhao},
 ##   year = {2017},
-##   note = {R package version 1.2.0},
+##   note = {R package version 1.2.1},
 ##   url = {https://github.com/pzhaonet/bookdownplus},
 ## }
 ## @Manual{R-mindr,
@@ -523,66 +575,6 @@ install.packages(&amp;#39;bookdownplus&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&amp;mdash; 朱彤，2017年6月13日&lt;/p&gt;
 &lt;/blockquote&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>pinyin: 把汉字转换成拼音的R包</title>
-      <link>http://www.pzhao.org/zh/post/pinyin/</link>
-      <pubDate>Fri, 26 May 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/zh/post/pinyin/</guid>
-      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
-&lt;!-- /BLOGDOWN-HEAD --&gt;
-
-&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
-&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
-&lt;p&gt;&lt;strong&gt;更新：2017-06-19，&lt;a href=&#34;https://cran.r-project.org/web/packages/mindr/index.html&#34;&gt;‘pinyin 1.0.2’&lt;/a&gt; 在 CRAN 正式发布。&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;今天新写了个R包，粗暴地取名为 &lt;a href=&#34;https://github.com/pzhaonet/pinyin/&#34;&gt;pinyin&lt;/a&gt;，作用是把汉字转换成拼音。&lt;/p&gt;
-&lt;p&gt;安装方法：&lt;/p&gt;
-&lt;p&gt;稳定版：&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;install.packages(&amp;quot;pinyin&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;devtools::install_github(&amp;quot;pzhaonet/pinyin&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;安装时可能会出现一些关于 locale 的警告，净吓唬人，无视。&lt;/p&gt;
-&lt;p&gt;使用方法：&lt;/p&gt;
-&lt;p&gt;pinyin 0.0.0版包含3个函数.&lt;code&gt;pinyin()&lt;/code&gt;是主函数，可以把一个带汉字的字符串转换成拼音。可以选择:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;转换成标准的全拼 (默认 &lt;code&gt;method = &#39;quanpin&#39;&lt;/code&gt;)，或&lt;/li&gt;
-&lt;li&gt;以数字表示声调 (&lt;code&gt;method = &#39;tone&#39;&lt;/code&gt;) , 或&lt;/li&gt;
-&lt;li&gt;不含声调(&lt;code&gt;method = &#39;toneless&#39;&lt;/code&gt;),&lt;/li&gt;
-&lt;li&gt;也可以选择仅保留每个字的首字母(&lt;code&gt;only_first_letter = TRUE&lt;/code&gt;),&lt;/li&gt;
-&lt;li&gt;可以自定义相邻两字拼音的分隔符号(&lt;code&gt;sep = &#39;_&#39;&lt;/code&gt;),&lt;/li&gt;
-&lt;li&gt;如果汉字字符串里边包含非汉字字符，可以选择将这些字符保留原样(&lt;code&gt;nonezh_replace = NULL&lt;/code&gt;)还是转换成指定字符(如&lt;code&gt;nonezh_replace = &#39;-&#39;&lt;/code&gt;)。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;举例如下：&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(&amp;#39;pinyin&amp;#39;)
-pinyin(&amp;#39;羌笛何须怨杨柳春风不度玉门关&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;qiānɡ_dí_hé_xū_yuàn_yánɡ_liǔ_chūn_fēnɡ_bú_dù_yù_mén_ɡuān&amp;quot;&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;pinyin(&amp;#39;羌笛何须怨杨柳春风不度玉门关&amp;#39;, sep = &amp;#39; &amp;#39;)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;qiānɡ dí hé xū yuàn yánɡ liǔ chūn fēnɡ bú dù yù mén ɡuān&amp;quot;&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;pinyin(&amp;#39;羌笛何须怨杨柳春风不度玉门关&amp;#39;, sep = &amp;#39; &amp;#39;, method = &amp;#39;tone&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;qiang1 di2 he2 xu1 yuan4 yang2 liu3 chun1 feng1 bu2 du4 yu4 men2 guan1&amp;quot;&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;pinyin(&amp;#39;羌笛何须怨杨柳春风不度玉门关&amp;#39;, sep = &amp;#39; &amp;#39;, method = &amp;#39;toneless&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;qiang di he xu yuan yang liu chun feng bu du yu men guan&amp;quot;&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;pinyin(&amp;#39;羌笛何须怨杨柳春风不度玉门关&amp;#39;, sep = &amp;#39;&amp;#39;, only_first_letter = TRUE)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;qdhxyylcfbdymɡ&amp;quot;&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;pinyin(&amp;#39;羌笛何须怨?杨柳春风,不度玉门关.&amp;#39;, sep = &amp;#39;&amp;#39;, nonezh_replace = &amp;#39;-&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;qiānɡdíhéxūyuàn-yánɡliǔchūnfēnɡ-búdùyùménɡuān-&amp;quot;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;如果自变量是多个字符串的向量，那么只会转换第一个字符串：&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;pinyin(c(&amp;#39;羌笛何须怨杨柳&amp;#39;, &amp;#39;春风不度玉门关&amp;#39;))&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;qiānɡ_dí_hé_xū_yuàn_yánɡ_liǔ&amp;quot;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;这怎么行？哎，用 &lt;code&gt;sapply()&lt;/code&gt; 嘛：&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;sapply(c(&amp;#39;羌笛何须怨杨柳&amp;#39;, &amp;#39;春风不度玉门关&amp;#39;), pinyin)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;##                 羌笛何须怨杨柳                 春风不度玉门关 
-## &amp;quot;qiānɡ_dí_hé_xū_yuàn_yánɡ_liǔ&amp;quot;  &amp;quot;chūn_fēnɡ_bú_dù_yù_mén_ɡuān&amp;quot;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;其他两个函数，其实是 &lt;code&gt;pinyin()&lt;/code&gt; 的延伸和示例：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;file.rename2py()&lt;/code&gt;用来将文件名里的汉字转换成拼音。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;bookdown2py()&lt;/code&gt;是专门为 bookdown 包服务的，作用是为章节的中文标题自动添加个对应的拼音ID &lt;code&gt;{#biaotipinyin}&lt;/code&gt;，避免在生成网页文件时文件名里出现一大堆乱码，并且解决&lt;a href=&#34;https://disqus.com/home/discussion/yihui/_yihui_xie_679/#comment-3175332429&#34;&gt;标题里中英文混合的问题&lt;/a&gt;。这事儿已经让我惦记三个月了。— 当然这事儿手动完全可以处理，只是手动处理的过程毫无乐趣可言罢了。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;拼音库我试了好几个，最后选定了&lt;a href=&#34;http://bbs.unispim.com/forum.php?mod=viewthread&amp;amp;tid=31644&#34;&gt;wangyanhan整理制作的42856字拼音表&lt;/a&gt;，直接处理文本文件，简单粗暴，转换起来可能有点慢，会顿一下，但已经够我自用了。&lt;/p&gt;
-&lt;p&gt;我写这个包的环境是 windows 7 下区域设置为中国，别的环境没测试，估计会有不少坑。我这里就有一些，比如不知道哪里设置有问题，包的函数里居然不能出现中文字符，弄得我自变量的默认值和example部分只好空着。再比如多音字的问题，目前完全没处理。所以，转换&lt;code&gt;春眠不觉晓&lt;/code&gt;的结果会让人愣一下，再转换&lt;code&gt;处处闻啼鸟&lt;/code&gt;……&lt;/p&gt;
-&lt;p&gt;结果好尴尬。&lt;/p&gt;
 </description>
     </item>
     
