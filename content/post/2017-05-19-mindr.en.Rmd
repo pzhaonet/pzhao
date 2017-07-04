@@ -11,7 +11,16 @@ tags:
 - post
 categories: []
 ---
+
 This is a preliminary version of the introduction to mindr. Please go to my Github repo [mindr](https://github.com/pzhaonet/mindr) for the latest updates.
+
+![](http://cranlogs.r-pkg.org/badges/grand-total/mindr)
+
+
+```{r, echo=FALSE, fig.asp=0.3}
+beginr::plotpkg(c("bookdownplus", "mindr", "pinyin", "beginr")[2], 
+                from = c("2017-06-21", "2017-06-19", "2017-06-19", "2017-06-23")[2])
+```
 
 ## Quick start
 

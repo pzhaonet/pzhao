@@ -12,9 +12,17 @@ bibliography: ["d:/Dropbox/Literature/zhaor.bib"]
 categories: []
 ---
 
-# 简介 
-
 又一次高兴地宣布, 我的 R 语言扩展包 'beginr' [@R-beginr] 在 CRAN [正式发布](https://cran.r-project.org/web/packages/beginr/)了.
+
+![](http://cranlogs.r-pkg.org/badges/grand-total/beginr)
+
+
+```{r, echo=FALSE, fig.asp=0.3}
+beginr::plotpkg(c("bookdownplus", "mindr", "pinyin", "beginr")[4], 
+                from = c("2017-06-21", "2017-06-19", "2017-06-19", "2017-06-23")[4])
+```
+
+# 简介 
 
 `beginr`是我为 R 语言初学者和自己写的工具包, 可能对中级用户也有帮助,  是我这些年来收集和自己编写的一些简化操作的函数和备忘录. 其实这个包的文档我写得不够详细, 有些函数还没来及整理进去, 之所以匆匆发布, 是想先把 'beginr' 这个名字给占住. 毕竟, 我中意的名字如 'learnr', 'startr'都被别人用过了. 
 

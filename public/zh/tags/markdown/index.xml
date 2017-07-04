@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Markdown on Peng Zhao</title>
-    <link>http://www.pzhao.org/zh/tags/markdown/index.xml</link>
+    <link>/zh/tags/markdown/index.xml</link>
     <description>Recent content in Markdown on Peng Zhao</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
@@ -11,16 +11,16 @@
     
     <item>
       <title>R mindr: 把 Markdown 转成思维导图</title>
-      <link>http://www.pzhao.org/zh/post/mindr/</link>
+      <link>/zh/post/mindr/</link>
       <pubDate>Fri, 19 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/zh/post/mindr/</guid>
-      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
-&lt;!-- /BLOGDOWN-HEAD --&gt;
+      <guid>/zh/post/mindr/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;更新：2017-06-19，&lt;a href=&#34;https://cran.r-project.org/web/packages/mindr/index.html&#34;&gt;‘mindr 1.0.4’&lt;/a&gt; 在 CRAN 正式发布。&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;http://cranlogs.r-pkg.org/badges/grand-total/mindr&#34; /&gt;
 
-&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
-&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
-&lt;p&gt;&lt;strong&gt;更新：2017-06-19，&lt;a href=&#34;https://cran.r-project.org/web/packages/mindr/index.html&#34;&gt;‘mindr 1.0.4’&lt;/a&gt; 在 CRAN 正式发布。&lt;/strong&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2017-05-19-mindr_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;将 markdown (.md, .Rmd) 文件转换成思维导图的 R 扩展包 &lt;a href=&#34;https://github.com/pzhaonet/mindr&#34;&gt;mindr&lt;/a&gt; 是我写的第五个 R 包，安装方法如下：&lt;/p&gt;
 &lt;p&gt;稳定版：&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;install.packages(&amp;quot;mindr&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
@@ -57,10 +57,10 @@
     
     <item>
       <title>R blogdown 科研网站的公式和参考文献</title>
-      <link>http://www.pzhao.org/zh/post/rblogdown-bib/</link>
+      <link>/zh/post/rblogdown-bib/</link>
       <pubDate>Thu, 18 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/zh/post/rblogdown-bib/</guid>
+      <guid>/zh/post/rblogdown-bib/</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 
@@ -91,7 +91,7 @@
 &lt;p&gt;blogdown 可以如此方便地往帖子里插入计算代码、图表、公式、参考文献，我实在找不出第二个这样的工具。建科研网站，非 blogdown 莫属！&lt;/p&gt;
 &lt;p&gt;最后顺便提一下：虽然最新正式版的 RStudio 1.0.143 并 没有 blogdown 和 bookdown 的入口，但是我欣喜地发现，在 &lt;a href=&#34;http://dailies.rstudio.com&#34;&gt;RStudio 的开发版&lt;/a&gt; 1.1.233 里已经加入了这个入口了！菜单 File - New Project - New Directory，就能看到 blogdown 和 bookdown 项目。跟 shiny 和 R package 并列，可见 RStudio 公司对这两个项目的重视程度。&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;http://www.pzhao.org/img/rstudiobookdown.jpg&#34; /&gt;
+&lt;img src=&#34;/img/rstudiobookdown.jpg&#34; /&gt;
 
 &lt;/div&gt;
 &lt;p&gt;有幸尝试了 blogdown 和 bookdown &lt;span class=&#34;citation&#34;&gt;(Xie 2016)&lt;/span&gt; 项目，并且也做过 &lt;a href=&#34;http://sciwis.com/&#34;&gt;shiny&lt;/a&gt; 和 &lt;a href=&#34;http://www.pzhao.org/zh/post/rmickey/&#34;&gt;R package&lt;/a&gt;，我模模糊糊有种异样的感觉，就像埋头赶路时猛一抬头，隐隐约约眺见了走在时代前面的先知们的背影。&lt;/p&gt;
@@ -111,10 +111,10 @@
     
     <item>
       <title>postr: 用R Markdown做海报</title>
-      <link>http://www.pzhao.org/zh/post/postr/</link>
+      <link>/zh/post/postr/</link>
       <pubDate>Tue, 16 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/zh/post/postr/</guid>
+      <guid>/zh/post/postr/</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 
@@ -160,10 +160,10 @@ postr::postr()&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>Word 永远转不成 Markdown</title>
-      <link>http://www.pzhao.org/zh/post/word-never-markdown/</link>
+      <link>/zh/post/word-never-markdown/</link>
       <pubDate>Sun, 16 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/zh/post/word-never-markdown/</guid>
+      <guid>/zh/post/word-never-markdown/</guid>
       <description>&lt;p&gt;R bookdown 用扩展的 Markdown 语法来写书，可以很方便地导出 Word 格式，虽然不完美，但只需稍微调一下样式，就是一个漂漂亮亮的文档。但是，如果在 Word 里做了修改，想转回 Markdown 该怎么办？&lt;/p&gt;
 
 &lt;p&gt;多年来，我一直奢望能找到这样一款软件，哪怕是把 Word 转成 LaTeX 也行。随着时间的流逝，希望却是越来越渺茫; 我越来越深信，这样的软件过去不曾有，现在还没有，将来永远都不会有。因为，逻辑上是不可能实现的。&lt;/p&gt;
@@ -192,10 +192,10 @@ postr::postr()&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>R bookdown 写学术论文</title>
-      <link>http://www.pzhao.org/zh/post/r-bookdown/</link>
+      <link>/zh/post/r-bookdown/</link>
       <pubDate>Fri, 24 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/zh/post/r-bookdown/</guid>
+      <guid>/zh/post/r-bookdown/</guid>
       <description>&lt;p&gt;&lt;em&gt;1&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;最近，我使用 R 语言的 bookdown 扩展包接连做了三件事：先是整理出一本跟&lt;a href=&#34;http://dapengde.com/archives/19122&#34; target=&#34;_blank&#34;&gt; R 语言有关的书&lt;/a&gt;，然后把博客的帖子整理出一本&lt;a href=&#34;http://dapengde.com/archives/19150&#34; target=&#34;_blank&#34;&gt;纯文本的中文书&lt;/a&gt;，这两天我又在用它来写一篇打算投稿的学术期刊论文。&lt;/p&gt;
@@ -253,10 +253,10 @@ bookdown::html_document2: default
     
     <item>
       <title>R bookdown 语法标记速查</title>
-      <link>http://www.pzhao.org/zh/post/bookdown-cheatsheet/</link>
+      <link>/zh/post/bookdown-cheatsheet/</link>
       <pubDate>Tue, 14 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/zh/post/bookdown-cheatsheet/</guid>
+      <guid>/zh/post/bookdown-cheatsheet/</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 
@@ -490,10 +490,10 @@ I like Eq. \@ref(eq:mc2) so much that I am falling love with her.&lt;/code&gt;&l
     
     <item>
       <title>不可挡的bookdown</title>
-      <link>http://www.pzhao.org/zh/post/inresistible-bookdown/</link>
+      <link>/zh/post/inresistible-bookdown/</link>
       <pubDate>Mon, 13 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/zh/post/inresistible-bookdown/</guid>
+      <guid>/zh/post/inresistible-bookdown/</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 

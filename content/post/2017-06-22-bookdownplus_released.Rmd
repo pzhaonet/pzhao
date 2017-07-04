@@ -13,9 +13,17 @@ bibliography: [zhaor.bib]
 categories: []
 ---
 
-# 简介 
-
 很高兴地宣布，我的 R 语言扩展包 'bookdownplus v1.0.2' [@R-bookdownplus] 在 CRAN [正式发布](https://cran.r-project.org/web/packages/bookdownplus/)了。本文是对'bookdownplus v1.0.2'的简要描述. 由于最近更新频繁, 最新版的'bookdownplus'更加强大和易用, 例如 'bookdownplus v1.2.0' 可以一条指令生成19个模板文档的 pdf, word, html 和 epub 四种格式. 建议移步位于 GitHub 的 [bookdownplus 项目主页](http://github.com/pzhaonet/bookdownplus).
+
+![](http://cranlogs.r-pkg.org/badges/grand-total/bookdownplus)
+
+
+```{r, echo=FALSE, fig.asp=0.3}
+beginr::plotpkg(c("bookdownplus", "mindr", "pinyin", "beginr")[1], 
+                from = c("2017-06-21", "2017-06-19", "2017-06-19", "2017-06-23")[1], textcex = 3)
+```
+
+# 简介 
 
 bookdownplus 是对 bookdown 包 [@R-bookdown] 的增强和简化, 是快速使用 bookdown 的最简洁方法。bookdown 就好比 Microsoft Word 或 \(\LaTeX\)，可以用来写文档，而 bookdownplus 提供了很多有用的模板，可以很方便地在 bookdown 平台写期刊论文、学位论文、学术海报、化学分子式、信件、日记、日历、诗集、吉他谱等各种常用文档和书籍。这是功能上的增强（+）。
 

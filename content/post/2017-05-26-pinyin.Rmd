@@ -9,13 +9,19 @@ tags:
 - pinyin
 - post
 categories: []
-output:
-  md_document:
-    variant: markdown_github
+#output:
+#  md_document:
+#    variant: markdown_github
 ---
 
 **更新：2017-06-19，['pinyin 1.0.2'](https://cran.r-project.org/web/packages/mindr/index.html) 在 CRAN 正式发布。**
 
+![](http://cranlogs.r-pkg.org/badges/grand-total/pinyin)
+
+```{r, echo=FALSE, fig.asp=0.3}
+beginr::plotpkg(c("bookdownplus", "mindr", "pinyin", "beginr")[3], 
+                from = c("2017-06-21", "2017-06-19", "2017-06-19", "2017-06-23")[3])
+```
 
 今天新写了个R包，粗暴地取名为 [pinyin](https://github.com/pzhaonet/pinyin/)，作用是把汉字转换成拼音。
 

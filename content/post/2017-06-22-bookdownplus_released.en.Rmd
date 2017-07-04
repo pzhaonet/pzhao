@@ -15,6 +15,14 @@ categories: []
 
 I’m glad to announce that 'bookdownplus 1.0.2' [@R-bookdownplus] is now on [CRAN](https://cran.r-project.org/web/packages/bookdownplus/). This post is a brief documentation of 'bookdownplus 1.0.2'. However, I have been updating 'bookdownplus' frequently and the new version is more powerful and even easier. Please go to the [GitHub site of bookdownplus](http://github.com/pzhaonet/bookdownplus).
 
+![](http://cranlogs.r-pkg.org/badges/grand-total/bookdownplus)
+
+
+```{r, echo=FALSE, fig.asp=0.3}
+beginr::plotpkg(c("bookdownplus", "mindr", "pinyin", "beginr")[1], 
+                from = c("2017-06-21", "2017-06-19", "2017-06-19", "2017-06-23")[1], textcex = 3)
+```
+
 # Introduction
 
 The R package `bookdownplus` is an extension of `bookdown` [@R-bookdown]. It is a collection of

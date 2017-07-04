@@ -14,6 +14,14 @@ categories: []
 
 **更新：2017-06-19，['mindr 1.0.4'](https://cran.r-project.org/web/packages/mindr/index.html) 在 CRAN 正式发布。**
 
+![](http://cranlogs.r-pkg.org/badges/grand-total/mindr)
+
+
+```{r, echo=FALSE, fig.asp=0.3}
+beginr::plotpkg(c("bookdownplus", "mindr", "pinyin", "beginr")[2], 
+                from = c("2017-06-21", "2017-06-19", "2017-06-19", "2017-06-23")[2])
+```
+
 将 markdown (.md, .Rmd) 文件转换成思维导图的 R 扩展包 [mindr](https://github.com/pzhaonet/mindr) 是我写的第五个 R 包，安装方法如下：
 
 稳定版：
