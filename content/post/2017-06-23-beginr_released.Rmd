@@ -10,21 +10,18 @@ tags:
 - post
 bibliography: ["d:/Dropbox/Literature/zhaor.bib"]
 categories: []
+output: #md_document
+  md_document:
+    variant: markdown_github
 ---
 
 又一次高兴地宣布, 我的 R 语言扩展包 'beginr' [@R-beginr] 在 CRAN [正式发布](https://cran.r-project.org/web/packages/beginr/)了.
 
 ![](http://cranlogs.r-pkg.org/badges/grand-total/beginr)
 
-
-```{r, echo=FALSE, fig.asp=0.3}
-beginr::plotpkg(c("bookdownplus", "mindr", "pinyin", "beginr")[4], 
-                from = c("2017-06-21", "2017-06-19", "2017-06-19", "2017-06-23")[4])
-```
-
 # 简介 
 
-`beginr`是我为 R 语言初学者和自己写的工具包, 可能对中级用户也有帮助,  是我这些年来收集和自己编写的一些简化操作的函数和备忘录. 其实这个包的文档我写得不够详细, 有些函数还没来及整理进去, 之所以匆匆发布, 是想先把 'beginr' 这个名字给占住. 毕竟, 我中意的名字如 'learnr', 'startr'都被别人用过了. 
+`beginr`是我为 R 语言初学者和自己写的工具包, 是我这些年来收集和自己编写的一些简化操作的函数和备忘录, 可能对中级用户也有帮助. 其实这个包的文档我写得不够详细, 有些函数还没来及整理进去, 之所以匆匆发布, 是想先把 'beginr' 这个名字给占住. 毕竟, 我中意的名字如 'learnr', 'startr'都被别人用过了. 
 
 安装方法：
 
@@ -39,13 +36,14 @@ devtools::install_github("pzhaonet/beginr")
 
 # 备忘函数
 
-我初学 R 的时候用 `plot()` 作图时, 常常忘记不同形状数据点(`pch`)对应的编号, 实线虚线(`lty`)的编号, 散点图类型(`type`)的代码, 以及最难选择的颜色代码. 每次忘了都要上网搜一下. 现在, beginr 里提供了 `plotpch()`, `plotlty()`, `plottype()`, `plotcolors()`等函数, 想不起来的时候运行一下就行了.
+我初学 R 的时候用 `plot()` 作图时, 常常忘记不同形状数据点(`pch`)对应的编号, 实线虚线(`lty`)的编号, 散点图类型(`type`)的代码, 以及最难选择的颜色代码. 每次忘了都要上网搜一下. 现在, beginr 里提供了 `plotpch()`, `plotlty()`, `plottype()`, `plotcolors()`, `plotcolorbar()`等函数, 想不起来的时候运行一下就行了.
 
 ```{r}
 beginr::plotpch()
 beginr::plotlty()
 beginr::plottype()
 beginr::plotcolors()
+beginr::plotcolorbar()
 ```
 
 # 快速作图函数
@@ -129,10 +127,24 @@ alist <- list(a = 1:10, b = letters)
 beginr::list2ascii(alist)
 ```
 
+# 扩展包函数
+
 很多人引用了别人的工作却往往不列出参考文献. 不仅初学者常常如此, 很多学术论文里有些插图一眼就能看出是 R 的某个扩展包作出来的, 但参考文献里却没有列出来, 这往小了说是不尊重别人的工作,往大了说是缺乏学术道德. 对开源社区的生态圈是不利的. beginr 为初学者提供了 `bib()` 函数, 可以为指定的 R 扩展包生成文献引用信息, 既可以打印出结果, 也可以直接保存为 '.bib'文件方便为 '[bookdownplus](http://www.pzhao.org/zh/post/bookdownplus-released/)' [@R-bookdownplus] 或 '[blogdown](http://www.pzhao.org/zh/post/r-blogdown/)' [@R-blogdown] 调用.
 
 ```{r, warning=FALSE}
 beginr::bib(pkg = c("mindr", "bookdownplus", "pinyin"))
+```
+
+`plotpkg()`函数可以做出一张图，来展示指定扩展包在CRAN上被用户下载的次数：
+
+```{r, fig.asp=0.3}
+beginr::plotpkg("beginr", "2017-06-23")
+```
+
+新手可以用`rpkg()`函数快速创建自己的扩展包.
+
+```{r, eval=FALSE}
+beginr::rpkg()
 ```
 
 好啦, 以后我还会把更多有用的工具添加到 beginr 包里. 欢迎关注 beginr的[项目主页](https://github.com/pzhaonet/beginr). 另外, 使用beginr的地方请记得列出参考文献哦.

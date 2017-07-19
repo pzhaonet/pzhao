@@ -11,6 +11,179 @@
     <atom:link href="/en/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>R package beginr 1.1.0 released on CRAN</title>
+      <link>/en/post/beginr-released/</link>
+      <pubDate>Fri, 23 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/en/post/beginr-released/</guid>
+      <description>&lt;p&gt;I’m glad to announce that ‘beginr’ &lt;span class=&#34;citation&#34;&gt;(Zhao 2017)&lt;/span&gt; is now on &lt;a href=&#34;https://CRAN.R-project.org/package=beginr&#34;&gt;CRAN&lt;/a&gt;. This post is a brief documentation of ‘beginr 0.1.0’. Subsequent updates can be found on the &lt;a href=&#34;http://github.com/pzhaonet/beginr&#34;&gt;GitHub site of beginr&lt;/a&gt;.&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;http://cranlogs.r-pkg.org/badges/grand-total/beginr&#34; /&gt;
+
+&lt;/div&gt;
+&lt;div id=&#34;introduction&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;‘beginr’ is a collection of useful functions for R beginners, including hints for the arguments of the ‘plot()’ function, self-defined functions for error bars, user-customized pair plots and hist plots, enhanced linear regression figures, etc.. This package could be helpful to R experts as well.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;installation&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Installation&lt;/h1&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# stable version on CRAN
+install.package(&amp;quot;beginr&amp;quot;)
+# or development version on GitHub
+devtools::install_github(&amp;quot;pzhaonet/beginr&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;quick-start&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Quick Start&lt;/h1&gt;
+&lt;div id=&#34;functions-as-memos&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Functions as Memos&lt;/h2&gt;
+&lt;p&gt;If you often forget the options for &lt;code&gt;pch&lt;/code&gt;, &lt;code&gt;lty&lt;/code&gt;, &lt;code&gt;type&lt;/code&gt;, and &lt;code&gt;col&lt;/code&gt; when you &lt;code&gt;plot()&lt;/code&gt;, you can run &lt;code&gt;plotpch()&lt;/code&gt;, &lt;code&gt;plotlty()&lt;/code&gt;, &lt;code&gt;plottype()&lt;/code&gt;, &lt;code&gt;plotcolors()&lt;/code&gt;, and &lt;code&gt;plotcolorbar()&lt;/code&gt;. No need to search the internet any more.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::plotpch()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::plotlty()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-2-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::plottype()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-2-3.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::plotcolors()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-2-4.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::plotcolorbar()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-2-5.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;functions-for-easy-plotting&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Functions for Easy Plotting&lt;/h2&gt;
+&lt;p&gt;Linear regression is often used in scientific work, but it is annoying to display the results. In R you have to run &lt;code&gt;lm()&lt;/code&gt;, &lt;code&gt;plot()&lt;/code&gt;, &lt;code&gt;abline()&lt;/code&gt;, &lt;code&gt;text()&lt;/code&gt; and so on and so forth. Now with ‘beginr’ you only have to run &lt;code&gt;plotlm()&lt;/code&gt;.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;x &amp;lt;- 1:10
+y &amp;lt;- 1:10 + rnorm(10)
+beginr::plotlm(x, y)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;## [[1]]
+##              Estimate Std. Error   t value     Pr(&amp;gt;|t|)
+## (Intercept) 1.3819544 0.40742556  3.391919 9.473028e-03
+## x           0.8191023 0.06566258 12.474417 1.594569e-06
+## 
+## [[2]]
+## [1] 0.9511036&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;If you want to display the distribution of a data-set, use &lt;code&gt;plothist()&lt;/code&gt;, which gives you a histogram with markers of the median, mean, quantiles, standard deviation, sample number and the skewness.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;x &amp;lt;- rnorm(10000)
+beginr::plothist(x)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;##     para       value
+## 1    min -4.04345602
+## 2     1q -0.65635345
+## 3 median  0.01862201
+## 4     3q  0.67812453
+## 5    max  4.46912130
+## 6  lower -2.65780647
+## 7  upper  2.67957755
+## 8   mean  0.02053218
+## 9     sd  1.00435998&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I like &lt;code&gt;pairs()&lt;/code&gt;, and ‘beginr’ gives more powerful features to &lt;code&gt;plotpairs()&lt;/code&gt; and &lt;code&gt;plotpairs2()&lt;/code&gt;.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df &amp;lt;- data.frame(a = 1:10, b = 1:10 + rnorm(10), c = 1:10 + rnorm(10))
+beginr::plotpairs(df)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::plotpairs2(df)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;p&amp;lt;0.01&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;p&amp;lt;0.01&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;p&amp;lt;0.01&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-5-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;I often have to plot one independent variable (x) and multiple dependent variables (y&lt;sub&gt;1&lt;/sub&gt;, y&lt;sub&gt;2&lt;/sub&gt;, …, y&lt;sub&gt;n&lt;/sub&gt;) in one 2-D coordinate system, or one dependent variable (y) against multiple independent variables (x&lt;sub&gt;1&lt;/sub&gt;, x&lt;sub&gt;2&lt;/sub&gt;, …, x&lt;sub&gt;n&lt;/sub&gt;) with their error bars. Use &lt;code&gt;dfplot()&lt;/code&gt; or &lt;code&gt;dfplot2()&lt;/code&gt; in ‘beginr’.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;x &amp;lt;- seq(0, 2 * pi, length.out = 100)
+y &amp;lt;- data.frame(sin(x), cos(x))
+yerror &amp;lt;- data.frame(abs(rnorm(100, sd = 0.3)), abs(rnorm(100, sd = 0.1)))
+beginr::dfplot(x, y, yerror = yerror)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::dfplot2(y, x, xerror = yerror)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-6-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;If you would like to add errorbars only, then use &lt;code&gt;errorbar()&lt;/code&gt;.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;x &amp;lt;- seq(0, 2 * pi, length.out = 100)
+y &amp;lt;- sin(x)
+plot(x, y, type = &amp;quot;l&amp;quot;)
+beginr::errorbar(x, y, yupper = 0.1, ylower = 0.1)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;functions-for-data-frames&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Functions for Data Frames&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;lmdf()&lt;/code&gt; performs the linear regression between every two columns in a data frame.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df &amp;lt;- data.frame(a = 1:10, b = 1:10 + rnorm(10), c = 1:10 + rnorm(10))
+beginr::lmdf(df)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##   x y r.squared adj.r.squared   intercept     slope Std.Error.intercept
+## 1 a b 0.8984914     0.8858028  0.05435018 0.8608522           0.6347584
+## 2 a c 0.9379526     0.9301967  1.14844620 0.8642261           0.4876229
+## 3 b a 0.8984914     0.8858028  0.50157087 1.0437231           0.6763958
+## 4 b c 0.7706168     0.7419439  1.77090321 0.8625505           0.9073339
+## 5 c a 0.9379526     0.9301967 -0.90515855 1.0853092           0.6350044
+## 6 c b 0.7706168     0.7419439 -0.48362942 0.8934164           1.1088362
+##   Std.Error.slope t.intercept  t.slope Pr.intercept     Pr.slope
+## 1      0.10230058   0.0856234  8.41493   0.93386992 3.029096e-05
+## 2      0.07858755   2.3551932 10.99699   0.04630436 4.157442e-06
+## 3      0.12403230   0.7415346  8.41493   0.47956954 3.029096e-05
+## 4      0.16637999   1.9517656  5.18422   0.08675518 8.384142e-04
+## 5      0.09869152  -1.4254366 10.99699   0.19185823 4.157442e-06
+## 6      0.17233381  -0.4361595  5.18422   0.67425188 8.384142e-04&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;There are two functions as improvements of &lt;code&gt;tapply()&lt;/code&gt; for factor calculation.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::tapplydf()
+beginr::tapplydfv()&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;functions-for-reading-and-writing-files&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Functions for Reading and Writing files&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;readdir()&lt;/code&gt; reads multiple files into a list.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::readdir()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;writefile()&lt;/code&gt; avoids overwriting the files which already exist.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::writefile()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;list2ascii()&lt;/code&gt; saves a list as a text file.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;alist &amp;lt;- list(a = 1:10, b = letters)
+beginr::list2ascii(alist)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;functions-for-packages&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Functions for Packages&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;bib()&lt;/code&gt; creates bibliographic entries as texts or a file (‘.bib’).&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::bib(pkg = c(&amp;quot;mindr&amp;quot;, &amp;quot;bookdownplus&amp;quot;, &amp;quot;pinyin&amp;quot;, &amp;quot;beginr&amp;quot;))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## @Manual{R-beginr,
+##   title = {beginr: Functions for R Beginners},
+##   author = {Peng Zhao},
+##   year = {2017},
+##   note = {R package version 0.1.0},
+##   url = {https://github.com/pzhaonet/beginr},
+## }
+## @Manual{R-bookdownplus,
+##   title = {bookdownplus: Generate Varied Books and Documents with R &amp;#39;bookdown&amp;#39; Package},
+##   author = {Peng Zhao},
+##   year = {2017},
+##   note = {R package version 1.2.2},
+##   url = {https://github.com/pzhaonet/bookdownplus},
+## }
+## @Manual{R-mindr,
+##   title = {mindr: Convert Files Between Markdown or Rmarkdown Files and Mindmaps},
+##   author = {Peng Zhao},
+##   year = {2017},
+##   note = {R package version 1.1.0},
+##   url = {https://github.com/pzhaonet/mindr},
+## }
+## @Manual{R-pinyin,
+##   title = {pinyin: Convert Chinese Characters into Pinyin},
+##   author = {Peng Zhao},
+##   year = {2017},
+##   note = {R package version 1.1.0},
+##   url = {https://github.com/pzhaonet/pinyin},
+## }&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;plotpkg()&lt;/code&gt; displays a figure showing the downloads of packages.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::plotpkg(&amp;quot;beginr&amp;quot;, from = &amp;quot;2017-06-23&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-14-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;rpkg()&lt;/code&gt; creates a new R package in an easy way.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::rpkg()&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;references&#34; class=&#34;section level1 unnumbered&#34;&gt;
+&lt;h1&gt;References&lt;/h1&gt;
+&lt;div id=&#34;refs&#34; class=&#34;references&#34;&gt;
+&lt;div id=&#34;ref-R-beginr&#34;&gt;
+&lt;p&gt;Zhao, Peng. 2017. &lt;em&gt;Beginr: Functions for R Beginners&lt;/em&gt;. &lt;a href=&#34;https://github.com/pzhaonet/beginr&#34; class=&#34;uri&#34;&gt;https://github.com/pzhaonet/beginr&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>R package bookdownplus 1.0.2 released on CRAN</title>
       <link>/en/post/bookdownplus-released/</link>
       <pubDate>Thu, 22 Jun 2017 00:00:00 +0000</pubDate>
@@ -924,233 +1097,6 @@ bookdownplus::bookdownplus()&lt;/code&gt;&lt;/pre&gt;
       
       <guid>/en/talk/2017-03-29-scalex/</guid>
       <description></description>
-    </item>
-    
-    <item>
-      <title>R bookdown cheatsheet</title>
-      <link>/en/post/bookdown-cheatsheet/</link>
-      <pubDate>Tue, 14 Mar 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/en/post/bookdown-cheatsheet/</guid>
-      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
-&lt;!-- /BLOGDOWN-HEAD --&gt;
-
-&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
-&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
-&lt;div id=&#34;quick-start&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Quick Start&lt;/h2&gt;
-&lt;div id=&#34;what-is-r-bookdown&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;What is R bookdown&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;A software for writing books or documents.&lt;/li&gt;
-&lt;li&gt;More elegant than MS Word. Much easier than &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt;.&lt;/li&gt;
-&lt;li&gt;Users can easily insert table of contents, figures and tables with cross-reference, footnotes, and index.&lt;/li&gt;
-&lt;li&gt;Users can easily embed equations, citations, R scripts.&lt;/li&gt;
-&lt;li&gt;pdf, word and html files can be exported.&lt;/li&gt;
-&lt;li&gt;best choice to write reproducible documents.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div id=&#34;installation&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Installation&lt;/h3&gt;
-&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
-&lt;li&gt;&lt;a href=&#34;https://cran.r-project.org/bin/windows/base/&#34;&gt;Download R&lt;/a&gt; and install it.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.rstudio.com/products/rstudio/download/&#34;&gt;Download RStudio&lt;/a&gt; and install it.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.ctex.org/CTeXDownload&#34;&gt;Download LaTeX&lt;/a&gt; and install it.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://pandoc.org/installing.html&#34;&gt;Download Pandoc&lt;/a&gt; and install it.&lt;/li&gt;
-&lt;li&gt;Run RStudio. Type the following codes in the top-left panel:&lt;/li&gt;
-&lt;/ol&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;install.packages(&amp;quot;bookdown&amp;quot;)
-install.packages(&amp;#39;servr&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div id=&#34;templates&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Templates&lt;/h3&gt;
-&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
-&lt;li&gt;Download a template (Open the following webpage and click &lt;code&gt;Clone or download&lt;/code&gt; - &lt;code&gt;Download ZIP&lt;/code&gt;):&lt;/li&gt;
-&lt;/ol&gt;
-&lt;ul&gt;
-&lt;li&gt;If writing in English, download &lt;a href=&#34;https://github.com/rstudio/bookdown-demo&#34;&gt;the common template&lt;/a&gt;;&lt;/li&gt;
-&lt;li&gt;If writing in Chinese, download &lt;a href=&#34;https://github.com/yihui/bookdown-chinese&#34;&gt;the Chinese template&lt;/a&gt;。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ol start=&#34;2&#34; style=&#34;list-style-type: decimal&#34;&gt;
-&lt;li&gt;&lt;p&gt;Unzip the template to a folder.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Find an .Rproj file. Double click it and open it with RSudio.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Click the &lt;code&gt;Build&lt;/code&gt; label in the top-right panel, and click &lt;code&gt;build book&lt;/code&gt;. Done. Find your demo book in &lt;code&gt;_book/&lt;/code&gt; folder.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;In the bottom-right panel you can see some files. Open those .Rmd file, and modify them into your own book. You can remove unnecessary .Rmd files except index.Rmd.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Repeat Step 4, and you will get your own book.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Compare your .Rmd files with the files in &lt;code&gt;_book/&lt;/code&gt;, and you will understand how they are connected.&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&#34;basic-syntax&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Basic syntax&lt;/h2&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr class=&#34;header&#34;&gt;
-&lt;th align=&#34;left&#34;&gt;marks&lt;/th&gt;
-&lt;th align=&#34;right&#34;&gt;output&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;code&gt;*Italic*&lt;/code&gt;&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;&lt;em&gt;Italic&lt;/em&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;even&#34;&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;code&gt;**bold**&lt;/code&gt;&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;&lt;strong&gt;bold&lt;/strong&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;code&gt;CO~2~&lt;/code&gt;&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;subscript&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;even&#34;&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;code&gt;R^2^&lt;/code&gt;&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;superscript&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;code&gt;$E = mc^2$&lt;/code&gt;&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;&lt;span class=&#34;math inline&#34;&gt;\(E = mc^2\)&lt;/span&gt; inline equation ($$ for displayed)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;even&#34;&gt;
-&lt;td align=&#34;left&#34;&gt;`[hyperlink](&lt;a href=&#34;http://bookdown.org&#34; class=&#34;uri&#34;&gt;http://bookdown.org&lt;/a&gt;&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;)` &lt;a href=&#34;http://bookdown.org&#34;&gt;hyperlink&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;code&gt;&amp;lt;dapengde@live.com&amp;gt;&lt;/code&gt;&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;&lt;a href=&#34;mailto:dapengde@live.com&#34;&gt;dapengde@live.com&lt;/a&gt; email&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;even&#34;&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;code&gt;![](hyperlink of figure)&lt;/code&gt;&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;insert a figure&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;code&gt;&amp;gt; quote&lt;/code&gt;&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;quote&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;even&#34;&gt;
-&lt;td align=&#34;left&#34;&gt;`code`&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;&lt;code&gt;code&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;code&gt;# Chapter One&lt;/code&gt;&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;chapter title&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;even&#34;&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;code&gt;1. First，...&lt;/code&gt;&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;numbered list&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;code&gt;- First&lt;/code&gt;&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;unnumbered list&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;even&#34;&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;code&gt;^[footnote]&lt;/code&gt;&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;footnote&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-&lt;div id=&#34;chapters&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Chapters&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;# (PART) Part I {-} 
-# (APPENDIX) Appendix {-} 
-# References {-}
-# chapter {#ID}
-## section {#ID}
-# chapter {#ID .unnumbered}
-
-\@ref(ID)&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div id=&#34;figures-and-tables&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Figures and tables&lt;/h2&gt;
-&lt;p&gt;A figure can be inserted with R plotting codes:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;```{r, fig.cap=&amp;#39;caption&amp;#39;, out.width=&amp;#39;80%&amp;#39;, fig.align=&amp;#39;center&amp;#39;, echo=FALSE}
-plot(1:10)
-```&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;code&gt;\@ref(fig:fig1)&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;or with R inserting codes:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;```{r img1, fig.cap=&amp;#39;caption&amp;#39;, out.width=&amp;#39;80%&amp;#39;, fig.align=&amp;#39;center&amp;#39;, echo=FALSE}
-knitr::include_graphics(&amp;quot;images/img1.png&amp;quot;)
-```&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;code&gt;\@ref(fig:img1)&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;or with markdown basic syntax：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;![caption](images/img1.png)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;A table can be inserted with basic markdown syntax:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;col one      col two
------------ ----------
-row 1.1     row 1.2
-row 2.1     row 2.2&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;and you will get:&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr class=&#34;header&#34;&gt;
-&lt;th align=&#34;left&#34;&gt;col one&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;col two&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td align=&#34;left&#34;&gt;row 1.1&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;row 1.2&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;even&#34;&gt;
-&lt;td align=&#34;left&#34;&gt;row 2.1&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;row 2.2&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;or with R codes:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;```{r tab1, tidy=FALSE, echo=FALSE}
-knitr::kable(
-  head(iris, 20), caption = &amp;#39;Here is a nice table!&amp;#39;,
-  booktabs = TRUE
-)
-```&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;code&gt;\@ref(tab:tab1)&lt;/code&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;bibliography&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Bibliography&lt;/h2&gt;
-&lt;p&gt;Bibliography entries must be saved in .bib.&lt;/p&gt;
-&lt;p&gt;Citation: &lt;code&gt;[@R-bookdown]&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Bibliography: &lt;code&gt;# References {-}&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Created a library of R packages for bibliography:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;knitr::write_bib(c(&amp;quot;knitr&amp;quot;, &amp;quot;stringr&amp;quot;), &amp;quot;&amp;quot;, width = 60)&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div id=&#34;theorems-lemma-definitions-etc.&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Theorems, lemma, definitions, etc.&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;Full name: theorems lemma   definition  corollary   proposition example
-Abbreviations:thm         lem   def         cor         prp         ex&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;```{Full name, label=&amp;#39;&amp;#39;, name=&amp;quot;&amp;quot;}
-
-```&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;code&gt;\@ref(Abbreviation:label)&lt;/code&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;export-word-document&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Export Word document&lt;/h2&gt;
-&lt;p&gt;Insert the following line into _output.yml:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;bookdown::word_document2: default &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div id=&#34;equations-numbering&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Equations numbering&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;(@eq-mc) $E = mc^2$
-
-I like Eq. (@eq-mc) so much that I am falling love with her.&lt;/code&gt;&lt;/pre&gt;
-&lt;ol class=&#34;example&#34; style=&#34;list-style-type: decimal&#34;&gt;
-&lt;li&gt;&lt;span class=&#34;math inline&#34;&gt;\(E = mc^2\)&lt;/span&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;I like Eq. (1) so much that I am falling love with her.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;\begin{equation} 
-E = mc^2
-  (\#eq:mc2)
-\end{equation} 
-
-I like Eq. \@ref(eq:mc2) so much that I am falling love with her.&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div id=&#34;further&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Further&lt;/h2&gt;
-&lt;p&gt;See &lt;a href=&#34;https://bookdown.org/yihui/bookdown/&#34;&gt;bookdown manual&lt;/a&gt; for more details.&lt;/p&gt;
-&lt;/div&gt;
-</description>
     </item>
     
   </channel>
