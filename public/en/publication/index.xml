@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Publications on Peng Zhao</title>
-    <link>http://www.pzhao.org/en/publication/index.xml</link>
+    <link>/en/publication/index.xml</link>
     <description>Recent content in Publications on Peng Zhao</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -11,152 +11,138 @@
     <atom:link href="/en/publication/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Parameterization of Evapotranspiration Estimation for Two Typical East Asian Crops</title>
-      <link>http://www.pzhao.org/en/publication/zhao2017/</link>
+      <title>Zhao, P., and Lüers J.. 2017. Parameterization of Evapotranspiration Estimation for Two Typical East Asian Crops. Atmosphere 8 (6): 111.</title>
+      <link>/en/publication/zhao2017/</link>
       <pubDate>Tue, 20 Jun 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/en/publication/zhao2017/</guid>
+      <guid>/en/publication/zhao2017/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Improved data gap-filling schemes for estimation of net ecosystem exchange in typical East-Asian croplands</title>
-      <link>http://www.pzhao.org/en/publication/zhao2016/</link>
+      <title>Huang, S.,  Wang Y., Xie, Y., Zhao, P.*, and Lüers, J.. 2016. OutlierFlag: A Tool for Scientific Data Quality Control by Outlier Data Flagging. *Journal of Open Research Software* 4: e20. </title>
+      <link>/en/publication/huang2016/</link>
       <pubDate>Fri, 01 Jul 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/en/publication/zhao2016/</guid>
-      <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
-</description>
+      <guid>/en/publication/huang2016/</guid>
+      <description></description>
     </item>
     
     <item>
-      <title>On the energy balance closure and net radiation in complex terrain</title>
-      <link>http://www.pzhao.org/en/publication/wohlfahrt2016/</link>
+      <title>Lee, C. B., Kim, J. C., Belorid, M., and Zhao, P.. 2016. Performance Evaluation of Four Different Land Surface Models in WRF. Asian Journal of Atmospheric Environment 10 (1): 42–50.</title>
+      <link>/en/publication/lee2016/</link>
       <pubDate>Fri, 01 Jul 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/en/publication/wohlfahrt2016/</guid>
-      <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt;&amp;rdquo;, &amp;ldquo;$\rm \LaTeX$ math code.&lt;/p&gt;
-</description>
+      <guid>/en/publication/lee2016/</guid>
+      <description></description>
     </item>
     
     <item>
-      <title>OutlierFlag: A Tool for Scientific Data Quality Control by Outlier Data Flagging</title>
-      <link>http://www.pzhao.org/en/publication/huang2016/</link>
+      <title>Wohlfahrt, G., Hammerle, A., Niedrist,G., Scholz, K., Tomelleri, E., and Zhao, P.. 2016. On the Energy Balance Closure and Net Radiation in Complex Terrain. Agricultural and Forest Meteorology 226 – 227: 37–49.</title>
+      <link>/en/publication/wohlfahrt2016/</link>
       <pubDate>Fri, 01 Jul 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/en/publication/huang2016/</guid>
-      <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt;&amp;rdquo;, &amp;ldquo;$\rm \LaTeX$ math code.&lt;/p&gt;
-</description>
+      <guid>/en/publication/wohlfahrt2016/</guid>
+      <description></description>
     </item>
     
     <item>
-      <title>Performance Evaluation of Four Different Land Surface Models in WRF</title>
-      <link>http://www.pzhao.org/en/publication/lee2016/</link>
+      <title>Zhao, P., and Lüers J.. 2016. Improved Data Gap-Filling Schemes for Estimation of Net Ecosystem Exchange in Typical East-Asian Croplands. Science China Earth Sciences, 1–13. </title>
+      <link>/en/publication/zhao2016/</link>
       <pubDate>Fri, 01 Jul 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/en/publication/lee2016/</guid>
-      <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt;&amp;rdquo;, &amp;ldquo;$\rm \LaTeX$ math code.&lt;/p&gt;
-</description>
+      <guid>/en/publication/zhao2016/</guid>
+      <description></description>
     </item>
     
     <item>
-      <title>Application of a multi-step error filter for post-processing atmospheric flux and meteorological basic data</title>
-      <link>http://www.pzhao.org/en/publication/lueers-2014/</link>
+      <title>Lüers, J., Detsch, F., and Zhao, P.. 2014. Application of a Multi-Step Error Filter for Post-Processing Atmospheric Flux and Meteorological Basic Data. University of Bayreuth, Department of Micrometeorology, in print, ISSN 1614-8916, Work Report 58, 22 pp. </title>
+      <link>/en/publication/lueers2014/</link>
       <pubDate>Tue, 01 Jul 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/en/publication/lueers-2014/</guid>
-      <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt;&amp;rdquo;, &amp;ldquo;$\rm \LaTeX$ math code.&lt;/p&gt;
-</description>
+      <guid>/en/publication/lueers2014/</guid>
+      <description></description>
     </item>
     
     <item>
-      <title>GaFiR: a gap-filling package for ecosystem-atmosphere carbon dioxide flux and evapotranspiration data</title>
-      <link>http://www.pzhao.org/en/publication/zhao-2014/</link>
+      <title>Zhao, P., Foken, T., and Lüers J.. 2014. GaFiR: A Gap-Filling Package for Ecosystem-Atmosphere Carbon Dioxide Flux and Evapotranspiration Data. University of Bayreuth, Department of Micrometeorology, Print, ISSN 1614-8916, Work Report 59. 22 pp.</title>
+      <link>/en/publication/zhao2014/</link>
       <pubDate>Tue, 01 Jul 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/en/publication/zhao-2014/</guid>
-      <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt;&amp;rdquo;, &amp;ldquo;$\rm \LaTeX$ math code.&lt;/p&gt;
-</description>
+      <guid>/en/publication/zhao2014/</guid>
+      <description></description>
     </item>
     
     <item>
-      <title>Documentation of the EVENT-HMMS experiment 2012: microclimatological effects of rain-out shelters within EVENT II. </title>
-      <link>http://www.pzhao.org/en/publication/babel-2013/</link>
+      <title>Babel, W., Schaller, C., Eigenmann, R., Foken, T.,, Hübner, J., Jentsch, A., Kreyling, J., Sultana, F., and Zhao, P.. 2013. Documentation of the Event-Hmms Experiment 2012: Microclimatological Effects of Rain-Out Shelters Within Event II. University of Bayreuth, Department of Micrometeorology, Print, ISSN 1614-8916, Work Report 55. 32 pp.</title>
+      <link>/en/publication/babel2013/</link>
       <pubDate>Mon, 01 Jul 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/en/publication/babel-2013/</guid>
-      <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt;&amp;rdquo;, &amp;ldquo;$\rm \LaTeX$ math code.&lt;/p&gt;
-</description>
+      <guid>/en/publication/babel2013/</guid>
+      <description></description>
     </item>
     
     <item>
-      <title>Brewer 光谱仪观测臭氧柱总量的方法</title>
-      <link>http://www.pzhao.org/en/publication/zhang_2012/</link>
+      <title>Zhao, P., and Lüers, J.. 2012. Improved Determination of Daytime Net Ecosystem Exchange of Carbon Dioxide at Croplands. Biogeosciences Discussions 9: 2883–2919.</title>
+      <link>/en/publication/zhao2012/</link>
       <pubDate>Sun, 01 Jul 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/en/publication/zhang_2012/</guid>
-      <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt;&amp;rdquo;, &amp;ldquo;$\rm \LaTeX$ math code.&lt;/p&gt;
-</description>
+      <guid>/en/publication/zhao2012/</guid>
+      <description></description>
     </item>
     
     <item>
-      <title>Improved determination of daytime net ecosystem exchange of carbon dioxide at croplands</title>
-      <link>http://www.pzhao.org/en/publication/zhao2012/</link>
+      <title>张晓春, 周凌晞, 徐晓斌, 孙俊英, 张小曳, 石春娥, 张苏, 靳军莉, 赵鹏. 2012. 大气成分站选址要求. 中华人民共和国气象行业标准QX/T 174-2012.</title>
+      <link>/en/publication/zhang2012c/</link>
       <pubDate>Sun, 01 Jul 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/en/publication/zhao2012/</guid>
-      <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
-</description>
+      <guid>/en/publication/zhang2012c/</guid>
+      <description></description>
     </item>
     
     <item>
-      <title>大气成分站选址要求</title>
-      <link>http://www.pzhao.org/en/publication/zhang_2012c/</link>
+      <title>张晓春, 郑向东, 汤洁, 赵玉成, 刘鹏, 靳军莉, 赵鹏. 2012. Brewer 光谱仪观测臭氧柱总量的方法. 中华人民共和国气象行业标准QX/T 172-2012.</title>
+      <link>/en/publication/zhang2012a/</link>
       <pubDate>Sun, 01 Jul 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/en/publication/zhang_2012c/</guid>
-      <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt;&amp;rdquo;, &amp;ldquo;$\rm \LaTeX$ math code.&lt;/p&gt;
-</description>
+      <guid>/en/publication/zhang2012a/</guid>
+      <description></description>
     </item>
     
     <item>
-      <title>GRIMM 180 测量PM10、PM2.5和PM1 的方法</title>
-      <link>http://www.pzhao.org/en/publication/zhang_2012b/</link>
+      <title>Zhao, P., Lüers, J., Olesch, J., and Foken, T.. 2011. Complex Terrain and Ecological Heterogeneity (TERRECO): WP 1-02: Spatial Assessment of Atmosphere-Ecosystem Exchanges via Micrometeorological Measurements, Footprint Modeling and Mesoscale Simulations ; Documentation of the Observation Period May 12th to Nov. 8th, 2010, Haean, South Korea. University of Bayreuth, Department of Micrometeorology, Print, ISSN 1614-8916, Work Report 45. 43 pp.</title>
+      <link>/en/publication/zhao2011/</link>
       <pubDate>Fri, 01 Jul 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/en/publication/zhang_2012b/</guid>
-      <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt;&amp;rdquo;, &amp;ldquo;$\rm \LaTeX$ math code.&lt;/p&gt;
-</description>
+      <guid>/en/publication/zhao2011/</guid>
+      <description></description>
     </item>
     
     <item>
-      <title>TERRECO WP 1-02: documentation of the observation period May 12th to Nov. 8th, 2010, Haean, South Korea</title>
-      <link>http://www.pzhao.org/en/publication/zhao-2011/</link>
+      <title>张晓春, 赵鹏, 靳军莉, 孙俊英, 张小曳. 2011. GRIMM 180 测量PM10、PM2.5和PM1 的方法. 中华人民共和国气象行业标准QX/T 173-2012.</title>
+      <link>/en/publication/zhang2012b/</link>
       <pubDate>Fri, 01 Jul 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/en/publication/zhao-2011/</guid>
-      <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt;&amp;rdquo;, &amp;ldquo;$\rm \LaTeX$ math code.&lt;/p&gt;
-</description>
+      <guid>/en/publication/zhang2012b/</guid>
+      <description></description>
     </item>
     
     <item>
-      <title>大气成分观测资料分类与编码</title>
-      <link>http://www.pzhao.org/en/publication/zhang_2011/</link>
+      <title>张晓春, 赵鹏, 靳军莉, 孙俊英, 张小曳. 2011. 大气成分观测资料分类与编码. 中华人民共和国气象行业标准QX/T 124-2011.</title>
+      <link>/en/publication/zhang2011/</link>
       <pubDate>Fri, 01 Jul 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/en/publication/zhang_2011/</guid>
-      <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt;&amp;rdquo;, &amp;ldquo;$\rm \LaTeX$ math code.&lt;/p&gt;
-</description>
+      <guid>/en/publication/zhang2011/</guid>
+      <description></description>
     </item>
     
     <item>
-      <title>Aerosol monitoring at multiple locations in China: contributions of EC and dust to aerosol light absorption</title>
-      <link>http://www.pzhao.org/en/publication/zhang2008/</link>
+      <title>Zhang, X., Wang, Y., Zhang, X., Guo, W., Niu, T., Gong, S., Yin,Y., Zhao, P., Jin, J., and Yu M.. 2008. Aerosol Monitoring at Multiple Locations in China: Contributions of EC and Dust to Aerosol Light Absorption. Tellus B 60 (4). Wiley Online Library: 647–56.</title>
+      <link>/en/publication/zhang2008/</link>
       <pubDate>Tue, 01 Jul 2008 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/en/publication/zhang2008/</guid>
-      <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
-</description>
+      <guid>/en/publication/zhang2008/</guid>
+      <description></description>
     </item>
     
   </channel>

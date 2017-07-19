@@ -1,0 +1,20 @@
+---
+title: 'Advection campaign at Torgnon started '
+author: "赵鹏"
+date: '2017-07-19'
+slug: advection-tn
+summary: '![](http://www.arpa.vda.it/images/stories/ARPA/camb_clim/news/20170714_PascoloTorgnon/setup.jpg)'
+tags:
+- pj-advection
+- news
+categories: []
+---
+
+![](http://www.arpa.vda.it/images/stories/ARPA/camb_clim/news/20170714_PascoloTorgnon/setup.jpg)
+
+At the beginning of July, Kathi and I went to the Aosta Valley  to set up the advection measurement at Torgnon. Thanks a lot to Marta and other colleagues!
+
+Our institute is collecting post cards from the fieldwork in the meanwhile. Here is one from us.
+
+[![](https://www.uibk.ac.at/ecology/postcards-from-the-field/bilder/postcard-from-aosta.jpg)](https://www.uibk.ac.at/ecology/postcards-from-the-field/)
+

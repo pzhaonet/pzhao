@@ -1,22 +1,13 @@
 +++
-abstract = ""
-abstract_short = ""
-authors = ["Wohlfahrt, Georg", "Hammerle, Albin", "Niedrist, Georg", "Scholz, Katharina", "Tomelleri, Enrico", "Zhao, Peng"]
-date = "2016-07-01"
-image_preview = ""
-math = true
+title = "Wohlfahrt, G., Hammerle, A., Niedrist,G., Scholz, K., Tomelleri, E., and Zhao, P.. 2016. On the Energy Balance Closure and Net Radiation in Complex Terrain. Agricultural and Forest Meteorology 226 – 227: 37–49."
+
 publication_types = ["2"]
-publication = "Agricultural and Forest Meteorology, 2016, 226 -- 227"
-publication_short = ""
-selected = true
-title = "On the energy balance closure and net radiation in complex terrain"
-url_pdf = "http://dx.doi.org/10.1016/j.agrformet.2016.05.012"
+publication = ""
+date = "2016-07-01"
 
-# Optional featured image (relative to `static/img/` folder).
-[header]
-image = ""
-caption = "My caption :smile:"
 
+url_pdf = "http://www.sciencedirect.com/science/article/pii/S0168192316302775/pdfft?md5=159858300021b1f66938a209768fb2a3&pid=1-s2.0-S0168192316302775-main.pdf"
+[[url_custom]]
+name = "Link"
+url = "http://dx.doi.org/10.1016/j.agrformet.2016.05.012"
 +++
-
-More detail can easily be written here using *Markdown*", "$\rm \LaTeX$ math code.

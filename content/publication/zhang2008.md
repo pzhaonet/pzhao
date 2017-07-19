@@ -1,22 +1,13 @@
 +++
-abstract = ""
-abstract_short = ""
-authors = ["Zhang, XY", "Wang, YQ", "Zhang, XC", "Guo, W.", "Niu, T.", "Gong, SL", "Yin, Y.", "Zhao, P.", "Jin, JL", "Yu, M."]
-date = "2008-07-01"
-image_preview = ""
-math = true
+title = "Zhang, X., Wang, Y., Zhang, X., Guo, W., Niu, T., Gong, S., Yin,Y., Zhao, P., Jin, J., and Yu M.. 2008. Aerosol Monitoring at Multiple Locations in China: Contributions of EC and Dust to Aerosol Light Absorption. Tellus B 60 (4). Wiley Online Library: 647–56."
+
 publication_types = ["2"]
-publication = "Tellus B 60, 647 - 656 (2008)"
-publication_short = ""
-selected = true
-title = "Aerosol monitoring at multiple locations in China: contributions of EC and dust to aerosol light absorption"
-url_pdf = "http://www.tellusb.net/index.php/tellusb/article/view/16951"
+publication = ""
+date = "2008-07-01"
 
-# Optional featured image (relative to `static/img/` folder).
-[header]
-image = ""
-caption = "My caption :smile:"
-
+url_pdf = "http://www.tandfonline.com/doi/pdf/10.1111/j.1600-0889.2008.00359.x?needAccess=true"
+[[url_custom]]
+name = "Link"
+url = "http://www.tandfonline.com/doi/abs/10.1111/j.1600-0889.2008.00359.x"
 +++
 
-More detail can easily be written here using *Markdown* and $\rm \LaTeX$ math code.

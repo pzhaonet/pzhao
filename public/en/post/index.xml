@@ -2,20 +2,41 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Peng Zhao</title>
-    <link>http://www.pzhao.org/en/post/index.xml</link>
+    <link>/en/post/index.xml</link>
     <description>Recent content in Posts on Peng Zhao</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017 Peng Zhao</copyright>
-    <lastBuildDate>Fri, 23 Jun 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 19 Jul 2017 00:00:00 +0000</lastBuildDate>
     <atom:link href="/en/post/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Advection campaign at Torgnon started </title>
+      <link>/en/post/advection-tn/</link>
+      <pubDate>Wed, 19 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/en/post/advection-tn/</guid>
+      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
+&lt;!-- /BLOGDOWN-HEAD --&gt;
+
+&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
+&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;http://www.arpa.vda.it/images/stories/ARPA/camb_clim/news/20170714_PascoloTorgnon/setup.jpg&#34; /&gt;
+
+&lt;/div&gt;
+&lt;p&gt;At the beginning of July, Kathi and I went to the Aosta Valley to set up the advection measurement at Torgnon. Thanks a lot to Marta and other colleagues!&lt;/p&gt;
+&lt;p&gt;Our institute is collecting post cards from the fieldwork in the meanwhile. Here is one from us.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.uibk.ac.at/ecology/postcards-from-the-field/&#34;&gt;&lt;img src=&#34;https://www.uibk.ac.at/ecology/postcards-from-the-field/bilder/postcard-from-aosta.jpg&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>R package beginr released on CRAN</title>
-      <link>http://www.pzhao.org/en/post/beginr-released/</link>
+      <link>/en/post/beginr-released/</link>
       <pubDate>Fri, 23 Jun 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/en/post/beginr-released/</guid>
+      <guid>/en/post/beginr-released/</guid>
       <description>&lt;p&gt;I’m glad to announce that ‘beginr’ &lt;span class=&#34;citation&#34;&gt;(Zhao 2017)&lt;/span&gt; is now on &lt;a href=&#34;https://CRAN.R-project.org/package=beginr&#34;&gt;CRAN&lt;/a&gt;. This post is a brief documentation of ‘beginr 0.1.0’. Subsequent updates can be found on the &lt;a href=&#34;http://github.com/pzhaonet/beginr&#34;&gt;GitHub site of beginr&lt;/a&gt;.&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;
 &lt;img src=&#34;http://cranlogs.r-pkg.org/badges/grand-total/beginr&#34; /&gt;
@@ -38,15 +59,15 @@ devtools::install_github(&amp;quot;pzhaonet/beginr&amp;quot;)&lt;/code&gt;&lt;/p
 &lt;h2&gt;Functions as Memos&lt;/h2&gt;
 &lt;p&gt;If you often forget the options for &lt;code&gt;pch&lt;/code&gt;, &lt;code&gt;lty&lt;/code&gt;, &lt;code&gt;type&lt;/code&gt;, and &lt;code&gt;col&lt;/code&gt; when you &lt;code&gt;plot()&lt;/code&gt;, you can run &lt;code&gt;plotpch()&lt;/code&gt;, &lt;code&gt;plotlty()&lt;/code&gt;, &lt;code&gt;plottype()&lt;/code&gt;, &lt;code&gt;plotcolors()&lt;/code&gt;, and &lt;code&gt;plotcolorbar()&lt;/code&gt;. No need to search the internet any more.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::plotpch()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::plotlty()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-2-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-2-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::plottype()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-2-3.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-2-3.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::plotcolors()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-2-4.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-2-4.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::plotcolorbar()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-2-5.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-2-5.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;functions-for-easy-plotting&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Functions for Easy Plotting&lt;/h2&gt;
@@ -54,7 +75,7 @@ devtools::install_github(&amp;quot;pzhaonet/beginr&amp;quot;)&lt;/code&gt;&lt;/p
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;x &amp;lt;- 1:10
 y &amp;lt;- 1:10 + rnorm(10)
 beginr::plotlm(x, y)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;## [[1]]
 ##               Estimate Std. Error   t value     Pr(&amp;gt;|t|)
 ## (Intercept) -0.8826021 0.59514844 -1.482995 1.763634e-01
@@ -65,7 +86,7 @@ beginr::plotlm(x, y)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;If you want to display the distribution of a data-set, use &lt;code&gt;plothist()&lt;/code&gt;, which gives you a histogram with markers of the median, mean, quantiles, standard deviation, sample number and the skewness.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;x &amp;lt;- rnorm(10000)
 beginr::plothist(x)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;##     para         value
 ## 1    min -3.9594329262
 ## 2     1q -0.6743155802
@@ -79,26 +100,26 @@ beginr::plothist(x)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;I like &lt;code&gt;pairs()&lt;/code&gt;, and ‘beginr’ gives more powerful features to &lt;code&gt;plotpairs()&lt;/code&gt; and &lt;code&gt;plotpairs2()&lt;/code&gt;.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df &amp;lt;- data.frame(a = 1:10, b = 1:10 + rnorm(10), c = 1:10 + rnorm(10))
 beginr::plotpairs(df)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::plotpairs2(df)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## [1] &amp;quot;p&amp;lt;0.01&amp;quot;&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## [1] &amp;quot;p&amp;lt;0.01&amp;quot;&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## [1] &amp;quot;p&amp;lt;0.01&amp;quot;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-5-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-5-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;I often have to plot one independent variable (x) and multiple dependent variables (y&lt;sub&gt;1&lt;/sub&gt;, y&lt;sub&gt;2&lt;/sub&gt;, …, y&lt;sub&gt;n&lt;/sub&gt;) in one 2-D coordinate system, or one dependent variable (y) against multiple independent variables (x&lt;sub&gt;1&lt;/sub&gt;, x&lt;sub&gt;2&lt;/sub&gt;, …, x&lt;sub&gt;n&lt;/sub&gt;) with their error bars. Use &lt;code&gt;dfplot()&lt;/code&gt; or &lt;code&gt;dfplot2()&lt;/code&gt; in ‘beginr’.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;x &amp;lt;- seq(0, 2 * pi, length.out = 100)
 y &amp;lt;- data.frame(sin(x), cos(x))
 yerror &amp;lt;- data.frame(abs(rnorm(100, sd = 0.3)), abs(rnorm(100, sd = 0.1)))
 beginr::dfplot(x, y, yerror = yerror)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::dfplot2(y, x, xerror = yerror)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-6-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-6-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;If you would like to add errorbars only, then use &lt;code&gt;errorbar()&lt;/code&gt;.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;x &amp;lt;- seq(0, 2 * pi, length.out = 100)
 y &amp;lt;- sin(x)
 plot(x, y, type = &amp;quot;l&amp;quot;)
 beginr::errorbar(x, y, yupper = 0.1, ylower = 0.1)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;functions-for-data-frames&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Functions for Data Frames&lt;/h2&gt;
@@ -167,7 +188,7 @@ beginr::list2ascii(alist)&lt;/code&gt;&lt;/pre&gt;
 ## }&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;code&gt;plotpkg()&lt;/code&gt; displays a figure showing the downloads of packages.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::plotpkg(&amp;quot;beginr&amp;quot;, from = &amp;quot;2017-06-23&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-14-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-14-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;rpkg()&lt;/code&gt; creates a new R package in an easy way.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::rpkg()&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
@@ -185,16 +206,16 @@ beginr::list2ascii(alist)&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>R package bookdownplus 1.0.2 released on CRAN</title>
-      <link>http://www.pzhao.org/en/post/bookdownplus-released/</link>
+      <link>/en/post/bookdownplus-released/</link>
       <pubDate>Thu, 22 Jun 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/en/post/bookdownplus-released/</guid>
+      <guid>/en/post/bookdownplus-released/</guid>
       <description>&lt;p&gt;I’m glad to announce that ‘bookdownplus 1.0.2’ &lt;span class=&#34;citation&#34;&gt;(Zhao 2017)&lt;/span&gt; is now on &lt;a href=&#34;https://cran.r-project.org/web/packages/bookdownplus/&#34;&gt;CRAN&lt;/a&gt;. This post is a brief documentation of ‘bookdownplus 1.0.2’. However, I have been updating ‘bookdownplus’ frequently and the new version is more powerful and even easier. Please go to the &lt;a href=&#34;http://github.com/pzhaonet/bookdownplus&#34;&gt;GitHub site of bookdownplus&lt;/a&gt;.&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;
 &lt;img src=&#34;http://cranlogs.r-pkg.org/badges/grand-total/bookdownplus&#34; /&gt;
 
 &lt;/div&gt;
-&lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-22-bookdownplus_released.en_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2017-06-22-bookdownplus_released.en_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;div id=&#34;introduction&#34; class=&#34;section level1&#34;&gt;
 &lt;h1&gt;Introduction&lt;/h1&gt;
 &lt;p&gt;The R package &lt;code&gt;bookdownplus&lt;/code&gt; is an extension of &lt;code&gt;bookdown&lt;/code&gt; &lt;span class=&#34;citation&#34;&gt;(Xie 2016)&lt;/span&gt;. It is a collection of multiple templates on the basis of LaTeX, which are tailored so that I can work happily under the umbrella of &lt;code&gt;bookdown&lt;/code&gt;. &lt;code&gt;bookdownplus&lt;/code&gt; helps you write academic journal articles, guitar books, chemical equations, mails, calendars, and diaries.&lt;/p&gt;
@@ -409,10 +430,10 @@ bookdownplus::bookdownplus()&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>LaTeX equations in micrometeorology</title>
-      <link>http://www.pzhao.org/en/post/equations/</link>
+      <link>/en/post/equations/</link>
       <pubDate>Tue, 23 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/en/post/equations/</guid>
+      <guid>/en/post/equations/</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 
@@ -732,16 +753,16 @@ R^2 =(\frac{\sum_{i=1}^{n}(O_i-\overline{O})(P_i-\overline{P})}{\sqrt{\sum_{i=1}
     
     <item>
       <title>R package mindr: convert markdown files to mind maps, and vice versa</title>
-      <link>http://www.pzhao.org/en/post/mindr/</link>
+      <link>/en/post/mindr/</link>
       <pubDate>Fri, 19 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/en/post/mindr/</guid>
+      <guid>/en/post/mindr/</guid>
       <description>&lt;p&gt;This is a preliminary version of the introduction to mindr. Please go to my Github repo &lt;a href=&#34;https://github.com/pzhaonet/mindr&#34;&gt;mindr&lt;/a&gt; for the latest updates.&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;
 &lt;img src=&#34;http://cranlogs.r-pkg.org/badges/grand-total/mindr&#34; /&gt;
 
 &lt;/div&gt;
-&lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-05-19-mindr.en_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2017-05-19-mindr.en_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;div id=&#34;quick-start&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Quick start&lt;/h2&gt;
 &lt;div id=&#34;installation&#34; class=&#34;section level3&#34;&gt;
@@ -804,10 +825,10 @@ R^2 =(\frac{\sum_{i=1}^{n}(O_i-\overline{O})(P_i-\overline{P})}{\sqrt{\sum_{i=1}
     
     <item>
       <title>R package postr: created posters with R markdown</title>
-      <link>http://www.pzhao.org/en/post/postr/</link>
+      <link>/en/post/postr/</link>
       <pubDate>Tue, 16 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/en/post/postr/</guid>
+      <guid>/en/post/postr/</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 
@@ -871,10 +892,10 @@ postr::postr()&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>bookdownplus: an R package for writing Articles, Mails, Guitar Chords, Chemical Molecular Formulae and Equations with R bookdown</title>
-      <link>http://www.pzhao.org/en/post/bookdownplus/</link>
+      <link>/en/post/bookdownplus/</link>
       <pubDate>Tue, 09 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/en/post/bookdownplus/</guid>
+      <guid>/en/post/bookdownplus/</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 
@@ -1051,10 +1072,10 @@ bookdownplus::bookdownplus()&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>EGU 2017</title>
-      <link>http://www.pzhao.org/en/post/egu2017photo/</link>
+      <link>/en/post/egu2017photo/</link>
       <pubDate>Tue, 02 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/en/post/egu2017photo/</guid>
+      <guid>/en/post/egu2017photo/</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 
@@ -1073,10 +1094,10 @@ bookdownplus::bookdownplus()&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>R bookdown cheatsheet</title>
-      <link>http://www.pzhao.org/en/post/bookdown-cheatsheet/</link>
+      <link>/en/post/bookdown-cheatsheet/</link>
       <pubDate>Tue, 14 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/en/post/bookdown-cheatsheet/</guid>
+      <guid>/en/post/bookdown-cheatsheet/</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 
@@ -1300,10 +1321,10 @@ I like Eq. \@ref(eq:mc2) so much that I am falling love with her.&lt;/code&gt;&l
     
     <item>
       <title>Advection campaign at Neustift started </title>
-      <link>http://www.pzhao.org/en/post/advection-ns/</link>
+      <link>/en/post/advection-ns/</link>
       <pubDate>Sat, 08 Oct 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/en/post/advection-ns/</guid>
+      <guid>/en/post/advection-ns/</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 
@@ -1321,10 +1342,10 @@ I like Eq. \@ref(eq:mc2) so much that I am falling love with her.&lt;/code&gt;&l
     
     <item>
       <title>EcoBot measurements during ScaleX 2016 </title>
-      <link>http://www.pzhao.org/en/post/ecobot-ft/</link>
+      <link>/en/post/ecobot-ft/</link>
       <pubDate>Fri, 08 Jul 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/en/post/ecobot-ft/</guid>
+      <guid>/en/post/ecobot-ft/</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 
@@ -1340,10 +1361,10 @@ I like Eq. \@ref(eq:mc2) so much that I am falling love with her.&lt;/code&gt;&l
     
     <item>
       <title>Advection campaign within ScaleX 2016</title>
-      <link>http://www.pzhao.org/en/post/advection-ft/</link>
+      <link>/en/post/advection-ft/</link>
       <pubDate>Thu, 30 Jun 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/en/post/advection-ft/</guid>
+      <guid>/en/post/advection-ft/</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 
@@ -1359,10 +1380,10 @@ I like Eq. \@ref(eq:mc2) so much that I am falling love with her.&lt;/code&gt;&l
     
     <item>
       <title>First advection campaign completed </title>
-      <link>http://www.pzhao.org/en/post/advection-mb1/</link>
+      <link>/en/post/advection-mb1/</link>
       <pubDate>Fri, 13 Nov 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/en/post/advection-mb1/</guid>
+      <guid>/en/post/advection-mb1/</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 
@@ -1378,10 +1399,10 @@ I like Eq. \@ref(eq:mc2) so much that I am falling love with her.&lt;/code&gt;&l
     
     <item>
       <title>Advection experiment at Monte Bondone started</title>
-      <link>http://www.pzhao.org/en/post/advection-mb/</link>
+      <link>/en/post/advection-mb/</link>
       <pubDate>Thu, 24 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/en/post/advection-mb/</guid>
+      <guid>/en/post/advection-mb/</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 
@@ -1419,10 +1440,10 @@ I like Eq. \@ref(eq:mc2) so much that I am falling love with her.&lt;/code&gt;&l
     
     <item>
       <title>Biomet hike</title>
-      <link>http://www.pzhao.org/en/post/biomet-hike/</link>
+      <link>/en/post/biomet-hike/</link>
       <pubDate>Wed, 01 Jul 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/en/post/biomet-hike/</guid>
+      <guid>/en/post/biomet-hike/</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 
@@ -1467,24 +1488,6 @@ I like Eq. \@ref(eq:mc2) so much that I am falling love with her.&lt;/code&gt;&l
 &lt;p&gt;… before we closed the hike with a game of viking chess.&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;
 &lt;img src=&#34;http://www.biomet.co.at/wp/wp-content/uploads/2015/07/IMG_0734-300x200.jpg&#34; /&gt;
-
-&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>EGU 2015</title>
-      <link>http://www.pzhao.org/en/post/egu-2015-photo/</link>
-      <pubDate>Wed, 22 Apr 2015 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/en/post/egu-2015-photo/</guid>
-      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
-&lt;!-- /BLOGDOWN-HEAD --&gt;
-
-&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
-&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;http://www.biomet.co.at/wp/wp-content/uploads/2015/04/Biomet@EGU.jpeg&#34; /&gt;
 
 &lt;/div&gt;
 </description>

@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Homes on Peng Zhao</title>
-    <link>http://www.pzhao.org/en/home/index.xml</link>
+    <link>/en/home/index.xml</link>
     <description>Recent content in Homes on Peng Zhao</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>

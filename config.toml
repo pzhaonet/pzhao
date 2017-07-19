@@ -125,7 +125,7 @@ defaultContentLanguageInSubdir = true
   [[params.social]]
     icon = "envelope"
     icon_pack = "fa"
-    link = "mailto:dapengde@live.com"
+    link = "mailto:pzhao@pzhao.net"
 
 #  [[params.social]]
 #    icon = "google-scholar"
@@ -135,7 +135,7 @@ defaultContentLanguageInSubdir = true
   [[params.social]]
     icon = "github"
     icon_pack = "fa"
-    link = "//github.com/dapengde"
+    link = "//github.com/pzhaonet"
 
   [[params.social]]
     icon = "youtube"
@@ -168,42 +168,52 @@ defaultContentLanguageInSubdir = true
 #   The weight parameter defines the order that the links will appear in.
 
 [[menu.main]]
-  name = "Home"
+  name = "About"
   url = "#about"
-  weight = 1
+  weight = 10
 
 [[menu.main]]
-  name = "Publications"
-  url = "#publications_selected"
-  weight = 2
+  name = "News"
+  url = "/tags/news"
+  weight = 20
 
 [[menu.main]]
   name = "Posts"
-  url = "#posts"
-  weight = 3
+  url = "/tags/post"
+  weight = 30
+
+[[menu.main]]
+  name = "Publications"
+  url = "/publication"
+  weight = 40
+
+[[menu.main]]
+  name = "Talks"
+  url = "/talk"
+  weight = 45
 
 [[menu.main]]
   name = "Projects"
   url = "#projects"
-  weight = 4
+  weight = 50
 
 [[menu.main]]
-  name = "Teaching"
-  url = "#teaching"
-  weight = 5
-
+  name = "Unclassified"
+  url = "#unclassified"
+  weight = 65
+  
 [[menu.main]]
   name = "Search"
   url = "https://cse.google.com/cse/publicurl?cx=006346710622437628329:tdbwt2rsqrs"
-  weight = 6
+  weight = 70
   
 [[menu.main]]
   name = "中文"
   url = "../zh"
-  weight = 7
+  weight = 80
 
 [[languages.zh.menu.main]]
-  name = "主页"
+  name = "关于"
   url = "#about"
   weight = 10
 
@@ -219,12 +229,12 @@ defaultContentLanguageInSubdir = true
 
 [[languages.zh.menu.main]]
   name = "论文"
-  url = "#publications"
+  url = "/publication"
   weight = 40
 
 [[languages.zh.menu.main]]
   name = "报告"
-  url = "#talks"
+  url = "/talk"
   weight = 45
   
 [[languages.zh.menu.main]]
