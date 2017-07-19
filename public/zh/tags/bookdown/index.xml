@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Bookdown on Peng Zhao</title>
-    <link>/zh/tags/bookdown/index.xml</link>
+    <link>http://www.pzhao.org/zh/tags/bookdown/index.xml</link>
     <description>Recent content in Bookdown on Peng Zhao</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
@@ -11,10 +11,10 @@
     
     <item>
       <title>bookdownplus 的两个魔法</title>
-      <link>/zh/post/bookdownplus-magic/</link>
+      <link>http://www.pzhao.org/zh/post/bookdownplus-magic/</link>
       <pubDate>Tue, 27 Jun 2017 00:00:00 +0000</pubDate>
       
-      <guid>/zh/post/bookdownplus-magic/</guid>
+      <guid>http://www.pzhao.org/zh/post/bookdownplus-magic/</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 
@@ -63,16 +63,16 @@
     
     <item>
       <title>R 包 bookdownplus 正式发布</title>
-      <link>/zh/post/bookdownplus-released/</link>
+      <link>http://www.pzhao.org/zh/post/bookdownplus-released/</link>
       <pubDate>Thu, 22 Jun 2017 00:00:00 +0000</pubDate>
       
-      <guid>/zh/post/bookdownplus-released/</guid>
+      <guid>http://www.pzhao.org/zh/post/bookdownplus-released/</guid>
       <description>&lt;p&gt;很高兴地宣布，我的 R 语言扩展包 ‘bookdownplus v1.0.2’ &lt;span class=&#34;citation&#34;&gt;(Zhao 2017a)&lt;/span&gt; 在 CRAN &lt;a href=&#34;https://cran.r-project.org/web/packages/bookdownplus/&#34;&gt;正式发布&lt;/a&gt;了。本文是对’bookdownplus v1.0.2’的简要描述. 由于最近更新频繁, 最新版的’bookdownplus’更加强大和易用, 例如 ‘bookdownplus v1.2.0’ 可以一条指令生成19个模板文档的 pdf, word, html 和 epub 四种格式. 建议移步位于 GitHub 的 &lt;a href=&#34;http://github.com/pzhaonet/bookdownplus&#34;&gt;bookdownplus 项目主页&lt;/a&gt;.&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;
 &lt;img src=&#34;http://cranlogs.r-pkg.org/badges/grand-total/bookdownplus&#34; /&gt;
 
 &lt;/div&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2017-06-22-bookdownplus_released_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-22-bookdownplus_released_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;div class=&#34;section level1&#34;&gt;
 &lt;h1&gt;简介&lt;/h1&gt;
 &lt;p&gt;bookdownplus 是对 bookdown 包 &lt;span class=&#34;citation&#34;&gt;(Xie 2016)&lt;/span&gt; 的增强和简化, 是快速使用 bookdown 的最简洁方法。bookdown 就好比 Microsoft Word 或 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt;，可以用来写文档，而 bookdownplus 提供了很多有用的模板，可以很方便地在 bookdown 平台写期刊论文、学位论文、学术海报、化学分子式、信件、日记、日历、诗集、吉他谱等各种常用文档和书籍。这是功能上的增强（+）。&lt;/p&gt;
@@ -284,10 +284,10 @@ install.packages(&amp;#39;pinyin&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>R bookdown&#43;: 用 R bookdown 写期刊论文、日记、信件、日历、吉他书、化学方程式</title>
-      <link>/zh/post/bookdown-plus/</link>
+      <link>http://www.pzhao.org/zh/post/bookdown-plus/</link>
       <pubDate>Tue, 09 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>/zh/post/bookdown-plus/</guid>
+      <guid>http://www.pzhao.org/zh/post/bookdown-plus/</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 
@@ -480,10 +480,10 @@ template &amp;lt;- templates[8]&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>R bookdown 写学术论文</title>
-      <link>/zh/post/r-bookdown/</link>
+      <link>http://www.pzhao.org/zh/post/r-bookdown/</link>
       <pubDate>Fri, 24 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>/zh/post/r-bookdown/</guid>
+      <guid>http://www.pzhao.org/zh/post/r-bookdown/</guid>
       <description>&lt;p&gt;&lt;em&gt;1&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;最近，我使用 R 语言的 bookdown 扩展包接连做了三件事：先是整理出一本跟&lt;a href=&#34;http://dapengde.com/archives/19122&#34; target=&#34;_blank&#34;&gt; R 语言有关的书&lt;/a&gt;，然后把博客的帖子整理出一本&lt;a href=&#34;http://dapengde.com/archives/19150&#34; target=&#34;_blank&#34;&gt;纯文本的中文书&lt;/a&gt;，这两天我又在用它来写一篇打算投稿的学术期刊论文。&lt;/p&gt;
@@ -541,10 +541,10 @@ bookdown::html_document2: default
     
     <item>
       <title>R bookdown 语法标记速查</title>
-      <link>/zh/post/bookdown-cheatsheet/</link>
+      <link>http://www.pzhao.org/zh/post/bookdown-cheatsheet/</link>
       <pubDate>Tue, 14 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>/zh/post/bookdown-cheatsheet/</guid>
+      <guid>http://www.pzhao.org/zh/post/bookdown-cheatsheet/</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 
@@ -778,10 +778,10 @@ I like Eq. \@ref(eq:mc2) so much that I am falling love with her.&lt;/code&gt;&l
     
     <item>
       <title>不可挡的bookdown</title>
-      <link>/zh/post/inresistible-bookdown/</link>
+      <link>http://www.pzhao.org/zh/post/inresistible-bookdown/</link>
       <pubDate>Mon, 13 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>/zh/post/inresistible-bookdown/</guid>
+      <guid>http://www.pzhao.org/zh/post/inresistible-bookdown/</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 

@@ -1,5 +1,5 @@
 ---
-title: 'R package beginr 1.1.0 released on CRAN'
+title: 'R package beginr released on CRAN'
 author: "赵鹏"
 date: '2017-06-23'
 slug: beginr-released

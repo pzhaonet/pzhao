@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>4 on Peng Zhao</title>
-    <link>/zh/publication_types/4/index.xml</link>
+    <link>http://www.pzhao.org/zh/publication_types/4/index.xml</link>
     <description>Recent content in 4 on Peng Zhao</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
@@ -11,40 +11,40 @@
     
     <item>
       <title>Application of a multi-step error filter for post-processing atmospheric flux and meteorological basic data</title>
-      <link>/zh/publication/lueers-2014/</link>
+      <link>http://www.pzhao.org/zh/publication/lueers-2014/</link>
       <pubDate>Tue, 01 Jul 2014 00:00:00 +0000</pubDate>
       
-      <guid>/zh/publication/lueers-2014/</guid>
+      <guid>http://www.pzhao.org/zh/publication/lueers-2014/</guid>
       <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt;&amp;rdquo;, &amp;ldquo;$\rm \LaTeX$ math code.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>GaFiR: a gap-filling package for ecosystem-atmosphere carbon dioxide flux and evapotranspiration data</title>
-      <link>/zh/publication/zhao-2014/</link>
+      <link>http://www.pzhao.org/zh/publication/zhao-2014/</link>
       <pubDate>Tue, 01 Jul 2014 00:00:00 +0000</pubDate>
       
-      <guid>/zh/publication/zhao-2014/</guid>
+      <guid>http://www.pzhao.org/zh/publication/zhao-2014/</guid>
       <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt;&amp;rdquo;, &amp;ldquo;$\rm \LaTeX$ math code.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Documentation of the EVENT-HMMS experiment 2012: microclimatological effects of rain-out shelters within EVENT II. </title>
-      <link>/zh/publication/babel-2013/</link>
+      <link>http://www.pzhao.org/zh/publication/babel-2013/</link>
       <pubDate>Mon, 01 Jul 2013 00:00:00 +0000</pubDate>
       
-      <guid>/zh/publication/babel-2013/</guid>
+      <guid>http://www.pzhao.org/zh/publication/babel-2013/</guid>
       <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt;&amp;rdquo;, &amp;ldquo;$\rm \LaTeX$ math code.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>TERRECO WP 1-02: documentation of the observation period May 12th to Nov. 8th, 2010, Haean, South Korea</title>
-      <link>/zh/publication/zhao-2011/</link>
+      <link>http://www.pzhao.org/zh/publication/zhao-2011/</link>
       <pubDate>Fri, 01 Jul 2011 00:00:00 +0000</pubDate>
       
-      <guid>/zh/publication/zhao-2011/</guid>
+      <guid>http://www.pzhao.org/zh/publication/zhao-2011/</guid>
       <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt;&amp;rdquo;, &amp;ldquo;$\rm \LaTeX$ math code.&lt;/p&gt;
 </description>
     </item>
