@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Peng Zhao</title>
-    <link>/zh/post/index.xml</link>
+    <link>http://www.pzhao.org/zh/post/index.xml</link>
     <description>Recent content in Posts on Peng Zhao</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
@@ -12,10 +12,10 @@
     
     <item>
       <title>Advection campaign at Torgnon started </title>
-      <link>/zh/post/advection-tn/</link>
+      <link>http://www.pzhao.org/zh/post/advection-tn/</link>
       <pubDate>Wed, 19 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>/zh/post/advection-tn/</guid>
+      <guid>http://www.pzhao.org/zh/post/advection-tn/</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 
@@ -33,10 +33,10 @@
     
     <item>
       <title>bookdownplus 的两个魔法</title>
-      <link>/zh/post/bookdownplus-magic/</link>
+      <link>http://www.pzhao.org/zh/post/bookdownplus-magic/</link>
       <pubDate>Tue, 27 Jun 2017 00:00:00 +0000</pubDate>
       
-      <guid>/zh/post/bookdownplus-magic/</guid>
+      <guid>http://www.pzhao.org/zh/post/bookdownplus-magic/</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 
@@ -85,10 +85,10 @@
     
     <item>
       <title>R 初学者包 beginr 在 CRAN 正式发布</title>
-      <link>/zh/post/beginr-released/</link>
+      <link>http://www.pzhao.org/zh/post/beginr-released/</link>
       <pubDate>Fri, 23 Jun 2017 00:00:00 +0000</pubDate>
       
-      <guid>/zh/post/beginr-released/</guid>
+      <guid>http://www.pzhao.org/zh/post/beginr-released/</guid>
       <description>&lt;p&gt;又一次高兴地宣布, 我的 R 语言扩展包 ‘beginr’ &lt;span class=&#34;citation&#34;&gt;(Zhao 2017a)&lt;/span&gt; 在 CRAN &lt;a href=&#34;https://cran.r-project.org/web/packages/beginr/&#34;&gt;正式发布&lt;/a&gt;了.&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;
 &lt;img src=&#34;http://cranlogs.r-pkg.org/badges/grand-total/beginr&#34; /&gt;
@@ -108,15 +108,15 @@ devtools::install_github(&amp;quot;pzhaonet/beginr&amp;quot;)&lt;/code&gt;&lt;/p
 &lt;h1&gt;备忘函数&lt;/h1&gt;
 &lt;p&gt;我初学 R 的时候用 &lt;code&gt;plot()&lt;/code&gt; 作图时, 常常忘记不同形状数据点(&lt;code&gt;pch&lt;/code&gt;)对应的编号, 实线虚线(&lt;code&gt;lty&lt;/code&gt;)的编号, 散点图类型(&lt;code&gt;type&lt;/code&gt;)的代码, 以及最难选择的颜色代码. 每次忘了都要上网搜一下. 现在, beginr 里提供了 &lt;code&gt;plotpch()&lt;/code&gt;, &lt;code&gt;plotlty()&lt;/code&gt;, &lt;code&gt;plottype()&lt;/code&gt;, &lt;code&gt;plotcolors()&lt;/code&gt;, &lt;code&gt;plotcolorbar()&lt;/code&gt;等函数, 想不起来的时候运行一下就行了.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::plotpch()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::plotlty()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-1-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-1-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::plottype()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-1-3.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-1-3.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::plotcolors()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-1-4.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-1-4.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::plotcolorbar()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-1-5.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-1-5.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;section level1&#34;&gt;
 &lt;h1&gt;快速作图函数&lt;/h1&gt;
@@ -124,51 +124,51 @@ devtools::install_github(&amp;quot;pzhaonet/beginr&amp;quot;)&lt;/code&gt;&lt;/p
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;x &amp;lt;- 1:10
 y &amp;lt;- 1:10 + rnorm(10)
 beginr::plotlm(x, y)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;## [[1]]
-##               Estimate Std. Error    t value  Pr(&amp;gt;|t|)
-## (Intercept) -0.1297766  0.8998717 -0.1442167 0.8888962
-## x            1.0069904  0.1450275  6.9434467 0.0001192
+##                Estimate Std. Error     t value     Pr(&amp;gt;|t|)
+## (Intercept) -0.04738386  0.8845211 -0.05357007 0.9585912898
+## x            0.96161448  0.1425535  6.74563991 0.0001457038
 ## 
 ## [[2]]
-## [1] 0.8576802&lt;/code&gt;&lt;/pre&gt;
+## [1] 0.8504775&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;经常需要了解一组数据的分布, 看看是不是正态分布. beginr 里的 &lt;code&gt;plothist()&lt;/code&gt; 函数不仅做出直方图和平滑曲线, 并且标出中值, 中位数, 四分位数, 标准偏差, 样本数, 以及用来判断是否正态分布的 skewness 值.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;x &amp;lt;- rnorm(10000)
 beginr::plothist(x)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;##     para        value
-## 1    min -3.452051445
-## 2     1q -0.683603831
-## 3 median -0.001157321
-## 4     3q  0.656780418
-## 5    max  3.669659445
-## 6  lower -2.693984698
-## 7  upper  2.667161284
-## 8   mean -0.011631954
-## 9     sd  0.991625792&lt;/code&gt;&lt;/pre&gt;
+## 1    min -3.706958585
+## 2     1q -0.683038438
+## 3 median -0.017294329
+## 4     3q  0.665324455
+## 5    max  3.821906969
+## 6  lower -2.705229723
+## 7  upper  2.687515740
+## 8   mean -0.005396339
+## 9     sd  0.986975945&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;我很喜欢系统自带的成对儿散点图函数&lt;code&gt;pairs()&lt;/code&gt;, 只是功能再强大一点就好了. beginr 里的 &lt;code&gt;plotpairs()&lt;/code&gt; 和 &lt;code&gt;plotpairs2()&lt;/code&gt; 可以实现.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df &amp;lt;- data.frame(a = 1:10, b = 1:10 + rnorm(10), c = 1:10 + rnorm(10))
 beginr::plotpairs(df)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::plotpairs2(df)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## [1] &amp;quot;p&amp;lt;0.01&amp;quot;&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## [1] &amp;quot;p&amp;lt;0.01&amp;quot;&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## [1] &amp;quot;p&amp;lt;0.01&amp;quot;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-4-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-4-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;我经常需要将一组自变量 (x) 和多组因变量 (y&lt;sub&gt;1&lt;/sub&gt;, y&lt;sub&gt;2&lt;/sub&gt;, …, y&lt;sub&gt;n&lt;/sub&gt;) 作在同一个坐标系, 或者一组因变量 (y) 对多组自变量 ((x&lt;sub&gt;1&lt;/sub&gt;, x&lt;sub&gt;2&lt;/sub&gt;, …, x&lt;sub&gt;n&lt;/sub&gt;)), 并且画上各自的误差线. beginr 里一条 &lt;code&gt;dfplot()&lt;/code&gt; 或 &lt;code&gt;dfplot2()&lt;/code&gt; 函数就能完成.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;x &amp;lt;- seq(0, 2 * pi, length.out = 100)
 y &amp;lt;- data.frame(sin(x), cos(x))
 yerror &amp;lt;- data.frame(abs(rnorm(100, sd = 0.3)), abs(rnorm(100, sd = 0.1)))
 beginr::dfplot(x, y, yerror = yerror)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::dfplot2(y, x, xerror = yerror)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-5-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-5-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;如果只是想简单添加误差线, 那就用 &lt;code&gt;errorbar()&lt;/code&gt; 函数.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;x &amp;lt;- seq(0, 2 * pi, length.out = 100)
 y &amp;lt;- sin(x)
 plot(x, y, type = &amp;quot;l&amp;quot;)
 beginr::errorbar(x, y, yupper = 0.1, ylower = 0.1)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;section level1&#34;&gt;
 &lt;h1&gt;数据框操作&lt;/h1&gt;
@@ -176,19 +176,19 @@ beginr::errorbar(x, y, yupper = 0.1, ylower = 0.1)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df &amp;lt;- data.frame(a = 1:10, b = 1:10 + rnorm(10), c = 1:10 + rnorm(10))
 beginr::lmdf(df)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;##   x y r.squared adj.r.squared   intercept     slope Std.Error.intercept
-## 1 a b 0.9341572     0.9259268 -0.74846379 1.0947944           0.6376205
-## 2 a c 0.9679430     0.9639359 -0.47226241 1.1478758           0.4582648
-## 3 b a 0.9341572     0.9259268  1.00077868 0.8532718           0.4962364
-## 4 b c 0.8549812     0.8368538  0.81906666 0.9524138           0.8592440
-## 5 c a 0.9679430     0.9639359  0.57454719 0.8432472           0.3653647
-## 6 c b 0.8549812     0.8368538  0.02939511 0.8976993           0.8802383
+## 1 a b 0.9332967     0.9249588 -0.47651116 1.0545611           0.6184732
+## 2 a c 0.9501830     0.9439559 -0.80699057 1.1257549           0.5654763
+## 3 b a 0.9332967     0.9249588  0.78858510 0.8850096           0.5168131
+## 4 b c 0.8868897     0.8727509  0.08050282 0.9963528           0.7772331
+## 5 c a 0.9501830     0.9439559  0.95512645 0.8440407           0.4321392
+## 6 c b 0.8868897     0.8727509  0.53049293 0.8901362           0.7108007
 ##   Std.Error.slope t.intercept   t.slope Pr.intercept     Pr.slope
-## 1      0.10276185 -1.17383895 10.653705   0.27421860 5.280361e-06
-## 2      0.07385606 -1.03054488 15.542067   0.33290086 2.925453e-07
-## 3      0.08009155  2.01673780 10.653705   0.07845444 5.280361e-06
-## 4      0.13868025  0.95324105  6.867696   0.36837808 1.286613e-04
-## 5      0.05425579  1.57253079 15.542067   0.15447196 2.925453e-07
-## 6      0.13071332  0.03339449  6.867696   0.97417817 1.286613e-04&lt;/code&gt;&lt;/pre&gt;
+## 1      0.09967598  -0.7704637 10.579891    0.4631684 5.563868e-06
+## 2      0.09113476  -1.4270989 12.352641    0.1913944 1.718745e-06
+## 3      0.08365016   1.5258612 10.579891    0.1655571 5.563868e-06
+## 4      0.12580113   0.1035762  7.920063    0.9200552 4.693851e-05
+## 5      0.06832877   2.2102288 12.352641    0.0580603 1.718745e-06
+## 6      0.11239004   0.7463314  7.920063    0.4768240 4.693851e-05&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;还有两个函数对&lt;code&gt;tapply()&lt;/code&gt;进行了改善, 用来进行因子计算.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::tapplydf()
 beginr::tapplydfv()&lt;/code&gt;&lt;/pre&gt;
@@ -208,10 +208,11 @@ beginr::list2ascii(alist)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;很多人引用了别人的工作却往往不列出参考文献. 不仅初学者常常如此, 很多学术论文里有些插图一眼就能看出是 R 的某个扩展包作出来的, 但参考文献里却没有列出来, 这往小了说是不尊重别人的工作,往大了说是缺乏学术道德. 对开源社区的生态圈是不利的. beginr 为初学者提供了 &lt;code&gt;bib()&lt;/code&gt; 函数, 可以为指定的 R 扩展包生成文献引用信息, 既可以打印出结果, 也可以直接保存为 ‘.bib’文件方便为’&lt;a href=&#34;http://www.pzhao.org/zh/post/bookdownplus-released/&#34;&gt;bookdownplus&lt;/a&gt;‘&lt;span class=&#34;citation&#34;&gt;(Zhao 2017b)&lt;/span&gt; 或’&lt;a href=&#34;http://www.pzhao.org/zh/post/r-blogdown/&#34;&gt;blogdown&lt;/a&gt;’ &lt;span class=&#34;citation&#34;&gt;(Xie 2017)&lt;/span&gt; 调用.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::bib(pkg = c(&amp;quot;mindr&amp;quot;, &amp;quot;bookdownplus&amp;quot;, &amp;quot;pinyin&amp;quot;))&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## @Manual{R-bookdownplus,
-##   title = {bookdownplus: Generate Varied Books and Documents with R &amp;#39;bookdown&amp;#39; Package},
+##   title = {bookdownplus: Generate Varied Types of Books and Documents with R &amp;#39;bookdown&amp;#39;
+## Package},
 ##   author = {Peng Zhao},
 ##   year = {2017},
-##   note = {R package version 1.2.2},
+##   note = {R package version 1.3.0},
 ##   url = {https://github.com/pzhaonet/bookdownplus},
 ## }
 ## @Manual{R-mindr,
@@ -230,7 +231,7 @@ beginr::list2ascii(alist)&lt;/code&gt;&lt;/pre&gt;
 ## }&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;code&gt;plotpkg()&lt;/code&gt;函数可以做出一张图，来展示指定扩展包在CRAN上被用户下载的次数：&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::plotpkg(&amp;quot;beginr&amp;quot;, &amp;quot;2017-06-23&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-13-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-13-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;新手可以用&lt;code&gt;rpkg()&lt;/code&gt;函数快速创建自己的扩展包.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::rpkg()&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;好啦, 以后我还会把更多有用的工具添加到 beginr 包里. 欢迎关注 beginr的&lt;a href=&#34;https://github.com/pzhaonet/beginr&#34;&gt;项目主页&lt;/a&gt;. 另外, 使用beginr的地方请记得列出参考文献哦.&lt;/p&gt;
@@ -262,16 +263,16 @@ beginr::list2ascii(alist)&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>R 包 bookdownplus 正式发布</title>
-      <link>/zh/post/bookdownplus-released/</link>
+      <link>http://www.pzhao.org/zh/post/bookdownplus-released/</link>
       <pubDate>Thu, 22 Jun 2017 00:00:00 +0000</pubDate>
       
-      <guid>/zh/post/bookdownplus-released/</guid>
+      <guid>http://www.pzhao.org/zh/post/bookdownplus-released/</guid>
       <description>&lt;p&gt;很高兴地宣布，我的 R 语言扩展包 ‘bookdownplus v1.0.2’ &lt;span class=&#34;citation&#34;&gt;(Zhao 2017a)&lt;/span&gt; 在 CRAN &lt;a href=&#34;https://cran.r-project.org/web/packages/bookdownplus/&#34;&gt;正式发布&lt;/a&gt;了。本文是对’bookdownplus v1.0.2’的简要描述. 由于最近更新频繁, 最新版的’bookdownplus’更加强大和易用, 例如 ‘bookdownplus v1.2.0’ 可以一条指令生成19个模板文档的 pdf, word, html 和 epub 四种格式. 建议移步位于 GitHub 的 &lt;a href=&#34;http://github.com/pzhaonet/bookdownplus&#34;&gt;bookdownplus 项目主页&lt;/a&gt;.&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;
 &lt;img src=&#34;http://cranlogs.r-pkg.org/badges/grand-total/bookdownplus&#34; /&gt;
 
 &lt;/div&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2017-06-22-bookdownplus_released_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-22-bookdownplus_released_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;div class=&#34;section level1&#34;&gt;
 &lt;h1&gt;简介&lt;/h1&gt;
 &lt;p&gt;bookdownplus 是对 bookdown 包 &lt;span class=&#34;citation&#34;&gt;(Xie 2016)&lt;/span&gt; 的增强和简化, 是快速使用 bookdown 的最简洁方法。bookdown 就好比 Microsoft Word 或 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt;，可以用来写文档，而 bookdownplus 提供了很多有用的模板，可以很方便地在 bookdown 平台写期刊论文、学位论文、学术海报、化学分子式、信件、日记、日历、诗集、吉他谱等各种常用文档和书籍。这是功能上的增强（+）。&lt;/p&gt;
@@ -483,10 +484,10 @@ install.packages(&amp;#39;pinyin&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>LaTeX 公式转换成 Word 公式</title>
-      <link>/zh/post/latex-equations-to-word/</link>
+      <link>http://www.pzhao.org/zh/post/latex-equations-to-word/</link>
       <pubDate>Tue, 20 Jun 2017 00:00:00 +0000</pubDate>
       
-      <guid>/zh/post/latex-equations-to-word/</guid>
+      <guid>http://www.pzhao.org/zh/post/latex-equations-to-word/</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 
@@ -505,7 +506,7 @@ install.packages(&amp;#39;pinyin&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
 &lt;/ol&gt;
 &lt;p&gt;当然，上面第一步也可以用&lt;a href=&#34;https://www.latex4technics.com/&#34;&gt;别的软件&lt;/a&gt;来完成，下图是个示例。&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;/img/latex-equations-to-word.gif&#34; /&gt;
+&lt;img src=&#34;http://www.pzhao.org/img/latex-equations-to-word.gif&#34; /&gt;
 
 &lt;/div&gt;
 &lt;p&gt;以后在合作里再也不用Aurora这种把 Word 和 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; 混在一起的工具了。不是不好，而是太小众。&lt;/p&gt;
@@ -514,10 +515,10 @@ install.packages(&amp;#39;pinyin&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>R包发布记</title>
-      <link>/zh/post/publish-r-packages/</link>
+      <link>http://www.pzhao.org/zh/post/publish-r-packages/</link>
       <pubDate>Mon, 19 Jun 2017 00:00:00 +0000</pubDate>
       
-      <guid>/zh/post/publish-r-packages/</guid>
+      <guid>http://www.pzhao.org/zh/post/publish-r-packages/</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 
@@ -582,10 +583,10 @@ install.packages(&amp;#39;bookdownplus&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>《学R》序（朱彤）</title>
-      <link>/zh/post/preface_zhu/</link>
+      <link>http://www.pzhao.org/zh/post/preface_zhu/</link>
       <pubDate>Wed, 14 Jun 2017 00:00:00 +0000</pubDate>
       
-      <guid>/zh/post/preface_zhu/</guid>
+      <guid>http://www.pzhao.org/zh/post/preface_zhu/</guid>
       <description>&lt;p&gt;我读硕士研究生时的导师是朱彤教授。在朱老师科研小组 ZTGroup 学习的三年如沐春风，我从中得到的收获受益终生。正值北京大学环境大楼落成不久，又逢毕业季，作为环境科学与工程学院的院长，朱老师在极其繁忙的工作中抽出时间来为本书欣然作序，实属不易，仅凭“感激”二字岂能表达我们的谢意？&lt;/p&gt;
 
 &lt;p&gt;下面是朱老师为本书写的序言。&lt;/p&gt;
@@ -606,16 +607,16 @@ install.packages(&amp;#39;bookdownplus&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>pinyin: 把汉字转换成拼音的R包</title>
-      <link>/zh/post/pinyin/</link>
+      <link>http://www.pzhao.org/zh/post/pinyin/</link>
       <pubDate>Fri, 26 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>/zh/post/pinyin/</guid>
+      <guid>http://www.pzhao.org/zh/post/pinyin/</guid>
       <description>&lt;p&gt;&lt;strong&gt;更新：2017-06-19，&lt;a href=&#34;https://cran.r-project.org/web/packages/mindr/index.html&#34;&gt;‘pinyin 1.0.2’&lt;/a&gt; 在 CRAN 正式发布。&lt;/strong&gt;&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;
 &lt;img src=&#34;http://cranlogs.r-pkg.org/badges/grand-total/pinyin&#34; /&gt;
 
 &lt;/div&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2017-05-26-pinyin_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-05-26-pinyin_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;今天新写了个R包，粗暴地取名为 &lt;a href=&#34;https://github.com/pzhaonet/pinyin/&#34;&gt;pinyin&lt;/a&gt;，作用是把汉字转换成拼音。&lt;/p&gt;
 &lt;p&gt;安装方法：&lt;/p&gt;
 &lt;p&gt;稳定版：&lt;/p&gt;
@@ -668,10 +669,10 @@ pinyin(&amp;#39;羌笛何须怨杨柳春风不度玉门关&amp;#39;)&lt;/code&gt
     
     <item>
       <title>微气象学常用的 LaTeX 公式</title>
-      <link>/zh/post/equations/</link>
+      <link>http://www.pzhao.org/zh/post/equations/</link>
       <pubDate>Tue, 23 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>/zh/post/equations/</guid>
+      <guid>http://www.pzhao.org/zh/post/equations/</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 
@@ -991,16 +992,16 @@ R^2 =(\frac{\sum_{i=1}^{n}(O_i-\overline{O})(P_i-\overline{P})}{\sqrt{\sum_{i=1}
     
     <item>
       <title>R mindr: 把 Markdown 转成思维导图</title>
-      <link>/zh/post/mindr/</link>
+      <link>http://www.pzhao.org/zh/post/mindr/</link>
       <pubDate>Fri, 19 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>/zh/post/mindr/</guid>
+      <guid>http://www.pzhao.org/zh/post/mindr/</guid>
       <description>&lt;p&gt;&lt;strong&gt;更新：2017-06-19，&lt;a href=&#34;https://cran.r-project.org/web/packages/mindr/index.html&#34;&gt;‘mindr 1.0.4’&lt;/a&gt; 在 CRAN 正式发布。&lt;/strong&gt;&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;
 &lt;img src=&#34;http://cranlogs.r-pkg.org/badges/grand-total/mindr&#34; /&gt;
 
 &lt;/div&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2017-05-19-mindr_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-05-19-mindr_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;将 markdown (.md, .Rmd) 文件转换成思维导图的 R 扩展包 &lt;a href=&#34;https://github.com/pzhaonet/mindr&#34;&gt;mindr&lt;/a&gt; 是我写的第五个 R 包，安装方法如下：&lt;/p&gt;
 &lt;p&gt;稳定版：&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;install.packages(&amp;quot;mindr&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
@@ -1037,10 +1038,10 @@ R^2 =(\frac{\sum_{i=1}^{n}(O_i-\overline{O})(P_i-\overline{P})}{\sqrt{\sum_{i=1}
     
     <item>
       <title>R blogdown 科研网站的公式和参考文献</title>
-      <link>/zh/post/rblogdown-bib/</link>
+      <link>http://www.pzhao.org/zh/post/rblogdown-bib/</link>
       <pubDate>Thu, 18 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>/zh/post/rblogdown-bib/</guid>
+      <guid>http://www.pzhao.org/zh/post/rblogdown-bib/</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 
@@ -1071,7 +1072,7 @@ R^2 =(\frac{\sum_{i=1}^{n}(O_i-\overline{O})(P_i-\overline{P})}{\sqrt{\sum_{i=1}
 &lt;p&gt;blogdown 可以如此方便地往帖子里插入计算代码、图表、公式、参考文献，我实在找不出第二个这样的工具。建科研网站，非 blogdown 莫属！&lt;/p&gt;
 &lt;p&gt;最后顺便提一下：虽然最新正式版的 RStudio 1.0.143 并 没有 blogdown 和 bookdown 的入口，但是我欣喜地发现，在 &lt;a href=&#34;http://dailies.rstudio.com&#34;&gt;RStudio 的开发版&lt;/a&gt; 1.1.233 里已经加入了这个入口了！菜单 File - New Project - New Directory，就能看到 blogdown 和 bookdown 项目。跟 shiny 和 R package 并列，可见 RStudio 公司对这两个项目的重视程度。&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;/img/rstudiobookdown.jpg&#34; /&gt;
+&lt;img src=&#34;http://www.pzhao.org/img/rstudiobookdown.jpg&#34; /&gt;
 
 &lt;/div&gt;
 &lt;p&gt;有幸尝试了 blogdown 和 bookdown &lt;span class=&#34;citation&#34;&gt;(Xie 2016)&lt;/span&gt; 项目，并且也做过 &lt;a href=&#34;http://sciwis.com/&#34;&gt;shiny&lt;/a&gt; 和 &lt;a href=&#34;http://www.pzhao.org/zh/post/rmickey/&#34;&gt;R package&lt;/a&gt;，我模模糊糊有种异样的感觉，就像埋头赶路时猛一抬头，隐隐约约眺见了走在时代前面的先知们的背影。&lt;/p&gt;
@@ -1091,10 +1092,10 @@ R^2 =(\frac{\sum_{i=1}^{n}(O_i-\overline{O})(P_i-\overline{P})}{\sqrt{\sum_{i=1}
     
     <item>
       <title>9分钟写个R语言包：菜鸟致简速成</title>
-      <link>/zh/post/rmickey/</link>
+      <link>http://www.pzhao.org/zh/post/rmickey/</link>
       <pubDate>Tue, 16 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>/zh/post/rmickey/</guid>
+      <guid>http://www.pzhao.org/zh/post/rmickey/</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 
@@ -1189,7 +1190,7 @@ foo()&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;PS. 星期三下午，我壮着胆子把Emacs装上，战战兢兢试了一下就惊呆了。这个ctrl+coo快捷键(可以读作“control 酷”，太好记了)来维护R包简直不要太逆天。昨天我花了四五个小时来为我那51个函数写文档，要是用Emacs，估计最多一小时就够了。省事的话，可能不到10分钟就能写出个包含这51个函数的能用的致简包。最让我受刺激的还不是这个。自打学了vim之后，我就坚信，我永远用不着，也永远学不会Emacs，而实际上，学会上面这个办法，只用了三五分钟……Emacs我不打算学更多，光这一招就够酷……(Update: 根据 &lt;a href=&#34;http://www.pzhao.org/zh/post/rmickey/#comment-3314475182&#34;&gt;Yihui Xie&lt;/a&gt;的留言，RStudio 里 ctrl+shift+alt+r也能同样实现)&lt;/p&gt;
 &lt;p&gt;到底是什么阻挡了尝试新事物的可能？&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;/img/emacs-coo.gif&#34; /&gt;
+&lt;img src=&#34;http://www.pzhao.org/img/emacs-coo.gif&#34; /&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1198,10 +1199,10 @@ foo()&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>postr: 用R Markdown做海报</title>
-      <link>/zh/post/postr/</link>
+      <link>http://www.pzhao.org/zh/post/postr/</link>
       <pubDate>Tue, 16 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>/zh/post/postr/</guid>
+      <guid>http://www.pzhao.org/zh/post/postr/</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 
@@ -1247,10 +1248,10 @@ postr::postr()&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>R bookdown&#43;: 用 R bookdown 写期刊论文、日记、信件、日历、吉他书、化学方程式</title>
-      <link>/zh/post/bookdown-plus/</link>
+      <link>http://www.pzhao.org/zh/post/bookdown-plus/</link>
       <pubDate>Tue, 09 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>/zh/post/bookdown-plus/</guid>
+      <guid>http://www.pzhao.org/zh/post/bookdown-plus/</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 
@@ -1443,10 +1444,10 @@ template &amp;lt;- templates[8]&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>初恋</title>
-      <link>/zh/post/cawas/</link>
+      <link>http://www.pzhao.org/zh/post/cawas/</link>
       <pubDate>Wed, 03 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>/zh/post/cawas/</guid>
+      <guid>http://www.pzhao.org/zh/post/cawas/</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 
@@ -1457,21 +1458,21 @@ template &amp;lt;- templates[8]&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;转眼间，范先生关于初恋的比喻已是几年前的旧事。前两日，整理移动硬盘里的旧文件，在一个多年没碰过的文件夹里，我发现了一些跟以前的工作单位有关的旧物，已遗忘多年，打开一看——&lt;/p&gt;
 &lt;p&gt;旧物里有入职满一年时，我为单位设计的logo。&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;/img/cawastech.jpg&#34; /&gt;
+&lt;img src=&#34;http://www.pzhao.org/img/cawastech.jpg&#34; /&gt;
 
 &lt;/div&gt;
 &lt;p&gt;那年，我们要编写大量的技术手册和办公文档，我很单纯地想，为他们设计一个logo会显得好看一点。说是“设计”，我哪里懂呢，只是把学到的一点flash技术使劲往上靠。这个工作单位属于国家气象局，那就往里加气象元素呗；我所在的部门主要职责是安装、维修和标校仪器，那就画个扳手呗。我们还要对来自全国各地的同行进行培训，于是我配套设计了几个颜色渐变动画版，打算在培训幻灯片里用。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/img/cawastech1.gif&#34; /&gt; &lt;img src=&#34;/img/cawastech2.gif&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/img/cawastech1.gif&#34; /&gt; &lt;img src=&#34;http://www.pzhao.org/img/cawastech2.gif&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;可惜做完之后并未派上用场。如今，我连源文件都打不开了。&lt;/p&gt;
 &lt;p&gt;旧物里有入职第二年，我制作的电子贺卡。&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;/img/cawas_214.jpg&#34; /&gt;
+&lt;img src=&#34;http://www.pzhao.org/img/cawas_214.jpg&#34; /&gt;
 
 &lt;/div&gt;
-&lt;p&gt;那年，春节和情人节接踵而至。刚刚学了一点编程的我，绞尽脑汁把用我学到的所有visual basic技术全都用上，制作了一张&lt;a href=&#34;/download/bainian.exe&#34;&gt;电子卡片(点击下载)&lt;/a&gt;，以部门的名义，发给同单位其他部门的同事联络感情。在这张卡片上，有“喜欢”和“不喜欢”两个按钮，但是有个小把戏：鼠标永远追不上“不喜欢”；鼠标一放上去，它就跳到别的地方去了。所以，你对我们部门只能喜欢，别无选择。&lt;/p&gt;
+&lt;p&gt;那年，春节和情人节接踵而至。刚刚学了一点编程的我，绞尽脑汁把用我学到的所有visual basic技术全都用上，制作了一张&lt;a href=&#34;http://www.pzhao.org/download/bainian.exe&#34;&gt;电子卡片(点击下载)&lt;/a&gt;，以部门的名义，发给同单位其他部门的同事联络感情。在这张卡片上，有“喜欢”和“不喜欢”两个按钮，但是有个小把戏：鼠标永远追不上“不喜欢”；鼠标一放上去，它就跳到别的地方去了。所以，你对我们部门只能喜欢，别无选择。&lt;/p&gt;
 &lt;p&gt;我就从没想过，贸然发给同事个exe文件，说不定讨人嫌吧？如今，我已经把visual basic忘得一干二净，代码读都读不懂了。&lt;/p&gt;
 &lt;p&gt;旧物里有入职第三年，我做的合唱伴奏音乐。&lt;/p&gt;
-&lt;p&gt;那时，我们单位举办春节联欢会，节目的演员是各所职工。我们中心表演的节目是大合唱。提前一个多月，我们就开始着手准备，指导老师请好了，演员也动员好了，排练时间也安排好了，曲目也选好了，是刘欢原唱的《在路上》。这时却发现，原唱音频文件的消声效果不够好，而专门的伴奏又找不到。我自告奋勇，连熬两个通宵，使出浑身解数，愣是用一个吉他谱制作软件把&lt;a href=&#34;/download/on_the_way.mid&#34;&gt;伴奏音乐(点击下载)&lt;/a&gt;硬生生做了出来。这里面，除了主旋律是在网上找到的简谱外，其他音轨都是我从原唱里一个音一个音听写下来，记在纸上，再输入电脑，反复调整才得来的。我记得，做完的时候已是凌晨5点，躺下眯了两小时，就跳起来挤公交上班，到单位继续亢奋地修仪器。&lt;/p&gt;
+&lt;p&gt;那时，我们单位举办春节联欢会，节目的演员是各所职工。我们中心表演的节目是大合唱。提前一个多月，我们就开始着手准备，指导老师请好了，演员也动员好了，排练时间也安排好了，曲目也选好了，是刘欢原唱的《在路上》。这时却发现，原唱音频文件的消声效果不够好，而专门的伴奏又找不到。我自告奋勇，连熬两个通宵，使出浑身解数，愣是用一个吉他谱制作软件把&lt;a href=&#34;http://www.pzhao.org/download/on_the_way.mid&#34;&gt;伴奏音乐(点击下载)&lt;/a&gt;硬生生做了出来。这里面，除了主旋律是在网上找到的简谱外，其他音轨都是我从原唱里一个音一个音听写下来，记在纸上，再输入电脑，反复调整才得来的。我记得，做完的时候已是凌晨5点，躺下眯了两小时，就跳起来挤公交上班，到单位继续亢奋地修仪器。&lt;/p&gt;
 &lt;p&gt;回望这段往事，我感到不可思议。logo并没有领导要求我做，电子贺卡的编程完全属于自愿，而合唱伴奏的制作弄得通宵不睡，更是自作自受——你不做又会怎么样呢？节目照演，春节照过。我问问自己：你为她投入的这份热忱，是她需要的吗？她要求你做到的事情，你做到了吗？你的所谓付出，哪些是出于爱她，哪些是出于爱自己，哪些是二者兼有？&lt;/p&gt;
 &lt;p&gt;此情可待成追忆，只是当时已惘然。入职第四年，我辞职出国深造，与旧单位分道扬镳。&lt;/p&gt;
 &lt;p&gt;如今翻起旧物，我清楚地知道，为工作单位设计logo、制作贺卡、制作伴奏这样的事情，今后恐怕再也不会自发自愿地发生在我身上；即使发生，也难以倾注当年那么大的热情。那份热情不计付出，熊熊燃烧，那是青春的见证。&lt;/p&gt;

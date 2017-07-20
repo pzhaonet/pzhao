@@ -53,26 +53,26 @@ y &lt;- 1:10 + rnorm(10)
 beginr::plotlm(x, y)</code></pre>
 <p><img src="/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 <pre><code>## [[1]]
-##               Estimate Std. Error    t value  Pr(&gt;|t|)
-## (Intercept) -0.1297766  0.8998717 -0.1442167 0.8888962
-## x            1.0069904  0.1450275  6.9434467 0.0001192
+##                Estimate Std. Error     t value     Pr(&gt;|t|)
+## (Intercept) -0.04738386  0.8845211 -0.05357007 0.9585912898
+## x            0.96161448  0.1425535  6.74563991 0.0001457038
 ## 
 ## [[2]]
-## [1] 0.8576802</code></pre>
+## [1] 0.8504775</code></pre>
 <p>经常需要了解一组数据的分布, 看看是不是正态分布. beginr 里的 <code>plothist()</code> 函数不仅做出直方图和平滑曲线, 并且标出中值, 中位数, 四分位数, 标准偏差, 样本数, 以及用来判断是否正态分布的 skewness 值.</p>
 <pre class="r"><code>x &lt;- rnorm(10000)
 beginr::plothist(x)</code></pre>
 <p><img src="/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 <pre><code>##     para        value
-## 1    min -3.452051445
-## 2     1q -0.683603831
-## 3 median -0.001157321
-## 4     3q  0.656780418
-## 5    max  3.669659445
-## 6  lower -2.693984698
-## 7  upper  2.667161284
-## 8   mean -0.011631954
-## 9     sd  0.991625792</code></pre>
+## 1    min -3.706958585
+## 2     1q -0.683038438
+## 3 median -0.017294329
+## 4     3q  0.665324455
+## 5    max  3.821906969
+## 6  lower -2.705229723
+## 7  upper  2.687515740
+## 8   mean -0.005396339
+## 9     sd  0.986975945</code></pre>
 <p>我很喜欢系统自带的成对儿散点图函数<code>pairs()</code>, 只是功能再强大一点就好了. beginr 里的 <code>plotpairs()</code> 和 <code>plotpairs2()</code> 可以实现.</p>
 <pre class="r"><code>df &lt;- data.frame(a = 1:10, b = 1:10 + rnorm(10), c = 1:10 + rnorm(10))
 beginr::plotpairs(df)</code></pre>
@@ -103,19 +103,19 @@ beginr::errorbar(x, y, yupper = 0.1, ylower = 0.1)</code></pre>
 <pre class="r"><code>df &lt;- data.frame(a = 1:10, b = 1:10 + rnorm(10), c = 1:10 + rnorm(10))
 beginr::lmdf(df)</code></pre>
 <pre><code>##   x y r.squared adj.r.squared   intercept     slope Std.Error.intercept
-## 1 a b 0.9341572     0.9259268 -0.74846379 1.0947944           0.6376205
-## 2 a c 0.9679430     0.9639359 -0.47226241 1.1478758           0.4582648
-## 3 b a 0.9341572     0.9259268  1.00077868 0.8532718           0.4962364
-## 4 b c 0.8549812     0.8368538  0.81906666 0.9524138           0.8592440
-## 5 c a 0.9679430     0.9639359  0.57454719 0.8432472           0.3653647
-## 6 c b 0.8549812     0.8368538  0.02939511 0.8976993           0.8802383
+## 1 a b 0.9332967     0.9249588 -0.47651116 1.0545611           0.6184732
+## 2 a c 0.9501830     0.9439559 -0.80699057 1.1257549           0.5654763
+## 3 b a 0.9332967     0.9249588  0.78858510 0.8850096           0.5168131
+## 4 b c 0.8868897     0.8727509  0.08050282 0.9963528           0.7772331
+## 5 c a 0.9501830     0.9439559  0.95512645 0.8440407           0.4321392
+## 6 c b 0.8868897     0.8727509  0.53049293 0.8901362           0.7108007
 ##   Std.Error.slope t.intercept   t.slope Pr.intercept     Pr.slope
-## 1      0.10276185 -1.17383895 10.653705   0.27421860 5.280361e-06
-## 2      0.07385606 -1.03054488 15.542067   0.33290086 2.925453e-07
-## 3      0.08009155  2.01673780 10.653705   0.07845444 5.280361e-06
-## 4      0.13868025  0.95324105  6.867696   0.36837808 1.286613e-04
-## 5      0.05425579  1.57253079 15.542067   0.15447196 2.925453e-07
-## 6      0.13071332  0.03339449  6.867696   0.97417817 1.286613e-04</code></pre>
+## 1      0.09967598  -0.7704637 10.579891    0.4631684 5.563868e-06
+## 2      0.09113476  -1.4270989 12.352641    0.1913944 1.718745e-06
+## 3      0.08365016   1.5258612 10.579891    0.1655571 5.563868e-06
+## 4      0.12580113   0.1035762  7.920063    0.9200552 4.693851e-05
+## 5      0.06832877   2.2102288 12.352641    0.0580603 1.718745e-06
+## 6      0.11239004   0.7463314  7.920063    0.4768240 4.693851e-05</code></pre>
 <p>还有两个函数对<code>tapply()</code>进行了改善, 用来进行因子计算.</p>
 <pre class="r"><code>beginr::tapplydf()
 beginr::tapplydfv()</code></pre>
@@ -135,10 +135,11 @@ beginr::list2ascii(alist)</code></pre>
 <p>很多人引用了别人的工作却往往不列出参考文献. 不仅初学者常常如此, 很多学术论文里有些插图一眼就能看出是 R 的某个扩展包作出来的, 但参考文献里却没有列出来, 这往小了说是不尊重别人的工作,往大了说是缺乏学术道德. 对开源社区的生态圈是不利的. beginr 为初学者提供了 <code>bib()</code> 函数, 可以为指定的 R 扩展包生成文献引用信息, 既可以打印出结果, 也可以直接保存为 ‘.bib’文件方便为’<a href="http://www.pzhao.org/zh/post/bookdownplus-released/">bookdownplus</a>‘<span class="citation">(Zhao 2017b)</span> 或’<a href="http://www.pzhao.org/zh/post/r-blogdown/">blogdown</a>’ <span class="citation">(Xie 2017)</span> 调用.</p>
 <pre class="r"><code>beginr::bib(pkg = c(&quot;mindr&quot;, &quot;bookdownplus&quot;, &quot;pinyin&quot;))</code></pre>
 <pre><code>## @Manual{R-bookdownplus,
-##   title = {bookdownplus: Generate Varied Books and Documents with R &#39;bookdown&#39; Package},
+##   title = {bookdownplus: Generate Varied Types of Books and Documents with R &#39;bookdown&#39;
+## Package},
 ##   author = {Peng Zhao},
 ##   year = {2017},
-##   note = {R package version 1.2.2},
+##   note = {R package version 1.3.0},
 ##   url = {https://github.com/pzhaonet/bookdownplus},
 ## }
 ## @Manual{R-mindr,

@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Egu on Peng Zhao</title>
-    <link>/zh/tags/egu/index.xml</link>
+    <link>http://www.pzhao.org/zh/tags/egu/index.xml</link>
     <description>Recent content in Egu on Peng Zhao</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
@@ -11,10 +11,10 @@
     
     <item>
       <title>2017年欧洲地学年会留影</title>
-      <link>/zh/post/egu2017photo/</link>
+      <link>http://www.pzhao.org/zh/post/egu2017photo/</link>
       <pubDate>Tue, 02 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>/zh/post/egu2017photo/</guid>
+      <guid>http://www.pzhao.org/zh/post/egu2017photo/</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 
@@ -33,10 +33,10 @@
     
     <item>
       <title>R vs Python: 2017年欧洲地学年会</title>
-      <link>/zh/post/egu2017/</link>
+      <link>http://www.pzhao.org/zh/post/egu2017/</link>
       <pubDate>Thu, 20 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>/zh/post/egu2017/</guid>
+      <guid>http://www.pzhao.org/zh/post/egu2017/</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 

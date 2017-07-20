@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Peng Zhao on Peng Zhao</title>
-    <link>/en/index.xml</link>
+    <link>http://www.pzhao.org/en/index.xml</link>
     <description>Recent content in Peng Zhao on Peng Zhao</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -12,10 +12,10 @@
     
     <item>
       <title>Advection campaign at Torgnon started </title>
-      <link>/en/post/advection-tn/</link>
+      <link>http://www.pzhao.org/en/post/advection-tn/</link>
       <pubDate>Wed, 19 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>/en/post/advection-tn/</guid>
+      <guid>http://www.pzhao.org/en/post/advection-tn/</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 
@@ -33,10 +33,10 @@
     
     <item>
       <title>R package beginr released on CRAN</title>
-      <link>/en/post/beginr-released/</link>
+      <link>http://www.pzhao.org/en/post/beginr-released/</link>
       <pubDate>Fri, 23 Jun 2017 00:00:00 +0000</pubDate>
       
-      <guid>/en/post/beginr-released/</guid>
+      <guid>http://www.pzhao.org/en/post/beginr-released/</guid>
       <description>&lt;p&gt;I’m glad to announce that ‘beginr’ &lt;span class=&#34;citation&#34;&gt;(Zhao 2017)&lt;/span&gt; is now on &lt;a href=&#34;https://CRAN.R-project.org/package=beginr&#34;&gt;CRAN&lt;/a&gt;. This post is a brief documentation of ‘beginr 0.1.0’. Subsequent updates can be found on the &lt;a href=&#34;http://github.com/pzhaonet/beginr&#34;&gt;GitHub site of beginr&lt;/a&gt;.&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;
 &lt;img src=&#34;http://cranlogs.r-pkg.org/badges/grand-total/beginr&#34; /&gt;
@@ -59,15 +59,15 @@ devtools::install_github(&amp;quot;pzhaonet/beginr&amp;quot;)&lt;/code&gt;&lt;/p
 &lt;h2&gt;Functions as Memos&lt;/h2&gt;
 &lt;p&gt;If you often forget the options for &lt;code&gt;pch&lt;/code&gt;, &lt;code&gt;lty&lt;/code&gt;, &lt;code&gt;type&lt;/code&gt;, and &lt;code&gt;col&lt;/code&gt; when you &lt;code&gt;plot()&lt;/code&gt;, you can run &lt;code&gt;plotpch()&lt;/code&gt;, &lt;code&gt;plotlty()&lt;/code&gt;, &lt;code&gt;plottype()&lt;/code&gt;, &lt;code&gt;plotcolors()&lt;/code&gt;, and &lt;code&gt;plotcolorbar()&lt;/code&gt;. No need to search the internet any more.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::plotpch()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::plotlty()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-2-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-2-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::plottype()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-2-3.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-2-3.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::plotcolors()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-2-4.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-2-4.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::plotcolorbar()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-2-5.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-2-5.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;functions-for-easy-plotting&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Functions for Easy Plotting&lt;/h2&gt;
@@ -75,71 +75,71 @@ devtools::install_github(&amp;quot;pzhaonet/beginr&amp;quot;)&lt;/code&gt;&lt;/p
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;x &amp;lt;- 1:10
 y &amp;lt;- 1:10 + rnorm(10)
 beginr::plotlm(x, y)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;## [[1]]
-##               Estimate Std. Error   t value     Pr(&amp;gt;|t|)
-## (Intercept) -0.8826021 0.59514844 -1.482995 1.763634e-01
-## x            1.1693736 0.09591686 12.191533 1.899987e-06
+##              Estimate Std. Error  t value    Pr(&amp;gt;|t|)
+## (Intercept) 1.3476711  1.0477232 1.286285 0.234318269
+## x           0.8182558  0.1688559 4.845883 0.001278527
 ## 
 ## [[2]]
-## [1] 0.9489254&lt;/code&gt;&lt;/pre&gt;
+## [1] 0.7458912&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;If you want to display the distribution of a data-set, use &lt;code&gt;plothist()&lt;/code&gt;, which gives you a histogram with markers of the median, mean, quantiles, standard deviation, sample number and the skewness.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;x &amp;lt;- rnorm(10000)
 beginr::plothist(x)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;##     para         value
-## 1    min -3.9594329262
-## 2     1q -0.6743155802
-## 3 median  0.0151220580
-## 4     3q  0.6806285656
-## 5    max  4.1576382225
-## 6  lower -2.7065331755
-## 7  upper  2.7128461609
-## 8   mean -0.0005589431
-## 9     sd  1.0064399683&lt;/code&gt;&lt;/pre&gt;
+## 1    min -3.9812481869
+## 2     1q -0.6874933340
+## 3 median  0.0064760096
+## 4     3q  0.6807854461
+## 5    max  3.6233398953
+## 6  lower -2.7398285371
+## 7  upper  2.7331206492
+## 8   mean -0.0009427701
+## 9     sd  1.0094793434&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;I like &lt;code&gt;pairs()&lt;/code&gt;, and ‘beginr’ gives more powerful features to &lt;code&gt;plotpairs()&lt;/code&gt; and &lt;code&gt;plotpairs2()&lt;/code&gt;.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df &amp;lt;- data.frame(a = 1:10, b = 1:10 + rnorm(10), c = 1:10 + rnorm(10))
 beginr::plotpairs(df)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::plotpairs2(df)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## [1] &amp;quot;p&amp;lt;0.01&amp;quot;&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## [1] &amp;quot;p&amp;lt;0.01&amp;quot;&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## [1] &amp;quot;p&amp;lt;0.01&amp;quot;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-5-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-5-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;I often have to plot one independent variable (x) and multiple dependent variables (y&lt;sub&gt;1&lt;/sub&gt;, y&lt;sub&gt;2&lt;/sub&gt;, …, y&lt;sub&gt;n&lt;/sub&gt;) in one 2-D coordinate system, or one dependent variable (y) against multiple independent variables (x&lt;sub&gt;1&lt;/sub&gt;, x&lt;sub&gt;2&lt;/sub&gt;, …, x&lt;sub&gt;n&lt;/sub&gt;) with their error bars. Use &lt;code&gt;dfplot()&lt;/code&gt; or &lt;code&gt;dfplot2()&lt;/code&gt; in ‘beginr’.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;x &amp;lt;- seq(0, 2 * pi, length.out = 100)
 y &amp;lt;- data.frame(sin(x), cos(x))
 yerror &amp;lt;- data.frame(abs(rnorm(100, sd = 0.3)), abs(rnorm(100, sd = 0.1)))
 beginr::dfplot(x, y, yerror = yerror)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::dfplot2(y, x, xerror = yerror)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-6-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-6-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;If you would like to add errorbars only, then use &lt;code&gt;errorbar()&lt;/code&gt;.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;x &amp;lt;- seq(0, 2 * pi, length.out = 100)
 y &amp;lt;- sin(x)
 plot(x, y, type = &amp;quot;l&amp;quot;)
 beginr::errorbar(x, y, yupper = 0.1, ylower = 0.1)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;functions-for-data-frames&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Functions for Data Frames&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;lmdf()&lt;/code&gt; performs the linear regression between every two columns in a data frame.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df &amp;lt;- data.frame(a = 1:10, b = 1:10 + rnorm(10), c = 1:10 + rnorm(10))
 beginr::lmdf(df)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;##   x y r.squared adj.r.squared  intercept     slope Std.Error.intercept
-## 1 a b 0.9630442     0.9584247 -0.7901086 1.1271749           0.4843895
-## 2 a c 0.8568806     0.8389907 -0.3427519 1.0425054           0.9346580
-## 3 b a 0.9630442     0.9584247  0.8783157 0.8543876           0.3749251
-## 4 b c 0.8157952     0.7927696  0.6004724 0.8856059           0.9426967
-## 5 c a 0.8568806     0.8389907  1.0688792 0.8219436           0.7466774
-## 6 c b 0.8157952     0.7927696  0.4432909 0.9211717           0.9729768
-##   Std.Error.slope t.intercept   t.slope Pr.intercept     Pr.slope
-## 1      0.07806644  -1.6311430 14.438661   0.14150586 5.177385e-07
-## 2      0.15063377  -0.3667137  6.920795   0.72334232 1.219459e-04
-## 3      0.05917360   2.3426432 14.438661   0.04722045 5.177385e-07
-## 4      0.14878374   0.6369730  5.952303   0.54193651 3.410966e-04
-## 5      0.11876434   1.4315142  6.920795   0.19016727 1.219459e-04
-## 6      0.15475888   0.4556027  5.952303   0.66078732 3.410966e-04&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##   x y r.squared adj.r.squared    intercept     slope Std.Error.intercept
+## 1 a b 0.9421142     0.9348785  0.319532505 0.9302256           0.5058337
+## 2 a c 0.9544459     0.9487516 -0.573474516 1.0663203           0.5110475
+## 3 b a 0.9421142     0.9348785 -0.005244563 1.0127804           0.5408022
+## 4 b c 0.9055275     0.8937185 -0.599694754 1.0837431           0.7540797
+## 5 c a 0.9544459     0.9487516  0.763855393 0.8950837           0.4252087
+## 6 c b 0.9055275     0.8937185  1.014609204 0.8355555           0.5868504
+##   Std.Error.slope  t.intercept   t.slope Pr.intercept     Pr.slope
+## 1      0.08152248  0.631694787 11.410664    0.5452098 3.143815e-06
+## 2      0.08236276 -1.122155020 12.946631    0.2943447 1.199610e-06
+## 3      0.08875736 -0.009697747 11.410664    0.9924999 3.143815e-06
+## 4      0.12376081 -0.795267051  8.756755    0.4494074 2.265629e-05
+## 5      0.06913642  1.796424712 12.946631    0.1101532 1.199610e-06
+## 6      0.09541840  1.728906103  8.756755    0.1220845 2.265629e-05&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;There are two functions as improvements of &lt;code&gt;tapply()&lt;/code&gt; for factor calculation.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::tapplydf()
 beginr::tapplydfv()&lt;/code&gt;&lt;/pre&gt;
@@ -166,10 +166,11 @@ beginr::list2ascii(alist)&lt;/code&gt;&lt;/pre&gt;
 ##   url = {https://github.com/pzhaonet/beginr},
 ## }
 ## @Manual{R-bookdownplus,
-##   title = {bookdownplus: Generate Varied Books and Documents with R &amp;#39;bookdown&amp;#39; Package},
+##   title = {bookdownplus: Generate Varied Types of Books and Documents with R &amp;#39;bookdown&amp;#39;
+## Package},
 ##   author = {Peng Zhao},
 ##   year = {2017},
-##   note = {R package version 1.2.2},
+##   note = {R package version 1.3.0},
 ##   url = {https://github.com/pzhaonet/bookdownplus},
 ## }
 ## @Manual{R-mindr,
@@ -188,7 +189,7 @@ beginr::list2ascii(alist)&lt;/code&gt;&lt;/pre&gt;
 ## }&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;code&gt;plotpkg()&lt;/code&gt; displays a figure showing the downloads of packages.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::plotpkg(&amp;quot;beginr&amp;quot;, from = &amp;quot;2017-06-23&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-14-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-14-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;rpkg()&lt;/code&gt; creates a new R package in an easy way.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::rpkg()&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
@@ -206,16 +207,16 @@ beginr::list2ascii(alist)&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>R package bookdownplus 1.0.2 released on CRAN</title>
-      <link>/en/post/bookdownplus-released/</link>
+      <link>http://www.pzhao.org/en/post/bookdownplus-released/</link>
       <pubDate>Thu, 22 Jun 2017 00:00:00 +0000</pubDate>
       
-      <guid>/en/post/bookdownplus-released/</guid>
+      <guid>http://www.pzhao.org/en/post/bookdownplus-released/</guid>
       <description>&lt;p&gt;I’m glad to announce that ‘bookdownplus 1.0.2’ &lt;span class=&#34;citation&#34;&gt;(Zhao 2017)&lt;/span&gt; is now on &lt;a href=&#34;https://cran.r-project.org/web/packages/bookdownplus/&#34;&gt;CRAN&lt;/a&gt;. This post is a brief documentation of ‘bookdownplus 1.0.2’. However, I have been updating ‘bookdownplus’ frequently and the new version is more powerful and even easier. Please go to the &lt;a href=&#34;http://github.com/pzhaonet/bookdownplus&#34;&gt;GitHub site of bookdownplus&lt;/a&gt;.&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;
 &lt;img src=&#34;http://cranlogs.r-pkg.org/badges/grand-total/bookdownplus&#34; /&gt;
 
 &lt;/div&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2017-06-22-bookdownplus_released.en_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-22-bookdownplus_released.en_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;div id=&#34;introduction&#34; class=&#34;section level1&#34;&gt;
 &lt;h1&gt;Introduction&lt;/h1&gt;
 &lt;p&gt;The R package &lt;code&gt;bookdownplus&lt;/code&gt; is an extension of &lt;code&gt;bookdown&lt;/code&gt; &lt;span class=&#34;citation&#34;&gt;(Xie 2016)&lt;/span&gt;. It is a collection of multiple templates on the basis of LaTeX, which are tailored so that I can work happily under the umbrella of &lt;code&gt;bookdown&lt;/code&gt;. &lt;code&gt;bookdownplus&lt;/code&gt; helps you write academic journal articles, guitar books, chemical equations, mails, calendars, and diaries.&lt;/p&gt;
@@ -430,19 +431,19 @@ bookdownplus::bookdownplus()&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>Zhao, P., and Lüers J.. 2017. Parameterization of Evapotranspiration Estimation for Two Typical East Asian Crops. Atmosphere 8 (6): 111.</title>
-      <link>/en/publication/zhao2017/</link>
+      <link>http://www.pzhao.org/en/publication/zhao2017/</link>
       <pubDate>Tue, 20 Jun 2017 00:00:00 +0000</pubDate>
       
-      <guid>/en/publication/zhao2017/</guid>
+      <guid>http://www.pzhao.org/en/publication/zhao2017/</guid>
       <description></description>
     </item>
     
     <item>
       <title>LaTeX equations in micrometeorology</title>
-      <link>/en/post/equations/</link>
+      <link>http://www.pzhao.org/en/post/equations/</link>
       <pubDate>Tue, 23 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>/en/post/equations/</guid>
+      <guid>http://www.pzhao.org/en/post/equations/</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 
@@ -762,16 +763,16 @@ R^2 =(\frac{\sum_{i=1}^{n}(O_i-\overline{O})(P_i-\overline{P})}{\sqrt{\sum_{i=1}
     
     <item>
       <title>R package mindr: convert markdown files to mind maps, and vice versa</title>
-      <link>/en/post/mindr/</link>
+      <link>http://www.pzhao.org/en/post/mindr/</link>
       <pubDate>Fri, 19 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>/en/post/mindr/</guid>
+      <guid>http://www.pzhao.org/en/post/mindr/</guid>
       <description>&lt;p&gt;This is a preliminary version of the introduction to mindr. Please go to my Github repo &lt;a href=&#34;https://github.com/pzhaonet/mindr&#34;&gt;mindr&lt;/a&gt; for the latest updates.&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;
 &lt;img src=&#34;http://cranlogs.r-pkg.org/badges/grand-total/mindr&#34; /&gt;
 
 &lt;/div&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2017-05-19-mindr.en_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-05-19-mindr.en_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;div id=&#34;quick-start&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Quick start&lt;/h2&gt;
 &lt;div id=&#34;installation&#34; class=&#34;section level3&#34;&gt;
@@ -834,10 +835,10 @@ R^2 =(\frac{\sum_{i=1}^{n}(O_i-\overline{O})(P_i-\overline{P})}{\sqrt{\sum_{i=1}
     
     <item>
       <title>R package postr: created posters with R markdown</title>
-      <link>/en/post/postr/</link>
+      <link>http://www.pzhao.org/en/post/postr/</link>
       <pubDate>Tue, 16 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>/en/post/postr/</guid>
+      <guid>http://www.pzhao.org/en/post/postr/</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 
@@ -901,10 +902,10 @@ postr::postr()&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>bookdownplus: an R package for writing Articles, Mails, Guitar Chords, Chemical Molecular Formulae and Equations with R bookdown</title>
-      <link>/en/post/bookdownplus/</link>
+      <link>http://www.pzhao.org/en/post/bookdownplus/</link>
       <pubDate>Tue, 09 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>/en/post/bookdownplus/</guid>
+      <guid>http://www.pzhao.org/en/post/bookdownplus/</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 
