@@ -56,26 +56,26 @@ y &lt;- 1:10 + rnorm(10)
 beginr::plotlm(x, y)</code></pre>
 <p><img src="/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 <pre><code>## [[1]]
-##              Estimate Std. Error  t value    Pr(&gt;|t|)
-## (Intercept) 1.3476711  1.0477232 1.286285 0.234318269
-## x           0.8182558  0.1688559 4.845883 0.001278527
+##               Estimate Std. Error    t value     Pr(&gt;|t|)
+## (Intercept) -0.1982551  0.7535595 -0.2630914 0.7991291215
+## x            1.0674804  0.1214471  8.7896733 0.0000220424
 ## 
 ## [[2]]
-## [1] 0.7458912</code></pre>
+## [1] 0.9061676</code></pre>
 <p>If you want to display the distribution of a data-set, use <code>plothist()</code>, which gives you a histogram with markers of the median, mean, quantiles, standard deviation, sample number and the skewness.</p>
 <pre class="r"><code>x &lt;- rnorm(10000)
 beginr::plothist(x)</code></pre>
 <p><img src="/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
-<pre><code>##     para         value
-## 1    min -3.9812481869
-## 2     1q -0.6874933340
-## 3 median  0.0064760096
-## 4     3q  0.6807854461
-## 5    max  3.6233398953
-## 6  lower -2.7398285371
-## 7  upper  2.7331206492
-## 8   mean -0.0009427701
-## 9     sd  1.0094793434</code></pre>
+<pre><code>##     para       value
+## 1    min -3.96255973
+## 2     1q -0.67312745
+## 3 median  0.01822066
+## 4     3q  0.68437892
+## 5    max  4.50264627
+## 6  lower -2.70917088
+## 7  upper  2.72042235
+## 8   mean  0.01053894
+## 9     sd  1.00181848</code></pre>
 <p>I like <code>pairs()</code>, and ‘beginr’ gives more powerful features to <code>plotpairs()</code> and <code>plotpairs2()</code>.</p>
 <pre class="r"><code>df &lt;- data.frame(a = 1:10, b = 1:10 + rnorm(10), c = 1:10 + rnorm(10))
 beginr::plotpairs(df)</code></pre>
@@ -105,20 +105,20 @@ beginr::errorbar(x, y, yupper = 0.1, ylower = 0.1)</code></pre>
 <p><code>lmdf()</code> performs the linear regression between every two columns in a data frame.</p>
 <pre class="r"><code>df &lt;- data.frame(a = 1:10, b = 1:10 + rnorm(10), c = 1:10 + rnorm(10))
 beginr::lmdf(df)</code></pre>
-<pre><code>##   x y r.squared adj.r.squared    intercept     slope Std.Error.intercept
-## 1 a b 0.9421142     0.9348785  0.319532505 0.9302256           0.5058337
-## 2 a c 0.9544459     0.9487516 -0.573474516 1.0663203           0.5110475
-## 3 b a 0.9421142     0.9348785 -0.005244563 1.0127804           0.5408022
-## 4 b c 0.9055275     0.8937185 -0.599694754 1.0837431           0.7540797
-## 5 c a 0.9544459     0.9487516  0.763855393 0.8950837           0.4252087
-## 6 c b 0.9055275     0.8937185  1.014609204 0.8355555           0.5868504
-##   Std.Error.slope  t.intercept   t.slope Pr.intercept     Pr.slope
-## 1      0.08152248  0.631694787 11.410664    0.5452098 3.143815e-06
-## 2      0.08236276 -1.122155020 12.946631    0.2943447 1.199610e-06
-## 3      0.08875736 -0.009697747 11.410664    0.9924999 3.143815e-06
-## 4      0.12376081 -0.795267051  8.756755    0.4494074 2.265629e-05
-## 5      0.06913642  1.796424712 12.946631    0.1101532 1.199610e-06
-## 6      0.09541840  1.728906103  8.756755    0.1220845 2.265629e-05</code></pre>
+<pre><code>##   x y r.squared adj.r.squared   intercept     slope Std.Error.intercept
+## 1 a b 0.9040321     0.8920361  0.60313185 0.8924744           0.6378994
+## 2 a c 0.9169045     0.9065176 -0.35986138 1.1006240           0.7268603
+## 3 b a 0.9040321     0.8920361 -0.08311916 1.0129502           0.7159546
+## 4 b c 0.7833444     0.7562625 -0.28005852 1.0838008           1.2364724
+## 5 c a 0.9169045     0.9065176  0.75681724 0.8330770           0.5835691
+## 6 c b 0.7833444     0.7562625  1.39656890 0.7227753           0.8844890
+##   Std.Error.slope t.intercept  t.slope Pr.intercept     Pr.slope
+## 1      0.10280679   0.9454969 8.681084    0.3720827 2.414093e-05
+## 2      0.11714414  -0.4950902 9.395468    0.6338467 1.349393e-05
+## 3      0.11668476  -0.1160956 8.681084    0.9104382 2.414093e-05
+## 4      0.20151763  -0.2264980 5.378193    0.8264942 6.630687e-04
+## 5      0.08866796   1.2968768 9.395468    0.2308252 1.349393e-05
+## 6      0.13438997   1.5789556 5.378193    0.1529997 6.630687e-04</code></pre>
 <p>There are two functions as improvements of <code>tapply()</code> for factor calculation.</p>
 <pre class="r"><code>beginr::tapplydf()
 beginr::tapplydfv()</code></pre>
@@ -150,21 +150,21 @@ beginr::list2ascii(alist)</code></pre>
 ##   author = {Peng Zhao},
 ##   year = {2017},
 ##   note = {R package version 1.3.0},
-##   url = {https://github.com/pzhaonet/bookdownplus},
+##   url = {https://CRAN.R-project.org/package=bookdownplus},
 ## }
 ## @Manual{R-mindr,
 ##   title = {mindr: Convert Files Between Markdown or Rmarkdown Files and Mindmaps},
 ##   author = {Peng Zhao},
 ##   year = {2017},
 ##   note = {R package version 1.1.0},
-##   url = {https://github.com/pzhaonet/mindr},
+##   url = {https://CRAN.R-project.org/package=mindr},
 ## }
 ## @Manual{R-pinyin,
 ##   title = {pinyin: Convert Chinese Characters into Pinyin},
 ##   author = {Peng Zhao},
 ##   year = {2017},
 ##   note = {R package version 1.1.0},
-##   url = {https://github.com/pzhaonet/pinyin},
+##   url = {https://CRAN.R-project.org/package=pinyin},
 ## }</code></pre>
 <p><code>plotpkg()</code> displays a figure showing the downloads of packages.</p>
 <pre class="r"><code>beginr::plotpkg(&quot;beginr&quot;, from = &quot;2017-06-23&quot;)</code></pre>
@@ -177,7 +177,7 @@ beginr::list2ascii(alist)</code></pre>
 <h1>References</h1>
 <div id="refs" class="references">
 <div id="ref-R-beginr">
-<p>Zhao, Peng. 2017. <em>Beginr: Functions for R Beginners</em>. <a href="https://github.com/pzhaonet/beginr" class="uri">https://github.com/pzhaonet/beginr</a>.</p>
+<p>Zhao, Peng. 2017. <em>Beginr: Functions for R Beginners</em>. <a href="https://CRAN.R-project.org/package=beginr" class="uri">https://CRAN.R-project.org/package=beginr</a>.</p>
 </div>
 </div>
 </div>

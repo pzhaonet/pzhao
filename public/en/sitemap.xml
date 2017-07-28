@@ -4,6 +4,14 @@
     
     
     <url>
+      <loc>http://www.pzhao.org/en/post/country-names/</loc>
+      <lastmod>2017-07-21T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
       <loc>http://www.pzhao.org/en/post/advection-tn/</loc>
       <lastmod>2017-07-19T00:00:00+00:00</lastmod>
     </url>
@@ -605,6 +613,15 @@
     
     
     <url>
+      <loc>http://www.pzhao.org/en/tags/languages/</loc>
+      <lastmod>2017-07-21T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
       <loc>http://www.pzhao.org/en/tags/markdown/</loc>
       <lastmod>2017-05-19T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -669,7 +686,7 @@
     
     <url>
       <loc>http://www.pzhao.org/en/post/</loc>
-      <lastmod>2017-07-19T00:00:00+00:00</lastmod>
+      <lastmod>2017-07-21T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     

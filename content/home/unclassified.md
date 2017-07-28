@@ -19,7 +19,6 @@ weight = 65
 ### 博客
 
 - [大鹏志](http://dapengde.com) (2005 -- )
-- [steemit](https://steemit.com/@dapeng)
 
 ### 书籍
 

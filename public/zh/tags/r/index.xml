@@ -104,26 +104,26 @@ y &amp;lt;- 1:10 + rnorm(10)
 beginr::plotlm(x, y)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;## [[1]]
-##                Estimate Std. Error     t value     Pr(&amp;gt;|t|)
-## (Intercept) -0.04738386  0.8845211 -0.05357007 0.9585912898
-## x            0.96161448  0.1425535  6.74563991 0.0001457038
+##              Estimate Std. Error    t value     Pr(&amp;gt;|t|)
+## (Intercept) -0.484978 0.58808114 -0.8246787 4.334528e-01
+## x            1.084000 0.09477786 11.4372685 3.088778e-06
 ## 
 ## [[2]]
-## [1] 0.8504775&lt;/code&gt;&lt;/pre&gt;
+## [1] 0.9423677&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;经常需要了解一组数据的分布, 看看是不是正态分布. beginr 里的 &lt;code&gt;plothist()&lt;/code&gt; 函数不仅做出直方图和平滑曲线, 并且标出中值, 中位数, 四分位数, 标准偏差, 样本数, 以及用来判断是否正态分布的 skewness 值.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;x &amp;lt;- rnorm(10000)
 beginr::plothist(x)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;##     para        value
-## 1    min -3.706958585
-## 2     1q -0.683038438
-## 3 median -0.017294329
-## 4     3q  0.665324455
-## 5    max  3.821906969
-## 6  lower -2.705229723
-## 7  upper  2.687515740
-## 8   mean -0.005396339
-## 9     sd  0.986975945&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##     para       value
+## 1    min -4.01733454
+## 2     1q -0.68537813
+## 3 median -0.02220917
+## 4     3q  0.65224512
+## 5    max  4.01741129
+## 6  lower -2.69175928
+## 7  upper  2.65862627
+## 8   mean -0.01600671
+## 9     sd  0.99142610&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;我很喜欢系统自带的成对儿散点图函数&lt;code&gt;pairs()&lt;/code&gt;, 只是功能再强大一点就好了. beginr 里的 &lt;code&gt;plotpairs()&lt;/code&gt; 和 &lt;code&gt;plotpairs2()&lt;/code&gt; 可以实现.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df &amp;lt;- data.frame(a = 1:10, b = 1:10 + rnorm(10), c = 1:10 + rnorm(10))
 beginr::plotpairs(df)&lt;/code&gt;&lt;/pre&gt;
@@ -153,20 +153,20 @@ beginr::errorbar(x, y, yupper = 0.1, ylower = 0.1)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;beginr 提供了一些对数据框计算的函数, 例如计算多列数据两两的相关性和线性拟合结果, 可以用 &lt;code&gt;lmdf()&lt;/code&gt; 函数.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df &amp;lt;- data.frame(a = 1:10, b = 1:10 + rnorm(10), c = 1:10 + rnorm(10))
 beginr::lmdf(df)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;##   x y r.squared adj.r.squared   intercept     slope Std.Error.intercept
-## 1 a b 0.9332967     0.9249588 -0.47651116 1.0545611           0.6184732
-## 2 a c 0.9501830     0.9439559 -0.80699057 1.1257549           0.5654763
-## 3 b a 0.9332967     0.9249588  0.78858510 0.8850096           0.5168131
-## 4 b c 0.8868897     0.8727509  0.08050282 0.9963528           0.7772331
-## 5 c a 0.9501830     0.9439559  0.95512645 0.8440407           0.4321392
-## 6 c b 0.8868897     0.8727509  0.53049293 0.8901362           0.7108007
+&lt;pre&gt;&lt;code&gt;##   x y r.squared adj.r.squared  intercept     slope Std.Error.intercept
+## 1 a b 0.8304141     0.8092159  1.0684948 0.7302626           0.7239557
+## 2 a c 0.9607834     0.9558813  0.5274040 0.9231838           0.4091627
+## 3 b a 0.8304141     0.8092159 -0.2823105 1.1371444           1.0140976
+## 4 b c 0.8418909     0.8221272  0.1214206 1.0783795           0.9222291
+## 5 c a 0.9607834     0.9558813 -0.3331926 1.0407281           0.4626546
+## 6 c b 0.8418909     0.8221272  0.7091822 0.7807000           0.7444438
 ##   Std.Error.slope t.intercept   t.slope Pr.intercept     Pr.slope
-## 1      0.09967598  -0.7704637 10.579891    0.4631684 5.563868e-06
-## 2      0.09113476  -1.4270989 12.352641    0.1913944 1.718745e-06
-## 3      0.08365016   1.5258612 10.579891    0.1655571 5.563868e-06
-## 4      0.12580113   0.1035762  7.920063    0.9200552 4.693851e-05
-## 5      0.06832877   2.2102288 12.352641    0.0580603 1.718745e-06
-## 6      0.11239004   0.7463314  7.920063    0.4768240 4.693851e-05&lt;/code&gt;&lt;/pre&gt;
+## 1      0.11667602   1.4759120  6.258892    0.1782082 2.433548e-04
+## 2      0.06594254   1.2889836 13.999822    0.2334242 6.571564e-07
+## 3      0.18168462  -0.2783859  6.258892    0.7877762 2.433548e-04
+## 4      0.16522555   0.1316599  6.526712    0.8985042 1.828901e-04
+## 5      0.07433867  -0.7201757 13.999822    0.4919195 6.571564e-07
+## 6      0.11961613   0.9526337  6.526712    0.3686676 1.828901e-04&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;还有两个函数对&lt;code&gt;tapply()&lt;/code&gt;进行了改善, 用来进行因子计算.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::tapplydf()
 beginr::tapplydfv()&lt;/code&gt;&lt;/pre&gt;
@@ -191,21 +191,21 @@ beginr::list2ascii(alist)&lt;/code&gt;&lt;/pre&gt;
 ##   author = {Peng Zhao},
 ##   year = {2017},
 ##   note = {R package version 1.3.0},
-##   url = {https://github.com/pzhaonet/bookdownplus},
+##   url = {https://CRAN.R-project.org/package=bookdownplus},
 ## }
 ## @Manual{R-mindr,
 ##   title = {mindr: Convert Files Between Markdown or Rmarkdown Files and Mindmaps},
 ##   author = {Peng Zhao},
 ##   year = {2017},
 ##   note = {R package version 1.1.0},
-##   url = {https://github.com/pzhaonet/mindr},
+##   url = {https://CRAN.R-project.org/package=mindr},
 ## }
 ## @Manual{R-pinyin,
 ##   title = {pinyin: Convert Chinese Characters into Pinyin},
 ##   author = {Peng Zhao},
 ##   year = {2017},
 ##   note = {R package version 1.1.0},
-##   url = {https://github.com/pzhaonet/pinyin},
+##   url = {https://CRAN.R-project.org/package=pinyin},
 ## }&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;code&gt;plotpkg()&lt;/code&gt;函数可以做出一张图，来展示指定扩展包在CRAN上被用户下载的次数：&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::plotpkg(&amp;quot;beginr&amp;quot;, &amp;quot;2017-06-23&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
@@ -228,10 +228,10 @@ beginr::list2ascii(alist)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Xie, Yihui. 2017. &lt;em&gt;Blogdown: Create Blogs and Websites with R Markdown&lt;/em&gt;. &lt;a href=&#34;https://github.com/rstudio/blogdown&#34; class=&#34;uri&#34;&gt;https://github.com/rstudio/blogdown&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;ref-R-beginr&#34;&gt;
-&lt;p&gt;Zhao, Peng. 2017a. &lt;em&gt;Beginr: Functions for R Beginners&lt;/em&gt;. &lt;a href=&#34;https://github.com/pzhaonet/beginr&#34; class=&#34;uri&#34;&gt;https://github.com/pzhaonet/beginr&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Zhao, Peng. 2017a. &lt;em&gt;Beginr: Functions for R Beginners&lt;/em&gt;. &lt;a href=&#34;https://CRAN.R-project.org/package=beginr&#34; class=&#34;uri&#34;&gt;https://CRAN.R-project.org/package=beginr&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;ref-R-bookdownplus&#34;&gt;
-&lt;p&gt;———. 2017b. &lt;em&gt;Bookdownplus: Generate Varied Books and Documents with R ’Bookdown’ Package&lt;/em&gt;. &lt;a href=&#34;https://CRAN.R-project.org/package=bookdownplus&#34; class=&#34;uri&#34;&gt;https://CRAN.R-project.org/package=bookdownplus&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;———. 2017b. &lt;em&gt;Bookdownplus: Generate Varied Types of Books and Documents with R ’Bookdown’ Package&lt;/em&gt;. &lt;a href=&#34;https://CRAN.R-project.org/package=bookdownplus&#34; class=&#34;uri&#34;&gt;https://CRAN.R-project.org/package=bookdownplus&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -583,26 +583,24 @@ install.packages(&amp;#39;bookdownplus&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;举例如下：&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(&amp;#39;pinyin&amp;#39;)
 pinyin(&amp;#39;羌笛何须怨杨柳春风不度玉门关&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;&amp;lt;_U_+_7_F_8_C_&amp;gt;_&amp;lt;_U_+_7_B_1_B_&amp;gt;_&amp;lt;_U_+_4_F_5_5_&amp;gt;_&amp;lt;_U_+_9_8_7_B_&amp;gt;_&amp;lt;_U_+_6_0_2_8_&amp;gt;_&amp;lt;_U_+_6_7_6_8_&amp;gt;_&amp;lt;_U_+_6_7_F_3_&amp;gt;_&amp;lt;_U_+_6_6_2_5_&amp;gt;_&amp;lt;_U_+_9_8_C_E_&amp;gt;_&amp;lt;_U_+_4_E_0_D_&amp;gt;_&amp;lt;_U_+_5_E_A_6_&amp;gt;_&amp;lt;_U_+_7_3_8_9_&amp;gt;_&amp;lt;_U_+_9_5_E_8_&amp;gt;_&amp;lt;_U_+_5_1_7_3_&amp;gt;&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;qiānɡ_dí_hé_xū_yuàn_yánɡ_liǔ_chūn_fēnɡ_bú_dù_yù_mén_ɡuān&amp;quot;&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;pinyin(&amp;#39;羌笛何须怨杨柳春风不度玉门关&amp;#39;, sep = &amp;#39; &amp;#39;)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;&amp;lt; U + 7 F 8 C &amp;gt; &amp;lt; U + 7 B 1 B &amp;gt; &amp;lt; U + 4 F 5 5 &amp;gt; &amp;lt; U + 9 8 7 B &amp;gt; &amp;lt; U + 6 0 2 8 &amp;gt; &amp;lt; U + 6 7 6 8 &amp;gt; &amp;lt; U + 6 7 F 3 &amp;gt; &amp;lt; U + 6 6 2 5 &amp;gt; &amp;lt; U + 9 8 C E &amp;gt; &amp;lt; U + 4 E 0 D &amp;gt; &amp;lt; U + 5 E A 6 &amp;gt; &amp;lt; U + 7 3 8 9 &amp;gt; &amp;lt; U + 9 5 E 8 &amp;gt; &amp;lt; U + 5 1 7 3 &amp;gt;&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;qiānɡ dí hé xū yuàn yánɡ liǔ chūn fēnɡ bú dù yù mén ɡuān&amp;quot;&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;pinyin(&amp;#39;羌笛何须怨杨柳春风不度玉门关&amp;#39;, sep = &amp;#39; &amp;#39;, method = &amp;#39;tone&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;&amp;lt; U + 7 F 8 C &amp;gt; &amp;lt; U + 7 B 1 B &amp;gt; &amp;lt; U + 4 F 5 5 &amp;gt; &amp;lt; U + 9 8 7 B &amp;gt; &amp;lt; U + 6 0 2 8 &amp;gt; &amp;lt; U + 6 7 6 8 &amp;gt; &amp;lt; U + 6 7 F 3 &amp;gt; &amp;lt; U + 6 6 2 5 &amp;gt; &amp;lt; U + 9 8 C E &amp;gt; &amp;lt; U + 4 E 0 D &amp;gt; &amp;lt; U + 5 E A 6 &amp;gt; &amp;lt; U + 7 3 8 9 &amp;gt; &amp;lt; U + 9 5 E 8 &amp;gt; &amp;lt; U + 5 1 7 3 &amp;gt;&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;qiang1 di2 he2 xu1 yuan4 yang2 liu3 chun1 feng1 bu2 du4 yu4 men2 guan1&amp;quot;&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;pinyin(&amp;#39;羌笛何须怨杨柳春风不度玉门关&amp;#39;, sep = &amp;#39; &amp;#39;, method = &amp;#39;toneless&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;&amp;lt; U + 7 F 8 C &amp;gt; &amp;lt; U + 7 B 1 B &amp;gt; &amp;lt; U + 4 F 5 5 &amp;gt; &amp;lt; U + 9 8 7 B &amp;gt; &amp;lt; U + 6 0 2 8 &amp;gt; &amp;lt; U + 6 7 6 8 &amp;gt; &amp;lt; U + 6 7 F 3 &amp;gt; &amp;lt; U + 6 6 2 5 &amp;gt; &amp;lt; U + 9 8 C E &amp;gt; &amp;lt; U + 4 E 0 D &amp;gt; &amp;lt; U + 5 E A 6 &amp;gt; &amp;lt; U + 7 3 8 9 &amp;gt; &amp;lt; U + 9 5 E 8 &amp;gt; &amp;lt; U + 5 1 7 3 &amp;gt;&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;qiang di he xu yuan yang liu chun feng bu du yu men guan&amp;quot;&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;pinyin(&amp;#39;羌笛何须怨杨柳春风不度玉门关&amp;#39;, sep = &amp;#39;&amp;#39;, only_first_letter = TRUE)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;&amp;lt;U+7F8C&amp;gt;&amp;lt;U+7B1B&amp;gt;&amp;lt;U+4F55&amp;gt;&amp;lt;U+987B&amp;gt;&amp;lt;U+6028&amp;gt;&amp;lt;U+6768&amp;gt;&amp;lt;U+67F3&amp;gt;&amp;lt;U+6625&amp;gt;&amp;lt;U+98CE&amp;gt;&amp;lt;U+4E0D&amp;gt;&amp;lt;U+5EA6&amp;gt;&amp;lt;U+7389&amp;gt;&amp;lt;U+95E8&amp;gt;&amp;lt;U+5173&amp;gt;&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;qdhxyylcfbdymɡ&amp;quot;&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;pinyin(&amp;#39;羌笛何须怨?杨柳春风,不度玉门关.&amp;#39;, sep = &amp;#39;&amp;#39;, nonezh_replace = &amp;#39;-&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;-------------------------------------------------------------------------------------------------------------------&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;qiānɡdíhéxūyuàn-yánɡliǔchūnfēnɡ-búdùyùménɡuān-&amp;quot;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;如果自变量是多个字符串的向量，那么只会转换第一个字符串：&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;pinyin(c(&amp;#39;羌笛何须怨杨柳&amp;#39;, &amp;#39;春风不度玉门关&amp;#39;))&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;&amp;lt;_U_+_7_F_8_C_&amp;gt;_&amp;lt;_U_+_7_B_1_B_&amp;gt;_&amp;lt;_U_+_4_F_5_5_&amp;gt;_&amp;lt;_U_+_9_8_7_B_&amp;gt;_&amp;lt;_U_+_6_0_2_8_&amp;gt;_&amp;lt;_U_+_6_7_6_8_&amp;gt;_&amp;lt;_U_+_6_7_F_3_&amp;gt;&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;qiānɡ_dí_hé_xū_yuàn_yánɡ_liǔ&amp;quot;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;这怎么行？哎，用 &lt;code&gt;sapply()&lt;/code&gt; 嘛：&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;sapply(c(&amp;#39;羌笛何须怨杨柳&amp;#39;, &amp;#39;春风不度玉门关&amp;#39;), pinyin)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;##                                                          &amp;lt;U+7F8C&amp;gt;&amp;lt;U+7B1B&amp;gt;&amp;lt;U+4F55&amp;gt;&amp;lt;U+987B&amp;gt;&amp;lt;U+6028&amp;gt;&amp;lt;U+6768&amp;gt;&amp;lt;U+67F3&amp;gt; 
-## &amp;quot;&amp;lt;_U_+_7_F_8_C_&amp;gt;_&amp;lt;_U_+_7_B_1_B_&amp;gt;_&amp;lt;_U_+_4_F_5_5_&amp;gt;_&amp;lt;_U_+_9_8_7_B_&amp;gt;_&amp;lt;_U_+_6_0_2_8_&amp;gt;_&amp;lt;_U_+_6_7_6_8_&amp;gt;_&amp;lt;_U_+_6_7_F_3_&amp;gt;&amp;quot; 
-##                                                          &amp;lt;U+6625&amp;gt;&amp;lt;U+98CE&amp;gt;&amp;lt;U+4E0D&amp;gt;&amp;lt;U+5EA6&amp;gt;&amp;lt;U+7389&amp;gt;&amp;lt;U+95E8&amp;gt;&amp;lt;U+5173&amp;gt; 
-## &amp;quot;&amp;lt;_U_+_6_6_2_5_&amp;gt;_&amp;lt;_U_+_9_8_C_E_&amp;gt;_&amp;lt;_U_+_4_E_0_D_&amp;gt;_&amp;lt;_U_+_5_E_A_6_&amp;gt;_&amp;lt;_U_+_7_3_8_9_&amp;gt;_&amp;lt;_U_+_9_5_E_8_&amp;gt;_&amp;lt;_U_+_5_1_7_3_&amp;gt;&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##                 羌笛何须怨杨柳                 春风不度玉门关 
+## &amp;quot;qiānɡ_dí_hé_xū_yuàn_yánɡ_liǔ&amp;quot;  &amp;quot;chūn_fēnɡ_bú_dù_yù_mén_ɡuān&amp;quot;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;其他两个函数，其实是 &lt;code&gt;pinyin()&lt;/code&gt; 的延伸和示例：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;file.rename2py()&lt;/code&gt;用来将文件名里的汉字转换成拼音。&lt;/li&gt;

@@ -16,10 +16,9 @@ weight = 65
 
 +++
 
-### Blogs
+### Blog
 
 - [dapengde.com](http://dapengde.com) (2005 -- , in Chinese)
-- [steemit](https://steemit.com/@dapeng)
 
 ### Books
 

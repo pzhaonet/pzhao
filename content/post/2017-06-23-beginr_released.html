@@ -53,26 +53,26 @@ y &lt;- 1:10 + rnorm(10)
 beginr::plotlm(x, y)</code></pre>
 <p><img src="/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 <pre><code>## [[1]]
-##                Estimate Std. Error     t value     Pr(&gt;|t|)
-## (Intercept) -0.04738386  0.8845211 -0.05357007 0.9585912898
-## x            0.96161448  0.1425535  6.74563991 0.0001457038
+##              Estimate Std. Error    t value     Pr(&gt;|t|)
+## (Intercept) -0.484978 0.58808114 -0.8246787 4.334528e-01
+## x            1.084000 0.09477786 11.4372685 3.088778e-06
 ## 
 ## [[2]]
-## [1] 0.8504775</code></pre>
+## [1] 0.9423677</code></pre>
 <p>经常需要了解一组数据的分布, 看看是不是正态分布. beginr 里的 <code>plothist()</code> 函数不仅做出直方图和平滑曲线, 并且标出中值, 中位数, 四分位数, 标准偏差, 样本数, 以及用来判断是否正态分布的 skewness 值.</p>
 <pre class="r"><code>x &lt;- rnorm(10000)
 beginr::plothist(x)</code></pre>
 <p><img src="/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
-<pre><code>##     para        value
-## 1    min -3.706958585
-## 2     1q -0.683038438
-## 3 median -0.017294329
-## 4     3q  0.665324455
-## 5    max  3.821906969
-## 6  lower -2.705229723
-## 7  upper  2.687515740
-## 8   mean -0.005396339
-## 9     sd  0.986975945</code></pre>
+<pre><code>##     para       value
+## 1    min -4.01733454
+## 2     1q -0.68537813
+## 3 median -0.02220917
+## 4     3q  0.65224512
+## 5    max  4.01741129
+## 6  lower -2.69175928
+## 7  upper  2.65862627
+## 8   mean -0.01600671
+## 9     sd  0.99142610</code></pre>
 <p>我很喜欢系统自带的成对儿散点图函数<code>pairs()</code>, 只是功能再强大一点就好了. beginr 里的 <code>plotpairs()</code> 和 <code>plotpairs2()</code> 可以实现.</p>
 <pre class="r"><code>df &lt;- data.frame(a = 1:10, b = 1:10 + rnorm(10), c = 1:10 + rnorm(10))
 beginr::plotpairs(df)</code></pre>
@@ -102,20 +102,20 @@ beginr::errorbar(x, y, yupper = 0.1, ylower = 0.1)</code></pre>
 <p>beginr 提供了一些对数据框计算的函数, 例如计算多列数据两两的相关性和线性拟合结果, 可以用 <code>lmdf()</code> 函数.</p>
 <pre class="r"><code>df &lt;- data.frame(a = 1:10, b = 1:10 + rnorm(10), c = 1:10 + rnorm(10))
 beginr::lmdf(df)</code></pre>
-<pre><code>##   x y r.squared adj.r.squared   intercept     slope Std.Error.intercept
-## 1 a b 0.9332967     0.9249588 -0.47651116 1.0545611           0.6184732
-## 2 a c 0.9501830     0.9439559 -0.80699057 1.1257549           0.5654763
-## 3 b a 0.9332967     0.9249588  0.78858510 0.8850096           0.5168131
-## 4 b c 0.8868897     0.8727509  0.08050282 0.9963528           0.7772331
-## 5 c a 0.9501830     0.9439559  0.95512645 0.8440407           0.4321392
-## 6 c b 0.8868897     0.8727509  0.53049293 0.8901362           0.7108007
+<pre><code>##   x y r.squared adj.r.squared  intercept     slope Std.Error.intercept
+## 1 a b 0.8304141     0.8092159  1.0684948 0.7302626           0.7239557
+## 2 a c 0.9607834     0.9558813  0.5274040 0.9231838           0.4091627
+## 3 b a 0.8304141     0.8092159 -0.2823105 1.1371444           1.0140976
+## 4 b c 0.8418909     0.8221272  0.1214206 1.0783795           0.9222291
+## 5 c a 0.9607834     0.9558813 -0.3331926 1.0407281           0.4626546
+## 6 c b 0.8418909     0.8221272  0.7091822 0.7807000           0.7444438
 ##   Std.Error.slope t.intercept   t.slope Pr.intercept     Pr.slope
-## 1      0.09967598  -0.7704637 10.579891    0.4631684 5.563868e-06
-## 2      0.09113476  -1.4270989 12.352641    0.1913944 1.718745e-06
-## 3      0.08365016   1.5258612 10.579891    0.1655571 5.563868e-06
-## 4      0.12580113   0.1035762  7.920063    0.9200552 4.693851e-05
-## 5      0.06832877   2.2102288 12.352641    0.0580603 1.718745e-06
-## 6      0.11239004   0.7463314  7.920063    0.4768240 4.693851e-05</code></pre>
+## 1      0.11667602   1.4759120  6.258892    0.1782082 2.433548e-04
+## 2      0.06594254   1.2889836 13.999822    0.2334242 6.571564e-07
+## 3      0.18168462  -0.2783859  6.258892    0.7877762 2.433548e-04
+## 4      0.16522555   0.1316599  6.526712    0.8985042 1.828901e-04
+## 5      0.07433867  -0.7201757 13.999822    0.4919195 6.571564e-07
+## 6      0.11961613   0.9526337  6.526712    0.3686676 1.828901e-04</code></pre>
 <p>还有两个函数对<code>tapply()</code>进行了改善, 用来进行因子计算.</p>
 <pre class="r"><code>beginr::tapplydf()
 beginr::tapplydfv()</code></pre>
@@ -140,21 +140,21 @@ beginr::list2ascii(alist)</code></pre>
 ##   author = {Peng Zhao},
 ##   year = {2017},
 ##   note = {R package version 1.3.0},
-##   url = {https://github.com/pzhaonet/bookdownplus},
+##   url = {https://CRAN.R-project.org/package=bookdownplus},
 ## }
 ## @Manual{R-mindr,
 ##   title = {mindr: Convert Files Between Markdown or Rmarkdown Files and Mindmaps},
 ##   author = {Peng Zhao},
 ##   year = {2017},
 ##   note = {R package version 1.1.0},
-##   url = {https://github.com/pzhaonet/mindr},
+##   url = {https://CRAN.R-project.org/package=mindr},
 ## }
 ## @Manual{R-pinyin,
 ##   title = {pinyin: Convert Chinese Characters into Pinyin},
 ##   author = {Peng Zhao},
 ##   year = {2017},
 ##   note = {R package version 1.1.0},
-##   url = {https://github.com/pzhaonet/pinyin},
+##   url = {https://CRAN.R-project.org/package=pinyin},
 ## }</code></pre>
 <p><code>plotpkg()</code>函数可以做出一张图，来展示指定扩展包在CRAN上被用户下载的次数：</p>
 <pre class="r"><code>beginr::plotpkg(&quot;beginr&quot;, &quot;2017-06-23&quot;)</code></pre>
@@ -177,10 +177,10 @@ beginr::list2ascii(alist)</code></pre>
 <p>Xie, Yihui. 2017. <em>Blogdown: Create Blogs and Websites with R Markdown</em>. <a href="https://github.com/rstudio/blogdown" class="uri">https://github.com/rstudio/blogdown</a>.</p>
 </div>
 <div id="ref-R-beginr">
-<p>Zhao, Peng. 2017a. <em>Beginr: Functions for R Beginners</em>. <a href="https://github.com/pzhaonet/beginr" class="uri">https://github.com/pzhaonet/beginr</a>.</p>
+<p>Zhao, Peng. 2017a. <em>Beginr: Functions for R Beginners</em>. <a href="https://CRAN.R-project.org/package=beginr" class="uri">https://CRAN.R-project.org/package=beginr</a>.</p>
 </div>
 <div id="ref-R-bookdownplus">
-<p>———. 2017b. <em>Bookdownplus: Generate Varied Books and Documents with R ’Bookdown’ Package</em>. <a href="https://CRAN.R-project.org/package=bookdownplus" class="uri">https://CRAN.R-project.org/package=bookdownplus</a>.</p>
+<p>———. 2017b. <em>Bookdownplus: Generate Varied Types of Books and Documents with R ’Bookdown’ Package</em>. <a href="https://CRAN.R-project.org/package=bookdownplus" class="uri">https://CRAN.R-project.org/package=bookdownplus</a>.</p>
 </div>
 </div>
 </div>

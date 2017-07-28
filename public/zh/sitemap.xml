@@ -4,7 +4,23 @@
     
     
     <url>
+      <loc>http://www.pzhao.org/zh/post/country-names/</loc>
+      <lastmod>2017-07-21T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
       <loc>http://www.pzhao.org/zh/post/advection-tn/</loc>
+      <lastmod>2017-07-19T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+      <loc>http://www.pzhao.org/zh/post/longest-word/</loc>
       <lastmod>2017-07-19T00:00:00+00:00</lastmod>
     </url>
     
@@ -825,6 +841,15 @@
     <url>
       <loc>http://www.pzhao.org/zh/tags/hugo/</loc>
       <lastmod>2017-04-19T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+      <loc>http://www.pzhao.org/zh/tags/languages/</loc>
+      <lastmod>2017-07-21T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     

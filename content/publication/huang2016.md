@@ -1,5 +1,5 @@
 +++
-title = "Huang, S.,  Wang Y., Xie, Y., Zhao, P.*, and Lüers, J.. 2016. OutlierFlag: A Tool for Scientific Data Quality Control by Outlier Data Flagging. *Journal of Open Research Software* 4: e20. "
+title = "Huang, S.,  Wang Y., Xie, Y., Zhao, P.*, and Lüers, J.. 2016. OutlierFlag: A Tool for Scientific Data Quality Control by Outlier Data Flagging. Journal of Open Research Software 4: e20. "
 
 publication_types = ["2"]
 publication = ""
