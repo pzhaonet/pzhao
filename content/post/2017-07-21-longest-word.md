@@ -1,5 +1,5 @@
 ---
-title: "外国国名的中文含义"
+title: "世界上最长的单词"
 author: 赵鹏
 date: '2017-07-19'
 slug: longest-word

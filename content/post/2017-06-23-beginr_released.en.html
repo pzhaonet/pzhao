@@ -57,25 +57,25 @@ beginr::plotlm(x, y)</code></pre>
 <p><img src="/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 <pre><code>## [[1]]
 ##               Estimate Std. Error    t value     Pr(&gt;|t|)
-## (Intercept) -0.1982551  0.7535595 -0.2630914 0.7991291215
-## x            1.0674804  0.1214471  8.7896733 0.0000220424
+## (Intercept) -0.2327490 0.54687401 -0.4255989 6.816183e-01
+## x            0.9724508 0.08813673 11.0334343 4.054809e-06
 ## 
 ## [[2]]
-## [1] 0.9061676</code></pre>
+## [1] 0.9383366</code></pre>
 <p>If you want to display the distribution of a data-set, use <code>plothist()</code>, which gives you a histogram with markers of the median, mean, quantiles, standard deviation, sample number and the skewness.</p>
 <pre class="r"><code>x &lt;- rnorm(10000)
 beginr::plothist(x)</code></pre>
 <p><img src="/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
-<pre><code>##     para       value
-## 1    min -3.96255973
-## 2     1q -0.67312745
-## 3 median  0.01822066
-## 4     3q  0.68437892
-## 5    max  4.50264627
-## 6  lower -2.70917088
-## 7  upper  2.72042235
-## 8   mean  0.01053894
-## 9     sd  1.00181848</code></pre>
+<pre><code>##     para        value
+## 1    min -3.843700122
+## 2     1q -0.695540029
+## 3 median  0.003586535
+## 4     3q  0.667035345
+## 5    max  3.541699680
+## 6  lower -2.738487007
+## 7  upper  2.709982322
+## 8   mean -0.011081342
+## 9     sd  0.992039193</code></pre>
 <p>I like <code>pairs()</code>, and ‘beginr’ gives more powerful features to <code>plotpairs()</code> and <code>plotpairs2()</code>.</p>
 <pre class="r"><code>df &lt;- data.frame(a = 1:10, b = 1:10 + rnorm(10), c = 1:10 + rnorm(10))
 beginr::plotpairs(df)</code></pre>
@@ -106,19 +106,19 @@ beginr::errorbar(x, y, yupper = 0.1, ylower = 0.1)</code></pre>
 <pre class="r"><code>df &lt;- data.frame(a = 1:10, b = 1:10 + rnorm(10), c = 1:10 + rnorm(10))
 beginr::lmdf(df)</code></pre>
 <pre><code>##   x y r.squared adj.r.squared   intercept     slope Std.Error.intercept
-## 1 a b 0.9040321     0.8920361  0.60313185 0.8924744           0.6378994
-## 2 a c 0.9169045     0.9065176 -0.35986138 1.1006240           0.7268603
-## 3 b a 0.9040321     0.8920361 -0.08311916 1.0129502           0.7159546
-## 4 b c 0.7833444     0.7562625 -0.28005852 1.0838008           1.2364724
-## 5 c a 0.9169045     0.9065176  0.75681724 0.8330770           0.5835691
-## 6 c b 0.7833444     0.7562625  1.39656890 0.7227753           0.8844890
-##   Std.Error.slope t.intercept  t.slope Pr.intercept     Pr.slope
-## 1      0.10280679   0.9454969 8.681084    0.3720827 2.414093e-05
-## 2      0.11714414  -0.4950902 9.395468    0.6338467 1.349393e-05
-## 3      0.11668476  -0.1160956 8.681084    0.9104382 2.414093e-05
-## 4      0.20151763  -0.2264980 5.378193    0.8264942 6.630687e-04
-## 5      0.08866796   1.2968768 9.395468    0.2308252 1.349393e-05
-## 6      0.13438997   1.5789556 5.378193    0.1529997 6.630687e-04</code></pre>
+## 1 a b 0.9648001     0.9604001  0.78279785 0.8650861           0.3624908
+## 2 a c 0.9602734     0.9553076 -0.06504577 1.0340661           0.4613991
+## 3 b a 0.9648001     0.9604001 -0.67942726 1.1152648           0.4587427
+## 4 b c 0.9043172     0.8923569 -0.69075512 1.1393852           0.7981161
+## 5 c a 0.9602734     0.9553076  0.27890015 0.9286383           0.4265395
+## 6 c b 0.9043172     0.8923569  1.07840104 0.7936887           0.5830103
+##   Std.Error.slope t.intercept   t.slope Pr.intercept     Pr.slope
+## 1      0.05842068   2.1594973 14.807875   0.06283859 4.258274e-07
+## 2      0.07436120  -0.1409751 13.905990   0.89137479 6.921544e-07
+## 3      0.07531565  -1.4810638 14.807875   0.17686466 4.258274e-07
+## 4      0.13103343  -0.8654820  8.695378   0.41197529 2.385239e-05
+## 5      0.06677974   0.6538672 13.905990   0.53153888 6.921544e-07
+## 6      0.09127708   1.8497117  8.695378   0.10152156 2.385239e-05</code></pre>
 <p>There are two functions as improvements of <code>tapply()</code> for factor calculation.</p>
 <pre class="r"><code>beginr::tapplydf()
 beginr::tapplydfv()</code></pre>

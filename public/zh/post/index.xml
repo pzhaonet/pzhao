@@ -18,7 +18,7 @@
       <guid>http://www.pzhao.org/zh/post/country-names/</guid>
       <description>&lt;p&gt;有一天，德国朋友苏珊兴奋地问我：听说 Germany 在中文的意思是&lt;strong&gt;美德的国度&lt;/strong&gt;，对吗？&lt;/p&gt;
 
-&lt;p&gt;&amp;rsquo;&amp;ndash; 对。德国，美德之国。&lt;/p&gt;
+&lt;p&gt;&amp;ndash; 对。德国，美德之国。&lt;/p&gt;
 
 &lt;p&gt;我爱中文！再多讲讲。France 怎么说？&lt;/p&gt;
 
@@ -110,7 +110,7 @@
     </item>
     
     <item>
-      <title>外国国名的中文含义</title>
+      <title>世界上最长的单词</title>
       <link>http://www.pzhao.org/zh/post/longest-word/</link>
       <pubDate>Wed, 19 Jul 2017 00:00:00 +0000</pubDate>
       
@@ -244,26 +244,26 @@ y &amp;lt;- 1:10 + rnorm(10)
 beginr::plotlm(x, y)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;## [[1]]
-##              Estimate Std. Error    t value     Pr(&amp;gt;|t|)
-## (Intercept) -0.484978 0.58808114 -0.8246787 4.334528e-01
-## x            1.084000 0.09477786 11.4372685 3.088778e-06
+##               Estimate Std. Error    t value     Pr(&amp;gt;|t|)
+## (Intercept) 0.03601082  0.8883597 0.04053631 9.686590e-01
+## x           1.04005939  0.1431721 7.26439843 8.683107e-05
 ## 
 ## [[2]]
-## [1] 0.9423677&lt;/code&gt;&lt;/pre&gt;
+## [1] 0.8683593&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;经常需要了解一组数据的分布, 看看是不是正态分布. beginr 里的 &lt;code&gt;plothist()&lt;/code&gt; 函数不仅做出直方图和平滑曲线, 并且标出中值, 中位数, 四分位数, 标准偏差, 样本数, 以及用来判断是否正态分布的 skewness 值.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;x &amp;lt;- rnorm(10000)
 beginr::plothist(x)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;##     para       value
-## 1    min -4.01733454
-## 2     1q -0.68537813
-## 3 median -0.02220917
-## 4     3q  0.65224512
-## 5    max  4.01741129
-## 6  lower -2.69175928
-## 7  upper  2.65862627
-## 8   mean -0.01600671
-## 9     sd  0.99142610&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##     para        value
+## 1    min -3.963444922
+## 2     1q -0.685618173
+## 3 median -0.011384971
+## 4     3q  0.679023134
+## 5    max  3.841248747
+## 6  lower -2.732551297
+## 7  upper  2.725956258
+## 8   mean -0.002381471
+## 9     sd  0.999047253&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;我很喜欢系统自带的成对儿散点图函数&lt;code&gt;pairs()&lt;/code&gt;, 只是功能再强大一点就好了. beginr 里的 &lt;code&gt;plotpairs()&lt;/code&gt; 和 &lt;code&gt;plotpairs2()&lt;/code&gt; 可以实现.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df &amp;lt;- data.frame(a = 1:10, b = 1:10 + rnorm(10), c = 1:10 + rnorm(10))
 beginr::plotpairs(df)&lt;/code&gt;&lt;/pre&gt;
@@ -294,19 +294,19 @@ beginr::errorbar(x, y, yupper = 0.1, ylower = 0.1)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df &amp;lt;- data.frame(a = 1:10, b = 1:10 + rnorm(10), c = 1:10 + rnorm(10))
 beginr::lmdf(df)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;##   x y r.squared adj.r.squared  intercept     slope Std.Error.intercept
-## 1 a b 0.8304141     0.8092159  1.0684948 0.7302626           0.7239557
-## 2 a c 0.9607834     0.9558813  0.5274040 0.9231838           0.4091627
-## 3 b a 0.8304141     0.8092159 -0.2823105 1.1371444           1.0140976
-## 4 b c 0.8418909     0.8221272  0.1214206 1.0783795           0.9222291
-## 5 c a 0.9607834     0.9558813 -0.3331926 1.0407281           0.4626546
-## 6 c b 0.8418909     0.8221272  0.7091822 0.7807000           0.7444438
+## 1 a b 0.8989097     0.8862735  0.9950563 0.8983970           0.6609221
+## 2 a c 0.9355156     0.9274551 -1.1516911 1.1838671           0.6818519
+## 3 b a 0.8989097     0.8862735 -0.4396277 1.0005707           0.7747134
+## 4 b c 0.8352681     0.8146766 -1.6483812 1.1805385           1.2104662
+## 5 c a 0.9355156     0.9274551  1.2647535 0.7902201           0.4701597
+## 6 c b 0.8352681     0.8146766  2.1441695 0.7075315           0.7120611
 ##   Std.Error.slope t.intercept   t.slope Pr.intercept     Pr.slope
-## 1      0.11667602   1.4759120  6.258892    0.1782082 2.433548e-04
-## 2      0.06594254   1.2889836 13.999822    0.2334242 6.571564e-07
-## 3      0.18168462  -0.2783859  6.258892    0.7877762 2.433548e-04
-## 4      0.16522555   0.1316599  6.526712    0.8985042 1.828901e-04
-## 5      0.07433867  -0.7201757 13.999822    0.4919195 6.571564e-07
-## 6      0.11961613   0.9526337  6.526712    0.3686676 1.828901e-04&lt;/code&gt;&lt;/pre&gt;
+## 1      0.10651724   1.5055575  8.434287   0.17059937 2.978922e-05
+## 2      0.10989038  -1.6890635 10.773164   0.12968052 4.855089e-06
+## 3      0.11863134  -0.5674715  8.434287   0.58596164 2.978922e-05
+## 4      0.18535787  -1.3617738  6.368969   0.21037697 2.161761e-04
+## 5      0.07335079   2.6900509 10.773164   0.02749447 4.855089e-06
+## 6      0.11109043   3.0112157  6.368969   0.01678244 2.161761e-04&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;还有两个函数对&lt;code&gt;tapply()&lt;/code&gt;进行了改善, 用来进行因子计算.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::tapplydf()
 beginr::tapplydfv()&lt;/code&gt;&lt;/pre&gt;
