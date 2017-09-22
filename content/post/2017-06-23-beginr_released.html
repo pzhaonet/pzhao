@@ -16,6 +16,7 @@ output: #md_document
 ---
 
 
+
 <p>又一次高兴地宣布, 我的 R 语言扩展包 ‘beginr’ <span class="citation">(Zhao 2017a)</span> 在 CRAN <a href="https://cran.r-project.org/web/packages/beginr/">正式发布</a>了.</p>
 <div class="figure">
 <img src="http://cranlogs.r-pkg.org/badges/grand-total/beginr" />
@@ -53,26 +54,16 @@ y &lt;- 1:10 + rnorm(10)
 beginr::plotlm(x, y)</code></pre>
 <p><img src="/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 <pre><code>## [[1]]
-##               Estimate Std. Error    t value     Pr(&gt;|t|)
-## (Intercept) 0.03601082  0.8883597 0.04053631 9.686590e-01
-## x           1.04005939  0.1431721 7.26439843 8.683107e-05
+##              Estimate Std. Error  t value     Pr(&gt;|t|)
+## (Intercept) 1.0394279  0.9045416 1.149121 0.2837000189
+## x           0.8298354  0.1457801 5.692378 0.0004583923
 ## 
 ## [[2]]
-## [1] 0.8683593</code></pre>
+## [1] 0.8019957</code></pre>
 <p>经常需要了解一组数据的分布, 看看是不是正态分布. beginr 里的 <code>plothist()</code> 函数不仅做出直方图和平滑曲线, 并且标出中值, 中位数, 四分位数, 标准偏差, 样本数, 以及用来判断是否正态分布的 skewness 值.</p>
 <pre class="r"><code>x &lt;- rnorm(10000)
 beginr::plothist(x)</code></pre>
 <p><img src="/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
-<pre><code>##     para        value
-## 1    min -3.963444922
-## 2     1q -0.685618173
-## 3 median -0.011384971
-## 4     3q  0.679023134
-## 5    max  3.841248747
-## 6  lower -2.732551297
-## 7  upper  2.725956258
-## 8   mean -0.002381471
-## 9     sd  0.999047253</code></pre>
 <p>我很喜欢系统自带的成对儿散点图函数<code>pairs()</code>, 只是功能再强大一点就好了. beginr 里的 <code>plotpairs()</code> 和 <code>plotpairs2()</code> 可以实现.</p>
 <pre class="r"><code>df &lt;- data.frame(a = 1:10, b = 1:10 + rnorm(10), c = 1:10 + rnorm(10))
 beginr::plotpairs(df)</code></pre>
@@ -103,19 +94,19 @@ beginr::errorbar(x, y, yupper = 0.1, ylower = 0.1)</code></pre>
 <pre class="r"><code>df &lt;- data.frame(a = 1:10, b = 1:10 + rnorm(10), c = 1:10 + rnorm(10))
 beginr::lmdf(df)</code></pre>
 <pre><code>##   x y r.squared adj.r.squared  intercept     slope Std.Error.intercept
-## 1 a b 0.8989097     0.8862735  0.9950563 0.8983970           0.6609221
-## 2 a c 0.9355156     0.9274551 -1.1516911 1.1838671           0.6818519
-## 3 b a 0.8989097     0.8862735 -0.4396277 1.0005707           0.7747134
-## 4 b c 0.8352681     0.8146766 -1.6483812 1.1805385           1.2104662
-## 5 c a 0.9355156     0.9274551  1.2647535 0.7902201           0.4701597
-## 6 c b 0.8352681     0.8146766  2.1441695 0.7075315           0.7120611
-##   Std.Error.slope t.intercept   t.slope Pr.intercept     Pr.slope
-## 1      0.10651724   1.5055575  8.434287   0.17059937 2.978922e-05
-## 2      0.10989038  -1.6890635 10.773164   0.12968052 4.855089e-06
-## 3      0.11863134  -0.5674715  8.434287   0.58596164 2.978922e-05
-## 4      0.18535787  -1.3617738  6.368969   0.21037697 2.161761e-04
-## 5      0.07335079   2.6900509 10.773164   0.02749447 4.855089e-06
-## 6      0.11109043   3.0112157  6.368969   0.01678244 2.161761e-04</code></pre>
+## 1 a b 0.8514099     0.8328361  0.9591779 0.8283508           0.7591460
+## 2 a c 0.8974569     0.8846390 -0.6319759 1.1294569           0.8375320
+## 3 b a 0.8514099     0.8328361 -0.1686331 1.0278373           0.9242475
+## 4 b c 0.6845420     0.6451098 -0.4799532 1.0987982           1.6055615
+## 5 c a 0.8974569     0.8846390  1.0661497 0.7945916           0.6217127
+## 6 c b 0.6845420     0.6451098  2.0387914 0.6229916           0.9789314
+##   Std.Error.slope t.intercept  t.slope Pr.intercept     Pr.slope
+## 1      0.12234745   1.2634959 6.770479   0.24198620 1.420428e-04
+## 2      0.13498051  -0.7545693 8.367556   0.47213301 3.155904e-05
+## 3      0.15181162  -0.1824545 6.770479   0.85976481 1.420428e-04
+## 4      0.26372036  -0.2989317 4.166528   0.77261028 3.136999e-03
+## 5      0.09496101   1.7148591 8.367556   0.12471401 3.155904e-05
+## 6      0.14952295   2.0826703 4.166528   0.07082059 3.136999e-03</code></pre>
 <p>还有两个函数对<code>tapply()</code>进行了改善, 用来进行因子计算.</p>
 <pre class="r"><code>beginr::tapplydf()
 beginr::tapplydfv()</code></pre>
@@ -139,8 +130,8 @@ beginr::list2ascii(alist)</code></pre>
 ## Package},
 ##   author = {Peng Zhao},
 ##   year = {2017},
-##   note = {R package version 1.3.0},
-##   url = {https://CRAN.R-project.org/package=bookdownplus},
+##   note = {R package version 1.3.1},
+##   url = {https://github.com/pzhaonet/bookdownplus},
 ## }
 ## @Manual{R-mindr,
 ##   title = {mindr: Convert Files Between Markdown or Rmarkdown Files and Mindmaps},
@@ -167,7 +158,7 @@ beginr::list2ascii(alist)</code></pre>
 ##   title = {beginr: Functions for R Beginners},
 ##   author = {Peng Zhao},
 ##   year = {2017},
-##   note = {R package version 0.1.0},
+##   note = {R package version 0.1.1},
 ##   url = {https://github.com/pzhaonet/beginr},
 ## }</code></pre>
 <div class="section level2 unnumbered">

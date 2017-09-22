@@ -10,6 +10,79 @@
     <atom:link href="/zh/tags/post/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>R bookdown 的小技巧</title>
+      <link>http://www.pzhao.org/zh/post/bookdown-tips/</link>
+      <pubDate>Fri, 22 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.pzhao.org/zh/post/bookdown-tips/</guid>
+      <description>&lt;p&gt;本帖用来收集整理 R 语言 bookdown 扩展包的一些使用技巧。有些是在网上搜来的，有些是我在别处讨论得来的，有些是我尚未发布的，都写在这里备用。&lt;/p&gt;
+&lt;div id=&#34;-markdown-&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;输出 Markdown 文件&lt;/h2&gt;
+&lt;p&gt;使用 bookdown 编译 Rmd 文件，可以得到的输出格式五花八门。对此，&lt;a href=&#34;https://bookdown.org/yihui/bookdown/output-formats.html&#34;&gt;bookdown 的官方文档&lt;/a&gt; 有详细介绍，包括 github， pdf，epub，word，html 单个文档等，偏偏没有提 markdown 格式。&lt;/p&gt;
+&lt;p&gt;其实，markdown 文件是有的，在编译过程里作为过渡文档存在，编译结束后自动删除。编译顺利的时候，在文件夹里“刷”地闪一下就消失了。我以前的做法是“快手”，在它消失之前迅速用 notepad++ 打开，就存下来了。这显然不是办法，凑合着过日子而已。&lt;/p&gt;
+&lt;p&gt;一般来说，如果仅仅是使用 rmarkdown，只需在 yaml 设置里声明一下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;output:
+  md_document:
+    variant: markdown_github&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;然后 knit 一下，就可以得到 markdown 文件了。想当然地，我把这段代码加到了 bookdown 的yaml 里，却得到警告，说 bookdown 不支持。&lt;/p&gt;
+&lt;p&gt;这事儿被我搁置了很久，最后我终于在 bookdown 的项目主页找到了&lt;a href=&#34;https://github.com/rstudio/bookdown/issues/317#issuecomment-275262486&#34;&gt;答案&lt;/a&gt;：参数 &lt;code&gt;clean = FALSE&lt;/code&gt; 。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;bookdown::render_book(&#39;index.Rmd&#39;, clean = FALSE)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;我很喜欢 markdown 格式。我用 bookdown 写论文，Rmd 的正文里插了不少诸如 &lt;code&gt;r pi&lt;/code&gt; 这样的调用。跟合作作者讨论时，看 Rmd 文件吧不直观，看 html 吧不方便修改，md 大概是最好的格式。&lt;/p&gt;
+&lt;p&gt;bookdown 的编译，我习惯按快捷键 ctrl+alt+b，或者点击右上方面板的 Build 按钮编译的，输出格式取决于 yaml。这样就得不到 md 文件。要想得到 md 文件，看来以后得改成命令行编译了。&lt;/p&gt;
+&lt;p&gt;我的 &lt;a href=&#34;https://github.com/pzhaonet/bookdownplus&#34;&gt;bookdownplus 最新版本 v1.3.1&lt;/a&gt; ，把 &lt;code&gt;clean&lt;/code&gt; 参数默认设置为 FALSE，并且在编译后把用不着的 .lol 文件删除。这样，新用户第一次用bookdown 时，就又多得到一种漂亮的输出结果。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;pdf-&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;pdf 的参考文献引用格式&lt;/h2&gt;
+&lt;p&gt;bookdown 里引用参考文献，在 bookdown 的官方文档里有说明。例如标识为’zhao2017’ 的 bib 条目，引用的方式和输出结果为：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;@zhao2017&lt;/code&gt;，得到 &lt;code&gt;Zhao (2017)&lt;/code&gt;， 相当于 LaTeX 里的 &lt;code&gt;\citet{zhao2017}&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;[@zhao2017]&lt;/code&gt; ，得到 &lt;code&gt;(Zhao, 2017)&lt;/code&gt;， 相当于 LaTeX 里的 &lt;code&gt;\citep{zhao2017}&lt;/code&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;但是，如果有多篇参考文献连续引用（我经常需要），就出问题了。我想得到的是 &lt;code&gt;(Xie, 2016; Zhao, 2017)&lt;/code&gt;，但无论输入 &lt;code&gt;[@zhao2017][@xie2016]&lt;/code&gt;, 或是&lt;code&gt;[@zhao2017 @xie2016]&lt;/code&gt;，或是&lt;code&gt;(@zhao2017; @xie2016)&lt;/code&gt;，都不管用。&lt;/p&gt;
+&lt;p&gt;管用的方法是使用 LaTeX 方式：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;\citep{zhao2017,xie2016}&lt;/code&gt;，得到&lt;code&gt;(Xie, 2016; Zhao, 2017)&lt;/code&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;-pdf-&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;往 pdf 里插入网络图片&lt;/h2&gt;
+&lt;p&gt;假定往文档里插入下面这张网络图片：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;url &amp;lt;- &#39;https://bookdown.org/yihui/bookdown/images/cover.jpg&#39;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;一般有两种方法：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;knitr::include_graphics(url)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;![](https://bookdown.org/yihui/bookdown/images/cover.jpg)&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;得到的网页输出格式里没有任何问题，但是 pdf 却不行。&lt;/p&gt;
+&lt;p&gt;这是因为，生成 pdf 的 LaTeX 不支持插入网络图片。LaTeX 界的解决办法是，先用 &lt;code&gt;wget&lt;/code&gt; 把网络图片下载到本地，再插入到tex 文档里。那么，我在 bookdown 里也如法炮制：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;download.file(url,&amp;#39;cover.jpg&amp;#39;, mode = &amp;#39;wb&amp;#39;)
+knitr::include_graphics(&amp;#39;cover.jpg&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这事儿其实已经解决了，但是不够完美。如果用 bookdown 同时输出网页格式和 pdf，那么网页格式的文档里插入的图片是本地图片；如果发布到 bookdown.org，那么插入的图片来自 bookdown.org。两者都不是该图片的原始地址。有点资源浪费。&lt;/p&gt;
+&lt;p&gt;完美的解决方式来自&lt;a href=&#34;https://stackoverflow.com/questions/46331896/how-can-i-insert-an-image-from-internet-to-the-pdf-file-produced-by-r-bookdown-i&#34;&gt;Yihui 的回答&lt;/a&gt;，在 Rmd 里这么写：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;if (!file.exists(cover_file &amp;lt;- &amp;#39;cover.jpg&amp;#39;))
+  download.file(url, cover_file, mode = &amp;#39;wb&amp;#39;)
+knitr::include_graphics(if (identical(knitr:::pandoc_to(), &amp;#39;html&amp;#39;)) url else cover_file)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这段代码自动判断，如果输出网页文档，就插入原始图片链接，否则就下载到本地再插入。&lt;/p&gt;
+&lt;!--
+## 如何在文章里显示 `r pi` 这样的 R 代码
+
+这个问题在编写 R markdown 教程时经常遇见。如果把世界上的提问按诡异程度排序的话，这个问题肯定能进前10，因为我根本不知道这个问题如何提问，如何描述。中英文都不知道。最后我只能这么提问：
+
+&gt; 请问怎么输入&#39;撇 r pi 撇&#39;并且别让它编译出来 3.1415？
+
+对此，knitr 有[说明](https://yihui.name/knitr/faq/)：用 `knitr::inline_expr()`。
+
+我现在用的方法是：`r \x60r pi\x60`
+
+这个 `\x60` 就是那个小撇。这个相当于把要显示的代码区弄成个字符串，然后插进去。
+
+对于
+--&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>外国国名的中文含义</title>
       <link>http://www.pzhao.org/zh/post/country-names/</link>
       <pubDate>Fri, 21 Jul 2017 00:00:00 +0000</pubDate>
@@ -133,12 +206,7 @@
       <pubDate>Tue, 27 Jun 2017 00:00:00 +0000</pubDate>
       
       <guid>http://www.pzhao.org/zh/post/bookdownplus-magic/</guid>
-      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
-&lt;!-- /BLOGDOWN-HEAD --&gt;
-
-&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
-&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
-&lt;p&gt;bookdown 是个好东西，只是入手有点难，酒香巷深。&lt;/p&gt;
+      <description>&lt;p&gt;bookdown 是个好东西，只是入手有点难，酒香巷深。&lt;/p&gt;
 &lt;p&gt;对于 R 初学者来说，如果身边没有人指导，使用者可能需要花大量精力应付 LaTeX，YAML，Pandoc，而很多初学者可能从来没听说过这些，站在 bookdown 的门口往里张望了一下，说不定就被吓跑了，从而错过了门里的精彩世界。&lt;/p&gt;
 &lt;p&gt;bookdownplus 扩展包，可以让新手对 bookdown 快速上手。从此，bookdown 这坛好酒就不必去深巷苦寻，它就放在你手边。&lt;/p&gt;
 &lt;p&gt;从 v1.2.0 开始，bookdownplus 增加了两个魔法，更是让新手对 bookdown 一见钟情。如果你对 bookdown 感兴趣却苦于入门的烦恼，那么可以试试这两个魔法。&lt;/p&gt;
@@ -222,26 +290,16 @@ y &amp;lt;- 1:10 + rnorm(10)
 beginr::plotlm(x, y)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;## [[1]]
-##               Estimate Std. Error    t value     Pr(&amp;gt;|t|)
-## (Intercept) 0.03601082  0.8883597 0.04053631 9.686590e-01
-## x           1.04005939  0.1431721 7.26439843 8.683107e-05
+##              Estimate Std. Error  t value     Pr(&amp;gt;|t|)
+## (Intercept) 1.0394279  0.9045416 1.149121 0.2837000189
+## x           0.8298354  0.1457801 5.692378 0.0004583923
 ## 
 ## [[2]]
-## [1] 0.8683593&lt;/code&gt;&lt;/pre&gt;
+## [1] 0.8019957&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;经常需要了解一组数据的分布, 看看是不是正态分布. beginr 里的 &lt;code&gt;plothist()&lt;/code&gt; 函数不仅做出直方图和平滑曲线, 并且标出中值, 中位数, 四分位数, 标准偏差, 样本数, 以及用来判断是否正态分布的 skewness 值.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;x &amp;lt;- rnorm(10000)
 beginr::plothist(x)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;##     para        value
-## 1    min -3.963444922
-## 2     1q -0.685618173
-## 3 median -0.011384971
-## 4     3q  0.679023134
-## 5    max  3.841248747
-## 6  lower -2.732551297
-## 7  upper  2.725956258
-## 8   mean -0.002381471
-## 9     sd  0.999047253&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;我很喜欢系统自带的成对儿散点图函数&lt;code&gt;pairs()&lt;/code&gt;, 只是功能再强大一点就好了. beginr 里的 &lt;code&gt;plotpairs()&lt;/code&gt; 和 &lt;code&gt;plotpairs2()&lt;/code&gt; 可以实现.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df &amp;lt;- data.frame(a = 1:10, b = 1:10 + rnorm(10), c = 1:10 + rnorm(10))
 beginr::plotpairs(df)&lt;/code&gt;&lt;/pre&gt;
@@ -272,19 +330,19 @@ beginr::errorbar(x, y, yupper = 0.1, ylower = 0.1)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df &amp;lt;- data.frame(a = 1:10, b = 1:10 + rnorm(10), c = 1:10 + rnorm(10))
 beginr::lmdf(df)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;##   x y r.squared adj.r.squared  intercept     slope Std.Error.intercept
-## 1 a b 0.8989097     0.8862735  0.9950563 0.8983970           0.6609221
-## 2 a c 0.9355156     0.9274551 -1.1516911 1.1838671           0.6818519
-## 3 b a 0.8989097     0.8862735 -0.4396277 1.0005707           0.7747134
-## 4 b c 0.8352681     0.8146766 -1.6483812 1.1805385           1.2104662
-## 5 c a 0.9355156     0.9274551  1.2647535 0.7902201           0.4701597
-## 6 c b 0.8352681     0.8146766  2.1441695 0.7075315           0.7120611
-##   Std.Error.slope t.intercept   t.slope Pr.intercept     Pr.slope
-## 1      0.10651724   1.5055575  8.434287   0.17059937 2.978922e-05
-## 2      0.10989038  -1.6890635 10.773164   0.12968052 4.855089e-06
-## 3      0.11863134  -0.5674715  8.434287   0.58596164 2.978922e-05
-## 4      0.18535787  -1.3617738  6.368969   0.21037697 2.161761e-04
-## 5      0.07335079   2.6900509 10.773164   0.02749447 4.855089e-06
-## 6      0.11109043   3.0112157  6.368969   0.01678244 2.161761e-04&lt;/code&gt;&lt;/pre&gt;
+## 1 a b 0.8514099     0.8328361  0.9591779 0.8283508           0.7591460
+## 2 a c 0.8974569     0.8846390 -0.6319759 1.1294569           0.8375320
+## 3 b a 0.8514099     0.8328361 -0.1686331 1.0278373           0.9242475
+## 4 b c 0.6845420     0.6451098 -0.4799532 1.0987982           1.6055615
+## 5 c a 0.8974569     0.8846390  1.0661497 0.7945916           0.6217127
+## 6 c b 0.6845420     0.6451098  2.0387914 0.6229916           0.9789314
+##   Std.Error.slope t.intercept  t.slope Pr.intercept     Pr.slope
+## 1      0.12234745   1.2634959 6.770479   0.24198620 1.420428e-04
+## 2      0.13498051  -0.7545693 8.367556   0.47213301 3.155904e-05
+## 3      0.15181162  -0.1824545 6.770479   0.85976481 1.420428e-04
+## 4      0.26372036  -0.2989317 4.166528   0.77261028 3.136999e-03
+## 5      0.09496101   1.7148591 8.367556   0.12471401 3.155904e-05
+## 6      0.14952295   2.0826703 4.166528   0.07082059 3.136999e-03&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;还有两个函数对&lt;code&gt;tapply()&lt;/code&gt;进行了改善, 用来进行因子计算.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::tapplydf()
 beginr::tapplydfv()&lt;/code&gt;&lt;/pre&gt;
@@ -308,8 +366,8 @@ beginr::list2ascii(alist)&lt;/code&gt;&lt;/pre&gt;
 ## Package},
 ##   author = {Peng Zhao},
 ##   year = {2017},
-##   note = {R package version 1.3.0},
-##   url = {https://CRAN.R-project.org/package=bookdownplus},
+##   note = {R package version 1.3.1},
+##   url = {https://github.com/pzhaonet/bookdownplus},
 ## }
 ## @Manual{R-mindr,
 ##   title = {mindr: Convert Files Between Markdown or Rmarkdown Files and Mindmaps},
@@ -336,7 +394,7 @@ beginr::list2ascii(alist)&lt;/code&gt;&lt;/pre&gt;
 ##   title = {beginr: Functions for R Beginners},
 ##   author = {Peng Zhao},
 ##   year = {2017},
-##   note = {R package version 0.1.0},
+##   note = {R package version 0.1.1},
 ##   url = {https://github.com/pzhaonet/beginr},
 ## }&lt;/code&gt;&lt;/pre&gt;
 &lt;div class=&#34;section level2 unnumbered&#34;&gt;
@@ -584,12 +642,7 @@ install.packages(&amp;#39;pinyin&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
       <pubDate>Tue, 20 Jun 2017 00:00:00 +0000</pubDate>
       
       <guid>http://www.pzhao.org/zh/post/latex-equations-to-word/</guid>
-      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
-&lt;!-- /BLOGDOWN-HEAD --&gt;
-
-&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
-&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
-&lt;p&gt;最近写了篇论文，投往一家学术期刊。投稿时，Word 格式和 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; 格式可以任选，我选了 Word，是因为合作作者用 Word。可是，文稿里的公式是我输入的，而那些公式在我的博士论文里是用 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; 写的。为了图省事，我就用了 Word 的插件&lt;a href=&#34;http://www.appinn.com/aurora/&#34;&gt;Aurora&lt;/a&gt;，这样，只需把公式的 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; 代码往 Word 文档的 Aurora 域里拷贝粘贴，bingo！公式就渲染好了，比 Word 的自带公式漂亮一些。&lt;/p&gt;
+      <description>&lt;p&gt;最近写了篇论文，投往一家学术期刊。投稿时，Word 格式和 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; 格式可以任选，我选了 Word，是因为合作作者用 Word。可是，文稿里的公式是我输入的，而那些公式在我的博士论文里是用 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; 写的。为了图省事，我就用了 Word 的插件&lt;a href=&#34;http://www.appinn.com/aurora/&#34;&gt;Aurora&lt;/a&gt;，这样，只需把公式的 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; 代码往 Word 文档的 Aurora 域里拷贝粘贴，bingo！公式就渲染好了，比 Word 的自带公式漂亮一些。&lt;/p&gt;
 &lt;p&gt;这篇论文很顺利，很快被接收了。到了最后一步的时候，编辑部要我把文档里的公式修改成可编辑的格式。——本来就是可编辑的呀。嗯，大概是编辑部不使用Aurora，那么他们的 Word 打开我的文档里看到的公式自然就是没法编辑的了。我懒得解释，最后决定把公式全部转换成 Word 公式。&lt;/p&gt;
 &lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; 公式转成 Word 公式并不难，只需三步：&lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; –&amp;gt; MathML –&amp;gt; 修改 –&amp;gt; Word.&lt;/p&gt;
 &lt;ol style=&#34;list-style-type: decimal&#34;&gt;
@@ -615,12 +668,7 @@ install.packages(&amp;#39;pinyin&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
       <pubDate>Mon, 19 Jun 2017 00:00:00 +0000</pubDate>
       
       <guid>http://www.pzhao.org/zh/post/publish-r-packages/</guid>
-      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
-&lt;!-- /BLOGDOWN-HEAD --&gt;
-
-&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
-&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
-&lt;p&gt;最近，我把&lt;a href=&#34;http://www.pzhao.org/zh/post/mindr/&#34;&gt;mindr&lt;/a&gt;，&lt;a href=&#34;http://www.pzhao.org/zh/post/pinyin/&#34;&gt;pinyin&lt;/a&gt; 和 &lt;a href=&#34;http://www.pzhao.org/zh/post/bookdown-plus/&#34;&gt;bookdownplus&lt;/a&gt; 三个包都提交到了 CRAN。这三个包都很简单，我就是想体验一下发布R包的流程，免得将来&lt;a href=&#34;http://xuer.pzhao.org/&#34;&gt;学R&lt;/a&gt;那本书出版了被问起来，答不上来就丢人了，另外也算是承接&lt;a href=&#34;http://www.pzhao.org/zh/post/rmickey/&#34;&gt;菜鸟致简速成&lt;/a&gt;那篇帖子，里面只谈了野包的发布分享，而只有提交到了 CRAN，野包才算转正。&lt;/p&gt;
+      <description>&lt;p&gt;最近，我把&lt;a href=&#34;http://www.pzhao.org/zh/post/mindr/&#34;&gt;mindr&lt;/a&gt;，&lt;a href=&#34;http://www.pzhao.org/zh/post/pinyin/&#34;&gt;pinyin&lt;/a&gt; 和 &lt;a href=&#34;http://www.pzhao.org/zh/post/bookdown-plus/&#34;&gt;bookdownplus&lt;/a&gt; 三个包都提交到了 CRAN。这三个包都很简单，我就是想体验一下发布R包的流程，免得将来&lt;a href=&#34;http://xuer.pzhao.org/&#34;&gt;学R&lt;/a&gt;那本书出版了被问起来，答不上来就丢人了，另外也算是承接&lt;a href=&#34;http://www.pzhao.org/zh/post/rmickey/&#34;&gt;菜鸟致简速成&lt;/a&gt;那篇帖子，里面只谈了野包的发布分享，而只有提交到了 CRAN，野包才算转正。&lt;/p&gt;
 &lt;p&gt;很快，这三个包都成功转正，可以正常安装了：&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;install.packages(&amp;#39;mindr&amp;#39;)
 install.packages(&amp;#39;pinyin&amp;#39;)
@@ -767,12 +815,7 @@ pinyin(&amp;#39;羌笛何须怨杨柳春风不度玉门关&amp;#39;)&lt;/code&gt
       <pubDate>Tue, 23 May 2017 00:00:00 +0000</pubDate>
       
       <guid>http://www.pzhao.org/zh/post/equations/</guid>
-      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
-&lt;!-- /BLOGDOWN-HEAD --&gt;
-
-&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
-&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
-&lt;p&gt;这些年，论文发得不多，公式却攒了不少，大部分都是自己亲手敲的 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; 代码。我把他们整理在一个 eq.tex 文档里，配合一个编译好的 eq.pdf 文件。每次需要的时候，在 eq.pdf 里找到需要的公式，然后去 eq.tex 找公式代码，拷到目标文档里完事儿。稍微有点小麻烦，但总比重新敲一遍代码要省事、准确。&lt;/p&gt;
+      <description>&lt;p&gt;这些年，论文发得不多，公式却攒了不少，大部分都是自己亲手敲的 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; 代码。我把他们整理在一个 eq.tex 文档里，配合一个编译好的 eq.pdf 文件。每次需要的时候，在 eq.pdf 里找到需要的公式，然后去 eq.tex 找公式代码，拷到目标文档里完事儿。稍微有点小麻烦，但总比重新敲一遍代码要省事、准确。&lt;/p&gt;
 &lt;p&gt;然而，现在有了 blogdown 和 Hugo-academic 主题，一切都变得不一样了。我把 eq.tex 里的文本全部拷贝粘贴到一个 .Rmd 文件，扔进网站里，就得到了现在这个帖子。鼠标放在公式上点右键- Show Math As - &lt;span class=&#34;math inline&#34;&gt;\(\TeX\)&lt;/span&gt; Commands，就得到了公式的 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; 代码。直接拷贝就行了，再也不用在两个文档里切换以及找来找去。&lt;/p&gt;
 &lt;p&gt;我觉得，我再也回不去了。&lt;/p&gt;
 &lt;div id=&#34;meteorology&#34; class=&#34;section level2&#34;&gt;
@@ -1136,12 +1179,7 @@ R^2 =(\frac{\sum_{i=1}^{n}(O_i-\overline{O})(P_i-\overline{P})}{\sqrt{\sum_{i=1}
       <pubDate>Thu, 18 May 2017 00:00:00 +0000</pubDate>
       
       <guid>http://www.pzhao.org/zh/post/rblogdown-bib/</guid>
-      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
-&lt;!-- /BLOGDOWN-HEAD --&gt;
-
-&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
-&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
-&lt;p&gt;本网站的公式和参考文献一直未能正常显示，直到今天我才把这两个问题解决。&lt;/p&gt;
+      <description>&lt;p&gt;本网站的公式和参考文献一直未能正常显示，直到今天我才把这两个问题解决。&lt;/p&gt;
 &lt;ol style=&#34;list-style-type: decimal&#34;&gt;
 &lt;li&gt;&lt;strong&gt;公式&lt;/strong&gt;&lt;/li&gt;
 &lt;/ol&gt;
@@ -1190,12 +1228,7 @@ R^2 =(\frac{\sum_{i=1}^{n}(O_i-\overline{O})(P_i-\overline{P})}{\sqrt{\sum_{i=1}
       <pubDate>Tue, 16 May 2017 00:00:00 +0000</pubDate>
       
       <guid>http://www.pzhao.org/zh/post/rmickey/</guid>
-      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
-&lt;!-- /BLOGDOWN-HEAD --&gt;
-
-&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
-&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
-&lt;div class=&#34;section level2&#34;&gt;
+      <description>&lt;div class=&#34;section level2&#34;&gt;
 &lt;h2&gt;前言&lt;/h2&gt;
 &lt;p&gt;写R包这种高大上的工作，原以为学会怎么写得花个一年半载，学会之后写一个包怎么着也得个把月，谁料想周一上午下了决心，到周二下午就一口气写了4个包，算起来从学到写，只花了一天多时间。这里是个小结。&lt;/p&gt;
 &lt;p&gt;学写R包，我主要参考了3份资料：&lt;/p&gt;
@@ -1287,55 +1320,6 @@ foo()&lt;/code&gt;&lt;/pre&gt;
 &lt;img src=&#34;http://www.pzhao.org/img/emacs-coo.gif&#34; /&gt;
 
 &lt;/div&gt;
-&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>postr: 用R Markdown做海报</title>
-      <link>http://www.pzhao.org/zh/post/postr/</link>
-      <pubDate>Tue, 16 May 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/zh/post/postr/</guid>
-      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
-&lt;!-- /BLOGDOWN-HEAD --&gt;
-
-&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
-&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
-&lt;p&gt;用R markdown写海报的扩展包&lt;a href=&#34;https://github.com/pzhaonet/postr&#34;&gt;postr&lt;/a&gt;安装使用方法（需要先安装好软件环境，详见&lt;a href=&#34;https://github.com/pzhaonet/postr&#34;&gt;postr&lt;/a&gt;项目主页）：&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;devtools::install_github(&amp;quot;pzhaonet/postr&amp;quot;)
-setwd()
-postr::postr()&lt;/code&gt;&lt;/pre&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+poster_eco.jpg&#34; /&gt;
-
-&lt;/div&gt;
-&lt;p&gt;益辉的&lt;a href=&#34;https://yihui.name/cn/2017/04/r-markdown-poster/&#34;&gt;莽撞人项目&lt;/a&gt;，悬赏解决“用 R Markdown 做海报”这个技术难题。我私下说，Markdown走的是LaTeX路线，讲究篇章结构和逻辑，而海报追求更多随意性和艺术性，即使学术海报也不例外，所以费劲硬要用Markdown解决，可能吃力不讨好。倒不如Powerpoint来得方便，或者把整个海报在R里当成一个device，用layout画图来实现。话虽这么说，我仍然在留意这件事，因为我在新书&lt;a href=&#34;http://xuer.pzhao.org&#34;&gt;学R&lt;/a&gt;里提出R语言科研方案的整体拼图，被我几乎全部拼完了，只缺海报这一块。这就好比在朋友圈发照片只发八张，看一眼就浑身不自在。&lt;/p&gt;
-&lt;p&gt;前几天，做&lt;a href=&#34;https://github.com/pzhaonet/bookdownplus&#34;&gt;bookdownplus&lt;/a&gt;时找模板，在比利时鲁汶大学的一大堆模板当中，我极其偶然地发现，里面暗暗潜伏着的，竟然有用R Markdown制作海报的秘密，淹没在一大堆文件里，搞不清楚各个文件之间的关系，而且说明文档过于简单，用起来不够方便。于是，我花了些工夫，把海报部分择了出来，稍加修改，增添了几个自己做的颜色主题，纳入了&lt;a href=&#34;https://github.com/pzhaonet/bookdownplus&#34;&gt;bookdownplus&lt;/a&gt;里。我的想法是，用户只需下载我这个文件夹，选择好模板，一运行，就出来个Rmd文件，打开一点knit按钮，Duang！海报就出来了。&lt;/p&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+poster_ocean.jpg&#34; /&gt;
-
-&lt;/div&gt;
-&lt;p&gt;于是去揭“莽撞人”榜。榜主说：很好。然后说：做成个包吧！名字都起好了，叫postr。为啥不直接叫poster？我猜大概是postr跟knitr的命名法类似，更容易搜到吧。&lt;/p&gt;
-&lt;p&gt;想来也是。我这种下载文件夹的方法毕竟路子太野，不符合R语言的习惯，大家更喜欢的是做包，上传，安装。但是我从来没做过包。而且，我认为做包是R语言里高大上的东西，我不认为自己能很快学会做。于是，我在朋友圈招贤，看有没有谁愿意把这活儿给接过去。消息放出去一天，无人理睬。&lt;/p&gt;
-&lt;p&gt;得，自己来吧。&lt;/p&gt;
-&lt;p&gt;这天大娃生病了，早上带他看医生。诊所人满为患。排队的时候，我把网上几篇关于R包开发入门的帖子扫了几遍，好像不太难哦。从诊所出来，十点多了，一到办公室，就干劲十足地折腾。事情出乎意料的顺利。我原以要到明年才能把这个包写出来，结果当天下午就写完了。这个过程里，多亏了几位前人的工作，几年前还很繁琐复杂的R包开发，现在分分钟就能写一个玩玩。&lt;/p&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+poster_rose.jpg&#34; /&gt;
-
-&lt;/div&gt;
-&lt;p&gt;既然这么容易，我顺手把&lt;a href=&#34;https://github.com/pzhaonet/bookdownplus&#34;&gt;bookdownplus&lt;/a&gt;也写成了个包。然后把平时常用的方程写成了第三个包。我还准备写个R包开发菜鸟教程，于是又写了个示例包。&lt;/p&gt;
-&lt;p&gt;从对R包开发一无所知，到一口气干掉四个包，花了不到两天工夫。用力过猛，有点撑了，我隐隐觉得不妙：好像不该这么顺利吧。&lt;/p&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+poster_ice.jpg&#34; /&gt;
-
-&lt;/div&gt;
-&lt;p&gt;果然，postr放到github当天晚上，就有人留言了。我很好奇这哥们儿是怎么在第一时间发现我这么个无名之辈发布了一个包。这哥们儿先说，postr这个名字起得好，很容易记住。这得感谢益辉，他给我的域名提的建议也让人说容易记。然后这哥们儿说：这个包他运行无法通过。&lt;/p&gt;
-&lt;p&gt;这时我陡然发现，这才是R包开发的关键。写个包发布到github并不难，难的是解决用户的问题。&lt;/p&gt;
-&lt;p&gt;前面等待的，将是一个又一个的坑。&lt;/p&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+poster_night.jpg&#34; /&gt;
-
 &lt;/div&gt;
 </description>
     </item>

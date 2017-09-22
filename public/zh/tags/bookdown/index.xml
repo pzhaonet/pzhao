@@ -10,17 +10,85 @@
     <atom:link href="/zh/tags/bookdown/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>R bookdown 的小技巧</title>
+      <link>http://www.pzhao.org/zh/post/bookdown-tips/</link>
+      <pubDate>Fri, 22 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.pzhao.org/zh/post/bookdown-tips/</guid>
+      <description>&lt;p&gt;本帖用来收集整理 R 语言 bookdown 扩展包的一些使用技巧。有些是在网上搜来的，有些是我在别处讨论得来的，有些是我尚未发布的，都写在这里备用。&lt;/p&gt;
+&lt;div id=&#34;-markdown-&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;输出 Markdown 文件&lt;/h2&gt;
+&lt;p&gt;使用 bookdown 编译 Rmd 文件，可以得到的输出格式五花八门。对此，&lt;a href=&#34;https://bookdown.org/yihui/bookdown/output-formats.html&#34;&gt;bookdown 的官方文档&lt;/a&gt; 有详细介绍，包括 github， pdf，epub，word，html 单个文档等，偏偏没有提 markdown 格式。&lt;/p&gt;
+&lt;p&gt;其实，markdown 文件是有的，在编译过程里作为过渡文档存在，编译结束后自动删除。编译顺利的时候，在文件夹里“刷”地闪一下就消失了。我以前的做法是“快手”，在它消失之前迅速用 notepad++ 打开，就存下来了。这显然不是办法，凑合着过日子而已。&lt;/p&gt;
+&lt;p&gt;一般来说，如果仅仅是使用 rmarkdown，只需在 yaml 设置里声明一下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;output:
+  md_document:
+    variant: markdown_github&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;然后 knit 一下，就可以得到 markdown 文件了。想当然地，我把这段代码加到了 bookdown 的yaml 里，却得到警告，说 bookdown 不支持。&lt;/p&gt;
+&lt;p&gt;这事儿被我搁置了很久，最后我终于在 bookdown 的项目主页找到了&lt;a href=&#34;https://github.com/rstudio/bookdown/issues/317#issuecomment-275262486&#34;&gt;答案&lt;/a&gt;：参数 &lt;code&gt;clean = FALSE&lt;/code&gt; 。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;bookdown::render_book(&#39;index.Rmd&#39;, clean = FALSE)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;我很喜欢 markdown 格式。我用 bookdown 写论文，Rmd 的正文里插了不少诸如 &lt;code&gt;r pi&lt;/code&gt; 这样的调用。跟合作作者讨论时，看 Rmd 文件吧不直观，看 html 吧不方便修改，md 大概是最好的格式。&lt;/p&gt;
+&lt;p&gt;bookdown 的编译，我习惯按快捷键 ctrl+alt+b，或者点击右上方面板的 Build 按钮编译的，输出格式取决于 yaml。这样就得不到 md 文件。要想得到 md 文件，看来以后得改成命令行编译了。&lt;/p&gt;
+&lt;p&gt;我的 &lt;a href=&#34;https://github.com/pzhaonet/bookdownplus&#34;&gt;bookdownplus 最新版本 v1.3.1&lt;/a&gt; ，把 &lt;code&gt;clean&lt;/code&gt; 参数默认设置为 FALSE，并且在编译后把用不着的 .lol 文件删除。这样，新用户第一次用bookdown 时，就又多得到一种漂亮的输出结果。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;pdf-&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;pdf 的参考文献引用格式&lt;/h2&gt;
+&lt;p&gt;bookdown 里引用参考文献，在 bookdown 的官方文档里有说明。例如标识为’zhao2017’ 的 bib 条目，引用的方式和输出结果为：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;@zhao2017&lt;/code&gt;，得到 &lt;code&gt;Zhao (2017)&lt;/code&gt;， 相当于 LaTeX 里的 &lt;code&gt;\citet{zhao2017}&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;[@zhao2017]&lt;/code&gt; ，得到 &lt;code&gt;(Zhao, 2017)&lt;/code&gt;， 相当于 LaTeX 里的 &lt;code&gt;\citep{zhao2017}&lt;/code&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;但是，如果有多篇参考文献连续引用（我经常需要），就出问题了。我想得到的是 &lt;code&gt;(Xie, 2016; Zhao, 2017)&lt;/code&gt;，但无论输入 &lt;code&gt;[@zhao2017][@xie2016]&lt;/code&gt;, 或是&lt;code&gt;[@zhao2017 @xie2016]&lt;/code&gt;，或是&lt;code&gt;(@zhao2017; @xie2016)&lt;/code&gt;，都不管用。&lt;/p&gt;
+&lt;p&gt;管用的方法是使用 LaTeX 方式：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;\citep{zhao2017,xie2016}&lt;/code&gt;，得到&lt;code&gt;(Xie, 2016; Zhao, 2017)&lt;/code&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;-pdf-&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;往 pdf 里插入网络图片&lt;/h2&gt;
+&lt;p&gt;假定往文档里插入下面这张网络图片：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;url &amp;lt;- &#39;https://bookdown.org/yihui/bookdown/images/cover.jpg&#39;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;一般有两种方法：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;knitr::include_graphics(url)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;![](https://bookdown.org/yihui/bookdown/images/cover.jpg)&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;得到的网页输出格式里没有任何问题，但是 pdf 却不行。&lt;/p&gt;
+&lt;p&gt;这是因为，生成 pdf 的 LaTeX 不支持插入网络图片。LaTeX 界的解决办法是，先用 &lt;code&gt;wget&lt;/code&gt; 把网络图片下载到本地，再插入到tex 文档里。那么，我在 bookdown 里也如法炮制：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;download.file(url,&amp;#39;cover.jpg&amp;#39;, mode = &amp;#39;wb&amp;#39;)
+knitr::include_graphics(&amp;#39;cover.jpg&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这事儿其实已经解决了，但是不够完美。如果用 bookdown 同时输出网页格式和 pdf，那么网页格式的文档里插入的图片是本地图片；如果发布到 bookdown.org，那么插入的图片来自 bookdown.org。两者都不是该图片的原始地址。有点资源浪费。&lt;/p&gt;
+&lt;p&gt;完美的解决方式来自&lt;a href=&#34;https://stackoverflow.com/questions/46331896/how-can-i-insert-an-image-from-internet-to-the-pdf-file-produced-by-r-bookdown-i&#34;&gt;Yihui 的回答&lt;/a&gt;，在 Rmd 里这么写：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;if (!file.exists(cover_file &amp;lt;- &amp;#39;cover.jpg&amp;#39;))
+  download.file(url, cover_file, mode = &amp;#39;wb&amp;#39;)
+knitr::include_graphics(if (identical(knitr:::pandoc_to(), &amp;#39;html&amp;#39;)) url else cover_file)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这段代码自动判断，如果输出网页文档，就插入原始图片链接，否则就下载到本地再插入。&lt;/p&gt;
+&lt;!--
+## 如何在文章里显示 `r pi` 这样的 R 代码
+
+这个问题在编写 R markdown 教程时经常遇见。如果把世界上的提问按诡异程度排序的话，这个问题肯定能进前10，因为我根本不知道这个问题如何提问，如何描述。中英文都不知道。最后我只能这么提问：
+
+&gt; 请问怎么输入&#39;撇 r pi 撇&#39;并且别让它编译出来 3.1415？
+
+对此，knitr 有[说明](https://yihui.name/knitr/faq/)：用 `knitr::inline_expr()`。
+
+我现在用的方法是：`r \x60r pi\x60`
+
+这个 `\x60` 就是那个小撇。这个相当于把要显示的代码区弄成个字符串，然后插进去。
+
+对于
+--&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>bookdownplus 的两个魔法</title>
       <link>http://www.pzhao.org/zh/post/bookdownplus-magic/</link>
       <pubDate>Tue, 27 Jun 2017 00:00:00 +0000</pubDate>
       
       <guid>http://www.pzhao.org/zh/post/bookdownplus-magic/</guid>
-      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
-&lt;!-- /BLOGDOWN-HEAD --&gt;
-
-&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
-&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
-&lt;p&gt;bookdown 是个好东西，只是入手有点难，酒香巷深。&lt;/p&gt;
+      <description>&lt;p&gt;bookdown 是个好东西，只是入手有点难，酒香巷深。&lt;/p&gt;
 &lt;p&gt;对于 R 初学者来说，如果身边没有人指导，使用者可能需要花大量精力应付 LaTeX，YAML，Pandoc，而很多初学者可能从来没听说过这些，站在 bookdown 的门口往里张望了一下，说不定就被吓跑了，从而错过了门里的精彩世界。&lt;/p&gt;
 &lt;p&gt;bookdownplus 扩展包，可以让新手对 bookdown 快速上手。从此，bookdown 这坛好酒就不必去深巷苦寻，它就放在你手边。&lt;/p&gt;
 &lt;p&gt;从 v1.2.0 开始，bookdownplus 增加了两个魔法，更是让新手对 bookdown 一见钟情。如果你对 bookdown 感兴趣却苦于入门的烦恼，那么可以试试这两个魔法。&lt;/p&gt;
@@ -288,12 +356,7 @@ install.packages(&amp;#39;pinyin&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
       <pubDate>Tue, 09 May 2017 00:00:00 +0000</pubDate>
       
       <guid>http://www.pzhao.org/zh/post/bookdown-plus/</guid>
-      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
-&lt;!-- /BLOGDOWN-HEAD --&gt;
-
-&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
-&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
-&lt;p&gt;&lt;strong&gt;注意：本文所述的&lt;code&gt;bookdown+&lt;/code&gt;这个项目已经停止开发，继承者是我新开的R包项目&lt;a href=&#34;https://github.com/pzhaonet/bookdownplus&#34;&gt;bookdownplus&lt;/a&gt; ，这是因为我学会了写R包。当然，说不定有些朋友不喜欢安装R包，喜欢下载个文件夹直接免安装用，那么本文所述的方法仍然可以继续使用，只是我不再更新了而已。&lt;/strong&gt;&lt;/p&gt;
+      <description>&lt;p&gt;&lt;strong&gt;注意：本文所述的&lt;code&gt;bookdown+&lt;/code&gt;这个项目已经停止开发，继承者是我新开的R包项目&lt;a href=&#34;https://github.com/pzhaonet/bookdownplus&#34;&gt;bookdownplus&lt;/a&gt; ，这是因为我学会了写R包。当然，说不定有些朋友不喜欢安装R包，喜欢下载个文件夹直接免安装用，那么本文所述的方法仍然可以继续使用，只是我不再更新了而已。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;R bookdown 能做的事情很多，可是那些功能迟迟不来，我只好自己动手，写了个 &lt;a href=&#34;https://github.com/pzhaonet/bookdown-plus&#34;&gt;bookdown+&lt;/a&gt;，目前大体实现了用 bookdown 写期刊论文、化学分子式、信件、日记、日历等功能。当然，有些还没完全实现，革命不够彻底，带着浓重的&lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt;旧社会的气息。革命尚未成功，同志仍需努力。&lt;/p&gt;
 &lt;p&gt;下面是 &lt;a href=&#34;https://github.com/pzhaonet/bookdown-plus&#34;&gt;bookdown+&lt;/a&gt; 的简介和快速使用方法。&lt;/p&gt;
 &lt;div class=&#34;section level1&#34;&gt;
@@ -545,12 +608,7 @@ bookdown::html_document2: default
       <pubDate>Tue, 14 Mar 2017 00:00:00 +0000</pubDate>
       
       <guid>http://www.pzhao.org/zh/post/bookdown-cheatsheet/</guid>
-      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
-&lt;!-- /BLOGDOWN-HEAD --&gt;
-
-&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
-&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
-&lt;div class=&#34;section level2&#34;&gt;
+      <description>&lt;div class=&#34;section level2&#34;&gt;
 &lt;h2&gt;快速开始&lt;/h2&gt;
 &lt;div id=&#34;r-bookdown-&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;R bookdown 是什么&lt;/h3&gt;
@@ -782,12 +840,7 @@ I like Eq. \@ref(eq:mc2) so much that I am falling love with her.&lt;/code&gt;&l
       <pubDate>Mon, 13 Mar 2017 00:00:00 +0000</pubDate>
       
       <guid>http://www.pzhao.org/zh/post/inresistible-bookdown/</guid>
-      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
-&lt;!-- /BLOGDOWN-HEAD --&gt;
-
-&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
-&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
-&lt;p&gt;最近，我打算把博客上关于R语言的帖子整理成一本书，希望弄得帅气一点，整齐一点，将来容易维护一点。涌进脑子的第一个念头是 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; ，第二个念头是想吐。&lt;/p&gt;
+      <description>&lt;p&gt;最近，我打算把博客上关于R语言的帖子整理成一本书，希望弄得帅气一点，整齐一点，将来容易维护一点。涌进脑子的第一个念头是 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; ，第二个念头是想吐。&lt;/p&gt;
 &lt;p&gt;是的，虽然我推崇 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; ，觉得这个工具排出来的文档很漂亮，但自从弄完博士论文&lt;a href=&#34;#fn1&#34; class=&#34;footnoteRef&#34; id=&#34;fnref1&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; 之后，除了帮别人备份一下博客&lt;a href=&#34;#fn2&#34; class=&#34;footnoteRef&#34; id=&#34;fnref2&#34;&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt; 、往论文里插几个公式和玩玩吉他谱&lt;a href=&#34;#fn3&#34; class=&#34;footnoteRef&#34; id=&#34;fnref3&#34;&gt;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt;，我再也没碰过她。惰性开始代替折腾，我宁可点点鼠标写出一份不太美观的Word文档，也不想面对 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; 那让人头疼的代码。大概我是真上了岁数罢。&lt;/p&gt;
 &lt;p&gt;对于 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt;，我想自己的内心深处是怀有恐惧的。她的美丽让我着迷，她的复杂令人生畏。&lt;/p&gt;
 &lt;p&gt;所以，这次整理博客，我决定在Word里做。用了这么多年，对Word的秉性我算是略知一二，从一开始就用主控文档和子文档的方式管理，以防单个文档太大而死机；从标题到R代码，我预先都设置好了样式以及样式的快捷键，方便调整格式；每写几句话，就左手抽筋一样ctrl+s一下，以防万一。其间，发现帖子里有些R代码要修改调试，我就咬牙忍着在RStudio和Word之间频繁拷贝粘贴的煎熬。反正换回 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; 也是一样想吐，既来之则安之，嫁鸡随鸡嫁狗随狗吧。&lt;/p&gt;

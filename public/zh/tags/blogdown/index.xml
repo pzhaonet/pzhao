@@ -15,12 +15,7 @@
       <pubDate>Thu, 18 May 2017 00:00:00 +0000</pubDate>
       
       <guid>http://www.pzhao.org/zh/post/rblogdown-bib/</guid>
-      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
-&lt;!-- /BLOGDOWN-HEAD --&gt;
-
-&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
-&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
-&lt;p&gt;本网站的公式和参考文献一直未能正常显示，直到今天我才把这两个问题解决。&lt;/p&gt;
+      <description>&lt;p&gt;本网站的公式和参考文献一直未能正常显示，直到今天我才把这两个问题解决。&lt;/p&gt;
 &lt;ol style=&#34;list-style-type: decimal&#34;&gt;
 &lt;li&gt;&lt;strong&gt;公式&lt;/strong&gt;&lt;/li&gt;
 &lt;/ol&gt;
@@ -69,12 +64,7 @@
       <pubDate>Wed, 19 Apr 2017 00:00:00 +0000</pubDate>
       
       <guid>http://www.pzhao.org/zh/post/hugo-icon/</guid>
-      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
-&lt;!-- /BLOGDOWN-HEAD --&gt;
-
-&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
-&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
-&lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/img/myicon.png&#34; /&gt;&lt;!-- --&gt;&lt;/p&gt;
+      <description>&lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/img/myicon.png&#34; /&gt;&lt;!-- --&gt;&lt;/p&gt;
 &lt;p&gt;网站图标，就是上图的这些东东，用浏览器打开网站时显示在地址栏的顶端。R blogdown安装的hugo-academic主题，默认图标是个蓝色学位帽，挺好看的，不改也行，只是如果大家都用的话，泯然众人，识别度就低了。&lt;/p&gt;
 &lt;p&gt;改的方式很简单：将你自己的图标图片保存为.png格式，并命名为icon.png，替换&lt;code&gt;\themes\hugo-academic\static\img\icon.png&lt;/code&gt;即可。&lt;/p&gt;
 &lt;p&gt;update: 更好的方案来自&lt;a href=&#34;https://disqus.com/home/discussion/pzhao/hugo/#comment-3287700912&#34;&gt;yang Cao的提议&lt;/a&gt;：把icon.png放在&lt;code&gt;static/img/&lt;/code&gt;，避免在更新themes时将自定义图标覆盖。&lt;/p&gt;
@@ -87,12 +77,7 @@
       <pubDate>Tue, 18 Apr 2017 00:00:00 +0000</pubDate>
       
       <guid>http://www.pzhao.org/zh/post/hugo-rss/</guid>
-      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
-&lt;!-- /BLOGDOWN-HEAD --&gt;
-
-&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
-&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
-&lt;p&gt;R blogdown 搭建的 Hugo 网站，小细节很多，可以一点一点完善，好在都不难搞定。今天添加了个RSS订阅按钮。&lt;/p&gt;
+      <description>&lt;p&gt;R blogdown 搭建的 Hugo 网站，小细节很多，可以一点一点完善，好在都不难搞定。今天添加了个RSS订阅按钮。&lt;/p&gt;
 &lt;p&gt;自从 Google Reader 死后，我就觉得 RSS 没有多大趣味，就好像子期死后伯牙摔琴一样。但是，没有 RSS 提醒的话，还真不知道谁的博客更新了，于是就勉强用 feedly 凑合。眼看我的新网站构架基本完成，就在 feedly 里订阅了一下自己的网站，输入 &lt;code&gt;pzhao.org&lt;/code&gt;，发现没找到。嗯？研究一下才明白，我的主页完整地址是：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;http://pzhao.org/zh/&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;这个路径对应的本地文件夹下面，不仅有个&lt;code&gt;index.html&lt;/code&gt;，还有个&lt;code&gt;index.xml&lt;/code&gt;，后者就是 RSS 订阅的文件。所以，在feedly添加：&lt;/p&gt;
@@ -201,12 +186,7 @@ defaultContentLanguageInSubdir = true
       <pubDate>Sat, 15 Apr 2017 00:00:00 +0000</pubDate>
       
       <guid>http://www.pzhao.org/zh/post/hugo-academic-summary/</guid>
-      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
-&lt;!-- /BLOGDOWN-HEAD --&gt;
-
-&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
-&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
-&lt;p&gt;在 RStudio 里用 R blogdown 来维护网站时，可以通过点击工具栏的 Addins - New Post 来创建新帖子，很方便。但是，如果用的是 Hugo 的 academic 主题，那么创建的新帖子在网站首页会显示全文，不大好看，尤其是全文很长的时候，根本就不像个首页了。这是因为，academic 首页的 posts 模块默认显示文摘。如果没有为每篇帖子设置文摘，就会显示全文。而上面说的创建新帖的方法里，并没有设置文摘的选项。那么，文摘在哪里设置呢？&lt;/p&gt;
+      <description>&lt;p&gt;在 RStudio 里用 R blogdown 来维护网站时，可以通过点击工具栏的 Addins - New Post 来创建新帖子，很方便。但是，如果用的是 Hugo 的 academic 主题，那么创建的新帖子在网站首页会显示全文，不大好看，尤其是全文很长的时候，根本就不像个首页了。这是因为，academic 首页的 posts 模块默认显示文摘。如果没有为每篇帖子设置文摘，就会显示全文。而上面说的创建新帖的方法里，并没有设置文摘的选项。那么，文摘在哪里设置呢？&lt;/p&gt;
 &lt;p&gt;直接说答案：手动在新帖的YAML文件头添加一行：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;summary: &amp;quot;我的文摘别太长。&amp;quot;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;答案来自&lt;a href=&#34;https://github.com/rstudio/blogdown/issues/21#issuecomment-269555683&#34;&gt;blogdown 项目主页&lt;/a&gt;。&lt;/p&gt;
@@ -233,12 +213,7 @@ Enable/disable and configure widgets to customize your homepage.
       <pubDate>Fri, 14 Apr 2017 00:00:00 +0000</pubDate>
       
       <guid>http://www.pzhao.org/zh/post/hogo-disques-problem/</guid>
-      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
-&lt;!-- /BLOGDOWN-HEAD --&gt;
-
-&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
-&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
-&lt;p&gt;今天，复活节假期前夕，同事们都休假了。我虽然在办公室，却无心上班，发了一会儿呆，想想与其痛苦地工作，不如快乐地解决一下&lt;a href=&#34;http://pzhao.org&#34;&gt;新网站&lt;/a&gt;的一个小问题：disqus 评论框的加载。&lt;/p&gt;
+      <description>&lt;p&gt;今天，复活节假期前夕，同事们都休假了。我虽然在办公室，却无心上班，发了一会儿呆，想想与其痛苦地工作，不如快乐地解决一下&lt;a href=&#34;http://pzhao.org&#34;&gt;新网站&lt;/a&gt;的一个小问题：disqus 评论框的加载。&lt;/p&gt;
 &lt;p&gt;用 R blogdown 打建好站，disqus评论框就一直没成功加载过。后来听说是&lt;code&gt;config.toml&lt;/code&gt;里 &lt;code&gt;disqus shortname&lt;/code&gt;指的不是我的disqus ID，而是要&lt;a href=&#34;https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-&#34;&gt;专门设置&lt;/a&gt;一下， 我说“啊,还有这事儿？”于是就设置了一下，但是仍然不能成功加载。这个问题放了几天，今天心血来潮&lt;a href=&#34;http://applyr.blogspot.co.at/2017/01/blogging-about-r-from-r-studio.html&#34;&gt;一搜&lt;/a&gt;，嗯，兴许是路径的问题，于是就把&lt;code&gt;config.toml&lt;/code&gt;开头的路径改为&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;baseurl = &amp;quot;http://www.pzhao.org&amp;quot;
 # relativeurls = true&lt;/code&gt;&lt;/pre&gt;
@@ -257,12 +232,7 @@ Enable/disable and configure widgets to customize your homepage.
       <pubDate>Tue, 11 Apr 2017 00:00:00 +0000</pubDate>
       
       <guid>http://www.pzhao.org/zh/post/r-blogdown/</guid>
-      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
-&lt;!-- /BLOGDOWN-HEAD --&gt;
-
-&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
-&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
-&lt;p&gt;本文收录在《学 R 》一书的附录中。&lt;/p&gt;
+      <description>&lt;p&gt;本文收录在《学 R 》一书的附录中。&lt;/p&gt;
 &lt;p&gt;互联网时代有个自己的网站，就好像真实世界里有了自己的房子（服务器）和固定地址（域名）；自我介绍时附上自己的网站，就像生活里邀请朋友来访或者职场上递上名片，都甚为方便。然而，建立一个网站并不容易，涉及诸多领域的知识和技能，门槛比较高。好在，我们有万能的R语言，搭建网站只需几分钟，而并不需要多少网络知识。你甚至不用懂 R 语言是什么，照我下面说的做就行，包教包会，学不会免费再教。&lt;/p&gt;
 &lt;p&gt;这里，我提供两个示范，演示如何使用 R 语言的 blogdown 扩展包&lt;a href=&#34;#fn1&#34; class=&#34;footnoteRef&#34; id=&#34;fnref1&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;，用来搭建一个&lt;a href=&#34;http://dapengde.com/blogdown_demo_default/&#34;&gt;个人博客&lt;/a&gt;和一个&lt;a href=&#34;http://dapengde.com/blogdown_demo_academic/&#34;&gt;科研小组网站&lt;/a&gt;。截至本文成稿之日，blogdown 含苞待放，尚未正式发布，但是已经能够正常安装使用了。我们来尝尝鲜，提前一睹她的芳容。&lt;/p&gt;
 &lt;div id=&#34;r-blogdown-&#34; class=&#34;section level2&#34;&gt;

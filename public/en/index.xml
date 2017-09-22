@@ -94,12 +94,7 @@
       <pubDate>Wed, 19 Jul 2017 00:00:00 +0000</pubDate>
       
       <guid>http://www.pzhao.org/en/post/advection-tn/</guid>
-      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
-&lt;!-- /BLOGDOWN-HEAD --&gt;
-
-&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
-&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
-&lt;div class=&#34;figure&#34;&gt;
+      <description>&lt;div class=&#34;figure&#34;&gt;
 &lt;img src=&#34;http://www.arpa.vda.it/images/stories/ARPA/camb_clim/news/20170714_PascoloTorgnon/setup.jpg&#34; /&gt;
 
 &lt;/div&gt;
@@ -155,26 +150,16 @@ y &amp;lt;- 1:10 + rnorm(10)
 beginr::plotlm(x, y)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;## [[1]]
-##               Estimate Std. Error    t value     Pr(&amp;gt;|t|)
-## (Intercept) -0.2327490 0.54687401 -0.4255989 6.816183e-01
-## x            0.9724508 0.08813673 11.0334343 4.054809e-06
+##              Estimate Std. Error   t value     Pr(&amp;gt;|t|)
+## (Intercept) 0.3544934  0.6695584 0.5294436 6.108704e-01
+## x           0.8563954  0.1079091 7.9362658 4.625425e-05
 ## 
 ## [[2]]
-## [1] 0.9383366&lt;/code&gt;&lt;/pre&gt;
+## [1] 0.887299&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;If you want to display the distribution of a data-set, use &lt;code&gt;plothist()&lt;/code&gt;, which gives you a histogram with markers of the median, mean, quantiles, standard deviation, sample number and the skewness.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;x &amp;lt;- rnorm(10000)
 beginr::plothist(x)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;##     para        value
-## 1    min -3.843700122
-## 2     1q -0.695540029
-## 3 median  0.003586535
-## 4     3q  0.667035345
-## 5    max  3.541699680
-## 6  lower -2.738487007
-## 7  upper  2.709982322
-## 8   mean -0.011081342
-## 9     sd  0.992039193&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;I like &lt;code&gt;pairs()&lt;/code&gt;, and ‘beginr’ gives more powerful features to &lt;code&gt;plotpairs()&lt;/code&gt; and &lt;code&gt;plotpairs2()&lt;/code&gt;.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df &amp;lt;- data.frame(a = 1:10, b = 1:10 + rnorm(10), c = 1:10 + rnorm(10))
 beginr::plotpairs(df)&lt;/code&gt;&lt;/pre&gt;
@@ -204,20 +189,20 @@ beginr::errorbar(x, y, yupper = 0.1, ylower = 0.1)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;code&gt;lmdf()&lt;/code&gt; performs the linear regression between every two columns in a data frame.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df &amp;lt;- data.frame(a = 1:10, b = 1:10 + rnorm(10), c = 1:10 + rnorm(10))
 beginr::lmdf(df)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;##   x y r.squared adj.r.squared   intercept     slope Std.Error.intercept
-## 1 a b 0.9648001     0.9604001  0.78279785 0.8650861           0.3624908
-## 2 a c 0.9602734     0.9553076 -0.06504577 1.0340661           0.4613991
-## 3 b a 0.9648001     0.9604001 -0.67942726 1.1152648           0.4587427
-## 4 b c 0.9043172     0.8923569 -0.69075512 1.1393852           0.7981161
-## 5 c a 0.9602734     0.9553076  0.27890015 0.9286383           0.4265395
-## 6 c b 0.9043172     0.8923569  1.07840104 0.7936887           0.5830103
+&lt;pre&gt;&lt;code&gt;##   x y r.squared adj.r.squared  intercept     slope Std.Error.intercept
+## 1 a b 0.9603610     0.9554061 -1.1785763 1.1682759           0.5206848
+## 2 a c 0.8259565     0.8042010  0.6327990 0.9167067           0.9231369
+## 3 b a 0.9603610     0.9554061  1.1868429 0.8220327           0.3699453
+## 4 b c 0.8508233     0.8321762  1.5797270 0.7804469           0.7238997
+## 5 c a 0.8259565     0.8042010  0.3870849 0.9010041           0.9316931
+## 6 c b 0.8508233     0.8321762 -0.9394567 1.0901745           1.0283065
 ##   Std.Error.slope t.intercept   t.slope Pr.intercept     Pr.slope
-## 1      0.05842068   2.1594973 14.807875   0.06283859 4.258274e-07
-## 2      0.07436120  -0.1409751 13.905990   0.89137479 6.921544e-07
-## 3      0.07531565  -1.4810638 14.807875   0.17686466 4.258274e-07
-## 4      0.13103343  -0.8654820  8.695378   0.41197529 2.385239e-05
-## 5      0.06677974   0.6538672 13.905990   0.53153888 6.921544e-07
-## 6      0.09127708   1.8497117  8.695378   0.10152156 2.385239e-05&lt;/code&gt;&lt;/pre&gt;
+## 1      0.08391596  -2.2635119 13.921975   0.05342872 6.860474e-07
+## 2      0.14877699   0.6854877  6.161616   0.51240655 2.705329e-04
+## 3      0.05904570   3.2081577 13.921975   0.01245872 6.860474e-07
+## 4      0.11553915   2.1822455  6.754826   0.06064979 1.443378e-04
+## 5      0.14622854   0.4154640  6.161616   0.68872203 2.705329e-04
+## 6      0.16139194  -0.9135960  6.754826   0.38763395 1.443378e-04&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;There are two functions as improvements of &lt;code&gt;tapply()&lt;/code&gt; for factor calculation.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::tapplydf()
 beginr::tapplydfv()&lt;/code&gt;&lt;/pre&gt;
@@ -240,7 +225,7 @@ beginr::list2ascii(alist)&lt;/code&gt;&lt;/pre&gt;
 ##   title = {beginr: Functions for R Beginners},
 ##   author = {Peng Zhao},
 ##   year = {2017},
-##   note = {R package version 0.1.0},
+##   note = {R package version 0.1.1},
 ##   url = {https://github.com/pzhaonet/beginr},
 ## }
 ## @Manual{R-bookdownplus,
@@ -248,8 +233,8 @@ beginr::list2ascii(alist)&lt;/code&gt;&lt;/pre&gt;
 ## Package},
 ##   author = {Peng Zhao},
 ##   year = {2017},
-##   note = {R package version 1.3.0},
-##   url = {https://CRAN.R-project.org/package=bookdownplus},
+##   note = {R package version 1.3.1},
+##   url = {https://github.com/pzhaonet/bookdownplus},
 ## }
 ## @Manual{R-mindr,
 ##   title = {mindr: Convert Files Between Markdown or Rmarkdown Files and Mindmaps},
@@ -522,12 +507,7 @@ bookdownplus::bookdownplus()&lt;/code&gt;&lt;/pre&gt;
       <pubDate>Tue, 23 May 2017 00:00:00 +0000</pubDate>
       
       <guid>http://www.pzhao.org/en/post/equations/</guid>
-      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
-&lt;!-- /BLOGDOWN-HEAD --&gt;
-
-&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
-&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
-&lt;p&gt;I have collected plenty of equations in my research in recent years. Most of them were typed by my own hands. For convenience, I organized them in an ASCII file named eq.tex as an equation library, side by side with a compiled file named eq.pdf. When I needed an equation, I searched eq.pdf, and looked for the codes in eq.tex, and then copied and posted it to my working document. A little annoying, but much better than retyping.&lt;/p&gt;
+      <description>&lt;p&gt;I have collected plenty of equations in my research in recent years. Most of them were typed by my own hands. For convenience, I organized them in an ASCII file named eq.tex as an equation library, side by side with a compiled file named eq.pdf. When I needed an equation, I searched eq.pdf, and looked for the codes in eq.tex, and then copied and posted it to my working document. A little annoying, but much better than retyping.&lt;/p&gt;
 &lt;p&gt;Now comes blogdown and Hugo-academic theme. Everything has changed. I pasted all the texts from eq.tex to an .Rmd file and left it in blogdown. which produced this post. Right click your mouse on an equation in this post - Show Math As - TeX Commands, and I get the LaTeX code of the equation immediately.&lt;/p&gt;
 &lt;p&gt;Farewell, &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt;. I guess I would never go back to the old fashioned way of&lt;span class=&#34;math inline&#34;&gt;\(\TeX\)&lt;/span&gt; - pdf couple any more.&lt;/p&gt;
 &lt;div id=&#34;meteorology&#34; class=&#34;section level2&#34;&gt;
@@ -917,12 +897,7 @@ R^2 =(\frac{\sum_{i=1}^{n}(O_i-\overline{O})(P_i-\overline{P})}{\sqrt{\sum_{i=1}
       <pubDate>Tue, 16 May 2017 00:00:00 +0000</pubDate>
       
       <guid>http://www.pzhao.org/en/post/postr/</guid>
-      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
-&lt;!-- /BLOGDOWN-HEAD --&gt;
-
-&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
-&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
-&lt;p&gt;This is a preliminary version of the introduction to postr. Please go to my Github repo &lt;a href=&#34;https://github.com/pzhaonet/postr&#34;&gt;postr&lt;/a&gt; for the latest updates.&lt;/p&gt;
+      <description>&lt;p&gt;This is a preliminary version of the introduction to postr. Please go to my Github repo &lt;a href=&#34;https://github.com/pzhaonet/postr&#34;&gt;postr&lt;/a&gt; for the latest updates.&lt;/p&gt;
 &lt;p&gt;This package is modified from &lt;a href=&#34;https://github.com/exporl/kuleuven-templates&#34;&gt;kuleuven-template&lt;/a&gt;, where you can see the requirements before using this package. Here I picked out the instruction for Windows users as follows.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Install a LaTeX distribution, e.g. &lt;a href=&#34;http://miktex.org/download&#34;&gt;MiKTeX&lt;/a&gt;. For Chinese users &lt;a href=&#34;http://www.ctex.org/CTeXDownload&#34;&gt;CTeX&lt;/a&gt; is highly recommended.&lt;/li&gt;

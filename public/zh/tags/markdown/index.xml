@@ -61,12 +61,7 @@
       <pubDate>Thu, 18 May 2017 00:00:00 +0000</pubDate>
       
       <guid>http://www.pzhao.org/zh/post/rblogdown-bib/</guid>
-      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
-&lt;!-- /BLOGDOWN-HEAD --&gt;
-
-&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
-&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
-&lt;p&gt;本网站的公式和参考文献一直未能正常显示，直到今天我才把这两个问题解决。&lt;/p&gt;
+      <description>&lt;p&gt;本网站的公式和参考文献一直未能正常显示，直到今天我才把这两个问题解决。&lt;/p&gt;
 &lt;ol style=&#34;list-style-type: decimal&#34;&gt;
 &lt;li&gt;&lt;strong&gt;公式&lt;/strong&gt;&lt;/li&gt;
 &lt;/ol&gt;
@@ -115,12 +110,7 @@
       <pubDate>Tue, 16 May 2017 00:00:00 +0000</pubDate>
       
       <guid>http://www.pzhao.org/zh/post/postr/</guid>
-      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
-&lt;!-- /BLOGDOWN-HEAD --&gt;
-
-&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
-&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
-&lt;p&gt;用R markdown写海报的扩展包&lt;a href=&#34;https://github.com/pzhaonet/postr&#34;&gt;postr&lt;/a&gt;安装使用方法（需要先安装好软件环境，详见&lt;a href=&#34;https://github.com/pzhaonet/postr&#34;&gt;postr&lt;/a&gt;项目主页）：&lt;/p&gt;
+      <description>&lt;p&gt;用R markdown写海报的扩展包&lt;a href=&#34;https://github.com/pzhaonet/postr&#34;&gt;postr&lt;/a&gt;安装使用方法（需要先安装好软件环境，详见&lt;a href=&#34;https://github.com/pzhaonet/postr&#34;&gt;postr&lt;/a&gt;项目主页）：&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;devtools::install_github(&amp;quot;pzhaonet/postr&amp;quot;)
 setwd()
 postr::postr()&lt;/code&gt;&lt;/pre&gt;
@@ -257,12 +247,7 @@ bookdown::html_document2: default
       <pubDate>Tue, 14 Mar 2017 00:00:00 +0000</pubDate>
       
       <guid>http://www.pzhao.org/zh/post/bookdown-cheatsheet/</guid>
-      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
-&lt;!-- /BLOGDOWN-HEAD --&gt;
-
-&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
-&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
-&lt;div class=&#34;section level2&#34;&gt;
+      <description>&lt;div class=&#34;section level2&#34;&gt;
 &lt;h2&gt;快速开始&lt;/h2&gt;
 &lt;div id=&#34;r-bookdown-&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;R bookdown 是什么&lt;/h3&gt;
@@ -494,12 +479,7 @@ I like Eq. \@ref(eq:mc2) so much that I am falling love with her.&lt;/code&gt;&l
       <pubDate>Mon, 13 Mar 2017 00:00:00 +0000</pubDate>
       
       <guid>http://www.pzhao.org/zh/post/inresistible-bookdown/</guid>
-      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
-&lt;!-- /BLOGDOWN-HEAD --&gt;
-
-&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
-&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
-&lt;p&gt;最近，我打算把博客上关于R语言的帖子整理成一本书，希望弄得帅气一点，整齐一点，将来容易维护一点。涌进脑子的第一个念头是 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; ，第二个念头是想吐。&lt;/p&gt;
+      <description>&lt;p&gt;最近，我打算把博客上关于R语言的帖子整理成一本书，希望弄得帅气一点，整齐一点，将来容易维护一点。涌进脑子的第一个念头是 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; ，第二个念头是想吐。&lt;/p&gt;
 &lt;p&gt;是的，虽然我推崇 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; ，觉得这个工具排出来的文档很漂亮，但自从弄完博士论文&lt;a href=&#34;#fn1&#34; class=&#34;footnoteRef&#34; id=&#34;fnref1&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; 之后，除了帮别人备份一下博客&lt;a href=&#34;#fn2&#34; class=&#34;footnoteRef&#34; id=&#34;fnref2&#34;&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt; 、往论文里插几个公式和玩玩吉他谱&lt;a href=&#34;#fn3&#34; class=&#34;footnoteRef&#34; id=&#34;fnref3&#34;&gt;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt;，我再也没碰过她。惰性开始代替折腾，我宁可点点鼠标写出一份不太美观的Word文档，也不想面对 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; 那让人头疼的代码。大概我是真上了岁数罢。&lt;/p&gt;
 &lt;p&gt;对于 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt;，我想自己的内心深处是怀有恐惧的。她的美丽让我着迷，她的复杂令人生畏。&lt;/p&gt;
 &lt;p&gt;所以，这次整理博客，我决定在Word里做。用了这么多年，对Word的秉性我算是略知一二，从一开始就用主控文档和子文档的方式管理，以防单个文档太大而死机；从标题到R代码，我预先都设置好了样式以及样式的快捷键，方便调整格式；每写几句话，就左手抽筋一样ctrl+s一下，以防万一。其间，发现帖子里有些R代码要修改调试，我就咬牙忍着在RStudio和Word之间频繁拷贝粘贴的煎熬。反正换回 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; 也是一样想吐，既来之则安之，嫁鸡随鸡嫁狗随狗吧。&lt;/p&gt;
