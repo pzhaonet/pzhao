@@ -58,11 +58,11 @@ beginr::plotlm(x, y)</code></pre>
 <p><img src="/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 <pre><code>## [[1]]
 ##              Estimate Std. Error   t value     Pr(&gt;|t|)
-## (Intercept) 0.3544934  0.6695584 0.5294436 6.108704e-01
-## x           0.8563954  0.1079091 7.9362658 4.625425e-05
+## (Intercept) 0.3071911  0.9812850 0.3130498 0.7622484417
+## x           0.8663483  0.1581484 5.4780719 0.0005887984
 ## 
 ## [[2]]
-## [1] 0.887299</code></pre>
+## [1] 0.789525</code></pre>
 <p>If you want to display the distribution of a data-set, use <code>plothist()</code>, which gives you a histogram with markers of the median, mean, quantiles, standard deviation, sample number and the skewness.</p>
 <pre class="r"><code>x &lt;- rnorm(10000)
 beginr::plothist(x)</code></pre>
@@ -96,20 +96,20 @@ beginr::errorbar(x, y, yupper = 0.1, ylower = 0.1)</code></pre>
 <p><code>lmdf()</code> performs the linear regression between every two columns in a data frame.</p>
 <pre class="r"><code>df &lt;- data.frame(a = 1:10, b = 1:10 + rnorm(10), c = 1:10 + rnorm(10))
 beginr::lmdf(df)</code></pre>
-<pre><code>##   x y r.squared adj.r.squared  intercept     slope Std.Error.intercept
-## 1 a b 0.9603610     0.9554061 -1.1785763 1.1682759           0.5206848
-## 2 a c 0.8259565     0.8042010  0.6327990 0.9167067           0.9231369
-## 3 b a 0.9603610     0.9554061  1.1868429 0.8220327           0.3699453
-## 4 b c 0.8508233     0.8321762  1.5797270 0.7804469           0.7238997
-## 5 c a 0.8259565     0.8042010  0.3870849 0.9010041           0.9316931
-## 6 c b 0.8508233     0.8321762 -0.9394567 1.0901745           1.0283065
+<pre><code>##   x y r.squared adj.r.squared intercept     slope Std.Error.intercept
+## 1 a b 0.9190095     0.9088856 0.4147020 0.9385834           0.6112451
+## 2 a c 0.9378341     0.9300633 0.0808868 0.9790793           0.5529890
+## 3 b a 0.9190095     0.9088856 0.0393945 0.9791453           0.6418717
+## 4 b c 0.8498213     0.8310490 0.1569848 0.9519318           0.8836700
+## 5 c a 0.9378341     0.9300633 0.2644333 0.9578734           0.5396601
+## 6 c b 0.8498213     0.8310490 0.6973875 0.8927334           0.8212230
 ##   Std.Error.slope t.intercept   t.slope Pr.intercept     Pr.slope
-## 1      0.08391596  -2.2635119 13.921975   0.05342872 6.860474e-07
-## 2      0.14877699   0.6854877  6.161616   0.51240655 2.705329e-04
-## 3      0.05904570   3.2081577 13.921975   0.01245872 6.860474e-07
-## 4      0.11553915   2.1822455  6.754826   0.06064979 1.443378e-04
-## 5      0.14622854   0.4154640  6.161616   0.68872203 2.705329e-04
-## 6      0.16139194  -0.9135960  6.754826   0.38763395 1.443378e-04</code></pre>
+## 1      0.09851107  0.67845450  9.527695    0.5166246 1.216672e-05
+## 2      0.08912224  0.14627200 10.985802    0.8873253 4.189511e-06
+## 3      0.10276833  0.06137442  9.527695    0.9525666 1.216672e-05
+## 4      0.14148200  0.17765094  6.728289    0.8634129 1.483231e-04
+## 5      0.08719194  0.48999969 10.985802    0.6372884 4.189511e-06
+## 6      0.13268357  0.84920601  6.728289    0.4204508 1.483231e-04</code></pre>
 <p>There are two functions as improvements of <code>tapply()</code> for factor calculation.</p>
 <pre class="r"><code>beginr::tapplydf()
 beginr::tapplydfv()</code></pre>

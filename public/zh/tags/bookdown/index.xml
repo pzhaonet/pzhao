@@ -63,21 +63,79 @@ knitr::include_graphics(&amp;#39;cover.jpg&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
   download.file(url, cover_file, mode = &amp;#39;wb&amp;#39;)
 knitr::include_graphics(if (identical(knitr:::pandoc_to(), &amp;#39;html&amp;#39;)) url else cover_file)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;这段代码自动判断，如果输出网页文档，就插入原始图片链接，否则就下载到本地再插入。&lt;/p&gt;
-&lt;!--
-## 如何在文章里显示 `r pi` 这样的 R 代码
+&lt;/div&gt;
+&lt;div class=&#34;section level2&#34;&gt;
+&lt;h2&gt;主控文档和子文档&lt;/h2&gt;
+&lt;p&gt;Word 有个很好的功能，叫做“主控文档”：如果文件太大，那么各章可以分别写在一个 word 文档（子文档）里，然后插入到另一个文档里合并。LaTeX 里也有同样的功能，用 include 指令就行了。&lt;/p&gt;
+&lt;p&gt;bookdown 当然也可以。官方文档对此有&lt;a href=&#34;https://bookdown.org/yihui/bookdown/usage.html&#34;&gt;说明&lt;/a&gt;，只需在’_bookdown.yml’里声明即可：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;rmd_files: [&amp;quot;chapter1.Rmd&amp;quot;, &amp;quot;chapter2.Rmd&amp;quot;, &amp;quot;chapter3.Rmd&amp;quot;]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如果希望在不同格式的输出文件里包含不同的章节，比如网页格式的书里包含 1 到 3 章，而 pdf 的只包含第 1 和第 3 章，那么：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;rmd_files:
+  html: [&amp;quot;chapter1.Rmd&amp;quot;, &amp;quot;chapter2.Rmd&amp;quot;, &amp;quot;chapter3.Rmd&amp;quot;]
+  latex: [&amp;quot;chapter1.Rmd&amp;quot;, &amp;quot;chapter3.Rmd&amp;quot;]&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;但是，这种方法只适合并列关系的章节，如果是总分关系的呢？比如，我想在 chapter1 里某段插入 ‘mytext.md’ 这个文本，在 chapter2 里再插入一次，该怎么办？&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://disqus.com/home/discussion/yihui/r_markdown_notebook_jupyter_ipython_notebook/#comment-3426121547&#34;&gt;这样办&lt;/a&gt;：&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;cat(readLines(&amp;quot;mytext.md&amp;quot;), sep = &amp;quot;\n&amp;quot;) # 结合代码段选项 results=&amp;quot;asis&amp;quot;, echo=FALSE&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如果深入一步，考虑上一节“往 pdf 里插入网络图片”的方法，就可以玩出更多花样，例如书的网页格式里插入 mytext.md，而 pdf 里不插。&lt;/p&gt;
+&lt;p&gt;如果再跟上面的 yaml 声明相结合，各个文本文件就成了乐高积木块，随心所欲组合了。&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>如何在 R markdown 里显示小撇`</title>
+      <link>http://www.pzhao.org/zh/post/backticks-in-rmd/</link>
+      <pubDate>Fri, 22 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.pzhao.org/zh/post/backticks-in-rmd/</guid>
+      <description>&lt;p&gt;其实本文的标题应该是：如何在文章里显示 &lt;code&gt;`r pi`&lt;/code&gt; 这样的文字。但是我不知道怎么把这个格式弄到标题里。所以，就这样凑合过吧。&lt;/p&gt;
+&lt;p&gt;这个问题的答案，要分几层意思来说。&lt;code&gt;`r pi`&lt;/code&gt; 是代码格式（本博客显示为粉底红字），并且包含的`符号同样是代码格式，并且 pi 并没有被编译成 3.1415927。别看它短，这三点每个都是个坑。&lt;/p&gt;
+&lt;p&gt;这个问题在编写 R markdown 教程时常见。其实，等你明白这个问题的答案后，会发现答案并不难，难的是如何描述这个问题。我费了好大劲，都想不出一个准确描述的办法，并且在那些支持 markdown 的论坛上，我连这个小撇都输不出来，这叫人怎么问？最后我只能这么提问：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;请问在输出文档里怎么显示’撇 r pi 撇’并且别让它编译出来 3.1415927？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div id=&#34;-1--&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;第 1 层意思，那个小撇 `，它到底叫什么？总不能总叫“小撇”吧？&lt;/h3&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/KB_Germany.svg/550px-KB_Germany.svg.png&#34; /&gt;
 
-这个问题在编写 R markdown 教程时经常遇见。如果把世界上的提问按诡异程度排序的话，这个问题肯定能进前10，因为我根本不知道这个问题如何提问，如何描述。中英文都不知道。最后我只能这么提问：
-
-&gt; 请问怎么输入&#39;撇 r pi 撇&#39;并且别让它编译出来 3.1415？
-
-对此，knitr 有[说明](https://yihui.name/knitr/faq/)：用 `knitr::inline_expr()`。
-
-我现在用的方法是：`r \x60r pi\x60`
-
-这个 `\x60` 就是那个小撇。这个相当于把要显示的代码区弄成个字符串，然后插进去。
-
-对于
---&gt;
+&lt;/div&gt;
+&lt;p&gt;我用的是德语键盘，挪，就是上图第一行右起第二个键的上面那个小可爱。&lt;/p&gt;
+&lt;p&gt;查&lt;a href=&#34;https://en.wikipedia.org/wiki/Grave_accent&#34;&gt;维基百科&lt;/a&gt;才知道，` 的学名叫 &lt;em&gt;Grave accent&lt;/em&gt; ，中文叫“重音符”。在程序猿的世界里，它又被称作 &lt;em&gt;backquote&lt;/em&gt; 或 &lt;em&gt;backtick&lt;/em&gt;，中文叫反引号。所以，跟这个有关的问题可以这么问：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://meta.stackexchange.com/questions/82718/how-do-i-escape-a-backtick-in-markdown&#34;&gt;How do I escape a backtick ` in Markdown?&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;或者&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://stackoverflow.com/questions/20409172/how-to-display-verbatim-inline-r-code-with-backticks-using-rmarkdown&#34;&gt;How to display verbatim/literal inline r code with backticks using Rmarkdown?&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;-2-&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;第 2 层意思：怎么把反引号显示出来？&lt;/h3&gt;
+&lt;p&gt;如果仅仅输入个反引号 &lt;code&gt;，在同一段里后面没有了还好办，万一又出现一个反引号&lt;/code&gt;，就会把他俩自动配对儿，两者之间的文字当成了代码。瞧，就是上句话这个德性。&lt;/p&gt;
+&lt;p&gt;为了棒打鸳鸯不让他俩自动配对儿，那就用转义符\。输入\`，就避免反引号自动配对变代码了。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;-3--r-&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;第 3 层意思，是怎么把 r 语言的输出结果显示到代码环境里。&lt;/h3&gt;
+&lt;p&gt;这个就开始有点绕了。&lt;/p&gt;
+&lt;p&gt;比如，我想在Rmd 源文件里输入 pi，而输出的文档里显示 &lt;code&gt;3.1415927&lt;/code&gt;。注意，光是输出 3.1415927 这容易，输入&lt;code&gt;`r pi`&lt;/code&gt; 就行了，但是怎么显示成代码格式（这里是粉底红字）？在 &lt;code&gt;`r pi`&lt;/code&gt; 外边加一层反引号是不行的。&lt;/p&gt;
+&lt;p&gt;正确的方法是: &lt;code&gt;两个反引号&lt;/code&gt; + &lt;code&gt;一个空格&lt;/code&gt; + &lt;code&gt;一个反引号&lt;/code&gt; + &lt;code&gt;r&lt;/code&gt; + &lt;code&gt;pi&lt;/code&gt; + &lt;code&gt;一个反引号&lt;/code&gt; + &lt;code&gt;一个空格&lt;/code&gt; + &lt;code&gt;两个反引号&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;也就是说，&lt;code&gt;两个反引号&lt;/code&gt; + &lt;code&gt;一个空格&lt;/code&gt; 相当于更外一层的反引号。 R markdown 先看到内层的反引号，进行编译，得到 3.1415927：然后，看到外层的反引号，于是把内层的编译结果表示成代码格式。&lt;/strong&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;-4--3.1415927-r-pi-r-pi&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;第 4 层意思，怎么让上面那个 3.1415927 在输出文档里显示源码’r pi’，并且都在代码环境（粉底红色）里，即 &lt;code&gt;r pi&lt;/code&gt;？&lt;/h3&gt;
+&lt;p&gt;方法有两种。第一种是用&lt;a href=&#34;https://yihui.name/knitr/faq/&#34;&gt;knitr&lt;/a&gt; 的 &lt;code&gt;inline_expr()&lt;/code&gt; 函数：&lt;code&gt;`r knitr::inline_expr(&#39;pi&#39;)`&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;第二种是用第 3 层意思里说的方法，即 &lt;code&gt;两个反引号&lt;/code&gt; + &lt;code&gt;一个空格&lt;/code&gt; &lt;code&gt;r&lt;/code&gt; + &lt;code&gt;一个空格&lt;/code&gt; + &lt;code&gt;pi&lt;/code&gt; + &lt;code&gt;一个空格&lt;/code&gt; + &lt;code&gt;两个反引号&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;牢记&lt;strong&gt;&lt;code&gt;两个反引号&lt;/code&gt; + &lt;code&gt;一个空格&lt;/code&gt; = &lt;code&gt;更外一层的反引号&lt;/code&gt;&lt;/strong&gt;，就稍微容易理解一点。&lt;/p&gt;
+&lt;p&gt;写到这个地方，我已经要晕车了，但是还没完。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;-5--4-&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;第 5 层意思，怎么在第 4 层意思的基础上再加两个反引号，并显示成粉底红字，即&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;`r pi`&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;我现在用的方法是：&lt;code&gt;``&lt;/code&gt; &lt;code&gt;r &#39;\x60r pi\x60&#39;&lt;/code&gt; &lt;code&gt;``&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;这个 &lt;code&gt;\x60&lt;/code&gt; 就是反引号。相当于把反引号弄到字符串里处理。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;-6-&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;完了吗？还没完，还有第 6 层意思。&lt;/h3&gt;
+&lt;p&gt;反引号就像个俄罗斯套娃；上文你看到的结果都是渲染出来的，而实际书写的源文档，总会比你看见的外面再多一层。&lt;/p&gt;
+&lt;p&gt;写到这里，我不行了，容我扶墙出去呼吸两颗新鲜空气。&lt;/p&gt;
 &lt;/div&gt;
 </description>
     </item>

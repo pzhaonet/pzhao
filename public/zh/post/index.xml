@@ -64,21 +64,79 @@ knitr::include_graphics(&amp;#39;cover.jpg&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
   download.file(url, cover_file, mode = &amp;#39;wb&amp;#39;)
 knitr::include_graphics(if (identical(knitr:::pandoc_to(), &amp;#39;html&amp;#39;)) url else cover_file)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;这段代码自动判断，如果输出网页文档，就插入原始图片链接，否则就下载到本地再插入。&lt;/p&gt;
-&lt;!--
-## 如何在文章里显示 `r pi` 这样的 R 代码
+&lt;/div&gt;
+&lt;div class=&#34;section level2&#34;&gt;
+&lt;h2&gt;主控文档和子文档&lt;/h2&gt;
+&lt;p&gt;Word 有个很好的功能，叫做“主控文档”：如果文件太大，那么各章可以分别写在一个 word 文档（子文档）里，然后插入到另一个文档里合并。LaTeX 里也有同样的功能，用 include 指令就行了。&lt;/p&gt;
+&lt;p&gt;bookdown 当然也可以。官方文档对此有&lt;a href=&#34;https://bookdown.org/yihui/bookdown/usage.html&#34;&gt;说明&lt;/a&gt;，只需在’_bookdown.yml’里声明即可：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;rmd_files: [&amp;quot;chapter1.Rmd&amp;quot;, &amp;quot;chapter2.Rmd&amp;quot;, &amp;quot;chapter3.Rmd&amp;quot;]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如果希望在不同格式的输出文件里包含不同的章节，比如网页格式的书里包含 1 到 3 章，而 pdf 的只包含第 1 和第 3 章，那么：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;rmd_files:
+  html: [&amp;quot;chapter1.Rmd&amp;quot;, &amp;quot;chapter2.Rmd&amp;quot;, &amp;quot;chapter3.Rmd&amp;quot;]
+  latex: [&amp;quot;chapter1.Rmd&amp;quot;, &amp;quot;chapter3.Rmd&amp;quot;]&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;但是，这种方法只适合并列关系的章节，如果是总分关系的呢？比如，我想在 chapter1 里某段插入 ‘mytext.md’ 这个文本，在 chapter2 里再插入一次，该怎么办？&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://disqus.com/home/discussion/yihui/r_markdown_notebook_jupyter_ipython_notebook/#comment-3426121547&#34;&gt;这样办&lt;/a&gt;：&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;cat(readLines(&amp;quot;mytext.md&amp;quot;), sep = &amp;quot;\n&amp;quot;) # 结合代码段选项 results=&amp;quot;asis&amp;quot;, echo=FALSE&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如果深入一步，考虑上一节“往 pdf 里插入网络图片”的方法，就可以玩出更多花样，例如书的网页格式里插入 mytext.md，而 pdf 里不插。&lt;/p&gt;
+&lt;p&gt;如果再跟上面的 yaml 声明相结合，各个文本文件就成了乐高积木块，随心所欲组合了。&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>如何在 R markdown 里显示小撇`</title>
+      <link>http://www.pzhao.org/zh/post/backticks-in-rmd/</link>
+      <pubDate>Fri, 22 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.pzhao.org/zh/post/backticks-in-rmd/</guid>
+      <description>&lt;p&gt;其实本文的标题应该是：如何在文章里显示 &lt;code&gt;`r pi`&lt;/code&gt; 这样的文字。但是我不知道怎么把这个格式弄到标题里。所以，就这样凑合过吧。&lt;/p&gt;
+&lt;p&gt;这个问题的答案，要分几层意思来说。&lt;code&gt;`r pi`&lt;/code&gt; 是代码格式（本博客显示为粉底红字），并且包含的`符号同样是代码格式，并且 pi 并没有被编译成 3.1415927。别看它短，这三点每个都是个坑。&lt;/p&gt;
+&lt;p&gt;这个问题在编写 R markdown 教程时常见。其实，等你明白这个问题的答案后，会发现答案并不难，难的是如何描述这个问题。我费了好大劲，都想不出一个准确描述的办法，并且在那些支持 markdown 的论坛上，我连这个小撇都输不出来，这叫人怎么问？最后我只能这么提问：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;请问在输出文档里怎么显示’撇 r pi 撇’并且别让它编译出来 3.1415927？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div id=&#34;-1--&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;第 1 层意思，那个小撇 `，它到底叫什么？总不能总叫“小撇”吧？&lt;/h3&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/KB_Germany.svg/550px-KB_Germany.svg.png&#34; /&gt;
 
-这个问题在编写 R markdown 教程时经常遇见。如果把世界上的提问按诡异程度排序的话，这个问题肯定能进前10，因为我根本不知道这个问题如何提问，如何描述。中英文都不知道。最后我只能这么提问：
-
-&gt; 请问怎么输入&#39;撇 r pi 撇&#39;并且别让它编译出来 3.1415？
-
-对此，knitr 有[说明](https://yihui.name/knitr/faq/)：用 `knitr::inline_expr()`。
-
-我现在用的方法是：`r \x60r pi\x60`
-
-这个 `\x60` 就是那个小撇。这个相当于把要显示的代码区弄成个字符串，然后插进去。
-
-对于
---&gt;
+&lt;/div&gt;
+&lt;p&gt;我用的是德语键盘，挪，就是上图第一行右起第二个键的上面那个小可爱。&lt;/p&gt;
+&lt;p&gt;查&lt;a href=&#34;https://en.wikipedia.org/wiki/Grave_accent&#34;&gt;维基百科&lt;/a&gt;才知道，` 的学名叫 &lt;em&gt;Grave accent&lt;/em&gt; ，中文叫“重音符”。在程序猿的世界里，它又被称作 &lt;em&gt;backquote&lt;/em&gt; 或 &lt;em&gt;backtick&lt;/em&gt;，中文叫反引号。所以，跟这个有关的问题可以这么问：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://meta.stackexchange.com/questions/82718/how-do-i-escape-a-backtick-in-markdown&#34;&gt;How do I escape a backtick ` in Markdown?&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;或者&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://stackoverflow.com/questions/20409172/how-to-display-verbatim-inline-r-code-with-backticks-using-rmarkdown&#34;&gt;How to display verbatim/literal inline r code with backticks using Rmarkdown?&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;-2-&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;第 2 层意思：怎么把反引号显示出来？&lt;/h3&gt;
+&lt;p&gt;如果仅仅输入个反引号 &lt;code&gt;，在同一段里后面没有了还好办，万一又出现一个反引号&lt;/code&gt;，就会把他俩自动配对儿，两者之间的文字当成了代码。瞧，就是上句话这个德性。&lt;/p&gt;
+&lt;p&gt;为了棒打鸳鸯不让他俩自动配对儿，那就用转义符\。输入\`，就避免反引号自动配对变代码了。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;-3--r-&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;第 3 层意思，是怎么把 r 语言的输出结果显示到代码环境里。&lt;/h3&gt;
+&lt;p&gt;这个就开始有点绕了。&lt;/p&gt;
+&lt;p&gt;比如，我想在Rmd 源文件里输入 pi，而输出的文档里显示 &lt;code&gt;3.1415927&lt;/code&gt;。注意，光是输出 3.1415927 这容易，输入&lt;code&gt;`r pi`&lt;/code&gt; 就行了，但是怎么显示成代码格式（这里是粉底红字）？在 &lt;code&gt;`r pi`&lt;/code&gt; 外边加一层反引号是不行的。&lt;/p&gt;
+&lt;p&gt;正确的方法是: &lt;code&gt;两个反引号&lt;/code&gt; + &lt;code&gt;一个空格&lt;/code&gt; + &lt;code&gt;一个反引号&lt;/code&gt; + &lt;code&gt;r&lt;/code&gt; + &lt;code&gt;pi&lt;/code&gt; + &lt;code&gt;一个反引号&lt;/code&gt; + &lt;code&gt;一个空格&lt;/code&gt; + &lt;code&gt;两个反引号&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;也就是说，&lt;code&gt;两个反引号&lt;/code&gt; + &lt;code&gt;一个空格&lt;/code&gt; 相当于更外一层的反引号。 R markdown 先看到内层的反引号，进行编译，得到 3.1415927：然后，看到外层的反引号，于是把内层的编译结果表示成代码格式。&lt;/strong&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;-4--3.1415927-r-pi-r-pi&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;第 4 层意思，怎么让上面那个 3.1415927 在输出文档里显示源码’r pi’，并且都在代码环境（粉底红色）里，即 &lt;code&gt;r pi&lt;/code&gt;？&lt;/h3&gt;
+&lt;p&gt;方法有两种。第一种是用&lt;a href=&#34;https://yihui.name/knitr/faq/&#34;&gt;knitr&lt;/a&gt; 的 &lt;code&gt;inline_expr()&lt;/code&gt; 函数：&lt;code&gt;`r knitr::inline_expr(&#39;pi&#39;)`&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;第二种是用第 3 层意思里说的方法，即 &lt;code&gt;两个反引号&lt;/code&gt; + &lt;code&gt;一个空格&lt;/code&gt; &lt;code&gt;r&lt;/code&gt; + &lt;code&gt;一个空格&lt;/code&gt; + &lt;code&gt;pi&lt;/code&gt; + &lt;code&gt;一个空格&lt;/code&gt; + &lt;code&gt;两个反引号&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;牢记&lt;strong&gt;&lt;code&gt;两个反引号&lt;/code&gt; + &lt;code&gt;一个空格&lt;/code&gt; = &lt;code&gt;更外一层的反引号&lt;/code&gt;&lt;/strong&gt;，就稍微容易理解一点。&lt;/p&gt;
+&lt;p&gt;写到这个地方，我已经要晕车了，但是还没完。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;-5--4-&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;第 5 层意思，怎么在第 4 层意思的基础上再加两个反引号，并显示成粉底红字，即&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;`r pi`&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;我现在用的方法是：&lt;code&gt;``&lt;/code&gt; &lt;code&gt;r &#39;\x60r pi\x60&#39;&lt;/code&gt; &lt;code&gt;``&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;这个 &lt;code&gt;\x60&lt;/code&gt; 就是反引号。相当于把反引号弄到字符串里处理。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;-6-&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;完了吗？还没完，还有第 6 层意思。&lt;/h3&gt;
+&lt;p&gt;反引号就像个俄罗斯套娃；上文你看到的结果都是渲染出来的，而实际书写的源文档，总会比你看见的外面再多一层。&lt;/p&gt;
+&lt;p&gt;写到这里，我不行了，容我扶墙出去呼吸两颗新鲜空气。&lt;/p&gt;
 &lt;/div&gt;
 </description>
     </item>
@@ -307,12 +365,12 @@ y &amp;lt;- 1:10 + rnorm(10)
 beginr::plotlm(x, y)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;## [[1]]
-##              Estimate Std. Error  t value     Pr(&amp;gt;|t|)
-## (Intercept) 1.0394279  0.9045416 1.149121 0.2837000189
-## x           0.8298354  0.1457801 5.692378 0.0004583923
+##               Estimate Std. Error    t value     Pr(&amp;gt;|t|)
+## (Intercept) 0.09167136 0.56635659  0.1618616 8.754282e-01
+## x           0.99949367 0.09127663 10.9501598 4.293580e-06
 ## 
 ## [[2]]
-## [1] 0.8019957&lt;/code&gt;&lt;/pre&gt;
+## [1] 0.9374541&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;经常需要了解一组数据的分布, 看看是不是正态分布. beginr 里的 &lt;code&gt;plothist()&lt;/code&gt; 函数不仅做出直方图和平滑曲线, 并且标出中值, 中位数, 四分位数, 标准偏差, 样本数, 以及用来判断是否正态分布的 skewness 值.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;x &amp;lt;- rnorm(10000)
 beginr::plothist(x)&lt;/code&gt;&lt;/pre&gt;
@@ -346,20 +404,20 @@ beginr::errorbar(x, y, yupper = 0.1, ylower = 0.1)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;beginr 提供了一些对数据框计算的函数, 例如计算多列数据两两的相关性和线性拟合结果, 可以用 &lt;code&gt;lmdf()&lt;/code&gt; 函数.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df &amp;lt;- data.frame(a = 1:10, b = 1:10 + rnorm(10), c = 1:10 + rnorm(10))
 beginr::lmdf(df)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;##   x y r.squared adj.r.squared  intercept     slope Std.Error.intercept
-## 1 a b 0.8514099     0.8328361  0.9591779 0.8283508           0.7591460
-## 2 a c 0.8974569     0.8846390 -0.6319759 1.1294569           0.8375320
-## 3 b a 0.8514099     0.8328361 -0.1686331 1.0278373           0.9242475
-## 4 b c 0.6845420     0.6451098 -0.4799532 1.0987982           1.6055615
-## 5 c a 0.8974569     0.8846390  1.0661497 0.7945916           0.6217127
-## 6 c b 0.6845420     0.6451098  2.0387914 0.6229916           0.9789314
+&lt;pre&gt;&lt;code&gt;##   x y r.squared adj.r.squared   intercept     slope Std.Error.intercept
+## 1 a b 0.8703363     0.8541284  0.66677290 0.9307702           0.7881219
+## 2 a c 0.8840348     0.8695391 -0.35136862 1.0574960           0.8402207
+## 3 b a 0.8703363     0.8541284  0.08967001 0.9350712           0.8239122
+## 4 b c 0.7622107     0.7324870 -0.22972156 0.9841985           1.2549085
+## 5 c a 0.8840348     0.8695391  0.93154241 0.8359698           0.6795668
+## 6 c b 0.7622107     0.7324870  1.55375862 0.7744481           0.9708749
 ##   Std.Error.slope t.intercept  t.slope Pr.intercept     Pr.slope
-## 1      0.12234745   1.2634959 6.770479   0.24198620 1.420428e-04
-## 2      0.13498051  -0.7545693 8.367556   0.47213301 3.155904e-05
-## 3      0.15181162  -0.1824545 6.770479   0.85976481 1.420428e-04
-## 4      0.26372036  -0.2989317 4.166528   0.77261028 3.136999e-03
-## 5      0.09496101   1.7148591 8.367556   0.12471401 3.155904e-05
-## 6      0.14952295   2.0826703 4.166528   0.07082059 3.136999e-03&lt;/code&gt;&lt;/pre&gt;
+## 1       0.1270173   0.8460276 7.327898    0.4221201 8.165844e-05
+## 2       0.1354138  -0.4181861 7.809365    0.6868108 5.192555e-05
+## 3       0.1276043   0.1088344 7.327898    0.9160142 8.165844e-05
+## 4       0.1943553  -0.1830584 5.063914    0.8593064 9.723170e-04
+## 5       0.1070471   1.3707886 7.809365    0.2076637 5.192555e-05
+## 6       0.1529347   1.6003695 5.063914    0.1481842 9.723170e-04&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;还有两个函数对&lt;code&gt;tapply()&lt;/code&gt;进行了改善, 用来进行因子计算.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::tapplydf()
 beginr::tapplydfv()&lt;/code&gt;&lt;/pre&gt;
@@ -1234,108 +1292,6 @@ R^2 =(\frac{\sum_{i=1}^{n}(O_i-\overline{O})(P_i-\overline{P})}{\sqrt{\sum_{i=1}
 &lt;div id=&#34;ref-R-blogdown&#34;&gt;
 &lt;p&gt;———. 2017. &lt;em&gt;Blogdown: Create Blogs and Websites with R Markdown&lt;/em&gt;. &lt;a href=&#34;https://github.com/rstudio/blogdown&#34; class=&#34;uri&#34;&gt;https://github.com/rstudio/blogdown&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>9分钟写个R语言包：菜鸟致简速成</title>
-      <link>http://www.pzhao.org/zh/post/rmickey/</link>
-      <pubDate>Tue, 16 May 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/zh/post/rmickey/</guid>
-      <description>&lt;div class=&#34;section level2&#34;&gt;
-&lt;h2&gt;前言&lt;/h2&gt;
-&lt;p&gt;写R包这种高大上的工作，原以为学会怎么写得花个一年半载，学会之后写一个包怎么着也得个把月，谁料想周一上午下了决心，到周二下午就一口气写了4个包，算起来从学到写，只花了一天多时间。这里是个小结。&lt;/p&gt;
-&lt;p&gt;学写R包，我主要参考了3份资料：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;谢益辉的&lt;a href=&#34;https://cos.name/2011/05/write-r-packages-like-a-ninja/&#34;&gt;开发R程序包之忍者篇&lt;/a&gt;，2011年。反复读了好几遍。&lt;/li&gt;
-&lt;li&gt;黄俊文的&lt;a href=&#34;https://cos.name/2013/11/building-r-packages-easily/&#34;&gt;极简R包建立方法&lt;/a&gt;, 2013年。反复读了好几遍。&lt;/li&gt;
-&lt;li&gt;Hadley Wickham 的&lt;a href=&#34;http://r-pkgs.had.co.nz/&#34;&gt;R packages&lt;/a&gt;, 2015年。反复扫了好几眼。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;有了这3份很好的资料，那我还写本篇帖子做什么？&lt;/p&gt;
-&lt;p&gt;这是因为，他们都是高手中的高手，只是我觉得他们写得，就好比教授写幼儿园教材，仍然不太合小朋友的胃口，不足以让我等菜鸟快速入门。比如读到roxygen2是多么美妙，我起初完全没体验，不知道“举头望文档，低头思函数”到底说的是什么（what the hell was Yihui talking about? 当然，一天之后我就体会到了静夜思的精妙），再一看Emacs就被吓得河水倒流，当年光一个vim就把我折腾个半死。而极简篇里，我觉得既然是极简，能减掉的步骤尽量减，所以还能继续剪。可能当年是极简，时过境迁，人类进步，现在可以比极简更简。&lt;/p&gt;
-&lt;p&gt;下面，我试试写个减到不能再减的一剑封喉致简版，只需小改两个文本文件，不出十分钟就写出一个能用的R包。&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;section level2&#34;&gt;
-&lt;h2&gt;准备&lt;/h2&gt;
-&lt;p&gt;跟前期准备和后期维护相比，写包本身其实是最简单的环节。假定你已经安装好了R和RStudio，那么，运行R，安装几个包：&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;install.packages(c(&amp;quot;devtools&amp;quot;, &amp;quot;roxygen2&amp;quot;, &amp;quot;testthat&amp;quot;, &amp;quot;knitr&amp;quot;))&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;然后：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Windows用户，安装 &lt;a href=&#34;http://cran.r-project.org/bin/windows/Rtools/&#34;&gt;rtools&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;Linux用户，安装对应的 R 开发包，sudo apt-get install r-base-dev.&lt;/li&gt;
-&lt;li&gt;OS X 用户，安装command-line-tools，Terminal 运行 git 或者 xcode-select.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class=&#34;section level2&#34;&gt;
-&lt;h2&gt;致简四部曲&lt;/h2&gt;
-&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
-&lt;li&gt;&lt;p&gt;参照益辉的&lt;a href=&#34;https://github.com/yihui/rmini&#34;&gt;rmini&lt;/a&gt;，我做了个更简单的模板（Update：根据&lt;a href=&#34;http://www.pzhao.org/zh/post/rmickey/#comment-3312847859&#34;&gt;Dong的建议&lt;/a&gt;，也可以RStudio - File - New project - New directory - R package），叫做rmickey。&lt;a href=&#34;https://github.com/pzhaonet/rmickey/archive/master.zip&#34;&gt;点击下载&lt;/a&gt;并解压缩，得到个名叫rmickey文件夹。这个文件夹名字可以随便改。&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;双击&lt;code&gt;rmickey.Rproj&lt;/code&gt;（这个文件名也可以随便改），就会用RStudio打开这个项目。后续步骤全部在RStudio里操作。&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;点击打开RStudio右下窗口Files下的&lt;code&gt;DESCRIPTION&lt;/code&gt;文件（这个文件名千万别改）和&lt;code&gt;R/foo.R&lt;/code&gt;文件（这个文件名可以随便改）。&lt;code&gt;DESCRIPTION&lt;/code&gt;里是你的包的描述信息。可以看到包名称，版本，日期，包标题，包作者，维护者，依赖性，描述等信息。把其中每一条冒号后面的信息改成你自己的信息，比如把第一行包的名称改成mymickey，保存。&lt;code&gt;R/foo.R&lt;/code&gt;里是你的包里包含的自定义函数，模板里只列了一条做示例。函数的写法跟平时没区别。而函数前面的几行，就是所谓的说明文档，都以&lt;code&gt;#&#39;&lt;/code&gt;开头，第一行是简要介绍，以&lt;code&gt;@param&lt;/code&gt;开头的行逐个介绍函数的自变量（懒得介绍的话就像示例里的x2那一行一样空着，但x2后面必须有一个空格），&lt;code&gt;@return&lt;/code&gt;开头的行介绍因变量（必填），&lt;code&gt;@export&lt;/code&gt; &lt;code&gt;@examples&lt;/code&gt;两行可以不修改。有更多函数的话，照葫芦画瓢在文件里往下继续写就是了。保存。&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;点击RStudio右上窗口的&lt;code&gt;Build&lt;/code&gt;标签下的&lt;code&gt;Build &amp;amp; Reload&lt;/code&gt;按钮，包就编译并自动安装好了！&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;试着运行一下你刚才自定义的函数，记得用tab键补全功能和F1查看帮助信息，体会一下刚才你在foo.R文件里修改的内容是如何在tab和F1里体现出来的，然后就自然知道如何把foo.R写得更好。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;下载模板–打开项目–修改模板–编译，这就是R包的9分钟致简开发四步曲。&lt;/strong&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;section level2&#34;&gt;
-&lt;h2&gt;发布和分享&lt;/h2&gt;
-&lt;p&gt;史书分正史和野史，R包分正包和野包。正包是通过R官方认可并且发布在CRAN网站上的，等于领到了认证和许可，可以用&lt;code&gt;install.package()&lt;/code&gt;直接安装；野包就是自己私下写的，随便放在自己喜欢的地方小范围使用的。很多包转正之前都是野包，经过反复测试和升级后才转的正，而有的野包会永远野下去，永不接受招安。我目前写的几个包都是野包，将来转不转正走着瞧，所以这里只介绍野包的发布和分享方法。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Github法&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;熟悉Github的话，建议用这种方法。既然熟悉，我这里就不详说Github的用法了，只做个简单介绍。&lt;/p&gt;
-&lt;p&gt;你要做的，就是在github.com上申请个账号，电脑里安装个客户端，在客户端新建个项目并起个名字例如叫mymickey，把你新的R包文件夹同步上去，就可以通知用户们来使用你的mymickey包了。&lt;/p&gt;
-&lt;p&gt;用户要做的就是直接安装，只需在R里运行&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;devtools::install_github(&amp;quot;你的账号/你的项目名称&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;就把你的包装到他们的R里了。&lt;/p&gt;
-&lt;p&gt;举个粒子：比如你刚才下载的rmickey模板，本身就是个R包（我的第四个R包），这个包里只有一个函数&lt;code&gt;foo()&lt;/code&gt;，可以给出宇宙和人生终极问题的答案。安装和运行方法是：&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;devtools::install_github(&amp;quot;pzhaonet/rmickey&amp;quot;)
-library(rmickey)
-foo()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;如果你跟我一样，搞了几年都搞不明白Github的用法和逻辑，那我建议你用下一种方法分享。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;离线法&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;离线法就是让用户把你的包先下载到他们电脑上，再用R包的离线安装方式。&lt;/p&gt;
-&lt;p&gt;你的包的压缩文件其实在上面点&lt;code&gt;Build &amp;amp; Reload&lt;/code&gt;的时候已经自动生成了，去看看你电脑上的R包文件夹，跟它并列存放的，有个与包同名的&lt;code&gt;.tar.gz&lt;/code&gt;压缩文件。这就是离线安装包。&lt;/p&gt;
-&lt;p&gt;你要做的，就是随便以任何方式，不管是email、qq、网盘，还是优盘、手机、移动硬盘，只要让用户能得到你这个压缩文件就行了。&lt;/p&gt;
-&lt;p&gt;用户要做的，就是拿到文件后在他们的电脑上安装，方法是在RStudio菜单栏点&lt;code&gt;Tools&lt;/code&gt; – &lt;code&gt;Install Packages&lt;/code&gt; – &lt;code&gt;Install from Package Archive File&lt;/code&gt;，选上你的包，就行了。&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;section level2&#34;&gt;
-&lt;h2&gt;进阶&lt;/h2&gt;
-&lt;p&gt;欲穷千里目，更上一层楼。&lt;/p&gt;
-&lt;p&gt;用9分钟致简四步法写出的R包，足够自用了。在这个高度，看到的风景已经够美。你可以在这个水平的观景台休整休整，再考虑是否继续往上攀登。孔子登东山而小鲁，登泰山而小天下。如果想看到更高处的风景，那么就继续读本帖前言部分的3份资料，以及他们介绍的更多资料，把你的包写得更好。&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;section level2&#34;&gt;
-&lt;h2&gt;心得&lt;/h2&gt;
-&lt;p&gt;现在，让我们回过头来谈一个问题：&lt;strong&gt;我们为什么要写R包？&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;首先是方便自用。&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;使用R语言这几年，我逐渐积累的自定义函数越来越多，我把他们通通存到一个.R文件里。现在，这个文件已经有2000行，51个自定义函数（Update: 后来发现更多，我忘在另一个.R文件里了）。每次用时都&lt;code&gt;source()&lt;/code&gt;一下，我觉得调用起来已经很方便了，虽然会导致RStudio右上窗Environment标签下特别冗长，而且经常忘记这些函数的用法，需要查看函数源代码，但总好过每次把函数重写或重拷贝一遍。没写成包之前，这几年都是这么过来的。&lt;/p&gt;
-&lt;p&gt;昨天，我花了半天时间，把它写成了我的&lt;a href=&#34;https://github.com/pzhaonet/mf&#34;&gt;第三个R包mf&lt;/a&gt;。这当然是个野包，纯属自用，自己懂就行了，我懒得为别人把这51个函数的说明文档从头到尾写一遍。用起来的爽快程度，当然比&lt;code&gt;source()&lt;/code&gt;强多了，不仅Environment区清爽了，更关键的是，忘了的话就用tab和F1大法，几年积攒的不快一扫而空。就算换个工作单位，换台电脑，花几秒钟安装后照旧调用，处处无家处处家。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;其次是改善代码。&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;写代码对我来说一直是件封闭的事情：自己写，自己用，一旦出错，只有自己知道。计算方法没有经过同行评议，出错的风险很大。但是我又不愿意厚着脸皮强迫别人帮我改代码。两全的办法，就是开源，写成包，放在Github上，接受志愿者挑错，有则改之无则加勉。只有这样，才能把代码错误越来越少，改得越来越好，最终还是自己用起来更爽。至于对别人和社区有没有贡献，我只盼自己没有添乱就行了。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;最后是审视自我。&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;我的第一个R包&lt;a href=&#34;https://github.com/pzhaonet/postr&#34;&gt;postr&lt;/a&gt;是用R markdown做海报，兴致勃勃地放到Github第一天，就有人留言汇报问题。我知道，这只是个开始，以后会有更多的问题，里面会有赞美也会有谩骂。写出个R包真的不算啥，等待在前面的一个又一个的坑才是让人真正头疼的事情。&lt;/p&gt;
-&lt;p&gt;这个阶段就要接收考验了。你会重新审视自己：我这么干到底是图个啥？我自用已经够了，却要花大量的时间帮一些跟我八杆子都打不到的人解决他们五花八门层出不穷的问题，我闲得么？花的这工夫和精力，到底是能发表成学术论文呢，还是能变现呢，还是能替我洗碗带孩子呢，还是能帮我赚游戏装备？&lt;/p&gt;
-&lt;p&gt;开源软件是面镜子，让你从中看到自己。唐太宗说过：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;以铜为鉴，可以正衣冠；&lt;/p&gt;
-&lt;p&gt;以人为鉴，可以知得失；&lt;/p&gt;
-&lt;p&gt;以史为鉴，可以知兴替：&lt;/p&gt;
-&lt;p&gt;以R包为鉴，可以知本我、自我和超我。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;http://dapengde.com/wp-content/uploads/2017/03/2017-03-19.jpg&#34; /&gt;
-
-&lt;/div&gt;
-&lt;p&gt;PS. 星期三下午，我壮着胆子把Emacs装上，战战兢兢试了一下就惊呆了。这个ctrl+coo快捷键(可以读作“control 酷”，太好记了)来维护R包简直不要太逆天。昨天我花了四五个小时来为我那51个函数写文档，要是用Emacs，估计最多一小时就够了。省事的话，可能不到10分钟就能写出个包含这51个函数的能用的致简包。最让我受刺激的还不是这个。自打学了vim之后，我就坚信，我永远用不着，也永远学不会Emacs，而实际上，学会上面这个办法，只用了三五分钟……Emacs我不打算学更多，光这一招就够酷……(Update: 根据 &lt;a href=&#34;http://www.pzhao.org/zh/post/rmickey/#comment-3314475182&#34;&gt;Yihui Xie&lt;/a&gt;的留言，RStudio 里 ctrl+shift+alt+r也能同样实现)&lt;/p&gt;
-&lt;p&gt;到底是什么阻挡了尝试新事物的可能？&lt;/p&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;http://www.pzhao.org/img/emacs-coo.gif&#34; /&gt;
-
 &lt;/div&gt;
 &lt;/div&gt;
 </description>
