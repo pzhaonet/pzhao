@@ -81,11 +81,23 @@ knitr::include_graphics(if (identical(knitr:::pandoc_to(), &amp;#39;html&amp;#39
 &lt;p&gt;如果深入一步，考虑上一节“往 pdf 里插入网络图片”的方法，就可以玩出更多花样，例如书的网页格式里插入 mytext.md，而 pdf 里不插。&lt;/p&gt;
 &lt;p&gt;如果再跟上面的 yaml 声明相结合，各个文本文件就成了乐高积木块，随心所欲组合了。&lt;/p&gt;
 &lt;/div&gt;
+&lt;div id=&#34;bookdown.org-&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;bookdown.org 的多账号管理&lt;/h2&gt;
+&lt;p&gt;在 bookdown.org 发布书稿，点击RStudio 左上面板的发布符号，会引导你用 google 账号登录。第一次登录会让你设置在 bookdown.org 的用户名，这个要重视，想个你喜欢的名字，以后就没法改了。&lt;/p&gt;
+&lt;p&gt;用同一账号发布书稿，一点问题都没有。但是当我用多个账号发布书稿，遇见了一些小麻烦。&lt;/p&gt;
+&lt;p&gt;首先，我用 &lt;code&gt;bookdown::publish_book()&lt;/code&gt; 的 &lt;code&gt;account&lt;/code&gt; 参数指定一个新账号，得到了错误信息:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Error: Unknown account name &amp;#39;newaccount&amp;#39; (you can use the setAccountInfo function to add a new account)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;一查 setAccountInfo，不是 bookdown 包的函数，而是 rsconnect 包的函数：&lt;code&gt;rsconnect::setAccountInfo()&lt;/code&gt;。然后就不知道怎么办了。&lt;/p&gt;
+&lt;p&gt;其实，添加账号应该点击 Rstudio 左上面板的发布按钮- Manage Account - Connect - RStudio Connect - 输入 bookdown.org，然后往下照提示走就行了。&lt;/p&gt;
+&lt;p&gt;添加账号后，照理说用 &lt;code&gt;bookdown::publish_book()&lt;/code&gt; 的 &lt;code&gt;account&lt;/code&gt;指定一下账号，就应该能发布了吧？不，还是失败了，说 &lt;code&gt;name&lt;/code&gt; 参数有问题。其实没问题。&lt;/p&gt;
+&lt;p&gt;怎么办？我发现必须从 Mange Account 里删掉旧 bookdown 的账号，就可以用新的账号成功发布了。&lt;/p&gt;
+&lt;p&gt;上面说了这么多，其实就是一句话：用不同账号往 bookdown.org 发布书稿，只需在 Manage Account 里添加并保留唯一一个账号即可。&lt;/p&gt;
+&lt;/div&gt;
 </description>
     </item>
     
     <item>
-      <title>如何在 R markdown 里显示小撇`</title>
+      <title>如何在 R markdown 里输出 r pi 并前后加上小撇`</title>
       <link>http://www.pzhao.org/zh/post/backticks-in-rmd/</link>
       <pubDate>Fri, 22 Sep 2017 00:00:00 +0000</pubDate>
       
@@ -365,12 +377,12 @@ y &amp;lt;- 1:10 + rnorm(10)
 beginr::plotlm(x, y)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;## [[1]]
-##               Estimate Std. Error    t value     Pr(&amp;gt;|t|)
-## (Intercept) 0.09167136 0.56635659  0.1618616 8.754282e-01
-## x           0.99949367 0.09127663 10.9501598 4.293580e-06
+##               Estimate Std. Error   t value     Pr(&amp;gt;|t|)
+## (Intercept) -0.3408179  0.8644299 -0.394269 7.036841e-01
+## x            1.0005676  0.1393155  7.182026 9.409011e-05
 ## 
 ## [[2]]
-## [1] 0.9374541&lt;/code&gt;&lt;/pre&gt;
+## [1] 0.8657301&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;经常需要了解一组数据的分布, 看看是不是正态分布. beginr 里的 &lt;code&gt;plothist()&lt;/code&gt; 函数不仅做出直方图和平滑曲线, 并且标出中值, 中位数, 四分位数, 标准偏差, 样本数, 以及用来判断是否正态分布的 skewness 值.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;x &amp;lt;- rnorm(10000)
 beginr::plothist(x)&lt;/code&gt;&lt;/pre&gt;
@@ -404,20 +416,20 @@ beginr::errorbar(x, y, yupper = 0.1, ylower = 0.1)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;beginr 提供了一些对数据框计算的函数, 例如计算多列数据两两的相关性和线性拟合结果, 可以用 &lt;code&gt;lmdf()&lt;/code&gt; 函数.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df &amp;lt;- data.frame(a = 1:10, b = 1:10 + rnorm(10), c = 1:10 + rnorm(10))
 beginr::lmdf(df)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;##   x y r.squared adj.r.squared   intercept     slope Std.Error.intercept
-## 1 a b 0.8703363     0.8541284  0.66677290 0.9307702           0.7881219
-## 2 a c 0.8840348     0.8695391 -0.35136862 1.0574960           0.8402207
-## 3 b a 0.8703363     0.8541284  0.08967001 0.9350712           0.8239122
-## 4 b c 0.7622107     0.7324870 -0.22972156 0.9841985           1.2549085
-## 5 c a 0.8840348     0.8695391  0.93154241 0.8359698           0.6795668
-## 6 c b 0.7622107     0.7324870  1.55375862 0.7744481           0.9708749
-##   Std.Error.slope t.intercept  t.slope Pr.intercept     Pr.slope
-## 1       0.1270173   0.8460276 7.327898    0.4221201 8.165844e-05
-## 2       0.1354138  -0.4181861 7.809365    0.6868108 5.192555e-05
-## 3       0.1276043   0.1088344 7.327898    0.9160142 8.165844e-05
-## 4       0.1943553  -0.1830584 5.063914    0.8593064 9.723170e-04
-## 5       0.1070471   1.3707886 7.809365    0.2076637 5.192555e-05
-## 6       0.1529347   1.6003695 5.063914    0.1481842 9.723170e-04&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##   x y r.squared adj.r.squared  intercept     slope Std.Error.intercept
+## 1 a b 0.8496679     0.8308764  0.9036231 0.8115921           0.7489012
+## 2 a c 0.9588284     0.9536819 -0.4325037 1.0963557           0.4983854
+## 3 b a 0.8496679     0.8308764 -0.1191898 1.0469149           0.9237743
+## 4 b c 0.8019021     0.7771399 -0.5146525 1.1387502           1.1873012
+## 5 c a 0.9588284     0.9536819  0.6046942 0.8745596           0.4136225
+## 6 c b 0.8019021     0.7771399  1.4256823 0.7041949           0.7988375
+##   Std.Error.slope t.intercept   t.slope Pr.intercept     Pr.slope
+## 1      0.12069635   1.2065986  6.724247    0.2620530 1.489407e-04
+## 2      0.08032209  -0.8678098 13.649492    0.4107731 7.989692e-07
+## 3      0.15569249  -0.1290248  6.724247    0.9005229 1.489407e-04
+## 4      0.20010721  -0.4334642  5.690701    0.6761284 4.592807e-04
+## 5      0.06407268   1.4619469 13.649492    0.1818960 7.989692e-07
+## 6      0.12374485   1.7846964  5.690701    0.1121439 4.592807e-04&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;还有两个函数对&lt;code&gt;tapply()&lt;/code&gt;进行了改善, 用来进行因子计算.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::tapplydf()
 beginr::tapplydfv()&lt;/code&gt;&lt;/pre&gt;

@@ -80,3 +80,15 @@ knitr::include_graphics(if (identical(knitr:::pandoc_to(), &#39;html&#39;)) url 
 <p>如果深入一步，考虑上一节“往 pdf 里插入网络图片”的方法，就可以玩出更多花样，例如书的网页格式里插入 mytext.md，而 pdf 里不插。</p>
 <p>如果再跟上面的 yaml 声明相结合，各个文本文件就成了乐高积木块，随心所欲组合了。</p>
 </div>
+<div id="bookdown.org-" class="section level2">
+<h2>bookdown.org 的多账号管理</h2>
+<p>在 bookdown.org 发布书稿，点击RStudio 左上面板的发布符号，会引导你用 google 账号登录。第一次登录会让你设置在 bookdown.org 的用户名，这个要重视，想个你喜欢的名字，以后就没法改了。</p>
+<p>用同一账号发布书稿，一点问题都没有。但是当我用多个账号发布书稿，遇见了一些小麻烦。</p>
+<p>首先，我用 <code>bookdown::publish_book()</code> 的 <code>account</code> 参数指定一个新账号，得到了错误信息:</p>
+<pre><code>Error: Unknown account name &#39;newaccount&#39; (you can use the setAccountInfo function to add a new account)</code></pre>
+<p>一查 setAccountInfo，不是 bookdown 包的函数，而是 rsconnect 包的函数：<code>rsconnect::setAccountInfo()</code>。然后就不知道怎么办了。</p>
+<p>其实，添加账号应该点击 Rstudio 左上面板的发布按钮- Manage Account - Connect - RStudio Connect - 输入 bookdown.org，然后往下照提示走就行了。</p>
+<p>添加账号后，照理说用 <code>bookdown::publish_book()</code> 的 <code>account</code>指定一下账号，就应该能发布了吧？不，还是失败了，说 <code>name</code> 参数有问题。其实没问题。</p>
+<p>怎么办？我发现必须从 Mange Account 里删掉旧 bookdown 的账号，就可以用新的账号成功发布了。</p>
+<p>上面说了这么多，其实就是一句话：用不同账号往 bookdown.org 发布书稿，只需在 Manage Account 里添加并保留唯一一个账号即可。</p>
+</div>

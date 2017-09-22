@@ -1,5 +1,5 @@
 ---
-title: '如何在 R markdown 里显示小撇`'
+title: '如何在 R markdown 里输出 r pi 并前后加上小撇`'
 author: "赵鹏"
 date: '2017-09-22'
 slug: backticks-in-rmd

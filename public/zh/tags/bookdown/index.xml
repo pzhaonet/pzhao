@@ -80,11 +80,23 @@ knitr::include_graphics(if (identical(knitr:::pandoc_to(), &amp;#39;html&amp;#39
 &lt;p&gt;如果深入一步，考虑上一节“往 pdf 里插入网络图片”的方法，就可以玩出更多花样，例如书的网页格式里插入 mytext.md，而 pdf 里不插。&lt;/p&gt;
 &lt;p&gt;如果再跟上面的 yaml 声明相结合，各个文本文件就成了乐高积木块，随心所欲组合了。&lt;/p&gt;
 &lt;/div&gt;
+&lt;div id=&#34;bookdown.org-&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;bookdown.org 的多账号管理&lt;/h2&gt;
+&lt;p&gt;在 bookdown.org 发布书稿，点击RStudio 左上面板的发布符号，会引导你用 google 账号登录。第一次登录会让你设置在 bookdown.org 的用户名，这个要重视，想个你喜欢的名字，以后就没法改了。&lt;/p&gt;
+&lt;p&gt;用同一账号发布书稿，一点问题都没有。但是当我用多个账号发布书稿，遇见了一些小麻烦。&lt;/p&gt;
+&lt;p&gt;首先，我用 &lt;code&gt;bookdown::publish_book()&lt;/code&gt; 的 &lt;code&gt;account&lt;/code&gt; 参数指定一个新账号，得到了错误信息:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Error: Unknown account name &amp;#39;newaccount&amp;#39; (you can use the setAccountInfo function to add a new account)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;一查 setAccountInfo，不是 bookdown 包的函数，而是 rsconnect 包的函数：&lt;code&gt;rsconnect::setAccountInfo()&lt;/code&gt;。然后就不知道怎么办了。&lt;/p&gt;
+&lt;p&gt;其实，添加账号应该点击 Rstudio 左上面板的发布按钮- Manage Account - Connect - RStudio Connect - 输入 bookdown.org，然后往下照提示走就行了。&lt;/p&gt;
+&lt;p&gt;添加账号后，照理说用 &lt;code&gt;bookdown::publish_book()&lt;/code&gt; 的 &lt;code&gt;account&lt;/code&gt;指定一下账号，就应该能发布了吧？不，还是失败了，说 &lt;code&gt;name&lt;/code&gt; 参数有问题。其实没问题。&lt;/p&gt;
+&lt;p&gt;怎么办？我发现必须从 Mange Account 里删掉旧 bookdown 的账号，就可以用新的账号成功发布了。&lt;/p&gt;
+&lt;p&gt;上面说了这么多，其实就是一句话：用不同账号往 bookdown.org 发布书稿，只需在 Manage Account 里添加并保留唯一一个账号即可。&lt;/p&gt;
+&lt;/div&gt;
 </description>
     </item>
     
     <item>
-      <title>如何在 R markdown 里显示小撇`</title>
+      <title>如何在 R markdown 里输出 r pi 并前后加上小撇`</title>
       <link>http://www.pzhao.org/zh/post/backticks-in-rmd/</link>
       <pubDate>Fri, 22 Sep 2017 00:00:00 +0000</pubDate>
       

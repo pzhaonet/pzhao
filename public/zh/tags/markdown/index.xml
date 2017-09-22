@@ -10,7 +10,7 @@
     <atom:link href="/zh/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>如何在 R markdown 里显示小撇`</title>
+      <title>如何在 R markdown 里输出 r pi 并前后加上小撇`</title>
       <link>http://www.pzhao.org/zh/post/backticks-in-rmd/</link>
       <pubDate>Fri, 22 Sep 2017 00:00:00 +0000</pubDate>
       
