@@ -11,6 +11,67 @@
     <atom:link href="/zh/post/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>我把青春献给你：LaTeX 排版 (1)</title>
+      <link>http://www.pzhao.org/zh/post/latex-and-me-1/</link>
+      <pubDate>Tue, 21 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.pzhao.org/zh/post/latex-and-me-1/</guid>
+      <description>&lt;p&gt;1&lt;/p&gt;
+&lt;p&gt;2017 年快要过去了。如果剩下这四十天不出什么幺蛾子的话，今年我做过的事情最蠢排行榜基本是板上钉钉。名列榜首的，就是过早给《学 R》一书大肆宣传。跟罗永浩当年头一回卖锤子手机一样一样的，还没量产，就先吹牛，结果吹破了，打了自己的脸。&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;http://5b0988e595225.cdn.sohucs.com/images/20170715/d6a28e43a55b48128265e4029fb4e6c2.gif&#34; /&gt;
+
+&lt;/div&gt;
+&lt;p&gt;其实，这本书早在今年 6 月就写完了，7 月做了最后一次修改。当时书号已经批了，封面也有了模样，我以为马上就能印出来了，于是告诉了我能告诉的每一个朋友。朋友们也很给力，把白花花的银子拍在桌上，就等着付钱买了。当了教授的老同学说：放心，到时候我送给我的学生人手一本！&lt;/p&gt;
+&lt;p&gt;谁知道，一晃四个多月过去了，书还没出来。我的前期宣传白费了。让人欣慰的是，直到现在，仍然有铁杆粉丝惦记着我，时不时发来鼓励的短信：”喂，你那书烂尾了吧？啊哈哈哈哈~&lt;sub&gt;~&lt;/sub&gt;“&lt;/p&gt;
+&lt;p&gt;谢谢。&lt;/p&gt;
+&lt;p&gt;那么四个月里这书干嘛去了？&lt;/p&gt;
+&lt;p&gt;在排版。&lt;/p&gt;
+&lt;p&gt;《学 R》这本书，一直排不出理想的模样。&lt;/p&gt;
+&lt;p&gt;四个月是在反反复复修改排版里度过的。一直拖到上周，我们仍然看不到任何排版成功的迹象。2017 年所剩无几的耐心消耗殆尽，一咬牙一跺脚，我们决定壮士断腕。Y 从出版社讨来排版文件，并且自己花钱购买了专业软件，自己排；我同时用 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; 排，齐头并进。谁先排好就用谁的。我们谁都不想再拖，再拖就真的要吐血了。&lt;/p&gt;
+&lt;p&gt;当做出这个决定的第二天，Y 看到我用 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; 做出的 pdf 书稿小样得到了印刷厂的认可，就放下了手里的专业软件，决定不干了：“&lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; 真厉害，有空我学一下……”&lt;/p&gt;
+&lt;p&gt;我立马拦住：“最好别去学。这个坑太大。一入 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt;，坑深似海。”&lt;/p&gt;
+&lt;p&gt;2&lt;/p&gt;
+&lt;p&gt;出版社负责录入和排版的工作，简称”录排“。&lt;/p&gt;
+&lt;p&gt;这四个月来，录排可谓兢兢业业，全心全力为《学 R》排版。可惜，辛苦不一定有回报，排出的书稿，一直有层出不穷的问题。&lt;/p&gt;
+&lt;p&gt;比如说，丢失公式和特殊字符。原稿里的诸如 &lt;em&gt;R&lt;/em&gt;&lt;sup&gt;2&lt;/sup&gt;， &lt;span class=&#34;math inline&#34;&gt;\(\pi\)&lt;/span&gt; 等都莫名其妙消失了。&lt;/p&gt;
+&lt;p&gt;比如说，字体。原稿里的代码都是用等宽字体表示的，录排之后都成了跟正文一样的字体。&lt;/p&gt;
+&lt;p&gt;比如说，标点符号。原告里的所有标点符号，包括代码里的逗号、引号、括号，都变成了中文标点符号。加上非等宽字体，书里的代码惨不忍睹。&lt;/p&gt;
+&lt;p&gt;最要命的是，原稿里的很多空格也都不翼而飞。比如录排稿：&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;http://www.pzhao.org/img/xuer1.jpg&#34; /&gt;
+
+&lt;/div&gt;
+&lt;p&gt;是不是一头雾水？实际上原稿是：&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;http://www.pzhao.org/img/xuer2.jpg&#34; /&gt;
+
+&lt;/div&gt;
+&lt;p&gt;所以说，格式是此书内容的一部分。&lt;/p&gt;
+&lt;p&gt;每次从录排稿里挑问题，都得瞪大一双近视眼逐字逐句看。后来，索性放弃了很多想法。比如说，原先代码是彩色的，得知需要录排逐个字符手动修改，算了不要了；原先打算增加个小贴士目录，得知需要排完页码手动添加，算了不要了；原先打算给常用函数做个索引，方便读者从书里找示例，看样子也得手动做，算了不要了……&lt;/p&gt;
+&lt;p&gt;即便如此，每次的排版仍然会出现奇奇怪怪的问题。如此往返三次，《学 R》这本书我已经读得想呕吐了。&lt;/p&gt;
+&lt;p&gt;我百思不得其解：这到底是怎么回事？&lt;/p&gt;
+&lt;p&gt;3&lt;/p&gt;
+&lt;p&gt;来回折磨了四个月。终于， Y 试用了一下录排用的排版软件—— Adobe InDesign，俗称 ID，是国内出版业主流的专业排版软件。&lt;/p&gt;
+&lt;p&gt;Y 立刻对我说：”我明白问题出在哪里了！“&lt;/p&gt;
+&lt;p&gt;原来，录排是把我们提交的原稿，转成了 txt 文本文件；书里的插图，全部转成了 tif 图片。然后，把这些素材导入 ID，然后手动按照原稿 pdf 的样子做调整。&lt;/p&gt;
+&lt;p&gt;这正是录排一贯的工作流程。&lt;/p&gt;
+&lt;p&gt;这个流程，对文学类书籍没有问题。一篇小说，重要的是内容，不是格式；只要把文字分好段，就不会有大错。&lt;/p&gt;
+&lt;p&gt;然而，这个流程用在《学 R》 这本书上，就是个灾难。因为这本书，内容和格式，都很重要。&lt;/p&gt;
+&lt;p&gt;然而，这一点，录排不知道。&lt;/p&gt;
+&lt;p&gt;然而，我们不知道录排不知道。&lt;/p&gt;
+&lt;p&gt;然而，录排不知道我们知不知道录排不知道。&lt;/p&gt;
+&lt;p&gt;四个月的大好青春，就是这样搭进去的。&lt;/p&gt;
+&lt;p&gt;对此我感到抱歉，让录排白白花了那么多时间和精力，我的吹毛求疵一定让录排很受折磨。同时我也感到遗憾，如果重来一次，这个坑恐怕仍然绕不开。&lt;/p&gt;
+&lt;p&gt;4，&lt;/p&gt;
+&lt;p&gt;好在我们及时止损了。&lt;/p&gt;
+&lt;p&gt;上周，我们从头做起，不仅四个月来积攒的问题一扫而空，而且彩色代码的格式保住了，索引也作出来了。&lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; 在这里显示了无与伦比的强大力量。以致于 Y 饶有兴趣地说：“&lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; 真厉害，有空我学一下……”&lt;/p&gt;
+&lt;p&gt;我立马拦住：“最好别去学。这个坑太大。一入 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt;，坑深似海。”&lt;/p&gt;
+&lt;p&gt;如果你以为本文是为 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; 做广告，呵呵，那你就错了。为啥？下回再说。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>R bookdown 的小技巧</title>
       <link>http://www.pzhao.org/zh/post/bookdown-tips/</link>
       <pubDate>Fri, 22 Sep 2017 00:00:00 +0000</pubDate>
@@ -44,6 +105,7 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;\citep{zhao2017,xie2016}&lt;/code&gt;，得到&lt;code&gt;(Xie, 2016; Zhao, 2017)&lt;/code&gt;。&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;更新：经 Yihui 提示，应当用 &lt;code&gt;[@zhao2017; @xie2016]&lt;/code&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;-pdf-&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;往 pdf 里插入网络图片&lt;/h2&gt;
@@ -377,12 +439,12 @@ y &amp;lt;- 1:10 + rnorm(10)
 beginr::plotlm(x, y)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;## [[1]]
-##               Estimate Std. Error   t value     Pr(&amp;gt;|t|)
-## (Intercept) -0.3408179  0.8644299 -0.394269 7.036841e-01
-## x            1.0005676  0.1393155  7.182026 9.409011e-05
+##              Estimate Std. Error   t value     Pr(&amp;gt;|t|)
+## (Intercept) 0.5442648  0.6977742 0.7800014 4.578438e-01
+## x           0.9770216  0.1124565 8.6879968 2.400091e-05
 ## 
 ## [[2]]
-## [1] 0.8657301&lt;/code&gt;&lt;/pre&gt;
+## [1] 0.9041701&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;经常需要了解一组数据的分布, 看看是不是正态分布. beginr 里的 &lt;code&gt;plothist()&lt;/code&gt; 函数不仅做出直方图和平滑曲线, 并且标出中值, 中位数, 四分位数, 标准偏差, 样本数, 以及用来判断是否正态分布的 skewness 值.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;x &amp;lt;- rnorm(10000)
 beginr::plothist(x)&lt;/code&gt;&lt;/pre&gt;
@@ -416,20 +478,20 @@ beginr::errorbar(x, y, yupper = 0.1, ylower = 0.1)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;beginr 提供了一些对数据框计算的函数, 例如计算多列数据两两的相关性和线性拟合结果, 可以用 &lt;code&gt;lmdf()&lt;/code&gt; 函数.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df &amp;lt;- data.frame(a = 1:10, b = 1:10 + rnorm(10), c = 1:10 + rnorm(10))
 beginr::lmdf(df)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;##   x y r.squared adj.r.squared  intercept     slope Std.Error.intercept
-## 1 a b 0.8496679     0.8308764  0.9036231 0.8115921           0.7489012
-## 2 a c 0.9588284     0.9536819 -0.4325037 1.0963557           0.4983854
-## 3 b a 0.8496679     0.8308764 -0.1191898 1.0469149           0.9237743
-## 4 b c 0.8019021     0.7771399 -0.5146525 1.1387502           1.1873012
-## 5 c a 0.9588284     0.9536819  0.6046942 0.8745596           0.4136225
-## 6 c b 0.8019021     0.7771399  1.4256823 0.7041949           0.7988375
+&lt;pre&gt;&lt;code&gt;##   x y r.squared adj.r.squared   intercept     slope Std.Error.intercept
+## 1 a b 0.8609231     0.8435385 -0.06596404 0.9502072           0.8378166
+## 2 a c 0.9394495     0.9318807 -0.49256902 1.1665419           0.6496924
+## 3 b a 0.8609231     0.8435385  0.82468862 0.9060372           0.7647301
+## 4 b c 0.8393032     0.8192161  0.36754992 1.0766806           0.9893454
+## 5 c a 0.9394495     0.9318807  0.72970754 0.8053286           0.4957592
+## 6 c b 0.8393032     0.8192161  0.54270807 0.7795285           0.8270880
 ##   Std.Error.slope t.intercept   t.slope Pr.intercept     Pr.slope
-## 1      0.12069635   1.2065986  6.724247    0.2620530 1.489407e-04
-## 2      0.08032209  -0.8678098 13.649492    0.4107731 7.989692e-07
-## 3      0.15569249  -0.1290248  6.724247    0.9005229 1.489407e-04
-## 4      0.20010721  -0.4334642  5.690701    0.6761284 4.592807e-04
-## 5      0.06407268   1.4619469 13.649492    0.1818960 7.989692e-07
-## 6      0.12374485   1.7846964  5.690701    0.1121439 4.592807e-04&lt;/code&gt;&lt;/pre&gt;
+## 1      0.13502637 -0.07873327  7.037198    0.9391785 1.085412e-04
+## 2      0.10470740 -0.75815733 11.140968    0.4700993 3.768146e-06
+## 3      0.12874972  1.07840483  7.037198    0.3122922 1.085412e-04
+## 4      0.16656589  0.37150819  6.463992    0.7199056 1.953942e-04
+## 5      0.07228533  1.47189923 11.140968    0.1792610 3.768146e-06
+## 6      0.12059551  0.65616726  6.463992    0.5301327 1.953942e-04&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;还有两个函数对&lt;code&gt;tapply()&lt;/code&gt;进行了改善, 用来进行因子计算.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::tapplydf()
 beginr::tapplydfv()&lt;/code&gt;&lt;/pre&gt;
@@ -453,7 +515,7 @@ beginr::list2ascii(alist)&lt;/code&gt;&lt;/pre&gt;
 ## Package},
 ##   author = {Peng Zhao},
 ##   year = {2017},
-##   note = {R package version 1.3.1},
+##   note = {R package version 1.3.2},
 ##   url = {https://github.com/pzhaonet/bookdownplus},
 ## }
 ## @Manual{R-mindr,
@@ -867,24 +929,26 @@ install.packages(&amp;#39;bookdownplus&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;举例如下：&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(&amp;#39;pinyin&amp;#39;)
 pinyin(&amp;#39;羌笛何须怨杨柳春风不度玉门关&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;qiānɡ_dí_hé_xū_yuàn_yánɡ_liǔ_chūn_fēnɡ_bú_dù_yù_mén_ɡuān&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;&amp;lt;_U_+_7_F_8_C_&amp;gt;_&amp;lt;_U_+_7_B_1_B_&amp;gt;_&amp;lt;_U_+_4_F_5_5_&amp;gt;_&amp;lt;_U_+_9_8_7_B_&amp;gt;_&amp;lt;_U_+_6_0_2_8_&amp;gt;_&amp;lt;_U_+_6_7_6_8_&amp;gt;_&amp;lt;_U_+_6_7_F_3_&amp;gt;_&amp;lt;_U_+_6_6_2_5_&amp;gt;_&amp;lt;_U_+_9_8_C_E_&amp;gt;_&amp;lt;_U_+_4_E_0_D_&amp;gt;_&amp;lt;_U_+_5_E_A_6_&amp;gt;_&amp;lt;_U_+_7_3_8_9_&amp;gt;_&amp;lt;_U_+_9_5_E_8_&amp;gt;_&amp;lt;_U_+_5_1_7_3_&amp;gt;&amp;quot;&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;pinyin(&amp;#39;羌笛何须怨杨柳春风不度玉门关&amp;#39;, sep = &amp;#39; &amp;#39;)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;qiānɡ dí hé xū yuàn yánɡ liǔ chūn fēnɡ bú dù yù mén ɡuān&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;&amp;lt; U + 7 F 8 C &amp;gt; &amp;lt; U + 7 B 1 B &amp;gt; &amp;lt; U + 4 F 5 5 &amp;gt; &amp;lt; U + 9 8 7 B &amp;gt; &amp;lt; U + 6 0 2 8 &amp;gt; &amp;lt; U + 6 7 6 8 &amp;gt; &amp;lt; U + 6 7 F 3 &amp;gt; &amp;lt; U + 6 6 2 5 &amp;gt; &amp;lt; U + 9 8 C E &amp;gt; &amp;lt; U + 4 E 0 D &amp;gt; &amp;lt; U + 5 E A 6 &amp;gt; &amp;lt; U + 7 3 8 9 &amp;gt; &amp;lt; U + 9 5 E 8 &amp;gt; &amp;lt; U + 5 1 7 3 &amp;gt;&amp;quot;&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;pinyin(&amp;#39;羌笛何须怨杨柳春风不度玉门关&amp;#39;, sep = &amp;#39; &amp;#39;, method = &amp;#39;tone&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;qiang1 di2 he2 xu1 yuan4 yang2 liu3 chun1 feng1 bu2 du4 yu4 men2 guan1&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;&amp;lt; U + 7 F 8 C &amp;gt; &amp;lt; U + 7 B 1 B &amp;gt; &amp;lt; U + 4 F 5 5 &amp;gt; &amp;lt; U + 9 8 7 B &amp;gt; &amp;lt; U + 6 0 2 8 &amp;gt; &amp;lt; U + 6 7 6 8 &amp;gt; &amp;lt; U + 6 7 F 3 &amp;gt; &amp;lt; U + 6 6 2 5 &amp;gt; &amp;lt; U + 9 8 C E &amp;gt; &amp;lt; U + 4 E 0 D &amp;gt; &amp;lt; U + 5 E A 6 &amp;gt; &amp;lt; U + 7 3 8 9 &amp;gt; &amp;lt; U + 9 5 E 8 &amp;gt; &amp;lt; U + 5 1 7 3 &amp;gt;&amp;quot;&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;pinyin(&amp;#39;羌笛何须怨杨柳春风不度玉门关&amp;#39;, sep = &amp;#39; &amp;#39;, method = &amp;#39;toneless&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;qiang di he xu yuan yang liu chun feng bu du yu men guan&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;&amp;lt; U + 7 F 8 C &amp;gt; &amp;lt; U + 7 B 1 B &amp;gt; &amp;lt; U + 4 F 5 5 &amp;gt; &amp;lt; U + 9 8 7 B &amp;gt; &amp;lt; U + 6 0 2 8 &amp;gt; &amp;lt; U + 6 7 6 8 &amp;gt; &amp;lt; U + 6 7 F 3 &amp;gt; &amp;lt; U + 6 6 2 5 &amp;gt; &amp;lt; U + 9 8 C E &amp;gt; &amp;lt; U + 4 E 0 D &amp;gt; &amp;lt; U + 5 E A 6 &amp;gt; &amp;lt; U + 7 3 8 9 &amp;gt; &amp;lt; U + 9 5 E 8 &amp;gt; &amp;lt; U + 5 1 7 3 &amp;gt;&amp;quot;&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;pinyin(&amp;#39;羌笛何须怨杨柳春风不度玉门关&amp;#39;, sep = &amp;#39;&amp;#39;, only_first_letter = TRUE)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;qdhxyylcfbdymɡ&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;&amp;lt;U+7F8C&amp;gt;&amp;lt;U+7B1B&amp;gt;&amp;lt;U+4F55&amp;gt;&amp;lt;U+987B&amp;gt;&amp;lt;U+6028&amp;gt;&amp;lt;U+6768&amp;gt;&amp;lt;U+67F3&amp;gt;&amp;lt;U+6625&amp;gt;&amp;lt;U+98CE&amp;gt;&amp;lt;U+4E0D&amp;gt;&amp;lt;U+5EA6&amp;gt;&amp;lt;U+7389&amp;gt;&amp;lt;U+95E8&amp;gt;&amp;lt;U+5173&amp;gt;&amp;quot;&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;pinyin(&amp;#39;羌笛何须怨?杨柳春风,不度玉门关.&amp;#39;, sep = &amp;#39;&amp;#39;, nonezh_replace = &amp;#39;-&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;qiānɡdíhéxūyuàn-yánɡliǔchūnfēnɡ-búdùyùménɡuān-&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;-------------------------------------------------------------------------------------------------------------------&amp;quot;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;如果自变量是多个字符串的向量，那么只会转换第一个字符串：&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;pinyin(c(&amp;#39;羌笛何须怨杨柳&amp;#39;, &amp;#39;春风不度玉门关&amp;#39;))&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;qiānɡ_dí_hé_xū_yuàn_yánɡ_liǔ&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;&amp;lt;_U_+_7_F_8_C_&amp;gt;_&amp;lt;_U_+_7_B_1_B_&amp;gt;_&amp;lt;_U_+_4_F_5_5_&amp;gt;_&amp;lt;_U_+_9_8_7_B_&amp;gt;_&amp;lt;_U_+_6_0_2_8_&amp;gt;_&amp;lt;_U_+_6_7_6_8_&amp;gt;_&amp;lt;_U_+_6_7_F_3_&amp;gt;&amp;quot;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;这怎么行？哎，用 &lt;code&gt;sapply()&lt;/code&gt; 嘛：&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;sapply(c(&amp;#39;羌笛何须怨杨柳&amp;#39;, &amp;#39;春风不度玉门关&amp;#39;), pinyin)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;##                 羌笛何须怨杨柳                 春风不度玉门关 
-## &amp;quot;qiānɡ_dí_hé_xū_yuàn_yánɡ_liǔ&amp;quot;  &amp;quot;chūn_fēnɡ_bú_dù_yù_mén_ɡuān&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##                                                          &amp;lt;U+7F8C&amp;gt;&amp;lt;U+7B1B&amp;gt;&amp;lt;U+4F55&amp;gt;&amp;lt;U+987B&amp;gt;&amp;lt;U+6028&amp;gt;&amp;lt;U+6768&amp;gt;&amp;lt;U+67F3&amp;gt; 
+## &amp;quot;&amp;lt;_U_+_7_F_8_C_&amp;gt;_&amp;lt;_U_+_7_B_1_B_&amp;gt;_&amp;lt;_U_+_4_F_5_5_&amp;gt;_&amp;lt;_U_+_9_8_7_B_&amp;gt;_&amp;lt;_U_+_6_0_2_8_&amp;gt;_&amp;lt;_U_+_6_7_6_8_&amp;gt;_&amp;lt;_U_+_6_7_F_3_&amp;gt;&amp;quot; 
+##                                                          &amp;lt;U+6625&amp;gt;&amp;lt;U+98CE&amp;gt;&amp;lt;U+4E0D&amp;gt;&amp;lt;U+5EA6&amp;gt;&amp;lt;U+7389&amp;gt;&amp;lt;U+95E8&amp;gt;&amp;lt;U+5173&amp;gt; 
+## &amp;quot;&amp;lt;_U_+_6_6_2_5_&amp;gt;_&amp;lt;_U_+_9_8_C_E_&amp;gt;_&amp;lt;_U_+_4_E_0_D_&amp;gt;_&amp;lt;_U_+_5_E_A_6_&amp;gt;_&amp;lt;_U_+_7_3_8_9_&amp;gt;_&amp;lt;_U_+_9_5_E_8_&amp;gt;_&amp;lt;_U_+_5_1_7_3_&amp;gt;&amp;quot;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;其他两个函数，其实是 &lt;code&gt;pinyin()&lt;/code&gt; 的延伸和示例：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;file.rename2py()&lt;/code&gt;用来将文件名里的汉字转换成拼音。&lt;/li&gt;
@@ -1256,55 +1320,6 @@ R^2 =(\frac{\sum_{i=1}^{n}(O_i-\overline{O})(P_i-\overline{P})}{\sqrt{\sum_{i=1}
 &lt;div class=&#34;figure&#34;&gt;
 &lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/mindr/master/showcase/mindr_xuer.jpg&#34; /&gt;
 
-&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>R blogdown 科研网站的公式和参考文献</title>
-      <link>http://www.pzhao.org/zh/post/rblogdown-bib/</link>
-      <pubDate>Thu, 18 May 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/zh/post/rblogdown-bib/</guid>
-      <description>&lt;p&gt;本网站的公式和参考文献一直未能正常显示，直到今天我才把这两个问题解决。&lt;/p&gt;
-&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
-&lt;li&gt;&lt;strong&gt;公式&lt;/strong&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;公式的问题迟迟未解决，是因为我看到人们在讨论往html文件里加 &lt;code&gt;Load mathjax&lt;/code&gt; 代码这种解决方案，一看就头大，不想做。&lt;/p&gt;
-&lt;p&gt;其实，我用的hugo-academic主题，据说是支持数学环境的，据说在 &lt;code&gt;config.toml&lt;/code&gt; 里设置 &lt;code&gt;math = true&lt;/code&gt;就开启全站支持，在单篇post的yml头里这样设置就开启单篇支持。可是我两样都试过，然后运行 &lt;code&gt;blogdown::serve_site()&lt;/code&gt;测试，在RStudio的Viewer里都不能成功显示公式。&lt;/p&gt;
-&lt;p&gt;今天突然灵光一现，心想不会是RStudio Viewer的问题吧？于是点击Viewer左上角的 &lt;code&gt;Show in new window&lt;/code&gt; 按钮，用外部浏览器打开一看，Duang！帖子里的公式就都可以正常显示了！这里秀一个：&lt;/p&gt;
-&lt;p&gt;帖子里输入下面的 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; 公式：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$$\int_0^\infty e^{-x^2} dx=\frac{\sqrt{\pi}}{2}$$&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;网页就会显示：&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\int_0^\infty e^{-x^2} dx=\frac{\sqrt{\pi}}{2}\]&lt;/span&gt;&lt;/p&gt;
-&lt;ol start=&#34;2&#34; style=&#34;list-style-type: decimal&#34;&gt;
-&lt;li&gt;&lt;strong&gt;参考文献&lt;/strong&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;两个多月前，就&lt;a href=&#34;https://github.com/rstudio/blogdown/issues/66&#34;&gt;有个哥们儿问&lt;/a&gt;“有没有可能在blogdown创建的网站里添加参考文献?”作者回答得干脆：“有。”两人对话戛然而止，让我目瞪口呆。由于在&lt;a href=&#34;http://bookdown.org/yihui/blogdown&#34;&gt;blogdown 官方手册&lt;/a&gt;里并未看到添加参考文献的方法，我一直以为这个功能尚在开发中，直到今天也没见动静，有些起疑，就随便试了一下，步骤跟在 bookdown 里一样：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;把参考文献库 .bib 文件考到 &lt;code&gt;content\post\&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;在帖子 &lt;code&gt;.Rmd&lt;/code&gt; 文档的 yml 头里声明 .bib 文件的名称和路径。这里我设成 &lt;code&gt;bibliography: [book.bib, packages.bib]&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;在帖子里引用 .bib 里的文献条目，例如 &lt;code&gt;[@R-blogdown]&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;运行建站函数 &lt;code&gt;blogdown::build_site()&lt;/code&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;就这样，说时迟那时快，只见Duang！帖子里的引用就显示成了 &lt;span class=&#34;citation&#34;&gt;(Xie 2017)&lt;/span&gt; ！而帖子末尾的参考文献列表就自动出来了！&lt;/p&gt;
-&lt;p&gt;blogdown 可以如此方便地往帖子里插入计算代码、图表、公式、参考文献，我实在找不出第二个这样的工具。建科研网站，非 blogdown 莫属！&lt;/p&gt;
-&lt;p&gt;最后顺便提一下：虽然最新正式版的 RStudio 1.0.143 并 没有 blogdown 和 bookdown 的入口，但是我欣喜地发现，在 &lt;a href=&#34;http://dailies.rstudio.com&#34;&gt;RStudio 的开发版&lt;/a&gt; 1.1.233 里已经加入了这个入口了！菜单 File - New Project - New Directory，就能看到 blogdown 和 bookdown 项目。跟 shiny 和 R package 并列，可见 RStudio 公司对这两个项目的重视程度。&lt;/p&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;http://www.pzhao.org/img/rstudiobookdown.jpg&#34; /&gt;
-
-&lt;/div&gt;
-&lt;p&gt;有幸尝试了 blogdown 和 bookdown &lt;span class=&#34;citation&#34;&gt;(Xie 2016)&lt;/span&gt; 项目，并且也做过 &lt;a href=&#34;http://sciwis.com/&#34;&gt;shiny&lt;/a&gt; 和 &lt;a href=&#34;http://www.pzhao.org/zh/post/rmickey/&#34;&gt;R package&lt;/a&gt;，我模模糊糊有种异样的感觉，就像埋头赶路时猛一抬头，隐隐约约眺见了走在时代前面的先知们的背影。&lt;/p&gt;
-&lt;div class=&#34;section level2 unnumbered&#34;&gt;
-&lt;h2&gt;参考文献&lt;/h2&gt;
-&lt;div id=&#34;refs&#34; class=&#34;references&#34;&gt;
-&lt;div id=&#34;ref-R-bookdown&#34;&gt;
-&lt;p&gt;Xie, Yihui. 2016. &lt;em&gt;Bookdown: Authoring Books and Technical Documents with R Markdown&lt;/em&gt;. &lt;a href=&#34;https://github.com/rstudio/bookdown&#34; class=&#34;uri&#34;&gt;https://github.com/rstudio/bookdown&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;ref-R-blogdown&#34;&gt;
-&lt;p&gt;———. 2017. &lt;em&gt;Blogdown: Create Blogs and Websites with R Markdown&lt;/em&gt;. &lt;a href=&#34;https://github.com/rstudio/blogdown&#34; class=&#34;uri&#34;&gt;https://github.com/rstudio/blogdown&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
 &lt;/div&gt;
 </description>
     </item>

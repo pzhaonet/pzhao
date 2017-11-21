@@ -43,6 +43,7 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;\citep{zhao2017,xie2016}&lt;/code&gt;，得到&lt;code&gt;(Xie, 2016; Zhao, 2017)&lt;/code&gt;。&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;更新：经 Yihui 提示，应当用 &lt;code&gt;[@zhao2017; @xie2016]&lt;/code&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;-pdf-&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;往 pdf 里插入网络图片&lt;/h2&gt;

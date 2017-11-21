@@ -11,6 +11,67 @@
     <atom:link href="/zh/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>我把青春献给你：LaTeX 排版 (1)</title>
+      <link>http://www.pzhao.org/zh/post/latex-and-me-1/</link>
+      <pubDate>Tue, 21 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.pzhao.org/zh/post/latex-and-me-1/</guid>
+      <description>&lt;p&gt;1&lt;/p&gt;
+&lt;p&gt;2017 年快要过去了。如果剩下这四十天不出什么幺蛾子的话，今年我做过的事情最蠢排行榜基本是板上钉钉。名列榜首的，就是过早给《学 R》一书大肆宣传。跟罗永浩当年头一回卖锤子手机一样一样的，还没量产，就先吹牛，结果吹破了，打了自己的脸。&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;http://5b0988e595225.cdn.sohucs.com/images/20170715/d6a28e43a55b48128265e4029fb4e6c2.gif&#34; /&gt;
+
+&lt;/div&gt;
+&lt;p&gt;其实，这本书早在今年 6 月就写完了，7 月做了最后一次修改。当时书号已经批了，封面也有了模样，我以为马上就能印出来了，于是告诉了我能告诉的每一个朋友。朋友们也很给力，把白花花的银子拍在桌上，就等着付钱买了。当了教授的老同学说：放心，到时候我送给我的学生人手一本！&lt;/p&gt;
+&lt;p&gt;谁知道，一晃四个多月过去了，书还没出来。我的前期宣传白费了。让人欣慰的是，直到现在，仍然有铁杆粉丝惦记着我，时不时发来鼓励的短信：”喂，你那书烂尾了吧？啊哈哈哈哈~&lt;sub&gt;~&lt;/sub&gt;“&lt;/p&gt;
+&lt;p&gt;谢谢。&lt;/p&gt;
+&lt;p&gt;那么四个月里这书干嘛去了？&lt;/p&gt;
+&lt;p&gt;在排版。&lt;/p&gt;
+&lt;p&gt;《学 R》这本书，一直排不出理想的模样。&lt;/p&gt;
+&lt;p&gt;四个月是在反反复复修改排版里度过的。一直拖到上周，我们仍然看不到任何排版成功的迹象。2017 年所剩无几的耐心消耗殆尽，一咬牙一跺脚，我们决定壮士断腕。Y 从出版社讨来排版文件，并且自己花钱购买了专业软件，自己排；我同时用 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; 排，齐头并进。谁先排好就用谁的。我们谁都不想再拖，再拖就真的要吐血了。&lt;/p&gt;
+&lt;p&gt;当做出这个决定的第二天，Y 看到我用 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; 做出的 pdf 书稿小样得到了印刷厂的认可，就放下了手里的专业软件，决定不干了：“&lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; 真厉害，有空我学一下……”&lt;/p&gt;
+&lt;p&gt;我立马拦住：“最好别去学。这个坑太大。一入 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt;，坑深似海。”&lt;/p&gt;
+&lt;p&gt;2&lt;/p&gt;
+&lt;p&gt;出版社负责录入和排版的工作，简称”录排“。&lt;/p&gt;
+&lt;p&gt;这四个月来，录排可谓兢兢业业，全心全力为《学 R》排版。可惜，辛苦不一定有回报，排出的书稿，一直有层出不穷的问题。&lt;/p&gt;
+&lt;p&gt;比如说，丢失公式和特殊字符。原稿里的诸如 &lt;em&gt;R&lt;/em&gt;&lt;sup&gt;2&lt;/sup&gt;， &lt;span class=&#34;math inline&#34;&gt;\(\pi\)&lt;/span&gt; 等都莫名其妙消失了。&lt;/p&gt;
+&lt;p&gt;比如说，字体。原稿里的代码都是用等宽字体表示的，录排之后都成了跟正文一样的字体。&lt;/p&gt;
+&lt;p&gt;比如说，标点符号。原告里的所有标点符号，包括代码里的逗号、引号、括号，都变成了中文标点符号。加上非等宽字体，书里的代码惨不忍睹。&lt;/p&gt;
+&lt;p&gt;最要命的是，原稿里的很多空格也都不翼而飞。比如录排稿：&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;http://www.pzhao.org/img/xuer1.jpg&#34; /&gt;
+
+&lt;/div&gt;
+&lt;p&gt;是不是一头雾水？实际上原稿是：&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;http://www.pzhao.org/img/xuer2.jpg&#34; /&gt;
+
+&lt;/div&gt;
+&lt;p&gt;所以说，格式是此书内容的一部分。&lt;/p&gt;
+&lt;p&gt;每次从录排稿里挑问题，都得瞪大一双近视眼逐字逐句看。后来，索性放弃了很多想法。比如说，原先代码是彩色的，得知需要录排逐个字符手动修改，算了不要了；原先打算增加个小贴士目录，得知需要排完页码手动添加，算了不要了；原先打算给常用函数做个索引，方便读者从书里找示例，看样子也得手动做，算了不要了……&lt;/p&gt;
+&lt;p&gt;即便如此，每次的排版仍然会出现奇奇怪怪的问题。如此往返三次，《学 R》这本书我已经读得想呕吐了。&lt;/p&gt;
+&lt;p&gt;我百思不得其解：这到底是怎么回事？&lt;/p&gt;
+&lt;p&gt;3&lt;/p&gt;
+&lt;p&gt;来回折磨了四个月。终于， Y 试用了一下录排用的排版软件—— Adobe InDesign，俗称 ID，是国内出版业主流的专业排版软件。&lt;/p&gt;
+&lt;p&gt;Y 立刻对我说：”我明白问题出在哪里了！“&lt;/p&gt;
+&lt;p&gt;原来，录排是把我们提交的原稿，转成了 txt 文本文件；书里的插图，全部转成了 tif 图片。然后，把这些素材导入 ID，然后手动按照原稿 pdf 的样子做调整。&lt;/p&gt;
+&lt;p&gt;这正是录排一贯的工作流程。&lt;/p&gt;
+&lt;p&gt;这个流程，对文学类书籍没有问题。一篇小说，重要的是内容，不是格式；只要把文字分好段，就不会有大错。&lt;/p&gt;
+&lt;p&gt;然而，这个流程用在《学 R》 这本书上，就是个灾难。因为这本书，内容和格式，都很重要。&lt;/p&gt;
+&lt;p&gt;然而，这一点，录排不知道。&lt;/p&gt;
+&lt;p&gt;然而，我们不知道录排不知道。&lt;/p&gt;
+&lt;p&gt;然而，录排不知道我们知不知道录排不知道。&lt;/p&gt;
+&lt;p&gt;四个月的大好青春，就是这样搭进去的。&lt;/p&gt;
+&lt;p&gt;对此我感到抱歉，让录排白白花了那么多时间和精力，我的吹毛求疵一定让录排很受折磨。同时我也感到遗憾，如果重来一次，这个坑恐怕仍然绕不开。&lt;/p&gt;
+&lt;p&gt;4，&lt;/p&gt;
+&lt;p&gt;好在我们及时止损了。&lt;/p&gt;
+&lt;p&gt;上周，我们从头做起，不仅四个月来积攒的问题一扫而空，而且彩色代码的格式保住了，索引也作出来了。&lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; 在这里显示了无与伦比的强大力量。以致于 Y 饶有兴趣地说：“&lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; 真厉害，有空我学一下……”&lt;/p&gt;
+&lt;p&gt;我立马拦住：“最好别去学。这个坑太大。一入 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt;，坑深似海。”&lt;/p&gt;
+&lt;p&gt;如果你以为本文是为 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; 做广告，呵呵，那你就错了。为啥？下回再说。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>R bookdown 的小技巧</title>
       <link>http://www.pzhao.org/zh/post/bookdown-tips/</link>
       <pubDate>Fri, 22 Sep 2017 00:00:00 +0000</pubDate>
@@ -44,6 +105,7 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;\citep{zhao2017,xie2016}&lt;/code&gt;，得到&lt;code&gt;(Xie, 2016; Zhao, 2017)&lt;/code&gt;。&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;更新：经 Yihui 提示，应当用 &lt;code&gt;[@zhao2017; @xie2016]&lt;/code&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;-pdf-&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;往 pdf 里插入网络图片&lt;/h2&gt;
@@ -330,174 +392,6 @@ knitr::include_graphics(if (identical(knitr:::pandoc_to(), &amp;#39;html&amp;#39
 }&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;仍然打开那个叫做 &lt;code&gt;_book/&lt;/code&gt;的文件夹，Duang！ 不同字体、不同主题、不同布局的信件示例文档就全部在那里了。&lt;/p&gt;
 &lt;p&gt;如果看了这个你还没动心，那么只能说明跟 bookdown 没缘分，趁早放手吧！&lt;/p&gt;
-&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>R 初学者包 beginr 在 CRAN 正式发布</title>
-      <link>http://www.pzhao.org/zh/post/beginr-released/</link>
-      <pubDate>Fri, 23 Jun 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/zh/post/beginr-released/</guid>
-      <description>&lt;p&gt;又一次高兴地宣布, 我的 R 语言扩展包 ‘beginr’ &lt;span class=&#34;citation&#34;&gt;(Zhao 2017a)&lt;/span&gt; 在 CRAN &lt;a href=&#34;https://cran.r-project.org/web/packages/beginr/&#34;&gt;正式发布&lt;/a&gt;了.&lt;/p&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;http://cranlogs.r-pkg.org/badges/grand-total/beginr&#34; /&gt;
-
-&lt;/div&gt;
-&lt;div class=&#34;section level1&#34;&gt;
-&lt;h1&gt;简介&lt;/h1&gt;
-&lt;p&gt;&lt;code&gt;beginr&lt;/code&gt;是我为 R 语言初学者和自己写的工具包, 是我这些年来收集和自己编写的一些简化操作的函数和备忘录, 可能对中级用户也有帮助. 其实这个包的文档我写得不够详细, 有些函数还没来及整理进去, 之所以匆匆发布, 是想先把 ‘beginr’ 这个名字给占住. 毕竟, 我中意的名字如 ‘learnr’, ’startr’都被别人用过了.&lt;/p&gt;
-&lt;p&gt;安装方法：&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# 稳定版：
-install.packages(&amp;#39;beginr&amp;#39;)
-# 开发版：
-devtools::install_github(&amp;quot;pzhaonet/beginr&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;下面分类介绍一下其中的函数.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;section level1&#34;&gt;
-&lt;h1&gt;备忘函数&lt;/h1&gt;
-&lt;p&gt;我初学 R 的时候用 &lt;code&gt;plot()&lt;/code&gt; 作图时, 常常忘记不同形状数据点(&lt;code&gt;pch&lt;/code&gt;)对应的编号, 实线虚线(&lt;code&gt;lty&lt;/code&gt;)的编号, 散点图类型(&lt;code&gt;type&lt;/code&gt;)的代码, 以及最难选择的颜色代码. 每次忘了都要上网搜一下. 现在, beginr 里提供了 &lt;code&gt;plotpch()&lt;/code&gt;, &lt;code&gt;plotlty()&lt;/code&gt;, &lt;code&gt;plottype()&lt;/code&gt;, &lt;code&gt;plotcolors()&lt;/code&gt;, &lt;code&gt;plotcolorbar()&lt;/code&gt;等函数, 想不起来的时候运行一下就行了.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::plotpch()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::plotlty()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-1-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::plottype()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-1-3.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::plotcolors()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-1-4.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::plotcolorbar()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-1-5.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;section level1&#34;&gt;
-&lt;h1&gt;快速作图函数&lt;/h1&gt;
-&lt;p&gt;我常常需要做线性拟合, 每次又是作图又是添加拟合方程, 繁琐. 现在, beginr 里的一个 &lt;code&gt;plotlm()&lt;/code&gt;函数就搞定.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;x &amp;lt;- 1:10
-y &amp;lt;- 1:10 + rnorm(10)
-beginr::plotlm(x, y)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;## [[1]]
-##               Estimate Std. Error   t value     Pr(&amp;gt;|t|)
-## (Intercept) -0.3408179  0.8644299 -0.394269 7.036841e-01
-## x            1.0005676  0.1393155  7.182026 9.409011e-05
-## 
-## [[2]]
-## [1] 0.8657301&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;经常需要了解一组数据的分布, 看看是不是正态分布. beginr 里的 &lt;code&gt;plothist()&lt;/code&gt; 函数不仅做出直方图和平滑曲线, 并且标出中值, 中位数, 四分位数, 标准偏差, 样本数, 以及用来判断是否正态分布的 skewness 值.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;x &amp;lt;- rnorm(10000)
-beginr::plothist(x)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;我很喜欢系统自带的成对儿散点图函数&lt;code&gt;pairs()&lt;/code&gt;, 只是功能再强大一点就好了. beginr 里的 &lt;code&gt;plotpairs()&lt;/code&gt; 和 &lt;code&gt;plotpairs2()&lt;/code&gt; 可以实现.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df &amp;lt;- data.frame(a = 1:10, b = 1:10 + rnorm(10), c = 1:10 + rnorm(10))
-beginr::plotpairs(df)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::plotpairs2(df)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;p&amp;lt;0.01&amp;quot;&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;p&amp;lt;0.01&amp;quot;&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;p&amp;lt;0.01&amp;quot;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-4-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;我经常需要将一组自变量 (x) 和多组因变量 (y&lt;sub&gt;1&lt;/sub&gt;, y&lt;sub&gt;2&lt;/sub&gt;, …, y&lt;sub&gt;n&lt;/sub&gt;) 作在同一个坐标系, 或者一组因变量 (y) 对多组自变量 ((x&lt;sub&gt;1&lt;/sub&gt;, x&lt;sub&gt;2&lt;/sub&gt;, …, x&lt;sub&gt;n&lt;/sub&gt;)), 并且画上各自的误差线. beginr 里一条 &lt;code&gt;dfplot()&lt;/code&gt; 或 &lt;code&gt;dfplot2()&lt;/code&gt; 函数就能完成.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;x &amp;lt;- seq(0, 2 * pi, length.out = 100)
-y &amp;lt;- data.frame(sin(x), cos(x))
-yerror &amp;lt;- data.frame(abs(rnorm(100, sd = 0.3)), abs(rnorm(100, sd = 0.1)))
-beginr::dfplot(x, y, yerror = yerror)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::dfplot2(y, x, xerror = yerror)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-5-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;如果只是想简单添加误差线, 那就用 &lt;code&gt;errorbar()&lt;/code&gt; 函数.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;x &amp;lt;- seq(0, 2 * pi, length.out = 100)
-y &amp;lt;- sin(x)
-plot(x, y, type = &amp;quot;l&amp;quot;)
-beginr::errorbar(x, y, yupper = 0.1, ylower = 0.1)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;section level1&#34;&gt;
-&lt;h1&gt;数据框操作&lt;/h1&gt;
-&lt;p&gt;beginr 提供了一些对数据框计算的函数, 例如计算多列数据两两的相关性和线性拟合结果, 可以用 &lt;code&gt;lmdf()&lt;/code&gt; 函数.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df &amp;lt;- data.frame(a = 1:10, b = 1:10 + rnorm(10), c = 1:10 + rnorm(10))
-beginr::lmdf(df)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;##   x y r.squared adj.r.squared  intercept     slope Std.Error.intercept
-## 1 a b 0.8496679     0.8308764  0.9036231 0.8115921           0.7489012
-## 2 a c 0.9588284     0.9536819 -0.4325037 1.0963557           0.4983854
-## 3 b a 0.8496679     0.8308764 -0.1191898 1.0469149           0.9237743
-## 4 b c 0.8019021     0.7771399 -0.5146525 1.1387502           1.1873012
-## 5 c a 0.9588284     0.9536819  0.6046942 0.8745596           0.4136225
-## 6 c b 0.8019021     0.7771399  1.4256823 0.7041949           0.7988375
-##   Std.Error.slope t.intercept   t.slope Pr.intercept     Pr.slope
-## 1      0.12069635   1.2065986  6.724247    0.2620530 1.489407e-04
-## 2      0.08032209  -0.8678098 13.649492    0.4107731 7.989692e-07
-## 3      0.15569249  -0.1290248  6.724247    0.9005229 1.489407e-04
-## 4      0.20010721  -0.4334642  5.690701    0.6761284 4.592807e-04
-## 5      0.06407268   1.4619469 13.649492    0.1818960 7.989692e-07
-## 6      0.12374485   1.7846964  5.690701    0.1121439 4.592807e-04&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;还有两个函数对&lt;code&gt;tapply()&lt;/code&gt;进行了改善, 用来进行因子计算.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::tapplydf()
-beginr::tapplydfv()&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div class=&#34;section level1&#34;&gt;
-&lt;h1&gt;文件读写函数&lt;/h1&gt;
-&lt;p&gt;经常需要同时对多个数据文件进行处理, 逐个读入 R 里太麻烦. beginr 提供了个 &lt;code&gt;readdir()&lt;/code&gt; 函数, 可以一次性把指定文件夹里所有数据读入, 保存在一个列表 (list) 里.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::readdir()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;R 自带的 write 系列文件保存函数, 一不小心就把原有同名文件给覆盖了. beginr 提供了个安全的函数 &lt;code&gt;writefile()&lt;/code&gt;, 避免一失足成千古恨.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::writefile()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;code&gt;list2ascii()&lt;/code&gt; 函数可以把一个列表原样保存成文本文件.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;alist &amp;lt;- list(a = 1:10, b = letters)
-beginr::list2ascii(alist)&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div class=&#34;section level1&#34;&gt;
-&lt;h1&gt;扩展包函数&lt;/h1&gt;
-&lt;p&gt;很多人引用了别人的工作却往往不列出参考文献. 不仅初学者常常如此, 很多学术论文里有些插图一眼就能看出是 R 的某个扩展包作出来的, 但参考文献里却没有列出来, 这往小了说是不尊重别人的工作,往大了说是缺乏学术道德. 对开源社区的生态圈是不利的. beginr 为初学者提供了 &lt;code&gt;bib()&lt;/code&gt; 函数, 可以为指定的 R 扩展包生成文献引用信息, 既可以打印出结果, 也可以直接保存为 ‘.bib’文件方便为’&lt;a href=&#34;http://www.pzhao.org/zh/post/bookdownplus-released/&#34;&gt;bookdownplus&lt;/a&gt;‘&lt;span class=&#34;citation&#34;&gt;(Zhao 2017b)&lt;/span&gt; 或’&lt;a href=&#34;http://www.pzhao.org/zh/post/r-blogdown/&#34;&gt;blogdown&lt;/a&gt;’ &lt;span class=&#34;citation&#34;&gt;(Xie 2017)&lt;/span&gt; 调用.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::bib(pkg = c(&amp;quot;mindr&amp;quot;, &amp;quot;bookdownplus&amp;quot;, &amp;quot;pinyin&amp;quot;))&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## @Manual{R-bookdownplus,
-##   title = {bookdownplus: Generate Varied Types of Books and Documents with R &amp;#39;bookdown&amp;#39;
-## Package},
-##   author = {Peng Zhao},
-##   year = {2017},
-##   note = {R package version 1.3.1},
-##   url = {https://github.com/pzhaonet/bookdownplus},
-## }
-## @Manual{R-mindr,
-##   title = {mindr: Convert Files Between Markdown or Rmarkdown Files and Mindmaps},
-##   author = {Peng Zhao},
-##   year = {2017},
-##   note = {R package version 1.1.0},
-##   url = {https://CRAN.R-project.org/package=mindr},
-## }
-## @Manual{R-pinyin,
-##   title = {pinyin: Convert Chinese Characters into Pinyin},
-##   author = {Peng Zhao},
-##   year = {2017},
-##   note = {R package version 1.1.0},
-##   url = {https://CRAN.R-project.org/package=pinyin},
-## }&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;code&gt;plotpkg()&lt;/code&gt;函数可以做出一张图，来展示指定扩展包在CRAN上被用户下载的次数：&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::plotpkg(&amp;quot;beginr&amp;quot;, &amp;quot;2017-06-23&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-13-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;新手可以用&lt;code&gt;rpkg()&lt;/code&gt;函数快速创建自己的扩展包.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::rpkg()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;好啦, 以后我还会把更多有用的工具添加到 beginr 包里. 欢迎关注 beginr的&lt;a href=&#34;https://github.com/pzhaonet/beginr&#34;&gt;项目主页&lt;/a&gt;. 另外, 使用beginr的地方请记得列出参考文献哦.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::bib(pkg = c(&amp;quot;beginr&amp;quot;))&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## @Manual{R-beginr,
-##   title = {beginr: Functions for R Beginners},
-##   author = {Peng Zhao},
-##   year = {2017},
-##   note = {R package version 0.1.1},
-##   url = {https://github.com/pzhaonet/beginr},
-## }&lt;/code&gt;&lt;/pre&gt;
-&lt;div class=&#34;section level2 unnumbered&#34;&gt;
-&lt;h2&gt;参考文献&lt;/h2&gt;
-&lt;div id=&#34;refs&#34; class=&#34;references&#34;&gt;
-&lt;div id=&#34;ref-R-blogdown&#34;&gt;
-&lt;p&gt;Xie, Yihui. 2017. &lt;em&gt;Blogdown: Create Blogs and Websites with R Markdown&lt;/em&gt;. &lt;a href=&#34;https://github.com/rstudio/blogdown&#34; class=&#34;uri&#34;&gt;https://github.com/rstudio/blogdown&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;ref-R-beginr&#34;&gt;
-&lt;p&gt;Zhao, Peng. 2017a. &lt;em&gt;Beginr: Functions for R Beginners&lt;/em&gt;. &lt;a href=&#34;https://CRAN.R-project.org/package=beginr&#34; class=&#34;uri&#34;&gt;https://CRAN.R-project.org/package=beginr&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;ref-R-bookdownplus&#34;&gt;
-&lt;p&gt;———. 2017b. &lt;em&gt;Bookdownplus: Generate Varied Types of Books and Documents with R ’Bookdown’ Package&lt;/em&gt;. &lt;a href=&#34;https://CRAN.R-project.org/package=bookdownplus&#34; class=&#34;uri&#34;&gt;https://CRAN.R-project.org/package=bookdownplus&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
 &lt;/div&gt;
 </description>
     </item>
