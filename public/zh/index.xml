@@ -11,6 +11,50 @@
     <atom:link href="/zh/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>我把青春献给你：排版 (2)</title>
+      <link>http://www.pzhao.org/zh/post/latex-and-me-2/</link>
+      <pubDate>Wed, 22 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.pzhao.org/zh/post/latex-and-me-2/</guid>
+      <description>&lt;p&gt;5&lt;/p&gt;
+&lt;p&gt;如果上一篇帖子让你以为我在为 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; 做广告，呵呵，那你就上当了。为啥？&lt;/p&gt;
+&lt;p&gt;因为我早就抛弃 LaTeX 了。&lt;/p&gt;
+&lt;p&gt;几年前，把用 LaTeX 排版排得漂漂亮亮的博士论文提交的那一刻，我咬牙切齿地想：老子终于可以跟 LaTeX 这个怪物永别了。&lt;/p&gt;
+&lt;p&gt;想不起来第一次是从哪里知道 LaTeX 的。好像是从 Linux 的学习里，得知 LaTeX 是科研圈常用的写作工具。作为一个混科研圈的工具控，我居然没听说过？而且身边全是搞科研的，居然没人用过？怪哉怪哉。&lt;/p&gt;
+&lt;p&gt;于是，我就去问见多识广的朋友：“你用过 LaTeX 吗？”&lt;/p&gt;
+&lt;p&gt;朋友正穿着白大褂，在中科院化学所的有机实验室忙活，一听我的问题，痛痛快快地回答：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;latex 啊？用过用过，我们经常从美国买。你要做什么？要多少克？&lt;a href=&#34;#fn1&#34; class=&#34;footnoteRef&#34; id=&#34;fnref1&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;我愣了，赶紧说：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;不急不急。你先忙，我需要的时候找你买。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;这就是我初学 LaTeX 时的生态。圈里没人懂，身边没人带，全凭好奇和兴趣。作为一个寻常百姓，学起来的难度可想而知。&lt;/p&gt;
+&lt;p&gt;当时虽然已经奔三的年岁，但血气犹存;还没当爹，手头还有一点闲置光阴。于是，磕磕碰碰，我终于用 LaTeX 把工作总结做了个 beamer 幻灯片，准备在单位作报告时用。花了这么多时间，如果不好用，那还学个啥劲呢？所以，要不要继续学，在此一举。&lt;/p&gt;
+&lt;p&gt;就在这关键时刻，单位领导一句话，把我仅有的热情抛进了万丈深渊。领导说：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;工作总结的 ppt 你不是说你做完了？发给我来修改。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;6&lt;/p&gt;
+&lt;p&gt;LaTeX 在我这里真正派上用武之地，是来德国读博士的时候。&lt;/p&gt;
+&lt;p&gt;刚到这个研究组，我就大吃一惊：组里清一色的 Linux 操作系统，大家拿 LaTeX 写各种文档，用 R 语言处理数据。&lt;/p&gt;
+&lt;p&gt;Linux，LaTeX，R，这是耗尽我青春尾巴的三大怪物。此外还有个 vim，但是跟这仨货比起来，属于小巫见大巫。&lt;/p&gt;
+&lt;p&gt;Linux 和 R 的血泪史按下不表，今天只说 LaTeX。&lt;/p&gt;
+&lt;p&gt;当时我无奈地想，嫁鸡随鸡嫁狗随狗，就跟着这帮 X-men 一起混吧。&lt;/p&gt;
+&lt;p&gt;很快，我又大吃一惊：在这个变种人小组里，牵头的老板，居然是个正常人，用的是 Windows 系统，Word 写文档，Excel 处理数据。话说一个正常老板跟一群变种人下属之间是怎么交流的？&lt;/p&gt;
+&lt;p&gt;没过多久，我就找到了答案：老板从来不直接修改文字。他总是把意见用批注添加到 X-men 发来的 pdf 上，让 X-men 自己去改。&lt;/p&gt;
+&lt;p&gt;于是，在同事的诱骗和老板的纵容下，我踏上了 LaTeX 的邪路。&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn1&#34;&gt;&lt;p&gt;latex 是一种微粒聚合物混合的乳剂，成分包括蛋白质、生物碱、淀粉、糖类、植物油、单宁酸、树脂、树胶等等，详见&lt;a href=&#34;https://en.wikipedia.org/wiki/Latex&#34;&gt;维基百科&lt;/a&gt; 。&lt;a href=&#34;#fnref1&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>我把青春献给你：排版 (1)</title>
       <link>http://www.pzhao.org/zh/post/latex-and-me-1/</link>
       <pubDate>Tue, 21 Nov 2017 00:00:00 +0000</pubDate>
@@ -345,53 +389,6 @@ knitr::include_graphics(if (identical(knitr:::pandoc_to(), &amp;#39;html&amp;#39
 &lt;p&gt;每当孩子玩磁力小火车，把托马斯、培西、詹姆士等前后连成一串开起来的时候，我就想到了这种BT的构词法。还是中文简洁啊。&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://steemitimages.com/0x0/https://ae01.alicdn.com/kf/HTB1OWoeKpXXXXbhXpXXq6xXFXXXN/Wooden-Magnetic-Thomas-and-Friends-the-Tank-Engine-Circus-Donald-Lady-Skarloey-James-Gordon-Pink-Lucie.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>bookdownplus 的两个魔法</title>
-      <link>http://www.pzhao.org/zh/post/bookdownplus-magic/</link>
-      <pubDate>Tue, 27 Jun 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/zh/post/bookdownplus-magic/</guid>
-      <description>&lt;p&gt;bookdown 是个好东西，只是入手有点难，酒香巷深。&lt;/p&gt;
-&lt;p&gt;对于 R 初学者来说，如果身边没有人指导，使用者可能需要花大量精力应付 LaTeX，YAML，Pandoc，而很多初学者可能从来没听说过这些，站在 bookdown 的门口往里张望了一下，说不定就被吓跑了，从而错过了门里的精彩世界。&lt;/p&gt;
-&lt;p&gt;bookdownplus 扩展包，可以让新手对 bookdown 快速上手。从此，bookdown 这坛好酒就不必去深巷苦寻，它就放在你手边。&lt;/p&gt;
-&lt;p&gt;从 v1.2.0 开始，bookdownplus 增加了两个魔法，更是让新手对 bookdown 一见钟情。如果你对 bookdown 感兴趣却苦于入门的烦恼，那么可以试试这两个魔法。&lt;/p&gt;
-&lt;div class=&#34;section level2&#34;&gt;
-&lt;h2&gt;准备工作&lt;/h2&gt;
-&lt;p&gt;首先，安装好必需的软件，包括 R, RStudio, &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt;等。详见 &lt;a href=&#34;https://bookdown.org/yihui/bookdown/&#34;&gt;bookdown 官方手册&lt;/a&gt;。然后，安装开发版的bookdownplus：&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;devtools::install_github(&amp;quot;pzhaonet/bookdownplus&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;再用 &lt;code&gt;setwd()&lt;/code&gt; 将R的工作目录设置到一个空文件夹里。&lt;/p&gt;
-&lt;p&gt;一切准备就绪后，接下来就是见证奇迹的时刻。&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;section level2&#34;&gt;
-&lt;h2&gt;第一个魔法&lt;/h2&gt;
-&lt;p&gt;在 R 里运行下面的代码，然后去喝个茶：&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;for (i in template()[1:19])
-  bookdownplus(template = i, 
-               more_output = more_output()[1:3])&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;回来以后，你会在工作目录里看到很多文件和文件夹。打开那个叫做 &lt;code&gt;_book/&lt;/code&gt;的文件夹，Duang！19个示例文档，每个都以 pdf、Word、网页和电子书格式乖乖地等在那里，等你打开了。其中，电子书 epub 格式可以在手机上阅读，也可以在台式机用免费的Calibre软件打开阅读。&lt;/p&gt;
-&lt;p&gt;这些示例文档，从学术论文到诗歌乐谱，从中文到英文，展示了 bookdown 能胜任的工作。是不是动心了？&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;section level2&#34;&gt;
-&lt;h2&gt;第二个魔法&lt;/h2&gt;
-&lt;p&gt;运行下面的代码，然后看两眼窗外的风景，bookdownplus 就把事情做完了：&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;for (mf in mail_font()) {
-  for (ms in mail_style()) {
-    for (mt in mail_theme()) {
-      outputname &amp;lt;- paste(&amp;#39;mail&amp;#39;, ms, mf, mt, sep = &amp;#39;_&amp;#39;)
-      bookdownplus(template = &amp;#39;mail&amp;#39;, 
-                   mail_style = ms, 
-                   mail_font = mf, 
-                   mail_theme = mt, 
-                   output_name = outputname)
-    }
-  }
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;仍然打开那个叫做 &lt;code&gt;_book/&lt;/code&gt;的文件夹，Duang！ 不同字体、不同主题、不同布局的信件示例文档就全部在那里了。&lt;/p&gt;
-&lt;p&gt;如果看了这个你还没动心，那么只能说明跟 bookdown 没缘分，趁早放手吧！&lt;/p&gt;
-&lt;/div&gt;
 </description>
     </item>
     

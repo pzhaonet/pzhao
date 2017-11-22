@@ -150,12 +150,12 @@ y &amp;lt;- 1:10 + rnorm(10)
 beginr::plotlm(x, y)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;## [[1]]
-##              Estimate Std. Error   t value     Pr(&amp;gt;|t|)
-## (Intercept) 0.5040096  0.8813862 0.5718374 0.5831382193
-## x           0.9174690  0.1420482 6.4588549 0.0001964595
+##              Estimate Std. Error    t value     Pr(&amp;gt;|t|)
+## (Intercept) -0.247064  0.7308329 -0.3380582 7.440197e-01
+## x            1.050641  0.1177844  8.9200404 1.978681e-05
 ## 
 ## [[2]]
-## [1] 0.8390886&lt;/code&gt;&lt;/pre&gt;
+## [1] 0.9086415&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;If you want to display the distribution of a data-set, use &lt;code&gt;plothist()&lt;/code&gt;, which gives you a histogram with markers of the median, mean, quantiles, standard deviation, sample number and the skewness.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;x &amp;lt;- rnorm(10000)
 beginr::plothist(x)&lt;/code&gt;&lt;/pre&gt;
@@ -190,19 +190,19 @@ beginr::errorbar(x, y, yupper = 0.1, ylower = 0.1)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df &amp;lt;- data.frame(a = 1:10, b = 1:10 + rnorm(10), c = 1:10 + rnorm(10))
 beginr::lmdf(df)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;##   x y r.squared adj.r.squared   intercept     slope Std.Error.intercept
-## 1 a b 0.9417758     0.9344978  0.03016132 1.0078459           0.5497403
-## 2 a c 0.9497418     0.9434595 -0.22666883 1.1063051           0.5582915
-## 3 b a 0.9417758     0.9344978  0.29204912 0.9344442           0.5192763
-## 4 b c 0.9046649     0.8927480  0.06360038 1.0396703           0.7543019
-## 5 c a 0.9497418     0.9434595  0.47101108 0.8584809           0.4681025
-## 6 c b 0.9046649     0.8927480  0.47599077 0.8701460           0.6695517
+## 1 a b 0.9668406     0.9626956 -0.08614178 0.9648659           0.3919932
+## 2 a c 0.9527444     0.9468375  0.23512469 0.9838185           0.4806608
+## 3 b a 0.9668406     0.9626956  0.26869505 1.0020466           0.3892538
+## 4 b c 0.8980985     0.8853608  0.56428190 0.9734178           0.6877748
+## 5 c a 0.9527444     0.9468375  0.03220747 0.9684148           0.4838286
+## 6 c b 0.8980985     0.8853608  0.01136900 0.9226239           0.6971797
 ##   Std.Error.slope t.intercept   t.slope Pr.intercept     Pr.slope
-## 1      0.08859867  0.05486467 11.375407    0.9575917 3.218448e-06
-## 2      0.08997683 -0.40600440 12.295444    0.6953823 1.780777e-06
-## 3      0.08214601  0.56241565 11.375407    0.5892406 3.218448e-06
-## 4      0.11932547  0.08431687  8.712895    0.9348763 2.350401e-05
-## 5      0.06982106  1.00621359 12.295444    0.3437738 1.780777e-06
-## 6      0.09986876  0.71090960  8.712895    0.4973402 2.350401e-05&lt;/code&gt;&lt;/pre&gt;
+## 1      0.06317542 -0.21975325 15.272804    0.8315670 3.350661e-07
+## 2      0.07746550  0.48916967 12.700085    0.6378505 1.390110e-06
+## 3      0.06560987  0.69028241 15.272804    0.5095433 3.350661e-07
+## 4      0.11592645  0.82044576  8.396856    0.4357247 3.076793e-05
+## 5      0.07625262  0.06656794 12.700085    0.9485592 1.390110e-06
+## 6      0.10987730  0.01630714  8.396856    0.9873887 3.076793e-05&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;There are two functions as improvements of &lt;code&gt;tapply()&lt;/code&gt; for factor calculation.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::tapplydf()
 beginr::tapplydfv()&lt;/code&gt;&lt;/pre&gt;

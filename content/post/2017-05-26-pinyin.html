@@ -41,26 +41,24 @@ categories: []
 <p>举例如下：</p>
 <pre class="r"><code>library(&#39;pinyin&#39;)
 pinyin(&#39;羌笛何须怨杨柳春风不度玉门关&#39;)</code></pre>
-<pre><code>## [1] &quot;&lt;_U_+_7_F_8_C_&gt;_&lt;_U_+_7_B_1_B_&gt;_&lt;_U_+_4_F_5_5_&gt;_&lt;_U_+_9_8_7_B_&gt;_&lt;_U_+_6_0_2_8_&gt;_&lt;_U_+_6_7_6_8_&gt;_&lt;_U_+_6_7_F_3_&gt;_&lt;_U_+_6_6_2_5_&gt;_&lt;_U_+_9_8_C_E_&gt;_&lt;_U_+_4_E_0_D_&gt;_&lt;_U_+_5_E_A_6_&gt;_&lt;_U_+_7_3_8_9_&gt;_&lt;_U_+_9_5_E_8_&gt;_&lt;_U_+_5_1_7_3_&gt;&quot;</code></pre>
+<pre><code>## [1] &quot;qiānɡ_dí_hé_xū_yuàn_yánɡ_liǔ_chūn_fēnɡ_bú_dù_yù_mén_ɡuān&quot;</code></pre>
 <pre class="r"><code>pinyin(&#39;羌笛何须怨杨柳春风不度玉门关&#39;, sep = &#39; &#39;)</code></pre>
-<pre><code>## [1] &quot;&lt; U + 7 F 8 C &gt; &lt; U + 7 B 1 B &gt; &lt; U + 4 F 5 5 &gt; &lt; U + 9 8 7 B &gt; &lt; U + 6 0 2 8 &gt; &lt; U + 6 7 6 8 &gt; &lt; U + 6 7 F 3 &gt; &lt; U + 6 6 2 5 &gt; &lt; U + 9 8 C E &gt; &lt; U + 4 E 0 D &gt; &lt; U + 5 E A 6 &gt; &lt; U + 7 3 8 9 &gt; &lt; U + 9 5 E 8 &gt; &lt; U + 5 1 7 3 &gt;&quot;</code></pre>
+<pre><code>## [1] &quot;qiānɡ dí hé xū yuàn yánɡ liǔ chūn fēnɡ bú dù yù mén ɡuān&quot;</code></pre>
 <pre class="r"><code>pinyin(&#39;羌笛何须怨杨柳春风不度玉门关&#39;, sep = &#39; &#39;, method = &#39;tone&#39;)</code></pre>
-<pre><code>## [1] &quot;&lt; U + 7 F 8 C &gt; &lt; U + 7 B 1 B &gt; &lt; U + 4 F 5 5 &gt; &lt; U + 9 8 7 B &gt; &lt; U + 6 0 2 8 &gt; &lt; U + 6 7 6 8 &gt; &lt; U + 6 7 F 3 &gt; &lt; U + 6 6 2 5 &gt; &lt; U + 9 8 C E &gt; &lt; U + 4 E 0 D &gt; &lt; U + 5 E A 6 &gt; &lt; U + 7 3 8 9 &gt; &lt; U + 9 5 E 8 &gt; &lt; U + 5 1 7 3 &gt;&quot;</code></pre>
+<pre><code>## [1] &quot;qiang1 di2 he2 xu1 yuan4 yang2 liu3 chun1 feng1 bu2 du4 yu4 men2 guan1&quot;</code></pre>
 <pre class="r"><code>pinyin(&#39;羌笛何须怨杨柳春风不度玉门关&#39;, sep = &#39; &#39;, method = &#39;toneless&#39;)</code></pre>
-<pre><code>## [1] &quot;&lt; U + 7 F 8 C &gt; &lt; U + 7 B 1 B &gt; &lt; U + 4 F 5 5 &gt; &lt; U + 9 8 7 B &gt; &lt; U + 6 0 2 8 &gt; &lt; U + 6 7 6 8 &gt; &lt; U + 6 7 F 3 &gt; &lt; U + 6 6 2 5 &gt; &lt; U + 9 8 C E &gt; &lt; U + 4 E 0 D &gt; &lt; U + 5 E A 6 &gt; &lt; U + 7 3 8 9 &gt; &lt; U + 9 5 E 8 &gt; &lt; U + 5 1 7 3 &gt;&quot;</code></pre>
+<pre><code>## [1] &quot;qiang di he xu yuan yang liu chun feng bu du yu men guan&quot;</code></pre>
 <pre class="r"><code>pinyin(&#39;羌笛何须怨杨柳春风不度玉门关&#39;, sep = &#39;&#39;, only_first_letter = TRUE)</code></pre>
-<pre><code>## [1] &quot;&lt;U+7F8C&gt;&lt;U+7B1B&gt;&lt;U+4F55&gt;&lt;U+987B&gt;&lt;U+6028&gt;&lt;U+6768&gt;&lt;U+67F3&gt;&lt;U+6625&gt;&lt;U+98CE&gt;&lt;U+4E0D&gt;&lt;U+5EA6&gt;&lt;U+7389&gt;&lt;U+95E8&gt;&lt;U+5173&gt;&quot;</code></pre>
+<pre><code>## [1] &quot;qdhxyylcfbdymɡ&quot;</code></pre>
 <pre class="r"><code>pinyin(&#39;羌笛何须怨?杨柳春风,不度玉门关.&#39;, sep = &#39;&#39;, nonezh_replace = &#39;-&#39;)</code></pre>
-<pre><code>## [1] &quot;-------------------------------------------------------------------------------------------------------------------&quot;</code></pre>
+<pre><code>## [1] &quot;qiānɡdíhéxūyuàn-yánɡliǔchūnfēnɡ-búdùyùménɡuān-&quot;</code></pre>
 <p>如果自变量是多个字符串的向量，那么只会转换第一个字符串：</p>
 <pre class="r"><code>pinyin(c(&#39;羌笛何须怨杨柳&#39;, &#39;春风不度玉门关&#39;))</code></pre>
-<pre><code>## [1] &quot;&lt;_U_+_7_F_8_C_&gt;_&lt;_U_+_7_B_1_B_&gt;_&lt;_U_+_4_F_5_5_&gt;_&lt;_U_+_9_8_7_B_&gt;_&lt;_U_+_6_0_2_8_&gt;_&lt;_U_+_6_7_6_8_&gt;_&lt;_U_+_6_7_F_3_&gt;&quot;</code></pre>
+<pre><code>## [1] &quot;qiānɡ_dí_hé_xū_yuàn_yánɡ_liǔ&quot;</code></pre>
 <p>这怎么行？哎，用 <code>sapply()</code> 嘛：</p>
 <pre class="r"><code>sapply(c(&#39;羌笛何须怨杨柳&#39;, &#39;春风不度玉门关&#39;), pinyin)</code></pre>
-<pre><code>##                                                          &lt;U+7F8C&gt;&lt;U+7B1B&gt;&lt;U+4F55&gt;&lt;U+987B&gt;&lt;U+6028&gt;&lt;U+6768&gt;&lt;U+67F3&gt; 
-## &quot;&lt;_U_+_7_F_8_C_&gt;_&lt;_U_+_7_B_1_B_&gt;_&lt;_U_+_4_F_5_5_&gt;_&lt;_U_+_9_8_7_B_&gt;_&lt;_U_+_6_0_2_8_&gt;_&lt;_U_+_6_7_6_8_&gt;_&lt;_U_+_6_7_F_3_&gt;&quot; 
-##                                                          &lt;U+6625&gt;&lt;U+98CE&gt;&lt;U+4E0D&gt;&lt;U+5EA6&gt;&lt;U+7389&gt;&lt;U+95E8&gt;&lt;U+5173&gt; 
-## &quot;&lt;_U_+_6_6_2_5_&gt;_&lt;_U_+_9_8_C_E_&gt;_&lt;_U_+_4_E_0_D_&gt;_&lt;_U_+_5_E_A_6_&gt;_&lt;_U_+_7_3_8_9_&gt;_&lt;_U_+_9_5_E_8_&gt;_&lt;_U_+_5_1_7_3_&gt;&quot;</code></pre>
+<pre><code>##                 羌笛何须怨杨柳                 春风不度玉门关 
+## &quot;qiānɡ_dí_hé_xū_yuàn_yánɡ_liǔ&quot;  &quot;chūn_fēnɡ_bú_dù_yù_mén_ɡuān&quot;</code></pre>
 <p>其他两个函数，其实是 <code>pinyin()</code> 的延伸和示例：</p>
 <ul>
 <li><code>file.rename2py()</code>用来将文件名里的汉字转换成拼音。</li>

@@ -11,6 +11,50 @@
     <atom:link href="/zh/post/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>我把青春献给你：排版 (2)</title>
+      <link>http://www.pzhao.org/zh/post/latex-and-me-2/</link>
+      <pubDate>Wed, 22 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.pzhao.org/zh/post/latex-and-me-2/</guid>
+      <description>&lt;p&gt;5&lt;/p&gt;
+&lt;p&gt;如果上一篇帖子让你以为我在为 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; 做广告，呵呵，那你就上当了。为啥？&lt;/p&gt;
+&lt;p&gt;因为我早就抛弃 LaTeX 了。&lt;/p&gt;
+&lt;p&gt;几年前，把用 LaTeX 排版排得漂漂亮亮的博士论文提交的那一刻，我咬牙切齿地想：老子终于可以跟 LaTeX 这个怪物永别了。&lt;/p&gt;
+&lt;p&gt;想不起来第一次是从哪里知道 LaTeX 的。好像是从 Linux 的学习里，得知 LaTeX 是科研圈常用的写作工具。作为一个混科研圈的工具控，我居然没听说过？而且身边全是搞科研的，居然没人用过？怪哉怪哉。&lt;/p&gt;
+&lt;p&gt;于是，我就去问见多识广的朋友：“你用过 LaTeX 吗？”&lt;/p&gt;
+&lt;p&gt;朋友正穿着白大褂，在中科院化学所的有机实验室忙活，一听我的问题，痛痛快快地回答：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;latex 啊？用过用过，我们经常从美国买。你要做什么？要多少克？&lt;a href=&#34;#fn1&#34; class=&#34;footnoteRef&#34; id=&#34;fnref1&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;我愣了，赶紧说：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;不急不急。你先忙，我需要的时候找你买。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;这就是我初学 LaTeX 时的生态。圈里没人懂，身边没人带，全凭好奇和兴趣。作为一个寻常百姓，学起来的难度可想而知。&lt;/p&gt;
+&lt;p&gt;当时虽然已经奔三的年岁，但血气犹存;还没当爹，手头还有一点闲置光阴。于是，磕磕碰碰，我终于用 LaTeX 把工作总结做了个 beamer 幻灯片，准备在单位作报告时用。花了这么多时间，如果不好用，那还学个啥劲呢？所以，要不要继续学，在此一举。&lt;/p&gt;
+&lt;p&gt;就在这关键时刻，单位领导一句话，把我仅有的热情抛进了万丈深渊。领导说：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;工作总结的 ppt 你不是说你做完了？发给我来修改。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;6&lt;/p&gt;
+&lt;p&gt;LaTeX 在我这里真正派上用武之地，是来德国读博士的时候。&lt;/p&gt;
+&lt;p&gt;刚到这个研究组，我就大吃一惊：组里清一色的 Linux 操作系统，大家拿 LaTeX 写各种文档，用 R 语言处理数据。&lt;/p&gt;
+&lt;p&gt;Linux，LaTeX，R，这是耗尽我青春尾巴的三大怪物。此外还有个 vim，但是跟这仨货比起来，属于小巫见大巫。&lt;/p&gt;
+&lt;p&gt;Linux 和 R 的血泪史按下不表，今天只说 LaTeX。&lt;/p&gt;
+&lt;p&gt;当时我无奈地想，嫁鸡随鸡嫁狗随狗，就跟着这帮 X-men 一起混吧。&lt;/p&gt;
+&lt;p&gt;很快，我又大吃一惊：在这个变种人小组里，牵头的老板，居然是个正常人，用的是 Windows 系统，Word 写文档，Excel 处理数据。话说一个正常老板跟一群变种人下属之间是怎么交流的？&lt;/p&gt;
+&lt;p&gt;没过多久，我就找到了答案：老板从来不直接修改文字。他总是把意见用批注添加到 X-men 发来的 pdf 上，让 X-men 自己去改。&lt;/p&gt;
+&lt;p&gt;于是，在同事的诱骗和老板的纵容下，我踏上了 LaTeX 的邪路。&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn1&#34;&gt;&lt;p&gt;latex 是一种微粒聚合物混合的乳剂，成分包括蛋白质、生物碱、淀粉、糖类、植物油、单宁酸、树脂、树胶等等，详见&lt;a href=&#34;https://en.wikipedia.org/wiki/Latex&#34;&gt;维基百科&lt;/a&gt; 。&lt;a href=&#34;#fnref1&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>我把青春献给你：排版 (1)</title>
       <link>http://www.pzhao.org/zh/post/latex-and-me-1/</link>
       <pubDate>Tue, 21 Nov 2017 00:00:00 +0000</pubDate>
@@ -439,11 +483,11 @@ beginr::plotlm(x, y)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;## [[1]]
 ##               Estimate Std. Error    t value     Pr(&amp;gt;|t|)
-## (Intercept) -0.4091608  0.8722924 -0.4690639 0.6515413941
-## x            0.9986985  0.1405826  7.1039953 0.0001015914
+## (Intercept) -0.4991186  0.6973729 -0.7157127 4.945256e-01
+## x            1.1562041  0.1123918 10.2872630 6.867752e-06
 ## 
 ## [[2]]
-## [1] 0.8631701&lt;/code&gt;&lt;/pre&gt;
+## [1] 0.9297184&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;经常需要了解一组数据的分布, 看看是不是正态分布. beginr 里的 &lt;code&gt;plothist()&lt;/code&gt; 函数不仅做出直方图和平滑曲线, 并且标出中值, 中位数, 四分位数, 标准偏差, 样本数, 以及用来判断是否正态分布的 skewness 值.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;x &amp;lt;- rnorm(10000)
 beginr::plothist(x)&lt;/code&gt;&lt;/pre&gt;
@@ -478,19 +522,19 @@ beginr::errorbar(x, y, yupper = 0.1, ylower = 0.1)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df &amp;lt;- data.frame(a = 1:10, b = 1:10 + rnorm(10), c = 1:10 + rnorm(10))
 beginr::lmdf(df)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;##   x y r.squared adj.r.squared  intercept     slope Std.Error.intercept
-## 1 a b 0.9474494     0.9408806 -1.2492810 1.1570638           0.5977964
-## 2 a c 0.7666647     0.7374978 -0.3005449 1.0089423           1.2210661
-## 3 b a 0.9474494     0.9408806  1.3119886 0.8188394           0.4192810
-## 4 b c 0.7502448     0.7190254  0.9543127 0.8396259           1.0532643
-## 5 c a 0.7666647     0.7374978  1.5117190 0.7598697           0.9196564
-## 6 c b 0.7502448     0.7190254  0.4246678 0.8935465           1.1310243
+## 1 a b 0.9359070     0.9278954 -0.3128455 1.0208567           0.5860561
+## 2 a c 0.9479300     0.9414213 -0.6087384 1.1456013           0.5890122
+## 3 b a 0.9359070     0.9278954  0.6393239 0.9167858           0.5180180
+## 4 b c 0.8656663     0.8488746  0.1915841 1.0374619           0.8824239
+## 5 c a 0.9479300     0.9414213  0.7900865 0.8274520           0.4538872
+## 6 c b 0.8656663     0.8488746  0.5523599 0.8344078           0.7692991
 ##   Std.Error.slope t.intercept   t.slope Pr.intercept     Pr.slope
-## 1      0.09634362  -2.0898100 12.009761   0.07003876 2.130624e-06
-## 2      0.19679262  -0.2461332  5.126932   0.81177665 8.994778e-04
-## 3      0.06818116   3.1291394 12.009761   0.01403352 2.130624e-06
-## 4      0.17127604   0.9060524  4.902179   0.39137982 1.190488e-03
-## 5      0.14821140   1.6437869  5.126932   0.13884279 8.994778e-04
-## 6      0.18227537   0.3754718  4.902179   0.71706959 1.190488e-03&lt;/code&gt;&lt;/pre&gt;
+## 1      0.09445149  -0.5338149 10.808265    0.6079786 4.737511e-06
+## 2      0.09492792  -1.0334903 12.068118    0.3316028 2.053330e-06
+## 3      0.08482267   1.2341732 10.808265    0.2521615 4.737511e-06
+## 4      0.14449218   0.2171112  7.180056    0.8335564 9.427181e-05
+## 5      0.06856512   1.7407113 12.068118    0.1199147 2.053330e-06
+## 6      0.11621188   0.7180041  7.180056    0.4931864 9.427181e-05&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;还有两个函数对&lt;code&gt;tapply()&lt;/code&gt;进行了改善, 用来进行因子计算.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::tapplydf()
 beginr::tapplydfv()&lt;/code&gt;&lt;/pre&gt;
@@ -928,26 +972,24 @@ install.packages(&amp;#39;bookdownplus&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;举例如下：&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(&amp;#39;pinyin&amp;#39;)
 pinyin(&amp;#39;羌笛何须怨杨柳春风不度玉门关&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;&amp;lt;_U_+_7_F_8_C_&amp;gt;_&amp;lt;_U_+_7_B_1_B_&amp;gt;_&amp;lt;_U_+_4_F_5_5_&amp;gt;_&amp;lt;_U_+_9_8_7_B_&amp;gt;_&amp;lt;_U_+_6_0_2_8_&amp;gt;_&amp;lt;_U_+_6_7_6_8_&amp;gt;_&amp;lt;_U_+_6_7_F_3_&amp;gt;_&amp;lt;_U_+_6_6_2_5_&amp;gt;_&amp;lt;_U_+_9_8_C_E_&amp;gt;_&amp;lt;_U_+_4_E_0_D_&amp;gt;_&amp;lt;_U_+_5_E_A_6_&amp;gt;_&amp;lt;_U_+_7_3_8_9_&amp;gt;_&amp;lt;_U_+_9_5_E_8_&amp;gt;_&amp;lt;_U_+_5_1_7_3_&amp;gt;&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;qiānɡ_dí_hé_xū_yuàn_yánɡ_liǔ_chūn_fēnɡ_bú_dù_yù_mén_ɡuān&amp;quot;&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;pinyin(&amp;#39;羌笛何须怨杨柳春风不度玉门关&amp;#39;, sep = &amp;#39; &amp;#39;)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;&amp;lt; U + 7 F 8 C &amp;gt; &amp;lt; U + 7 B 1 B &amp;gt; &amp;lt; U + 4 F 5 5 &amp;gt; &amp;lt; U + 9 8 7 B &amp;gt; &amp;lt; U + 6 0 2 8 &amp;gt; &amp;lt; U + 6 7 6 8 &amp;gt; &amp;lt; U + 6 7 F 3 &amp;gt; &amp;lt; U + 6 6 2 5 &amp;gt; &amp;lt; U + 9 8 C E &amp;gt; &amp;lt; U + 4 E 0 D &amp;gt; &amp;lt; U + 5 E A 6 &amp;gt; &amp;lt; U + 7 3 8 9 &amp;gt; &amp;lt; U + 9 5 E 8 &amp;gt; &amp;lt; U + 5 1 7 3 &amp;gt;&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;qiānɡ dí hé xū yuàn yánɡ liǔ chūn fēnɡ bú dù yù mén ɡuān&amp;quot;&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;pinyin(&amp;#39;羌笛何须怨杨柳春风不度玉门关&amp;#39;, sep = &amp;#39; &amp;#39;, method = &amp;#39;tone&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;&amp;lt; U + 7 F 8 C &amp;gt; &amp;lt; U + 7 B 1 B &amp;gt; &amp;lt; U + 4 F 5 5 &amp;gt; &amp;lt; U + 9 8 7 B &amp;gt; &amp;lt; U + 6 0 2 8 &amp;gt; &amp;lt; U + 6 7 6 8 &amp;gt; &amp;lt; U + 6 7 F 3 &amp;gt; &amp;lt; U + 6 6 2 5 &amp;gt; &amp;lt; U + 9 8 C E &amp;gt; &amp;lt; U + 4 E 0 D &amp;gt; &amp;lt; U + 5 E A 6 &amp;gt; &amp;lt; U + 7 3 8 9 &amp;gt; &amp;lt; U + 9 5 E 8 &amp;gt; &amp;lt; U + 5 1 7 3 &amp;gt;&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;qiang1 di2 he2 xu1 yuan4 yang2 liu3 chun1 feng1 bu2 du4 yu4 men2 guan1&amp;quot;&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;pinyin(&amp;#39;羌笛何须怨杨柳春风不度玉门关&amp;#39;, sep = &amp;#39; &amp;#39;, method = &amp;#39;toneless&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;&amp;lt; U + 7 F 8 C &amp;gt; &amp;lt; U + 7 B 1 B &amp;gt; &amp;lt; U + 4 F 5 5 &amp;gt; &amp;lt; U + 9 8 7 B &amp;gt; &amp;lt; U + 6 0 2 8 &amp;gt; &amp;lt; U + 6 7 6 8 &amp;gt; &amp;lt; U + 6 7 F 3 &amp;gt; &amp;lt; U + 6 6 2 5 &amp;gt; &amp;lt; U + 9 8 C E &amp;gt; &amp;lt; U + 4 E 0 D &amp;gt; &amp;lt; U + 5 E A 6 &amp;gt; &amp;lt; U + 7 3 8 9 &amp;gt; &amp;lt; U + 9 5 E 8 &amp;gt; &amp;lt; U + 5 1 7 3 &amp;gt;&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;qiang di he xu yuan yang liu chun feng bu du yu men guan&amp;quot;&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;pinyin(&amp;#39;羌笛何须怨杨柳春风不度玉门关&amp;#39;, sep = &amp;#39;&amp;#39;, only_first_letter = TRUE)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;&amp;lt;U+7F8C&amp;gt;&amp;lt;U+7B1B&amp;gt;&amp;lt;U+4F55&amp;gt;&amp;lt;U+987B&amp;gt;&amp;lt;U+6028&amp;gt;&amp;lt;U+6768&amp;gt;&amp;lt;U+67F3&amp;gt;&amp;lt;U+6625&amp;gt;&amp;lt;U+98CE&amp;gt;&amp;lt;U+4E0D&amp;gt;&amp;lt;U+5EA6&amp;gt;&amp;lt;U+7389&amp;gt;&amp;lt;U+95E8&amp;gt;&amp;lt;U+5173&amp;gt;&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;qdhxyylcfbdymɡ&amp;quot;&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;pinyin(&amp;#39;羌笛何须怨?杨柳春风,不度玉门关.&amp;#39;, sep = &amp;#39;&amp;#39;, nonezh_replace = &amp;#39;-&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;-------------------------------------------------------------------------------------------------------------------&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;qiānɡdíhéxūyuàn-yánɡliǔchūnfēnɡ-búdùyùménɡuān-&amp;quot;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;如果自变量是多个字符串的向量，那么只会转换第一个字符串：&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;pinyin(c(&amp;#39;羌笛何须怨杨柳&amp;#39;, &amp;#39;春风不度玉门关&amp;#39;))&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;&amp;lt;_U_+_7_F_8_C_&amp;gt;_&amp;lt;_U_+_7_B_1_B_&amp;gt;_&amp;lt;_U_+_4_F_5_5_&amp;gt;_&amp;lt;_U_+_9_8_7_B_&amp;gt;_&amp;lt;_U_+_6_0_2_8_&amp;gt;_&amp;lt;_U_+_6_7_6_8_&amp;gt;_&amp;lt;_U_+_6_7_F_3_&amp;gt;&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;qiānɡ_dí_hé_xū_yuàn_yánɡ_liǔ&amp;quot;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;这怎么行？哎，用 &lt;code&gt;sapply()&lt;/code&gt; 嘛：&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;sapply(c(&amp;#39;羌笛何须怨杨柳&amp;#39;, &amp;#39;春风不度玉门关&amp;#39;), pinyin)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;##                                                          &amp;lt;U+7F8C&amp;gt;&amp;lt;U+7B1B&amp;gt;&amp;lt;U+4F55&amp;gt;&amp;lt;U+987B&amp;gt;&amp;lt;U+6028&amp;gt;&amp;lt;U+6768&amp;gt;&amp;lt;U+67F3&amp;gt; 
-## &amp;quot;&amp;lt;_U_+_7_F_8_C_&amp;gt;_&amp;lt;_U_+_7_B_1_B_&amp;gt;_&amp;lt;_U_+_4_F_5_5_&amp;gt;_&amp;lt;_U_+_9_8_7_B_&amp;gt;_&amp;lt;_U_+_6_0_2_8_&amp;gt;_&amp;lt;_U_+_6_7_6_8_&amp;gt;_&amp;lt;_U_+_6_7_F_3_&amp;gt;&amp;quot; 
-##                                                          &amp;lt;U+6625&amp;gt;&amp;lt;U+98CE&amp;gt;&amp;lt;U+4E0D&amp;gt;&amp;lt;U+5EA6&amp;gt;&amp;lt;U+7389&amp;gt;&amp;lt;U+95E8&amp;gt;&amp;lt;U+5173&amp;gt; 
-## &amp;quot;&amp;lt;_U_+_6_6_2_5_&amp;gt;_&amp;lt;_U_+_9_8_C_E_&amp;gt;_&amp;lt;_U_+_4_E_0_D_&amp;gt;_&amp;lt;_U_+_5_E_A_6_&amp;gt;_&amp;lt;_U_+_7_3_8_9_&amp;gt;_&amp;lt;_U_+_9_5_E_8_&amp;gt;_&amp;lt;_U_+_5_1_7_3_&amp;gt;&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##                 羌笛何须怨杨柳                 春风不度玉门关 
+## &amp;quot;qiānɡ_dí_hé_xū_yuàn_yánɡ_liǔ&amp;quot;  &amp;quot;chūn_fēnɡ_bú_dù_yù_mén_ɡuān&amp;quot;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;其他两个函数，其实是 &lt;code&gt;pinyin()&lt;/code&gt; 的延伸和示例：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;file.rename2py()&lt;/code&gt;用来将文件名里的汉字转换成拼音。&lt;/li&gt;
@@ -1273,52 +1315,6 @@ R^2 =(\frac{\sum_{i=1}^{n}(O_i-\overline{O})(P_i-\overline{P})}{\sqrt{\sum_{i=1}
 &lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
 \int \csc x \cot x \text {d} x = -\csc x + C\\
 \end{equation}\]&lt;/span&gt;
-&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>R mindr: 把 Markdown 转成思维导图</title>
-      <link>http://www.pzhao.org/zh/post/mindr/</link>
-      <pubDate>Fri, 19 May 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/zh/post/mindr/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;更新：2017-06-19，&lt;a href=&#34;https://cran.r-project.org/web/packages/mindr/index.html&#34;&gt;‘mindr 1.0.4’&lt;/a&gt; 在 CRAN 正式发布。&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;http://cranlogs.r-pkg.org/badges/grand-total/mindr&#34; /&gt;
-
-&lt;/div&gt;
-&lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-05-19-mindr_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;将 markdown (.md, .Rmd) 文件转换成思维导图的 R 扩展包 &lt;a href=&#34;https://github.com/pzhaonet/mindr&#34;&gt;mindr&lt;/a&gt; 是我写的第五个 R 包，安装方法如下：&lt;/p&gt;
-&lt;p&gt;稳定版：&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;install.packages(&amp;quot;mindr&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;开发版：&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;devtools::install_github(&amp;quot;pzhaonet/mindr&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;使用方法：&lt;/p&gt;
-&lt;p&gt;在R的工作目录创建个名叫 &lt;code&gt;mm/&lt;/code&gt; 的文件夹，丢进去一堆 markdown 文件 (.md, .Rmd)，然后运行：&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;mindr::md2mm()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;就得到个 &lt;code&gt;mm.mm&lt;/code&gt; 的思维导图文件，用免费的思维导图软件 &lt;a href=&#34;http://freemind.sourceforge.net/wiki/index.php/Download&#34;&gt;freemind&lt;/a&gt; 可以直接打开。界面比较简陋。或者用漂亮的免费软件 &lt;a href=&#34;http://www.xmind.net/download/win/&#34;&gt;Xmind&lt;/a&gt;，需要选择&lt;code&gt;导入 freemind 导图&lt;/code&gt;。&lt;/p&gt;
-&lt;p&gt;mindr包还有另外两个函数：&lt;code&gt;mm2md()&lt;/code&gt;是反向操作，将思维导图转换成markdown;&lt;code&gt;outline()&lt;/code&gt;是从markdown文件里提取出各级标题生成大纲。&lt;/p&gt;
-&lt;hr /&gt;
-&lt;p&gt;我的书稿《学R》最初是先用思维导图拟定框架，然后在 Word 里写，后来转到 bookdown 里完成的。今天下午，我在书稿的旧思维导图里照着新稿修改，想把两者统一了。改着改着，觉得不对劲儿呀，R markdown 的哲学是维护一份文档，导出多个格式，我怎么又开始维护两份内容相同只是格式不同的文档了？&lt;/p&gt;
-&lt;p&gt;这肯定不是什么新问题，肯定有办法直接把 markdown 转成思维导图。于是我搜。我搜搜搜，竟然没搜到！&lt;/p&gt;
-&lt;p&gt;这就怪了。从常识上判断，我认为这个工具肯定有，说不定藏在某个 R 包里，只是太隐蔽了。&lt;/p&gt;
-&lt;p&gt;是应该继续搜呢，还是自己动手？有时候真是难以权衡。我掂量了一下轻重，选择了后者。&lt;/p&gt;
-&lt;p&gt;晚上，写好了。&lt;/p&gt;
-&lt;p&gt;先拿 &lt;a href=&#34;https://github.com/rstudio/bookdown/tree/master/inst/examples&#34;&gt;bookdown 书稿&lt;/a&gt;当小白鼠练手，用 freemind 直接打开：&lt;/p&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/mindr/master/showcase/mindr_bookdown.jpeg&#34; /&gt;
-
-&lt;/div&gt;
-&lt;p&gt;freemind 确实简陋。再拿 &lt;a href=&#34;https://github.com/rstudio/blogdown/tree/master/docs&#34;&gt;blogdown 书稿&lt;/a&gt; 试试，导入 Xmind 看看：&lt;/p&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/mindr/master/showcase/mindr_blogdown.jpg&#34; /&gt;
-
-&lt;/div&gt;
-&lt;p&gt;还不错。好了，实验成熟了，放心地用在自己的书稿上，并且挑个最漂亮的款式：&lt;/p&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/mindr/master/showcase/mindr_xuer.jpg&#34; /&gt;
-
 &lt;/div&gt;
 </description>
     </item>
