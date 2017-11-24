@@ -45,6 +45,7 @@
 &lt;p&gt;很快，我又大吃一惊：在这个变种人小组里，牵头的老板，居然是个正常人，用的是 Windows 系统，Word 写文档，Excel 处理数据。话说一个正常老板跟一群变种人下属之间是怎么交流的？&lt;/p&gt;
 &lt;p&gt;没过多久，我就找到了答案：老板从来不直接修改文字。他总是把意见用批注添加到 X-men 发来的 pdf 上，让 X-men 自己去改。&lt;/p&gt;
 &lt;p&gt;于是，在同事的诱骗和老板的纵容下，我踏上了 LaTeX 的邪路。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://dcmnyjhirotcw.cloudfront.net/cdn/scdn/images/uploads/economy-powder-free-latex-gloves_56693.jpg&#34; /&gt; 图解：Latex 材质的手套，要不要来一双？&lt;/p&gt;
 &lt;div class=&#34;footnotes&#34;&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
@@ -482,12 +483,12 @@ y &amp;lt;- 1:10 + rnorm(10)
 beginr::plotlm(x, y)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;## [[1]]
-##               Estimate Std. Error    t value     Pr(&amp;gt;|t|)
-## (Intercept) -0.4991186  0.6973729 -0.7157127 4.945256e-01
-## x            1.1562041  0.1123918 10.2872630 6.867752e-06
+##              Estimate Std. Error  t value     Pr(&amp;gt;|t|)
+## (Intercept) 0.7875901  0.6212906 1.267668 2.405669e-01
+## x           0.8705270  0.1001300 8.693964 2.388076e-05
 ## 
 ## [[2]]
-## [1] 0.9297184&lt;/code&gt;&lt;/pre&gt;
+## [1] 0.9042891&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;经常需要了解一组数据的分布, 看看是不是正态分布. beginr 里的 &lt;code&gt;plothist()&lt;/code&gt; 函数不仅做出直方图和平滑曲线, 并且标出中值, 中位数, 四分位数, 标准偏差, 样本数, 以及用来判断是否正态分布的 skewness 值.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;x &amp;lt;- rnorm(10000)
 beginr::plothist(x)&lt;/code&gt;&lt;/pre&gt;
@@ -521,20 +522,20 @@ beginr::errorbar(x, y, yupper = 0.1, ylower = 0.1)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;beginr 提供了一些对数据框计算的函数, 例如计算多列数据两两的相关性和线性拟合结果, 可以用 &lt;code&gt;lmdf()&lt;/code&gt; 函数.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df &amp;lt;- data.frame(a = 1:10, b = 1:10 + rnorm(10), c = 1:10 + rnorm(10))
 beginr::lmdf(df)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;##   x y r.squared adj.r.squared  intercept     slope Std.Error.intercept
-## 1 a b 0.9359070     0.9278954 -0.3128455 1.0208567           0.5860561
-## 2 a c 0.9479300     0.9414213 -0.6087384 1.1456013           0.5890122
-## 3 b a 0.9359070     0.9278954  0.6393239 0.9167858           0.5180180
-## 4 b c 0.8656663     0.8488746  0.1915841 1.0374619           0.8824239
-## 5 c a 0.9479300     0.9414213  0.7900865 0.8274520           0.4538872
-## 6 c b 0.8656663     0.8488746  0.5523599 0.8344078           0.7692991
+&lt;pre&gt;&lt;code&gt;##   x y r.squared adj.r.squared   intercept     slope Std.Error.intercept
+## 1 a b 0.9049854     0.8931085 -1.80332853 1.1845936           0.8420333
+## 2 a c 0.9501407     0.9439083  0.28040656 1.0265138           0.5158568
+## 3 b a 0.9049854     0.8931085  1.90025632 0.7639627           0.5177295
+## 4 b c 0.8141248     0.7908904  2.33066773 0.7630758           0.7625867
+## 5 c a 0.9501407     0.9439083  0.01468183 0.9255996           0.4987816
+## 6 c b 0.8141248     0.7908904 -1.61075461 1.0668989           1.1992143
 ##   Std.Error.slope t.intercept   t.slope Pr.intercept     Pr.slope
-## 1      0.09445149  -0.5338149 10.808265    0.6079786 4.737511e-06
-## 2      0.09492792  -1.0334903 12.068118    0.3316028 2.053330e-06
-## 3      0.08482267   1.2341732 10.808265    0.2521615 4.737511e-06
-## 4      0.14449218   0.2171112  7.180056    0.8335564 9.427181e-05
-## 5      0.06856512   1.7407113 12.068118    0.1199147 2.053330e-06
-## 6      0.11621188   0.7180041  7.180056    0.4931864 9.427181e-05&lt;/code&gt;&lt;/pre&gt;
+## 1      0.13570596  -2.1416356  8.729120  0.064611608 2.318635e-05
+## 2      0.08313786   0.5435744 12.347129  0.601548882 1.724616e-06
+## 3      0.08751887   3.6703650  8.729120  0.006306162 2.318635e-05
+## 4      0.12891041   3.0562658  5.919428  0.015671192 3.539191e-04
+## 5      0.07496476   0.0294354 12.347129  0.977238419 1.724616e-06
+## 6      0.18023683  -1.3431749  5.919428  0.216071683 3.539191e-04&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;还有两个函数对&lt;code&gt;tapply()&lt;/code&gt;进行了改善, 用来进行因子计算.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::tapplydf()
 beginr::tapplydfv()&lt;/code&gt;&lt;/pre&gt;
@@ -558,7 +559,7 @@ beginr::list2ascii(alist)&lt;/code&gt;&lt;/pre&gt;
 ## Package},
 ##   author = {Peng Zhao},
 ##   year = {2017},
-##   note = {R package version 1.3.2},
+##   note = {R package version 1.4.0},
 ##   url = {https://github.com/pzhaonet/bookdownplus},
 ## }
 ## @Manual{R-mindr,
@@ -586,7 +587,7 @@ beginr::list2ascii(alist)&lt;/code&gt;&lt;/pre&gt;
 ##   title = {beginr: Functions for R Beginners},
 ##   author = {Peng Zhao},
 ##   year = {2017},
-##   note = {R package version 0.1.1},
+##   note = {R package version 0.1.2},
 ##   url = {https://github.com/pzhaonet/beginr},
 ## }&lt;/code&gt;&lt;/pre&gt;
 &lt;div class=&#34;section level2 unnumbered&#34;&gt;
