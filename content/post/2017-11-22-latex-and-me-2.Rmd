@@ -58,3 +58,6 @@ Linux 和 R 的血泪史按下不表，今天只说 LaTeX。
 没过多久，我就找到了答案：老板从来不直接修改文字。他总是把意见用批注添加到 X-men 发来的 pdf 上，让 X-men 自己去改。
 
 于是，在同事的诱骗和老板的纵容下，我踏上了 LaTeX 的邪路。
+
+![](https://dcmnyjhirotcw.cloudfront.net/cdn/scdn/images/uploads/economy-powder-free-latex-gloves_56693.jpg)
+图解：Latex 材质的手套，要不要来一双？
