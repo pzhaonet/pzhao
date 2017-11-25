@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Bookdown on Peng Zhao</title>
-    <link>http://www.pzhao.org/zh/tags/bookdown/index.xml</link>
+    <link>/zh/tags/bookdown/index.xml</link>
     <description>Recent content in Bookdown on Peng Zhao</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
@@ -11,10 +11,10 @@
     
     <item>
       <title>R bookdown 的小技巧</title>
-      <link>http://www.pzhao.org/zh/post/bookdown-tips/</link>
+      <link>/zh/post/bookdown-tips/</link>
       <pubDate>Fri, 22 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/zh/post/bookdown-tips/</guid>
+      <guid>/zh/post/bookdown-tips/</guid>
       <description>&lt;p&gt;本帖用来收集整理 R 语言 bookdown 扩展包的一些使用技巧。有些是在网上搜来的，有些是我在别处讨论得来的，有些是我尚未发布的，都写在这里备用。&lt;/p&gt;
 &lt;div id=&#34;-markdown-&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;输出 Markdown 文件&lt;/h2&gt;
@@ -98,10 +98,10 @@ knitr::include_graphics(if (identical(knitr:::pandoc_to(), &amp;#39;html&amp;#39
     
     <item>
       <title>如何在 R markdown 里输出 r pi 并前后加上小撇`</title>
-      <link>http://www.pzhao.org/zh/post/backticks-in-rmd/</link>
+      <link>/zh/post/backticks-in-rmd/</link>
       <pubDate>Fri, 22 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/zh/post/backticks-in-rmd/</guid>
+      <guid>/zh/post/backticks-in-rmd/</guid>
       <description>&lt;p&gt;其实本文的标题应该是：如何在文章里显示 &lt;code&gt;`r pi`&lt;/code&gt; 这样的文字。但是我不知道怎么把这个格式弄到标题里。所以，就这样凑合过吧。&lt;/p&gt;
 &lt;p&gt;这个问题的答案，要分几层意思来说。&lt;code&gt;`r pi`&lt;/code&gt; 是代码格式（本博客显示为粉底红字），并且包含的`符号同样是代码格式，并且 pi 并没有被编译成 3.1415927。别看它短，这三点每个都是个坑。&lt;/p&gt;
 &lt;p&gt;这个问题在编写 R markdown 教程时常见。其实，等你明白这个问题的答案后，会发现答案并不难，难的是如何描述这个问题。我费了好大劲，都想不出一个准确描述的办法，并且在那些支持 markdown 的论坛上，我连这个小撇都输不出来，这叫人怎么问？最后我只能这么提问：&lt;/p&gt;
@@ -155,10 +155,10 @@ knitr::include_graphics(if (identical(knitr:::pandoc_to(), &amp;#39;html&amp;#39
     
     <item>
       <title>bookdownplus 的两个魔法</title>
-      <link>http://www.pzhao.org/zh/post/bookdownplus-magic/</link>
+      <link>/zh/post/bookdownplus-magic/</link>
       <pubDate>Tue, 27 Jun 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/zh/post/bookdownplus-magic/</guid>
+      <guid>/zh/post/bookdownplus-magic/</guid>
       <description>&lt;p&gt;bookdown 是个好东西，只是入手有点难，酒香巷深。&lt;/p&gt;
 &lt;p&gt;对于 R 初学者来说，如果身边没有人指导，使用者可能需要花大量精力应付 LaTeX，YAML，Pandoc，而很多初学者可能从来没听说过这些，站在 bookdown 的门口往里张望了一下，说不定就被吓跑了，从而错过了门里的精彩世界。&lt;/p&gt;
 &lt;p&gt;bookdownplus 扩展包，可以让新手对 bookdown 快速上手。从此，bookdown 这坛好酒就不必去深巷苦寻，它就放在你手边。&lt;/p&gt;
@@ -202,16 +202,16 @@ knitr::include_graphics(if (identical(knitr:::pandoc_to(), &amp;#39;html&amp;#39
     
     <item>
       <title>R 包 bookdownplus 正式发布</title>
-      <link>http://www.pzhao.org/zh/post/bookdownplus-released/</link>
+      <link>/zh/post/bookdownplus-released/</link>
       <pubDate>Thu, 22 Jun 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/zh/post/bookdownplus-released/</guid>
+      <guid>/zh/post/bookdownplus-released/</guid>
       <description>&lt;p&gt;很高兴地宣布，我的 R 语言扩展包 ‘bookdownplus v1.0.2’ &lt;span class=&#34;citation&#34;&gt;(Zhao 2017a)&lt;/span&gt; 在 CRAN &lt;a href=&#34;https://cran.r-project.org/web/packages/bookdownplus/&#34;&gt;正式发布&lt;/a&gt;了。本文是对’bookdownplus v1.0.2’的简要描述. 由于最近更新频繁, 最新版的’bookdownplus’更加强大和易用, 例如 ‘bookdownplus v1.2.0’ 可以一条指令生成19个模板文档的 pdf, word, html 和 epub 四种格式. 建议移步位于 GitHub 的 &lt;a href=&#34;http://github.com/pzhaonet/bookdownplus&#34;&gt;bookdownplus 项目主页&lt;/a&gt;.&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;
 &lt;img src=&#34;http://cranlogs.r-pkg.org/badges/grand-total/bookdownplus&#34; /&gt;
 
 &lt;/div&gt;
-&lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-22-bookdownplus_released_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2017-06-22-bookdownplus_released_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;div class=&#34;section level1&#34;&gt;
 &lt;h1&gt;简介&lt;/h1&gt;
 &lt;p&gt;bookdownplus 是对 bookdown 包 &lt;span class=&#34;citation&#34;&gt;(Xie 2016)&lt;/span&gt; 的增强和简化, 是快速使用 bookdown 的最简洁方法。bookdown 就好比 Microsoft Word 或 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt;，可以用来写文档，而 bookdownplus 提供了很多有用的模板，可以很方便地在 bookdown 平台写期刊论文、学位论文、学术海报、化学分子式、信件、日记、日历、诗集、吉他谱等各种常用文档和书籍。这是功能上的增强（+）。&lt;/p&gt;
@@ -423,10 +423,10 @@ install.packages(&amp;#39;pinyin&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>R bookdown&#43;: 用 R bookdown 写期刊论文、日记、信件、日历、吉他书、化学方程式</title>
-      <link>http://www.pzhao.org/zh/post/bookdown-plus/</link>
+      <link>/zh/post/bookdown-plus/</link>
       <pubDate>Tue, 09 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/zh/post/bookdown-plus/</guid>
+      <guid>/zh/post/bookdown-plus/</guid>
       <description>&lt;p&gt;&lt;strong&gt;注意：本文所述的&lt;code&gt;bookdown+&lt;/code&gt;这个项目已经停止开发，继承者是我新开的R包项目&lt;a href=&#34;https://github.com/pzhaonet/bookdownplus&#34;&gt;bookdownplus&lt;/a&gt; ，这是因为我学会了写R包。当然，说不定有些朋友不喜欢安装R包，喜欢下载个文件夹直接免安装用，那么本文所述的方法仍然可以继续使用，只是我不再更新了而已。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;R bookdown 能做的事情很多，可是那些功能迟迟不来，我只好自己动手，写了个 &lt;a href=&#34;https://github.com/pzhaonet/bookdown-plus&#34;&gt;bookdown+&lt;/a&gt;，目前大体实现了用 bookdown 写期刊论文、化学分子式、信件、日记、日历等功能。当然，有些还没完全实现，革命不够彻底，带着浓重的&lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt;旧社会的气息。革命尚未成功，同志仍需努力。&lt;/p&gt;
 &lt;p&gt;下面是 &lt;a href=&#34;https://github.com/pzhaonet/bookdown-plus&#34;&gt;bookdown+&lt;/a&gt; 的简介和快速使用方法。&lt;/p&gt;
@@ -614,24 +614,24 @@ template &amp;lt;- templates[8]&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>用 R bookdown 写吉他谱</title>
-      <link>http://www.pzhao.org/archives/19291</link>
+      <link>/archives/19291</link>
       <pubDate>Thu, 06 Apr 2017 09:15:36 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/archives/19291</guid>
+      <guid>/archives/19291</guid>
       <description>&lt;p&gt;前情提要：&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://dapengde.com/archives/19122&#34; target=&#34;_blank&#34;&gt;用 R 语言的 bookdown 写书&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://dapengde.com/archives/19150&#34; target=&#34;_blank&#34;&gt;用 R 语言的 bookdown 写诗集&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://dapengde.com/archives/19190&#34; target=&#34;_blank&#34;&gt;用 R 语言的 bookdown 写学术论文&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://dapengde.com/archives/19141&#34; target=&#34;_blank&#34;&gt;R 语言 bookdown 快速入门和语法速查&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://pzhao.org/archives/19122&#34; target=&#34;_blank&#34;&gt;用 R 语言的 bookdown 写书&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://pzhao.org/archives/19150&#34; target=&#34;_blank&#34;&gt;用 R 语言的 bookdown 写诗集&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://pzhao.org/archives/19190&#34; target=&#34;_blank&#34;&gt;用 R 语言的 bookdown 写学术论文&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://pzhao.org/archives/19141&#34; target=&#34;_blank&#34;&gt;R 语言 bookdown 快速入门和语法速查&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;本篇说说如何用 R 语言的 bookdown 写吉他谱。别拦着我，让我陷进bookdown的怀抱里爽死吧。&lt;/p&gt;
 
 &lt;p&gt;中国的民谣吉他伴奏谱常见的一般是六线谱，格式是这样的：&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://dapengde.com/wp-content/uploads/2017/04/chengdu1-.jpg&#34; alt=&#34;enter image description here&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://pzhao.org/wp-content/uploads/2017/04/chengdu1-.jpg&#34; alt=&#34;enter image description here&#34; /&gt;&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;第一行是和弦谱，包括和弦名称和左手按琴弦的指法图；&lt;/li&gt;
@@ -648,11 +648,11 @@ template &amp;lt;- templates[8]&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;文字谱的好处是用不着任何专业软件，录入很方便。但是，这比较坑菜鸟。想不起来&lt;code&gt;Em&lt;/code&gt;和弦的指法该怎么办？&lt;code&gt;Em&lt;/code&gt;还好办，看见个&lt;code&gt;G#7sus4&lt;/code&gt;，我崩溃了，自认水平不行，乖乖翻和弦字典去。如果标注了指法图——&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://dapengde.com/wp-content/uploads/2017/04/chengdu2.png&#34; alt=&#34;enter image description here&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://pzhao.org/wp-content/uploads/2017/04/chengdu2.png&#34; alt=&#34;enter image description here&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;还是更方便一些，吉他和钢琴都可以用。我觉得等我老得掉光牙齿的时候，估计连C和弦的指法都忘光了，给孙子连个《成都》都唱不成，这时候指法图就有用了。&lt;/p&gt;
 
-&lt;p&gt;以前我玩过&lt;a href=&#34;http://dapengde.com/archives/18230&#34; target=&#34;_blank&#34;&gt;LaTeX输入指法图&lt;/a&gt;的游戏。由于对LaTeX心怀恐惧，这个游戏没敢多玩。现在有了R语言的bookdown来取代LaTeX，自然想把这个游戏拿回来找找年轻的感觉。&lt;/p&gt;
+&lt;p&gt;以前我玩过&lt;a href=&#34;http://pzhao.org/archives/18230&#34; target=&#34;_blank&#34;&gt;LaTeX输入指法图&lt;/a&gt;的游戏。由于对LaTeX心怀恐惧，这个游戏没敢多玩。现在有了R语言的bookdown来取代LaTeX，自然想把这个游戏拿回来找找年轻的感觉。&lt;/p&gt;
 
 &lt;p&gt;这个主意早就有了，原以为会很麻烦（恐惧心理），一直没行动。昨天在送大娃和接二娃之间空出半个小时，鼓捣了一下，居然鼓捣出来了上面那个样子。其实很简单：用 bookdown 的壳，LaTeX的核。上面那句歌词，录入的文字是这样的：&lt;/p&gt;
 
@@ -661,7 +661,7 @@ template &amp;lt;- templates[8]&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;我打算以后陆陆续续把喜欢的歌弄成一本书（&lt;a href=&#34;https://bookdown.org/baydap/bdguitar/bdguitar.pdf&#34; target=&#34;_blank&#34;&gt;pdf&lt;/a&gt;），样子是：&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://dapengde.com/wp-content/uploads/2017/04/img-guitar.png&#34; alt=&#34;enter image description here&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://pzhao.org/wp-content/uploads/2017/04/img-guitar.png&#34; alt=&#34;enter image description here&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;并且把bookdown录入吉他谱的源代码在&lt;a href=&#34;https://github.com/dapengde/bookdown-guitar&#34; target=&#34;_blank&#34;&gt;GitHub开了个bookdown-guitar的项目&lt;/a&gt;。毕竟，中文的对齐不太完美，看看有没有高手来帮帮我。&lt;/p&gt;
 
@@ -677,15 +677,15 @@ template &amp;lt;- templates[8]&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>来，跟我一起玩泥巴</title>
-      <link>http://www.pzhao.org/archives/19276</link>
+      <link>/archives/19276</link>
       <pubDate>Fri, 31 Mar 2017 03:32:33 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/archives/19276</guid>
-      <description>&lt;p&gt;去年五月份，跟坛子君一起开始&lt;a href=&#34;http://dapengde.com/archives/18799&#34; target=&#34;_blank&#34;&gt;玩微信公众号&lt;/a&gt;。这个生猛的小伙伴获得原创保护功能只用了11天，获得赞赏功能只用了20天。而我硬挺了大概两个月，除了几十的订阅量让人感到欣慰外，没有获得其他实质性进展。这就好比&lt;a href=&#34;http://cn.derekyang.us/google/#comment-1606&#34; target=&#34;_blank&#34;&gt;Derek在博客说&lt;/a&gt;google“美国”搜到的结果里他的美国攻略排第5，我就google了一下“德国”想看看自己的博客排第几，结果&amp;#8230;&amp;#8230;跟猛人PK，就是自取其辱。&lt;/p&gt;
+      <guid>/archives/19276</guid>
+      <description>&lt;p&gt;去年五月份，跟坛子君一起开始&lt;a href=&#34;http://pzhao.org/archives/18799&#34; target=&#34;_blank&#34;&gt;玩微信公众号&lt;/a&gt;。这个生猛的小伙伴获得原创保护功能只用了11天，获得赞赏功能只用了20天。而我硬挺了大概两个月，除了几十的订阅量让人感到欣慰外，没有获得其他实质性进展。这就好比&lt;a href=&#34;http://cn.derekyang.us/google/#comment-1606&#34; target=&#34;_blank&#34;&gt;Derek在博客说&lt;/a&gt;google“美国”搜到的结果里他的美国攻略排第5，我就google了一下“德国”想看看自己的博客排第几，结果&amp;#8230;&amp;#8230;跟猛人PK，就是自取其辱。&lt;/p&gt;
 
-&lt;p&gt;这样懒散了八个月，2月9号下午，我在博客上&lt;a href=&#34;http://dapengde.com/archives/19083&#34; target=&#34;_blank&#34;&gt;抱怨&lt;/a&gt;了一下，然后，原创保护就突然开通了！&lt;/p&gt;
+&lt;p&gt;这样懒散了八个月，2月9号下午，我在博客上&lt;a href=&#34;http://pzhao.org/archives/19083&#34; target=&#34;_blank&#34;&gt;抱怨&lt;/a&gt;了一下，然后，原创保护就突然开通了！&lt;/p&gt;
 
-&lt;p&gt;我想：我去，按照坛子君的节奏，下一步开通赞赏还得等8/11*9=7个月吧。所以基本不指望了，开通之后我就没再管，忙着玩&lt;a href=&#34;http://dapengde.com/archives/19122&#34; target=&#34;_blank&#34;&gt;bookdown&lt;/a&gt;了。忙完之后已经到了3月份，想起来我还有个公众号呢，打开一看吓一跳，系统信息里有三条一模一样的信息，猛一看还以为是垃圾邮件，标题全部是“公共平台邀请你使用赞赏功能”，发于2月10日、16日和22日。&lt;/p&gt;
+&lt;p&gt;我想：我去，按照坛子君的节奏，下一步开通赞赏还得等8/11*9=7个月吧。所以基本不指望了，开通之后我就没再管，忙着玩&lt;a href=&#34;http://pzhao.org/archives/19122&#34; target=&#34;_blank&#34;&gt;bookdown&lt;/a&gt;了。忙完之后已经到了3月份，想起来我还有个公众号呢，打开一看吓一跳，系统信息里有三条一模一样的信息，猛一看还以为是垃圾邮件，标题全部是“公共平台邀请你使用赞赏功能”，发于2月10日、16日和22日。&lt;/p&gt;
 
 &lt;p&gt;我以为会等7个月，其实只花了1天。&lt;/p&gt;
 
@@ -697,7 +697,7 @@ template &amp;lt;- templates[8]&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;既然我自己用不了那么多，不如大家一起用。所以，我的公众号（注意，是公众号，不是博客）开始接受投稿。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://dapengde.com/wp-content/uploads/2016/10/dapeng-de200.jpg&#34; alt=&#34;大鹏志公众号二维码&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://pzhao.org/wp-content/uploads/2016/10/dapeng-de200.jpg&#34; alt=&#34;大鹏志公众号二维码&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;征稿启事&lt;/strong&gt;&lt;/p&gt;
 
@@ -733,13 +733,13 @@ template &amp;lt;- templates[8]&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>用 R bookdown 写学术论文</title>
-      <link>http://www.pzhao.org/archives/19190</link>
+      <link>/archives/19190</link>
       <pubDate>Fri, 24 Mar 2017 09:53:23 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/archives/19190</guid>
+      <guid>/archives/19190</guid>
       <description>&lt;p&gt;&lt;em&gt;1&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;最近，我使用 R 语言的 bookdown 扩展包接连做了三件事：先是整理出一本跟 &lt;a href=&#34;http://dapengde.com/archives/19122&#34; target=&#34;_blank&#34;&gt;R 语言有关的书&lt;/a&gt;，然后把博客的帖子整理出一本&lt;a href=&#34;http://dapengde.com/archives/19150&#34; target=&#34;_blank&#34;&gt;纯文本的中文书&lt;/a&gt;，这两天我又在用它来写一篇打算投稿的学术期刊论文。&lt;/p&gt;
+&lt;p&gt;最近，我使用 R 语言的 bookdown 扩展包接连做了三件事：先是整理出一本跟 &lt;a href=&#34;http://pzhao.org/archives/19122&#34; target=&#34;_blank&#34;&gt;R 语言有关的书&lt;/a&gt;，然后把博客的帖子整理出一本&lt;a href=&#34;http://pzhao.org/archives/19150&#34; target=&#34;_blank&#34;&gt;纯文本的中文书&lt;/a&gt;，这两天我又在用它来写一篇打算投稿的学术期刊论文。&lt;/p&gt;
 
 &lt;p&gt;用 bookdown 写英文的科研期刊论文，配置起来是很简单的，只需在bookdown提供的&lt;a href=&#34;https://github.com/rstudio/bookdown-demo&#34; target=&#34;_blank&#34;&gt;官方演示文档&lt;/a&gt;里做简单修改如下：&lt;/p&gt;
 
@@ -794,10 +794,10 @@ bookdown::html_document2: default
     
     <item>
       <title>R bookdown 写学术论文</title>
-      <link>http://www.pzhao.org/zh/post/r-bookdown/</link>
+      <link>/zh/post/r-bookdown/</link>
       <pubDate>Fri, 24 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/zh/post/r-bookdown/</guid>
+      <guid>/zh/post/r-bookdown/</guid>
       <description>&lt;p&gt;&lt;em&gt;1&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;最近，我使用 R 语言的 bookdown 扩展包接连做了三件事：先是整理出一本跟&lt;a href=&#34;http://dapengde.com/archives/19122&#34; target=&#34;_blank&#34;&gt; R 语言有关的书&lt;/a&gt;，然后把博客的帖子整理出一本&lt;a href=&#34;http://dapengde.com/archives/19150&#34; target=&#34;_blank&#34;&gt;纯文本的中文书&lt;/a&gt;，这两天我又在用它来写一篇打算投稿的学术期刊论文。&lt;/p&gt;
@@ -855,10 +855,10 @@ bookdown::html_document2: default
     
     <item>
       <title>如果用bookdown来写诗集</title>
-      <link>http://www.pzhao.org/archives/19150</link>
+      <link>/archives/19150</link>
       <pubDate>Wed, 15 Mar 2017 14:21:56 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/archives/19150</guid>
+      <guid>/archives/19150</guid>
       <description>&lt;p&gt;update-2017-07-03：&lt;a href=&#34;http://www.pzhao.org/zh/post/bookdownplus-released/&#34; target=&#34;_blank&#34;&gt;bookdownplus&lt;/a&gt;包里附带了诗集模板，可以用bookdown制作下图这样的诗集：&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdownplus/master/inst/showcase/bookdownplus_poem.jpg&#34; alt=&#34;enter image description here&#34; /&gt;&lt;/p&gt;
@@ -940,10 +940,10 @@ bookdown::html_document2: default
     
     <item>
       <title>R bookdown 快速入门和语法速查</title>
-      <link>http://www.pzhao.org/archives/19141</link>
+      <link>/archives/19141</link>
       <pubDate>Wed, 15 Mar 2017 07:29:47 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/archives/19141</guid>
+      <guid>/archives/19141</guid>
       <description>&lt;div class=&#34;section level2&#34;&gt;
   &lt;h2&gt;
     快速开始&lt;br /&gt;
@@ -1142,11 +1142,11 @@ bookdown::html_document2: default
     
     &lt;tr class=&#34;even&#34;&gt;
       &lt;td align=&#34;left&#34;&gt;
-        &lt;code&gt;[大鹏志](http://dapengde.com)&lt;/code&gt;
+        &lt;code&gt;[大鹏志](http://pzhao.org)&lt;/code&gt;
       &lt;/td&gt;
       
       &lt;td align=&#34;left&#34;&gt;
-        &lt;a href=&#34;http://dapengde.com&#34;&gt;大鹏志&lt;/a&gt;超级链接
+        &lt;a href=&#34;http://pzhao.org&#34;&gt;大鹏志&lt;/a&gt;超级链接
       &lt;/td&gt;
     &lt;/tr&gt;
     
@@ -1450,13 +1450,13 @@ I like Eq. \@ref(eq:mc2) so much that I am falling love with her.&lt;/code&gt;&l
   
   &lt;ul&gt;
     &lt;li&gt;
-      &lt;a href=&#34;http://dapengde.com/archives/19122&#34;&gt;用bookdown写书&lt;/a&gt;
+      &lt;a href=&#34;http://pzhao.org/archives/19122&#34;&gt;用bookdown写书&lt;/a&gt;
     &lt;/li&gt;
     &lt;li&gt;
-      &lt;a href=&#34;http://dapengde.com/archives/19190&#34;&gt;用bookdown写学术论文&lt;/a&gt;
+      &lt;a href=&#34;http://pzhao.org/archives/19190&#34;&gt;用bookdown写学术论文&lt;/a&gt;
     &lt;/li&gt;
     &lt;li&gt;
-      &lt;a href=&#34;http://dapengde.com/archives/19150&#34;&gt;用bookdown写文学作品&lt;/a&gt;
+      &lt;a href=&#34;http://pzhao.org/archives/19150&#34;&gt;用bookdown写文学作品&lt;/a&gt;
     &lt;/li&gt;
   &lt;/ul&gt;
 &lt;/div&gt;&lt;/div&gt; 
@@ -1469,10 +1469,10 @@ I like Eq. \@ref(eq:mc2) so much that I am falling love with her.&lt;/code&gt;&l
     
     <item>
       <title>不可挡的bookdown</title>
-      <link>http://www.pzhao.org/archives/19122</link>
+      <link>/archives/19122</link>
       <pubDate>Tue, 14 Mar 2017 14:36:57 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/archives/19122</guid>
+      <guid>/archives/19122</guid>
       <description>&lt;p&gt;最近，我打算把博客上关于R语言的帖子整理成一本书，希望弄得帅气一点，整齐一点，将来容易维护一点。涌进脑子的第一个念头是 &lt;span class=&#34;math inline&#34;&gt;(\LaTeX)&lt;/span&gt; ，第二个念头是想吐。&lt;/p&gt;
 
 &lt;p&gt;是的，虽然我推崇 &lt;span class=&#34;math inline&#34;&gt;(\LaTeX)&lt;/span&gt; ，觉得这个工具排出来的文档很漂亮，但自从弄完博士论文&lt;a href=&#34;#fn1&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;{#fnref1.footnoteRef} 之后，除了帮别人备份一下博客&lt;a href=&#34;#fn2&#34;&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;{#fnref2.footnoteRef} 、往论文里插几个公式和玩玩吉他谱&lt;a href=&#34;#fn3&#34;&gt;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt;{#fnref3.footnoteRef}，我再也没碰过她。惰性开始代替折腾，我宁可点点鼠标写出一份不太美观的Word文档，也不想面对 &lt;span class=&#34;math inline&#34;&gt;(\LaTeX)&lt;/span&gt; 那让人头疼的代码。大概我是真上了岁数罢。&lt;/p&gt;
@@ -1640,19 +1640,19 @@ I like Eq. (@eq-mc) so much that I am falling love with her.
 
 &lt;p&gt;&lt;li id=&#34;fn1&#34;&gt;
   &lt;p&gt;
-    &lt;a href=&#34;http://dapengde.com/archives/17095&#34; class=&#34;uri&#34;&gt;&lt;a href=&#34;http://dapengde.com/archives/17095&#34; target=&#34;_blank&#34;&gt;http://dapengde.com/archives/17095&lt;/a&gt;&lt;/a&gt;&lt;a href=&#34;#fnref1&#34;&gt;↩&lt;/a&gt;
+    &lt;a href=&#34;http://pzhao.org/archives/17095&#34; class=&#34;uri&#34;&gt;&lt;a href=&#34;http://pzhao.org/archives/17095&#34; target=&#34;_blank&#34;&gt;http://pzhao.org/archives/17095&lt;/a&gt;&lt;/a&gt;&lt;a href=&#34;#fnref1&#34;&gt;↩&lt;/a&gt;
   &lt;/p&gt;
 &lt;/li&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;li id=&#34;fn2&#34;&gt;
   &lt;p&gt;
-    &lt;a href=&#34;http://dapengde.com/archives/16906&#34; class=&#34;uri&#34;&gt;&lt;a href=&#34;http://dapengde.com/archives/16906&#34; target=&#34;_blank&#34;&gt;http://dapengde.com/archives/16906&lt;/a&gt;&lt;/a&gt;&lt;a href=&#34;#fnref2&#34;&gt;↩&lt;/a&gt;
+    &lt;a href=&#34;http://pzhao.org/archives/16906&#34; class=&#34;uri&#34;&gt;&lt;a href=&#34;http://pzhao.org/archives/16906&#34; target=&#34;_blank&#34;&gt;http://pzhao.org/archives/16906&lt;/a&gt;&lt;/a&gt;&lt;a href=&#34;#fnref2&#34;&gt;↩&lt;/a&gt;
   &lt;/p&gt;
 &lt;/li&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;li id=&#34;fn3&#34;&gt;
   &lt;p&gt;
-    &lt;a href=&#34;http://dapengde.com/archives/18230&#34; class=&#34;uri&#34;&gt;&lt;a href=&#34;http://dapengde.com/archives/18230&#34; target=&#34;_blank&#34;&gt;http://dapengde.com/archives/18230&lt;/a&gt;&lt;/a&gt;&lt;a href=&#34;#fnref3&#34;&gt;↩&lt;/a&gt;
+    &lt;a href=&#34;http://pzhao.org/archives/18230&#34; class=&#34;uri&#34;&gt;&lt;a href=&#34;http://pzhao.org/archives/18230&#34; target=&#34;_blank&#34;&gt;http://pzhao.org/archives/18230&lt;/a&gt;&lt;/a&gt;&lt;a href=&#34;#fnref3&#34;&gt;↩&lt;/a&gt;
   &lt;/p&gt;
 &lt;/li&gt;&lt;/p&gt;
 
@@ -1691,10 +1691,10 @@ I like Eq. (@eq-mc) so much that I am falling love with her.
     
     <item>
       <title>R bookdown 语法标记速查</title>
-      <link>http://www.pzhao.org/zh/post/bookdown-cheatsheet/</link>
+      <link>/zh/post/bookdown-cheatsheet/</link>
       <pubDate>Tue, 14 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/zh/post/bookdown-cheatsheet/</guid>
+      <guid>/zh/post/bookdown-cheatsheet/</guid>
       <description>&lt;div class=&#34;section level2&#34;&gt;
 &lt;h2&gt;快速开始&lt;/h2&gt;
 &lt;div id=&#34;r-bookdown-&#34; class=&#34;section level3&#34;&gt;
@@ -1923,10 +1923,10 @@ I like Eq. \@ref(eq:mc2) so much that I am falling love with her.&lt;/code&gt;&l
     
     <item>
       <title>不可挡的bookdown</title>
-      <link>http://www.pzhao.org/zh/post/inresistible-bookdown/</link>
+      <link>/zh/post/inresistible-bookdown/</link>
       <pubDate>Mon, 13 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/zh/post/inresistible-bookdown/</guid>
+      <guid>/zh/post/inresistible-bookdown/</guid>
       <description>&lt;p&gt;最近，我打算把博客上关于R语言的帖子整理成一本书，希望弄得帅气一点，整齐一点，将来容易维护一点。涌进脑子的第一个念头是 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; ，第二个念头是想吐。&lt;/p&gt;
 &lt;p&gt;是的，虽然我推崇 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; ，觉得这个工具排出来的文档很漂亮，但自从弄完博士论文&lt;a href=&#34;#fn1&#34; class=&#34;footnoteRef&#34; id=&#34;fnref1&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; 之后，除了帮别人备份一下博客&lt;a href=&#34;#fn2&#34; class=&#34;footnoteRef&#34; id=&#34;fnref2&#34;&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt; 、往论文里插几个公式和玩玩吉他谱&lt;a href=&#34;#fn3&#34; class=&#34;footnoteRef&#34; id=&#34;fnref3&#34;&gt;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt;，我再也没碰过她。惰性开始代替折腾，我宁可点点鼠标写出一份不太美观的Word文档，也不想面对 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; 那让人头疼的代码。大概我是真上了岁数罢。&lt;/p&gt;
 &lt;p&gt;对于 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt;，我想自己的内心深处是怀有恐惧的。她的美丽让我着迷，她的复杂令人生畏。&lt;/p&gt;

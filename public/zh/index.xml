@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Peng Zhao on Peng Zhao</title>
-    <link>http://www.pzhao.org/zh/index.xml</link>
+    <link>/zh/index.xml</link>
     <description>Recent content in Peng Zhao on Peng Zhao</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
@@ -12,10 +12,10 @@
     
     <item>
       <title>我把青春献给你：排版 (2)</title>
-      <link>http://www.pzhao.org/zh/post/latex-and-me-2/</link>
+      <link>/zh/post/latex-and-me-2/</link>
       <pubDate>Wed, 22 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/zh/post/latex-and-me-2/</guid>
+      <guid>/zh/post/latex-and-me-2/</guid>
       <description>&lt;p&gt;5&lt;/p&gt;
 &lt;p&gt;如果上一篇帖子让你以为我在为 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; 做广告，呵呵，那你就上当了。为啥？&lt;/p&gt;
 &lt;p&gt;因为我早就抛弃 LaTeX 了。&lt;/p&gt;
@@ -57,10 +57,10 @@
     
     <item>
       <title>我把青春献给你：排版 (1)</title>
-      <link>http://www.pzhao.org/zh/post/latex-and-me-1/</link>
+      <link>/zh/post/latex-and-me-1/</link>
       <pubDate>Tue, 21 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/zh/post/latex-and-me-1/</guid>
+      <guid>/zh/post/latex-and-me-1/</guid>
       <description>&lt;p&gt;1&lt;/p&gt;
 &lt;p&gt;2017 年快要过去了。如果剩下这四十天不出什么幺蛾子的话，我今年的最蠢事情排行榜，基本是板上钉钉。名列榜首的，就是过早给《学 R》一书大肆宣传。跟罗永浩当年头一回卖锤子手机一样一样的，还没量产，就先吹牛，结果吹破了，打了自己的脸。&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;
@@ -84,12 +84,12 @@
 &lt;p&gt;比如说，标点符号。原稿里的所有标点符号，包括代码里的逗号、引号、括号、冒号，都变成了中文标点符号。加上非等宽字体，书里的代码惨不忍睹。&lt;/p&gt;
 &lt;p&gt;最要命的是，原稿里的很多空格也都不翼而飞。比如录排稿：&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;http://www.pzhao.org/img/xuer1.jpg&#34; /&gt;
+&lt;img src=&#34;/img/xuer1.jpg&#34; /&gt;
 
 &lt;/div&gt;
 &lt;p&gt;是不是一头雾水？实际上原稿是：&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;http://www.pzhao.org/img/xuer2.jpg&#34; /&gt;
+&lt;img src=&#34;/img/xuer2.jpg&#34; /&gt;
 
 &lt;/div&gt;
 &lt;p&gt;每次从录排稿里挑问题，都恨不得把一双近视眼珠子抠出来，再拿着放大镜逐字逐句看。后来，索性放弃了很多想法。比如说，原先代码是彩色的，得知需要录排逐个字符手动修改，算了不要了；原先打算增加个小贴士目录，得知需要排完页码手动添加，算了不要了；原先打算给常用函数做个索引，方便读者从书里找示例，看样子也得手动做，算了不要了……&lt;/p&gt;
@@ -117,10 +117,10 @@
     
     <item>
       <title>逻辑娃(2)</title>
-      <link>http://www.pzhao.org/zh/post/logical-kid-2/</link>
+      <link>/zh/post/logical-kid-2/</link>
       <pubDate>Tue, 21 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/zh/post/logical-kid-2/</guid>
+      <guid>/zh/post/logical-kid-2/</guid>
       <description>&lt;p&gt;1&lt;/p&gt;
 &lt;p&gt;我：下午谁跟我出去逛街？&lt;/p&gt;
 &lt;p&gt;德生：我！给我买新玩具！&lt;/p&gt;
@@ -170,10 +170,10 @@
     
     <item>
       <title>论英雄</title>
-      <link>http://www.pzhao.org/archives/19541</link>
+      <link>/archives/19541</link>
       <pubDate>Fri, 20 Oct 2017 15:28:50 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/archives/19541</guid>
+      <guid>/archives/19541</guid>
       <description>&lt;p&gt;日前读了一篇题为『&lt;a href=&#34;https://steemit.com/cn/@linuslee0216/2yyreh&#34; target=&#34;_blank&#34;&gt;自古英雄，不得好死&lt;/a&gt;』的文章，文中写道：“在现实的所谓「英雄」，下场好的都没有几过。很多都难逃「自古英雄，不得好死」的命运。如观我们中国历史，很多名将命运也是非常悲哀。近代的「英雄」，也一样不是被暗杀就是被囚禁，被打压。在外国的例子多的是。”&lt;/p&gt;
 
 &lt;p&gt;掩卷而思，我对“英雄不得好死”的因果关系有完全相反的看法：并非因为是英雄，所以不得好死；而是因为这些人不得好死，才成就了“英雄”的美名！&lt;/p&gt;
@@ -222,10 +222,10 @@
     
     <item>
       <title>抬望眼，仰天長嘯，壯懷激烈</title>
-      <link>http://www.pzhao.org/archives/19539</link>
+      <link>/archives/19539</link>
       <pubDate>Tue, 17 Oct 2017 09:11:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/archives/19539</guid>
+      <guid>/archives/19539</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;怒髮衝冠，憑欄處，潚潚雨歇。&lt;/p&gt;
 
@@ -270,10 +270,10 @@
     
     <item>
       <title>童话国王的君子岛宫殿</title>
-      <link>http://www.pzhao.org/archives/19537</link>
+      <link>/archives/19537</link>
       <pubDate>Tue, 17 Oct 2017 09:09:03 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/archives/19537</guid>
+      <guid>/archives/19537</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;Chiemsee, a lake seated in Bavaria, is famous for a palace built by the Fairy-tale King Lugwig II. On a rainy Sunday, we went there for a short trip.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -332,10 +332,10 @@
     
     <item>
       <title>德国小学开学第一天</title>
-      <link>http://www.pzhao.org/archives/19531</link>
+      <link>/archives/19531</link>
       <pubDate>Tue, 03 Oct 2017 15:28:38 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/archives/19531</guid>
+      <guid>/archives/19531</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;My son, Jingsheng, goes to school in Austria. He started his school life in Germany years ago. Cannot believe that he is going to leave primary school next year. Here I posted some sweet photos taken on his first day in school. How time flies!&lt;/p&gt;
 &lt;/blockquote&gt;

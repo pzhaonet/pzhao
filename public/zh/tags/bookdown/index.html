@@ -28,13 +28,13 @@
   <link rel="stylesheet" href="/css/hugo-academic.css">
   
 
-  <link rel="alternate" href="http://www.pzhao.org/tags/bookdown/index.xml" type="application/rss+xml" title="Peng Zhao">
-  <link rel="feed" href="http://www.pzhao.org/tags/bookdown/index.xml" type="application/rss+xml" title="Peng Zhao">
+  <link rel="alternate" href="/tags/bookdown/index.xml" type="application/rss+xml" title="Peng Zhao">
+  <link rel="feed" href="/tags/bookdown/index.xml" type="application/rss+xml" title="Peng Zhao">
 
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/apple-touch-icon.png">
 
-  <link rel="canonical" href="http://www.pzhao.org/zh/tags/bookdown/">
+  <link rel="canonical" href="/zh/tags/bookdown/">
 
   
 
@@ -55,7 +55,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/zh/">Peng Zhao</a>
+      <a class="navbar-brand" href="/zh">Peng Zhao</a>
     </div>
 
     
@@ -202,7 +202,7 @@
   
   
   <div>
-    <h2><a href="http://www.pzhao.org/zh/post/bookdown-tips/">R bookdown 的小技巧</a></h2>
+    <h2><a href="/zh/post/bookdown-tips/">R bookdown 的小技巧</a></h2>
     <div class="article-style">
       
       收集整理 R 语言 bookdown 扩展包的一些使用技巧。
@@ -211,7 +211,7 @@
   </div>
   
   <div>
-    <h2><a href="http://www.pzhao.org/zh/post/backticks-in-rmd/">如何在 R markdown 里输出 r pi 并前后加上小撇`</a></h2>
+    <h2><a href="/zh/post/backticks-in-rmd/">如何在 R markdown 里输出 r pi 并前后加上小撇`</a></h2>
     <div class="article-style">
       
       其实本文的标题应该是：如何在文章里显示 <code>`r pi`</code> 这样的文字。
@@ -220,7 +220,7 @@
   </div>
   
   <div>
-    <h2><a href="http://www.pzhao.org/zh/post/bookdownplus-magic/">bookdownplus 的两个魔法</a></h2>
+    <h2><a href="/zh/post/bookdownplus-magic/">bookdownplus 的两个魔法</a></h2>
     <div class="article-style">
       
       bookdown 虽好，但入手并不容易。怎么样能让人对 bookdown 一见钟情呢？ 用 bookdownplus 的两个魔法，一剑封喉。
@@ -229,7 +229,7 @@
   </div>
   
   <div>
-    <h2><a href="http://www.pzhao.org/zh/post/bookdownplus-released/">R 包 bookdownplus 正式发布</a></h2>
+    <h2><a href="/zh/post/bookdownplus-released/">R 包 bookdownplus 正式发布</a></h2>
     <div class="article-style">
       
       bookdownplus 对 bookdown 做了两件事：+功能，-操作。
@@ -238,7 +238,7 @@
   </div>
   
   <div>
-    <h2><a href="http://www.pzhao.org/zh/post/bookdown-plus/">R bookdown&#43;: 用 R bookdown 写期刊论文、日记、信件、日历、吉他书、化学方程式</a></h2>
+    <h2><a href="/zh/post/bookdown-plus/">R bookdown&#43;: 用 R bookdown 写期刊论文、日记、信件、日历、吉他书、化学方程式</a></h2>
     <div class="article-style">
       
       我对R bookdown做了两件事：功能上增强，操作上简化, 这就是R bookdown+。
@@ -247,41 +247,34 @@
   </div>
   
   <div>
-    <h2><a href="http://www.pzhao.org/archives/19291">用 R bookdown 写吉他谱</a></h2>
+    <h2><a href="/archives/19291">用 R bookdown 写吉他谱</a></h2>
     <div class="article-style">
+      
+      前情提要：
       
     </div>
   </div>
   
   <div>
-    <h2><a href="http://www.pzhao.org/archives/19276">来，跟我一起玩泥巴</a></h2>
+    <h2><a href="/archives/19276">来，跟我一起玩泥巴</a></h2>
     <div class="article-style">
+      
+      去年五月份，跟坛子君一起开始[玩微信公众号][1]。这个生猛的小伙伴获得原创保护功能只用了11天，获得赞赏功能只用了20天。而我硬挺了大概两个月，除了几十的订阅量让人感到欣慰外，没有获得其他实质性进展。这就好比[Derek在博客说][2]google“美国”搜到的结果里他的美国攻略排第5，我就google了一下“德国”想看看自己的博客排第几，结果&#8230;&#8230;跟猛人PK，就是自取其辱。
       
     </div>
   </div>
   
   <div>
-    <h2><a href="http://www.pzhao.org/archives/19190">用 R bookdown 写学术论文</a></h2>
+    <h2><a href="/archives/19190">用 R bookdown 写学术论文</a></h2>
     <div class="article-style">
       
-      1
-最近，我使用 R 语言的 bookdown 扩展包接连做了三件事：先是整理出一本跟 R 语言有关的书，然后把博客的帖子整理出一本纯文本的中文书，这两天我又在用它来写一篇打算投稿的学术期刊论文。
-用 bookdown 写英文的科研期刊论文，配置起来是很简单的，只需在bookdown提供的官方演示文档里做简单修改如下：
-首先，index.Rmd 的文件头 yaml 部分，将 documentclass 设为 article，并关闭图表目录和文章目录即可：
-documentclass: article lof: no lot: no toc: no  然后，_output.yml 文件内容全部清空，然后添加指令生成 word&#95;document2 文档、 pdf&#95;document2 文档和 html&#95;document2 文档，参数为default即可。也就是说，&#95;output.yml 文件内容只需3行：
-bookdown::word_document2: default bookdown::pdf_document2: default bookdown::html_document2: default  就能生成足够美观的三种格式的文档了。
-2
-写论文期间发生了一件事，让我饱受刺激。
-我的科研论文有个计算公式，昨天发现其中一个数值不小心敲错了。后续计算都是建立在这个计算的基础上，所以后续计算全错。虽然不影响结论，但严格来讲，论文里所有的数据都得改。
-放在以前，这是让人崩溃的灾难。幸亏，这次我写论文用了 bookdown。
-这篇研究论文是用 Rmd 格式写的，里面绝大部分数据不是手动敲进去的，而是调用了 R 代码，图表也是用 R 代码插入的，走的是“可重复性研究”的思路。现在，我只要把 R 代码里那个敲错的数据改过来，运行代码，后续计算就全部自动更新，而论文 Rmd 文件里调用代码的输出结果，会在导出的 pdf 或 word 文档也相应自动更新，节省了大量时间，还减少了敲数字或拷贝粘贴出错的可能，怎一个爽字了得！
-在 bookdown 发布之前，其实 rmarkdown 也有这个功能，但因为公式、交叉引用、参考文献方面的欠缺， rmarkdown 对我来讲比较鸡肋，一直未能用在论文写作上。现在有了 bookdown ，可以甩开膀子使劲儿用。可以说， bookdown 把 rmarkdown 原有的价值做了更充分的挖掘。
+      <em>1</em>
       
     </div>
   </div>
   
   <div>
-    <h2><a href="http://www.pzhao.org/zh/post/r-bookdown/">R bookdown 写学术论文</a></h2>
+    <h2><a href="/zh/post/r-bookdown/">R bookdown 写学术论文</a></h2>
     <div class="article-style">
       
       用 bookdown 写英文的科研期刊论文，配置起来是很简单的，只需在bookdown提供的<a href="https://github.com/rstudio/bookdown-demo" target="_blank">官方演示文档</a>里做简单修改即可。
@@ -290,13 +283,10 @@ bookdown::word_document2: default bookdown::pdf_document2: default bookdown::htm
   </div>
   
   <div>
-    <h2><a href="http://www.pzhao.org/archives/19150">如果用bookdown来写诗集</a></h2>
+    <h2><a href="/archives/19150">如果用bookdown来写诗集</a></h2>
     <div class="article-style">
       
-      update-2017-07-03：bookdownplus包里附带了诗集模板，可以用bookdown制作下图这样的诗集：
-今天，我用R的bookdown做出了第一本电子书：&lt;爸爸三定律&gt;。内容是从我博客上选的育儿相关帖。
-益辉在bookdown的官方文档里讲到：
- This book is primarily about the R package bookdown, so you need to at least install R and the bookdown package. However, your book does not have to be related to the R language at all. It can use other computing languages (C++, SQL, Python, and so on; see Appendix B), and it can even be totally irrelevant to computing (e.g., you can write a novel, or a collection of poems)
+      update-2017-07-03：[bookdownplus][1]包里附带了诗集模板，可以用bookdown制作下图这样的诗集：
       
     </div>
   </div>
