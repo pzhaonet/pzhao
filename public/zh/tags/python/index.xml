@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Python on Peng Zhao</title>
-    <link>/zh/tags/python/index.xml</link>
+    <link>http://www.pzhao.org/zh/tags/python/index.xml</link>
     <description>Recent content in Python on Peng Zhao</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
@@ -11,10 +11,10 @@
     
     <item>
       <title>R vs Python: 2017年欧洲地学年会</title>
-      <link>/zh/post/egu2017/</link>
+      <link>http://www.pzhao.org/zh/post/egu2017/</link>
       <pubDate>Thu, 20 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>/zh/post/egu2017/</guid>
+      <guid>http://www.pzhao.org/zh/post/egu2017/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;http://dapengde.com/archives/17969&#34;&gt;欧洲地学学会EGU年会&lt;/a&gt;每年一次，都在维也纳国际会议中心举办，原因是别的地方很难找到这样一个会场，能容得下这么大的规模。为期一周的会议，参加人数上万，分会场有五百个以上。因为离得近，乘火车4小时，我们组年年都参加。去年我申请到一个口头报告，今年再次申请，会议协调人说：你们组申请了两个口头报告，但只能给你们组一个名额，你们内部定吧。我和同事商量了一下，决定他做口头报告，我做海报。&lt;/p&gt;
 &lt;p&gt;这两天，准备海报和年会日程时，我发现个有趣的新现象。一打开“短期课程”类日程表，就感到一股杀气扑面而来。年会擂台的两位选手即将上阵，一个叫R，一个叫Python。&lt;/p&gt;
 &lt;p&gt;首先亮相的是Python。第一天的第一批分会场，Python先发制人，发起个课程叫做&lt;a href=&#34;http://meetingorganizer.copernicus.org/EGU2017/session/25679&#34;&gt;“使用Python和Jupiter做数据分析”&lt;/a&gt;，一个半小时，要求携带笔记本电脑，手把手教你用Python语言读取不同格式数据、分析和作图，并使用 Jupyter Notebook 来记录和分享工作。Python语言就相当于R语言，Jupyter Notebook就相当于 R markdown。这是明摆着对R的挑衅啊！我决定放弃另外一个感兴趣的学术分会场，来参加这一个。&lt;/p&gt;

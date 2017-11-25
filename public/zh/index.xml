@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Peng Zhao on Peng Zhao</title>
-    <link>/zh/index.xml</link>
+    <link>http://www.pzhao.org/zh/index.xml</link>
     <description>Recent content in Peng Zhao on Peng Zhao</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
@@ -11,11 +11,51 @@
     <atom:link href="/zh/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>全面迁站</title>
+      <link>http://www.pzhao.org/zh/post/migrated-to-hugo/</link>
+      <pubDate>Sat, 25 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.pzhao.org/zh/post/migrated-to-hugo/</guid>
+      <description>&lt;p&gt;从今天起，我的旧博客 dapengde.com 停止更新。旧博客的全部帖子已经搬到了 &lt;a href=&#34;http://www.pzhao.org&#34; target=&#34;_blank&#34;&gt;pzhao.org&lt;/a&gt;，欢迎收藏（ctrl + d）和&lt;a href=&#34;http://www.pzhao.org/zh/index.xml&#34; target=&#34;_blank&#34;&gt;订阅&lt;/a&gt;)。&lt;/p&gt;
+
+&lt;p&gt;半年多以前，我用 R 语言的 blogdown 包搭建了新网站，与旧博客并存至今。&lt;a href=&#34;http://www.pzhao.org/archives/19323/&#34; target=&#34;_blank&#34;&gt;当时我就说&lt;/a&gt;，我要等着益辉同学把blogdown 的使用说明书“迁站”一章写好，就照步骤把旧博客内容全搬过去。前些日子，&lt;a href=&#34;https://bookdown.org/yihui/blogdown&#34; target=&#34;_blank&#34;&gt;blogdown 书&lt;/a&gt;终于出版了，从 wordpress 搬到 hugo 的迁站方法写得很详细。迁站的时机成熟了。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://media.defense.gov/2012/Mar/19/2000168920/670/394/0/120319-F-JZ014-905.JPG&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;然而，迁站的过程并不是很顺利。我照着书里推荐的步骤，试图用 travis-exitwp 将 wordpress 导出的 xml 文件转换成 Hugo 的markdown 文件。前面都还好，到了最后一步（第8步），我始终得不到右下角的绿色对勾，自然也得不到文件的下载链接。起初我以为是 xml 文件太大的缘故（10 M，五百多篇帖子），于是试着只导出少量帖子来生成 xml，从头操作，但是一觉睡醒还没得到下载链接。&lt;/p&gt;
+
+&lt;p&gt;于是改变策略，我给 wordpress 博客安装了插件 &lt;a href=&#34;https://github.com/SchumacherFM/wordpress-to-hugo-exporter&#34; target=&#34;_blank&#34;&gt;wordpress-to-hugo-exporter&lt;/a&gt;，直接将帖子导出为 Hugo 的markdown 格式。除了文件名里的中文乱码外，我相当满意。于是将文件批量重命名，只保留日期。文件内容可以用益辉写的 &lt;a href=&#34;https://github.com/yihui/oldblog_xml/blob/master/convert.R&#34; target=&#34;_blank&#34;&gt;convert.R 代码&lt;/a&gt;来清理。&lt;/p&gt;
+
+&lt;p&gt;不过，对我来说仍然不够，看来还得自己动手，丰衣足食。因为我用的是 hugo-academic 主题，网页上会显示每篇帖子的摘要，需要每篇帖子的 yaml 里设置一个 “summary” 条目。这个好办，用 R 语言把每篇帖子的第一段摘出来当作 summary 插进去就行了。&lt;/p&gt;
+
+&lt;p&gt;此外，我还想在每篇帖子末尾增添一个“原文链接”，链到旧博客，万一哪篇帖子格式没转好呢？这也好吧，markdown 的 yaml 里有个 url 条目，稍微改一下插到文末就行了。&lt;/p&gt;
+
+&lt;p&gt;看，这就是 hugo 静态网站的好处。有 R 语言在手，以后我就可以对帖子随心所欲操作了。&lt;/p&gt;
+
+&lt;p&gt;旧博客 dapengde.com 虽然不更新了，但会仍然放在那里，发挥余热。前些天，还有朋友&lt;a href=&#34;http://dapengde.com/archives/14752#comment-153909&#34; target=&#34;_blank&#34;&gt;来我四年前写的帖子后面留言&lt;/a&gt;呢。&lt;/p&gt;
+
+&lt;p&gt;增加 summary 和原文链接的代码：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;for (i in dir(&#39;postold&#39;)){
+  txt &amp;lt;- readLines(paste0(&#39;postold/&#39;, i), encoding = &#39;UTF-8&#39;)
+  summ &amp;lt;- txt[grep(&#39;---&#39;, txt)[2]+1]
+  summ &amp;lt;- gsub(&#39;&amp;quot;&#39;, &#39;&#39;, summ)
+  newline &amp;lt;- paste0(&#39;summary: &amp;quot;&#39;, summ, &#39;&amp;quot;&#39;)
+  linkzh &amp;lt;- &#39;原文链接&#39;
+  newline2 &amp;lt;- paste0(&#39;\n[&#39;, linkzh, &#39;](http://dapengde.com&#39;, substring(txt[grep(&#39;url&#39;, txt)[1]], 6), &#39;)\n&#39;)
+  txtnew &amp;lt;- c(txt[1:3], newline,  txt[4:length(txt)], newline2)
+  writeLines(txtnew, paste0(&#39;postnew/&#39;, i), useBytes = TRUE)
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>我把青春献给你：排版 (2)</title>
-      <link>/zh/post/latex-and-me-2/</link>
+      <link>http://www.pzhao.org/zh/post/latex-and-me-2/</link>
       <pubDate>Wed, 22 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>/zh/post/latex-and-me-2/</guid>
+      <guid>http://www.pzhao.org/zh/post/latex-and-me-2/</guid>
       <description>&lt;p&gt;5&lt;/p&gt;
 &lt;p&gt;如果上一篇帖子让你以为我在为 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; 做广告，呵呵，那你就上当了。为啥？&lt;/p&gt;
 &lt;p&gt;因为我早就抛弃 LaTeX 了。&lt;/p&gt;
@@ -57,10 +97,10 @@
     
     <item>
       <title>我把青春献给你：排版 (1)</title>
-      <link>/zh/post/latex-and-me-1/</link>
+      <link>http://www.pzhao.org/zh/post/latex-and-me-1/</link>
       <pubDate>Tue, 21 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>/zh/post/latex-and-me-1/</guid>
+      <guid>http://www.pzhao.org/zh/post/latex-and-me-1/</guid>
       <description>&lt;p&gt;1&lt;/p&gt;
 &lt;p&gt;2017 年快要过去了。如果剩下这四十天不出什么幺蛾子的话，我今年的最蠢事情排行榜，基本是板上钉钉。名列榜首的，就是过早给《学 R》一书大肆宣传。跟罗永浩当年头一回卖锤子手机一样一样的，还没量产，就先吹牛，结果吹破了，打了自己的脸。&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;
@@ -84,12 +124,12 @@
 &lt;p&gt;比如说，标点符号。原稿里的所有标点符号，包括代码里的逗号、引号、括号、冒号，都变成了中文标点符号。加上非等宽字体，书里的代码惨不忍睹。&lt;/p&gt;
 &lt;p&gt;最要命的是，原稿里的很多空格也都不翼而飞。比如录排稿：&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;/img/xuer1.jpg&#34; /&gt;
+&lt;img src=&#34;http://www.pzhao.org/img/xuer1.jpg&#34; /&gt;
 
 &lt;/div&gt;
 &lt;p&gt;是不是一头雾水？实际上原稿是：&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;/img/xuer2.jpg&#34; /&gt;
+&lt;img src=&#34;http://www.pzhao.org/img/xuer2.jpg&#34; /&gt;
 
 &lt;/div&gt;
 &lt;p&gt;每次从录排稿里挑问题，都恨不得把一双近视眼珠子抠出来，再拿着放大镜逐字逐句看。后来，索性放弃了很多想法。比如说，原先代码是彩色的，得知需要录排逐个字符手动修改，算了不要了；原先打算增加个小贴士目录，得知需要排完页码手动添加，算了不要了；原先打算给常用函数做个索引，方便读者从书里找示例，看样子也得手动做，算了不要了……&lt;/p&gt;
@@ -117,10 +157,10 @@
     
     <item>
       <title>逻辑娃(2)</title>
-      <link>/zh/post/logical-kid-2/</link>
+      <link>http://www.pzhao.org/zh/post/logical-kid-2/</link>
       <pubDate>Tue, 21 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>/zh/post/logical-kid-2/</guid>
+      <guid>http://www.pzhao.org/zh/post/logical-kid-2/</guid>
       <description>&lt;p&gt;1&lt;/p&gt;
 &lt;p&gt;我：下午谁跟我出去逛街？&lt;/p&gt;
 &lt;p&gt;德生：我！给我买新玩具！&lt;/p&gt;
@@ -170,10 +210,10 @@
     
     <item>
       <title>论英雄</title>
-      <link>/archives/19541</link>
+      <link>http://www.pzhao.org/archives/19541</link>
       <pubDate>Fri, 20 Oct 2017 15:28:50 +0000</pubDate>
       
-      <guid>/archives/19541</guid>
+      <guid>http://www.pzhao.org/archives/19541</guid>
       <description>&lt;p&gt;日前读了一篇题为『&lt;a href=&#34;https://steemit.com/cn/@linuslee0216/2yyreh&#34; target=&#34;_blank&#34;&gt;自古英雄，不得好死&lt;/a&gt;』的文章，文中写道：“在现实的所谓「英雄」，下场好的都没有几过。很多都难逃「自古英雄，不得好死」的命运。如观我们中国历史，很多名将命运也是非常悲哀。近代的「英雄」，也一样不是被暗杀就是被囚禁，被打压。在外国的例子多的是。”&lt;/p&gt;
 
 &lt;p&gt;掩卷而思，我对“英雄不得好死”的因果关系有完全相反的看法：并非因为是英雄，所以不得好死；而是因为这些人不得好死，才成就了“英雄”的美名！&lt;/p&gt;
@@ -217,15 +257,17 @@
 &lt;p&gt;历史无法假设，我们永远不知道这些问题的答案。于谦被平反之前，没人为他立祠堂；袁崇焕被千刀万剐的时候，没人站出来说他是英雄。世间没有永恒的英雄。正如『&lt;a href=&#34;https://steemit.com/cn/@wooleeweb/whether-you-will-become-the-zhao-tienan-inmr-donkey&#34; target=&#34;_blank&#34;&gt;如果有一天你成了驴得水中的周铁男&lt;/a&gt;』 里说：“有太多英雄形象的产生，可能只是因为第一枪就打中了吧。”&lt;/p&gt;
 
 &lt;p&gt;不要迷信英雄。英雄，只存在于人们的幻想中。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://dapengde.com/archives/19541&#34; target=&#34;_blank&#34;&gt;原文链接&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>抬望眼，仰天長嘯，壯懷激烈</title>
-      <link>/archives/19539</link>
+      <link>http://www.pzhao.org/archives/19539</link>
       <pubDate>Tue, 17 Oct 2017 09:11:00 +0000</pubDate>
       
-      <guid>/archives/19539</guid>
+      <guid>http://www.pzhao.org/archives/19539</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;怒髮衝冠，憑欄處，潚潚雨歇。&lt;/p&gt;
 
@@ -265,15 +307,17 @@
 &lt;p&gt;近日，这首词涌入脑海，颇有共鸣。岳飞字鹏举，有个“鹏”字；岳飞有瑶琴，我有吉他。&lt;/p&gt;
 
 &lt;p&gt;岳武穆被害时，年 39，比我现在的年龄大了一点。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://dapengde.com/archives/19539&#34; target=&#34;_blank&#34;&gt;原文链接&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>童话国王的君子岛宫殿</title>
-      <link>/archives/19537</link>
+      <link>http://www.pzhao.org/archives/19537</link>
       <pubDate>Tue, 17 Oct 2017 09:09:03 +0000</pubDate>
       
-      <guid>/archives/19537</guid>
+      <guid>http://www.pzhao.org/archives/19537</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;Chiemsee, a lake seated in Bavaria, is famous for a palace built by the Fairy-tale King Lugwig II. On a rainy Sunday, we went there for a short trip.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -327,88 +371,8 @@
 &lt;p&gt;&lt;img src=&#34;https://steemitimages.com/DQmVe8EcubncErKj7qquZVZjV495oEY9d5jYoS1via2Z8oP/5.jpg&#34; alt=&#34;5.jpg&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;​&amp;gt; A papa not on steemit is a good papa.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>德国小学开学第一天</title>
-      <link>/archives/19531</link>
-      <pubDate>Tue, 03 Oct 2017 15:28:38 +0000</pubDate>
-      
-      <guid>/archives/19531</guid>
-      <description>&lt;blockquote&gt;
-&lt;p&gt;My son, Jingsheng, goes to school in Austria. He started his school life in Germany years ago. Cannot believe that he is going to leave primary school next year. Here I posted some sweet photos taken on his first day in school. How time flies!&lt;/p&gt;
-&lt;/blockquote&gt;
 
-&lt;p&gt;前些日子，奥地利的小学开学了。京生欢欣雀跃：“终于有作业可以做啦！”我们也是普天同庆：“大人终于可以开始休假了！”&lt;/p&gt;
-
-&lt;p&gt;家长会上，老师严肃地指出：小学 4 年级是至关重要的一年。最大的一件事是：孩子们开始有考试了。&lt;/p&gt;
-
-&lt;p&gt;从 1 年级到 3 年级，德国和奥地利的小学没有考试。每个学期的成绩由老师综合评定。京生属于学霸型，各门成绩优异。老师说将来应该可以上文理中学——相当于国内的重点中学。然而，老师还说，不能掉以轻心。4 年级上完就该升中学，而中学录取的重要参考依据，就是 4 年级的考试成绩。&lt;/p&gt;
-
-&lt;p&gt;京生问：“考试是什么？”&lt;/p&gt;
-
-&lt;p&gt;我答：“跟做作业一样，只有两个不同：第一是限制时间，比如 1 小时必须答完；第二是独立完成，别人不能帮你检查。最后老师打分。”心中暗想：“我们是中国小孩，考试算什么。”&lt;/p&gt;
-
-&lt;p&gt;京生做作业去了。想着儿子居然快要升中学了，我翻出了他刚入小学时的照片。一切仿佛发生在昨天。&lt;/p&gt;
-
-&lt;p&gt;那时候，我们还在德国生活。小孩 6 岁的时候，会接到市政府发来的纸质信件，通知准备入学。虽然是按住址划分学校，但京生分到的学校离家里还不如大学的附属小学离得近。我们费尽周折，终于成功把他转到了附小。&lt;/p&gt;
-
-&lt;p&gt;开学第一天，朝阳下，晨雾中，我们送给京生来到了小学。送孩子的家长可真不少。毕竟，这是孩子一生中的大事。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://steemitimages.com/DQmVKj2R9piEH4uR1YYxM669ZycEoQYSr2gCiwbDMwJq2pm/school4.jpg&#34; alt=&#34;school4.jpg&#34; /&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;First morning at the entrance of the school.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;每个孩子都从家里抱来个圆锥形的东西，德语叫做 Schultüte，是德国小学新生的标配，其实是个包，里面塞满了大人装进去的礼物。开学典礼在小学一楼大厅举行。新生们围坐起来。很多孩子来自同一所幼儿园，原先都认识，经过了一个暑假没见面，唧唧喳喳聊个不停。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://steemitimages.com/DQmRkDqcZvs4q3V7aC6FFQhczrg78LaWXv6SjBM2bx9G7vs/school5.jpg&#34; alt=&#34;school5.jpg&#34; /&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Opening ceremony for new pupils.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;开学典礼挺简单。校长和老师简单介绍了一下学校的概况，然后是学长代表上台发言，以过来人的身份，对新来的学弟学妹们进行一番语重心长的教诲。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://steemitimages.com/DQmTTvodFPtihcJ5egHa41h1BCJGg9a2tbXWPV6x5Y6v32H/school2.jpg&#34; alt=&#34;school2.jpg&#34; /&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Welcome speeches given by high-graded pupils.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;接下来，参观教室。教室里的桌椅已经摆好，每张桌子上放有新生名字的标签。家长们很快被赶了出去。老师跟孩子们在教室里相互熟悉，我们家长在外面，既是欢喜又是忐忑地等待。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://steemitimages.com/DQmQRWRhhrEdN4ywbJbjhNzxcm1BftHUTCiBJ28veQA6AUj/school6.jpg&#34; alt=&#34;school6.jpg&#34; /&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Classroom.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;大约过去 1 节课的工夫，教室门打开，孩子们出来了。剩下的时间就是自由活动。京生跟幼儿园的老朋友们合影留念。接下来的节目是：幼儿园回访。&lt;/p&gt;
-
-&lt;p&gt;京生的小学跟幼儿园挨着，几分钟就走到了。幼儿园的老师早已准备好，安排小朋友们就座。幼儿园这一届的毕业生，除了京生外，还有卢卡和海蒂。卢卡是京生的好朋友，海蒂是他们班的三大美女之一。在幼儿园，他们成了学长，把文具给幼儿园的孩子们传阅。有的孩子无比羡慕，有的孩子根本不知道发生了什么。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://steemitimages.com/DQmdLod7d6eFysf9noVZtLEPpQrdAduY6wYKBGMDjXZa1MJ/school3.jpg&#34; alt=&#34;school3.jpg&#34; /&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Return to the kindergarten.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;在幼儿园里逗留片刻，三个好朋友合影留念。然后，京生就离开了这所让我们难忘的幼儿园，至今再也没有回去过。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://steemitimages.com/DQmQ39rLztaQNpMGxStf9vxJueNmxCQC4PFRrcyUG1Bhu4r/school7.jpg&#34; alt=&#34;school7.jpg&#34; /&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Friends, who might never see each other again.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;后来，京生随我们搬到了奥地利。一年之后，我收到了卢卡爸爸的来信，说卢卡很想念京生，能不能安排一次聚会，让孩子们见个面？&lt;/p&gt;
-
-&lt;p&gt;我们试了好几次，终因种种不巧，未能如愿。&lt;/p&gt;
-
-&lt;p&gt;就这样，在奥地利，京生开始了他的人生新阶段。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://dapengde.com/archives/19537&#34; target=&#34;_blank&#34;&gt;原文链接&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     

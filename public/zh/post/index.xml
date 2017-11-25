@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Peng Zhao</title>
-    <link>/zh/post/index.xml</link>
+    <link>http://www.pzhao.org/zh/post/index.xml</link>
     <description>Recent content in Posts on Peng Zhao</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
@@ -11,11 +11,51 @@
     <atom:link href="/zh/post/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>全面迁站</title>
+      <link>http://www.pzhao.org/zh/post/migrated-to-hugo/</link>
+      <pubDate>Sat, 25 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.pzhao.org/zh/post/migrated-to-hugo/</guid>
+      <description>&lt;p&gt;从今天起，我的旧博客 dapengde.com 停止更新。旧博客的全部帖子已经搬到了 &lt;a href=&#34;http://www.pzhao.org&#34; target=&#34;_blank&#34;&gt;pzhao.org&lt;/a&gt;，欢迎收藏（ctrl + d）和&lt;a href=&#34;http://www.pzhao.org/zh/index.xml&#34; target=&#34;_blank&#34;&gt;订阅&lt;/a&gt;)。&lt;/p&gt;
+
+&lt;p&gt;半年多以前，我用 R 语言的 blogdown 包搭建了新网站，与旧博客并存至今。&lt;a href=&#34;http://www.pzhao.org/archives/19323/&#34; target=&#34;_blank&#34;&gt;当时我就说&lt;/a&gt;，我要等着益辉同学把blogdown 的使用说明书“迁站”一章写好，就照步骤把旧博客内容全搬过去。前些日子，&lt;a href=&#34;https://bookdown.org/yihui/blogdown&#34; target=&#34;_blank&#34;&gt;blogdown 书&lt;/a&gt;终于出版了，从 wordpress 搬到 hugo 的迁站方法写得很详细。迁站的时机成熟了。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://media.defense.gov/2012/Mar/19/2000168920/670/394/0/120319-F-JZ014-905.JPG&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;然而，迁站的过程并不是很顺利。我照着书里推荐的步骤，试图用 travis-exitwp 将 wordpress 导出的 xml 文件转换成 Hugo 的markdown 文件。前面都还好，到了最后一步（第8步），我始终得不到右下角的绿色对勾，自然也得不到文件的下载链接。起初我以为是 xml 文件太大的缘故（10 M，五百多篇帖子），于是试着只导出少量帖子来生成 xml，从头操作，但是一觉睡醒还没得到下载链接。&lt;/p&gt;
+
+&lt;p&gt;于是改变策略，我给 wordpress 博客安装了插件 &lt;a href=&#34;https://github.com/SchumacherFM/wordpress-to-hugo-exporter&#34; target=&#34;_blank&#34;&gt;wordpress-to-hugo-exporter&lt;/a&gt;，直接将帖子导出为 Hugo 的markdown 格式。除了文件名里的中文乱码外，我相当满意。于是将文件批量重命名，只保留日期。文件内容可以用益辉写的 &lt;a href=&#34;https://github.com/yihui/oldblog_xml/blob/master/convert.R&#34; target=&#34;_blank&#34;&gt;convert.R 代码&lt;/a&gt;来清理。&lt;/p&gt;
+
+&lt;p&gt;不过，对我来说仍然不够，看来还得自己动手，丰衣足食。因为我用的是 hugo-academic 主题，网页上会显示每篇帖子的摘要，需要每篇帖子的 yaml 里设置一个 “summary” 条目。这个好办，用 R 语言把每篇帖子的第一段摘出来当作 summary 插进去就行了。&lt;/p&gt;
+
+&lt;p&gt;此外，我还想在每篇帖子末尾增添一个“原文链接”，链到旧博客，万一哪篇帖子格式没转好呢？这也好吧，markdown 的 yaml 里有个 url 条目，稍微改一下插到文末就行了。&lt;/p&gt;
+
+&lt;p&gt;看，这就是 hugo 静态网站的好处。有 R 语言在手，以后我就可以对帖子随心所欲操作了。&lt;/p&gt;
+
+&lt;p&gt;旧博客 dapengde.com 虽然不更新了，但会仍然放在那里，发挥余热。前些天，还有朋友&lt;a href=&#34;http://dapengde.com/archives/14752#comment-153909&#34; target=&#34;_blank&#34;&gt;来我四年前写的帖子后面留言&lt;/a&gt;呢。&lt;/p&gt;
+
+&lt;p&gt;增加 summary 和原文链接的代码：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;for (i in dir(&#39;postold&#39;)){
+  txt &amp;lt;- readLines(paste0(&#39;postold/&#39;, i), encoding = &#39;UTF-8&#39;)
+  summ &amp;lt;- txt[grep(&#39;---&#39;, txt)[2]+1]
+  summ &amp;lt;- gsub(&#39;&amp;quot;&#39;, &#39;&#39;, summ)
+  newline &amp;lt;- paste0(&#39;summary: &amp;quot;&#39;, summ, &#39;&amp;quot;&#39;)
+  linkzh &amp;lt;- &#39;原文链接&#39;
+  newline2 &amp;lt;- paste0(&#39;\n[&#39;, linkzh, &#39;](http://dapengde.com&#39;, substring(txt[grep(&#39;url&#39;, txt)[1]], 6), &#39;)\n&#39;)
+  txtnew &amp;lt;- c(txt[1:3], newline,  txt[4:length(txt)], newline2)
+  writeLines(txtnew, paste0(&#39;postnew/&#39;, i), useBytes = TRUE)
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>我把青春献给你：排版 (2)</title>
-      <link>/zh/post/latex-and-me-2/</link>
+      <link>http://www.pzhao.org/zh/post/latex-and-me-2/</link>
       <pubDate>Wed, 22 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>/zh/post/latex-and-me-2/</guid>
+      <guid>http://www.pzhao.org/zh/post/latex-and-me-2/</guid>
       <description>&lt;p&gt;5&lt;/p&gt;
 &lt;p&gt;如果上一篇帖子让你以为我在为 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; 做广告，呵呵，那你就上当了。为啥？&lt;/p&gt;
 &lt;p&gt;因为我早就抛弃 LaTeX 了。&lt;/p&gt;
@@ -57,10 +97,10 @@
     
     <item>
       <title>我把青春献给你：排版 (1)</title>
-      <link>/zh/post/latex-and-me-1/</link>
+      <link>http://www.pzhao.org/zh/post/latex-and-me-1/</link>
       <pubDate>Tue, 21 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>/zh/post/latex-and-me-1/</guid>
+      <guid>http://www.pzhao.org/zh/post/latex-and-me-1/</guid>
       <description>&lt;p&gt;1&lt;/p&gt;
 &lt;p&gt;2017 年快要过去了。如果剩下这四十天不出什么幺蛾子的话，我今年的最蠢事情排行榜，基本是板上钉钉。名列榜首的，就是过早给《学 R》一书大肆宣传。跟罗永浩当年头一回卖锤子手机一样一样的，还没量产，就先吹牛，结果吹破了，打了自己的脸。&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;
@@ -84,12 +124,12 @@
 &lt;p&gt;比如说，标点符号。原稿里的所有标点符号，包括代码里的逗号、引号、括号、冒号，都变成了中文标点符号。加上非等宽字体，书里的代码惨不忍睹。&lt;/p&gt;
 &lt;p&gt;最要命的是，原稿里的很多空格也都不翼而飞。比如录排稿：&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;/img/xuer1.jpg&#34; /&gt;
+&lt;img src=&#34;http://www.pzhao.org/img/xuer1.jpg&#34; /&gt;
 
 &lt;/div&gt;
 &lt;p&gt;是不是一头雾水？实际上原稿是：&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;/img/xuer2.jpg&#34; /&gt;
+&lt;img src=&#34;http://www.pzhao.org/img/xuer2.jpg&#34; /&gt;
 
 &lt;/div&gt;
 &lt;p&gt;每次从录排稿里挑问题，都恨不得把一双近视眼珠子抠出来，再拿着放大镜逐字逐句看。后来，索性放弃了很多想法。比如说，原先代码是彩色的，得知需要录排逐个字符手动修改，算了不要了；原先打算增加个小贴士目录，得知需要排完页码手动添加，算了不要了；原先打算给常用函数做个索引，方便读者从书里找示例，看样子也得手动做，算了不要了……&lt;/p&gt;
@@ -117,10 +157,10 @@
     
     <item>
       <title>逻辑娃(2)</title>
-      <link>/zh/post/logical-kid-2/</link>
+      <link>http://www.pzhao.org/zh/post/logical-kid-2/</link>
       <pubDate>Tue, 21 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>/zh/post/logical-kid-2/</guid>
+      <guid>http://www.pzhao.org/zh/post/logical-kid-2/</guid>
       <description>&lt;p&gt;1&lt;/p&gt;
 &lt;p&gt;我：下午谁跟我出去逛街？&lt;/p&gt;
 &lt;p&gt;德生：我！给我买新玩具！&lt;/p&gt;
@@ -170,10 +210,10 @@
     
     <item>
       <title>论英雄</title>
-      <link>/archives/19541</link>
+      <link>http://www.pzhao.org/archives/19541</link>
       <pubDate>Fri, 20 Oct 2017 15:28:50 +0000</pubDate>
       
-      <guid>/archives/19541</guid>
+      <guid>http://www.pzhao.org/archives/19541</guid>
       <description>&lt;p&gt;日前读了一篇题为『&lt;a href=&#34;https://steemit.com/cn/@linuslee0216/2yyreh&#34; target=&#34;_blank&#34;&gt;自古英雄，不得好死&lt;/a&gt;』的文章，文中写道：“在现实的所谓「英雄」，下场好的都没有几过。很多都难逃「自古英雄，不得好死」的命运。如观我们中国历史，很多名将命运也是非常悲哀。近代的「英雄」，也一样不是被暗杀就是被囚禁，被打压。在外国的例子多的是。”&lt;/p&gt;
 
 &lt;p&gt;掩卷而思，我对“英雄不得好死”的因果关系有完全相反的看法：并非因为是英雄，所以不得好死；而是因为这些人不得好死，才成就了“英雄”的美名！&lt;/p&gt;
@@ -217,15 +257,17 @@
 &lt;p&gt;历史无法假设，我们永远不知道这些问题的答案。于谦被平反之前，没人为他立祠堂；袁崇焕被千刀万剐的时候，没人站出来说他是英雄。世间没有永恒的英雄。正如『&lt;a href=&#34;https://steemit.com/cn/@wooleeweb/whether-you-will-become-the-zhao-tienan-inmr-donkey&#34; target=&#34;_blank&#34;&gt;如果有一天你成了驴得水中的周铁男&lt;/a&gt;』 里说：“有太多英雄形象的产生，可能只是因为第一枪就打中了吧。”&lt;/p&gt;
 
 &lt;p&gt;不要迷信英雄。英雄，只存在于人们的幻想中。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://dapengde.com/archives/19541&#34; target=&#34;_blank&#34;&gt;原文链接&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>抬望眼，仰天長嘯，壯懷激烈</title>
-      <link>/archives/19539</link>
+      <link>http://www.pzhao.org/archives/19539</link>
       <pubDate>Tue, 17 Oct 2017 09:11:00 +0000</pubDate>
       
-      <guid>/archives/19539</guid>
+      <guid>http://www.pzhao.org/archives/19539</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;怒髮衝冠，憑欄處，潚潚雨歇。&lt;/p&gt;
 
@@ -265,15 +307,17 @@
 &lt;p&gt;近日，这首词涌入脑海，颇有共鸣。岳飞字鹏举，有个“鹏”字；岳飞有瑶琴，我有吉他。&lt;/p&gt;
 
 &lt;p&gt;岳武穆被害时，年 39，比我现在的年龄大了一点。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://dapengde.com/archives/19539&#34; target=&#34;_blank&#34;&gt;原文链接&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>童话国王的君子岛宫殿</title>
-      <link>/archives/19537</link>
+      <link>http://www.pzhao.org/archives/19537</link>
       <pubDate>Tue, 17 Oct 2017 09:09:03 +0000</pubDate>
       
-      <guid>/archives/19537</guid>
+      <guid>http://www.pzhao.org/archives/19537</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;Chiemsee, a lake seated in Bavaria, is famous for a palace built by the Fairy-tale King Lugwig II. On a rainy Sunday, we went there for a short trip.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -327,15 +371,17 @@
 &lt;p&gt;&lt;img src=&#34;https://steemitimages.com/DQmVe8EcubncErKj7qquZVZjV495oEY9d5jYoS1via2Z8oP/5.jpg&#34; alt=&#34;5.jpg&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;​&amp;gt; A papa not on steemit is a good papa.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://dapengde.com/archives/19537&#34; target=&#34;_blank&#34;&gt;原文链接&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>德国小学开学第一天</title>
-      <link>/archives/19531</link>
+      <link>http://www.pzhao.org/archives/19531</link>
       <pubDate>Tue, 03 Oct 2017 15:28:38 +0000</pubDate>
       
-      <guid>/archives/19531</guid>
+      <guid>http://www.pzhao.org/archives/19531</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;My son, Jingsheng, goes to school in Austria. He started his school life in Germany years ago. Cannot believe that he is going to leave primary school next year. Here I posted some sweet photos taken on his first day in school. How time flies!&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -409,15 +455,17 @@
 &lt;p&gt;我们试了好几次，终因种种不巧，未能如愿。&lt;/p&gt;
 
 &lt;p&gt;就这样，在奥地利，京生开始了他的人生新阶段。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://dapengde.com/archives/19531&#34; target=&#34;_blank&#34;&gt;原文链接&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Steemit 的三大谎言</title>
-      <link>/archives/19526</link>
+      <link>http://www.pzhao.org/archives/19526</link>
       <pubDate>Mon, 25 Sep 2017 13:45:49 +0000</pubDate>
       
-      <guid>/archives/19526</guid>
+      <guid>http://www.pzhao.org/archives/19526</guid>
       <description>&lt;p&gt;&lt;strong&gt;“写文章赚钱”，这是 steemit 最大的谎言。对此，新手知道得越早越好。&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://media.licdn.com/mpr/mpr/AAEAAQAAAAAAAAZJAAAAJDExYTZjNDZjLTk4ODItNDAyOS04MjFiLTJhYTFiYjU2Zjk3MA.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
@@ -483,15 +531,17 @@
 &lt;p&gt;steemit 的元老老聂，对“在steemit 上写作的收入从哪里来”这个问题回答道：就像矿工挖矿，写东西的作者是矿工，文章收益就是矿工的工钱。言外之意，“挖”值钱，而“矿”更值钱；矿工赚钱，矿老板更赚钱。&lt;/p&gt;
 
 &lt;p&gt;要知道，写作，终究是一种劳动。用劳动换钱，永远是小打小闹。只有用钱生钱，才是赚钱的王道。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://dapengde.com/archives/19526&#34; target=&#34;_blank&#34;&gt;原文链接&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>R bookdown 的小技巧</title>
-      <link>/zh/post/bookdown-tips/</link>
+      <link>http://www.pzhao.org/zh/post/bookdown-tips/</link>
       <pubDate>Fri, 22 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>/zh/post/bookdown-tips/</guid>
+      <guid>http://www.pzhao.org/zh/post/bookdown-tips/</guid>
       <description>&lt;p&gt;本帖用来收集整理 R 语言 bookdown 扩展包的一些使用技巧。有些是在网上搜来的，有些是我在别处讨论得来的，有些是我尚未发布的，都写在这里备用。&lt;/p&gt;
 &lt;div id=&#34;-markdown-&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;输出 Markdown 文件&lt;/h2&gt;
@@ -575,10 +625,10 @@ knitr::include_graphics(if (identical(knitr:::pandoc_to(), &amp;#39;html&amp;#39
     
     <item>
       <title>如何在 R markdown 里输出 r pi 并前后加上小撇`</title>
-      <link>/zh/post/backticks-in-rmd/</link>
+      <link>http://www.pzhao.org/zh/post/backticks-in-rmd/</link>
       <pubDate>Fri, 22 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>/zh/post/backticks-in-rmd/</guid>
+      <guid>http://www.pzhao.org/zh/post/backticks-in-rmd/</guid>
       <description>&lt;p&gt;其实本文的标题应该是：如何在文章里显示 &lt;code&gt;`r pi`&lt;/code&gt; 这样的文字。但是我不知道怎么把这个格式弄到标题里。所以，就这样凑合过吧。&lt;/p&gt;
 &lt;p&gt;这个问题的答案，要分几层意思来说。&lt;code&gt;`r pi`&lt;/code&gt; 是代码格式（本博客显示为粉底红字），并且包含的`符号同样是代码格式，并且 pi 并没有被编译成 3.1415927。别看它短，这三点每个都是个坑。&lt;/p&gt;
 &lt;p&gt;这个问题在编写 R markdown 教程时常见。其实，等你明白这个问题的答案后，会发现答案并不难，难的是如何描述这个问题。我费了好大劲，都想不出一个准确描述的办法，并且在那些支持 markdown 的论坛上，我连这个小撇都输不出来，这叫人怎么问？最后我只能这么提问：&lt;/p&gt;
@@ -632,10 +682,10 @@ knitr::include_graphics(if (identical(knitr:::pandoc_to(), &amp;#39;html&amp;#39
     
     <item>
       <title>Typora: 一款无可挑剔的 Markdown 编辑器</title>
-      <link>/archives/19522</link>
+      <link>http://www.pzhao.org/archives/19522</link>
       <pubDate>Mon, 18 Sep 2017 12:43:59 +0000</pubDate>
       
-      <guid>/archives/19522</guid>
+      <guid>http://www.pzhao.org/archives/19522</guid>
       <description>
 
 &lt;p&gt;我郑重推荐一款免费开源、老少咸宜的编辑器：&lt;a href=&#34;https://typora.io/&#34; target=&#34;_blank&#34;&gt;Typora&lt;/a&gt;。&lt;/p&gt;
@@ -707,15 +757,17 @@ knitr::include_graphics(if (identical(knitr:::pandoc_to(), &amp;#39;html&amp;#39
 &lt;p&gt;而且，Typora 竟然是免费的，开源的，跨平台的！Windows，mac 和 linux 平台都可以用！&lt;/p&gt;
 
 &lt;p&gt;这么好的编辑器，不推荐，根本忍不住。来试一下吧，告诉我你的体验。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://dapengde.com/archives/19522&#34; target=&#34;_blank&#34;&gt;原文链接&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>锵锵三人行，与君生别离</title>
-      <link>/archives/19519</link>
+      <link>http://www.pzhao.org/archives/19519</link>
       <pubDate>Sat, 16 Sep 2017 21:55:17 +0000</pubDate>
       
-      <guid>/archives/19519</guid>
+      <guid>http://www.pzhao.org/archives/19519</guid>
       <description>&lt;p&gt;听说《锵锵三人行》停播，我的眼镜跌到了键盘上。&lt;/p&gt;
 
 &lt;p&gt;记不起是几时开始结识这个节目的，好像自从离开校园后，生活里就从来没有离开过《锵锵三人行》，掐指算来有十来年了，称得上我的一大兴趣。&lt;/p&gt;
@@ -777,15 +829,17 @@ knitr::include_graphics(if (identical(knitr:::pandoc_to(), &amp;#39;html&amp;#39
 &lt;p&gt;&lt;strong&gt;锵锵三人行最后一期：&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;锵锵三人行第一期：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://dapengde.com/archives/19519&#34; target=&#34;_blank&#34;&gt;原文链接&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>露天电影</title>
-      <link>/archives/19514</link>
+      <link>http://www.pzhao.org/archives/19514</link>
       <pubDate>Tue, 05 Sep 2017 15:13:00 +0000</pubDate>
       
-      <guid>/archives/19514</guid>
+      <guid>http://www.pzhao.org/archives/19514</guid>
       <description>&lt;p&gt;世界著名品牌“施华洛世奇”，总部有个水晶世界博物馆，距离我家半小时车程。今年夏天，水晶世界播放露天电影。水晶世界的露天电影，会是什么样呢？会是挂在水晶上的吗？&lt;/p&gt;
 
 &lt;p&gt;一说起露天电影，我的思绪立刻回到了童年。&lt;/p&gt;
@@ -819,15 +873,17 @@ knitr::include_graphics(if (identical(knitr:::pandoc_to(), &amp;#39;html&amp;#39
 &lt;p&gt;果然，到电影快结束的时候，乌云飘过来了。就在野兽变回王子的瞬间，远处山上轰隆隆一道闪电！太应景了，我还以为是电影里配的。&lt;/p&gt;
 
 &lt;p&gt;观众们纷纷开始逃窜。我们坚持看到了最后一幕，然后跳起来，推着婴儿车拔腿就跑。一边跑一边把孩子的雨靴往肩上搭，心想，不知村里现在还放不放露天电影，人们还看不看寇准背靴了？&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://dapengde.com/archives/19514&#34; target=&#34;_blank&#34;&gt;原文链接&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>“大鹏观察”从今开始守望，至死方休</title>
-      <link>/archives/19511</link>
+      <link>http://www.pzhao.org/archives/19511</link>
       <pubDate>Wed, 30 Aug 2017 10:51:09 +0000</pubDate>
       
-      <guid>/archives/19511</guid>
+      <guid>http://www.pzhao.org/archives/19511</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;长夜将至，我从今开始守望，至死方休。&lt;/p&gt;
 
@@ -901,42 +957,8 @@ knitr::include_graphics(if (identical(knitr:::pandoc_to(), &amp;#39;html&amp;#39
 &lt;p&gt;抱歉没能无法翻译成中文，因为我翻译不出其中的味道来。其中有调侃的成分，但主要还是鞭策自己把东西做好。&lt;/p&gt;
 
 &lt;p&gt;steem 是个宝藏，是个观察人性的绝佳实验场。从里面能观察到什么，我们拭目以待。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>为什么钢铁侠和临冬城皆姓“史塔克”（权力的游戏 S7-5，正文无剧透，但不保证评论里有没有剧透）</title>
-      <link>/archives/19504</link>
-      <pubDate>Sun, 20 Aug 2017 07:03:30 +0000</pubDate>
-      
-      <guid>/archives/19504</guid>
-      <description>&lt;p&gt;权力的游戏第 7 季第 5 集，里面出现了一张小字条。由于镜头停留时间太短，并且手写体不容易识别，还没看清写的是什么就过去了。于是很多人在网上问，小字条上到底写的是什么。&lt;/p&gt;
 
-&lt;p&gt;有人恶搞了下面的答案：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://steemitimages.com/0x0/https://pic1.zhimg.com/v2-4b5fc43c8db26bdb652419d174cc5838_b.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;图片来源：知乎&lt;/code&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;托尼-史塔克是我们的兄弟。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Tony Stark 是钢铁侠的名字。由于恰好都姓 Stark，所以这其实是被大家恶搞的一个老梗了。下面是有人绘制的 Stark 一家的合影。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://orig07.deviantart.net/a841/f/2012/080/b/b/house_stark_by_lorainesammy-d4tgqjs.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;图片来源：lorainesammy.deviantart.com&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;为啥漫威动画和《冰与火之歌》都不约而同用了 Stark 这个姓呢？&lt;/p&gt;
-
-&lt;p&gt;Stark 是个德语词，是”强壮“的意思，就好像中文里姓“牛”一样。Stark 这个姓听起来就跟狼家风格搭配，跟钢铁侠也很般配。而且 stark 比 strong 听起来更古朴一些，似乎有种命中注定的意思 —— 不信，你试试让小指头姓 Stark，是不是很违和？其实就是等同于英文的 strong。Strong 也是一个姓，中文译作“斯特朗”，有个著名的美国记者就叫斯特朗，但是英文版听起来是不是不如德语版更厚重一些？&lt;/p&gt;
-
-&lt;p&gt;德语里，s 在 t 前面发音为 sch，类似于中文里的卷舌音，译作”史塔克“，表面看起来波澜不惊，实际非常贴切：这几个汉字把其中的强悍和古朴都展示出来了。唯一的不足之处，是让人觉得跟“史莱克”好像有点什么关系。&lt;/p&gt;
-
-&lt;p&gt;中国人也喜欢给男孩子起名叫“强”。大约每个中国小朋友都会有个同学名叫“强”吧。这名字一直让大家喜闻乐见，直到出现了《唐伯虎点秋香》&amp;#8230;&amp;#8230;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://static.ishaohuang.com/2011/10/xiaoqiang.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://dapengde.com/archives/19511&#34; target=&#34;_blank&#34;&gt;原文链接&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
