@@ -55,11 +55,11 @@ beginr::plotlm(x, y)</code></pre>
 <p><img src="/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 <pre><code>## [[1]]
 ##              Estimate Std. Error  t value     Pr(&gt;|t|)
-## (Intercept) 0.7875901  0.6212906 1.267668 2.405669e-01
-## x           0.8705270  0.1001300 8.693964 2.388076e-05
+## (Intercept) 1.0952776 0.55356940 1.978573 8.323230e-02
+## x           0.7899138 0.08921579 8.853968 2.089608e-05
 ## 
 ## [[2]]
-## [1] 0.9042891</code></pre>
+## [1] 0.9073996</code></pre>
 <p>经常需要了解一组数据的分布, 看看是不是正态分布. beginr 里的 <code>plothist()</code> 函数不仅做出直方图和平滑曲线, 并且标出中值, 中位数, 四分位数, 标准偏差, 样本数, 以及用来判断是否正态分布的 skewness 值.</p>
 <pre class="r"><code>x &lt;- rnorm(10000)
 beginr::plothist(x)</code></pre>
@@ -93,20 +93,20 @@ beginr::errorbar(x, y, yupper = 0.1, ylower = 0.1)</code></pre>
 <p>beginr 提供了一些对数据框计算的函数, 例如计算多列数据两两的相关性和线性拟合结果, 可以用 <code>lmdf()</code> 函数.</p>
 <pre class="r"><code>df &lt;- data.frame(a = 1:10, b = 1:10 + rnorm(10), c = 1:10 + rnorm(10))
 beginr::lmdf(df)</code></pre>
-<pre><code>##   x y r.squared adj.r.squared   intercept     slope Std.Error.intercept
-## 1 a b 0.9049854     0.8931085 -1.80332853 1.1845936           0.8420333
-## 2 a c 0.9501407     0.9439083  0.28040656 1.0265138           0.5158568
-## 3 b a 0.9049854     0.8931085  1.90025632 0.7639627           0.5177295
-## 4 b c 0.8141248     0.7908904  2.33066773 0.7630758           0.7625867
-## 5 c a 0.9501407     0.9439083  0.01468183 0.9255996           0.4987816
-## 6 c b 0.8141248     0.7908904 -1.61075461 1.0668989           1.1992143
-##   Std.Error.slope t.intercept   t.slope Pr.intercept     Pr.slope
-## 1      0.13570596  -2.1416356  8.729120  0.064611608 2.318635e-05
-## 2      0.08313786   0.5435744 12.347129  0.601548882 1.724616e-06
-## 3      0.08751887   3.6703650  8.729120  0.006306162 2.318635e-05
-## 4      0.12891041   3.0562658  5.919428  0.015671192 3.539191e-04
-## 5      0.07496476   0.0294354 12.347129  0.977238419 1.724616e-06
-## 6      0.18023683  -1.3431749  5.919428  0.216071683 3.539191e-04</code></pre>
+<pre><code>##   x y r.squared adj.r.squared  intercept     slope Std.Error.intercept
+## 1 a b 0.9004290     0.8879826 -0.2028849 0.9987915           0.7286216
+## 2 a c 0.9236594     0.9141168  0.7358966 0.9284375           0.5855447
+## 3 b a 0.9004290     0.8879826  0.7305452 0.9015184           0.6458466
+## 4 b c 0.7723177     0.7438574  1.5751446 0.8065748           0.9434617
+## 5 c a 0.9236594     0.9141168 -0.3122358 0.9948535           0.6540170
+## 6 c b 0.7723177     0.7438574 -0.3036984 0.9575277           1.1888470
+##   Std.Error.slope t.intercept  t.slope Pr.intercept     Pr.slope
+## 1      0.11742800  -0.2784503 8.505565    0.7877285 2.801983e-05
+## 2      0.09436907   1.2567728 9.838367    0.2442883 9.585029e-06
+## 3      0.10599159   1.1311436 8.505565    0.2907614 2.801983e-05
+## 4      0.15483399   1.6695375 5.209288    0.1335611 8.131341e-04
+## 5      0.10111978  -0.4774124 9.838367    0.6458391 9.585029e-06
+## 6      0.18381164  -0.2554563 5.209288    0.8048159 8.131341e-04</code></pre>
 <p>还有两个函数对<code>tapply()</code>进行了改善, 用来进行因子计算.</p>
 <pre class="r"><code>beginr::tapplydf()
 beginr::tapplydfv()</code></pre>
@@ -126,8 +126,7 @@ beginr::list2ascii(alist)</code></pre>
 <p>很多人引用了别人的工作却往往不列出参考文献. 不仅初学者常常如此, 很多学术论文里有些插图一眼就能看出是 R 的某个扩展包作出来的, 但参考文献里却没有列出来, 这往小了说是不尊重别人的工作,往大了说是缺乏学术道德. 对开源社区的生态圈是不利的. beginr 为初学者提供了 <code>bib()</code> 函数, 可以为指定的 R 扩展包生成文献引用信息, 既可以打印出结果, 也可以直接保存为 ‘.bib’文件方便为’<a href="http://www.pzhao.org/zh/post/bookdownplus-released/">bookdownplus</a>‘<span class="citation">(Zhao 2017b)</span> 或’<a href="http://www.pzhao.org/zh/post/r-blogdown/">blogdown</a>’ <span class="citation">(Xie 2017)</span> 调用.</p>
 <pre class="r"><code>beginr::bib(pkg = c(&quot;mindr&quot;, &quot;bookdownplus&quot;, &quot;pinyin&quot;))</code></pre>
 <pre><code>## @Manual{R-bookdownplus,
-##   title = {bookdownplus: Generate Varied Types of Books and Documents with R &#39;bookdown&#39;
-## Package},
+##   title = {bookdownplus: Generate Assorted Books and Documents with R &#39;bookdown&#39; Package},
 ##   author = {Peng Zhao},
 ##   year = {2017},
 ##   note = {R package version 1.4.0},

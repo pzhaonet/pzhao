@@ -116,280 +116,299 @@
     </item>
     
     <item>
-      <title>R bookdown 的小技巧</title>
-      <link>http://www.pzhao.org/zh/post/bookdown-tips/</link>
-      <pubDate>Fri, 22 Sep 2017 00:00:00 +0000</pubDate>
+      <title>逻辑娃(2)</title>
+      <link>http://www.pzhao.org/zh/post/logical-kid-2/</link>
+      <pubDate>Tue, 21 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/zh/post/bookdown-tips/</guid>
-      <description>&lt;p&gt;本帖用来收集整理 R 语言 bookdown 扩展包的一些使用技巧。有些是在网上搜来的，有些是我在别处讨论得来的，有些是我尚未发布的，都写在这里备用。&lt;/p&gt;
-&lt;div id=&#34;-markdown-&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;输出 Markdown 文件&lt;/h2&gt;
-&lt;p&gt;使用 bookdown 编译 Rmd 文件，可以得到的输出格式五花八门。对此，&lt;a href=&#34;https://bookdown.org/yihui/bookdown/output-formats.html&#34;&gt;bookdown 的官方文档&lt;/a&gt; 有详细介绍，包括 github， pdf，epub，word，html 单个文档等，偏偏没有提 markdown 格式。&lt;/p&gt;
-&lt;p&gt;其实，markdown 文件是有的，在编译过程里作为过渡文档存在，编译结束后自动删除。编译顺利的时候，在文件夹里“刷”地闪一下就消失了。我以前的做法是“快手”，在它消失之前迅速用 notepad++ 打开，就存下来了。这显然不是办法，凑合着过日子而已。&lt;/p&gt;
-&lt;p&gt;一般来说，如果仅仅是使用 rmarkdown，只需在 yaml 设置里声明一下：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;output:
-  md_document:
-    variant: markdown_github&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;然后 knit 一下，就可以得到 markdown 文件了。想当然地，我把这段代码加到了 bookdown 的yaml 里，却得到警告，说 bookdown 不支持。&lt;/p&gt;
-&lt;p&gt;这事儿被我搁置了很久，最后我终于在 bookdown 的项目主页找到了&lt;a href=&#34;https://github.com/rstudio/bookdown/issues/317#issuecomment-275262486&#34;&gt;答案&lt;/a&gt;：参数 &lt;code&gt;clean = FALSE&lt;/code&gt; 。&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;bookdown::render_book(&#39;index.Rmd&#39;, clean = FALSE)&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;我很喜欢 markdown 格式。我用 bookdown 写论文，Rmd 的正文里插了不少诸如 &lt;code&gt;r pi&lt;/code&gt; 这样的调用。跟合作作者讨论时，看 Rmd 文件吧不直观，看 html 吧不方便修改，md 大概是最好的格式。&lt;/p&gt;
-&lt;p&gt;bookdown 的编译，我习惯按快捷键 ctrl+alt+b，或者点击右上方面板的 Build 按钮编译的，输出格式取决于 yaml。这样就得不到 md 文件。要想得到 md 文件，看来以后得改成命令行编译了。&lt;/p&gt;
-&lt;p&gt;我的 &lt;a href=&#34;https://github.com/pzhaonet/bookdownplus&#34;&gt;bookdownplus 最新版本 v1.3.1&lt;/a&gt; ，把 &lt;code&gt;clean&lt;/code&gt; 参数默认设置为 FALSE，并且在编译后把用不着的 .lol 文件删除。这样，新用户第一次用bookdown 时，就又多得到一种漂亮的输出结果。&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;pdf-&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;pdf 的参考文献引用格式&lt;/h2&gt;
-&lt;p&gt;bookdown 里引用参考文献，在 bookdown 的官方文档里有说明。例如标识为’zhao2017’ 的 bib 条目，引用的方式和输出结果为：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;@zhao2017&lt;/code&gt;，得到 &lt;code&gt;Zhao (2017)&lt;/code&gt;， 相当于 LaTeX 里的 &lt;code&gt;\citet{zhao2017}&lt;/code&gt;。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;[@zhao2017]&lt;/code&gt; ，得到 &lt;code&gt;(Zhao, 2017)&lt;/code&gt;， 相当于 LaTeX 里的 &lt;code&gt;\citep{zhao2017}&lt;/code&gt;。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;但是，如果有多篇参考文献连续引用（我经常需要），就出问题了。我想得到的是 &lt;code&gt;(Xie, 2016; Zhao, 2017)&lt;/code&gt;，但无论输入 &lt;code&gt;[@zhao2017][@xie2016]&lt;/code&gt;, 或是&lt;code&gt;[@zhao2017 @xie2016]&lt;/code&gt;，或是&lt;code&gt;(@zhao2017; @xie2016)&lt;/code&gt;，都不管用。&lt;/p&gt;
-&lt;p&gt;管用的方法是使用 LaTeX 方式：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;\citep{zhao2017,xie2016}&lt;/code&gt;，得到&lt;code&gt;(Xie, 2016; Zhao, 2017)&lt;/code&gt;。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;更新：经 Yihui 提示，应当用 &lt;code&gt;[@zhao2017; @xie2016]&lt;/code&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;-pdf-&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;往 pdf 里插入网络图片&lt;/h2&gt;
-&lt;p&gt;假定往文档里插入下面这张网络图片：&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;url &amp;lt;- &#39;https://bookdown.org/yihui/bookdown/images/cover.jpg&#39;&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;一般有两种方法：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;knitr::include_graphics(url)&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;![](https://bookdown.org/yihui/bookdown/images/cover.jpg)&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;得到的网页输出格式里没有任何问题，但是 pdf 却不行。&lt;/p&gt;
-&lt;p&gt;这是因为，生成 pdf 的 LaTeX 不支持插入网络图片。LaTeX 界的解决办法是，先用 &lt;code&gt;wget&lt;/code&gt; 把网络图片下载到本地，再插入到tex 文档里。那么，我在 bookdown 里也如法炮制：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;download.file(url,&amp;#39;cover.jpg&amp;#39;, mode = &amp;#39;wb&amp;#39;)
-knitr::include_graphics(&amp;#39;cover.jpg&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;这事儿其实已经解决了，但是不够完美。如果用 bookdown 同时输出网页格式和 pdf，那么网页格式的文档里插入的图片是本地图片；如果发布到 bookdown.org，那么插入的图片来自 bookdown.org。两者都不是该图片的原始地址。有点资源浪费。&lt;/p&gt;
-&lt;p&gt;完美的解决方式来自&lt;a href=&#34;https://stackoverflow.com/questions/46331896/how-can-i-insert-an-image-from-internet-to-the-pdf-file-produced-by-r-bookdown-i&#34;&gt;Yihui 的回答&lt;/a&gt;，在 Rmd 里这么写：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;if (!file.exists(cover_file &amp;lt;- &amp;#39;cover.jpg&amp;#39;))
-  download.file(url, cover_file, mode = &amp;#39;wb&amp;#39;)
-knitr::include_graphics(if (identical(knitr:::pandoc_to(), &amp;#39;html&amp;#39;)) url else cover_file)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;这段代码自动判断，如果输出网页文档，就插入原始图片链接，否则就下载到本地再插入。&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;section level2&#34;&gt;
-&lt;h2&gt;主控文档和子文档&lt;/h2&gt;
-&lt;p&gt;Word 有个很好的功能，叫做“主控文档”：如果文件太大，那么各章可以分别写在一个 word 文档（子文档）里，然后插入到另一个文档里合并。LaTeX 里也有同样的功能，用 include 指令就行了。&lt;/p&gt;
-&lt;p&gt;bookdown 当然也可以。官方文档对此有&lt;a href=&#34;https://bookdown.org/yihui/bookdown/usage.html&#34;&gt;说明&lt;/a&gt;，只需在’_bookdown.yml’里声明即可：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;rmd_files: [&amp;quot;chapter1.Rmd&amp;quot;, &amp;quot;chapter2.Rmd&amp;quot;, &amp;quot;chapter3.Rmd&amp;quot;]
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;如果希望在不同格式的输出文件里包含不同的章节，比如网页格式的书里包含 1 到 3 章，而 pdf 的只包含第 1 和第 3 章，那么：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;rmd_files:
-  html: [&amp;quot;chapter1.Rmd&amp;quot;, &amp;quot;chapter2.Rmd&amp;quot;, &amp;quot;chapter3.Rmd&amp;quot;]
-  latex: [&amp;quot;chapter1.Rmd&amp;quot;, &amp;quot;chapter3.Rmd&amp;quot;]&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;但是，这种方法只适合并列关系的章节，如果是总分关系的呢？比如，我想在 chapter1 里某段插入 ‘mytext.md’ 这个文本，在 chapter2 里再插入一次，该怎么办？&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://disqus.com/home/discussion/yihui/r_markdown_notebook_jupyter_ipython_notebook/#comment-3426121547&#34;&gt;这样办&lt;/a&gt;：&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;cat(readLines(&amp;quot;mytext.md&amp;quot;), sep = &amp;quot;\n&amp;quot;) # 结合代码段选项 results=&amp;quot;asis&amp;quot;, echo=FALSE&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;如果深入一步，考虑上一节“往 pdf 里插入网络图片”的方法，就可以玩出更多花样，例如书的网页格式里插入 mytext.md，而 pdf 里不插。&lt;/p&gt;
-&lt;p&gt;如果再跟上面的 yaml 声明相结合，各个文本文件就成了乐高积木块，随心所欲组合了。&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;bookdown.org-&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;bookdown.org 的多账号管理&lt;/h2&gt;
-&lt;p&gt;在 bookdown.org 发布书稿，点击RStudio 左上面板的发布符号，会引导你用 google 账号登录。第一次登录会让你设置在 bookdown.org 的用户名，这个要重视，想个你喜欢的名字，以后就没法改了。&lt;/p&gt;
-&lt;p&gt;用同一账号发布书稿，一点问题都没有。但是当我用多个账号发布书稿，遇见了一些小麻烦。&lt;/p&gt;
-&lt;p&gt;首先，我用 &lt;code&gt;bookdown::publish_book()&lt;/code&gt; 的 &lt;code&gt;account&lt;/code&gt; 参数指定一个新账号，得到了错误信息:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;Error: Unknown account name &amp;#39;newaccount&amp;#39; (you can use the setAccountInfo function to add a new account)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;一查 setAccountInfo，不是 bookdown 包的函数，而是 rsconnect 包的函数：&lt;code&gt;rsconnect::setAccountInfo()&lt;/code&gt;。然后就不知道怎么办了。&lt;/p&gt;
-&lt;p&gt;其实，添加账号应该点击 Rstudio 左上面板的发布按钮- Manage Account - Connect - RStudio Connect - 输入 bookdown.org，然后往下照提示走就行了。&lt;/p&gt;
-&lt;p&gt;添加账号后，照理说用 &lt;code&gt;bookdown::publish_book()&lt;/code&gt; 的 &lt;code&gt;account&lt;/code&gt;指定一下账号，就应该能发布了吧？不，还是失败了，说 &lt;code&gt;name&lt;/code&gt; 参数有问题。其实没问题。&lt;/p&gt;
-&lt;p&gt;怎么办？我发现必须从 Mange Account 里删掉旧 bookdown 的账号，就可以用新的账号成功发布了。&lt;/p&gt;
-&lt;p&gt;上面说了这么多，其实就是一句话：用不同账号往 bookdown.org 发布书稿，只需在 Manage Account 里添加并保留唯一一个账号即可。&lt;/p&gt;
-&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>如何在 R markdown 里输出 r pi 并前后加上小撇`</title>
-      <link>http://www.pzhao.org/zh/post/backticks-in-rmd/</link>
-      <pubDate>Fri, 22 Sep 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/zh/post/backticks-in-rmd/</guid>
-      <description>&lt;p&gt;其实本文的标题应该是：如何在文章里显示 &lt;code&gt;`r pi`&lt;/code&gt; 这样的文字。但是我不知道怎么把这个格式弄到标题里。所以，就这样凑合过吧。&lt;/p&gt;
-&lt;p&gt;这个问题的答案，要分几层意思来说。&lt;code&gt;`r pi`&lt;/code&gt; 是代码格式（本博客显示为粉底红字），并且包含的`符号同样是代码格式，并且 pi 并没有被编译成 3.1415927。别看它短，这三点每个都是个坑。&lt;/p&gt;
-&lt;p&gt;这个问题在编写 R markdown 教程时常见。其实，等你明白这个问题的答案后，会发现答案并不难，难的是如何描述这个问题。我费了好大劲，都想不出一个准确描述的办法，并且在那些支持 markdown 的论坛上，我连这个小撇都输不出来，这叫人怎么问？最后我只能这么提问：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;请问在输出文档里怎么显示’撇 r pi 撇’并且别让它编译出来 3.1415927？&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;div id=&#34;-1--&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;第 1 层意思，那个小撇 `，它到底叫什么？总不能总叫“小撇”吧？&lt;/h3&gt;
+      <guid>http://www.pzhao.org/zh/post/logical-kid-2/</guid>
+      <description>&lt;p&gt;1&lt;/p&gt;
+&lt;p&gt;我：下午谁跟我出去逛街？&lt;/p&gt;
+&lt;p&gt;德生：我！给我买新玩具！&lt;/p&gt;
+&lt;p&gt;我：新玩具家里有。上午不是刚刚买过了吗？&lt;/p&gt;
+&lt;p&gt;德生：家里没有。买回来拆开就不是新的了。&lt;/p&gt;
+&lt;p&gt;我竟然无言以对。&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/KB_Germany.svg/550px-KB_Germany.svg.png&#34; /&gt;
+&lt;img src=&#34;http://maxpixel.freegreatpicture.com/static/photo/1x/Inspiration-Innovation-Idea-Thought-Imagination-2123970.jpg&#34; /&gt;
 
 &lt;/div&gt;
-&lt;p&gt;我用的是德语键盘，挪，就是上图第一行右起第二个键的上面那个小可爱。&lt;/p&gt;
-&lt;p&gt;查&lt;a href=&#34;https://en.wikipedia.org/wiki/Grave_accent&#34;&gt;维基百科&lt;/a&gt;才知道，` 的学名叫 &lt;em&gt;Grave accent&lt;/em&gt; ，中文叫“重音符”。在程序猿的世界里，它又被称作 &lt;em&gt;backquote&lt;/em&gt; 或 &lt;em&gt;backtick&lt;/em&gt;，中文叫反引号。所以，跟这个有关的问题可以这么问：&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://meta.stackexchange.com/questions/82718/how-do-i-escape-a-backtick-in-markdown&#34;&gt;How do I escape a backtick ` in Markdown?&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;或者&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://stackoverflow.com/questions/20409172/how-to-display-verbatim-inline-r-code-with-backticks-using-rmarkdown&#34;&gt;How to display verbatim/literal inline r code with backticks using Rmarkdown?&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;-2-&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;第 2 层意思：怎么把反引号显示出来？&lt;/h3&gt;
-&lt;p&gt;如果仅仅输入个反引号 &lt;code&gt;，在同一段里后面没有了还好办，万一又出现一个反引号&lt;/code&gt;，就会把他俩自动配对儿，两者之间的文字当成了代码。瞧，就是上句话这个德性。&lt;/p&gt;
-&lt;p&gt;为了棒打鸳鸯不让他俩自动配对儿，那就用转义符\。输入\`，就避免反引号自动配对变代码了。&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;-3--r-&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;第 3 层意思，是怎么把 r 语言的输出结果显示到代码环境里。&lt;/h3&gt;
-&lt;p&gt;这个就开始有点绕了。&lt;/p&gt;
-&lt;p&gt;比如，我想在Rmd 源文件里输入 pi，而输出的文档里显示 &lt;code&gt;3.1415927&lt;/code&gt;。注意，光是输出 3.1415927 这容易，输入&lt;code&gt;`r pi`&lt;/code&gt; 就行了，但是怎么显示成代码格式（这里是粉底红字）？在 &lt;code&gt;`r pi`&lt;/code&gt; 外边加一层反引号是不行的。&lt;/p&gt;
-&lt;p&gt;正确的方法是: &lt;code&gt;两个反引号&lt;/code&gt; + &lt;code&gt;一个空格&lt;/code&gt; + &lt;code&gt;一个反引号&lt;/code&gt; + &lt;code&gt;r&lt;/code&gt; + &lt;code&gt;pi&lt;/code&gt; + &lt;code&gt;一个反引号&lt;/code&gt; + &lt;code&gt;一个空格&lt;/code&gt; + &lt;code&gt;两个反引号&lt;/code&gt;。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;也就是说，&lt;code&gt;两个反引号&lt;/code&gt; + &lt;code&gt;一个空格&lt;/code&gt; 相当于更外一层的反引号。 R markdown 先看到内层的反引号，进行编译，得到 3.1415927：然后，看到外层的反引号，于是把内层的编译结果表示成代码格式。&lt;/strong&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;-4--3.1415927-r-pi-r-pi&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;第 4 层意思，怎么让上面那个 3.1415927 在输出文档里显示源码’r pi’，并且都在代码环境（粉底红色）里，即 &lt;code&gt;r pi&lt;/code&gt;？&lt;/h3&gt;
-&lt;p&gt;方法有两种。第一种是用&lt;a href=&#34;https://yihui.name/knitr/faq/&#34;&gt;knitr&lt;/a&gt; 的 &lt;code&gt;inline_expr()&lt;/code&gt; 函数：&lt;code&gt;`r knitr::inline_expr(&#39;pi&#39;)`&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;第二种是用第 3 层意思里说的方法，即 &lt;code&gt;两个反引号&lt;/code&gt; + &lt;code&gt;一个空格&lt;/code&gt; &lt;code&gt;r&lt;/code&gt; + &lt;code&gt;一个空格&lt;/code&gt; + &lt;code&gt;pi&lt;/code&gt; + &lt;code&gt;一个空格&lt;/code&gt; + &lt;code&gt;两个反引号&lt;/code&gt;。&lt;/p&gt;
-&lt;p&gt;牢记&lt;strong&gt;&lt;code&gt;两个反引号&lt;/code&gt; + &lt;code&gt;一个空格&lt;/code&gt; = &lt;code&gt;更外一层的反引号&lt;/code&gt;&lt;/strong&gt;，就稍微容易理解一点。&lt;/p&gt;
-&lt;p&gt;写到这个地方，我已经要晕车了，但是还没完。&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;-5--4-&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;第 5 层意思，怎么在第 4 层意思的基础上再加两个反引号，并显示成粉底红字，即&lt;/h3&gt;
-&lt;p&gt;&lt;code&gt;`r pi`&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;我现在用的方法是：&lt;code&gt;``&lt;/code&gt; &lt;code&gt;r &#39;\x60r pi\x60&#39;&lt;/code&gt; &lt;code&gt;``&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;这个 &lt;code&gt;\x60&lt;/code&gt; 就是反引号。相当于把反引号弄到字符串里处理。&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;-6-&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;完了吗？还没完，还有第 6 层意思。&lt;/h3&gt;
-&lt;p&gt;反引号就像个俄罗斯套娃；上文你看到的结果都是渲染出来的，而实际书写的源文档，总会比你看见的外面再多一层。&lt;/p&gt;
-&lt;p&gt;写到这里，我不行了，容我扶墙出去呼吸两颗新鲜空气。&lt;/p&gt;
-&lt;/div&gt;
+&lt;p&gt;2&lt;/p&gt;
+&lt;p&gt;我们家住半山腰，爬山有得天独厚的条件。然而德生愿意赖在家里玩玩具和看书。&lt;/p&gt;
+&lt;p&gt;德生说：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;不敢去爬山，山上有老虎。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;妈妈：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;山上没老虎！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;德生：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;山上有没有动物园？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;妈妈：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;有啊！走，咱们爬山去看动物园……&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;德生：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;动物园里有没有老虎？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;妈妈：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;有啊……嗯？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;德生：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;那山上有没有老虎？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;妈妈：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;有……&lt;/p&gt;
+&lt;/blockquote&gt;
 </description>
     </item>
     
     <item>
-      <title>外国国名的中文含义</title>
-      <link>http://www.pzhao.org/zh/post/country-names/</link>
-      <pubDate>Fri, 21 Jul 2017 00:00:00 +0000</pubDate>
+      <title>论英雄</title>
+      <link>http://www.pzhao.org/archives/19541</link>
+      <pubDate>Fri, 20 Oct 2017 15:28:50 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/zh/post/country-names/</guid>
-      <description>&lt;p&gt;有一天，德国朋友苏珊兴奋地问我：听说 Germany 在中文的意思是&lt;strong&gt;美德的国度&lt;/strong&gt;，对吗？&lt;/p&gt;
+      <guid>http://www.pzhao.org/archives/19541</guid>
+      <description>&lt;p&gt;日前读了一篇题为『&lt;a href=&#34;https://steemit.com/cn/@linuslee0216/2yyreh&#34; target=&#34;_blank&#34;&gt;自古英雄，不得好死&lt;/a&gt;』的文章，文中写道：“在现实的所谓「英雄」，下场好的都没有几过。很多都难逃「自古英雄，不得好死」的命运。如观我们中国历史，很多名将命运也是非常悲哀。近代的「英雄」，也一样不是被暗杀就是被囚禁，被打压。在外国的例子多的是。”&lt;/p&gt;
 
-&lt;p&gt;&amp;ndash; 对。德国，美德之国。&lt;/p&gt;
+&lt;p&gt;掩卷而思，我对“英雄不得好死”的因果关系有完全相反的看法：并非因为是英雄，所以不得好死；而是因为这些人不得好死，才成就了“英雄”的美名！&lt;/p&gt;
 
-&lt;p&gt;我爱中文！再多讲讲。France 怎么说？&lt;/p&gt;
+&lt;p&gt;记得小时候读过岳麓书院版的《三国演义》，序言作者我忘了是谁，只对其中一句话记忆犹新：奸贼曹操是逆贼曹丕的“儿子”。想想曹操在世时立下的丰功伟业，灭各路诸侯，统一东汉王朝的中国北方，说是英雄一点也不为过。如果没有后来儿子曹丕的废汉建魏而称帝，曹操还会落下“奸雄”的骂名吗？从这个意义上说，儿子产生老子，结果产生原因！&lt;/p&gt;
 
-&lt;p&gt;&amp;ndash; 法国。法制之邦。&lt;/p&gt;
+&lt;p&gt;“英雄”之名也一样。&lt;/p&gt;
 
-&lt;p&gt;嗯，有道理。那么 America 呢？&lt;/p&gt;
+&lt;p&gt;下面，我们来看看这几位倒霉蛋，他们前半生的所作所为，无愧于英雄，但是因为死得晚，后半生白白地把英雄的美名给丢了。&lt;/p&gt;
 
-&lt;p&gt;&amp;ndash; 美国。美丽之国。&lt;/p&gt;
+&lt;p&gt;商纣王。纣王名受，生前称为“受王”，谥号“帝辛”。“纣”这个恶谥，是在他死之后周武王给起的，不乏抹黑的成分。事实上，受王在世时注重发展生产，使殷商国力一度十分强盛。如果受王这个时候死掉了，说不定像他的祖先盘庚一样得到个英主美名。可惜，后来的他发动对外战争，导致国力空虚，才让周趁虚而入，对他肆意抹黑，让他遗臭万年。&lt;/p&gt;
 
-&lt;p&gt;真的？那 Britain 呢？&lt;/p&gt;
+&lt;p&gt;纣王万世恶名，没有成为英雄，因为死晚了。&lt;/p&gt;
 
-&lt;p&gt;&amp;ndash; 英吉利。幸运的花儿。&lt;/p&gt;
+&lt;p&gt;唐玄宗。李隆基的早年，平定了唐朝当时乱糟糟的局面，开创一代开元盛世，使得大唐达到极盛，歌舞升平，人民爱戴，中国对世界的影响力今日犹存，至今我们还管国外华人的聚集地叫“唐人街”。如果李隆基死在公元 735 年，天宝危机的安史之乱也就算不到他头上，“千古一帝”的名头说不定还能跟康熙争一争。&lt;/p&gt;
 
-&lt;p&gt;有趣！Netherlands？&lt;/p&gt;
+&lt;p&gt;李隆基成了昏君，没有成为英雄，因为死晚了。&lt;/p&gt;
 
-&lt;p&gt;&amp;ndash; 荷兰。荷花和兰花。&lt;/p&gt;
+&lt;p&gt;汪精卫。现在一说汪精卫，就是汉奸的代名词。然而早年的汪精卫，讨伐袁世凯，参与护法运动，为中华民国的成立立下过赫赫功勋。汪精卫刺杀摄政王，入狱时写下“慷慨歌燕市，从容作楚囚；引刀成一快，不负少年头”的诗句。如果他死在公元 1910 年 的狱中，那么完全可以得到个“英雄”美名，再加上“民国四小鲜肉”的名头，必为后世瞻仰。&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;Finland&lt;/em&gt;?&amp;rsquo;&lt;/p&gt;
+&lt;p&gt;汪精卫成了汉奸，没有成为英雄，因为死晚了。&lt;/p&gt;
 
-&lt;p&gt;&amp;ndash; 芬兰。芬芳的兰花。&lt;/p&gt;
+&lt;p&gt;这样的例子太多太多了。我们常说“自古英雄出少年”。人性复杂，世情险恶，想一生都当英雄，难。这就好比癌症，为何现代越来越常见，古代怎么没有癌症，其中一个原因就是，癌症更容易在年长时发生，就像人晚年容易犯下不可饶恕的错误，毁了早年的英名。古人寿命短，没熬到得癌症就死了，恰如少年英雄。&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;Denmark&lt;/em&gt;?&lt;/p&gt;
+&lt;p&gt;那么，是不是说，这些人原本就不是英雄，在时间考验下露出了真面目呢？就像白居易写过一首诗：&lt;/p&gt;
 
-&lt;p&gt;&amp;ndash; 丹麦。红色的麦子。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;赠君一法决狐疑，不用钻龟与祝蓍。&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;Czech&lt;/em&gt;?&lt;/p&gt;
+&lt;p&gt;试玉要烧三日满，辨材须待七年期。&lt;/p&gt;
 
-&lt;p&gt;&amp;ndash; 捷克。打败敌人，赢得战争！&lt;/p&gt;
+&lt;p&gt;周公恐惧流言日，王莽谦恭未篡时。&lt;/p&gt;
 
-&lt;p&gt;天哪! &lt;em&gt;Austria&lt;/em&gt;?&lt;/p&gt;
+&lt;p&gt;向使当初身便死，一生真伪复谁知？&lt;/p&gt;
+&lt;/blockquote&gt;
 
-&lt;p&gt;&amp;ndash; 奥地利，占据地利的国家。&lt;/p&gt;
+&lt;p&gt;按白居易的说法，时间长才能分辨真伪，所为盖棺定论，真的是这样吗？&lt;/p&gt;
 
-&lt;p&gt;为什么是地利？&lt;/p&gt;
+&lt;p&gt;我不这么认为。曹操是奸臣，这个论断超过一千年，算是经历了考验了吧，但是毛泽东却对曹操大加赞赏；孔子是圣人，这个论断超过两千年，但后来却把孔子墓铲平，把孔子的遗骸都弄丢了。一个人到底是不是英雄，就像薛定谔的猫，处于“是英雄”和“不是英雄”的量子叠加态，没有观察的时候，二者皆有可能。而观察者必然带上主观的眼镜和功利的需要。如果秦桧死在陷害岳飞前，那么留给后世的名声会不会是”一代大书法家”呢？如果袁世凯死在称帝以前，那么留给后世的名声会不会是“民国英雄”呢？反过来说，如果庞统没有早死，那“伏龙凤雏”一起当政的结果会是如何呢？如果李大钊没有早死，会不会跟后来的毛泽东争权呢？&lt;/p&gt;
 
-&lt;p&gt;&amp;ndash; 因为有个 Belgium，比利时，占据天时的国家！&lt;/p&gt;
+&lt;p&gt;历史无法假设，我们永远不知道这些问题的答案。于谦被平反之前，没人为他立祠堂；袁崇焕被千刀万剐的时候，没人站出来说他是英雄。世间没有永恒的英雄。正如『&lt;a href=&#34;https://steemit.com/cn/@wooleeweb/whether-you-will-become-the-zhao-tienan-inmr-donkey&#34; target=&#34;_blank&#34;&gt;如果有一天你成了驴得水中的周铁男&lt;/a&gt;』 里说：“有太多英雄形象的产生，可能只是因为第一枪就打中了吧。”&lt;/p&gt;
 
-&lt;p&gt;好吧。&lt;em&gt;Portugal&lt;/em&gt;?&amp;rsquo;&lt;/p&gt;
-
-&lt;p&gt;&amp;ndash; 葡萄牙。葡萄的牙齿。&lt;/p&gt;
-
-&lt;p&gt;啥？那 Spain？&lt;/p&gt;
-
-&lt;p&gt;&amp;ndash; 西班牙。在西边分开的牙齿！&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://haonowshaokao.files.wordpress.com/2013/04/europe_map_political.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;我懂了！亚洲国家呢？Vietnam？&lt;/p&gt;
-
-&lt;p&gt;&amp;ndash; 越南。百越部族的南边。&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Thailand&lt;/em&gt;?&amp;rsquo;&lt;/p&gt;
-
-&lt;p&gt;&amp;ndash; 泰国。国泰民安。&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Korea&lt;/em&gt;?&lt;/p&gt;
-
-&lt;p&gt;&amp;ndash; 朝鲜。明亮的早晨。&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Japan&lt;/em&gt; 是什么意思?&lt;/p&gt;
-
-&lt;p&gt;&amp;ndash; 日本，太阳的根。&lt;/p&gt;
-
-&lt;p&gt;这些远东国家的名字在中文里更有意义。那么 China 呢？&lt;/p&gt;
-
-&lt;p&gt;&amp;ndash; 我们才不是远东呢。中国，我们是中央之国。&lt;/p&gt;
+&lt;p&gt;不要迷信英雄。英雄，只存在于人们的幻想中。&lt;/p&gt;
 </description>
     </item>
     
     <item>
-      <title>Advection campaign at Torgnon started </title>
-      <link>http://www.pzhao.org/zh/post/advection-tn/</link>
-      <pubDate>Wed, 19 Jul 2017 00:00:00 +0000</pubDate>
+      <title>抬望眼，仰天長嘯，壯懷激烈</title>
+      <link>http://www.pzhao.org/archives/19539</link>
+      <pubDate>Tue, 17 Oct 2017 09:11:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/zh/post/advection-tn/</guid>
-      <description>&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;http://www.arpa.vda.it/images/stories/ARPA/camb_clim/news/20170714_PascoloTorgnon/setup.jpg&#34; /&gt;
+      <guid>http://www.pzhao.org/archives/19539</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;怒髮衝冠，憑欄處，潚潚雨歇。&lt;/p&gt;
 
-&lt;/div&gt;
-&lt;p&gt;At the beginning of July, Kathi and I went to the Aosta Valley to set up the advection measurement at Torgnon. Thanks a lot to Marta and other colleagues!&lt;/p&gt;
-&lt;p&gt;Our institute is collecting post cards from the fieldwork in the meanwhile. Here is one from us.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.uibk.ac.at/ecology/postcards-from-the-field/&#34;&gt;&lt;img src=&#34;https://www.uibk.ac.at/ecology/postcards-from-the-field/bilder/postcard-from-aosta.jpg&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;抬望眼，仰天長嘯，壯懷激烈。&lt;/p&gt;
+
+&lt;p&gt;三十功名塵與土，八千里路雲和月。&lt;/p&gt;
+
+&lt;p&gt;莫等閑，白了少年頭，空悲切。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://steemitimages.com/DQmNuuBCZb6LEzV8kFapYrmxafWxHnCVBuHF1q5SfTRALS1/i20170803_172701.jpg&#34; alt=&#34;i20170803_172701.jpg&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;摩纳哥王宫炮台，摄于 2017 年 8 月。&lt;/p&gt;
+
+&lt;p&gt;岳飞的这首『满江红』妇孺皆知，特别是上阕最后一句，是小学常引用的名人名言。黄翁版的电视剧《射雕英雄传》里，为这首词谱上曲，罗文演唱，为剧情增色不少。&lt;/p&gt;
+
+&lt;p&gt;岳飞还有一首『小重山』，知名度就没那么高了：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;昨夜寒蛩不住鳴。&lt;/p&gt;
+
+&lt;p&gt;驚回千里夢，已三更。&lt;/p&gt;
+
+&lt;p&gt;起來獨自遶階行。&lt;/p&gt;
+
+&lt;p&gt;人悄悄，簾外月朧明。&lt;/p&gt;
+
+&lt;p&gt;白首為功名。&lt;/p&gt;
+
+&lt;p&gt;舊山松竹老，阻歸程。&lt;/p&gt;
+
+&lt;p&gt;欲將心事付瑤琴。&lt;/p&gt;
+
+&lt;p&gt;知音少，弦斷有誰聽？&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;近日，这首词涌入脑海，颇有共鸣。岳飞字鹏举，有个“鹏”字；岳飞有瑶琴，我有吉他。&lt;/p&gt;
+
+&lt;p&gt;岳武穆被害时，年 39，比我现在的年龄大了一点。&lt;/p&gt;
 </description>
     </item>
     
     <item>
-      <title>世界上最长的单词</title>
-      <link>http://www.pzhao.org/zh/post/longest-word/</link>
-      <pubDate>Wed, 19 Jul 2017 00:00:00 +0000</pubDate>
+      <title>童话国王的君子岛宫殿</title>
+      <link>http://www.pzhao.org/archives/19537</link>
+      <pubDate>Tue, 17 Oct 2017 09:09:03 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/zh/post/longest-word/</guid>
-      <description>&lt;p&gt;学过这么多年英语，你知道英文里最长的单词是什么吗？&lt;/p&gt;
+      <guid>http://www.pzhao.org/archives/19537</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Chiemsee, a lake seated in Bavaria, is famous for a palace built by the Fairy-tale King Lugwig II. On a rainy Sunday, we went there for a short trip.&lt;/p&gt;
+&lt;/blockquote&gt;
 
-&lt;p&gt;据说是肌联蛋白。它是目前已知的最大的蛋白质。按照化学上的科学命名法，它的学名由大约 19 万个字母组成，单它一个单词就可以占据一本字典了，独孤求败，不要太寂寞。大家用可怜的眼光看着它，然后起了个俗名，叫做 &lt;em&gt;titin&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;玩物丧志。沉迷网络太深，我没有注意到窗外，绿树正因风落叶，青山已为雪白头。我没有看到大娃的衣服又穿小了，没有听到二娃竟然学会了用德语数数。然而，电脑再迷人，也敌不过孩子在耳边说一声：“爸爸，别看电脑了，咱们出去玩吧。”&lt;/p&gt;
 
-&lt;p&gt;在字典上，最长的英文单词据说是 *pneumonoultramicroscopicsilicovolcanoconiosis*，45个字母，中文译作“超微粒硅酸盐尘埃沉着症”，简称“火山肺矽病”，是肺尘病里的一种。拆开来是：*pneumono*（关于肺）-*ultra*（超）-*microscopic*（微小）-*silico*（硅，即“矽”）-*volcano*（火山）-*coniosis*（尘埃引致的疾病）。看起来吓人，其实不难记，是个纸老虎。&lt;/p&gt;
+&lt;p&gt;可是，奥地利的星期天，到处都关门不营业，实在找不到玩的去处。这些天又遭遇连绵阴雨，连室外的儿童乐园都成了可望不可及的梦。媳妇想想，说，要不去基姆湖看看吧，每次都是路过，从未走近。下雨不要紧，可以带孩子们坐船玩。&lt;/p&gt;
 
-&lt;p&gt;德语里，这样的纸老虎很多，吓了我无数次。&lt;/p&gt;
+&lt;p&gt;基姆湖在德国境内，离家不远。算了一下，如果大部分时间在车里或者船上，倒也不受阴雨天影响，而景致跟晴天也会大有不同吧。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://steemitimages.com/0x0/https://qg5vba.dm2302.livefilestore.com/y2pQ5yUtzjO2SG8ygAjtHOer8WMx-uc-QjSF0korfCFH2ZLnOhzcWsWW1faOu_K7oozi-U39gerzvlb7n6uQxEnSdoWvzKKGDj3UGo3Rb0WFBI/2010-11-29_de.jpg?psid=1&#34; alt=&#34;img&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;孩子们一听要去坐船，手忙脚乱地开始换衣服。我一看，骑虎难下，看来是非去不可了。&lt;/p&gt;
 
-&lt;p&gt;上面这幅漫画，就来自我所在的棚房办公室男厕所马桶上方。一直不知道画中的兄弟在折腾个啥，很久之后等我具备了一点德语水平才弄懂。翻译如下：&lt;/p&gt;
+&lt;p&gt;开车一路向东，不到两小时就到了湖边。基姆湖，又被称为“巴伐利亚海”，位于罗森海姆和萨尔茨堡之间。湖边烟雨蒙蒙，我怕淋湿相机，没拍照就上了船。船的目的地，是湖心小岛。&lt;/p&gt;
 
-&lt;p&gt;标题：马桶刷使用指南。&lt;/p&gt;
+&lt;p&gt;湖不大，湖心有三岛，名曰“君子岛”、“淑女岛”、“小三岛”。天气不好，又担心二娃睡着，我们只去了君子岛。岛上有一个著名国王修建的著名宫殿：君子宫。&lt;/p&gt;
 
-&lt;p&gt;第一幅：完全错误。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://steemitimages.com/DQmfTXcmBkkrwnv8Dz2MPYyv1vYV44pTkEXQ9ELboHVMz3h/0.jpg&#34; alt=&#34;0.jpg&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;第二幅：错误。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Bird view of Chiemsee. Modified from Google Map.&lt;/p&gt;
+&lt;/blockquote&gt;
 
-&lt;p&gt;第三幅：接近正确。&lt;/p&gt;
+&lt;p&gt;好啦，不跟你们开玩笑了，三个岛的德语名字直译过来其实是“男人岛”、“女人岛”和“香草岛”。男人岛上的宫殿叫“男人岛宫”，音译“海伦基姆湖宫”。宫殿的旧日主人，就是当年巴伐利亚王国的童话国王——路德维希二世。&lt;/p&gt;
 
-&lt;p&gt;第四幅：正确。&lt;/p&gt;
+&lt;p&gt;路国王生得传奇，死得神秘，一生热衷于修建城堡宫殿。他先是主持修建了新天鹅堡，举世闻名; 然后是林德霍夫宫，精巧别致; 到了基姆湖，路国王大概是累了，懒得设计了，那就山寨个凡尔赛宫吧。于是，就有了这座男人岛宫。&lt;/p&gt;
 
-&lt;p&gt;这个漫画的标题是个超级长的单词：*Toilettenbürstenbenutzungsanweisung*。这是&lt;strong&gt;一个&lt;/strong&gt;由36个字母组成的单词，意思是“马桶-刷-使用-指南”。跟上文介绍的英语单词类似，德语把很多个词连在一起构成一个新词，而这些词之间是没有空格也没有连字符的；跟英语不同的是，德语里这样的词在字典里查不到，得你自己把它断成 *Toiletten-bürsten-benutzungs-anweisung*，再逐个去查。这让初学者望而却步：遇见的是一个生词，不懂只能查字典，字典上又查不到，我又不知道怎么断开它。你让我怎么办？难道是逼我带着智能手机上厕所吗？万一掉进去谁赔？&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://steemitimages.com/DQmbf7MvcmMSATdA99owJkJW5APgHJbCxDxvHYErynUhZ9q/2.jpg&#34; alt=&#34;2.jpg&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;记得第一次买盐，我特意先查了字典，知道 &lt;em&gt;salt&lt;/em&gt; 的德语是 *salz*，可我把超市翻了三遍也没找到叫 &lt;em&gt;salz&lt;/em&gt; 的东西。只得硬着头皮问收银员。收银员带我到货架一指，我一看几乎晕倒，盒子上写着：*Markensalz*。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Palace Herrenchiemsee&lt;/p&gt;
+&lt;/blockquote&gt;
 
-&lt;p&gt;德语字典里出现的最长的单词，据说是 *Donaudampfschiffahrtselektrizit?tenhauptbetriebswerkbauunterbeamtengesellschaft*，以79个字母的长度，载入了吉尼斯世界纪录。这个词是维也纳一家俱乐部的名字。而事实上，根据德语的构词法，最长的单词是无限长。德语里的数，不管有多少位，都作为一个单词来处理， 例如 &lt;em&gt;777777&lt;/em&gt; 这个六位数，德语写作：&lt;em&gt;siebenhundertsiebenundsiebzigtausendsiebenhundertsiebenundsiebzig&lt;/em&gt; 。所以只要来个无理数，德国单词的长度就能傲视群雄，无词能及。&lt;/p&gt;
+&lt;p&gt;然而，孩子们对宫殿一点兴趣都没有。倒是一块旋转的草坪，能让他们开心地围着跑半天。&lt;/p&gt;
 
-&lt;p&gt;每当孩子玩磁力小火车，把托马斯、培西、詹姆士等前后连成一串开起来的时候，我就想到了这种BT的构词法。还是中文简洁啊。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://steemitimages.com/DQmUqtmKkJb5BZUimq4Y4GQuGkiJxgzvMeEbeW1kU9jRASc/3.jpg&#34; alt=&#34;3.jpg&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://steemitimages.com/0x0/https://ae01.alicdn.com/kf/HTB1OWoeKpXXXXbhXpXXq6xXFXXXN/Wooden-Magnetic-Thomas-and-Friends-the-Tank-Engine-Circus-Donald-Lady-Skarloey-James-Gordon-Pink-Lucie.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Kids had no interest in palaces, but in &amp;#8230;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;我们抵达的时候，宫殿前面广场的喷泉并未喷水，我们还以为是季节过了，天冷给关了。就在我们即将离开的时候，修道院钟声敲响，喷泉随着钟声翩翩起舞。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://steemitimages.com/DQmUXoE84vpwrXopfHMJyb6ZrtWXibXVdwMMusZcbs3xWwE/4.jpg&#34; alt=&#34;4.jpg&#34; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;The springs started when the bell rang.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;一个骑上我的脖子，一个拉着我的手，说：不上网的爸爸真是个好爸爸！&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://steemitimages.com/DQmVe8EcubncErKj7qquZVZjV495oEY9d5jYoS1via2Z8oP/5.jpg&#34; alt=&#34;5.jpg&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;​&amp;gt; A papa not on steemit is a good papa.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>德国小学开学第一天</title>
+      <link>http://www.pzhao.org/archives/19531</link>
+      <pubDate>Tue, 03 Oct 2017 15:28:38 +0000</pubDate>
+      
+      <guid>http://www.pzhao.org/archives/19531</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;My son, Jingsheng, goes to school in Austria. He started his school life in Germany years ago. Cannot believe that he is going to leave primary school next year. Here I posted some sweet photos taken on his first day in school. How time flies!&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;前些日子，奥地利的小学开学了。京生欢欣雀跃：“终于有作业可以做啦！”我们也是普天同庆：“大人终于可以开始休假了！”&lt;/p&gt;
+
+&lt;p&gt;家长会上，老师严肃地指出：小学 4 年级是至关重要的一年。最大的一件事是：孩子们开始有考试了。&lt;/p&gt;
+
+&lt;p&gt;从 1 年级到 3 年级，德国和奥地利的小学没有考试。每个学期的成绩由老师综合评定。京生属于学霸型，各门成绩优异。老师说将来应该可以上文理中学——相当于国内的重点中学。然而，老师还说，不能掉以轻心。4 年级上完就该升中学，而中学录取的重要参考依据，就是 4 年级的考试成绩。&lt;/p&gt;
+
+&lt;p&gt;京生问：“考试是什么？”&lt;/p&gt;
+
+&lt;p&gt;我答：“跟做作业一样，只有两个不同：第一是限制时间，比如 1 小时必须答完；第二是独立完成，别人不能帮你检查。最后老师打分。”心中暗想：“我们是中国小孩，考试算什么。”&lt;/p&gt;
+
+&lt;p&gt;京生做作业去了。想着儿子居然快要升中学了，我翻出了他刚入小学时的照片。一切仿佛发生在昨天。&lt;/p&gt;
+
+&lt;p&gt;那时候，我们还在德国生活。小孩 6 岁的时候，会接到市政府发来的纸质信件，通知准备入学。虽然是按住址划分学校，但京生分到的学校离家里还不如大学的附属小学离得近。我们费尽周折，终于成功把他转到了附小。&lt;/p&gt;
+
+&lt;p&gt;开学第一天，朝阳下，晨雾中，我们送给京生来到了小学。送孩子的家长可真不少。毕竟，这是孩子一生中的大事。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://steemitimages.com/DQmVKj2R9piEH4uR1YYxM669ZycEoQYSr2gCiwbDMwJq2pm/school4.jpg&#34; alt=&#34;school4.jpg&#34; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;First morning at the entrance of the school.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;每个孩子都从家里抱来个圆锥形的东西，德语叫做 Schultüte，是德国小学新生的标配，其实是个包，里面塞满了大人装进去的礼物。开学典礼在小学一楼大厅举行。新生们围坐起来。很多孩子来自同一所幼儿园，原先都认识，经过了一个暑假没见面，唧唧喳喳聊个不停。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://steemitimages.com/DQmRkDqcZvs4q3V7aC6FFQhczrg78LaWXv6SjBM2bx9G7vs/school5.jpg&#34; alt=&#34;school5.jpg&#34; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Opening ceremony for new pupils.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;开学典礼挺简单。校长和老师简单介绍了一下学校的概况，然后是学长代表上台发言，以过来人的身份，对新来的学弟学妹们进行一番语重心长的教诲。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://steemitimages.com/DQmTTvodFPtihcJ5egHa41h1BCJGg9a2tbXWPV6x5Y6v32H/school2.jpg&#34; alt=&#34;school2.jpg&#34; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Welcome speeches given by high-graded pupils.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;接下来，参观教室。教室里的桌椅已经摆好，每张桌子上放有新生名字的标签。家长们很快被赶了出去。老师跟孩子们在教室里相互熟悉，我们家长在外面，既是欢喜又是忐忑地等待。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://steemitimages.com/DQmQRWRhhrEdN4ywbJbjhNzxcm1BftHUTCiBJ28veQA6AUj/school6.jpg&#34; alt=&#34;school6.jpg&#34; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Classroom.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;大约过去 1 节课的工夫，教室门打开，孩子们出来了。剩下的时间就是自由活动。京生跟幼儿园的老朋友们合影留念。接下来的节目是：幼儿园回访。&lt;/p&gt;
+
+&lt;p&gt;京生的小学跟幼儿园挨着，几分钟就走到了。幼儿园的老师早已准备好，安排小朋友们就座。幼儿园这一届的毕业生，除了京生外，还有卢卡和海蒂。卢卡是京生的好朋友，海蒂是他们班的三大美女之一。在幼儿园，他们成了学长，把文具给幼儿园的孩子们传阅。有的孩子无比羡慕，有的孩子根本不知道发生了什么。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://steemitimages.com/DQmdLod7d6eFysf9noVZtLEPpQrdAduY6wYKBGMDjXZa1MJ/school3.jpg&#34; alt=&#34;school3.jpg&#34; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Return to the kindergarten.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;在幼儿园里逗留片刻，三个好朋友合影留念。然后，京生就离开了这所让我们难忘的幼儿园，至今再也没有回去过。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://steemitimages.com/DQmQ39rLztaQNpMGxStf9vxJueNmxCQC4PFRrcyUG1Bhu4r/school7.jpg&#34; alt=&#34;school7.jpg&#34; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Friends, who might never see each other again.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;后来，京生随我们搬到了奥地利。一年之后，我收到了卢卡爸爸的来信，说卢卡很想念京生，能不能安排一次聚会，让孩子们见个面？&lt;/p&gt;
+
+&lt;p&gt;我们试了好几次，终因种种不巧，未能如愿。&lt;/p&gt;
+
+&lt;p&gt;就这样，在奥地利，京生开始了他的人生新阶段。&lt;/p&gt;
 </description>
     </item>
     
