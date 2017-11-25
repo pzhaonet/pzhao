@@ -10,6 +10,52 @@
     <atom:link href="/zh/tags/post/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>R bookdownplus 升级手记，以及北大论文模板</title>
+      <link>http://www.pzhao.org/zh/post/-bookdownplus-update/</link>
+      <pubDate>Sun, 26 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.pzhao.org/zh/post/-bookdownplus-update/</guid>
+      <description>&lt;p&gt;bookdownplus 这个 R 语言程序包，自用起来感觉不错，当初发布的时候还小得意了一把。时过境迁，现在回头看起来是越来越不满意。CRAN 上，bookdownplus 的总下载量接近三千（与此相比，bookdown 的总下载量是七万），大约每小时就有一次下载。Google ‘bookdownplus’ 可以搜到 已经有中文用户在写使用体验了。越是这样，我越惶恐，因为我知道，这个包写得粗糙，可改进的地方数都数不过来。&lt;/p&gt;
+&lt;p&gt;向我反馈问题的用户超出了预期，主要是兼容性的问题：在 macOS上如何，在 Linux 上如何，这些问题我都没有办法回答，因为我只在 Windows 7 上测试了，其他操作系统既无精力也无条件测试。开发个软件，自用是一回事，让别人能用完全是另外一回事，这两回事之间真是相差了一个筋斗云。&lt;/p&gt;
+&lt;p&gt;所以我决定先把自己看不过去的问题解决一下，那就是代码的构架问题。&lt;/p&gt;
+&lt;p&gt;bookdownplus v.1.3 以后的版本包含了 20 个模板。写这个包的时候，因为懒，我就把所有模板的 .tex 文件混到一个文件夹里，style 和 cls 文件混在另一文件夹里，到最后自己都搞不清楚哪个模板用哪个文件了。用户每次想运行 &lt;code&gt;bookdownplus()&lt;/code&gt; 生成一个新文档时，都把所有有用没用的文件一股脑考进来（反正也不大），连我自己都看不下去了。此外，我还指望着别人贡献一些新模板，可是目前乱糟糟的，谁愿意把好东西往垃圾堆里扔呢？&lt;/p&gt;
+&lt;p&gt;于是这两天我花了一个上午，把这些文件重新整理归类，让他们各回各家各找各妈，每个 bookdown 模板都对应一个 zip 压缩文件，扔在 bookdownplus 的安装目录里。而且，如果再开发新 bookdown 模板，只需按照现有模板 zip 文件里的结构，将所需文件压缩并甩进 bookdownplus 安装目录，就可以用 &lt;code&gt;bookdownplus()&lt;/code&gt; 直接调用了，连升级都不用。&lt;/p&gt;
+&lt;p&gt;虽然功能上没有多大增强，但架构上舒服多了，所以我把版本号从1.3.x 升到了 1.4.0。&lt;/p&gt;
+&lt;p&gt;我还有一块心病，是北京大学学位论文的 &lt;a href=&#34;https://github.com/CasperVector/pkuthss&#34;&gt;LaTeX 模板&lt;/a&gt;，我迟迟没能转成 bookdown 模板。原因是这个 LaTeX 模板本身在我电脑上就编译不成功。这次不知怎么开了窍，突然被我搞定了，作为第 21 个模板，收进了 bookdownplus v.1.4.0 里。&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdownplus/master/inst2/showcase/bookdownplus_thesis_pku.jpg&#34; /&gt;
+
+&lt;/div&gt;
+&lt;p&gt;此外，新增了一下几个模板：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;益辉制作了 &lt;a href=&#34;https://disq.us/url?url=https%3A%2F%2Fgithub.com%2Fyihui%2Fbookdown-crc%3A5wtgG3vpge_i9bq1JupLLfeTiOI&amp;amp;cuid=5083260&#34;&gt;Chapman &amp;amp; Hall 出版社的模板&lt;/a&gt;，现成的，我稍微改了一下。看上去是这样的：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdownplus/master/inst2/showcase/bookdownplus_yihui_crc.jpg&#34; /&gt;
+
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;这提醒我，直接去 bookdown.org 找现成的嘛！于是找到了Eduardo García Portugués 写的 &lt;a href=&#34;https://bookdown.org/egarpor/nonpar-eafit/&#34;&gt;A short course on nonparametric curve estimation&lt;/a&gt;，是在 yihui_demo 模板基础上增加了一个自定义环境。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdownplus/master/inst2/showcase/bookdownplus_nonpar.jpg&#34; /&gt;
+
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;以前搜集过一个很有趣的 LaTeX 模板叫 dnd，这次虽然没有完全改为 bookdown 模板，但是我仍然收进来了，作为开发版，以后慢慢想办法吧。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdownplus/master/inst2/showcase/bookdownplus_dnd_dev.jpg&#34; /&gt;
+
+&lt;/div&gt;
+&lt;p&gt;bookdownplus v.1.4.0 已经在 GitHub 发布，安装和使用方法是在 R 语言环境下运行：&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;devtools::install_github(&amp;quot;pzhaonet/bookdownplus&amp;quot;)
+require(bookdownplus)
+showcase()&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>全面迁站</title>
       <link>http://www.pzhao.org/zh/post/migrated-to-hugo/</link>
       <pubDate>Sat, 25 Nov 2017 00:00:00 +0000</pubDate>
@@ -21,15 +67,17 @@
 
 &lt;p&gt;&lt;img src=&#34;https://media.defense.gov/2012/Mar/19/2000168920/670/394/0/120319-F-JZ014-905.JPG&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;然而，迁站的过程并不是很顺利。我照着书里推荐的步骤，试图用 travis-exitwp 将 wordpress 导出的 xml 文件转换成 Hugo 的markdown 文件。前面都还好，到了最后一步（第8步），我始终得不到右下角的绿色对勾，自然也得不到文件的下载链接。起初我以为是 xml 文件太大的缘故（10 M，五百多篇帖子），于是试着只导出少量帖子来生成 xml，从头操作，但是一觉睡醒还没得到下载链接。&lt;/p&gt;
+&lt;p&gt;然而，迁站的过程并不是很顺利。我照着书里推荐的步骤，试图用 &lt;a href=&#34;https://github.com/yihui/travis-exitwp&#34; target=&#34;_blank&#34;&gt;travis-exitwp&lt;/a&gt; 将 wordpress 导出的 xml 文件转换成 Hugo 的markdown 文件。前面都还好，到了最后一步（第8步），我始终得不到右下角的绿色对勾，自然也得不到文件的下载链接。起初我以为是 xml 文件太大的缘故（10 M，五百多篇帖子），于是试着只导出少量帖子来生成 xml，从头操作，但是一觉睡醒还没得到下载链接。&lt;/p&gt;
 
 &lt;p&gt;于是改变策略，我给 wordpress 博客安装了插件 &lt;a href=&#34;https://github.com/SchumacherFM/wordpress-to-hugo-exporter&#34; target=&#34;_blank&#34;&gt;wordpress-to-hugo-exporter&lt;/a&gt;，直接将帖子导出为 Hugo 的markdown 格式。除了文件名里的中文乱码外，我相当满意。于是将文件批量重命名，只保留日期。文件内容可以用益辉写的 &lt;a href=&#34;https://github.com/yihui/oldblog_xml/blob/master/convert.R&#34; target=&#34;_blank&#34;&gt;convert.R 代码&lt;/a&gt;来清理。&lt;/p&gt;
 
-&lt;p&gt;不过，对我来说仍然不够，看来还得自己动手，丰衣足食。因为我用的是 hugo-academic 主题，网页上会显示每篇帖子的摘要，需要每篇帖子的 yaml 里设置一个 “summary” 条目。这个好办，用 R 语言把每篇帖子的第一段摘出来当作 summary 插进去就行了。&lt;/p&gt;
+&lt;p&gt;不过，对我来说仍然不够，看来还得自己动手，才能丰衣足食。因为我用的是 hugo-academic 主题，网页上会显示每篇帖子的摘要，需要每篇帖子的 yaml 里设置一个 “summary” 条目。这个好办，用 R 语言把每篇帖子的第一段摘出来当作 summary 插进去就行了（R 代码附后）。&lt;/p&gt;
 
-&lt;p&gt;此外，我还想在每篇帖子末尾增添一个“原文链接”，链到旧博客，万一哪篇帖子格式没转好呢？这也好吧，markdown 的 yaml 里有个 url 条目，稍微改一下插到文末就行了。&lt;/p&gt;
+&lt;p&gt;此外，我还想在每篇帖子末尾增添一个“原文链接”，链到旧博客，万一哪篇帖子格式没转好呢？这也好吧，markdown 的 yaml 里有个 url 条目，稍微改一下插到文末就行了（R 代码附后）。&lt;/p&gt;
 
-&lt;p&gt;看，这就是 hugo 静态网站的好处。有 R 语言在手，以后我就可以对帖子随心所欲地批量操作了。Hugo-academic 主题我很满意，唯一不足的是缺个归档页面，一目了然展示全部帖子清单。看来得以后自己动手做一个。&lt;/p&gt;
+&lt;p&gt;这就是 hugo 静态网站的好处。有 R 语言在手，以后我就可以对这些 markdown 格式的帖子为所欲为了。而且，GitHub、简书、 steemit、Stackoverflow、统计之都等诸多网站都原生支持 markdown， 发的帖子只需稍微整理，就能发到博客上，颇有万佛朝宗的盛况。&lt;/p&gt;
+
+&lt;p&gt;Hugo-academic 主题我很满意，唯一不足的是缺个归档页面，一目了然展示全部帖子清单。看来得以后自己动手做一个。&lt;/p&gt;
 
 &lt;p&gt;旧博客 dapengde.com 虽然不更新了，但会仍然放在那里，发挥余热。前些天，还有朋友&lt;a href=&#34;http://dapengde.com/archives/14752#comment-153909&#34; target=&#34;_blank&#34;&gt;来我四年前写的帖子后面留言&lt;/a&gt;呢。&lt;/p&gt;
 
@@ -559,12 +607,12 @@ y &amp;lt;- 1:10 + rnorm(10)
 beginr::plotlm(x, y)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;## [[1]]
-##              Estimate Std. Error  t value     Pr(&amp;gt;|t|)
-## (Intercept) 0.7207661  0.9044624 0.796900 0.4485112361
-## x           0.9554401  0.1457673 6.554556 0.0001776244
+##              Estimate Std. Error   t value     Pr(&amp;gt;|t|)
+## (Intercept) 0.4243568 0.37281689  1.138245 2.879555e-01
+## x           0.9474724 0.06008488 15.768898 2.613880e-07
 ## 
 ## [[2]]
-## [1] 0.8430209&lt;/code&gt;&lt;/pre&gt;
+## [1] 0.9688301&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;经常需要了解一组数据的分布, 看看是不是正态分布. beginr 里的 &lt;code&gt;plothist()&lt;/code&gt; 函数不仅做出直方图和平滑曲线, 并且标出中值, 中位数, 四分位数, 标准偏差, 样本数, 以及用来判断是否正态分布的 skewness 值.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;x &amp;lt;- rnorm(10000)
 beginr::plothist(x)&lt;/code&gt;&lt;/pre&gt;
@@ -598,20 +646,20 @@ beginr::errorbar(x, y, yupper = 0.1, ylower = 0.1)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;beginr 提供了一些对数据框计算的函数, 例如计算多列数据两两的相关性和线性拟合结果, 可以用 &lt;code&gt;lmdf()&lt;/code&gt; 函数.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df &amp;lt;- data.frame(a = 1:10, b = 1:10 + rnorm(10), c = 1:10 + rnorm(10))
 beginr::lmdf(df)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;##   x y r.squared adj.r.squared   intercept     slope Std.Error.intercept
-## 1 a b 0.9379239     0.9301644 -0.65347752 1.0682873           0.6029092
-## 2 a c 0.9049750     0.8930968  0.01670671 0.9795398           0.6963189
-## 3 b a 0.9379239     0.9301644  0.91515212 0.8779697           0.4877734
-## 4 b c 0.8207418     0.7983345  0.98798086 0.8456737           0.8534914
-## 5 c a 0.9049750     0.8930968  0.50720271 0.9238777           0.6520614
-## 6 c b 0.8207418     0.7983345 -0.02274889 0.9705184           0.9879006
-##   Std.Error.slope t.intercept   t.slope Pr.intercept     Pr.slope
-## 1      0.09716762 -1.08387378 10.994273   0.31000240 4.165196e-06
-## 2      0.11222195  0.02399290  8.728593   0.98144594 2.319659e-05
-## 3      0.07985700  1.87618280 10.994273   0.09747607 4.165196e-06
-## 4      0.13973141  1.15757564  6.052137   0.28042749 3.051910e-04
-## 5      0.10584497  0.77784504  8.728593   0.45904401 2.319659e-05
-## 6      0.16035961 -0.02302751  6.052137   0.98219234 3.051910e-04&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##   x y r.squared adj.r.squared intercept     slope Std.Error.intercept
+## 1 a b 0.8365832     0.8161561 0.6730751 0.8670116           0.8406285
+## 2 a c 0.7966901     0.7712763 0.8325273 0.7912378           0.8768534
+## 3 b a 0.8365832     0.8161561 0.2493394 0.9649042           0.9174392
+## 4 b c 0.7234069     0.6888327 0.8560786 0.7953958           1.0580641
+## 5 c a 0.7966901     0.7712763 0.2799404 1.0068908           1.0386935
+## 6 c b 0.7234069     0.6888327 0.7265226 0.9094930           1.1484158
+##   Std.Error.slope t.intercept  t.slope Pr.intercept     Pr.slope
+## 1       0.1354795   0.8006808 6.399576    0.4464410 0.0002092272
+## 2       0.1413177   0.9494487 5.598999    0.3701888 0.0005108417
+## 3       0.1507763   0.2717776 6.399576    0.7926750 0.0002092272
+## 4       0.1738872   0.8090990 4.574205    0.4418550 0.0018157486
+## 5       0.1798341   0.2695121 5.598999    0.7943568 0.0005108417
+## 6       0.1988308   0.6326303 4.574205    0.5446288 0.0018157486&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;还有两个函数对&lt;code&gt;tapply()&lt;/code&gt;进行了改善, 用来进行因子计算.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::tapplydf()
 beginr::tapplydfv()&lt;/code&gt;&lt;/pre&gt;
@@ -990,30 +1038,6 @@ install.packages(&amp;#39;bookdownplus&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;说得挺吓人。我这次的体验挺轻松愉快的，两位维护者的答复带领我这个新手学会了下回怎么正确地写 R 包。虽然有些意见我觉得有些吹毛求疵，但是跟向学术期刊投稿比起来算个啥呀。&lt;/p&gt;
 &lt;p&gt;而且，R包发布之后，立刻就在Github上得到了pull request，我一看，人家的修改意见提得真好，这是提高 R 水平的好办法。&lt;/p&gt;
 &lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>《学R》序（朱彤）</title>
-      <link>http://www.pzhao.org/zh/post/preface_zhu/</link>
-      <pubDate>Wed, 14 Jun 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/zh/post/preface_zhu/</guid>
-      <description>&lt;p&gt;我读硕士研究生时的导师是朱彤教授。在朱老师科研小组 ZTGroup 学习的三年如沐春风，我从中得到的收获受益终生。正值北京大学环境大楼落成不久，又逢毕业季，作为环境科学与工程学院的院长，朱老师在极其繁忙的工作中抽出时间来为本书欣然作序，实属不易，仅凭“感激”二字岂能表达我们的谢意？&lt;/p&gt;
-
-&lt;p&gt;下面是朱老师为本书写的序言。&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;受作者邀请为此书写序，感到惶恐和高兴。两名作者分别是我以前的硕士和博士生，多年来我们小组很多同学都在学习和使用R语言，作为老师的我却从来没有用过，要为一本关于R语言的书写序，自然感到很惶恐。而当我打开这本书，没有看到晦涩难懂的概念、公式，在风趣易懂的语言、引人入胜的描述下，很快阅读完了前几章，不仅迅速跨越了零基础的障碍，更为两名作者为广大的数据统计分析和R语言学习人员提供这样一本独特、有趣的入门书而感到高兴。&lt;/p&gt;
-
-&lt;p&gt;随着科技的高速发展，对大量数据的处理和分析已成为科研甚至日常生活的必需，掌握一门强大的数据分析工具非常必要。作为一种开源、免费且不断更新的语言，R不仅拥有数据分析、统计、作图等强大功能，其应用范围还在不断扩大：赵鹏博士可以用它来撰写学术论文、做备忘录、制作幻灯片、整理读书笔记、整理照片、写书、记录吉他谱、写博客、做网站等。R语言拥有越来越多的使用者和爱好者，也使得其功能越来越广泛、强大。&lt;/p&gt;
-
-&lt;p&gt;与其它介绍R语言的书籍不同，这本书以两名作者自身学习的经验娓娓道来，没有多少枯燥的术语和公式，是一本非常适合自学R语言和统计学的入门书，尤其适合零基础和不懂统计学的读者。这本书可作为大学本科生和研究生自学用，也可作为高校教师教案。相信这读者们不仅会发现这本书很有用，更会发现关于R语言和统计学的书可以写的很有趣。&lt;/p&gt;
-
-&lt;p&gt;&amp;mdash; 朱彤，2017年6月13日&lt;/p&gt;
-&lt;/blockquote&gt;
 </description>
     </item>
     
