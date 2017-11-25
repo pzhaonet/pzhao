@@ -15,7 +15,7 @@
       <pubDate>Sat, 25 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>http://www.pzhao.org/zh/post/migrated-to-hugo/</guid>
-      <description>&lt;p&gt;从今天起，我的旧博客 dapengde.com 停止更新。旧博客的全部帖子已经搬到了 &lt;a href=&#34;http://www.pzhao.org&#34; target=&#34;_blank&#34;&gt;pzhao.org&lt;/a&gt;，欢迎收藏（ctrl + d）和&lt;a href=&#34;http://www.pzhao.org/zh/index.xml&#34; target=&#34;_blank&#34;&gt;订阅&lt;/a&gt;)。&lt;/p&gt;
+      <description>&lt;p&gt;从今天起，我的旧博客 dapengde.com 停止更新。旧博客的全部帖子已经搬到了 &lt;a href=&#34;http://www.pzhao.org&#34; target=&#34;_blank&#34;&gt;pzhao.org&lt;/a&gt;，欢迎收藏（ctrl + d）和&lt;a href=&#34;http://www.pzhao.org/zh/index.xml&#34; target=&#34;_blank&#34;&gt;订阅&lt;/a&gt;。&lt;/p&gt;
 
 &lt;p&gt;半年多以前，我用 R 语言的 blogdown 包搭建了新网站，与旧博客并存至今。&lt;a href=&#34;http://www.pzhao.org/archives/19323/&#34; target=&#34;_blank&#34;&gt;当时我就说&lt;/a&gt;，我要等着益辉同学把blogdown 的使用说明书“迁站”一章写好，就照步骤把旧博客内容全搬过去。前些日子，&lt;a href=&#34;https://bookdown.org/yihui/blogdown&#34; target=&#34;_blank&#34;&gt;blogdown 书&lt;/a&gt;终于出版了，从 wordpress 搬到 hugo 的迁站方法写得很详细。迁站的时机成熟了。&lt;/p&gt;
 
@@ -29,7 +29,7 @@
 
 &lt;p&gt;此外，我还想在每篇帖子末尾增添一个“原文链接”，链到旧博客，万一哪篇帖子格式没转好呢？这也好吧，markdown 的 yaml 里有个 url 条目，稍微改一下插到文末就行了。&lt;/p&gt;
 
-&lt;p&gt;看，这就是 hugo 静态网站的好处。有 R 语言在手，以后我就可以对帖子随心所欲操作了。&lt;/p&gt;
+&lt;p&gt;看，这就是 hugo 静态网站的好处。有 R 语言在手，以后我就可以对帖子随心所欲地批量操作了。Hugo-academic 主题我很满意，唯一不足的是缺个归档页面，一目了然展示全部帖子清单。看来得以后自己动手做一个。&lt;/p&gt;
 
 &lt;p&gt;旧博客 dapengde.com 虽然不更新了，但会仍然放在那里，发挥余热。前些天，还有朋友&lt;a href=&#34;http://dapengde.com/archives/14752#comment-153909&#34; target=&#34;_blank&#34;&gt;来我四年前写的帖子后面留言&lt;/a&gt;呢。&lt;/p&gt;
 
@@ -559,12 +559,12 @@ y &amp;lt;- 1:10 + rnorm(10)
 beginr::plotlm(x, y)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;## [[1]]
-##               Estimate Std. Error    t value     Pr(&amp;gt;|t|)
-## (Intercept) 0.05172226  0.7170599 0.07213102 9.442684e-01
-## x           1.04476655  0.1155647 9.04053569 1.792874e-05
+##              Estimate Std. Error  t value     Pr(&amp;gt;|t|)
+## (Intercept) 0.7207661  0.9044624 0.796900 0.4485112361
+## x           0.9554401  0.1457673 6.554556 0.0001776244
 ## 
 ## [[2]]
-## [1] 0.9108449&lt;/code&gt;&lt;/pre&gt;
+## [1] 0.8430209&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;经常需要了解一组数据的分布, 看看是不是正态分布. beginr 里的 &lt;code&gt;plothist()&lt;/code&gt; 函数不仅做出直方图和平滑曲线, 并且标出中值, 中位数, 四分位数, 标准偏差, 样本数, 以及用来判断是否正态分布的 skewness 值.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;x &amp;lt;- rnorm(10000)
 beginr::plothist(x)&lt;/code&gt;&lt;/pre&gt;
@@ -598,20 +598,20 @@ beginr::errorbar(x, y, yupper = 0.1, ylower = 0.1)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;beginr 提供了一些对数据框计算的函数, 例如计算多列数据两两的相关性和线性拟合结果, 可以用 &lt;code&gt;lmdf()&lt;/code&gt; 函数.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df &amp;lt;- data.frame(a = 1:10, b = 1:10 + rnorm(10), c = 1:10 + rnorm(10))
 beginr::lmdf(df)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;##   x y r.squared adj.r.squared  intercept     slope Std.Error.intercept
-## 1 a b 0.9692274     0.9653808 -0.3907877 1.1167575           0.4365294
-## 2 a c 0.9881918     0.9867158 -0.1268943 1.0136400           0.2430745
-## 3 b a 0.9692274     0.9653808  0.5084117 0.8678942           0.3614115
-## 4 b c 0.9775478     0.9747412  0.3365121 0.8887632           0.3147841
-## 5 c a 0.9881918     0.9867158  0.1886534 0.9748943           0.2330532
-## 6 c b 0.9775478     0.9747412 -0.2409973 1.0998968           0.3645356
-##   Std.Error.slope t.intercept  t.slope Pr.intercept     Pr.slope
-## 1      0.07035309  -0.8952149 15.87361    0.3968072 2.482744e-07
-## 2      0.03917501  -0.5220387 25.87466    0.6157856 5.341306e-09
-## 3      0.05467529   1.4067391 15.87361    0.1971434 2.482744e-07
-## 4      0.04762137   1.0690252 18.66312    0.3162503 7.011880e-08
-## 5      0.03767757   0.8094862 25.87466    0.4416448 5.341306e-09
-## 6      0.05893425  -0.6611075 18.66312    0.5271200 7.011880e-08&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##   x y r.squared adj.r.squared   intercept     slope Std.Error.intercept
+## 1 a b 0.9379239     0.9301644 -0.65347752 1.0682873           0.6029092
+## 2 a c 0.9049750     0.8930968  0.01670671 0.9795398           0.6963189
+## 3 b a 0.9379239     0.9301644  0.91515212 0.8779697           0.4877734
+## 4 b c 0.8207418     0.7983345  0.98798086 0.8456737           0.8534914
+## 5 c a 0.9049750     0.8930968  0.50720271 0.9238777           0.6520614
+## 6 c b 0.8207418     0.7983345 -0.02274889 0.9705184           0.9879006
+##   Std.Error.slope t.intercept   t.slope Pr.intercept     Pr.slope
+## 1      0.09716762 -1.08387378 10.994273   0.31000240 4.165196e-06
+## 2      0.11222195  0.02399290  8.728593   0.98144594 2.319659e-05
+## 3      0.07985700  1.87618280 10.994273   0.09747607 4.165196e-06
+## 4      0.13973141  1.15757564  6.052137   0.28042749 3.051910e-04
+## 5      0.10584497  0.77784504  8.728593   0.45904401 2.319659e-05
+## 6      0.16035961 -0.02302751  6.052137   0.98219234 3.051910e-04&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;还有两个函数对&lt;code&gt;tapply()&lt;/code&gt;进行了改善, 用来进行因子计算.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::tapplydf()
 beginr::tapplydfv()&lt;/code&gt;&lt;/pre&gt;

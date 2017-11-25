@@ -11,7 +11,7 @@ bibliography: [zhaor.bib]
 categories: []
 ---
 
-从今天起，我的旧博客 dapengde.com 停止更新。旧博客的全部帖子已经搬到了 [pzhao.org](http://www.pzhao.org)，欢迎收藏（ctrl + d）和[订阅](http://www.pzhao.org/zh/index.xml))。
+从今天起，我的旧博客 dapengde.com 停止更新。旧博客的全部帖子已经搬到了 [pzhao.org](http://www.pzhao.org)，欢迎收藏（ctrl + d）和[订阅](http://www.pzhao.org/zh/index.xml)。
 
 半年多以前，我用 R 语言的 blogdown 包搭建了新网站，与旧博客并存至今。[当时我就说](http://www.pzhao.org/archives/19323/)，我要等着益辉同学把blogdown 的使用说明书“迁站”一章写好，就照步骤把旧博客内容全搬过去。前些日子，[blogdown 书](https://bookdown.org/yihui/blogdown)终于出版了，从 wordpress 搬到 hugo 的迁站方法写得很详细。迁站的时机成熟了。
 
@@ -25,7 +25,7 @@ categories: []
 
 此外，我还想在每篇帖子末尾增添一个“原文链接”，链到旧博客，万一哪篇帖子格式没转好呢？这也好吧，markdown 的 yaml 里有个 url 条目，稍微改一下插到文末就行了。
 
-看，这就是 hugo 静态网站的好处。有 R 语言在手，以后我就可以对帖子随心所欲操作了。
+看，这就是 hugo 静态网站的好处。有 R 语言在手，以后我就可以对帖子随心所欲地批量操作了。Hugo-academic 主题我很满意，唯一不足的是缺个归档页面，一目了然展示全部帖子清单。看来得以后自己动手做一个。
 
 旧博客 dapengde.com 虽然不更新了，但会仍然放在那里，发挥余热。前些天，还有朋友[来我四年前写的帖子后面留言](http://dapengde.com/archives/14752#comment-153909)呢。
 
