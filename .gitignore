@@ -3,6 +3,7 @@
 .RData
 .Ruserdata
 public/
+private/
 _*.*
 
 # Windows image file caches

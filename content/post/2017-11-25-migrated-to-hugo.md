@@ -1,5 +1,5 @@
 ---
-title: '全面迁站'
+title: '全面迁站：从 Wordpress 到 Hugo'
 author: "赵鹏"
 date: '2017-11-25'
 slug: migrated-to-hugo

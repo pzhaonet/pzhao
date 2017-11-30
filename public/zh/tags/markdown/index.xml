@@ -67,6 +67,48 @@
     </item>
     
     <item>
+      <title>中文段首加空格和增加段落间距 （steemit markdown）</title>
+      <link>http://www.pzhao.org/zh/post/steemit-markdown/</link>
+      <pubDate>Sun, 13 Aug 2017 09:05:33 +0000</pubDate>
+      
+      <guid>http://www.pzhao.org/zh/post/steemit-markdown/</guid>
+      <description>&lt;p&gt;原文链接: &lt;a href=&#34;https://steemit.com/cn/@dapeng/steemit-markdown&#34; target=&#34;_blank&#34;&gt;steemit&lt;/a&gt;, &lt;a href=&#34;https://cnsteem.com/cn/@dapeng/steemit-markdown&#34; target=&#34;_blank&#34;&gt;cnsteem&lt;/a&gt;, &lt;a href=&#34;https://chainbb.com/cn/@dapeng/steemit-markdown&#34; target=&#34;_blank&#34;&gt;chainbb&lt;/a&gt;, &lt;a href=&#34;https://busy.org/cn/@dapeng/steemit-markdown&#34; target=&#34;_blank&#34;&gt;busy&lt;/a&gt;, &lt;a href=&#34;https://raw.githubusercontent.com/pzhaonet/steem_mirror/master/content/post/steemit-markdown.md&#34; target=&#34;_blank&#34;&gt;markdown&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;　　有朋友在 steemit 的 cn-reader 的微信群里问了一个 markdown 中文排版的问题：如何为中文段首增加空格，以及改变段落间的间距。这个简单：使用中文的全角空格。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://steemitimages.com/DQmQjSRg9PkM2gGmsqa7jm5wNxorgGgWQid3on1QwPeaoLa/quanjiao.jpg&#34; alt=&#34;quanjiao.jpg&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;　　&lt;/p&gt;
+
+&lt;p&gt;　　一般的中文输入法都有上述设置界面。点一下弯月符号（或快捷键shift+空格）就变成满月，这就是全角。此时按空格键，就会输入一个汉字宽度的空白。所以，段首输入两个全角空白就行了。&lt;/p&gt;
+
+&lt;p&gt;　　不过，如果是紧跟在非普通文本（全文第一段，插图，代码等）后面，这种方法会失效，那么可以在全角空格前面加上个&lt;code&gt;&amp;lt;br&amp;gt;&lt;/code&gt;就行了。&lt;/p&gt;
+
+&lt;p&gt;　　一般来说，在markdown编辑器里输入全角空格后再换行，就会多插入一行空白。下面我们用这种方法输入一行空白。&lt;/p&gt;
+
+&lt;p&gt;　　&lt;/p&gt;
+
+&lt;p&gt;　　&lt;/p&gt;
+
+&lt;p&gt;　　但连续几个空行 steemit 就不支持了。那么可以输入：&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;&amp;lt;br&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;也同样是插入一个空行。输入几个&lt;code&gt;&amp;lt;br&amp;gt;&lt;/code&gt;就插入几个空行。下面，我们插入两个空行。&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;　　&lt;code&gt;&amp;lt;br&amp;gt;&lt;/code&gt;其实是 html 语言的代码。“全角空格”是html界的魔法占位符。善用“全角空格”这个小魔法，就可以实现诸如　　对　　齐　　等其他功能。&lt;/p&gt;
+
+&lt;p&gt;　　要想使用复杂的格式，就需要复杂的命令或按钮来排版，容易偏离对内容的关注。而 steemit 使用的 markdown 语法，在内容和形式之间达到了最微妙的平衡，让你用最简单的指令，实现日常99%以上的排版需求。&lt;/p&gt;
+
+&lt;p&gt;　　不过，markdown 也尊重其他1%用户的特殊需求。原则上，markdown 支持 html，所以，要想对你的帖子的格式进行复杂排版，那么就学习 html 吧，少年！&lt;/p&gt;
+
+&lt;p&gt;　　中文段首空格原本是用来印刷时方便划分自然段的。在网络时代，自然段完全可以通过段落间距看得出来，所以段首空格丧失了原本的意义。不过，作为对纸质书和印刷时代的怀念，用一下段首空格，不失为一种情怀吧。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>R mindr: 把 Markdown 转成思维导图</title>
       <link>http://www.pzhao.org/zh/post/mindr/</link>
       <pubDate>Fri, 19 May 2017 00:00:00 +0000</pubDate>
@@ -1665,89 +1707,6 @@ I like Eq. (@eq-mc) so much that I am falling love with her.&lt;/code&gt;&lt;/pr
 &lt;li id=&#34;fn6&#34;&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/yihui/bookdown-chinese&#34; class=&#34;uri&#34;&gt;https://github.com/yihui/bookdown-chinese&lt;/a&gt;&lt;a href=&#34;#fnref6&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>精品网络应用：Markdown篇</title>
-      <link>http://www.pzhao.org/archives/17712</link>
-      <pubDate>Fri, 07 Nov 2014 16:00:48 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/archives/17712</guid>
-      <description>
-
-&lt;p&gt;&lt;a href=&#34;http://pzhao.org/archives/17033&#34; target=&#34;_blank&#34;&gt;Markdown&lt;/a&gt;是时下非常流行的软件。我们一般用它在电脑里写文字（作文、笔记、会议记录等），功能介于记事本和 Word 之间，是html语言的简化版，比&lt;a href=&#34;http://pzhao.org/archives/17695&#34; target=&#34;_blank&#34;&gt;LaTeX&lt;/a&gt;要简单和容易得多。&lt;/p&gt;
-
-&lt;p&gt;Markdown的时髦得益于它的简洁和强大，可以满足平时用电脑写东西的大多数需求，甚至有时候更方便。比如想把本文里所有的“Markdown”这个词的字体加粗，Word的初级用户只会逐个修改，大概到中级水平才会批量操作，而Markdown用户学一分钟就能轻松完成了。&lt;/p&gt;
-
-&lt;p&gt;我以前写过题为&lt;a href=&#34;http://pzhao.org/archives/17033&#34; target=&#34;_blank&#34;&gt;九分钟学会Markdown&lt;/a&gt;的日志。这里介绍我精挑细选的几款超级棒的网络应用，让你不必安装任何软件，就可以痛痛快快使用Markdown。&lt;/p&gt;
-
-&lt;h3 id=&#34;大鹏志在线markdown编辑器-1&#34;&gt;&lt;a href=&#34;http://pzhao.org/archives/17033&#34; target=&#34;_blank&#34;&gt;大鹏志在线MarkDown编辑器&lt;/a&gt;&lt;/h3&gt;
-
-&lt;p&gt;先给自己做下广告。&amp;#8217;大鹏志&amp;#8217;的所有博客都是用Markdown写的；每篇日志文末的评论栏都支持Markdown语法。不信，你把本网页拉到底部，试试输入文字，并选定一些文字后点工具栏的任意按钮试试效果。快捷键让插入超级链接(ctrl+l)、插入图片(ctrl+g)、粗体(ctrl+b)、斜体(ctrl+i)都异常方便。试试在评论栏按ctrl+g，然后把下面这个图片链接拷贝粘贴进去：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;https://gwkpxq-bn1305.files.1drv.com/y2p02nUqt7uhPRsYrhV0dpnH6R1hDrLBksSpNrYuLl_VxmcnFb4LHtyqStJKM3hO9uC2i6mx7IH5p9Gnz8nZA6fi5rDTjJR_pZoA09hmVX-SBE/alipay.png
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://qg5vba.dm2301.livefilestore.com/y2pa2EqsJmVKeJckue-Xbhfd3vPbIW11hvlIRg0mM83R5K5vS2seoQCVq5epGZpGBbanzVBX8pByLGEhubk4C3LlTHaAgOFUR0nKjpaBRJsD8Q/2014-01-17_wp_plugin_Markdown.jpg&#34; alt=&#34;enter image description here&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;插图：&amp;#8217;大鹏志&amp;#8217;的评论栏&lt;/p&gt;
-
-&lt;p&gt;相信你此时大概理解了Markdown是什么。对，&amp;#8217;Markdown&amp;#8217;和&amp;#8217;Markdown编辑器&amp;#8217;是两回事，就像&amp;#8217;英语&amp;#8217;和&amp;#8217;英语字典&amp;#8217;的关系一样。Markdown是一套规则；不管用什么软件，包括记事本，你只要按这个简单的规则写文本就行了。它不依赖任何软件，就好比使用英语并不依赖特定的字典一样。不喜欢的字典，丢掉换一本就行，Markdown文本也一样。需要的时候，借助任何Markdown编辑器，不管是在线的或本地安装的，把这个文本的格式显示出来即可。&lt;/p&gt;
-
-&lt;h3 id=&#34;stackedit在线markdown编辑器-4&#34;&gt;&lt;a href=&#34;https://stackedit.io/&#34; target=&#34;_blank&#34;&gt;StackEdit在线Markdown编辑器&lt;/a&gt;&lt;/h3&gt;
-
-&lt;p&gt;Markdown在线编辑器数不胜数，鱼龙混杂。我试用过几款，后来锁定在&lt;a href=&#34;https://stackedit.io/&#34; target=&#34;_blank&#34;&gt;StackEdit&lt;/a&gt;上，再也不换别的了，并且卸载了本地安装的MarkdownPad。StackEdit是谷歌网络硬盘 Google Drive的默认编辑器，是我见过的最强大的Markdown编辑器，没有之一。&lt;/p&gt;
-
-&lt;p&gt;进入&lt;a href=&#34;https://stackedit.io/&#34; target=&#34;_blank&#34;&gt;StackEdit的网站&lt;/a&gt;，点击上边的&lt;code&gt;Start&lt;/code&gt;按钮，就看到了编辑窗口。默认给出一个文档示例，左栏用来写文字，右栏是输出结果，右上角可以修改文件名。就在这个默认示例文档里修改修改吧，体会一下。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://gwkpxq-bn1305.files.1drv.com/y2p8Y_gSrl9HsG3Teygtfy1IwrvEPyYWwbJY1IY-NkqmpgZkcO31zA5NvbrPR87bi7dVPnjWb58wtWc2Uzka8YqysktLLfl27w_wNSZsqEOs4M/2014-11-04_markdown_stackedit.jpg&#34; alt=&#34;enter image description here&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;插图：&lt;a href=&#34;https://stackedit.io/&#34; target=&#34;_blank&#34;&gt;StackEdit在线Markdown编辑器&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;StackEdit太强悍，秒杀一切同类应用：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;最方便的是：只要是浏览器的StackEdit窗口里显示的文本，不管是不是网络硬盘的，都实时自动保存。怕因为死机、断电而没保存文稿的人有福了，在这里连ctrl+s都不用按。&lt;/li&gt;
-&lt;li&gt;更牛的是，只要不清除浏览器缓存，那么即使在没有网络的时候，在浏览器里可以同样使用StackEdit。相当于是个本地软件。&lt;/li&gt;
-&lt;li&gt;StackEdit可以跟谷歌网络硬盘关联同步。在Google Drive里可以选择创建StackEdit文档，就自动用StackEdit打开了。任何修改、编辑、重命名等，都在Google Drive自动实时同步。&lt;/li&gt;
-&lt;li&gt;也支持从Dropbox导入，或从本地电脑硬盘里导入。&lt;/li&gt;
-&lt;li&gt;最牛的是：支持扩展的Markdown语法，可以很方便地输入表格、脚注、&lt;a href=&#34;http://pzhao.org/archives/17695&#34; target=&#34;_blank&#34;&gt;LaTeX数学公式&lt;/a&gt;、生成文档目录等。而且，这些功能都很容易学会，看看示例文档就行了。&lt;/li&gt;
-&lt;li&gt;实时字数统计。&lt;/li&gt;
-&lt;li&gt;显示文档结构图。&lt;/li&gt;
-&lt;li&gt;支持Markdown和HTML之间相互转换。&lt;/li&gt;
-&lt;li&gt;支持拼写检查。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;StackEdit的早期版本是可以直接导出pdf的，后来这个功能只提供给赞助者（每年5美元赞助费）。不过，只要把左栏写好的文本拷贝粘贴到下面这一款编辑器里，就可以免费导出pdf了。&lt;/p&gt;
-
-&lt;h3 id=&#34;dillinger在线markdown编辑器-6&#34;&gt;&lt;a href=&#34;http://dillinger.io/&#34; target=&#34;_blank&#34;&gt;Dillinger在线MarkDown编辑器&lt;/a&gt;&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://dillinger.io/&#34; target=&#34;_blank&#34;&gt;Dillinger&lt;/a&gt;的界面跟StackEdit类似，功能略逊，但也有它独特的优势。它支持的网盘更多，可以跟多个网盘关联和自动同步，包括Google Drive，Microsoft Onedrive，Dropbox，GitHub，可以更换主题，并直接导出 pdf。稍微不便的是，它没有给出一个直观的工具栏，因此更适合熟练者使用。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://gwkpxq-bn1305.files.1drv.com/y2pc0FImEq2sjt8ibxGw5HzqSGbpY4DcFJu-xutkBRxFc-qv2MIcOKKO0powo3kawh4qd9-Mvaal-piALmVrt9fEgewnaLBXJqatQ3LicSsCCo/2014-11-04_markdown_dillinger.jpg&#34; alt=&#34;enter image description here&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;插图：&lt;a href=&#34;http://dillinger.io/&#34; target=&#34;_blank&#34;&gt;Dillinger在线MarkDown编辑器&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;上面这两款编辑器都是英文界面。喜欢中文界面的，可以试试下面这两款。&lt;/p&gt;
-
-&lt;h3 id=&#34;中文界面的在线markdown编辑器&#34;&gt;中文界面的在线Markdown编辑器&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://mahua.jser.me/&#34; target=&#34;_blank&#34;&gt;麻花在线Markdown编辑器&lt;/a&gt;是国人自己开发的优秀编辑器，完全满足日常使用。而且，它另辟蹊径，可以自定义css，可以显示行号；最特别的是，它竟然支持vim的操作方式。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://gwkpxq-bn1305.files.1drv.com/y2pwrTH7QOgzjp0Law0tiEFJPz_5Ud9YZNg7feO78DUO4m0ShyKFkK9RZkXpK9qRLIuo9YFcj8ksg-GrklVSgc28zt-s7aKx91w0TaqEMLci40/2014-11-04_markdown_muhua.jpg&#34; alt=&#34;enter image description here&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;插图：&lt;a href=&#34;http://mahua.jser.me/&#34; target=&#34;_blank&#34;&gt;MaHua在线Markdown编辑器&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://jianshu.com&#34; target=&#34;_blank&#34;&gt;简书&lt;/a&gt;是一个支持Markdown的写作阅读平台。就像新浪博客一样，用户在上面写文章，并发布在网站上；也可以阅读别人发布的文章，发表评论。文章可以以Markdown格式打包下载。简书吸引人的地方在于它界面的简约清爽。跟上面介绍的Markdown编辑器不同，简书需要用邮箱注册才能书写。&lt;/p&gt;
-
-&lt;h3 id=&#34;结语&#34;&gt;结语&lt;/h3&gt;
-
-&lt;p&gt;我使用Markdown，是从&lt;a href=&#34;http://pzhao.org/archives/14639&#34; target=&#34;_blank&#34;&gt;RStudio编写R代码&lt;/a&gt;开始的，到现在用了不到两年，渐入佳境，至今爱不释手，欲罢不能。我认为，电脑软件的理想境界就应该像Markdown一样，易用，简洁，优雅，灵活。以后我还会继续用下去，希望有更多的朋友爱上她。&lt;/p&gt;
-
-&lt;p&gt;顺便说一下，&amp;#8217;大鹏志&amp;#8217;的后台和评论栏支持Markdown，没什么神秘，用&lt;a href=&#34;http://pzhao.org/archives/16035&#34; target=&#34;_blank&#34;&gt;WP-Markdown插件&lt;/a&gt;就可以实现。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://dapengde.com/archives/17712&#34; target=&#34;_blank&#34;&gt;原文链接&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
