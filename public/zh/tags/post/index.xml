@@ -714,12 +714,12 @@ y &amp;lt;- 1:10 + rnorm(10)
 beginr::plotlm(x, y)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;## [[1]]
-##              Estimate Std. Error  t value     Pr(&amp;gt;|t|)
-## (Intercept) -0.133576 0.57860199 -0.23086 8.232182e-01
-## x            1.003951 0.09325015 10.76621 4.878754e-06
+##              Estimate Std. Error   t value     Pr(&amp;gt;|t|)
+## (Intercept) 0.1351674  0.7891470 0.1712829 0.8682544635
+## x           0.9000927  0.1271826 7.0771708 0.0001043212
 ## 
 ## [[2]]
-## [1] 0.9354377&lt;/code&gt;&lt;/pre&gt;
+## [1] 0.862274&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;经常需要了解一组数据的分布, 看看是不是正态分布. beginr 里的 &lt;code&gt;plothist()&lt;/code&gt; 函数不仅做出直方图和平滑曲线, 并且标出中值, 中位数, 四分位数, 标准偏差, 样本数, 以及用来判断是否正态分布的 skewness 值.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;x &amp;lt;- rnorm(10000)
 beginr::plothist(x)&lt;/code&gt;&lt;/pre&gt;
@@ -753,20 +753,20 @@ beginr::errorbar(x, y, yupper = 0.1, ylower = 0.1)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;beginr 提供了一些对数据框计算的函数, 例如计算多列数据两两的相关性和线性拟合结果, 可以用 &lt;code&gt;lmdf()&lt;/code&gt; 函数.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df &amp;lt;- data.frame(a = 1:10, b = 1:10 + rnorm(10), c = 1:10 + rnorm(10))
 beginr::lmdf(df)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;##   x y r.squared adj.r.squared  intercept     slope Std.Error.intercept
-## 1 a b 0.9246430     0.9152234 -0.4999318 1.1108337           0.6956795
-## 2 a c 0.8690700     0.8527037  0.1462292 0.9111173           0.7758039
-## 3 b a 0.9246430     0.9152234  0.8306000 0.8323865           0.5475664
-## 4 b c 0.7746511     0.7464825  0.9802825 0.7446257           0.9254428
-## 5 c a 0.8690700     0.8527037  0.5806344 0.9538507           0.7686072
-## 6 c b 0.7746511     0.7464825  0.2443191 1.0403228           1.1648622
-##   Std.Error.slope t.intercept  t.slope Pr.intercept     Pr.slope
-## 1      0.11211891  -0.7186236 9.907639    0.4928248 9.096672e-06
-## 2      0.12503212   0.1884873 7.287066    0.8551883 8.494400e-05
-## 3      0.08401462   1.5168939 9.907639    0.1677674 9.096672e-06
-## 4      0.14199325   1.0592578 5.244092    0.3204138 7.794062e-04
-## 5      0.13089640   0.7554371 7.287066    0.4716406 8.494400e-05
-## 6      0.19837996   0.2097408 5.244092    0.8391128 7.794062e-04&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##   x y r.squared adj.r.squared   intercept     slope Std.Error.intercept
+## 1 a b 0.9353304     0.9272467  0.41673279 0.9317744           0.5374818
+## 2 a c 0.9305173     0.9218320 -1.10017326 1.1911937           0.7140750
+## 3 b a 0.9353304     0.9272467 -0.06264033 1.0038163           0.5780300
+## 4 b c 0.8437171     0.8241818 -1.07265450 1.1773086           1.1096247
+## 5 c a 0.9305173     0.9218320  1.24157024 0.7811637           0.4908327
+## 6 c b 0.8437171     0.8241818  1.63475709 0.7166491           0.7092169
+##   Std.Error.slope t.intercept   t.slope Pr.intercept     Pr.slope
+## 1      0.08662303   0.7753431 10.756659   0.46043923 4.911502e-06
+## 2      0.11508361  -1.5406970 10.350680   0.16195788 6.558533e-06
+## 3      0.09332046  -0.1083686 10.756659   0.91637201 4.911502e-06
+## 4      0.17914413  -0.9666822  6.571852   0.36201349 1.744381e-04
+## 5      0.07546979   2.5295184 10.350680   0.03528188 6.558533e-06
+## 6      0.10904827   2.3050172  6.571852   0.05007710 1.744381e-04&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;还有两个函数对&lt;code&gt;tapply()&lt;/code&gt;进行了改善, 用来进行因子计算.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::tapplydf()
 beginr::tapplydfv()&lt;/code&gt;&lt;/pre&gt;

@@ -3,7 +3,7 @@ title: '逻辑娃 III'
 author: "赵鹏"
 date: '2017-12-03'
 slug: logical-kid-3
-summary: "从今天起，我的旧博客 dapengde.com 停止更新。旧博客的全部帖子已经搬到了 pzhao.org."
+summary: "最近，逻辑娃的逻辑出了点毛病。"
 tags:
 - blog
 - post
