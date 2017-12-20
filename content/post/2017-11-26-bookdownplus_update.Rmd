@@ -52,6 +52,6 @@ bookdownplus v.1.4.0 已经在 GitHub 发布，安装和使用方法是在 R 语
 ```{r, eval=FALSE}
 devtools::install_github("pzhaonet/bookdownplus")
 require(bookdownplus)
-showcase()
+bd()
 ```
 

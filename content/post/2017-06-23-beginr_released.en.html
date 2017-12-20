@@ -58,11 +58,11 @@ beginr::plotlm(x, y)</code></pre>
 <p><img src="/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 <pre><code>## [[1]]
 ##              Estimate Std. Error   t value     Pr(&gt;|t|)
-## (Intercept) -1.379948  1.0530053 -1.310486 2.264020e-01
-## x            1.258509  0.1697072  7.415767 7.505538e-05
+## (Intercept) 0.4464470  0.7251476 0.6156636 5.552232e-01
+## x           0.8739908  0.1168681 7.4784365 7.070809e-05
 ## 
 ## [[2]]
-## [1] 0.873003</code></pre>
+## [1] 0.8748573</code></pre>
 <p>If you want to display the distribution of a data-set, use <code>plothist()</code>, which gives you a histogram with markers of the median, mean, quantiles, standard deviation, sample number and the skewness.</p>
 <pre class="r"><code>x &lt;- rnorm(10000)
 beginr::plothist(x)</code></pre>
@@ -96,20 +96,20 @@ beginr::errorbar(x, y, yupper = 0.1, ylower = 0.1)</code></pre>
 <p><code>lmdf()</code> performs the linear regression between every two columns in a data frame.</p>
 <pre class="r"><code>df &lt;- data.frame(a = 1:10, b = 1:10 + rnorm(10), c = 1:10 + rnorm(10))
 beginr::lmdf(df)</code></pre>
-<pre><code>##   x y r.squared adj.r.squared   intercept     slope Std.Error.intercept
-## 1 a b 0.9713128     0.9677270  0.39116683 0.9291673           0.3503027
-## 2 a c 0.8704187     0.8542211 -0.08918763 0.9956210           0.8427261
-## 3 b a 0.9713128     0.9677270 -0.25113018 1.0453584           0.3894763
-## 4 b c 0.8679240     0.8514145 -0.41482728 1.0545239           0.8918241
-## 5 c a 0.8704187     0.8542211  0.79066908 0.8742470           0.7391470
-## 6 c b 0.8679240     0.8514145  1.06805035 0.8230482           0.7035354
-##   Std.Error.slope t.intercept   t.slope Pr.intercept     Pr.slope
-## 1      0.05645639   1.1166538 16.458144    0.2965551 1.873497e-07
-## 2      0.13581761  -0.1058323  7.330574    0.9183210 8.144811e-05
-## 3      0.06351618  -0.6447894 16.458144    0.5371108 1.873497e-07
-## 4      0.14543954  -0.4651448  7.250600    0.6542268 8.800251e-05
-## 5      0.11926038   1.0697048  7.330574    0.3159622 8.144811e-05
-## 6      0.11351450   1.5181188  7.250600    0.1674639 8.800251e-05</code></pre>
+<pre><code>##   x y r.squared adj.r.squared  intercept     slope Std.Error.intercept
+## 1 a b 0.9552722     0.9496812 -1.1082178 1.1846518           0.5623431
+## 2 a c 0.9458450     0.9390756 -0.3365401 1.0792343           0.5665137
+## 3 b a 0.9552722     0.9496812  1.1396409 0.8063738           0.3967398
+## 4 b c 0.9701927     0.9664667  0.7229145 0.9017945           0.3594051
+## 5 c a 0.9458450     0.9390756  0.5927975 0.8764038           0.4776940
+## 6 c b 0.9701927     0.9664667 -0.6165660 1.0758467           0.4295554
+##   Std.Error.slope t.intercept  t.slope Pr.intercept     Pr.slope
+## 1      0.09062980  -1.9707146 13.07133   0.08425047 1.114528e-06
+## 2      0.09130195  -0.5940547 11.82050   0.56888915 2.404605e-06
+## 3      0.06169028   2.8725143 13.07133   0.02074865 1.114528e-06
+## 4      0.05588500   2.0114195 16.13661   0.07910395 2.184720e-07
+## 5      0.07414273   1.2409568 11.82050   0.24977630 2.404605e-06
+## 6      0.06667116  -1.4353584 16.13661   0.18910448 2.184720e-07</code></pre>
 <p>There are two functions as improvements of <code>tapply()</code> for factor calculation.</p>
 <pre class="r"><code>beginr::tapplydf()
 beginr::tapplydfv()</code></pre>
@@ -139,7 +139,7 @@ beginr::list2ascii(alist)</code></pre>
 ##   title = {bookdownplus: Generate Assorted Books and Documents with R &#39;bookdown&#39; Package},
 ##   author = {Peng Zhao},
 ##   year = {2017},
-##   note = {R package version 1.4.0},
+##   note = {R package version 1.4.2},
 ##   url = {https://github.com/pzhaonet/bookdownplus},
 ## }
 ## @Manual{R-mindr,
