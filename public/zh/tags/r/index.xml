@@ -10,6 +10,41 @@
     <atom:link href="/zh/tags/r/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>我把青春献给你：排版 (3)</title>
+      <link>http://www.pzhao.org/zh/post/latex-and-me-3/</link>
+      <pubDate>Sat, 23 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.pzhao.org/zh/post/latex-and-me-3/</guid>
+      <description>&lt;p&gt;7&lt;/p&gt;
+&lt;p&gt;LaTeX 做出来的文档，确实漂亮。这种漂亮不是那种一眼就能看出哪儿漂亮的漂亮，而是一种说不出来的气质。这种气质来自字体、间距、断字等等诸多细节的堆积和交互作用。只要是用过 LaTeX 的人，拿来个文档用鼻子一闻，就知道是 Word 做的还是 LaTeX 做的。&lt;/p&gt;
+&lt;p&gt;然而，这种气质不是能轻易把握的。LaTeX 最为奇特的是，你为她投入了无数的时间，却竟然说不清楚到底是因为她太好还是她太糟。如果她太好，为何这么难用？如果她太糟，为何你甘心为她付出？&lt;/p&gt;
+&lt;p&gt;之所以能用 LaTeX 写完博士论文，我想来想去，这个奇迹是以下四点一起促成的：&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;&lt;p&gt;组里的同事提供了现成的论文模板，&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;身边有同事可以随时问，&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;老板只看结果，对我实现的手段并不介意，&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;论文是英文写的，不需要跟中文排版死磕。&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;想学 LaTeX 的注意了！以上四点，只要缺了一样，那么学 LaTeX 的阻力就会提高一个数量级。此坑慎入！&lt;/p&gt;
+&lt;p&gt;如果有了这四个条件，那么基本上就不用额外操心，只管埋头写论文就是了。&lt;/p&gt;
+&lt;p&gt;然而，LaTeX 下埋头写作的体验并不美好。那感觉根本就不是写论文，而是写代码。不编译出来，你根本不知道自己写了几页，每页是啥模样。一天下来，脑袋胀胀的，心里乱乱的。相比之下，用 Word 写论文，每敲一个字符都有一点成就感，敲完一页后，就像已经出版了一样心满意足。&lt;/p&gt;
+&lt;p&gt;LaTeX 就像个绝世美人，不时让你为她的美貌倾倒。更大的诱惑是，你心里清楚，只要你努力，就能距离她的美貌更接近一点。于是，你就身不由己地投入大把大把的精力，把你的文档弄得越来越漂亮，虽然每次只是漂亮了那么一点点。&lt;/p&gt;
+&lt;p&gt;不像 Word，你知道，无论再怎么使劲，做出来的论文顶多也就那样了，不可能更美，所以心态反而平静下来，老老实实过日子。&lt;/p&gt;
+&lt;p&gt;一个像恋爱，一个像婚姻。&lt;/p&gt;
+&lt;p&gt;8&lt;/p&gt;
+&lt;p&gt;当完成博士论文的时候，我决定结束天天心惊胆战的 LaTeX 爱情长跑，回到 Word 的温柔乡。我把城墙修高加厚，厚得就像特洛伊城，把 LaTeX 拦住墙外，从此一刀两断。曾经在同一个战壕里的战友，变成了洪水猛兽。&lt;/p&gt;
+&lt;p&gt;到了新工作单位，观察了一下，老板和同事全部是正常人，不是 X-men。我松了一口气。&lt;/p&gt;
+&lt;p&gt;有一次，有个名叫 LyX 的使者来敲我的城门。从三个字母参差不齐的模样，我一眼就识破了他的伪装，轻轻吐出一个字：滚。&lt;/p&gt;
+&lt;p&gt;我以为，从此就跟 LaTeX 形同陌路了。&lt;/p&gt;
+&lt;p&gt;有一天，我在使用 R 语言的时候，神使鬼差地装上了一个名叫 bookdown 的扩展包。&lt;/p&gt;
+&lt;p&gt;很久以后，再次回忆那一刻，仍然不由得感慨万千。命中注定的事，逃不掉的劫数。&lt;/p&gt;
+&lt;p&gt;bookdown，就是攻陷特洛伊的木马; 里面藏着的，除了我的旧爱 LaTeX，还有 Pandoc 这个魔鬼。后者从名字上一看，就知道是潘多拉放出来的。&lt;/p&gt;
+&lt;p&gt;安装 bookdown 的那一瞬间，我把木马轰隆隆地拉进了我的城。&lt;/p&gt;
+&lt;p&gt;特洛伊，就此沦陷。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>R bookdownplus 升级手记，以及北大论文模板</title>
       <link>http://www.pzhao.org/zh/post/-bookdownplus-update/</link>
       <pubDate>Sun, 26 Nov 2017 00:00:00 +0000</pubDate>
@@ -511,12 +546,12 @@ y &amp;lt;- 1:10 + rnorm(10)
 beginr::plotlm(x, y)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;## [[1]]
-##              Estimate Std. Error   t value     Pr(&amp;gt;|t|)
-## (Intercept) 0.1351674  0.7891470 0.1712829 0.8682544635
-## x           0.9000927  0.1271826 7.0771708 0.0001043212
+##              Estimate Std. Error    t value     Pr(&amp;gt;|t|)
+## (Intercept) 0.2115959 0.48991294  0.4319051 6.772150e-01
+## x           1.0482595 0.07895662 13.2763978 9.889013e-07
 ## 
 ## [[2]]
-## [1] 0.862274&lt;/code&gt;&lt;/pre&gt;
+## [1] 0.9565837&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;经常需要了解一组数据的分布, 看看是不是正态分布. beginr 里的 &lt;code&gt;plothist()&lt;/code&gt; 函数不仅做出直方图和平滑曲线, 并且标出中值, 中位数, 四分位数, 标准偏差, 样本数, 以及用来判断是否正态分布的 skewness 值.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;x &amp;lt;- rnorm(10000)
 beginr::plothist(x)&lt;/code&gt;&lt;/pre&gt;
@@ -550,20 +585,20 @@ beginr::errorbar(x, y, yupper = 0.1, ylower = 0.1)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;beginr 提供了一些对数据框计算的函数, 例如计算多列数据两两的相关性和线性拟合结果, 可以用 &lt;code&gt;lmdf()&lt;/code&gt; 函数.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df &amp;lt;- data.frame(a = 1:10, b = 1:10 + rnorm(10), c = 1:10 + rnorm(10))
 beginr::lmdf(df)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;##   x y r.squared adj.r.squared   intercept     slope Std.Error.intercept
-## 1 a b 0.9353304     0.9272467  0.41673279 0.9317744           0.5374818
-## 2 a c 0.9305173     0.9218320 -1.10017326 1.1911937           0.7140750
-## 3 b a 0.9353304     0.9272467 -0.06264033 1.0038163           0.5780300
-## 4 b c 0.8437171     0.8241818 -1.07265450 1.1773086           1.1096247
-## 5 c a 0.9305173     0.9218320  1.24157024 0.7811637           0.4908327
-## 6 c b 0.8437171     0.8241818  1.63475709 0.7166491           0.7092169
-##   Std.Error.slope t.intercept   t.slope Pr.intercept     Pr.slope
-## 1      0.08662303   0.7753431 10.756659   0.46043923 4.911502e-06
-## 2      0.11508361  -1.5406970 10.350680   0.16195788 6.558533e-06
-## 3      0.09332046  -0.1083686 10.756659   0.91637201 4.911502e-06
-## 4      0.17914413  -0.9666822  6.571852   0.36201349 1.744381e-04
-## 5      0.07546979   2.5295184 10.350680   0.03528188 6.558533e-06
-## 6      0.10904827   2.3050172  6.571852   0.05007710 1.744381e-04&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##   x y r.squared adj.r.squared  intercept     slope Std.Error.intercept
+## 1 a b 0.8908181     0.8771704  0.4637203 0.9657318           0.7416905
+## 2 a c 0.9051819     0.8933296  0.6349221 0.8403052           0.5966232
+## 3 b a 0.8908181     0.8771704  0.1727518 0.9224280           0.7398525
+## 4 b c 0.8545711     0.8363925  0.6481851 0.7979602           0.7541614
+## 5 c a 0.9051819     0.8933296 -0.1624424 1.0772061           0.7194516
+## 6 c b 0.8545711     0.8363925  0.1457172 1.0709446           0.9116819
+##   Std.Error.slope t.intercept  t.slope Pr.intercept     Pr.slope
+## 1      0.11953425   0.6252208 8.079123    0.5492406 4.067884e-05
+## 2      0.09615453   1.0641928 8.739112    0.3183048 2.299311e-05
+## 3      0.11417428   0.2334949 8.079123    0.8212410 4.067884e-05
+## 4      0.11638243   0.8594779 6.856363    0.4150876 1.301469e-04
+## 5      0.12326264  -0.2257864 8.739112    0.8270290 2.299311e-05
+## 6      0.15619719   0.1598333 6.856363    0.8769742 1.301469e-04&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;还有两个函数对&lt;code&gt;tapply()&lt;/code&gt;进行了改善, 用来进行因子计算.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::tapplydf()
 beginr::tapplydfv()&lt;/code&gt;&lt;/pre&gt;
@@ -1045,55 +1080,6 @@ pinyin(&amp;#39;羌笛何须怨杨柳春风不度玉门关&amp;#39;)&lt;/code&gt
 &lt;div class=&#34;figure&#34;&gt;
 &lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/mindr/master/showcase/mindr_xuer.jpg&#34; /&gt;
 
-&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>R blogdown 科研网站的公式和参考文献</title>
-      <link>http://www.pzhao.org/zh/post/rblogdown-bib/</link>
-      <pubDate>Thu, 18 May 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/zh/post/rblogdown-bib/</guid>
-      <description>&lt;p&gt;本网站的公式和参考文献一直未能正常显示，直到今天我才把这两个问题解决。&lt;/p&gt;
-&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
-&lt;li&gt;&lt;strong&gt;公式&lt;/strong&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;公式的问题迟迟未解决，是因为我看到人们在讨论往html文件里加 &lt;code&gt;Load mathjax&lt;/code&gt; 代码这种解决方案，一看就头大，不想做。&lt;/p&gt;
-&lt;p&gt;其实，我用的hugo-academic主题，据说是支持数学环境的，据说在 &lt;code&gt;config.toml&lt;/code&gt; 里设置 &lt;code&gt;math = true&lt;/code&gt;就开启全站支持，在单篇post的yml头里这样设置就开启单篇支持。可是我两样都试过，然后运行 &lt;code&gt;blogdown::serve_site()&lt;/code&gt;测试，在RStudio的Viewer里都不能成功显示公式。&lt;/p&gt;
-&lt;p&gt;今天突然灵光一现，心想不会是RStudio Viewer的问题吧？于是点击Viewer左上角的 &lt;code&gt;Show in new window&lt;/code&gt; 按钮，用外部浏览器打开一看，Duang！帖子里的公式就都可以正常显示了！这里秀一个：&lt;/p&gt;
-&lt;p&gt;帖子里输入下面的 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; 公式：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$$\int_0^\infty e^{-x^2} dx=\frac{\sqrt{\pi}}{2}$$&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;网页就会显示：&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\int_0^\infty e^{-x^2} dx=\frac{\sqrt{\pi}}{2}\]&lt;/span&gt;&lt;/p&gt;
-&lt;ol start=&#34;2&#34; style=&#34;list-style-type: decimal&#34;&gt;
-&lt;li&gt;&lt;strong&gt;参考文献&lt;/strong&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;两个多月前，就&lt;a href=&#34;https://github.com/rstudio/blogdown/issues/66&#34;&gt;有个哥们儿问&lt;/a&gt;“有没有可能在blogdown创建的网站里添加参考文献?”作者回答得干脆：“有。”两人对话戛然而止，让我目瞪口呆。由于在&lt;a href=&#34;http://bookdown.org/yihui/blogdown&#34;&gt;blogdown 官方手册&lt;/a&gt;里并未看到添加参考文献的方法，我一直以为这个功能尚在开发中，直到今天也没见动静，有些起疑，就随便试了一下，步骤跟在 bookdown 里一样：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;把参考文献库 .bib 文件考到 &lt;code&gt;content\post\&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;在帖子 &lt;code&gt;.Rmd&lt;/code&gt; 文档的 yml 头里声明 .bib 文件的名称和路径。这里我设成 &lt;code&gt;bibliography: [book.bib, packages.bib]&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;在帖子里引用 .bib 里的文献条目，例如 &lt;code&gt;[@R-blogdown]&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;运行建站函数 &lt;code&gt;blogdown::build_site()&lt;/code&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;就这样，说时迟那时快，只见Duang！帖子里的引用就显示成了 &lt;span class=&#34;citation&#34;&gt;(Xie 2017)&lt;/span&gt; ！而帖子末尾的参考文献列表就自动出来了！&lt;/p&gt;
-&lt;p&gt;blogdown 可以如此方便地往帖子里插入计算代码、图表、公式、参考文献，我实在找不出第二个这样的工具。建科研网站，非 blogdown 莫属！&lt;/p&gt;
-&lt;p&gt;最后顺便提一下：虽然最新正式版的 RStudio 1.0.143 并 没有 blogdown 和 bookdown 的入口，但是我欣喜地发现，在 &lt;a href=&#34;http://dailies.rstudio.com&#34;&gt;RStudio 的开发版&lt;/a&gt; 1.1.233 里已经加入了这个入口了！菜单 File - New Project - New Directory，就能看到 blogdown 和 bookdown 项目。跟 shiny 和 R package 并列，可见 RStudio 公司对这两个项目的重视程度。&lt;/p&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;http://www.pzhao.org/img/rstudiobookdown.jpg&#34; /&gt;
-
-&lt;/div&gt;
-&lt;p&gt;有幸尝试了 blogdown 和 bookdown &lt;span class=&#34;citation&#34;&gt;(Xie 2016)&lt;/span&gt; 项目，并且也做过 &lt;a href=&#34;http://sciwis.com/&#34;&gt;shiny&lt;/a&gt; 和 &lt;a href=&#34;http://www.pzhao.org/zh/post/rmickey/&#34;&gt;R package&lt;/a&gt;，我模模糊糊有种异样的感觉，就像埋头赶路时猛一抬头，隐隐约约眺见了走在时代前面的先知们的背影。&lt;/p&gt;
-&lt;div class=&#34;section level2 unnumbered&#34;&gt;
-&lt;h2&gt;参考文献&lt;/h2&gt;
-&lt;div id=&#34;refs&#34; class=&#34;references&#34;&gt;
-&lt;div id=&#34;ref-R-bookdown&#34;&gt;
-&lt;p&gt;Xie, Yihui. 2016. &lt;em&gt;Bookdown: Authoring Books and Technical Documents with R Markdown&lt;/em&gt;. &lt;a href=&#34;https://github.com/rstudio/bookdown&#34; class=&#34;uri&#34;&gt;https://github.com/rstudio/bookdown&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;ref-R-blogdown&#34;&gt;
-&lt;p&gt;———. 2017. &lt;em&gt;Blogdown: Create Blogs and Websites with R Markdown&lt;/em&gt;. &lt;a href=&#34;https://github.com/rstudio/blogdown&#34; class=&#34;uri&#34;&gt;https://github.com/rstudio/blogdown&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
 &lt;/div&gt;
 </description>
     </item>
