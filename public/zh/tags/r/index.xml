@@ -10,13 +10,34 @@
     <atom:link href="/zh/tags/r/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>我把青春献给你：排版 (4)</title>
+      <link>http://www.pzhao.org/zh/post/latex-and-me-4/</link>
+      <pubDate>Wed, 17 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.pzhao.org/zh/post/latex-and-me-4/</guid>
+      <description>&lt;p&gt;9&lt;/p&gt;
+&lt;p&gt;bookdown 或者说 Pandoc 的伟大之处，就是把原先必须在 LaTeX 里做的事情，99.9% 都可以用 markdown 语法完成。剩下的 0.1%，例如公式、索引、控制换行、临时改变字体字号、强制分页等操作，所涉及的 LaTeX 命令都很简单（$$, 、、、），偶尔用一下无伤大雅。只需找个漂亮的编辑器，在 bookdown 下写作就有不错的体验，而生成的 pdf 文档处处透露着 LaTeX 的优雅。平时自用一下，美得不行，仿佛梅开二度，枯木逢春。我为 bookdown 量身制作了 bookdownplus，pinyin 和 mindr 几个扩展包，沉浸在美妙之中不可自拔。&lt;/p&gt;
+&lt;p&gt;但是，直到这次真正给《学 R》排版，真正要送到印刷厂印个几千本的时候，光有 bookdown 的现成模板就不够用了。《学 R》是本中文书，LaTeX 对中文的支持先天不足，很多细小的问题，得自己一个一个抠。&lt;/p&gt;
+&lt;p&gt;比如中文里夹杂的英文词的中断换行（hyphenation），总是在不该断的地方瞎断。找不到完美的解决方案，最后我手动添加了 &lt;code&gt;\mbox{}&lt;/code&gt; 凑合。&lt;/p&gt;
+&lt;p&gt;比如段首空两格。我明明记得原先是自动空两格的，不知哪一次升级以后，这个设置就不见了。好在这个不难解决。&lt;/p&gt;
+&lt;p&gt;比如脚注和上标。bookdown 里&lt;code&gt;^[]&lt;/code&gt;表示脚注，两个&lt;code&gt;^&lt;/code&gt;之间表示上标。问题是两个脚注连在一起怎么办？要是写成&lt;code&gt;杨过^[]和小龙女^[]&lt;/code&gt;，那两个&lt;code&gt;^&lt;/code&gt;之间的文字就变成了上标。我试来试去，最简单的就是在中间偷偷摸摸塞进去个空格，把上标结构破坏掉。想来英文不存在这个问题，到处都是空格。&lt;/p&gt;
+&lt;p&gt;10&lt;/p&gt;
+&lt;p&gt;所幸，我算是挺过来了。最后排出的文档，虽然不是尽善尽美，但已经达到了我能力的天花板。想要更多也没有了。&lt;/p&gt;
+&lt;p&gt;只是年轻的时候我从没想过，将来自己会跟排版这件事纠缠。那些投进去的时间和精力，花在别处，会不会更好？无论本职工作，还是业余爱好，我都不是干排版的啊。&lt;/p&gt;
+&lt;p&gt;可是，怪就怪在，排版里这些一个一个的坑，你不去亲自填，就没人给你填。就像自己的娃，打扮成啥样，全在爹妈。自己的书，正式的出版物，难看的排版，你能忍吗？诸葛亮是怎么死的？事无巨细事必躬亲累死的。可是难道诸葛亮自己想被累死吗？&lt;/p&gt;
+&lt;p&gt;回头看看来时的路，我把青春的尾巴献给了 R，LaTeX，Linux。Linux 已然渐行渐远，LaTeX 曾经聚聚散散，只有 R 自始至终在我身边，成为了长久的陪伴。而这次，LaTeX 想甩也甩不掉了，她借着 bookdown 这匹木马，藏在了 R 的深处，彻底把我攻陷。&lt;/p&gt;
+&lt;p&gt;用 LaTex 排出的《学 R》这本书，就当是青春的纪念。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>我把青春献给你：排版 (3)</title>
       <link>http://www.pzhao.org/zh/post/latex-and-me-3/</link>
       <pubDate>Sat, 23 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>http://www.pzhao.org/zh/post/latex-and-me-3/</guid>
       <description>&lt;p&gt;7&lt;/p&gt;
-&lt;p&gt;LaTeX 做出来的文档，确实漂亮。这种漂亮不是那种一眼就能看出哪儿漂亮的漂亮，而是一种说不出来的气质。这种气质来自字体、间距、断字等等诸多细节的堆积和交互作用。只要是用过 LaTeX 的人，拿来个文档用鼻子一闻，就知道是 Word 做的还是 LaTeX 做的。&lt;/p&gt;
+&lt;p&gt;LaTeX 做出来的文档，确实漂亮。这种漂亮不是那种一眼就能看出哪儿漂亮的漂亮，而是一种说不出来的气质。这种气质来自字体、间距、断字等等诸多细节的堆积和交互作用。只要是用过 LaTeX 的人，拿来个文档用鼻子一闻，就知道是 Word 做的还是 LaTeX 做的。就好像你遇到了你的另一半，让你神魂颠倒，可就是说不出她究竟好在哪里; 她走在人群里，你一眼就能找到她。因为你眼里没别人。&lt;/p&gt;
 &lt;p&gt;然而，这种气质不是能轻易把握的。LaTeX 最为奇特的是，你为她投入了无数的时间，却竟然说不清楚到底是因为她太好还是她太糟。如果她太好，为何这么难用？如果她太糟，为何你甘心为她付出？&lt;/p&gt;
 &lt;p&gt;之所以能用 LaTeX 写完博士论文，我想来想去，这个奇迹是以下四点一起促成的：&lt;/p&gt;
 &lt;ol style=&#34;list-style-type: decimal&#34;&gt;
@@ -34,12 +55,12 @@
 &lt;p&gt;8&lt;/p&gt;
 &lt;p&gt;当完成博士论文的时候，我决定结束天天心惊胆战的 LaTeX 爱情长跑，回到 Word 的温柔乡。我把城墙修高加厚，厚得就像特洛伊城，把 LaTeX 拦住墙外，从此一刀两断。曾经在同一个战壕里的战友，变成了洪水猛兽。&lt;/p&gt;
 &lt;p&gt;到了新工作单位，观察了一下，老板和同事全部是正常人，不是 X-men。我松了一口气。&lt;/p&gt;
-&lt;p&gt;有一次，有个名叫 LyX 的使者来敲我的城门。从三个字母参差不齐的模样，我一眼就识破了他的伪装，轻轻吐出一个字：滚。&lt;/p&gt;
+&lt;p&gt;有一次，有个名叫 LyX 的使者来敲我的城门。从三个字母参差不齐的模样，我一眼就识破了他的伪装，知道是 LaTeX 派来的奸细，于是我轻轻吐出一个字：滚。&lt;/p&gt;
 &lt;p&gt;我以为，从此就跟 LaTeX 形同陌路了。&lt;/p&gt;
 &lt;p&gt;有一天，我在使用 R 语言的时候，神使鬼差地装上了一个名叫 bookdown 的扩展包。&lt;/p&gt;
 &lt;p&gt;很久以后，再次回忆那一刻，仍然不由得感慨万千。命中注定的事，逃不掉的劫数。&lt;/p&gt;
 &lt;p&gt;bookdown，就是攻陷特洛伊的木马; 里面藏着的，除了我的旧爱 LaTeX，还有 Pandoc 这个魔鬼。后者从名字上一看，就知道是潘多拉放出来的。&lt;/p&gt;
-&lt;p&gt;安装 bookdown 的那一瞬间，我把木马轰隆隆地拉进了我的城。&lt;/p&gt;
+&lt;p&gt;安装 bookdown 的那一瞬间，我把木马轰隆隆地拉进了我的城，而我却浑然不知。&lt;/p&gt;
 &lt;p&gt;特洛伊，就此沦陷。&lt;/p&gt;
 </description>
     </item>
@@ -546,12 +567,12 @@ y &amp;lt;- 1:10 + rnorm(10)
 beginr::plotlm(x, y)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;## [[1]]
-##              Estimate Std. Error    t value     Pr(&amp;gt;|t|)
-## (Intercept) 0.2115959 0.48991294  0.4319051 6.772150e-01
-## x           1.0482595 0.07895662 13.2763978 9.889013e-07
+##               Estimate Std. Error  t value     Pr(&amp;gt;|t|)
+## (Intercept) -0.6959923  0.6772067 -1.02774 3.341407e-01
+## x            1.1458866  0.1091417 10.49907 5.893963e-06
 ## 
 ## [[2]]
-## [1] 0.9565837&lt;/code&gt;&lt;/pre&gt;
+## [1] 0.9323355&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;经常需要了解一组数据的分布, 看看是不是正态分布. beginr 里的 &lt;code&gt;plothist()&lt;/code&gt; 函数不仅做出直方图和平滑曲线, 并且标出中值, 中位数, 四分位数, 标准偏差, 样本数, 以及用来判断是否正态分布的 skewness 值.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;x &amp;lt;- rnorm(10000)
 beginr::plothist(x)&lt;/code&gt;&lt;/pre&gt;
@@ -585,20 +606,20 @@ beginr::errorbar(x, y, yupper = 0.1, ylower = 0.1)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;beginr 提供了一些对数据框计算的函数, 例如计算多列数据两两的相关性和线性拟合结果, 可以用 &lt;code&gt;lmdf()&lt;/code&gt; 函数.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df &amp;lt;- data.frame(a = 1:10, b = 1:10 + rnorm(10), c = 1:10 + rnorm(10))
 beginr::lmdf(df)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;##   x y r.squared adj.r.squared  intercept     slope Std.Error.intercept
-## 1 a b 0.8908181     0.8771704  0.4637203 0.9657318           0.7416905
-## 2 a c 0.9051819     0.8933296  0.6349221 0.8403052           0.5966232
-## 3 b a 0.8908181     0.8771704  0.1727518 0.9224280           0.7398525
-## 4 b c 0.8545711     0.8363925  0.6481851 0.7979602           0.7541614
-## 5 c a 0.9051819     0.8933296 -0.1624424 1.0772061           0.7194516
-## 6 c b 0.8545711     0.8363925  0.1457172 1.0709446           0.9116819
+&lt;pre&gt;&lt;code&gt;##   x y r.squared adj.r.squared   intercept     slope Std.Error.intercept
+## 1 a b 0.8572147     0.8393665  0.04922987 1.0268209           0.9193420
+## 2 a c 0.8625614     0.8453816  0.63578007 0.9546106           0.8359321
+## 3 b a 0.8572147     0.8393665  0.74422112 0.8348240           0.7862364
+## 4 b c 0.8600060     0.8425067  0.98994183 0.8594727           0.8001977
+## 5 c a 0.8625614     0.8453816  0.18143805 0.9035740           0.8397226
+## 6 c b 0.8600060     0.8425067 -0.19304585 1.0006204           0.9399096
 ##   Std.Error.slope t.intercept  t.slope Pr.intercept     Pr.slope
-## 1      0.11953425   0.6252208 8.079123    0.5492406 4.067884e-05
-## 2      0.09615453   1.0641928 8.739112    0.3183048 2.299311e-05
-## 3      0.11417428   0.2334949 8.079123    0.8212410 4.067884e-05
-## 4      0.11638243   0.8594779 6.856363    0.4150876 1.301469e-04
-## 5      0.12326264  -0.2257864 8.739112    0.8270290 2.299311e-05
-## 6      0.15619719   0.1598333 6.856363    0.8769742 1.301469e-04&lt;/code&gt;&lt;/pre&gt;
+## 1       0.1481654  0.05354903 6.930235    0.9586075 0.0001207931
+## 2       0.1347227  0.76056421 7.085746    0.4687384 0.0001034398
+## 3       0.1204611  0.94656155 6.930235    0.3715717 0.0001207931
+## 4       0.1226002  1.23712151 7.010371    0.2511225 0.0001114792
+## 5       0.1275200  0.21606902 7.085746    0.8343415 0.0001034398
+## 6       0.1427343 -0.20538767 7.010371    0.8423991 0.0001114792&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;还有两个函数对&lt;code&gt;tapply()&lt;/code&gt;进行了改善, 用来进行因子计算.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beginr::tapplydf()
 beginr::tapplydfv()&lt;/code&gt;&lt;/pre&gt;
@@ -1035,52 +1056,6 @@ pinyin(&amp;#39;羌笛何须怨杨柳春风不度玉门关&amp;#39;)&lt;/code&gt
 &lt;p&gt;拼音库我试了好几个，最后选定了&lt;a href=&#34;http://bbs.unispim.com/forum.php?mod=viewthread&amp;amp;tid=31644&#34;&gt;wangyanhan整理制作的42856字拼音表&lt;/a&gt;，直接处理文本文件，简单粗暴，转换起来可能有点慢，会顿一下，但已经够我自用了。&lt;/p&gt;
 &lt;p&gt;我写这个包的环境是 windows 7 下区域设置为中国，别的环境没测试，估计会有不少坑。我这里就有一些，比如不知道哪里设置有问题，包的函数里居然不能出现中文字符，弄得我自变量的默认值和example部分只好空着。再比如多音字的问题，目前完全没处理。所以，转换&lt;code&gt;春眠不觉晓&lt;/code&gt;的结果会让人愣一下，再转换&lt;code&gt;处处闻啼鸟&lt;/code&gt;……&lt;/p&gt;
 &lt;p&gt;结果好尴尬。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>R mindr: 把 Markdown 转成思维导图</title>
-      <link>http://www.pzhao.org/zh/post/mindr/</link>
-      <pubDate>Fri, 19 May 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/zh/post/mindr/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;更新：2017-06-19，&lt;a href=&#34;https://cran.r-project.org/web/packages/mindr/index.html&#34;&gt;‘mindr 1.0.4’&lt;/a&gt; 在 CRAN 正式发布。&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;http://cranlogs.r-pkg.org/badges/grand-total/mindr&#34; /&gt;
-
-&lt;/div&gt;
-&lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-05-19-mindr_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;将 markdown (.md, .Rmd) 文件转换成思维导图的 R 扩展包 &lt;a href=&#34;https://github.com/pzhaonet/mindr&#34;&gt;mindr&lt;/a&gt; 是我写的第五个 R 包，安装方法如下：&lt;/p&gt;
-&lt;p&gt;稳定版：&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;install.packages(&amp;quot;mindr&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;开发版：&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;devtools::install_github(&amp;quot;pzhaonet/mindr&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;使用方法：&lt;/p&gt;
-&lt;p&gt;在R的工作目录创建个名叫 &lt;code&gt;mm/&lt;/code&gt; 的文件夹，丢进去一堆 markdown 文件 (.md, .Rmd)，然后运行：&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;mindr::md2mm()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;就得到个 &lt;code&gt;mm.mm&lt;/code&gt; 的思维导图文件，用免费的思维导图软件 &lt;a href=&#34;http://freemind.sourceforge.net/wiki/index.php/Download&#34;&gt;freemind&lt;/a&gt; 可以直接打开。界面比较简陋。或者用漂亮的免费软件 &lt;a href=&#34;http://www.xmind.net/download/win/&#34;&gt;Xmind&lt;/a&gt;，需要选择&lt;code&gt;导入 freemind 导图&lt;/code&gt;。&lt;/p&gt;
-&lt;p&gt;mindr包还有另外两个函数：&lt;code&gt;mm2md()&lt;/code&gt;是反向操作，将思维导图转换成markdown;&lt;code&gt;outline()&lt;/code&gt;是从markdown文件里提取出各级标题生成大纲。&lt;/p&gt;
-&lt;hr /&gt;
-&lt;p&gt;我的书稿《学R》最初是先用思维导图拟定框架，然后在 Word 里写，后来转到 bookdown 里完成的。今天下午，我在书稿的旧思维导图里照着新稿修改，想把两者统一了。改着改着，觉得不对劲儿呀，R markdown 的哲学是维护一份文档，导出多个格式，我怎么又开始维护两份内容相同只是格式不同的文档了？&lt;/p&gt;
-&lt;p&gt;这肯定不是什么新问题，肯定有办法直接把 markdown 转成思维导图。于是我搜。我搜搜搜，竟然没搜到！&lt;/p&gt;
-&lt;p&gt;这就怪了。从常识上判断，我认为这个工具肯定有，说不定藏在某个 R 包里，只是太隐蔽了。&lt;/p&gt;
-&lt;p&gt;是应该继续搜呢，还是自己动手？有时候真是难以权衡。我掂量了一下轻重，选择了后者。&lt;/p&gt;
-&lt;p&gt;晚上，写好了。&lt;/p&gt;
-&lt;p&gt;先拿 &lt;a href=&#34;https://github.com/rstudio/bookdown/tree/master/inst/examples&#34;&gt;bookdown 书稿&lt;/a&gt;当小白鼠练手，用 freemind 直接打开：&lt;/p&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/mindr/master/showcase/mindr_bookdown.jpeg&#34; /&gt;
-
-&lt;/div&gt;
-&lt;p&gt;freemind 确实简陋。再拿 &lt;a href=&#34;https://github.com/rstudio/blogdown/tree/master/docs&#34;&gt;blogdown 书稿&lt;/a&gt; 试试，导入 Xmind 看看：&lt;/p&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/mindr/master/showcase/mindr_blogdown.jpg&#34; /&gt;
-
-&lt;/div&gt;
-&lt;p&gt;还不错。好了，实验成熟了，放心地用在自己的书稿上，并且挑个最漂亮的款式：&lt;/p&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/mindr/master/showcase/mindr_xuer.jpg&#34; /&gt;
-
-&lt;/div&gt;
 </description>
     </item>
     

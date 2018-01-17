@@ -11,13 +11,34 @@
     <atom:link href="/zh/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>我把青春献给你：排版 (4)</title>
+      <link>http://www.pzhao.org/zh/post/latex-and-me-4/</link>
+      <pubDate>Wed, 17 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.pzhao.org/zh/post/latex-and-me-4/</guid>
+      <description>&lt;p&gt;9&lt;/p&gt;
+&lt;p&gt;bookdown 或者说 Pandoc 的伟大之处，就是把原先必须在 LaTeX 里做的事情，99.9% 都可以用 markdown 语法完成。剩下的 0.1%，例如公式、索引、控制换行、临时改变字体字号、强制分页等操作，所涉及的 LaTeX 命令都很简单（$$, 、、、），偶尔用一下无伤大雅。只需找个漂亮的编辑器，在 bookdown 下写作就有不错的体验，而生成的 pdf 文档处处透露着 LaTeX 的优雅。平时自用一下，美得不行，仿佛梅开二度，枯木逢春。我为 bookdown 量身制作了 bookdownplus，pinyin 和 mindr 几个扩展包，沉浸在美妙之中不可自拔。&lt;/p&gt;
+&lt;p&gt;但是，直到这次真正给《学 R》排版，真正要送到印刷厂印个几千本的时候，光有 bookdown 的现成模板就不够用了。《学 R》是本中文书，LaTeX 对中文的支持先天不足，很多细小的问题，得自己一个一个抠。&lt;/p&gt;
+&lt;p&gt;比如中文里夹杂的英文词的中断换行（hyphenation），总是在不该断的地方瞎断。找不到完美的解决方案，最后我手动添加了 &lt;code&gt;\mbox{}&lt;/code&gt; 凑合。&lt;/p&gt;
+&lt;p&gt;比如段首空两格。我明明记得原先是自动空两格的，不知哪一次升级以后，这个设置就不见了。好在这个不难解决。&lt;/p&gt;
+&lt;p&gt;比如脚注和上标。bookdown 里&lt;code&gt;^[]&lt;/code&gt;表示脚注，两个&lt;code&gt;^&lt;/code&gt;之间表示上标。问题是两个脚注连在一起怎么办？要是写成&lt;code&gt;杨过^[]和小龙女^[]&lt;/code&gt;，那两个&lt;code&gt;^&lt;/code&gt;之间的文字就变成了上标。我试来试去，最简单的就是在中间偷偷摸摸塞进去个空格，把上标结构破坏掉。想来英文不存在这个问题，到处都是空格。&lt;/p&gt;
+&lt;p&gt;10&lt;/p&gt;
+&lt;p&gt;所幸，我算是挺过来了。最后排出的文档，虽然不是尽善尽美，但已经达到了我能力的天花板。想要更多也没有了。&lt;/p&gt;
+&lt;p&gt;只是年轻的时候我从没想过，将来自己会跟排版这件事纠缠。那些投进去的时间和精力，花在别处，会不会更好？无论本职工作，还是业余爱好，我都不是干排版的啊。&lt;/p&gt;
+&lt;p&gt;可是，怪就怪在，排版里这些一个一个的坑，你不去亲自填，就没人给你填。就像自己的娃，打扮成啥样，全在爹妈。自己的书，正式的出版物，难看的排版，你能忍吗？诸葛亮是怎么死的？事无巨细事必躬亲累死的。可是难道诸葛亮自己想被累死吗？&lt;/p&gt;
+&lt;p&gt;回头看看来时的路，我把青春的尾巴献给了 R，LaTeX，Linux。Linux 已然渐行渐远，LaTeX 曾经聚聚散散，只有 R 自始至终在我身边，成为了长久的陪伴。而这次，LaTeX 想甩也甩不掉了，她借着 bookdown 这匹木马，藏在了 R 的深处，彻底把我攻陷。&lt;/p&gt;
+&lt;p&gt;用 LaTex 排出的《学 R》这本书，就当是青春的纪念。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>我把青春献给你：排版 (3)</title>
       <link>http://www.pzhao.org/zh/post/latex-and-me-3/</link>
       <pubDate>Sat, 23 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>http://www.pzhao.org/zh/post/latex-and-me-3/</guid>
       <description>&lt;p&gt;7&lt;/p&gt;
-&lt;p&gt;LaTeX 做出来的文档，确实漂亮。这种漂亮不是那种一眼就能看出哪儿漂亮的漂亮，而是一种说不出来的气质。这种气质来自字体、间距、断字等等诸多细节的堆积和交互作用。只要是用过 LaTeX 的人，拿来个文档用鼻子一闻，就知道是 Word 做的还是 LaTeX 做的。&lt;/p&gt;
+&lt;p&gt;LaTeX 做出来的文档，确实漂亮。这种漂亮不是那种一眼就能看出哪儿漂亮的漂亮，而是一种说不出来的气质。这种气质来自字体、间距、断字等等诸多细节的堆积和交互作用。只要是用过 LaTeX 的人，拿来个文档用鼻子一闻，就知道是 Word 做的还是 LaTeX 做的。就好像你遇到了你的另一半，让你神魂颠倒，可就是说不出她究竟好在哪里; 她走在人群里，你一眼就能找到她。因为你眼里没别人。&lt;/p&gt;
 &lt;p&gt;然而，这种气质不是能轻易把握的。LaTeX 最为奇特的是，你为她投入了无数的时间，却竟然说不清楚到底是因为她太好还是她太糟。如果她太好，为何这么难用？如果她太糟，为何你甘心为她付出？&lt;/p&gt;
 &lt;p&gt;之所以能用 LaTeX 写完博士论文，我想来想去，这个奇迹是以下四点一起促成的：&lt;/p&gt;
 &lt;ol style=&#34;list-style-type: decimal&#34;&gt;
@@ -35,12 +56,12 @@
 &lt;p&gt;8&lt;/p&gt;
 &lt;p&gt;当完成博士论文的时候，我决定结束天天心惊胆战的 LaTeX 爱情长跑，回到 Word 的温柔乡。我把城墙修高加厚，厚得就像特洛伊城，把 LaTeX 拦住墙外，从此一刀两断。曾经在同一个战壕里的战友，变成了洪水猛兽。&lt;/p&gt;
 &lt;p&gt;到了新工作单位，观察了一下，老板和同事全部是正常人，不是 X-men。我松了一口气。&lt;/p&gt;
-&lt;p&gt;有一次，有个名叫 LyX 的使者来敲我的城门。从三个字母参差不齐的模样，我一眼就识破了他的伪装，轻轻吐出一个字：滚。&lt;/p&gt;
+&lt;p&gt;有一次，有个名叫 LyX 的使者来敲我的城门。从三个字母参差不齐的模样，我一眼就识破了他的伪装，知道是 LaTeX 派来的奸细，于是我轻轻吐出一个字：滚。&lt;/p&gt;
 &lt;p&gt;我以为，从此就跟 LaTeX 形同陌路了。&lt;/p&gt;
 &lt;p&gt;有一天，我在使用 R 语言的时候，神使鬼差地装上了一个名叫 bookdown 的扩展包。&lt;/p&gt;
 &lt;p&gt;很久以后，再次回忆那一刻，仍然不由得感慨万千。命中注定的事，逃不掉的劫数。&lt;/p&gt;
 &lt;p&gt;bookdown，就是攻陷特洛伊的木马; 里面藏着的，除了我的旧爱 LaTeX，还有 Pandoc 这个魔鬼。后者从名字上一看，就知道是潘多拉放出来的。&lt;/p&gt;
-&lt;p&gt;安装 bookdown 的那一瞬间，我把木马轰隆隆地拉进了我的城。&lt;/p&gt;
+&lt;p&gt;安装 bookdown 的那一瞬间，我把木马轰隆隆地拉进了我的城，而我却浑然不知。&lt;/p&gt;
 &lt;p&gt;特洛伊，就此沦陷。&lt;/p&gt;
 </description>
     </item>
@@ -282,66 +303,6 @@ bd()&lt;/code&gt;&lt;/pre&gt;
 &lt;li id=&#34;fn1&#34;&gt;&lt;p&gt;latex 是一种微粒聚合物混合的乳剂，成分包括蛋白质、生物碱、淀粉、糖类、植物油、单宁酸、树脂、树胶等等，详见&lt;a href=&#34;https://en.wikipedia.org/wiki/Latex&#34;&gt;维基百科&lt;/a&gt; 。&lt;a href=&#34;#fnref1&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>我把青春献给你：排版 (1)</title>
-      <link>http://www.pzhao.org/zh/post/latex-and-me-1/</link>
-      <pubDate>Tue, 21 Nov 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/zh/post/latex-and-me-1/</guid>
-      <description>&lt;p&gt;1&lt;/p&gt;
-&lt;p&gt;2017 年快要过去了。如果剩下这四十天不出什么幺蛾子的话，我今年的最蠢事情排行榜，基本是板上钉钉。名列榜首的，就是过早给《学 R》一书大肆宣传。跟罗永浩当年头一回卖锤子手机一样一样的，还没量产，就先吹牛，结果吹破了，打了自己的脸。&lt;/p&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;http://5b0988e595225.cdn.sohucs.com/images/20170715/d6a28e43a55b48128265e4029fb4e6c2.gif&#34; /&gt;
-
-&lt;/div&gt;
-&lt;p&gt;其实，这本书早在今年 6 月就写完了，7 月做了最后一次修改。当时书号已经批了，封面也有了模样，我以为马上就能印出来了，于是告诉了我能告诉的每一个朋友。朋友们都很讲义气，把白花花的银子拍在桌上，就等着付钱买了。当了教授的老同学说：放心，到时候我送给我的学生人手一本！&lt;/p&gt;
-&lt;p&gt;谁知道，一晃四个多月过去了，书还没出来。我的前期宣传算是白费了。让人欣慰的是，直到现在，仍然有铁杆粉丝惦记着我，时不时发来鼓励的短信：“喂，你那书烂尾了吧？啊哈哈哈哈~~~~”&lt;/p&gt;
-&lt;p&gt;谢谢。&lt;/p&gt;
-&lt;p&gt;那么，四个月里，这书干嘛去了？&lt;/p&gt;
-&lt;p&gt;在排版。&lt;/p&gt;
-&lt;p&gt;《学 R》这本书，一直排不出理想的模样。&lt;/p&gt;
-&lt;p&gt;四个月是在反反复复修改排版里度过的。一直拖到上周，我们仍然看不到任何排版成功的迹象。2017 年所剩无几的耐心消耗殆尽，一咬牙一跺脚，我们决定壮士断腕。合作作者 Y 从出版社讨来排版文件，并且自己花钱购买了专业软件，自己排；我同时用 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; 排，齐头并进。谁先排好就用谁的。我们谁都不想再拖，再拖就真的要吐血了。&lt;/p&gt;
-&lt;p&gt;当做出这个决定的第二天，Y 看到我用 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; 做出的 pdf 书稿小样得到了印刷厂的认可，就放下了手里的专业软件，决定不干了：“&lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; 真厉害，有空我学一下……”&lt;/p&gt;
-&lt;p&gt;我立马拦住：“最好别去学。这个坑太大。一入 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt;，坑深似海。”&lt;/p&gt;
-&lt;p&gt;2&lt;/p&gt;
-&lt;p&gt;出版社负责录入和排版的工作，简称“录排”。&lt;/p&gt;
-&lt;p&gt;这四个月来，录排可谓兢兢业业，全心全力为《学 R》排版。可惜，辛苦不一定有回报，排出的书稿，一直有层出不穷的问题。&lt;/p&gt;
-&lt;p&gt;比如说，丢失公式和特殊字符。原稿里的诸如 &lt;em&gt;R&lt;/em&gt;&lt;sup&gt;2&lt;/sup&gt;， &lt;span class=&#34;math inline&#34;&gt;\(\pi\)&lt;/span&gt; 等都莫名其妙消失了。&lt;/p&gt;
-&lt;p&gt;比如说，字体。原稿里的代码都是用等宽字体表示的，录排之后都成了跟正文一样的字体。&lt;/p&gt;
-&lt;p&gt;比如说，标点符号。原稿里的所有标点符号，包括代码里的逗号、引号、括号、冒号，都变成了中文标点符号。加上非等宽字体，书里的代码惨不忍睹。&lt;/p&gt;
-&lt;p&gt;最要命的是，原稿里的很多空格也都不翼而飞。比如录排稿：&lt;/p&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;http://www.pzhao.org/img/xuer1.jpg&#34; /&gt;
-
-&lt;/div&gt;
-&lt;p&gt;是不是一头雾水？实际上原稿是：&lt;/p&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;http://www.pzhao.org/img/xuer2.jpg&#34; /&gt;
-
-&lt;/div&gt;
-&lt;p&gt;每次从录排稿里挑问题，都恨不得把一双近视眼珠子抠出来，再拿着放大镜逐字逐句看。后来，索性放弃了很多想法。比如说，原先代码是彩色的，得知需要录排逐个字符手动修改，算了不要了；原先打算增加个小贴士目录，得知需要排完页码手动添加，算了不要了；原先打算给常用函数做个索引，方便读者从书里找示例，看样子也得手动做，算了不要了……&lt;/p&gt;
-&lt;p&gt;即便如此，每次的排版仍然会出现奇奇怪怪的问题。如此往返三次，《学 R》这本书我已经读得想呕吐了。&lt;/p&gt;
-&lt;p&gt;我百思不得其解：这到底是怎么回事？&lt;/p&gt;
-&lt;p&gt;3&lt;/p&gt;
-&lt;p&gt;来回折磨了四个月。终于， Y 试用了一下录排用的排版软件—— Adobe InDesign，俗称 ID，是国内出版业主流的专业排版软件。&lt;/p&gt;
-&lt;p&gt;Y 立刻对我说：“我明白问题出在哪里了！”&lt;/p&gt;
-&lt;p&gt;原来，录排是把我们提交的原稿，转成了 txt 文本文件；书里的插图，全部转成了 tif 图片。然后，把这些素材导入 ID，然后手动按照原稿 pdf 的样子做调整。&lt;/p&gt;
-&lt;p&gt;这正是录排一贯的工作流程。&lt;/p&gt;
-&lt;p&gt;这个流程，对文学类书籍没有问题。一篇小说，重要的是内容，不是格式；只要把文字分好段，就不会有大错。&lt;/p&gt;
-&lt;p&gt;然而，这个流程用在《学 R》 这本书上，就是个灾难。因为这本书，内容和格式，都很重要。&lt;/p&gt;
-&lt;p&gt;然而，这一点，录排不知道。&lt;/p&gt;
-&lt;p&gt;然而，我们不知道录排不知道。&lt;/p&gt;
-&lt;p&gt;然而，录排不知道我们不知道录排不知道。&lt;/p&gt;
-&lt;p&gt;四个月的大好青春，就是这样搭进去的。&lt;/p&gt;
-&lt;p&gt;对此我感到抱歉，让录排白白花了那么多时间和精力，我的吹毛求疵一定让录排很受折磨。同时我也感到遗憾，如果重来一次，这个坑恐怕仍然绕不开。&lt;/p&gt;
-&lt;p&gt;4，&lt;/p&gt;
-&lt;p&gt;好在我们及时止损了。&lt;/p&gt;
-&lt;p&gt;上周，我们从头做起，不仅四个月来积攒的问题一扫而空，而且彩色代码的格式保住了，索引也作出来了。&lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; 在这里显示了无与伦比的强大力量。以致于 Y 饶有兴趣地说：“&lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; 真厉害，有空我学一下……”&lt;/p&gt;
-&lt;p&gt;我立马拦住：“最好别去学。这个坑太大。一入 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt;，坑深似海。”&lt;/p&gt;
-&lt;p&gt;如果你以为本文是为 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; 做广告，呵呵，那你就错了。为啥？下回再说。&lt;/p&gt;
 </description>
     </item>
     

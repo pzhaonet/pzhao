@@ -11,13 +11,34 @@
     <atom:link href="/zh/post/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>我把青春献给你：排版 (4)</title>
+      <link>http://www.pzhao.org/zh/post/latex-and-me-4/</link>
+      <pubDate>Wed, 17 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.pzhao.org/zh/post/latex-and-me-4/</guid>
+      <description>&lt;p&gt;9&lt;/p&gt;
+&lt;p&gt;bookdown 或者说 Pandoc 的伟大之处，就是把原先必须在 LaTeX 里做的事情，99.9% 都可以用 markdown 语法完成。剩下的 0.1%，例如公式、索引、控制换行、临时改变字体字号、强制分页等操作，所涉及的 LaTeX 命令都很简单（$$, 、、、），偶尔用一下无伤大雅。只需找个漂亮的编辑器，在 bookdown 下写作就有不错的体验，而生成的 pdf 文档处处透露着 LaTeX 的优雅。平时自用一下，美得不行，仿佛梅开二度，枯木逢春。我为 bookdown 量身制作了 bookdownplus，pinyin 和 mindr 几个扩展包，沉浸在美妙之中不可自拔。&lt;/p&gt;
+&lt;p&gt;但是，直到这次真正给《学 R》排版，真正要送到印刷厂印个几千本的时候，光有 bookdown 的现成模板就不够用了。《学 R》是本中文书，LaTeX 对中文的支持先天不足，很多细小的问题，得自己一个一个抠。&lt;/p&gt;
+&lt;p&gt;比如中文里夹杂的英文词的中断换行（hyphenation），总是在不该断的地方瞎断。找不到完美的解决方案，最后我手动添加了 &lt;code&gt;\mbox{}&lt;/code&gt; 凑合。&lt;/p&gt;
+&lt;p&gt;比如段首空两格。我明明记得原先是自动空两格的，不知哪一次升级以后，这个设置就不见了。好在这个不难解决。&lt;/p&gt;
+&lt;p&gt;比如脚注和上标。bookdown 里&lt;code&gt;^[]&lt;/code&gt;表示脚注，两个&lt;code&gt;^&lt;/code&gt;之间表示上标。问题是两个脚注连在一起怎么办？要是写成&lt;code&gt;杨过^[]和小龙女^[]&lt;/code&gt;，那两个&lt;code&gt;^&lt;/code&gt;之间的文字就变成了上标。我试来试去，最简单的就是在中间偷偷摸摸塞进去个空格，把上标结构破坏掉。想来英文不存在这个问题，到处都是空格。&lt;/p&gt;
+&lt;p&gt;10&lt;/p&gt;
+&lt;p&gt;所幸，我算是挺过来了。最后排出的文档，虽然不是尽善尽美，但已经达到了我能力的天花板。想要更多也没有了。&lt;/p&gt;
+&lt;p&gt;只是年轻的时候我从没想过，将来自己会跟排版这件事纠缠。那些投进去的时间和精力，花在别处，会不会更好？无论本职工作，还是业余爱好，我都不是干排版的啊。&lt;/p&gt;
+&lt;p&gt;可是，怪就怪在，排版里这些一个一个的坑，你不去亲自填，就没人给你填。就像自己的娃，打扮成啥样，全在爹妈。自己的书，正式的出版物，难看的排版，你能忍吗？诸葛亮是怎么死的？事无巨细事必躬亲累死的。可是难道诸葛亮自己想被累死吗？&lt;/p&gt;
+&lt;p&gt;回头看看来时的路，我把青春的尾巴献给了 R，LaTeX，Linux。Linux 已然渐行渐远，LaTeX 曾经聚聚散散，只有 R 自始至终在我身边，成为了长久的陪伴。而这次，LaTeX 想甩也甩不掉了，她借着 bookdown 这匹木马，藏在了 R 的深处，彻底把我攻陷。&lt;/p&gt;
+&lt;p&gt;用 LaTex 排出的《学 R》这本书，就当是青春的纪念。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>我把青春献给你：排版 (3)</title>
       <link>http://www.pzhao.org/zh/post/latex-and-me-3/</link>
       <pubDate>Sat, 23 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>http://www.pzhao.org/zh/post/latex-and-me-3/</guid>
       <description>&lt;p&gt;7&lt;/p&gt;
-&lt;p&gt;LaTeX 做出来的文档，确实漂亮。这种漂亮不是那种一眼就能看出哪儿漂亮的漂亮，而是一种说不出来的气质。这种气质来自字体、间距、断字等等诸多细节的堆积和交互作用。只要是用过 LaTeX 的人，拿来个文档用鼻子一闻，就知道是 Word 做的还是 LaTeX 做的。&lt;/p&gt;
+&lt;p&gt;LaTeX 做出来的文档，确实漂亮。这种漂亮不是那种一眼就能看出哪儿漂亮的漂亮，而是一种说不出来的气质。这种气质来自字体、间距、断字等等诸多细节的堆积和交互作用。只要是用过 LaTeX 的人，拿来个文档用鼻子一闻，就知道是 Word 做的还是 LaTeX 做的。就好像你遇到了你的另一半，让你神魂颠倒，可就是说不出她究竟好在哪里; 她走在人群里，你一眼就能找到她。因为你眼里没别人。&lt;/p&gt;
 &lt;p&gt;然而，这种气质不是能轻易把握的。LaTeX 最为奇特的是，你为她投入了无数的时间，却竟然说不清楚到底是因为她太好还是她太糟。如果她太好，为何这么难用？如果她太糟，为何你甘心为她付出？&lt;/p&gt;
 &lt;p&gt;之所以能用 LaTeX 写完博士论文，我想来想去，这个奇迹是以下四点一起促成的：&lt;/p&gt;
 &lt;ol style=&#34;list-style-type: decimal&#34;&gt;
@@ -35,12 +56,12 @@
 &lt;p&gt;8&lt;/p&gt;
 &lt;p&gt;当完成博士论文的时候，我决定结束天天心惊胆战的 LaTeX 爱情长跑，回到 Word 的温柔乡。我把城墙修高加厚，厚得就像特洛伊城，把 LaTeX 拦住墙外，从此一刀两断。曾经在同一个战壕里的战友，变成了洪水猛兽。&lt;/p&gt;
 &lt;p&gt;到了新工作单位，观察了一下，老板和同事全部是正常人，不是 X-men。我松了一口气。&lt;/p&gt;
-&lt;p&gt;有一次，有个名叫 LyX 的使者来敲我的城门。从三个字母参差不齐的模样，我一眼就识破了他的伪装，轻轻吐出一个字：滚。&lt;/p&gt;
+&lt;p&gt;有一次，有个名叫 LyX 的使者来敲我的城门。从三个字母参差不齐的模样，我一眼就识破了他的伪装，知道是 LaTeX 派来的奸细，于是我轻轻吐出一个字：滚。&lt;/p&gt;
 &lt;p&gt;我以为，从此就跟 LaTeX 形同陌路了。&lt;/p&gt;
 &lt;p&gt;有一天，我在使用 R 语言的时候，神使鬼差地装上了一个名叫 bookdown 的扩展包。&lt;/p&gt;
 &lt;p&gt;很久以后，再次回忆那一刻，仍然不由得感慨万千。命中注定的事，逃不掉的劫数。&lt;/p&gt;
 &lt;p&gt;bookdown，就是攻陷特洛伊的木马; 里面藏着的，除了我的旧爱 LaTeX，还有 Pandoc 这个魔鬼。后者从名字上一看，就知道是潘多拉放出来的。&lt;/p&gt;
-&lt;p&gt;安装 bookdown 的那一瞬间，我把木马轰隆隆地拉进了我的城。&lt;/p&gt;
+&lt;p&gt;安装 bookdown 的那一瞬间，我把木马轰隆隆地拉进了我的城，而我却浑然不知。&lt;/p&gt;
 &lt;p&gt;特洛伊，就此沦陷。&lt;/p&gt;
 </description>
     </item>
@@ -751,82 +772,6 @@ bd()&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;就这样，在奥地利，京生开始了他的人生新阶段。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://dapengde.com/archives/19531&#34; target=&#34;_blank&#34;&gt;原文链接&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Steemit 的三大谎言</title>
-      <link>http://www.pzhao.org/archives/19526</link>
-      <pubDate>Mon, 25 Sep 2017 13:45:49 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/archives/19526</guid>
-      <description>&lt;p&gt;&lt;strong&gt;“写文章赚钱”，这是 steemit 最大的谎言。对此，新手知道得越早越好。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://media.licdn.com/mpr/mpr/AAEAAQAAAAAAAAZJAAAAJDExYTZjNDZjLTk4ODItNDAyOS04MjFiLTJhYTFiYjU2Zjk3MA.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Image credit to www.linkedin.com/pulse/lie-me-6-signs-someone-lying-you-alexandre-marins-augusto&lt;/p&gt;
-
-&lt;p&gt;Blog, vote and get paid. 这大概是 steemit 对外宣传的最大噱头。很多独立博客的作者都被这么忽悠到 steemit 去了，包括我。&lt;/p&gt;
-
-&lt;p&gt;实际上，光靠 blog 和 vote，很多人没有 get paid，悻悻而去。&lt;/p&gt;
-
-&lt;p&gt;是上当受骗了吗？不对啊，你会看到别人的很多文章赚了很多钱，哪怕读起来质量不高。这是为何？&lt;/p&gt;
-
-&lt;p&gt;就我目前的体会而言，某篇文章的收益决定因素，除了文章质量本身，很大程度上，是作者长期经营的效果。如果一个作者长期连续写出好文字，并且长期跟社区良好互动，那么就会逐渐积累大家的关注。这些关注可以来自点赞团队，也可以来自机器人。他们点赞某篇文章，一部分出于这篇文章的质量，另一部分出于对作者的信赖。信赖的建立，需要时间。&lt;/p&gt;
-
-&lt;p&gt;比如说我自己的帖子，最初的几篇，质量不比现在的差，但收益不到现在的千分之一，就是这个原因。&lt;/p&gt;
-
-&lt;p&gt;文章收益有滞后效应。你看到有些质量不高的文章收益高，那是因为作者早先写过大量优质文章而带来的延迟收益。如果这个作者不珍惜信誉，继续写烂帖，那么将来收益就会降下来——当然，这也有滞后效应。信誉破产，也需要时间。&lt;/p&gt;
-
-&lt;p&gt;所以，有些新人虽然写得好，但酒香也怕巷子深；尚未引起大家的关注之前，好文章可能一分钱也赚不到。来 steemit 上靠写东西赚钱，做短线是不可能的。&lt;/p&gt;
-
-&lt;p&gt;steemit 实际是个社交平台，光靠写作赚不到钱。两条腿走路，才能走得快；社交和写作兼顾，才能赚到钱。这恰恰是很多人没有意识到的。&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;steemit 的第二大谎言，是“没有审查”，去中心化。&lt;/strong&gt; 想写什么就写什么，没有敏感词过滤，也不会突然哪一天根据相关法律法规你搜索的内容无法显示。&lt;/p&gt;
-
-&lt;p&gt;实际上，steemit 上，审查无处不在。如果哪些言论越界，每个人都是“朝阳群众”，声望高的账号可以踩（Flag）声望低的账号，让帖子折叠隐藏，让被踩账号声望急剧下降。然后，大家一看你声望低，知道你臭名昭著，就没人跟你玩了。&lt;/p&gt;
-
-&lt;p&gt;当然，你的越界言论仍然在区块链上，想读就能读到。&lt;/p&gt;
-
-&lt;p&gt;此外，也许你的言论并未越界，但仍然被踩，究其原因，可能是误会，可能是含冤，可能是私人恩怨，甚至可能是踩你那人当时心情不好，看你不顺眼。你可能莫名其妙得到个臭名，是别人给你扣的屎盆子。谁知道呢？去中心化就意味着，你想写什么就可以写什么，别人想怎么踩你就怎么踩你。当然，你也可以踩别人。这样的蛮荒导致的结果就是，在一段混乱期之后，整体上达到一个平衡，使利益最大化。大家找到这个平衡点，然后临深履薄，尽量不要打破它。&lt;/p&gt;
-
-&lt;p&gt;强烈推荐德国动画片《平衡》。我认为这是对 steemit 的绝妙隐喻。&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;这个平衡点，体现在 &lt;strong&gt;steemit 上的第三大谎言：自由。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;世界上不存在绝对的自由，这是很简单的事实。你的自由就是对别人自由的侵犯，所以需要法律和道德来约束。steemit 除了对抄袭比较敏感外，几乎没有明显的法律和道德，似乎最自由。&lt;/p&gt;
-
-&lt;p&gt;然而，steemit 上运行的，是更难把握的潜规则。&lt;/p&gt;
-
-&lt;p&gt;比如，你会看到一种更难以置信的现象：有些有权（Steem Power）的账号，只要付钱给他，他就给你的文章点赞，不管你的文章写得多烂。光天化日之下，这种赤裸裸的钱权交易，在 steemit 天天上演。&lt;/p&gt;
-
-&lt;p&gt;再如，&lt;a href=&#34;https://steemit.com/cn/@dapeng/steem&#34; target=&#34;_blank&#34;&gt;前一段时间&lt;/a&gt;，我用中文写了一篇关于德语的文章，用了deutsch 这个标签，也就是德语的“德语”，结果被大鲸踩，警告我说 deutsch 标签的文章必须用德语写，而这条规定我在任何地方都找不到，因为这是条潜规则。&lt;/p&gt;
-
-&lt;p&gt;此外，还有传说中的“过度自我点赞”，也会被踩。这个我未曾亲历，因为我自己点个赞最多值2毛钱，甩开膀子拼命点也算不上“过度”，所以只是听说。那么问题来了：自我点赞超过具体多少数额才算“过度”？这个“度”是什么？没规定，所以是潜规则，靠你自己体会。&lt;/p&gt;
-
-&lt;p&gt;除了“标签咋用叫滥用”和“自赞多少算过度”之外，steemit 上还有很多潜规则。不同圈子的潜规则有不同，并且随着时间有变动。想靠写东西赚钱的话，你需要慢慢摸索。我也在摸索中，也经常感到不确定。本文批评 steemit 的谎言，发布在 steemit 上，我并不确定是否破坏了某个潜规则——七天后看最终收益就知道了。&lt;/p&gt;
-
-&lt;p&gt;话又说回来，“弄清楚潜规则”，这就是 steem 的游戏规则。&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;steemit 上， 写文章不一定能赚钱，赚钱不一定靠写文章。写文章对赚钱来说，既不是充分条件，也不是必要条件。这就是 steemit 的真相。&lt;/p&gt;
-
-&lt;p&gt;这似乎说明，steemit 这里是个野蛮社会，文明处于未开化状态，大家遵循的是丛林法则。&lt;/p&gt;
-
-&lt;p&gt;不过，换个角度想，经历了蛮荒社会，能流传下来的故事，就是神话；能存活下来的人，就是神。“三皇五帝神圣事”，皆是如此。&lt;/p&gt;
-
-&lt;p&gt;爱玩不玩，愿赌服输，在 steemit 上写作其实就是个游戏，仅此而已。早点了解这一点，有助于理解 steemit 上发生的一些现象，有助于摆正心态，做自己该做的事。 steemit 这个游戏，没人强迫你来玩，来去随意，这是你最底层的自由，没有任何人可以侵犯。&lt;/p&gt;
-
-&lt;p&gt;steemit 的元老老聂，对“在steemit 上写作的收入从哪里来”这个问题回答道：就像矿工挖矿，写东西的作者是矿工，文章收益就是矿工的工钱。言外之意，“挖”值钱，而“矿”更值钱；矿工赚钱，矿老板更赚钱。&lt;/p&gt;
-
-&lt;p&gt;要知道，写作，终究是一种劳动。用劳动换钱，永远是小打小闹。只有用钱生钱，才是赚钱的王道。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://dapengde.com/archives/19526&#34; target=&#34;_blank&#34;&gt;原文链接&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
