@@ -11,13 +11,71 @@
     <atom:link href="/zh/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Windows 的又一个坑：R writeLines() 函数的换行符</title>
+      <link>http://www.pzhao.org/zh/post/r-writelines-line-break/</link>
+      <pubDate>Thu, 18 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.pzhao.org/zh/post/r-writelines-line-break/</guid>
+      <description>&lt;p&gt;昨天，又被 Windows 坑到了。&lt;/p&gt;
+&lt;p&gt;事情的背景是，我的工作环境是 Windows 操作系统。由于一些众所周知的原因，有些事情在 Linux 下做起来比较顺当。于是，我就用 virtualbox 装了个虚拟的 Ubuntu。由于不熟，只用到其中很小一部分功能，所以，凡是能在 Windows 下做的事情，我绝不去 Ubuntu。&lt;/p&gt;
+&lt;p&gt;昨天，我要写一批 bash 指令，打算在 Ubuntu 里运行。这批指令格式相同，只是内容略有不同。于是，我就动了点小心思，用 R 语言批量写好了 bash 指令的内容，最后用 &lt;code&gt;writeLines()&lt;/code&gt; 函数生成了这批 .sh 文件。&lt;/p&gt;
+&lt;p&gt;前面我提到了，这些操作都是在 windows 下完成了。保险起见，我特地指定了 &lt;code&gt;writeLines(useBytes = TRUE)&lt;/code&gt;，来保证这批 .sh 文件的编码 UTF-8，心想这下应该没问题了吧。&lt;/p&gt;
+&lt;p&gt;但是，在 Ubuntu 里执行 这批 .sh 文件，居然出错！说什么文件找不到……&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://steemitimages.com/0x0/https://github.com/pzhaonet/keller/raw/master/figtemp/2018-01-17_153445.jpg&#34; alt=&#34;img&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;img&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;上面显示的这个 test.sh 文件，是我测试用的。我从这批运行失败的 .sh 文件里面随便拎出一个，里面删得只剩两条指令：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cd ~
+ls&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;就这，居然还有错？&lt;/p&gt;
+&lt;p&gt;我记得在 Ubuntu 下直接写的 .sh 文件没这个问题啊。&lt;/p&gt;
+&lt;p&gt;那好，我就在 ubuntu 的文本编辑器里写了一个一模一样的文件，取名 test2.sh，内容也是只有这两条指令。然后运行，居然好了！&lt;/p&gt;
+&lt;p&gt;肉眼去看，两个文件都完全相同！我对比了一下两个文件的编码，都是 UTF-8。&lt;/p&gt;
+&lt;p&gt;这是遇见孙悟空和六耳猕猴了？&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://steemitimages.com/0x0/https://github.com/pzhaonet/keller/raw/master/figtemp/2018-01-17_153646.jpg&#34; alt=&#34;img&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;img&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;我拿出两面照妖镜：一个是 Totalcommander 的文本比较工具，一个是 notepad++ 的文本比较插件。比较的结果是，两个文件完全相同！&lt;/p&gt;
+&lt;p&gt;大惑不解。&lt;/p&gt;
+&lt;p&gt;使出浑身解数，都没有进展。万般无奈之下，想起这批 .sh 文件是用 R 的 &lt;code&gt;writeLines()&lt;/code&gt;函数写的，那就去看看这个函数的帮助文件吧。&lt;/p&gt;
+&lt;p&gt;这一看，不打紧，竟发现一条惊人的线索。&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://steemitimages.com/0x0/https://github.com/pzhaonet/keller/raw/master/figtemp/2018-01-17-001.jpg&#34; alt=&#34;img&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;img&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Linux 的换行分隔符是&lt;code&gt;LF&lt;/code&gt;， Windows 是 &lt;code&gt;CRLF&lt;/code&gt;?&lt;/p&gt;
+&lt;p&gt;好像是有这么个印象。于是，我在 notepad++ 里打开了“显示所有符号”。&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://steemitimages.com/0x0/https://github.com/pzhaonet/keller/raw/master/figtemp/2018-01-17_153657.jpg&#34; alt=&#34;img&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;img&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;真相大白！&lt;/p&gt;
+&lt;p&gt;原来，因为我用 windows 下 R 语言的 &lt;code&gt;writeLines()&lt;/code&gt;函数写的 .sh 文件，里面的换行符号是 &lt;code&gt;CRLF&lt;/code&gt;，在 Linux 里执行时不认可，所以出现了错误。&lt;/p&gt;
+&lt;p&gt;F1 才是识别六耳猕猴的如来佛祖！&lt;/p&gt;
+&lt;p&gt;解决办法：同样的 R 代码，在 Linux 运行就可以了，生成的 .sh 文件没有任何问题。&lt;/p&gt;
+&lt;p&gt;谨以此文，纪念又一次被 windows 坑了一下。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>一封 CRAN 的来信</title>
+      <link>http://www.pzhao.org/zh/post/a-mail-from-cran/</link>
+      <pubDate>Wed, 17 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.pzhao.org/zh/post/a-mail-from-cran/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>我把青春献给你：排版 (4)</title>
       <link>http://www.pzhao.org/zh/post/latex-and-me-4/</link>
       <pubDate>Wed, 17 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>http://www.pzhao.org/zh/post/latex-and-me-4/</guid>
       <description>&lt;p&gt;9&lt;/p&gt;
-&lt;p&gt;bookdown 或者说 Pandoc 的伟大之处，就是把原先必须在 LaTeX 里做的事情，99.9% 都可以用 markdown 语法完成。剩下的 0.1%，例如公式、索引、控制换行、临时改变字体字号、强制分页等操作，所涉及的 LaTeX 命令都很简单（$$, 、、、），偶尔用一下无伤大雅。只需找个漂亮的编辑器，在 bookdown 下写作就有不错的体验，而生成的 pdf 文档处处透露着 LaTeX 的优雅。平时自用一下，美得不行，仿佛梅开二度，枯木逢春。我为 bookdown 量身制作了 bookdownplus，pinyin 和 mindr 几个扩展包，沉浸在美妙之中不可自拔。&lt;/p&gt;
+&lt;p&gt;bookdown 或者说 Pandoc 的伟大之处，就是把原先必须在 LaTeX 里做的事情，99.9% 都可以用 markdown 语法完成。剩下的 0.1%，例如公式、索引、控制换行、临时改变字体字号、强制分页等操作，所涉及的 LaTeX 命令都很简单（&lt;code&gt;$$&lt;/code&gt;, &lt;code&gt;\index{}&lt;/code&gt;、&lt;code&gt;\mbox{}&lt;/code&gt;、&lt;code&gt;\small&lt;/code&gt;、&lt;code&gt;\newpage&lt;/code&gt;），偶尔用一下无伤大雅。只需找个漂亮的编辑器，在 bookdown 下写作就有不错的体验，而生成的 pdf 文档处处透露着 LaTeX 的优雅。平时自用一下，美得不行，仿佛梅开二度，枯木逢春。我为 bookdown 量身制作了 bookdownplus，pinyin 和 mindr 几个扩展包，沉浸在美妙之中不可自拔。&lt;/p&gt;
 &lt;p&gt;但是，直到这次真正给《学 R》排版，真正要送到印刷厂印个几千本的时候，光有 bookdown 的现成模板就不够用了。《学 R》是本中文书，LaTeX 对中文的支持先天不足，很多细小的问题，得自己一个一个抠。&lt;/p&gt;
 &lt;p&gt;比如中文里夹杂的英文词的中断换行（hyphenation），总是在不该断的地方瞎断。找不到完美的解决方案，最后我手动添加了 &lt;code&gt;\mbox{}&lt;/code&gt; 凑合。&lt;/p&gt;
 &lt;p&gt;比如段首空两格。我明明记得原先是自动空两格的，不知哪一次升级以后，这个设置就不见了。好在这个不难解决。&lt;/p&gt;
@@ -216,93 +274,6 @@
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;devtools::install_github(&amp;quot;pzhaonet/bookdownplus&amp;quot;)
 require(bookdownplus)
 bd()&lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>全面迁站：从 Wordpress 到 Hugo</title>
-      <link>http://www.pzhao.org/zh/post/migrated-to-hugo/</link>
-      <pubDate>Sat, 25 Nov 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/zh/post/migrated-to-hugo/</guid>
-      <description>&lt;p&gt;从今天起，我的旧博客 dapengde.com 停止更新。旧博客的全部帖子已经搬到了 &lt;a href=&#34;http://www.pzhao.org&#34; target=&#34;_blank&#34;&gt;pzhao.org&lt;/a&gt;，欢迎收藏（ctrl + d）和&lt;a href=&#34;http://www.pzhao.org/zh/index.xml&#34; target=&#34;_blank&#34;&gt;订阅&lt;/a&gt;。&lt;/p&gt;
-
-&lt;p&gt;半年多以前，我用 R 语言的 blogdown 包搭建了新网站，与旧博客并存至今。&lt;a href=&#34;http://www.pzhao.org/archives/19323/&#34; target=&#34;_blank&#34;&gt;当时我就说&lt;/a&gt;，我要等着益辉同学把blogdown 的使用说明书“迁站”一章写好，就照步骤把旧博客内容全搬过去。前些日子，&lt;a href=&#34;https://bookdown.org/yihui/blogdown&#34; target=&#34;_blank&#34;&gt;blogdown 书&lt;/a&gt;终于出版了，从 wordpress 搬到 hugo 的迁站方法写得很详细。迁站的时机成熟了。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://media.defense.gov/2012/Mar/19/2000168920/670/394/0/120319-F-JZ014-905.JPG&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;然而，迁站的过程并不是很顺利。我照着书里推荐的步骤，试图用 &lt;a href=&#34;https://github.com/yihui/travis-exitwp&#34; target=&#34;_blank&#34;&gt;travis-exitwp&lt;/a&gt; 将 wordpress 导出的 xml 文件转换成 Hugo 的markdown 文件。前面都还好，到了最后一步（第8步），我始终得不到右下角的绿色对勾，自然也得不到文件的下载链接。起初我以为是 xml 文件太大的缘故（10 M，五百多篇帖子），于是试着只导出少量帖子来生成 xml，从头操作，但是一觉睡醒还没得到下载链接。&lt;/p&gt;
-
-&lt;p&gt;于是改变策略，我给 wordpress 博客安装了插件 &lt;a href=&#34;https://github.com/SchumacherFM/wordpress-to-hugo-exporter&#34; target=&#34;_blank&#34;&gt;wordpress-to-hugo-exporter&lt;/a&gt;，直接将帖子导出为 Hugo 的markdown 格式。除了文件名里的中文乱码外，我相当满意。于是将文件批量重命名，只保留日期。文件内容可以用益辉写的 &lt;a href=&#34;https://github.com/yihui/oldblog_xml/blob/master/convert.R&#34; target=&#34;_blank&#34;&gt;convert.R 代码&lt;/a&gt;来清理。&lt;/p&gt;
-
-&lt;p&gt;不过，对我来说仍然不够，看来还得自己动手，才能丰衣足食。因为我用的是 hugo-academic 主题，网页上会显示每篇帖子的摘要，需要每篇帖子的 yaml 里设置一个 “summary” 条目。这个好办，用 R 语言把每篇帖子的第一段摘出来当作 summary 插进去就行了（R 代码附后）。&lt;/p&gt;
-
-&lt;p&gt;此外，我还想在每篇帖子末尾增添一个“原文链接”，链到旧博客，万一哪篇帖子格式没转好呢？这也好吧，markdown 的 yaml 里有个 url 条目，稍微改一下插到文末就行了（R 代码附后）。&lt;/p&gt;
-
-&lt;p&gt;这就是 hugo 静态网站的好处。有 R 语言在手，以后我就可以对这些 markdown 格式的帖子为所欲为了。而且，GitHub、简书、 steemit、Stackoverflow、统计之都等诸多网站都原生支持 markdown， 发的帖子只需稍微整理，就能发到博客上，颇有万佛朝宗的盛况。&lt;/p&gt;
-
-&lt;p&gt;Hugo-academic 主题我很满意，唯一不足的是缺个归档页面，一目了然展示全部帖子清单。看来得以后自己动手做一个。&lt;/p&gt;
-
-&lt;p&gt;旧博客 dapengde.com 虽然不更新了，但会仍然放在那里，发挥余热。前些天，还有朋友&lt;a href=&#34;http://dapengde.com/archives/14752#comment-153909&#34; target=&#34;_blank&#34;&gt;来我四年前写的帖子后面留言&lt;/a&gt;呢。&lt;/p&gt;
-
-&lt;p&gt;增加 summary 和原文链接的代码：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;for (i in dir(&#39;postold&#39;)){
-  txt &amp;lt;- readLines(paste0(&#39;postold/&#39;, i), encoding = &#39;UTF-8&#39;)
-  summ &amp;lt;- txt[grep(&#39;---&#39;, txt)[2]+1]
-  summ &amp;lt;- gsub(&#39;&amp;quot;&#39;, &#39;&#39;, summ)
-  newline &amp;lt;- paste0(&#39;summary: &amp;quot;&#39;, summ, &#39;&amp;quot;&#39;)
-  linkzh &amp;lt;- &#39;原文链接&#39;
-  newline2 &amp;lt;- paste0(&#39;\n[&#39;, linkzh, &#39;](http://dapengde.com&#39;, substring(txt[grep(&#39;url&#39;, txt)[1]], 6), &#39;)\n&#39;)
-  txtnew &amp;lt;- c(txt[1:3], newline,  txt[4:length(txt)], newline2)
-  writeLines(txtnew, paste0(&#39;postnew/&#39;, i), useBytes = TRUE)
-}
-&lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>我把青春献给你：排版 (2)</title>
-      <link>http://www.pzhao.org/zh/post/latex-and-me-2/</link>
-      <pubDate>Wed, 22 Nov 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/zh/post/latex-and-me-2/</guid>
-      <description>&lt;p&gt;5&lt;/p&gt;
-&lt;p&gt;如果上一篇帖子让你以为我在为 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; 做广告，呵呵，那你就上当了。为啥？&lt;/p&gt;
-&lt;p&gt;因为我早就抛弃 LaTeX 了。&lt;/p&gt;
-&lt;p&gt;几年前，把用 LaTeX 排版排得漂漂亮亮的博士论文提交的那一刻，我咬牙切齿地想：老子终于可以跟 LaTeX 这个怪物永别了。&lt;/p&gt;
-&lt;p&gt;想不起来第一次是从哪里知道 LaTeX 的。好像是从 Linux 的学习里，得知 LaTeX 是科研圈常用的写作工具。作为一个混科研圈的工具控，我居然没听说过？而且身边全是搞科研的，居然没人用过？怪哉怪哉。&lt;/p&gt;
-&lt;p&gt;于是，我就去问见多识广的朋友：“你用过 LaTeX 吗？”&lt;/p&gt;
-&lt;p&gt;朋友正穿着白大褂，在中科院化学所的有机实验室忙活，一听我的问题，痛痛快快地回答：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;latex 啊？用过用过，我们经常从美国买。你要做什么？要多少克？&lt;a href=&#34;#fn1&#34; class=&#34;footnoteRef&#34; id=&#34;fnref1&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;我愣了，赶紧说：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;不急不急。你先忙，我需要的时候找你买。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;这就是我初学 LaTeX 时的生态。圈里没人懂，身边没人带，全凭好奇和兴趣。作为一个寻常百姓，学起来的难度可想而知。&lt;/p&gt;
-&lt;p&gt;当时虽然已经奔三的年岁，但血气犹存;还没当爹，手头还有一点闲置光阴。于是，磕磕碰碰，我终于用 LaTeX 把工作总结做了个 beamer 幻灯片，准备在单位作报告时用。花了这么多时间，如果不好用，那还学个啥劲呢？所以，要不要继续学，在此一举。&lt;/p&gt;
-&lt;p&gt;就在这关键时刻，单位领导一句话，把我仅有的热情抛进了万丈深渊。领导说：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;工作总结的 ppt 你不是说你做完了？发给我来修改。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;6&lt;/p&gt;
-&lt;p&gt;LaTeX 在我这里真正派上用武之地，是来德国读博士的时候。&lt;/p&gt;
-&lt;p&gt;刚到这个研究组，我就大吃一惊：组里清一色的 Linux 操作系统，大家拿 LaTeX 写各种文档，用 R 语言处理数据。&lt;/p&gt;
-&lt;p&gt;Linux，LaTeX，R，这是耗尽我青春尾巴的三大怪物。此外还有个 vim，但是跟这仨货比起来，属于小巫见大巫。&lt;/p&gt;
-&lt;p&gt;Linux 和 R 的血泪史按下不表，今天只说 LaTeX。&lt;/p&gt;
-&lt;p&gt;当时我无奈地想，嫁鸡随鸡嫁狗随狗，就跟着这帮 X-men 一起混吧。&lt;/p&gt;
-&lt;p&gt;很快，我又大吃一惊：在这个变种人小组里，牵头的老板，居然是个正常人，用的是 Windows 系统，Word 写文档，Excel 处理数据。话说一个正常老板跟一群变种人下属之间是怎么交流的？&lt;/p&gt;
-&lt;p&gt;没过多久，我就找到了答案：老板从来不直接修改文字。他总是把意见用批注添加到 X-men 发来的 pdf 上，让 X-men 自己去改。&lt;/p&gt;
-&lt;p&gt;于是，在同事的诱骗和老板的纵容下，我踏上了 LaTeX 的邪路。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://dcmnyjhirotcw.cloudfront.net/cdn/scdn/images/uploads/economy-powder-free-latex-gloves_56693.jpg&#34; /&gt; 图解：Latex 材质的手套，要不要来一双？&lt;/p&gt;
-&lt;div class=&#34;footnotes&#34;&gt;
-&lt;hr /&gt;
-&lt;ol&gt;
-&lt;li id=&#34;fn1&#34;&gt;&lt;p&gt;latex 是一种微粒聚合物混合的乳剂，成分包括蛋白质、生物碱、淀粉、糖类、植物油、单宁酸、树脂、树胶等等，详见&lt;a href=&#34;https://en.wikipedia.org/wiki/Latex&#34;&gt;维基百科&lt;/a&gt; 。&lt;a href=&#34;#fnref1&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
 </description>
     </item>
     

@@ -11,13 +11,71 @@
     <atom:link href="/zh/post/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Windows 的又一个坑：R writeLines() 函数的换行符</title>
+      <link>http://www.pzhao.org/zh/post/r-writelines-line-break/</link>
+      <pubDate>Thu, 18 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.pzhao.org/zh/post/r-writelines-line-break/</guid>
+      <description>&lt;p&gt;昨天，又被 Windows 坑到了。&lt;/p&gt;
+&lt;p&gt;事情的背景是，我的工作环境是 Windows 操作系统。由于一些众所周知的原因，有些事情在 Linux 下做起来比较顺当。于是，我就用 virtualbox 装了个虚拟的 Ubuntu。由于不熟，只用到其中很小一部分功能，所以，凡是能在 Windows 下做的事情，我绝不去 Ubuntu。&lt;/p&gt;
+&lt;p&gt;昨天，我要写一批 bash 指令，打算在 Ubuntu 里运行。这批指令格式相同，只是内容略有不同。于是，我就动了点小心思，用 R 语言批量写好了 bash 指令的内容，最后用 &lt;code&gt;writeLines()&lt;/code&gt; 函数生成了这批 .sh 文件。&lt;/p&gt;
+&lt;p&gt;前面我提到了，这些操作都是在 windows 下完成了。保险起见，我特地指定了 &lt;code&gt;writeLines(useBytes = TRUE)&lt;/code&gt;，来保证这批 .sh 文件的编码 UTF-8，心想这下应该没问题了吧。&lt;/p&gt;
+&lt;p&gt;但是，在 Ubuntu 里执行 这批 .sh 文件，居然出错！说什么文件找不到……&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://steemitimages.com/0x0/https://github.com/pzhaonet/keller/raw/master/figtemp/2018-01-17_153445.jpg&#34; alt=&#34;img&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;img&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;上面显示的这个 test.sh 文件，是我测试用的。我从这批运行失败的 .sh 文件里面随便拎出一个，里面删得只剩两条指令：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cd ~
+ls&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;就这，居然还有错？&lt;/p&gt;
+&lt;p&gt;我记得在 Ubuntu 下直接写的 .sh 文件没这个问题啊。&lt;/p&gt;
+&lt;p&gt;那好，我就在 ubuntu 的文本编辑器里写了一个一模一样的文件，取名 test2.sh，内容也是只有这两条指令。然后运行，居然好了！&lt;/p&gt;
+&lt;p&gt;肉眼去看，两个文件都完全相同！我对比了一下两个文件的编码，都是 UTF-8。&lt;/p&gt;
+&lt;p&gt;这是遇见孙悟空和六耳猕猴了？&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://steemitimages.com/0x0/https://github.com/pzhaonet/keller/raw/master/figtemp/2018-01-17_153646.jpg&#34; alt=&#34;img&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;img&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;我拿出两面照妖镜：一个是 Totalcommander 的文本比较工具，一个是 notepad++ 的文本比较插件。比较的结果是，两个文件完全相同！&lt;/p&gt;
+&lt;p&gt;大惑不解。&lt;/p&gt;
+&lt;p&gt;使出浑身解数，都没有进展。万般无奈之下，想起这批 .sh 文件是用 R 的 &lt;code&gt;writeLines()&lt;/code&gt;函数写的，那就去看看这个函数的帮助文件吧。&lt;/p&gt;
+&lt;p&gt;这一看，不打紧，竟发现一条惊人的线索。&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://steemitimages.com/0x0/https://github.com/pzhaonet/keller/raw/master/figtemp/2018-01-17-001.jpg&#34; alt=&#34;img&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;img&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Linux 的换行分隔符是&lt;code&gt;LF&lt;/code&gt;， Windows 是 &lt;code&gt;CRLF&lt;/code&gt;?&lt;/p&gt;
+&lt;p&gt;好像是有这么个印象。于是，我在 notepad++ 里打开了“显示所有符号”。&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://steemitimages.com/0x0/https://github.com/pzhaonet/keller/raw/master/figtemp/2018-01-17_153657.jpg&#34; alt=&#34;img&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;img&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;真相大白！&lt;/p&gt;
+&lt;p&gt;原来，因为我用 windows 下 R 语言的 &lt;code&gt;writeLines()&lt;/code&gt;函数写的 .sh 文件，里面的换行符号是 &lt;code&gt;CRLF&lt;/code&gt;，在 Linux 里执行时不认可，所以出现了错误。&lt;/p&gt;
+&lt;p&gt;F1 才是识别六耳猕猴的如来佛祖！&lt;/p&gt;
+&lt;p&gt;解决办法：同样的 R 代码，在 Linux 运行就可以了，生成的 .sh 文件没有任何问题。&lt;/p&gt;
+&lt;p&gt;谨以此文，纪念又一次被 windows 坑了一下。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>一封 CRAN 的来信</title>
+      <link>http://www.pzhao.org/zh/post/a-mail-from-cran/</link>
+      <pubDate>Wed, 17 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.pzhao.org/zh/post/a-mail-from-cran/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>我把青春献给你：排版 (4)</title>
       <link>http://www.pzhao.org/zh/post/latex-and-me-4/</link>
       <pubDate>Wed, 17 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>http://www.pzhao.org/zh/post/latex-and-me-4/</guid>
       <description>&lt;p&gt;9&lt;/p&gt;
-&lt;p&gt;bookdown 或者说 Pandoc 的伟大之处，就是把原先必须在 LaTeX 里做的事情，99.9% 都可以用 markdown 语法完成。剩下的 0.1%，例如公式、索引、控制换行、临时改变字体字号、强制分页等操作，所涉及的 LaTeX 命令都很简单（$$, 、、、），偶尔用一下无伤大雅。只需找个漂亮的编辑器，在 bookdown 下写作就有不错的体验，而生成的 pdf 文档处处透露着 LaTeX 的优雅。平时自用一下，美得不行，仿佛梅开二度，枯木逢春。我为 bookdown 量身制作了 bookdownplus，pinyin 和 mindr 几个扩展包，沉浸在美妙之中不可自拔。&lt;/p&gt;
+&lt;p&gt;bookdown 或者说 Pandoc 的伟大之处，就是把原先必须在 LaTeX 里做的事情，99.9% 都可以用 markdown 语法完成。剩下的 0.1%，例如公式、索引、控制换行、临时改变字体字号、强制分页等操作，所涉及的 LaTeX 命令都很简单（&lt;code&gt;$$&lt;/code&gt;, &lt;code&gt;\index{}&lt;/code&gt;、&lt;code&gt;\mbox{}&lt;/code&gt;、&lt;code&gt;\small&lt;/code&gt;、&lt;code&gt;\newpage&lt;/code&gt;），偶尔用一下无伤大雅。只需找个漂亮的编辑器，在 bookdown 下写作就有不错的体验，而生成的 pdf 文档处处透露着 LaTeX 的优雅。平时自用一下，美得不行，仿佛梅开二度，枯木逢春。我为 bookdown 量身制作了 bookdownplus，pinyin 和 mindr 几个扩展包，沉浸在美妙之中不可自拔。&lt;/p&gt;
 &lt;p&gt;但是，直到这次真正给《学 R》排版，真正要送到印刷厂印个几千本的时候，光有 bookdown 的现成模板就不够用了。《学 R》是本中文书，LaTeX 对中文的支持先天不足，很多细小的问题，得自己一个一个抠。&lt;/p&gt;
 &lt;p&gt;比如中文里夹杂的英文词的中断换行（hyphenation），总是在不该断的地方瞎断。找不到完美的解决方案，最后我手动添加了 &lt;code&gt;\mbox{}&lt;/code&gt; 凑合。&lt;/p&gt;
 &lt;p&gt;比如段首空两格。我明明记得原先是自动空两格的，不知哪一次升级以后，这个设置就不见了。好在这个不难解决。&lt;/p&gt;
@@ -624,154 +682,6 @@ bd()&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;岳武穆被害时，年 39，比我现在的年龄大了一点。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://dapengde.com/archives/19539&#34; target=&#34;_blank&#34;&gt;原文链接&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>童话国王的君子岛宫殿</title>
-      <link>http://www.pzhao.org/archives/19537</link>
-      <pubDate>Tue, 17 Oct 2017 09:09:03 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/archives/19537</guid>
-      <description>&lt;blockquote&gt;
-&lt;p&gt;Chiemsee, a lake seated in Bavaria, is famous for a palace built by the Fairy-tale King Lugwig II. On a rainy Sunday, we went there for a short trip.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;玩物丧志。沉迷网络太深，我没有注意到窗外，绿树正因风落叶，青山已为雪白头。我没有看到大娃的衣服又穿小了，没有听到二娃竟然学会了用德语数数。然而，电脑再迷人，也敌不过孩子在耳边说一声：“爸爸，别看电脑了，咱们出去玩吧。”&lt;/p&gt;
-
-&lt;p&gt;可是，奥地利的星期天，到处都关门不营业，实在找不到玩的去处。这些天又遭遇连绵阴雨，连室外的儿童乐园都成了可望不可及的梦。媳妇想想，说，要不去基姆湖看看吧，每次都是路过，从未走近。下雨不要紧，可以带孩子们坐船玩。&lt;/p&gt;
-
-&lt;p&gt;基姆湖在德国境内，离家不远。算了一下，如果大部分时间在车里或者船上，倒也不受阴雨天影响，而景致跟晴天也会大有不同吧。&lt;/p&gt;
-
-&lt;p&gt;孩子们一听要去坐船，手忙脚乱地开始换衣服。我一看，骑虎难下，看来是非去不可了。&lt;/p&gt;
-
-&lt;p&gt;开车一路向东，不到两小时就到了湖边。基姆湖，又被称为“巴伐利亚海”，位于罗森海姆和萨尔茨堡之间。湖边烟雨蒙蒙，我怕淋湿相机，没拍照就上了船。船的目的地，是湖心小岛。&lt;/p&gt;
-
-&lt;p&gt;湖不大，湖心有三岛，名曰“君子岛”、“淑女岛”、“小三岛”。天气不好，又担心二娃睡着，我们只去了君子岛。岛上有一个著名国王修建的著名宫殿：君子宫。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://steemitimages.com/DQmfTXcmBkkrwnv8Dz2MPYyv1vYV44pTkEXQ9ELboHVMz3h/0.jpg&#34; alt=&#34;0.jpg&#34; /&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Bird view of Chiemsee. Modified from Google Map.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;好啦，不跟你们开玩笑了，三个岛的德语名字直译过来其实是“男人岛”、“女人岛”和“香草岛”。男人岛上的宫殿叫“男人岛宫”，音译“海伦基姆湖宫”。宫殿的旧日主人，就是当年巴伐利亚王国的童话国王——路德维希二世。&lt;/p&gt;
-
-&lt;p&gt;路国王生得传奇，死得神秘，一生热衷于修建城堡宫殿。他先是主持修建了新天鹅堡，举世闻名; 然后是林德霍夫宫，精巧别致; 到了基姆湖，路国王大概是累了，懒得设计了，那就山寨个凡尔赛宫吧。于是，就有了这座男人岛宫。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://steemitimages.com/DQmbf7MvcmMSATdA99owJkJW5APgHJbCxDxvHYErynUhZ9q/2.jpg&#34; alt=&#34;2.jpg&#34; /&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Palace Herrenchiemsee&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;然而，孩子们对宫殿一点兴趣都没有。倒是一块旋转的草坪，能让他们开心地围着跑半天。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://steemitimages.com/DQmUqtmKkJb5BZUimq4Y4GQuGkiJxgzvMeEbeW1kU9jRASc/3.jpg&#34; alt=&#34;3.jpg&#34; /&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Kids had no interest in palaces, but in &amp;#8230;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;我们抵达的时候，宫殿前面广场的喷泉并未喷水，我们还以为是季节过了，天冷给关了。就在我们即将离开的时候，修道院钟声敲响，喷泉随着钟声翩翩起舞。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://steemitimages.com/DQmUXoE84vpwrXopfHMJyb6ZrtWXibXVdwMMusZcbs3xWwE/4.jpg&#34; alt=&#34;4.jpg&#34; /&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;The springs started when the bell rang.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;一个骑上我的脖子，一个拉着我的手，说：不上网的爸爸真是个好爸爸！&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://steemitimages.com/DQmVe8EcubncErKj7qquZVZjV495oEY9d5jYoS1via2Z8oP/5.jpg&#34; alt=&#34;5.jpg&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;​&amp;gt; A papa not on steemit is a good papa.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://dapengde.com/archives/19537&#34; target=&#34;_blank&#34;&gt;原文链接&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>德国小学开学第一天</title>
-      <link>http://www.pzhao.org/archives/19531</link>
-      <pubDate>Tue, 03 Oct 2017 15:28:38 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/archives/19531</guid>
-      <description>&lt;blockquote&gt;
-&lt;p&gt;My son, Jingsheng, goes to school in Austria. He started his school life in Germany years ago. Cannot believe that he is going to leave primary school next year. Here I posted some sweet photos taken on his first day in school. How time flies!&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;前些日子，奥地利的小学开学了。京生欢欣雀跃：“终于有作业可以做啦！”我们也是普天同庆：“大人终于可以开始休假了！”&lt;/p&gt;
-
-&lt;p&gt;家长会上，老师严肃地指出：小学 4 年级是至关重要的一年。最大的一件事是：孩子们开始有考试了。&lt;/p&gt;
-
-&lt;p&gt;从 1 年级到 3 年级，德国和奥地利的小学没有考试。每个学期的成绩由老师综合评定。京生属于学霸型，各门成绩优异。老师说将来应该可以上文理中学——相当于国内的重点中学。然而，老师还说，不能掉以轻心。4 年级上完就该升中学，而中学录取的重要参考依据，就是 4 年级的考试成绩。&lt;/p&gt;
-
-&lt;p&gt;京生问：“考试是什么？”&lt;/p&gt;
-
-&lt;p&gt;我答：“跟做作业一样，只有两个不同：第一是限制时间，比如 1 小时必须答完；第二是独立完成，别人不能帮你检查。最后老师打分。”心中暗想：“我们是中国小孩，考试算什么。”&lt;/p&gt;
-
-&lt;p&gt;京生做作业去了。想着儿子居然快要升中学了，我翻出了他刚入小学时的照片。一切仿佛发生在昨天。&lt;/p&gt;
-
-&lt;p&gt;那时候，我们还在德国生活。小孩 6 岁的时候，会接到市政府发来的纸质信件，通知准备入学。虽然是按住址划分学校，但京生分到的学校离家里还不如大学的附属小学离得近。我们费尽周折，终于成功把他转到了附小。&lt;/p&gt;
-
-&lt;p&gt;开学第一天，朝阳下，晨雾中，我们送给京生来到了小学。送孩子的家长可真不少。毕竟，这是孩子一生中的大事。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://steemitimages.com/DQmVKj2R9piEH4uR1YYxM669ZycEoQYSr2gCiwbDMwJq2pm/school4.jpg&#34; alt=&#34;school4.jpg&#34; /&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;First morning at the entrance of the school.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;每个孩子都从家里抱来个圆锥形的东西，德语叫做 Schultüte，是德国小学新生的标配，其实是个包，里面塞满了大人装进去的礼物。开学典礼在小学一楼大厅举行。新生们围坐起来。很多孩子来自同一所幼儿园，原先都认识，经过了一个暑假没见面，唧唧喳喳聊个不停。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://steemitimages.com/DQmRkDqcZvs4q3V7aC6FFQhczrg78LaWXv6SjBM2bx9G7vs/school5.jpg&#34; alt=&#34;school5.jpg&#34; /&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Opening ceremony for new pupils.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;开学典礼挺简单。校长和老师简单介绍了一下学校的概况，然后是学长代表上台发言，以过来人的身份，对新来的学弟学妹们进行一番语重心长的教诲。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://steemitimages.com/DQmTTvodFPtihcJ5egHa41h1BCJGg9a2tbXWPV6x5Y6v32H/school2.jpg&#34; alt=&#34;school2.jpg&#34; /&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Welcome speeches given by high-graded pupils.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;接下来，参观教室。教室里的桌椅已经摆好，每张桌子上放有新生名字的标签。家长们很快被赶了出去。老师跟孩子们在教室里相互熟悉，我们家长在外面，既是欢喜又是忐忑地等待。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://steemitimages.com/DQmQRWRhhrEdN4ywbJbjhNzxcm1BftHUTCiBJ28veQA6AUj/school6.jpg&#34; alt=&#34;school6.jpg&#34; /&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Classroom.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;大约过去 1 节课的工夫，教室门打开，孩子们出来了。剩下的时间就是自由活动。京生跟幼儿园的老朋友们合影留念。接下来的节目是：幼儿园回访。&lt;/p&gt;
-
-&lt;p&gt;京生的小学跟幼儿园挨着，几分钟就走到了。幼儿园的老师早已准备好，安排小朋友们就座。幼儿园这一届的毕业生，除了京生外，还有卢卡和海蒂。卢卡是京生的好朋友，海蒂是他们班的三大美女之一。在幼儿园，他们成了学长，把文具给幼儿园的孩子们传阅。有的孩子无比羡慕，有的孩子根本不知道发生了什么。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://steemitimages.com/DQmdLod7d6eFysf9noVZtLEPpQrdAduY6wYKBGMDjXZa1MJ/school3.jpg&#34; alt=&#34;school3.jpg&#34; /&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Return to the kindergarten.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;在幼儿园里逗留片刻，三个好朋友合影留念。然后，京生就离开了这所让我们难忘的幼儿园，至今再也没有回去过。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://steemitimages.com/DQmQ39rLztaQNpMGxStf9vxJueNmxCQC4PFRrcyUG1Bhu4r/school7.jpg&#34; alt=&#34;school7.jpg&#34; /&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Friends, who might never see each other again.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;后来，京生随我们搬到了奥地利。一年之后，我收到了卢卡爸爸的来信，说卢卡很想念京生，能不能安排一次聚会，让孩子们见个面？&lt;/p&gt;
-
-&lt;p&gt;我们试了好几次，终因种种不巧，未能如愿。&lt;/p&gt;
-
-&lt;p&gt;就这样，在奥地利，京生开始了他的人生新阶段。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://dapengde.com/archives/19531&#34; target=&#34;_blank&#34;&gt;原文链接&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     

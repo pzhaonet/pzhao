@@ -4,6 +4,22 @@
     
     
     <url>
+      <loc>http://www.pzhao.org/zh/post/r-writelines-line-break/</loc>
+      <lastmod>2018-01-18T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+      <loc>http://www.pzhao.org/zh/post/a-mail-from-cran/</loc>
+      <lastmod>2018-01-17T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
       <loc>http://www.pzhao.org/zh/post/latex-and-me-4/</loc>
       <lastmod>2018-01-17T00:00:00+00:00</lastmod>
     </url>
@@ -5230,6 +5246,15 @@
     
     
     <url>
+      <loc>http://www.pzhao.org/zh/tags/linux/</loc>
+      <lastmod>2018-01-18T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
       <loc>http://www.pzhao.org/zh/tags/markdown/</loc>
       <lastmod>2017-09-22T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -5383,7 +5408,7 @@
     
     <url>
       <loc>http://www.pzhao.org/zh/tags/r/</loc>
-      <lastmod>2018-01-17T00:00:00+00:00</lastmod>
+      <lastmod>2018-01-18T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     

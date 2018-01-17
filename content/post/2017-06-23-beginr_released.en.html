@@ -57,12 +57,12 @@ y &lt;- 1:10 + rnorm(10)
 beginr::plotlm(x, y)</code></pre>
 <p><img src="/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 <pre><code>## [[1]]
-##               Estimate Std. Error    t value    Pr(&gt;|t|)
-## (Intercept) -0.1881163  0.9453134 -0.1989989 0.847228149
-## x            1.0043610  0.1523510  6.5924131 0.000170732
+##              Estimate Std. Error  t value     Pr(&gt;|t|)
+## (Intercept) -1.168920 0.45346889 -2.57773 3.273166e-02
+## x            1.174483 0.07308313 16.07051 2.255663e-07
 ## 
 ## [[2]]
-## [1] 0.8445392</code></pre>
+## [1] 0.9699543</code></pre>
 <p>If you want to display the distribution of a data-set, use <code>plothist()</code>, which gives you a histogram with markers of the median, mean, quantiles, standard deviation, sample number and the skewness.</p>
 <pre class="r"><code>x &lt;- rnorm(10000)
 beginr::plothist(x)</code></pre>
@@ -96,20 +96,20 @@ beginr::errorbar(x, y, yupper = 0.1, ylower = 0.1)</code></pre>
 <p><code>lmdf()</code> performs the linear regression between every two columns in a data frame.</p>
 <pre class="r"><code>df &lt;- data.frame(a = 1:10, b = 1:10 + rnorm(10), c = 1:10 + rnorm(10))
 beginr::lmdf(df)</code></pre>
-<pre><code>##   x y r.squared adj.r.squared   intercept     slope Std.Error.intercept
-## 1 a b 0.8954739     0.8824081  0.04395176 1.0371047           0.7773094
-## 2 a c 0.9057453     0.8939635 -1.70484991 1.2505807           0.8850046
-## 3 b a 0.8954739     0.8824081  0.53694406 0.8634363           0.6835161
-## 4 b c 0.8270808     0.8054659 -1.09431504 1.0904017           1.1552251
-## 5 c a 0.9057453     0.8939635  1.75315498 0.7242598           0.5289763
-## 6 c b 0.8270808     0.8054659  1.82399327 0.7585102           0.7852401
-##   Std.Error.slope t.intercept  t.slope Pr.intercept     Pr.slope
-## 1      0.12527475  0.05654346 8.278641   0.95629560 3.410164e-05
-## 2      0.14263140 -1.92637416 8.767920   0.09022404 2.244596e-05
-## 3      0.10429687  0.78556163 8.278641   0.45475874 3.410164e-05
-## 4      0.17627434 -0.94727429 6.185822   0.37122999 2.634703e-04
-## 5      0.08260337  3.31424112 8.767920   0.01063084 2.244596e-05
-## 6      0.12262077  2.32284797 6.185822   0.04870242 2.634703e-04</code></pre>
+<pre><code>##   x y r.squared adj.r.squared  intercept     slope Std.Error.intercept
+## 1 a b 0.9448545     0.9379613 -0.3151223 1.0604757           0.5620288
+## 2 a c 0.9356099     0.9275611 -0.7930902 1.1514953           0.6626891
+## 3 b a 0.9448545     0.9379613  0.5840654 0.8909723           0.4828818
+## 4 b c 0.9146753     0.9040097 -0.2178690 1.0435903           0.7150526
+## 5 c a 0.9356099     0.9275611  0.9985452 0.8125173           0.4906318
+## 6 c b 0.9146753     0.9040097  0.6617339 0.8764698           0.6161715
+##   Std.Error.slope t.intercept   t.slope Pr.intercept     Pr.slope
+## 1      0.09057914  -0.5606870 11.707725    0.5903641 2.586483e-06
+## 2      0.10680202  -1.1967757 10.781588    0.2656534 4.826578e-06
+## 3      0.07610124   1.2095411 11.707725    0.2609824 2.586483e-06
+## 4      0.11269090  -0.3046894  9.260643    0.7683784 1.501568e-05
+## 5      0.07536156   2.0352232 10.781588    0.0762369 4.826578e-06
+## 6      0.09464459   1.0739444  9.260643    0.3141695 1.501568e-05</code></pre>
 <p>There are two functions as improvements of <code>tapply()</code> for factor calculation.</p>
 <pre class="r"><code>beginr::tapplydf()
 beginr::tapplydfv()</code></pre>
@@ -152,9 +152,9 @@ beginr::list2ascii(alist)</code></pre>
 ## @Manual{R-pinyin,
 ##   title = {pinyin: Convert Chinese Characters into Pinyin},
 ##   author = {Peng Zhao},
-##   year = {2017},
-##   note = {R package version 1.1.0},
-##   url = {https://CRAN.R-project.org/package=pinyin},
+##   year = {2018},
+##   note = {R package version 1.1.1},
+##   url = {https://github.com/pzhaonet/pinyin},
 ## }</code></pre>
 <p><code>plotpkg()</code> displays a figure showing the downloads of packages.</p>
 <pre class="r"><code>beginr::plotpkg(&quot;beginr&quot;, from = &quot;2017-06-23&quot;)</code></pre>
