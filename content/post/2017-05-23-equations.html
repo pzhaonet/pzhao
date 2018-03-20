@@ -24,8 +24,10 @@ P=101.325 \cdot (\frac{293-0.0065z}{293}) ^ {5.26} = 86.838\,\text{kPa}
 <p><span class="math inline">\(z\)</span>: elevation above sea level in m.</p>
 <span class="math display">\[\begin{equation}
 -\text{d} p =\rho g \text{d}z
-\end{equation}\]</span>
-<span class="math display">\[\begin{equation}
+\end{equation}
+
+
+\begin{equation}
 \ln \frac{p_2}{p_1} = - \int_{z_1}^{z_2} \frac{g}{RT}\text{d}z
 \end{equation}\]</span>
 </div>
@@ -33,8 +35,9 @@ P=101.325 \cdot (\frac{293-0.0065z}{293}) ^ {5.26} = 86.838\,\text{kPa}
 <h3>Psychrometric constant</h3>
 <span class="math display">\[\begin{equation}
 \gamma =\frac{c_p P}{\varepsilon \lambda} = 0.665 \times 10 ^ {-3} P
-\end{equation}\]</span>
-<span class="math display">\[\begin{equation}
+\end{equation}
+
+\begin{equation}
 \lambda = -0.0000614342 T^3 + 0.00158927 T^2 - 2.36418T + 2500.79
 \end{equation}\]</span>
 <p><span class="math inline">\(P\)</span>: atmospheric pressure.</p>
@@ -65,14 +68,17 @@ P=101.325 \cdot (\frac{293-0.0065z}{293}) ^ {5.26} = 86.838\,\text{kPa}
 <h2>Carbon</h2>
 <span class="math display">\[\begin{equation}
     \text {GPP} = \frac{\alpha R_{\mathrm g}\beta }{\alpha R_{\mathrm g}+\beta }
-\end{equation}\]</span>
-<span class="math display">\[\begin{equation}
+\end{equation}
+
+\begin{equation}
     \frac{\text {GPP}}{\text {LAI}_\text{act}}\ = \frac{\alpha&#39; R_{\mathrm g}\beta&#39; }{\alpha&#39; R_{\mathrm g}+\beta&#39; }
-\end{equation}\]</span>
-<span class="math display">\[\begin{equation}\label{eGPPLRg}
+\end{equation}
+
+\begin{equation}\label{eGPPLRg}
     \text{GPP} = \text{LAI}_\text{act}\frac{\alpha&#39; R_{\mathrm g}\beta&#39; }{\alpha&#39; R_{\mathrm g}+\beta&#39; }, 
-\end{equation}\]</span>
-<span class="math display">\[\begin{equation}\label{eGPPL}
+\end{equation}
+
+\begin{equation}\label{eGPPL}
     \text {GPP} = a_\text {LAI}\text{LAI}_\text {act}.
 \end{equation}\]</span>
 <p>Chamber flux calculation:</p>
@@ -82,14 +88,18 @@ P=101.325 \cdot (\frac{293-0.0065z}{293}) ^ {5.26} = 86.838\,\text{kPa}
 <p>flux in μmol m s, p in kpa, volume in cm, w0 in 0.001, t in °C, t in s, c in ppm.</p>
 <span class="math display">\[\begin{equation}
     C&#39; = C&#39;_x + (C&#39;_0 - C&#39;_x) e ^ {-a(t-t_0)}
-\end{equation}\]</span>
-<span class="math display">\[\begin{equation}
+\end{equation}
+
+\begin{equation}
 \frac{\partial C&#39;}{\partial t} | _{t = t_0} = a(C&#39;_x - C&#39;_0)
-\end{equation}\]</span>
-<span class="math display">\[\begin{equation}
+\end{equation}
+
+
+\begin{equation}
     C&#39; = (C&#39;_x + kt) + (C&#39;_0 - C&#39;_x) e ^ {-a(t-t_0)}
-\end{equation}\]</span>
-<span class="math display">\[\begin{equation}
+\end{equation}
+
+\begin{equation}
     \frac{\partial C&#39;}{\partial t} | _{t = t_0} = a(C&#39;_x - C&#39;_0) + k
 \end{equation}\]</span>
 </div>
@@ -99,8 +109,9 @@ P=101.325 \cdot (\frac{293-0.0065z}{293}) ^ {5.26} = 86.838\,\text{kPa}
 <h3>Evaporation from water by energy balance</h3>
 <span class="math display">\[\begin{equation}
 E_r = \frac{R_n}{l_v \rho_w} \times 1000 \times 86400
-\end{equation}\]</span>
-<span class="math display">\[\begin{equation}
+\end{equation}
+
+\begin{equation}
 l_v = 2.501 \times 10^6 - 2370T
 \end{equation}\]</span>
 <p><span class="math inline">\(E_r\)</span> in mm d<span class="math inline">\(^{-1}\)</span>.</p>
@@ -121,17 +132,21 @@ Q ^\text {PM}_{\text E}=\frac {s_{\text c} \frac{-R_{\text n}-Q_{\text G}}{86400
 <p><span class="math inline">\(\rho_a\)</span>: mean air density at constant pressure (1.040 kg m<span class="math inline">\(^{-3}\)</span>)</p>
 <span class="math display">\[\begin{equation}
 \rho_{adry} = \frac{p}{RT} = 1.229 \text { kg m}^{-3}
-\end{equation}\]</span>
-<span class="math display">\[\begin{equation}
+\end{equation}
+
+\begin{equation}
 \rho_{ahumid} = \frac{p_d}{R_d T} + \frac{p_v}{R_v T}= 1.040 \text { kg m}^{-3}
-\end{equation}\]</span>
-<span class="math display">\[\begin{equation}
+\end{equation}
+
+\begin{equation}
 p_v = RH \times p_{sat} = 1.142 \text{kPa}
-\end{equation}\]</span>
-<span class="math display">\[\begin{equation}
+\end{equation}
+
+\begin{equation}
 p_{sat} = 6.1078 \cdot 10 ^{\frac{7.5T-2048.625}{T-35.85}} \cdot 100 = 1.84 \text { kPa}
-\end{equation}\]</span>
-<span class="math display">\[\begin{equation}
+\end{equation}
+
+\begin{equation}
 p_d = p_{abs} - p_v = 85.696 \text{ kPa}
 \end{equation}\]</span>
 <p><span class="math inline">\(c_p\)</span>: specific heat of the air (at constant pressure <span class="math inline">\(1.013 \times 10 ^{-3}\)</span> MJ kg<span class="math inline">\(^{-1}\)</span>K<span class="math inline">\(^{-1}\)</span>)</p>
@@ -173,29 +188,36 @@ ET_0 = \frac {0.408 s_{\text c} \frac{-R_{\text n}-Q_{\text G}}{86400\text{s}} +
 <span class="math display" id="eq:eNEE">\[\begin{equation}
 \text{NEE = GPP} + R_\text{eco}
 \tag{1}
-\end{equation}\]</span>
-<span class="math display">\[\begin{equation}\label{ePM}
+\end{equation}
+
+\begin{equation}\label{ePM}
 Q ^\text {PM}_{\text E}=\frac {s_{\text c} (-R_{\text n}-Q_{\text G}) + \frac{\rho c_{\text p}  (e_{\text s} - e_{\text a})}{r_{\text a}}}{s_{\text c} + \gamma (1 + \frac{r_{\text s}}{r_{\text a}})},
-\end{equation}\]</span>
-<span class="math display">\[\begin{equation}\label{era}
+\end{equation}
+
+\begin{equation}\label{era}
 r_{\text a}= \frac{\ln \frac{z-d}{z_{\textrm{om}}} \ln \frac {z-d}{z_{\textrm{oh}}}}{\kappa ^2 u},
-\end{equation}\]</span>
-<span class="math display">\[\begin{equation}\label{eRl}
+\end{equation}
+
+\begin{equation}\label{eRl}
 %r^{\text {LAI}}_\text s=\frac{r_\text {si}}{0.5\text {LAI}},
 r_\text s=\frac{r_\text {si}}{\text {LAI}_\text {active}},
-\end{equation}\]</span>
-<span class="math display">\[\begin{equation}\label{eKP}
+\end{equation}
+
+\begin{equation}\label{eKP}
 %\frac{r^{\text {KP}}_\text s}{r_\text a} = a \frac{r^*}{r_\text a} + b,
 \frac{r_\text s}{r_\text a} = a \frac{r^*}{r_\text a} + b,
-\end{equation}\]</span>
-<span class="math display">\[\begin{equation}
+\end{equation}
+
+\begin{equation}
 r^*=\frac{(s_\text c + \gamma)\rho c_\text p (e_{\text s} - e_{\text a})}{s_\text c \gamma (-R_{\text n}-Q_{\text G})},
-\end{equation}\]</span>
-<span class="math display">\[\begin{equation}\label{eRs}
+\end{equation}
+
+\begin{equation}\label{eRs}
 r_{\text s}= \frac {r_{\text a}s_{\text c} (-R_{\text n}-Q_{\text G}) + \rho c_{\text p}  (e_{\text s} - e_{\text a}) - r_{\text a}Q_{\text E}(s_{\text c} + \gamma)}
 {\gamma Q_{\text E}}.
-\end{equation}\]</span>
-<span class="math display">\[\begin{equation}\label{ePT}
+\end{equation}
+
+\begin{equation}\label{ePT}
 E=\alpha_{\text {PT}} \frac {s_{\text c}}{s_{\text c} + \gamma}(-Q_{\text A})
 \end{equation}\]</span>
 </div>
@@ -204,56 +226,78 @@ E=\alpha_{\text {PT}} \frac {s_{\text c}}{s_{\text c} + \gamma}(-Q_{\text A})
 <h2>Model evaluation</h2>
 <span class="math display">\[\begin{equation}
  \text{ME}=\frac{1}{N}\sum_{i=1}^{N}|P_i-O_i|
- \end{equation}\]</span>
-<span class="math display">\[\begin{equation}
+ \end{equation}
+
+\begin{equation}
  \text{MAE}=\frac{1}{N}\sum_{i=1}^{N}(P_i-O_i)
- \end{equation}\]</span>
-<span class="math display">\[\begin{equation} 
+ \end{equation}
+
+\begin{equation} 
 \text{MSE}=\frac{1}{N}\sum_{i=1}^{N}(P_i-O_i)^2
-\end{equation}\]</span>
-<span class="math display">\[\begin{equation} 
+\end{equation}
+
+\begin{equation} 
 \text{RMSE}=\sqrt{\frac{1}{N}\sum_{i=1}^{N}(P_i-O_i)^2}
-\end{equation}\]</span>
-<span class="math display">\[\begin{equation} 
+\end{equation}
+
+\begin{equation} 
 \text{NRMSE}=100\frac{\text{RMSE}}{O_\text{max} - O_\text{min}}
-\end{equation}\]</span>
-<span class="math display">\[\begin{equation} 
+\end{equation}
+
+
+\begin{equation} 
 \text{PBIAS} =100\frac{\sum_{i=1}^{n}(P_i-O_i)}{\sum_{i=1}^{n}O_i}
-\end{equation}\]</span>
-<span class="math display">\[\begin{equation} 
+\end{equation}
+
+\begin{equation} 
 \text{RSR} =\frac{\text{RMSE}}{\sigma_O}
-\end{equation}\]</span>
-<span class="math display">\[\begin{equation} 
+\end{equation}
+
+\begin{equation} 
 \text{rSD} =\frac{\sigma_P}{\sigma_O}
-\end{equation}\]</span>
-<span class="math display">\[\begin{equation} 
+\end{equation}
+
+
+\begin{equation} 
 \text{NSE} =1-\frac{\sum_{i=1}^{n}(O_i-P_i)^2}{\sum_{i=1}^{n}(O_i - \overline{O})^2}
-\end{equation}\]</span>
-<span class="math display">\[\begin{equation} 
+\end{equation}
+
+\begin{equation} 
 \text{mNSE} =1-\frac{\sum_{i=1}^{n}|O_i-P_i||^j}{\sum_{i=1}^{n}|O_i - \overline{O}|^j}
-\end{equation}\]</span>
-<span class="math display">\[\begin{equation} 
+\end{equation}
+
+\begin{equation} 
 \text{rNSE} =1-\frac{\sum_{i=1}^{n}(\frac{O_i-P_i}{\overline{O}})^2}{\sum_{i=1}^{n}(\frac{O_i - \overline{O}}{\overline{O}})^2}
-\end{equation}\]</span>
-<span class="math display">\[\begin{equation} 
+\end{equation}
+
+
+\begin{equation} 
 d =1-\frac{\sum_{i=1}^{n}(P_i-O_i)^2}{\sum_{i=1}^{n}(|P_i-O_i|+|P_i+O_i|)^2}
-\end{equation}\]</span>
-<span class="math display">\[\begin{equation} 
+\end{equation}
+
+\begin{equation} 
 md =1 - \frac{\sum_{i=1}^{n}(P_i-O_i)^j}{\sum_{i=1}^{n}(|P_i-O_i|+|P_i+O_i|)^j}
-\end{equation}\]</span>
-<span class="math display">\[\begin{equation} 
+\end{equation}
+
+
+\begin{equation} 
 rd =1-\frac{\sum_{i=1}^{n}(\frac{P_i-O_i}{\overline{O}})^2}{\sum_{i=1}^{n}(\frac{|P_i-O_i|+|P_i+O_i|}{\overline{O}})^2}
-\end{equation}\]</span>
-<span class="math display">\[\begin{equation} 
+\end{equation}
+
+
+\begin{equation} 
 \text{cp} =1-\frac{\sum_{i=2}^{n}(O_i-P_i)^2}{\sum_{i=1}^{n-1}(O_{i+1} - O_i)^2}
-\end{equation}\]</span>
-<span class="math display">\[\begin{equation} 
+\end{equation}
+
+\begin{equation} 
 R =\frac{\sum_{i=1}^{n}(O_i-\overline{O})(P_i-\overline{P})}{\sqrt{\sum_{i=1}^{n}(O_i-\overline{O})^2}\sqrt{\sum_{i=1}^{n}(P_i-\overline{P})^2}) }
-\end{equation}\]</span>
-<span class="math display">\[\begin{equation} 
+\end{equation}
+
+\begin{equation} 
 R^2 =(\frac{\sum_{i=1}^{n}(O_i-\overline{O})(P_i-\overline{P})}{\sqrt{\sum_{i=1}^{n}(O_i-\overline{O})^2}\sqrt{\sum_{i=1}^{n}(P_i-\overline{P})^2}) })^2
-\end{equation}\]</span>
-<span class="math display">\[\begin{equation} 
+\end{equation}
+
+\begin{equation} 
 \text{bR2} =bR^2
 \end{equation}\]</span>
 </div>
@@ -261,62 +305,81 @@ R^2 =(\frac{\sum_{i=1}^{n}(O_i-\overline{O})(P_i-\overline{P})}{\sqrt{\sum_{i=1}
 <h2>Mathematics</h2>
 <span class="math display">\[\begin{equation}
 \frac{\text {d} x^\mu}{\text {d} x} = \mu x ^{\mu - 1}\\
-\end{equation}\]</span>
-<span class="math display">\[\begin{equation}
+\end{equation}
+
+\begin{equation}
 \frac{\text {d} e^x}{\text {d} x} = e^x\\
-\end{equation}\]</span>
-<span class="math display">\[\begin{equation}
+\end{equation}
+
+\begin{equation}
 \frac{\text {d} a^x}{\text {d} x} = a^x \ln a \\
-\end{equation}\]</span>
-<span class="math display">\[\begin{equation}
+\end{equation}
+
+\begin{equation}
 \frac{\text {d} \ln x}{\text {d} x} = \frac{1}{x}\\
-\end{equation}\]</span>
-<span class="math display">\[\begin{equation}
+\end{equation}
+
+\begin{equation}
 \frac{\text {d} \log _a x}{\text {d} x} = \frac{1}{x\ln a}\\
-\end{equation}\]</span>
-<span class="math display">\[\begin{equation}
+\end{equation}
+
+\begin{equation}
 \frac{\text {d} \sin x}{\text {d} x} = \cos x\\
-\end{equation}\]</span>
-<span class="math display">\[\begin{equation}
+\end{equation}
+
+\begin{equation}
 \frac{\text {d} \cos x}{\text {d} x} = - \sin x\\
-\end{equation}\]</span>
-<span class="math display">\[\begin{equation}
+\end{equation}
+
+\begin{equation}
 \int k \text {d} x = kx + C
-\end{equation}\]</span>
-<span class="math display">\[\begin{equation}
+\end{equation}
+
+\begin{equation}
 \int x ^ \mu \text {d} x = \frac{x^{\mu + 1}}{\mu + 1} + C\ (\mu \neq -1)
-\end{equation}\]</span>
-<span class="math display">\[\begin{equation}
+\end{equation}
+
+\begin{equation}
 \int \frac{1}{x}\text {d} x = \ln \left | x \right | + C
-\end{equation}\]</span>
-<span class="math display">\[\begin{equation}
+\end{equation}
+
+\begin{equation}
 \int \text {e} ^x \text {d} x = \text {e} ^x + C\\
-\end{equation}\]</span>
-<span class="math display">\[\begin{equation}
+\end{equation}
+
+\begin{equation}
 \int a ^x \text {d} x = \frac{a^x}{\ln a}+ C\\
-\end{equation}\]</span>
-<span class="math display">\[\begin{equation}
+\end{equation}
+
+\begin{equation}
 \int \frac{1}{1+x^2}\text {d} x = \arctan x + C\\
-\end{equation}\]</span>
-<span class="math display">\[\begin{equation}
+\end{equation}
+
+\begin{equation}
 \int \frac{1}{1-x^2}\text {d} x = \arcsin x + C\\
-\end{equation}\]</span>
-<span class="math display">\[\begin{equation}
+\end{equation}
+
+\begin{equation}
 \int \cos x \text {d} x = \sin x + C\\
-\end{equation}\]</span>
-<span class="math display">\[\begin{equation}
+\end{equation}
+
+\begin{equation}
 \int \sin x \text {d} x = -\cos x + C\\
-\end{equation}\]</span>
-<span class="math display">\[\begin{equation}
+\end{equation}
+
+\begin{equation}
 \int \frac{1}{\cos^2 x} \text {d} x = \tan x + C\\
-\end{equation}\]</span>
-<span class="math display">\[\begin{equation}
+\end{equation}
+
+\begin{equation}
 \int \frac{1}{\sin^2 x} \text {d} x = -\cot x + C\\
-\end{equation}\]</span>
-<span class="math display">\[\begin{equation}
+\end{equation}
+
+\begin{equation}
 \int \sec x \tan x \text {d} x = \sec x + C\\
-\end{equation}\]</span>
-<span class="math display">\[\begin{equation}
+\end{equation}
+
+\begin{equation}
 \int \csc x \cot x \text {d} x = -\csc x + C\\
 \end{equation}\]</span>
 </div>

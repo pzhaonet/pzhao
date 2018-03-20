@@ -50,15 +50,3 @@ tags:
 
 
 让我们拭目以待。
-
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/0I-zRs8sP3Q" frameborder="0" allowfullscreen></iframe>
-
-
-Youtube 视频：三年时间制作的14 分钟短片，一镜到底展示三体里的水滴。对原著无剧透。我看到第三遍才看明白，然后击节叫好。然后，不寒而栗。
-
-
-
-
-
-![dapeng](https://steemitimages.com/DQmeYUwQ7Juorgd79o6D5E34BnUYxwfmLxYH4cApgPRhRf6/end2.jpg)

@@ -18,10 +18,7 @@ output: #md_document
 
 
 <p>又一次高兴地宣布, 我的 R 语言扩展包 ‘beginr’ <span class="citation">(Zhao 2017a)</span> 在 CRAN <a href="https://cran.r-project.org/web/packages/beginr/">正式发布</a>了.</p>
-<div class="figure">
-<img src="http://cranlogs.r-pkg.org/badges/grand-total/beginr" />
-
-</div>
+<p><img src="http://cranlogs.r-pkg.org/badges/grand-total/beginr" /></p>
 <div class="section level1">
 <h1>简介</h1>
 <p><code>beginr</code>是我为 R 语言初学者和自己写的工具包, 是我这些年来收集和自己编写的一些简化操作的函数和备忘录, 可能对中级用户也有帮助. 其实这个包的文档我写得不够详细, 有些函数还没来及整理进去, 之所以匆匆发布, 是想先把 ‘beginr’ 这个名字给占住. 毕竟, 我中意的名字如 ‘learnr’, ’startr’都被别人用过了.</p>
@@ -54,12 +51,12 @@ y &lt;- 1:10 + rnorm(10)
 beginr::plotlm(x, y)</code></pre>
 <p><img src="/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 <pre><code>## [[1]]
-##               Estimate Std. Error   t value     Pr(&gt;|t|)
-## (Intercept) -0.8822514  0.7447635 -1.184606 2.701701e-01
-## x            1.1385809  0.1200295  9.485842 1.257036e-05
+##              Estimate Std. Error  t value     Pr(&gt;|t|)
+## (Intercept) 1.1122649 0.57896933 1.921112 9.095942e-02
+## x           0.7491103 0.09330936 8.028244 4.257399e-05
 ## 
 ## [[2]]
-## [1] 0.9183517</code></pre>
+## [1] 0.8895831</code></pre>
 <p>经常需要了解一组数据的分布, 看看是不是正态分布. beginr 里的 <code>plothist()</code> 函数不仅做出直方图和平滑曲线, 并且标出中值, 中位数, 四分位数, 标准偏差, 样本数, 以及用来判断是否正态分布的 skewness 值.</p>
 <pre class="r"><code>x &lt;- rnorm(10000)
 beginr::plothist(x)</code></pre>
@@ -93,20 +90,20 @@ beginr::errorbar(x, y, yupper = 0.1, ylower = 0.1)</code></pre>
 <p>beginr 提供了一些对数据框计算的函数, 例如计算多列数据两两的相关性和线性拟合结果, 可以用 <code>lmdf()</code> 函数.</p>
 <pre class="r"><code>df &lt;- data.frame(a = 1:10, b = 1:10 + rnorm(10), c = 1:10 + rnorm(10))
 beginr::lmdf(df)</code></pre>
-<pre><code>##   x y r.squared adj.r.squared  intercept     slope Std.Error.intercept
-## 1 a b 0.9224512     0.9127576  0.5873742 0.9935323           0.6319506
-## 2 a c 0.9323347     0.9238765  0.2723070 0.9847699           0.5819923
-## 3 b a 0.9224512     0.9127576 -0.1188330 0.9284562           0.6416694
-## 4 b c 0.8053668     0.7810377  0.3340266 0.8847803           1.0367670
-## 5 c a 0.9323347     0.9238765  0.1143515 0.9467538           0.5769886
-## 6 c b 0.8053668     0.7810377  0.8738354 0.9102450           1.0122853
+<pre><code>##   x y r.squared adj.r.squared    intercept     slope Std.Error.intercept
+## 1 a b 0.9504570     0.9442641 -0.008669419 0.9549422           0.4782856
+## 2 a c 0.8916960     0.8781580 -0.295677576 1.0165898           0.7772218
+## 3 b a 0.9504570     0.9442641  0.281115101 0.9953032           0.4780765
+## 4 b c 0.7705537     0.7418730  0.236733958 0.9647793           1.1076032
+## 5 c a 0.8916960     0.8781580  0.855024005 0.8771443           0.6627661
+## 6 c b 0.7705537     0.7418730  1.014028718 0.7986840           0.9449076
 ##   Std.Error.slope t.intercept   t.slope Pr.intercept     Pr.slope
-## 1      0.10184806   0.9294623  9.755044    0.3798408 1.021162e-05
-## 2      0.09379655   0.4678877 10.498999    0.6523467 5.894258e-06
-## 3      0.09517704  -0.1851935  9.755044    0.8576863 1.021162e-05
-## 4      0.15378076   0.3221810  5.753517    0.7555736 4.272704e-04
-## 5      0.09017563   0.1981867 10.498999    0.8478426 5.894258e-06
-## 6      0.15820671   0.8632304  5.753517    0.4131405 4.272704e-04</code></pre>
+## 1      0.07708270 -0.01812603 12.388541    0.9859822 1.681047e-06
+## 2      0.12526064 -0.38042880  8.115796    0.7135294 3.937098e-05
+## 3      0.08034063  0.58801275 12.388541    0.5727444 1.681047e-06
+## 4      0.18613241  0.21373536  5.183296    0.8361002 8.393632e-04
+## 5      0.10807866  1.29008400  8.115796    0.2330604 3.937098e-05
+## 6      0.15408806  1.07315114  5.183296    0.3145043 8.393632e-04</code></pre>
 <p>还有两个函数对<code>tapply()</code>进行了改善, 用来进行因子计算.</p>
 <pre class="r"><code>beginr::tapplydf()
 beginr::tapplydfv()</code></pre>
@@ -128,16 +125,16 @@ beginr::list2ascii(alist)</code></pre>
 <pre><code>## @Manual{R-bookdownplus,
 ##   title = {bookdownplus: Generate Assorted Books and Documents with R &#39;bookdown&#39; Package},
 ##   author = {Peng Zhao},
-##   year = {2017},
-##   note = {R package version 1.4.2},
+##   year = {2018},
+##   note = {R package version 1.4.3},
 ##   url = {https://github.com/pzhaonet/bookdownplus},
 ## }
 ## @Manual{R-mindr,
 ##   title = {mindr: Convert Files Between Markdown or Rmarkdown Files and Mindmaps},
 ##   author = {Peng Zhao},
-##   year = {2017},
-##   note = {R package version 1.1.0},
-##   url = {https://CRAN.R-project.org/package=mindr},
+##   year = {2018},
+##   note = {R package version 1.1.1},
+##   url = {https://github.com/pzhaonet/mindr},
 ## }
 ## @Manual{R-pinyin,
 ##   title = {pinyin: Convert Chinese Characters into Pinyin},

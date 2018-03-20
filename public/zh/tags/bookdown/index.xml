@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Bookdown on Peng Zhao</title>
-    <link>http://www.pzhao.org/zh/tags/bookdown/index.xml</link>
+    <link>/zh/tags/bookdown/index.xml</link>
     <description>Recent content in Bookdown on Peng Zhao</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
@@ -11,10 +11,10 @@
     
     <item>
       <title>R bookdownplus 升级手记，以及北大论文模板</title>
-      <link>http://www.pzhao.org/zh/post/-bookdownplus-update/</link>
+      <link>/zh/post/-bookdownplus-update/</link>
       <pubDate>Sun, 26 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/zh/post/-bookdownplus-update/</guid>
+      <guid>/zh/post/-bookdownplus-update/</guid>
       <description>&lt;p&gt;bookdownplus 这个 R 语言程序包，自用起来感觉不错，当初发布的时候还小得意了一把。时过境迁，现在回头看起来是越来越不满意。CRAN 上，bookdownplus 的总下载量接近三千（与此相比，bookdown 的总下载量是七万），大约每小时就有一次下载。Google ‘bookdownplus’ 可以搜到 已经有中文用户在写使用体验了。越是这样，我越惶恐，因为我知道，这个包写得粗糙，可改进的地方数都数不过来。&lt;/p&gt;
 &lt;p&gt;向我反馈问题的用户超出了预期，主要是兼容性的问题：在 macOS上如何，在 Linux 上如何，这些问题我都没有办法回答，因为我只在 Windows 7 上测试了，其他操作系统既无精力也无条件测试。开发个软件，自用是一回事，让别人能用完全是另外一回事，这两回事之间真是相差了一个筋斗云。&lt;/p&gt;
 &lt;p&gt;所以我决定先把自己看不过去的问题解决一下，那就是代码的构架问题。&lt;/p&gt;
@@ -22,32 +22,20 @@
 &lt;p&gt;于是这两天我花了一个上午，把这些文件重新整理归类，让他们各回各家各找各妈，每个 bookdown 模板都对应一个 zip 压缩文件，扔在 bookdownplus 的安装目录里。而且，如果再开发新 bookdown 模板，只需按照现有模板 zip 文件里的结构，将所需文件压缩并甩进 bookdownplus 安装目录，就可以用 &lt;code&gt;bookdownplus()&lt;/code&gt; 直接调用了，连升级都不用。&lt;/p&gt;
 &lt;p&gt;虽然功能上没有多大增强，但架构上舒服多了，所以我把版本号从1.3.x 升到了 1.4.0。&lt;/p&gt;
 &lt;p&gt;我还有一块心病，是北京大学学位论文的 &lt;a href=&#34;https://github.com/CasperVector/pkuthss&#34;&gt;LaTeX 模板&lt;/a&gt;，我迟迟没能转成 bookdown 模板。原因是这个 LaTeX 模板本身在我电脑上就编译不成功。这次不知怎么开了窍，突然被我搞定了，作为第 21 个模板，收进了 bookdownplus v.1.4.0 里。&lt;/p&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdownplus/master/inst2/showcase/bookdownplus_thesis_pku.jpg&#34; /&gt;
-
-&lt;/div&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdownplus/master/inst2/showcase/bookdownplus_thesis_pku.jpg&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;此外，新增了一下几个模板：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;益辉制作了 &lt;a href=&#34;https://disq.us/url?url=https%3A%2F%2Fgithub.com%2Fyihui%2Fbookdown-crc%3A5wtgG3vpge_i9bq1JupLLfeTiOI&amp;amp;cuid=5083260&#34;&gt;Chapman &amp;amp; Hall 出版社的模板&lt;/a&gt;，现成的，我稍微改了一下。看上去是这样的：&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdownplus/master/inst2/showcase/bookdownplus_yihui_crc.jpg&#34; /&gt;
-
-&lt;/div&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdownplus/master/inst2/showcase/bookdownplus_yihui_crc.jpg&#34; /&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;这提醒我，直接去 bookdown.org 找现成的嘛！于是找到了Eduardo García Portugués 写的 &lt;a href=&#34;https://bookdown.org/egarpor/nonpar-eafit/&#34;&gt;A short course on nonparametric curve estimation&lt;/a&gt;，是在 yihui_demo 模板基础上增加了一个自定义环境。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdownplus/master/inst2/showcase/bookdownplus_nonpar.jpg&#34; /&gt;
-
-&lt;/div&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdownplus/master/inst2/showcase/bookdownplus_nonpar.jpg&#34; /&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;以前搜集过一个很有趣的 LaTeX 模板叫 dnd，这次虽然没有完全改为 bookdown 模板，但是我仍然收进来了，作为开发版，以后慢慢想办法吧。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdownplus/master/inst2/showcase/bookdownplus_dnd_dev.jpg&#34; /&gt;
-
-&lt;/div&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdownplus/master/inst2/showcase/bookdownplus_dnd_dev.jpg&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;bookdownplus v.1.4.0 已经在 GitHub 发布，安装和使用方法是在 R 语言环境下运行：&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;devtools::install_github(&amp;quot;pzhaonet/bookdownplus&amp;quot;)
 require(bookdownplus)
@@ -57,10 +45,10 @@ bd()&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>R bookdown 的小技巧</title>
-      <link>http://www.pzhao.org/zh/post/bookdown-tips/</link>
+      <link>/zh/post/bookdown-tips/</link>
       <pubDate>Fri, 22 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/zh/post/bookdown-tips/</guid>
+      <guid>/zh/post/bookdown-tips/</guid>
       <description>&lt;p&gt;本帖用来收集整理 R 语言 bookdown 扩展包的一些使用技巧。有些是在网上搜来的，有些是我在别处讨论得来的，有些是我尚未发布的，都写在这里备用。&lt;/p&gt;
 &lt;div id=&#34;-markdown-&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;输出 Markdown 文件&lt;/h2&gt;
@@ -134,7 +122,8 @@ knitr::include_graphics(if (identical(knitr:::pandoc_to(), &amp;#39;html&amp;#39
 &lt;p&gt;首先，我用 &lt;code&gt;bookdown::publish_book()&lt;/code&gt; 的 &lt;code&gt;account&lt;/code&gt; 参数指定一个新账号，得到了错误信息:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;Error: Unknown account name &amp;#39;newaccount&amp;#39; (you can use the setAccountInfo function to add a new account)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;一查 setAccountInfo，不是 bookdown 包的函数，而是 rsconnect 包的函数：&lt;code&gt;rsconnect::setAccountInfo()&lt;/code&gt;。然后就不知道怎么办了。&lt;/p&gt;
-&lt;p&gt;其实，添加账号应该点击 Rstudio 左上面板的发布按钮- Manage Account - Connect - RStudio Connect - 输入 bookdown.org，然后往下照提示走就行了。&lt;/p&gt;
+&lt;p&gt;其实，添加账号应该点击 Rstudio 左上面板的发布按钮- Manage Account - Connect - RStudio
+Connect - 输入 bookdown.org，然后往下照提示走就行了。&lt;/p&gt;
 &lt;p&gt;添加账号后，照理说用 &lt;code&gt;bookdown::publish_book()&lt;/code&gt; 的 &lt;code&gt;account&lt;/code&gt;指定一下账号，就应该能发布了吧？不，还是失败了，说 &lt;code&gt;name&lt;/code&gt; 参数有问题。其实没问题。&lt;/p&gt;
 &lt;p&gt;怎么办？我发现必须从 Mange Account 里删掉旧 bookdown 的账号，就可以用新的账号成功发布了。&lt;/p&gt;
 &lt;p&gt;上面说了这么多，其实就是一句话：用不同账号往 bookdown.org 发布书稿，只需在 Manage Account 里添加并保留唯一一个账号即可。&lt;/p&gt;
@@ -144,10 +133,10 @@ knitr::include_graphics(if (identical(knitr:::pandoc_to(), &amp;#39;html&amp;#39
     
     <item>
       <title>如何在 R markdown 里输出 r pi 并前后加上小撇`</title>
-      <link>http://www.pzhao.org/zh/post/backticks-in-rmd/</link>
+      <link>/zh/post/backticks-in-rmd/</link>
       <pubDate>Fri, 22 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/zh/post/backticks-in-rmd/</guid>
+      <guid>/zh/post/backticks-in-rmd/</guid>
       <description>&lt;p&gt;其实本文的标题应该是：如何在文章里显示 &lt;code&gt;`r pi`&lt;/code&gt; 这样的文字。但是我不知道怎么把这个格式弄到标题里。所以，就这样凑合过吧。&lt;/p&gt;
 &lt;p&gt;这个问题的答案，要分几层意思来说。&lt;code&gt;`r pi`&lt;/code&gt; 是代码格式（本博客显示为粉底红字），并且包含的`符号同样是代码格式，并且 pi 并没有被编译成 3.1415927。别看它短，这三点每个都是个坑。&lt;/p&gt;
 &lt;p&gt;这个问题在编写 R markdown 教程时常见。其实，等你明白这个问题的答案后，会发现答案并不难，难的是如何描述这个问题。我费了好大劲，都想不出一个准确描述的办法，并且在那些支持 markdown 的论坛上，我连这个小撇都输不出来，这叫人怎么问？最后我只能这么提问：&lt;/p&gt;
@@ -156,10 +145,7 @@ knitr::include_graphics(if (identical(knitr:::pandoc_to(), &amp;#39;html&amp;#39
 &lt;/blockquote&gt;
 &lt;div id=&#34;-1--&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;第 1 层意思，那个小撇 `，它到底叫什么？总不能总叫“小撇”吧？&lt;/h3&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/KB_Germany.svg/550px-KB_Germany.svg.png&#34; /&gt;
-
-&lt;/div&gt;
+&lt;p&gt;&lt;img src=&#34;https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/KB_Germany.svg/550px-KB_Germany.svg.png&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;我用的是德语键盘，挪，就是上图第一行右起第二个键的上面那个小可爱。&lt;/p&gt;
 &lt;p&gt;查&lt;a href=&#34;https://en.wikipedia.org/wiki/Grave_accent&#34;&gt;维基百科&lt;/a&gt;才知道，` 的学名叫 &lt;em&gt;Grave accent&lt;/em&gt; ，中文叫“重音符”。在程序猿的世界里，它又被称作 &lt;em&gt;backquote&lt;/em&gt; 或 &lt;em&gt;backtick&lt;/em&gt;，中文叫反引号。所以，跟这个有关的问题可以这么问：&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://meta.stackexchange.com/questions/82718/how-do-i-escape-a-backtick-in-markdown&#34;&gt;How do I escape a backtick ` in Markdown?&lt;/a&gt;&lt;/p&gt;
@@ -188,7 +174,7 @@ knitr::include_graphics(if (identical(knitr:::pandoc_to(), &amp;#39;html&amp;#39
 &lt;div id=&#34;-5--4-&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;第 5 层意思，怎么在第 4 层意思的基础上再加两个反引号，并显示成粉底红字，即&lt;/h3&gt;
 &lt;p&gt;&lt;code&gt;`r pi`&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;我现在用的方法是：&lt;code&gt;``&lt;/code&gt; &lt;code&gt;r &#39;\x60r pi\x60&#39;&lt;/code&gt; &lt;code&gt;``&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;我现在用的方法是：`&lt;code&gt;``  ``&lt;/code&gt;r ‘60r pi60’` `` `` ``&lt;/p&gt;
 &lt;p&gt;这个 &lt;code&gt;\x60&lt;/code&gt; 就是反引号。相当于把反引号弄到字符串里处理。&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;-6-&#34; class=&#34;section level3&#34;&gt;
@@ -201,10 +187,10 @@ knitr::include_graphics(if (identical(knitr:::pandoc_to(), &amp;#39;html&amp;#39
     
     <item>
       <title>bookdownplus 的两个魔法</title>
-      <link>http://www.pzhao.org/zh/post/bookdownplus-magic/</link>
+      <link>/zh/post/bookdownplus-magic/</link>
       <pubDate>Tue, 27 Jun 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/zh/post/bookdownplus-magic/</guid>
+      <guid>/zh/post/bookdownplus-magic/</guid>
       <description>&lt;p&gt;bookdown 是个好东西，只是入手有点难，酒香巷深。&lt;/p&gt;
 &lt;p&gt;对于 R 初学者来说，如果身边没有人指导，使用者可能需要花大量精力应付 LaTeX，YAML，Pandoc，而很多初学者可能从来没听说过这些，站在 bookdown 的门口往里张望了一下，说不定就被吓跑了，从而错过了门里的精彩世界。&lt;/p&gt;
 &lt;p&gt;bookdownplus 扩展包，可以让新手对 bookdown 快速上手。从此，bookdown 这坛好酒就不必去深巷苦寻，它就放在你手边。&lt;/p&gt;
@@ -248,16 +234,13 @@ knitr::include_graphics(if (identical(knitr:::pandoc_to(), &amp;#39;html&amp;#39
     
     <item>
       <title>R 包 bookdownplus 正式发布</title>
-      <link>http://www.pzhao.org/zh/post/bookdownplus-released/</link>
+      <link>/zh/post/bookdownplus-released/</link>
       <pubDate>Thu, 22 Jun 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/zh/post/bookdownplus-released/</guid>
+      <guid>/zh/post/bookdownplus-released/</guid>
       <description>&lt;p&gt;很高兴地宣布，我的 R 语言扩展包 ‘bookdownplus v1.0.2’ &lt;span class=&#34;citation&#34;&gt;(Zhao 2017a)&lt;/span&gt; 在 CRAN &lt;a href=&#34;https://cran.r-project.org/web/packages/bookdownplus/&#34;&gt;正式发布&lt;/a&gt;了。本文是对’bookdownplus v1.0.2’的简要描述. 由于最近更新频繁, 最新版的’bookdownplus’更加强大和易用, 例如 ‘bookdownplus v1.2.0’ 可以一条指令生成19个模板文档的 pdf, word, html 和 epub 四种格式. 建议移步位于 GitHub 的 &lt;a href=&#34;http://github.com/pzhaonet/bookdownplus&#34;&gt;bookdownplus 项目主页&lt;/a&gt;.&lt;/p&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;http://cranlogs.r-pkg.org/badges/grand-total/bookdownplus&#34; /&gt;
-
-&lt;/div&gt;
-&lt;p&gt;&lt;img src=&#34;http://www.pzhao.org/post/2017-06-22-bookdownplus_released_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cranlogs.r-pkg.org/badges/grand-total/bookdownplus&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2017-06-22-bookdownplus_released_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;div class=&#34;section level1&#34;&gt;
 &lt;h1&gt;简介&lt;/h1&gt;
 &lt;p&gt;bookdownplus 是对 bookdown 包 &lt;span class=&#34;citation&#34;&gt;(Xie 2016)&lt;/span&gt; 的增强和简化, 是快速使用 bookdown 的最简洁方法。bookdown 就好比 Microsoft Word 或 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt;，可以用来写文档，而 bookdownplus 提供了很多有用的模板，可以很方便地在 bookdown 平台写期刊论文、学位论文、学术海报、化学分子式、信件、日记、日历、诗集、吉他谱等各种常用文档和书籍。这是功能上的增强（+）。&lt;/p&gt;
@@ -320,123 +303,69 @@ install.packages(&amp;#39;pinyin&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
 &lt;ul&gt;
 &lt;li&gt;article&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+article.jpg&#34; /&gt;
-
-&lt;/div&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+article.jpg&#34; /&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;article_mdpi1&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+article_mdpi.jpg&#34; /&gt;
-
-&lt;/div&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+article_mdpi.jpg&#34; /&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;article_zh&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+article_zh.jpg&#34; /&gt;
-
-&lt;/div&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+article_zh.jpg&#34; /&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;calendar&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+calendar.jpg&#34; /&gt;
-
-&lt;/div&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+calendar.jpg&#34; /&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;chemistry&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+chemistry.jpg&#34; /&gt;
-
-&lt;/div&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+chemistry.jpg&#34; /&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;guitar&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+guitar.jpg&#34; /&gt;
-
-&lt;/div&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+guitar.jpg&#34; /&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;journal&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+journal.jpg&#34; /&gt;
-
-&lt;/div&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+journal.jpg&#34; /&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;mail&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+mail.jpg&#34; /&gt;
-
-&lt;/div&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+mail2.png&#34; /&gt;
-
-&lt;/div&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+mail.jpg&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+mail2.png&#34; /&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;poem&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+poem.jpg&#34; /&gt;
-
-&lt;/div&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+poem.jpg&#34; /&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;thesis_classic&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+thesis_classic.jpg&#34; /&gt;
-
-&lt;/div&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+thesis_classic.jpg&#34; /&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;thesis_ubt&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+thesis_ubt.jpg&#34; /&gt;
-
-&lt;/div&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+thesis_ubt.jpg&#34; /&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;thesis_zju&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+thesis_zju.jpg&#34; /&gt;
-
-&lt;/div&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+thesis_zju.jpg&#34; /&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;yihui_demo&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+yihui_demo.jpg&#34; /&gt;
-
-&lt;/div&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+yihui_demo.jpg&#34; /&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;yihui_mini&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+yihui_mini.jpg&#34; /&gt;
-
-&lt;/div&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+yihui_mini.jpg&#34; /&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;yihui_zh&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+yihui_zh.jpg&#34; /&gt;
-
-&lt;/div&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+yihui_zh.jpg&#34; /&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;poster&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+poster_ocean.jpg&#34; /&gt;
-
-&lt;/div&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+poster_eco.jpg&#34; /&gt;
-
-&lt;/div&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+poster_ocean.jpg&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+poster_eco.jpg&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;section level2&#34;&gt;
 &lt;h2&gt;更新记录&lt;/h2&gt;
@@ -469,10 +398,10 @@ install.packages(&amp;#39;pinyin&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>R bookdown&#43;: 用 R bookdown 写期刊论文、日记、信件、日历、吉他书、化学方程式</title>
-      <link>http://www.pzhao.org/zh/post/bookdown-plus/</link>
+      <link>/zh/post/bookdown-plus/</link>
       <pubDate>Tue, 09 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/zh/post/bookdown-plus/</guid>
+      <guid>/zh/post/bookdown-plus/</guid>
       <description>&lt;p&gt;&lt;strong&gt;注意：本文所述的&lt;code&gt;bookdown+&lt;/code&gt;这个项目已经停止开发，继承者是我新开的R包项目&lt;a href=&#34;https://github.com/pzhaonet/bookdownplus&#34;&gt;bookdownplus&lt;/a&gt; ，这是因为我学会了写R包。当然，说不定有些朋友不喜欢安装R包，喜欢下载个文件夹直接免安装用，那么本文所述的方法仍然可以继续使用，只是我不再更新了而已。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;R bookdown 能做的事情很多，可是那些功能迟迟不来，我只好自己动手，写了个 &lt;a href=&#34;https://github.com/pzhaonet/bookdown-plus&#34;&gt;bookdown+&lt;/a&gt;，目前大体实现了用 bookdown 写期刊论文、化学分子式、信件、日记、日历等功能。当然，有些还没完全实现，革命不够彻底，带着浓重的&lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt;旧社会的气息。革命尚未成功，同志仍需努力。&lt;/p&gt;
 &lt;p&gt;下面是 &lt;a href=&#34;https://github.com/pzhaonet/bookdown-plus&#34;&gt;bookdown+&lt;/a&gt; 的简介和快速使用方法。&lt;/p&gt;
@@ -537,133 +466,79 @@ template &amp;lt;- templates[8]&lt;/code&gt;&lt;/pre&gt;
 &lt;ul&gt;
 &lt;li&gt;article&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+article.jpg&#34; /&gt;
-
-&lt;/div&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+article.jpg&#34; /&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;article_mdpi1&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+article_mdpi.jpg&#34; /&gt;
-
-&lt;/div&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+article_mdpi.jpg&#34; /&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;article_zh&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+article_zh.jpg&#34; /&gt;
-
-&lt;/div&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+article_zh.jpg&#34; /&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;calendar&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+calendar.jpg&#34; /&gt;
-
-&lt;/div&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+calendar.jpg&#34; /&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;chemistry&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+chemistry.jpg&#34; /&gt;
-
-&lt;/div&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+chemistry.jpg&#34; /&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;guitar&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+guitar.jpg&#34; /&gt;
-
-&lt;/div&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+guitar.jpg&#34; /&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;journal&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+journal.jpg&#34; /&gt;
-
-&lt;/div&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+journal.jpg&#34; /&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;mail&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+mail.jpg&#34; /&gt;
-
-&lt;/div&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+mail2.png&#34; /&gt;
-
-&lt;/div&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+mail.jpg&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+mail2.png&#34; /&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;poem&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+poem.jpg&#34; /&gt;
-
-&lt;/div&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+poem.jpg&#34; /&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;thesis_classic&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+thesis_classic.jpg&#34; /&gt;
-
-&lt;/div&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+thesis_classic.jpg&#34; /&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;thesis_ubt&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+thesis_ubt.jpg&#34; /&gt;
-
-&lt;/div&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+thesis_ubt.jpg&#34; /&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;thesis_zju&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+thesis_zju.jpg&#34; /&gt;
-
-&lt;/div&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+thesis_zju.jpg&#34; /&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;yihui_demo&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+yihui_demo.jpg&#34; /&gt;
-
-&lt;/div&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+yihui_demo.jpg&#34; /&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;yihui_mini&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+yihui_mini.jpg&#34; /&gt;
-
-&lt;/div&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+yihui_mini.jpg&#34; /&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;yihui_zh&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+yihui_zh.jpg&#34; /&gt;
-
-&lt;/div&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+yihui_zh.jpg&#34; /&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;poster&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+poster_ocean.jpg&#34; /&gt;
-
-&lt;/div&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+poster_eco.jpg&#34; /&gt;
-
-&lt;/div&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+poster_ocean.jpg&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+poster_eco.jpg&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 </description>
     </item>
     
     <item>
       <title>用 R bookdown 写吉他谱</title>
-      <link>http://www.pzhao.org/archives/19291</link>
+      <link>/archives/19291</link>
       <pubDate>Thu, 06 Apr 2017 09:15:36 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/archives/19291</guid>
+      <guid>/archives/19291</guid>
       <description>&lt;p&gt;前情提要：&lt;/p&gt;
 
 &lt;ul&gt;
@@ -725,10 +600,10 @@ template &amp;lt;- templates[8]&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>来，跟我一起玩泥巴</title>
-      <link>http://www.pzhao.org/archives/19276</link>
+      <link>/archives/19276</link>
       <pubDate>Fri, 31 Mar 2017 03:32:33 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/archives/19276</guid>
+      <guid>/archives/19276</guid>
       <description>&lt;p&gt;去年五月份，跟坛子君一起开始&lt;a href=&#34;http://pzhao.org/archives/18799&#34; target=&#34;_blank&#34;&gt;玩微信公众号&lt;/a&gt;。这个生猛的小伙伴获得原创保护功能只用了11天，获得赞赏功能只用了20天。而我硬挺了大概两个月，除了几十的订阅量让人感到欣慰外，没有获得其他实质性进展。这就好比&lt;a href=&#34;http://cn.derekyang.us/google/#comment-1606&#34; target=&#34;_blank&#34;&gt;Derek在博客说&lt;/a&gt;google“美国”搜到的结果里他的美国攻略排第5，我就google了一下“德国”想看看自己的博客排第几，结果&amp;#8230;&amp;#8230;跟猛人PK，就是自取其辱。&lt;/p&gt;
 
 &lt;p&gt;这样懒散了八个月，2月9号下午，我在博客上&lt;a href=&#34;http://pzhao.org/archives/19083&#34; target=&#34;_blank&#34;&gt;抱怨&lt;/a&gt;了一下，然后，原创保护就突然开通了！&lt;/p&gt;
@@ -783,10 +658,10 @@ template &amp;lt;- templates[8]&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>用 R bookdown 写学术论文</title>
-      <link>http://www.pzhao.org/archives/19190</link>
+      <link>/archives/19190</link>
       <pubDate>Fri, 24 Mar 2017 09:53:23 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/archives/19190</guid>
+      <guid>/archives/19190</guid>
       <description>&lt;p&gt;&lt;em&gt;1&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;最近，我使用 R 语言的 bookdown 扩展包接连做了三件事：先是整理出一本跟 &lt;a href=&#34;http://pzhao.org/archives/19122&#34; target=&#34;_blank&#34;&gt;R 语言有关的书&lt;/a&gt;，然后把博客的帖子整理出一本&lt;a href=&#34;http://pzhao.org/archives/19150&#34; target=&#34;_blank&#34;&gt;纯文本的中文书&lt;/a&gt;，这两天我又在用它来写一篇打算投稿的学术期刊论文。&lt;/p&gt;
@@ -846,10 +721,10 @@ bookdown::html_document2: default
     
     <item>
       <title>R bookdown 写学术论文</title>
-      <link>http://www.pzhao.org/zh/post/r-bookdown/</link>
+      <link>/zh/post/r-bookdown/</link>
       <pubDate>Fri, 24 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/zh/post/r-bookdown/</guid>
+      <guid>/zh/post/r-bookdown/</guid>
       <description>&lt;p&gt;&lt;em&gt;1&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;最近，我使用 R 语言的 bookdown 扩展包接连做了三件事：先是整理出一本跟&lt;a href=&#34;http://dapengde.com/archives/19122&#34; target=&#34;_blank&#34;&gt; R 语言有关的书&lt;/a&gt;，然后把博客的帖子整理出一本&lt;a href=&#34;http://dapengde.com/archives/19150&#34; target=&#34;_blank&#34;&gt;纯文本的中文书&lt;/a&gt;，这两天我又在用它来写一篇打算投稿的学术期刊论文。&lt;/p&gt;
@@ -907,10 +782,10 @@ bookdown::html_document2: default
     
     <item>
       <title>如果用bookdown来写诗集</title>
-      <link>http://www.pzhao.org/archives/19150</link>
+      <link>/archives/19150</link>
       <pubDate>Wed, 15 Mar 2017 14:21:56 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/archives/19150</guid>
+      <guid>/archives/19150</guid>
       <description>&lt;p&gt;update-2017-07-03：&lt;a href=&#34;http://www.pzhao.org/zh/post/bookdownplus-released/&#34; target=&#34;_blank&#34;&gt;bookdownplus&lt;/a&gt;包里附带了诗集模板，可以用bookdown制作下图这样的诗集：&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/pzhaonet/bookdownplus/master/inst/showcase/bookdownplus_poem.jpg&#34; alt=&#34;enter image description here&#34; /&gt;&lt;/p&gt;
@@ -994,10 +869,10 @@ bookdown::html_document2: default
     
     <item>
       <title>R bookdown 快速入门和语法速查</title>
-      <link>http://www.pzhao.org/archives/19141</link>
+      <link>/archives/19141</link>
       <pubDate>Wed, 15 Mar 2017 07:29:47 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/archives/19141</guid>
+      <guid>/archives/19141</guid>
       <description>&lt;div class=&#34;section level2&#34;&gt;
   &lt;h2&gt;
     快速开始&lt;br /&gt;
@@ -1525,10 +1400,10 @@ I like Eq. \@ref(eq:mc2) so much that I am falling love with her.&lt;/code&gt;&l
     
     <item>
       <title>不可挡的bookdown</title>
-      <link>http://www.pzhao.org/archives/19122</link>
+      <link>/archives/19122</link>
       <pubDate>Tue, 14 Mar 2017 14:36:57 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/archives/19122</guid>
+      <guid>/archives/19122</guid>
       <description>&lt;p&gt;最近，我打算把博客上关于R语言的帖子整理成一本书，希望弄得帅气一点，整齐一点，将来容易维护一点。涌进脑子的第一个念头是 &lt;span class=&#34;math inline&#34;&gt;(\LaTeX)&lt;/span&gt; ，第二个念头是想吐。&lt;/p&gt;
 
 &lt;p&gt;是的，虽然我推崇 &lt;span class=&#34;math inline&#34;&gt;(\LaTeX)&lt;/span&gt; ，觉得这个工具排出来的文档很漂亮，但自从弄完博士论文&lt;a href=&#34;#fn1&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;{#fnref1.footnoteRef} 之后，除了帮别人备份一下博客&lt;a href=&#34;#fn2&#34;&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;{#fnref2.footnoteRef} 、往论文里插几个公式和玩玩吉他谱&lt;a href=&#34;#fn3&#34;&gt;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt;{#fnref3.footnoteRef}，我再也没碰过她。惰性开始代替折腾，我宁可点点鼠标写出一份不太美观的Word文档，也不想面对 &lt;span class=&#34;math inline&#34;&gt;(\LaTeX)&lt;/span&gt; 那让人头疼的代码。大概我是真上了岁数罢。&lt;/p&gt;
@@ -1749,10 +1624,10 @@ I like Eq. (@eq-mc) so much that I am falling love with her.
     
     <item>
       <title>R bookdown 语法标记速查</title>
-      <link>http://www.pzhao.org/zh/post/bookdown-cheatsheet/</link>
+      <link>/zh/post/bookdown-cheatsheet/</link>
       <pubDate>Tue, 14 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/zh/post/bookdown-cheatsheet/</guid>
+      <guid>/zh/post/bookdown-cheatsheet/</guid>
       <description>&lt;div class=&#34;section level2&#34;&gt;
 &lt;h2&gt;快速开始&lt;/h2&gt;
 &lt;div id=&#34;r-bookdown-&#34; class=&#34;section level3&#34;&gt;
@@ -1966,9 +1841,7 @@ E = mc^2
 \end{equation} 
 
 I like Eq. \@ref(eq:mc2) so much that I am falling love with her.&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div class=&#34;section level2&#34;&gt;
-&lt;h2&gt;更进一步&lt;/h2&gt;
+&lt;p&gt;##更进一步&lt;/p&gt;
 &lt;p&gt;bookdown的详细介绍见&lt;a href=&#34;https://bookdown.org/yihui/bookdown/&#34;&gt;使用手册&lt;/a&gt;。我的使用体验写成了三篇帖子：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://dapengde.com/archives/19122&#34;&gt;用bookdown写书&lt;/a&gt;&lt;/li&gt;
@@ -1981,12 +1854,12 @@ I like Eq. \@ref(eq:mc2) so much that I am falling love with her.&lt;/code&gt;&l
     
     <item>
       <title>不可挡的bookdown</title>
-      <link>http://www.pzhao.org/zh/post/inresistible-bookdown/</link>
+      <link>/zh/post/inresistible-bookdown/</link>
       <pubDate>Mon, 13 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/zh/post/inresistible-bookdown/</guid>
+      <guid>/zh/post/inresistible-bookdown/</guid>
       <description>&lt;p&gt;最近，我打算把博客上关于R语言的帖子整理成一本书，希望弄得帅气一点，整齐一点，将来容易维护一点。涌进脑子的第一个念头是 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; ，第二个念头是想吐。&lt;/p&gt;
-&lt;p&gt;是的，虽然我推崇 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; ，觉得这个工具排出来的文档很漂亮，但自从弄完博士论文&lt;a href=&#34;#fn1&#34; class=&#34;footnoteRef&#34; id=&#34;fnref1&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; 之后，除了帮别人备份一下博客&lt;a href=&#34;#fn2&#34; class=&#34;footnoteRef&#34; id=&#34;fnref2&#34;&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt; 、往论文里插几个公式和玩玩吉他谱&lt;a href=&#34;#fn3&#34; class=&#34;footnoteRef&#34; id=&#34;fnref3&#34;&gt;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt;，我再也没碰过她。惰性开始代替折腾，我宁可点点鼠标写出一份不太美观的Word文档，也不想面对 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; 那让人头疼的代码。大概我是真上了岁数罢。&lt;/p&gt;
+&lt;p&gt;是的，虽然我推崇 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; ，觉得这个工具排出来的文档很漂亮，但自从弄完博士论文&lt;a href=&#34;#fn1&#34; class=&#34;footnote-ref&#34; id=&#34;fnref1&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; 之后，除了帮别人备份一下博客&lt;a href=&#34;#fn2&#34; class=&#34;footnote-ref&#34; id=&#34;fnref2&#34;&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt; 、往论文里插几个公式和玩玩吉他谱&lt;a href=&#34;#fn3&#34; class=&#34;footnote-ref&#34; id=&#34;fnref3&#34;&gt;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt;，我再也没碰过她。惰性开始代替折腾，我宁可点点鼠标写出一份不太美观的Word文档，也不想面对 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; 那让人头疼的代码。大概我是真上了岁数罢。&lt;/p&gt;
 &lt;p&gt;对于 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt;，我想自己的内心深处是怀有恐惧的。她的美丽让我着迷，她的复杂令人生畏。&lt;/p&gt;
 &lt;p&gt;所以，这次整理博客，我决定在Word里做。用了这么多年，对Word的秉性我算是略知一二，从一开始就用主控文档和子文档的方式管理，以防单个文档太大而死机；从标题到R代码，我预先都设置好了样式以及样式的快捷键，方便调整格式；每写几句话，就左手抽筋一样ctrl+s一下，以防万一。其间，发现帖子里有些R代码要修改调试，我就咬牙忍着在RStudio和Word之间频繁拷贝粘贴的煎熬。反正换回 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; 也是一样想吐，既来之则安之，嫁鸡随鸡嫁狗随狗吧。&lt;/p&gt;
 &lt;p&gt;我天真地以为，这样就万无一失了。&lt;/p&gt;
@@ -2002,7 +1875,7 @@ I like Eq. \@ref(eq:mc2) so much that I am falling love with her.&lt;/code&gt;&l
 &lt;p class=&#34;caption&#34;&gt;我用bookdown生成的书稿&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;一种亲切之美扑面而来，我感到无法抗拒无法阻挡。有了bookdown在手，写东西我还需要别的什么呢？想来想去，我不需要别的了。在Word和&lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; 之间摇摆了十来年，到头来才发现bookdown才是真爱。&lt;/p&gt;
-&lt;p&gt;不过，bookdown绝非完美。如果不了解rmarkdown&lt;span class=&#34;citation&#34;&gt;(Allaire et al. 2017)&lt;/span&gt;，没见过 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; ，没听过pandoc，没用过knitr &lt;span class=&#34;citation&#34;&gt;(Xie 2016c)&lt;/span&gt;&lt;span class=&#34;citation&#34;&gt;(Xie 2015)&lt;/span&gt;&lt;span class=&#34;citation&#34;&gt;(Xie 2014)&lt;/span&gt;，那么bookdown对新手来说，门槛仍然有点高。幸运的是，这几样工具我都用过，那么投入bookdown的怀抱就属于水到渠成了。即便如此，在使用初期仍然遇到了一些难以解决的问题，好在有bookdown的开发者益辉同学&lt;a href=&#34;#fn4&#34; class=&#34;footnoteRef&#34; id=&#34;fnref4&#34;&gt;&lt;sup&gt;4&lt;/sup&gt;&lt;/a&gt; 和其他同道中人热心地提供帮助，才能一路披荆斩棘，最后走上了幸福的康庄大道。&lt;/p&gt;
+&lt;p&gt;不过，bookdown绝非完美。如果不了解rmarkdown&lt;span class=&#34;citation&#34;&gt;(Allaire et al. 2017)&lt;/span&gt;，没见过 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; ，没听过pandoc，没用过knitr &lt;span class=&#34;citation&#34;&gt;(Xie 2016c)&lt;/span&gt;&lt;span class=&#34;citation&#34;&gt;(Xie 2015)&lt;/span&gt;&lt;span class=&#34;citation&#34;&gt;(Xie 2014)&lt;/span&gt;，那么bookdown对新手来说，门槛仍然有点高。幸运的是，这几样工具我都用过，那么投入bookdown的怀抱就属于水到渠成了。即便如此，在使用初期仍然遇到了一些难以解决的问题，好在有bookdown的开发者益辉同学&lt;a href=&#34;#fn4&#34; class=&#34;footnote-ref&#34; id=&#34;fnref4&#34;&gt;&lt;sup&gt;4&lt;/sup&gt;&lt;/a&gt; 和其他同道中人热心地提供帮助，才能一路披荆斩棘，最后走上了幸福的康庄大道。&lt;/p&gt;
 &lt;p&gt;下面，我把我那些散落在各处的提问和解决方法汇总在这里。&lt;/p&gt;
 &lt;ol style=&#34;list-style-type: decimal&#34;&gt;
 &lt;li&gt;编译&lt;/li&gt;
@@ -2011,7 +1884,7 @@ I like Eq. \@ref(eq:mc2) so much that I am falling love with her.&lt;/code&gt;&l
 &lt;p&gt;bookdown是可以直接导出为word文档的。这么重要的功能，却隐藏得很深，在官方文档里都没有强调。导出方法是，在_output.yml里添加一行：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;bookdown::word_document2: default &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;注意，&lt;code&gt;default&lt;/code&gt;这个词是不能少的，不管它是不是默认。我也不知道为什么。&lt;/p&gt;
-&lt;p&gt;导出的word文档相当令人满意，参考文献的版式、图表的交叉引用都堪称完美。唯一不足之处，是公式的编号和交叉引用。bookdown的官方文档&lt;a href=&#34;#fn5&#34; class=&#34;footnoteRef&#34; id=&#34;fnref5&#34;&gt;&lt;sup&gt;5&lt;/sup&gt;&lt;/a&gt;给出的公式书写方案是，利用 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; 的公式环境来编号和引用，这一点在生成pdf时没问题，但生成word时，会发现别说编号，连公式本身都消失了。这大概是因为pandoc未能将公式环境正确转换的缘故。解决办法是，不使用公式环境，而使用行内公式（即公式前后有一个美元符号），公式前面用圆括号里加公式标签就可以了。例如，输入：&lt;/p&gt;
+&lt;p&gt;导出的word文档相当令人满意，参考文献的版式、图表的交叉引用都堪称完美。唯一不足之处，是公式的编号和交叉引用。bookdown的官方文档^[&lt;a href=&#34;https://bookdown.org/yihui/bookdown/&#34; class=&#34;uri&#34;&gt;https://bookdown.org/yihui/bookdown/&lt;/a&gt;]给出的公式书写方案是，利用 &lt;span class=&#34;math inline&#34;&gt;\(\LaTeX\)&lt;/span&gt; 的公式环境来编号和引用，这一点在生成pdf时没问题，但生成word时，会发现别说编号，连公式本身都消失了。这大概是因为pandoc未能将公式环境正确转换的缘故。解决办法是，不使用公式环境，而使用行内公式（即公式前后有一个美元符号），公式前面用圆括号里加公式标签就可以了。例如，输入：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;(@eq-mc) $E = mc^2$
 
 I like Eq. (@eq-mc) so much that I am falling love with her.&lt;/code&gt;&lt;/pre&gt;
@@ -2023,7 +1896,7 @@ I like Eq. (@eq-mc) so much that I am falling love with her.&lt;/code&gt;&lt;/pr
 &lt;ol start=&#34;2&#34; style=&#34;list-style-type: decimal&#34;&gt;
 &lt;li&gt;中文支持&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;益辉专门为中文弄了个bookdown的中文示例文档&lt;a href=&#34;#fn6&#34; class=&#34;footnoteRef&#34; id=&#34;fnref6&#34;&gt;&lt;sup&gt;6&lt;/sup&gt;&lt;/a&gt;，编译需要的tex文件全都写好了，简直太体贴。我照猫画虎，却意外出现了编译错误，后来把preamble.tex的15到27行删掉，把index.Rmd里的 &lt;code&gt;colorlinks: yes&lt;/code&gt; 改为 no，中文文档就华丽丽地编译出来了。&lt;/p&gt;
+&lt;p&gt;益辉专门为中文弄了个bookdown的中文示例文档&lt;a href=&#34;#fn5&#34; class=&#34;footnote-ref&#34; id=&#34;fnref5&#34;&gt;&lt;sup&gt;5&lt;/sup&gt;&lt;/a&gt;，编译需要的tex文件全都写好了，简直太体贴。我照猫画虎，却意外出现了编译错误，后来把preamble.tex的15到27行删掉，把index.Rmd里的 &lt;code&gt;colorlinks: yes&lt;/code&gt; 改为 no，中文文档就华丽丽地编译出来了。&lt;/p&gt;
 &lt;p&gt;其间还出过其他的意外。我Windows的区域设置是German(Austria)，导致导出的文档里有乱码，只要把区域设置改为Chinese(PRC)就解决了大部分的乱码问题了。如果仍然有没解决的，那么将所有能设置编码的地方就全部设置成UTF-8，例如&lt;code&gt;readLines()&lt;/code&gt;函数的encoding参数，&lt;code&gt;writeLines()&lt;/code&gt;的useBytes参数等。&lt;/p&gt;
 &lt;p&gt;bookdown默认是按章节标题来生成网页文件名称，纯英文标题和纯中文标题都没问题，但对中英混合的标题，bookdown会只取其中的英文部分为html文件命名。如果每个章节标题里都有个R字母，那么生成的html文件就都叫R.html，编译时就会报错。解决办法是给heading添加{#ID}，让编译生成的html文件以此ID命名。解决是解决了，但又出现无编号章节标题{#ID} 和{-}共存问题。这就不知道怎么搜了，只好继续骚扰益辉，得到的答案是 &lt;code&gt;{#identifier .unnumbered}&lt;/code&gt;。我就拿这个答案一搜，原来这一条明明白白写在pandoc的技术文档里，惭愧。&lt;/p&gt;
 &lt;ol start=&#34;3&#34; style=&#34;list-style-type: decimal&#34;&gt;
@@ -2078,12 +1951,11 @@ I like Eq. (@eq-mc) so much that I am falling love with her.&lt;/code&gt;&lt;/pr
 &lt;div class=&#34;footnotes&#34;&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
-&lt;li id=&#34;fn1&#34;&gt;&lt;p&gt;&lt;a href=&#34;http://dapengde.com/archives/17095&#34; class=&#34;uri&#34;&gt;http://dapengde.com/archives/17095&lt;/a&gt;&lt;a href=&#34;#fnref1&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li id=&#34;fn2&#34;&gt;&lt;p&gt;&lt;a href=&#34;http://dapengde.com/archives/16906&#34; class=&#34;uri&#34;&gt;http://dapengde.com/archives/16906&lt;/a&gt;&lt;a href=&#34;#fnref2&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li id=&#34;fn3&#34;&gt;&lt;p&gt;&lt;a href=&#34;http://dapengde.com/archives/18230&#34; class=&#34;uri&#34;&gt;http://dapengde.com/archives/18230&lt;/a&gt;&lt;a href=&#34;#fnref3&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li id=&#34;fn4&#34;&gt;&lt;p&gt;&lt;a href=&#34;https://yihui.name/cn/&#34; class=&#34;uri&#34;&gt;https://yihui.name/cn/&lt;/a&gt;&lt;a href=&#34;#fnref4&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li id=&#34;fn5&#34;&gt;&lt;p&gt;&lt;a href=&#34;https://bookdown.org/yihui/bookdown/&#34; class=&#34;uri&#34;&gt;https://bookdown.org/yihui/bookdown/&lt;/a&gt;&lt;a href=&#34;#fnref5&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li id=&#34;fn6&#34;&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/yihui/bookdown-chinese&#34; class=&#34;uri&#34;&gt;https://github.com/yihui/bookdown-chinese&lt;/a&gt;&lt;a href=&#34;#fnref6&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id=&#34;fn1&#34;&gt;&lt;p&gt;&lt;a href=&#34;http://dapengde.com/archives/17095&#34; class=&#34;uri&#34;&gt;http://dapengde.com/archives/17095&lt;/a&gt;&lt;a href=&#34;#fnref1&#34; class=&#34;footnote-back&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id=&#34;fn2&#34;&gt;&lt;p&gt;&lt;a href=&#34;http://dapengde.com/archives/16906&#34; class=&#34;uri&#34;&gt;http://dapengde.com/archives/16906&lt;/a&gt;&lt;a href=&#34;#fnref2&#34; class=&#34;footnote-back&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id=&#34;fn3&#34;&gt;&lt;p&gt;&lt;a href=&#34;http://dapengde.com/archives/18230&#34; class=&#34;uri&#34;&gt;http://dapengde.com/archives/18230&lt;/a&gt;&lt;a href=&#34;#fnref3&#34; class=&#34;footnote-back&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id=&#34;fn4&#34;&gt;&lt;p&gt;&lt;a href=&#34;https://yihui.name/cn/&#34; class=&#34;uri&#34;&gt;https://yihui.name/cn/&lt;/a&gt;&lt;a href=&#34;#fnref4&#34; class=&#34;footnote-back&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id=&#34;fn5&#34;&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/yihui/bookdown-chinese&#34; class=&#34;uri&#34;&gt;https://github.com/yihui/bookdown-chinese&lt;/a&gt;&lt;a href=&#34;#fnref5&#34; class=&#34;footnote-back&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
 </description>

@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Writing on Peng Zhao</title>
-    <link>http://www.pzhao.org/zh/tags/writing/index.xml</link>
+    <link>/zh/tags/writing/index.xml</link>
     <description>Recent content in Writing on Peng Zhao</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
@@ -11,10 +11,10 @@
     
     <item>
       <title>《三体》第一部为啥读起来不够好 (无剧透) The three-body problem</title>
-      <link>http://www.pzhao.org/zh/post/the-three-body-problem/</link>
+      <link>/zh/post/the-three-body-problem/</link>
       <pubDate>Tue, 24 Oct 2017 12:50:39 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/zh/post/the-three-body-problem/</guid>
+      <guid>/zh/post/the-three-body-problem/</guid>
       <description>&lt;p&gt;原文链接: &lt;a href=&#34;https://steemit.com/cn-book/@dapeng/the-three-body-problem&#34; target=&#34;_blank&#34;&gt;steemit&lt;/a&gt;, &lt;a href=&#34;https://cnsteem.com/cn-book/@dapeng/the-three-body-problem&#34; target=&#34;_blank&#34;&gt;cnsteem&lt;/a&gt;, &lt;a href=&#34;https://chainbb.com/cn-book/@dapeng/the-three-body-problem&#34; target=&#34;_blank&#34;&gt;chainbb&lt;/a&gt;, &lt;a href=&#34;https://busy.org/cn-book/@dapeng/the-three-body-problem&#34; target=&#34;_blank&#34;&gt;busy&lt;/a&gt;, &lt;a href=&#34;https://raw.githubusercontent.com/pzhaonet/steem_mirror/master/content/post/the-three-body-problem.md&#34; target=&#34;_blank&#34;&gt;markdown&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;昨天，我在『&lt;a href=&#34;https://cnsteem.com/steemit/@dapeng/the-very-first-thing-to-do-for-new-steemians-or-steem#@mrspointm/re-dapeng-the-very-first-thing-to-do-for-new-steemians-or-steem-20171023t133706762z&#34; target=&#34;_blank&#34;&gt;Steem 新手必须做的第一件事&lt;/a&gt; 』一文里谈到如何保存 steem 的密码时，以科幻小说《三体》为例，因为里面讲到，保存资料最安全最长久的办法，是&amp;rdquo;刻在石头上&amp;rdquo;。恰巧 @lemooljiang 的品乐书会也在&lt;a href=&#34;https://cnsteem.com/cn-book/@lemooljiang/12&#34; target=&#34;_blank&#34;&gt;聊《三体》&lt;/a&gt;，认为《三体》第一部读起来比较失望。这部小说我在六年前第一次读过，后来又重温过几遍，同样觉得第一部不够好。这是为什么呢？&lt;/p&gt;
@@ -42,21 +42,15 @@
 &lt;p&gt;听说《三体》要拍成电影了。不知会用何种特效来展示三体人的探测器“水滴”，何种手段来展示降维打击，何种方法来展示从四维空间看三维空间的“无限细节”呢？&lt;/p&gt;
 
 &lt;p&gt;让我们拭目以待。&lt;/p&gt;
-
-&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/0I-zRs8sP3Q&#34; frameborder=&#34;0&#34; allowfullscreen&gt;&lt;/iframe&gt;
-
-&lt;p&gt;Youtube 视频：三年时间制作的14 分钟短片，一镜到底展示三体里的水滴。对原著无剧透。我看到第三遍才看明白，然后击节叫好。然后，不寒而栗。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://steemitimages.com/DQmeYUwQ7Juorgd79o6D5E34BnUYxwfmLxYH4cApgPRhRf6/end2.jpg&#34; alt=&#34;dapeng&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>English Grammar in Use</title>
-      <link>http://www.pzhao.org/zh/post/english-grammar-in-use/</link>
+      <link>/zh/post/english-grammar-in-use/</link>
       <pubDate>Sat, 14 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.pzhao.org/zh/post/english-grammar-in-use/</guid>
+      <guid>/zh/post/english-grammar-in-use/</guid>
       <description>
 
 &lt;p&gt;2009年夏，我刚刚出国读书，被系里临时安排在交流学者的办公室。办公室书架上，竖着几本书无人认领，我就顺手牵羊拿走了唯一的一本英文书。此书叫做《English Grammar in Use》，作者是Raymond Murphy，剑桥大学出版社1985年第一版，1988年第八次印刷。扉页上还印着“仅在俄罗斯和乌克兰出售”。20年前的书，难怪闻起来一股古董味。&lt;/p&gt;
