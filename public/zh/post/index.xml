@@ -147,11 +147,11 @@
 &lt;p&gt;一个替代方案是 &lt;strong&gt;Google Drive&lt;/strong&gt;，免费 15 G 空间。这货最近改名叫 Backup and Sync 了，新名字令人发指。功能上不如 Dropbox，配合用一下也不错。&lt;/p&gt;
 &lt;p&gt;可惜，Google Drive 好像也被墙了。&lt;/p&gt;
 &lt;p&gt;那就&lt;strong&gt;腾讯微云&lt;/strong&gt;或&lt;strong&gt;百度网盘&lt;/strong&gt;（这个名字同样令人发指）吧，我不常用，不评价。好歹是个网盘吧。&lt;/p&gt;
-&lt;p&gt;** 如果文件少，而且是一次性的，那就 email 也行。**&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;如果文件少，而且是一次性的，那就 email 也行。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;但是新的问题来了：如果用网盘或 email，那么文件势必经过中央服务器。如果是隐私文件，你不想在腾讯服务器上留一份吧？&lt;/p&gt;
 &lt;p&gt;嗯，有时候留一份也无妨，加密就行了，例如使用加密邮箱 &lt;strong&gt;protonmail&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;如果文件多，邮箱不方便呢？&lt;/p&gt;
-&lt;p&gt;** 那么可以用点对点的同步工具，例如 resilio sync。**&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;那么可以用点对点的同步工具，例如 resilio sync。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;resilio sync 也是免费跨平台软件。手机、电脑等各个设备上安装一下，设置好各自的同步文件夹，那么只要设备连上网，就自动同步了，不经过中央服务器。&lt;/p&gt;
 &lt;p&gt;但是新的问题来了： resilio sync 不是开源的；他们说没经过中央服务器，你信么？&lt;/p&gt;
 &lt;p&gt;不信的话，可以用替代方案：&lt;strong&gt;syncthing&lt;/strong&gt;。这是我此次微信聊天的最大收获。感谢提供这条方案的朋友。&lt;/p&gt;
