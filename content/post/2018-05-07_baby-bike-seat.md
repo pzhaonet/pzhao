@@ -2,7 +2,7 @@
 title: 旧物断舍离：自行车婴儿座椅
 author: 大鹏
 summary: "必须安装座椅，必须扎紧座椅上的安全带，孩子必须带上头盔。如果不这样，被警察抓住了会罚款。"
-slug: hiking
+slug: baby-bike-seat
 type: post
 date: 2018-05-07T00:00:00+00:00
 tags:
