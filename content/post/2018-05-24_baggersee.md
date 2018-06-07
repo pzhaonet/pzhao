@@ -1,7 +1,7 @@
 ---
 title: 雪山下的夏天
 author: 大鹏
-summary: ""
+summary: "雪山+比基尼，这个组合是不多见的。"
 slug: baggersee
 type: post
 date: 2018-05-24T00:00:00+00:00

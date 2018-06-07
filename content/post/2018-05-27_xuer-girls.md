@@ -1,11 +1,13 @@
 ---
-title: '独狼死，群狼活：R 语言女子学习小组 & 书友之窗'
+title: 独狼死，群狼活：R 语言女子学习小组 & 书友之窗
 author: 大鹏
 date: '2018-05-27'
 slug: xuer-girls
 categories: []
 # tags: ["序言"]
 summary: "独狼死，群狼活。光靠买本书自己啃，哪怕这本书写得像个段子集，她们仍然有半途而废的风险。除非，除非她们组成一支“女子学习小组”，互相帮忙互相敦促……"
+tags:
+- post
 ---
 
 文科女生 @dancingapple 买了《学 R》这本书，[郑重宣告](http://xuer.dapengde.com/post/dancingapple/)开始学习 R 语言。这个圈子里，据我所知，买了这书的还有：
