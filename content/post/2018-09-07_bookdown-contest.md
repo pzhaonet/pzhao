@@ -59,7 +59,7 @@ bookdown 可以输出很多很漂亮的文档格式，然而前提是得预先�
 
 ## 参加方式
 
-详见官方通知。原文是英文。下面我用中文介绍一下。
+详见[官方通知](https://blog.rstudio.com/2018/07/27/first-bookdown-contest/)。原文是英文。下面我用中文介绍一下。
 
 - 简单来说，就是进入 [RStudio 社区]( http://rstd.io/bookdown-contest)， 按指定格式发帖，介绍一下自己参赛的 bookdown 模板或示例。
 - 指定格式的意思是，标题以 “Bookdown contest submission:“ 开头，紧跟着简单介绍一下参赛作品。[这里](https://community.rstudio.com/tags/bookdown-contest)是目前参赛的作品，可以作为示例。

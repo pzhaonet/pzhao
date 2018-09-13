@@ -1,7 +1,7 @@
 +++
 # About/Biography widget.
 
-date = "2016-04-20T00:00:00"
+date = "2018-09-12T00:00:00"
 draft = false
 
 widget = "about"
@@ -37,4 +37,4 @@ weight = 1
 
 # Biography
 
-Peng Zhao is a scientific researcher. He is employed as a post-doc in the Institute of Ecology, University of Innsbruck.
+Peng Zhao is a scientific researcher. He is employed as a post-doc in the Max-Planck-Institute of Chemistry.
