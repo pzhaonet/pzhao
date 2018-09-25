@@ -1,0 +1,68 @@
+---
+title: '几何平均值与几何标准差'
+author: "赵鹏"
+date: '2018-09-25'
+slug: geometric-mean
+summary: "如何合并几何平均值和几何标准差？今天，小师妹问了我这样一个棘手的问题。"
+tags:
+- post
+categories: []
+---
+
+如何合并几何平均值和几何标准差？今天，小师妹问了我这样一个棘手的问题。
+
+这两个概念我从前学过，但从来没用过。于是查了一下[维基百科](https://zh.wikipedia.org/wiki/%E5%87%A0%E4%BD%95%E5%B9%B3%E5%9D%87%E6%95%B0):
+
+> 几何平均数（Geometric mean），是求一组数值的平均数的方法中的一种。适用于对比率数据的平均，并主要用于计算数据平均增长（变化）率。
+
+计算公式是：
+
+$G = \sqrt[n]{\prod_{i = 1}^{n} x_i} = \sqrt[n]{x_1\cdot x_2 \cdot \cdot \cdot x_n}$
+
+而几何标准差的解释是[这样](https://zh.wikipedia.org/wiki/%E5%B9%BE%E4%BD%95%E6%A8%99%E6%BA%96%E5%B7%AE)的：
+
+>  在机率论与统计学中，几何标准差形容一组数值有多分散，用于当这一组数字理应优先选用的平均数为几何平均数之时。对于这类数据，几何标准差可能优于普通的标准差。留意几何标准差是个乘法因数，因此是无量纲的，而不似普通的算术标准差，与输入数值有同样的量纲。
+
+计算公式：
+
+$\sigma = \exp(\sqrt{\frac{\sum_{i = 1}^{n} (\ln \frac{x_i}{G})^2)}{n}})$
+
+这里吐槽一下维基百科：同一个量在不同的页面就不能使用同一个符号来表示吗？害得我这个小白费解了半天。
+
+好了，现在我们来合并两组数据的几何平均值和几何标准差。
+
+### 请听题：
+
+假定：
+
+- 第 1 组数据是 $(x_i, x_2, ... x_n)$, 其几何平均值是 $G_x$，几何标准差是 $\sigma_x$。
+- 第 2 组数据是 $(y_i, y_2, ... y_n)$, 其几何平均值是 $G_y$，几何标准差是 $\sigma_y$。
+
+那么，这两组数据的合集 $(x_i, x_2, ... x_n, y_i, y_2, ... y_n)$ 的几何平均值 $G_{x,y}$ 和几何标准差$\sigma_{x,y}$如何计算？
+
+这是一道初中代数题。下面是推导:
+
+### 几何平均值 $G_{x,y}$：
+
+$G_x = \sqrt[n]{x_1\cdot x_2 \cdot \cdot \cdot x_n} \Rightarrow G_x^n = x_1\cdot x_2 \cdot \cdot \cdot x_n$ (1)
+
+ $G_y = \sqrt[m]{y_1\cdot y_2 \cdot \cdot \cdot y_m} \Rightarrow G_y^m = y_1\cdot y_2 \cdot \cdot \cdot y_m$ (2)
+
+故合集的几何平均值是：
+
+$G_{x,y} = \sqrt[n + m]{x_1\cdot x_2 \cdot \cdot \cdot x_n \cdot y_1\cdot y_2 \cdot \cdot \cdot y_m}  = \sqrt[n + m]{G_x^n \cdot G_y^m}$ (3)
+
+### 几何标准差 $\sigma_{x,y}$：
+
+$\sigma_x = \exp(\sqrt{\frac{\sum_{i = 1}^{n} (\ln \frac{x_i}{G_x})^2)}{n}}) \Rightarrow \Sigma(\ln \frac{x_i}{G_x})^2 = (\ln(\sigma_x))^2 \cdot n$ (4)
+
+$\sigma_y = \exp(\sqrt{\frac{\sum_{i = 1}^{n} (\ln \frac{y_i}{G_y})^2)}{m}}) \Rightarrow \Sigma(\ln \frac{y_i}{G_y}) ^2= (\ln(\sigma_y))^2 \cdot m$ (5)
+
+根据定义：
+
+$\sigma_{x,y} = \exp(\sqrt{\frac{\sum_{i = 1}^{n} (\ln \frac{x_i}{G_x})^2  +\sum_{i = 1}^{m} (\ln \frac{y_i}{G_y})^2)}{n+m}})$ (6)
+
+将 (4) (5) 带入 (6) 即可：
+
+\sigma_{x,y} = \exp(\sqrt{\frac{\sum_{i = 1}^{n} (\ln \frac{x_i}{G_x})^2  +\sum_{i = 1}^{m} (\ln \frac{y_i}{G_y})^2)}{n+m}}) = \exp \sqrt{\frac{(\ln \sigma_x)^2 \cdot n + (\ln \sigma_y)^2 \cdot m}{n + m}} (7)
+
