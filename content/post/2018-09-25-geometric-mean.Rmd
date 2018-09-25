@@ -66,3 +66,8 @@ $\sigma_{x,y} = \exp(\sqrt{\frac{\sum_{i = 1}^{n} (\ln \frac{x_i}{G_x})^2  +\sum
 
 \sigma_{x,y} = \exp(\sqrt{\frac{\sum_{i = 1}^{n} (\ln \frac{x_i}{G_x})^2  +\sum_{i = 1}^{m} (\ln \frac{y_i}{G_y})^2)}{n+m}}) = \exp \sqrt{\frac{(\ln \sigma_x)^2 \cdot n + (\ln \sigma_y)^2 \cdot m}{n + m}} (7)
 
+推导不难，麻烦的是敲公式。
+
+好吧，其实我就是想试试，用 R 语言的 blogdown 写这样一篇带公式的帖子要多久而已。
+
+大约半小时。

@@ -1,0 +1,57 @@
+---
+title: '几何平均值与几何标准差'
+author: "赵鹏"
+date: '2018-09-25'
+slug: geometric-mean
+summary: "如何合并几何平均值和几何标准差？今天，小师妹问了我这样一个棘手的问题。"
+tags:
+- post
+categories: []
+---
+
+
+
+<p>如何合并几何平均值和几何标准差？今天，小师妹问了我这样一个棘手的问题。</p>
+<p>这两个概念我从前学过，但从来没用过。于是查了一下<a href="https://zh.wikipedia.org/wiki/%E5%87%A0%E4%BD%95%E5%B9%B3%E5%9D%87%E6%95%B0">维基百科</a>:</p>
+<blockquote>
+<p>几何平均数（Geometric mean），是求一组数值的平均数的方法中的一种。适用于对比率数据的平均，并主要用于计算数据平均增长（变化）率。</p>
+</blockquote>
+<p>计算公式是：</p>
+<p><span class="math inline">\(G = \sqrt[n]{\prod_{i = 1}^{n} x_i} = \sqrt[n]{x_1\cdot x_2 \cdot \cdot \cdot x_n}\)</span></p>
+<p>而几何标准差的解释是<a href="https://zh.wikipedia.org/wiki/%E5%B9%BE%E4%BD%95%E6%A8%99%E6%BA%96%E5%B7%AE">这样</a>的：</p>
+<blockquote>
+<p>在机率论与统计学中，几何标准差形容一组数值有多分散，用于当这一组数字理应优先选用的平均数为几何平均数之时。对于这类数据，几何标准差可能优于普通的标准差。留意几何标准差是个乘法因数，因此是无量纲的，而不似普通的算术标准差，与输入数值有同样的量纲。</p>
+</blockquote>
+<p>计算公式：</p>
+<p><span class="math inline">\(\sigma = \exp(\sqrt{\frac{\sum_{i = 1}^{n} (\ln \frac{x_i}{G})^2)}{n}})\)</span></p>
+<p>这里吐槽一下维基百科：同一个量在不同的页面就不能使用同一个符号来表示吗？害得我这个小白费解了半天。</p>
+<p>好了，现在我们来合并两组数据的几何平均值和几何标准差。</p>
+<div class="section level3">
+<h3>请听题：</h3>
+<p>假定：</p>
+<ul>
+<li>第 1 组数据是 <span class="math inline">\((x_i, x_2, ... x_n)\)</span>, 其几何平均值是 <span class="math inline">\(G_x\)</span>，几何标准差是 <span class="math inline">\(\sigma_x\)</span>。</li>
+<li>第 2 组数据是 <span class="math inline">\((y_i, y_2, ... y_n)\)</span>, 其几何平均值是 <span class="math inline">\(G_y\)</span>，几何标准差是 <span class="math inline">\(\sigma_y\)</span>。</li>
+</ul>
+<p>那么，这两组数据的合集 <span class="math inline">\((x_i, x_2, ... x_n, y_i, y_2, ... y_n)\)</span> 的几何平均值 <span class="math inline">\(G_{x,y}\)</span> 和几何标准差<span class="math inline">\(\sigma_{x,y}\)</span>如何计算？</p>
+<p>这是一道初中代数题。下面是推导:</p>
+</div>
+<div id="-g_xy" class="section level3">
+<h3>几何平均值 <span class="math inline">\(G_{x,y}\)</span>：</h3>
+<p><span class="math inline">\(G_x = \sqrt[n]{x_1\cdot x_2 \cdot \cdot \cdot x_n} \Rightarrow G_x^n = x_1\cdot x_2 \cdot \cdot \cdot x_n\)</span> (1)</p>
+<p><span class="math inline">\(G_y = \sqrt[m]{y_1\cdot y_2 \cdot \cdot \cdot y_m} \Rightarrow G_y^m = y_1\cdot y_2 \cdot \cdot \cdot y_m\)</span> (2)</p>
+<p>故合集的几何平均值是：</p>
+<p><span class="math inline">\(G_{x,y} = \sqrt[n + m]{x_1\cdot x_2 \cdot \cdot \cdot x_n \cdot y_1\cdot y_2 \cdot \cdot \cdot y_m} = \sqrt[n + m]{G_x^n \cdot G_y^m}\)</span> (3)</p>
+</div>
+<div id="-sigma_xy" class="section level3">
+<h3>几何标准差 <span class="math inline">\(\sigma_{x,y}\)</span>：</h3>
+<p><span class="math inline">\(\sigma_x = \exp(\sqrt{\frac{\sum_{i = 1}^{n} (\ln \frac{x_i}{G_x})^2)}{n}}) \Rightarrow \Sigma(\ln \frac{x_i}{G_x})^2 = (\ln(\sigma_x))^2 \cdot n\)</span> (4)</p>
+<p><span class="math inline">\(\sigma_y = \exp(\sqrt{\frac{\sum_{i = 1}^{n} (\ln \frac{y_i}{G_y})^2)}{m}}) \Rightarrow \Sigma(\ln \frac{y_i}{G_y}) ^2= (\ln(\sigma_y))^2 \cdot m\)</span> (5)</p>
+<p>根据定义：</p>
+<p><span class="math inline">\(\sigma_{x,y} = \exp(\sqrt{\frac{\sum_{i = 1}^{n} (\ln \frac{x_i}{G_x})^2 +\sum_{i = 1}^{m} (\ln \frac{y_i}{G_y})^2)}{n+m}})\)</span> (6)</p>
+<p>将 (4) (5) 带入 (6) 即可：</p>
+<p>_{x,y} = () =  (7)</p>
+<p>推导不难，麻烦的是敲公式。</p>
+<p>好吧，其实我就是想试试，用 R 语言的 blogdown 写这样一篇带公式的帖子要多久而已。</p>
+<p>大约半小时。</p>
+</div>

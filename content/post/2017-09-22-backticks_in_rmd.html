@@ -24,7 +24,10 @@ categories: []
 </blockquote>
 <div id="-1--" class="section level3">
 <h3>第 1 层意思，那个小撇 `，它到底叫什么？总不能总叫“小撇”吧？</h3>
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/KB_Germany.svg/550px-KB_Germany.svg.png" /></p>
+<div class="figure">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/KB_Germany.svg/550px-KB_Germany.svg.png" />
+
+</div>
 <p>我用的是德语键盘，挪，就是上图第一行右起第二个键的上面那个小可爱。</p>
 <p>查<a href="https://en.wikipedia.org/wiki/Grave_accent">维基百科</a>才知道，` 的学名叫 <em>Grave accent</em> ，中文叫“重音符”。在程序猿的世界里，它又被称作 <em>backquote</em> 或 <em>backtick</em>，中文叫反引号。所以，跟这个有关的问题可以这么问：</p>
 <p><a href="https://meta.stackexchange.com/questions/82718/how-do-i-escape-a-backtick-in-markdown">How do I escape a backtick ` in Markdown?</a></p>
@@ -53,7 +56,7 @@ categories: []
 <div id="-5--4-" class="section level3">
 <h3>第 5 层意思，怎么在第 4 层意思的基础上再加两个反引号，并显示成粉底红字，即</h3>
 <p><code>`r pi`</code></p>
-<p>我现在用的方法是：`<code>``  ``</code>r ‘60r pi60’` `` `` ``</p>
+<p>我现在用的方法是：<code>``</code> <code>r '\x60r pi\x60'</code> <code>``</code></p>
 <p>这个 <code>\x60</code> 就是反引号。相当于把反引号弄到字符串里处理。</p>
 </div>
 <div id="-6-" class="section level3">

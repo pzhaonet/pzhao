@@ -18,7 +18,10 @@ output: #md_document
 
 
 <p>又一次高兴地宣布, 我的 R 语言扩展包 ‘beginr’ <span class="citation">(Zhao 2017a)</span> 在 CRAN <a href="https://cran.r-project.org/web/packages/beginr/">正式发布</a>了.</p>
-<p><img src="http://cranlogs.r-pkg.org/badges/grand-total/beginr" /></p>
+<div class="figure">
+<img src="http://cranlogs.r-pkg.org/badges/grand-total/beginr" />
+
+</div>
 <div class="section level1">
 <h1>简介</h1>
 <p><code>beginr</code>是我为 R 语言初学者和自己写的工具包, 是我这些年来收集和自己编写的一些简化操作的函数和备忘录, 可能对中级用户也有帮助. 其实这个包的文档我写得不够详细, 有些函数还没来及整理进去, 之所以匆匆发布, 是想先把 ‘beginr’ 这个名字给占住. 毕竟, 我中意的名字如 ‘learnr’, ’startr’都被别人用过了.</p>
@@ -51,12 +54,12 @@ y &lt;- 1:10 + rnorm(10)
 beginr::plotlm(x, y)</code></pre>
 <p><img src="/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 <pre><code>## [[1]]
-##              Estimate Std. Error   t value     Pr(&gt;|t|)
-## (Intercept) 0.6543931  0.8443445 0.7750309 0.4606135020
-## x           0.8899582  0.1360784 6.5400385 0.0001803486
+##              Estimate Std. Error  t value     Pr(&gt;|t|)
+## (Intercept) 0.5806982 0.53093864  1.09372 3.059134e-01
+## x           0.8844446 0.08556851 10.33610 6.628228e-06
 ## 
 ## [[2]]
-## [1] 0.8424332</code></pre>
+## [1] 0.9303348</code></pre>
 <p>经常需要了解一组数据的分布, 看看是不是正态分布. beginr 里的 <code>plothist()</code> 函数不仅做出直方图和平滑曲线, 并且标出中值, 中位数, 四分位数, 标准偏差, 样本数, 以及用来判断是否正态分布的 skewness 值.</p>
 <pre class="r"><code>x &lt;- rnorm(10000)
 beginr::plothist(x)</code></pre>
@@ -91,19 +94,19 @@ beginr::errorbar(x, y, yupper = 0.1, ylower = 0.1)</code></pre>
 <pre class="r"><code>df &lt;- data.frame(a = 1:10, b = 1:10 + rnorm(10), c = 1:10 + rnorm(10))
 beginr::lmdf(df)</code></pre>
 <pre><code>##   x y r.squared adj.r.squared  intercept     slope Std.Error.intercept
-## 1 a b 0.9468129     0.9401646 -0.3324786 1.0799748           0.5615260
-## 2 a c 0.8286424     0.8072227 -0.1310503 1.0230746           1.0206123
-## 3 b a 0.9468129     0.9401646  0.5840125 0.8766991           0.4738627
-## 4 b c 0.8122002     0.7887252  0.3786416 0.9125859           1.0007389
-## 5 c a 0.8286424     0.8072227  1.0486114 0.8099530           0.8300059
-## 6 c b 0.8122002     0.7887252  0.7160748 0.8899986           0.9644030
+## 1 a b 0.8060690     0.7818276  0.5151170 0.8912314           0.9589884
+## 2 a c 0.9408784     0.9334882 -0.8016710 1.0476869           0.5761338
+## 3 b a 0.8060690     0.7818276  0.6007260 0.9044441           0.9601270
+## 4 b c 0.7772349     0.7493892 -0.2356012 0.9592604           1.1114590
+## 5 c a 0.9408784     0.9334882  1.0451121 0.8980530           0.4656731
+## 6 c b 0.7772349     0.7493892  1.3975885 0.8102439           0.8972962
 ##   Std.Error.slope t.intercept   t.slope Pr.intercept     Pr.slope
-## 1      0.09049811  -0.5920983 11.933672    0.5701358 2.236336e-06
-## 2      0.16448657  -0.1284036  6.219807    0.9009988 2.538953e-04
-## 3      0.07346432   1.2324510 11.933672    0.2527701 2.236336e-06
-## 4      0.15514750   0.3783620  5.882054    0.7150046 3.691444e-04
-## 5      0.13022158   1.2633783  6.219807    0.2420263 2.538953e-04
-## 6      0.15130746   0.7425057  5.882054    0.4790129 3.691444e-04</code></pre>
+## 1      0.15455498   0.5371462  5.766436   0.60577976 4.209961e-04
+## 2      0.09285237  -1.3914667 11.283361   0.20155452 3.422803e-06
+## 3      0.15684630   0.6256735  5.766436   0.54895823 4.209961e-04
+## 4      0.18156787  -0.2119747  5.283206   0.83742767 7.433188e-04
+## 5      0.07959091   2.2443044 11.283361   0.05505444 3.422803e-06
+## 6      0.15336215   1.5575553  5.283206   0.15795366 7.433188e-04</code></pre>
 <p>还有两个函数对<code>tapply()</code>进行了改善, 用来进行因子计算.</p>
 <pre class="r"><code>beginr::tapplydf()
 beginr::tapplydfv()</code></pre>
@@ -126,21 +129,21 @@ beginr::list2ascii(alist)</code></pre>
 ##   title = {bookdownplus: Generate Assorted Books and Documents with R &#39;bookdown&#39; Package},
 ##   author = {Peng Zhao},
 ##   year = {2018},
-##   note = {R package version 1.4.3},
+##   note = {R package version 1.5.0},
 ##   url = {https://github.com/pzhaonet/bookdownplus},
 ## }
 ## @Manual{R-mindr,
 ##   title = {mindr: Convert Files Between Markdown or Rmarkdown Files and Mindmaps},
 ##   author = {Peng Zhao},
-##   year = {2018},
-##   note = {R package version 1.1.1},
-##   url = {https://github.com/pzhaonet/mindr},
+##   year = {2017},
+##   note = {R package version 1.1.0},
+##   url = {https://CRAN.R-project.org/package=mindr},
 ## }
 ## @Manual{R-pinyin,
 ##   title = {pinyin: Convert Chinese Characters into Pinyin},
 ##   author = {Peng Zhao},
 ##   year = {2018},
-##   note = {R package version 1.1.1},
+##   note = {R package version 1.1.2},
 ##   url = {https://github.com/pzhaonet/pinyin},
 ## }</code></pre>
 <p><code>plotpkg()</code>函数可以做出一张图，来展示指定扩展包在CRAN上被用户下载的次数：</p>
@@ -153,9 +156,9 @@ beginr::list2ascii(alist)</code></pre>
 <pre><code>## @Manual{R-beginr,
 ##   title = {beginr: Functions for R Beginners},
 ##   author = {Peng Zhao},
-##   year = {2017},
-##   note = {R package version 0.1.2},
-##   url = {https://github.com/pzhaonet/beginr},
+##   year = {2018},
+##   note = {R package version 0.1.3},
+##   url = {https://CRAN.R-project.org/package=beginr},
 ## }</code></pre>
 <div class="section level2 unnumbered">
 <h2>参考文献</h2>

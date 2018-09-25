@@ -18,7 +18,10 @@ output: #md_document
 
 
 <p>I’m glad to announce that ‘beginr’ <span class="citation">(Zhao 2017)</span> is now on <a href="https://CRAN.R-project.org/package=beginr">CRAN</a>. This post is a brief documentation of ‘beginr 0.1.0’. Subsequent updates can be found on the <a href="http://github.com/pzhaonet/beginr">GitHub site of beginr</a>.</p>
-<p><img src="http://cranlogs.r-pkg.org/badges/grand-total/beginr" /></p>
+<div class="figure">
+<img src="http://cranlogs.r-pkg.org/badges/grand-total/beginr" />
+
+</div>
 <div id="introduction" class="section level1">
 <h1>Introduction</h1>
 <p>‘beginr’ is a collection of useful functions for R beginners, including hints for the arguments of the ‘plot()’ function, self-defined functions for error bars, user-customized pair plots and hist plots, enhanced linear regression figures, etc.. This package could be helpful to R experts as well.</p>
@@ -55,11 +58,11 @@ beginr::plotlm(x, y)</code></pre>
 <p><img src="/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 <pre><code>## [[1]]
 ##               Estimate Std. Error    t value     Pr(&gt;|t|)
-## (Intercept) -0.4990221  0.7223089 -0.6908708 0.5091925898
-## x            1.0380926  0.1164106  8.9175081 0.0000198281
+## (Intercept) -0.1450558  0.7859254 -0.1845668 8.581617e-01
+## x            1.0451130  0.1266634  8.2511082 3.493457e-05
 ## 
 ## [[2]]
-## [1] 0.9085944</code></pre>
+## [1] 0.8948486</code></pre>
 <p>If you want to display the distribution of a data-set, use <code>plothist()</code>, which gives you a histogram with markers of the median, mean, quantiles, standard deviation, sample number and the skewness.</p>
 <pre class="r"><code>x &lt;- rnorm(10000)
 beginr::plothist(x)</code></pre>
@@ -93,20 +96,20 @@ beginr::errorbar(x, y, yupper = 0.1, ylower = 0.1)</code></pre>
 <p><code>lmdf()</code> performs the linear regression between every two columns in a data frame.</p>
 <pre class="r"><code>df &lt;- data.frame(a = 1:10, b = 1:10 + rnorm(10), c = 1:10 + rnorm(10))
 beginr::lmdf(df)</code></pre>
-<pre><code>##   x y r.squared adj.r.squared   intercept     slope Std.Error.intercept
-## 1 a b 0.9446675     0.9377509 -0.83552248 1.0974055           0.5826438
-## 2 a c 0.9161943     0.9057186  0.03126545 1.0421219           0.6914277
-## 3 b a 0.9446675     0.9377509  1.02356231 0.8608190           0.4514169
-## 4 b c 0.9331514     0.9247954  0.91905071 0.9314791           0.5402048
-## 5 c a 0.9161943     0.9057186  0.43344371 0.8791623           0.6163876
-## 6 c b 0.9331514     0.9247954 -0.57307433 1.0017953           0.6215712
+<pre><code>##   x y r.squared adj.r.squared    intercept     slope Std.Error.intercept
+## 1 a b 0.9608917     0.9560031 -0.259857855 0.9422284           0.4170028
+## 2 a c 0.9443021     0.9373399 -0.440308392 1.0165678           0.5416087
+## 3 b a 0.9608917     0.9560031  0.480100793 1.0198076           0.4105270
+## 4 b c 0.9210699     0.9112036  0.009372429 1.0444994           0.6101117
+## 5 c a 0.9443021     0.9373399  0.715346201 0.9289121           0.4756316
+## 6 c b 0.9210699     0.9112036  0.380260480 0.8818290           0.5442414
 ##   Std.Error.slope t.intercept   t.slope Pr.intercept     Pr.slope
-## 1      0.09390156 -1.43401926 11.686766   0.18947411 2.621953e-06
-## 2      0.11143366  0.04521869  9.351949   0.96504136 1.396547e-05
-## 3      0.07365758  2.26744327 11.686766   0.05310191 2.621953e-06
-## 4      0.08814508  1.70130044 10.567568   0.12730204 5.612836e-06
-## 5      0.09400846  0.70319996  9.351949   0.50187935 1.396547e-05
-## 6      0.09479904 -0.92197702 10.567568   0.38350296 5.612836e-06</code></pre>
+## 1      0.06720608 -0.62315619 14.019987    0.5505298 6.498966e-07
+## 2      0.08728815 -0.81296401 11.646115    0.4397602 2.692314e-06
+## 3      0.07273955  1.16947423 14.019987    0.2758738 6.498966e-07
+## 4      0.10810312  0.01536183  9.662066    0.9881197 1.096535e-05
+## 5      0.07976154  1.50399219 11.646115    0.1709938 2.692314e-06
+## 6      0.09126713  0.69869818  9.662066    0.5045419 1.096535e-05</code></pre>
 <p>There are two functions as improvements of <code>tapply()</code> for factor calculation.</p>
 <pre class="r"><code>beginr::tapplydf()
 beginr::tapplydfv()</code></pre>
@@ -128,29 +131,29 @@ beginr::list2ascii(alist)</code></pre>
 <pre><code>## @Manual{R-beginr,
 ##   title = {beginr: Functions for R Beginners},
 ##   author = {Peng Zhao},
-##   year = {2017},
-##   note = {R package version 0.1.2},
-##   url = {https://github.com/pzhaonet/beginr},
+##   year = {2018},
+##   note = {R package version 0.1.3},
+##   url = {https://CRAN.R-project.org/package=beginr},
 ## }
 ## @Manual{R-bookdownplus,
 ##   title = {bookdownplus: Generate Assorted Books and Documents with R &#39;bookdown&#39; Package},
 ##   author = {Peng Zhao},
 ##   year = {2018},
-##   note = {R package version 1.4.3},
+##   note = {R package version 1.5.0},
 ##   url = {https://github.com/pzhaonet/bookdownplus},
 ## }
 ## @Manual{R-mindr,
 ##   title = {mindr: Convert Files Between Markdown or Rmarkdown Files and Mindmaps},
 ##   author = {Peng Zhao},
-##   year = {2018},
-##   note = {R package version 1.1.1},
-##   url = {https://github.com/pzhaonet/mindr},
+##   year = {2017},
+##   note = {R package version 1.1.0},
+##   url = {https://CRAN.R-project.org/package=mindr},
 ## }
 ## @Manual{R-pinyin,
 ##   title = {pinyin: Convert Chinese Characters into Pinyin},
 ##   author = {Peng Zhao},
 ##   year = {2018},
-##   note = {R package version 1.1.1},
+##   note = {R package version 1.1.2},
 ##   url = {https://github.com/pzhaonet/pinyin},
 ## }</code></pre>
 <p><code>plotpkg()</code> displays a figure showing the downloads of packages.</p>
