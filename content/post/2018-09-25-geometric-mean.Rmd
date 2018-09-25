@@ -19,7 +19,7 @@ categories: []
 
 $G = \sqrt[n]{\prod_{i = 1}^{n} x_i} = \sqrt[n]{x_1\cdot x_2 \cdot \cdot \cdot x_n}$
 
-而几何标准差的解释是[这样](https://zh.wikipedia.org/wiki/%E5%B9%BE%E4%BD%95%E6%A8%99%E6%BA%96%E5%B7%AE)的：
+而几何标准差（geometric standard deviation）的解释是[这样](https://zh.wikipedia.org/wiki/%E5%B9%BE%E4%BD%95%E6%A8%99%E6%BA%96%E5%B7%AE)的：
 
 >  在机率论与统计学中，几何标准差形容一组数值有多分散，用于当这一组数字理应优先选用的平均数为几何平均数之时。对于这类数据，几何标准差可能优于普通的标准差。留意几何标准差是个乘法因数，因此是无量纲的，而不似普通的算术标准差，与输入数值有同样的量纲。
 
@@ -56,7 +56,7 @@ $G_{x,y} = \sqrt[n + m]{x_1\cdot x_2 \cdot \cdot \cdot x_n \cdot y_1\cdot y_2 \c
 
 $\sigma_x = \exp(\sqrt{\frac{\sum_{i = 1}^{n} (\ln \frac{x_i}{G_x})^2)}{n}}) \Rightarrow \Sigma(\ln \frac{x_i}{G_x})^2 = (\ln(\sigma_x))^2 \cdot n$ (4)
 
-$\sigma_y = \exp(\sqrt{\frac{\sum_{i = 1}^{n} (\ln \frac{y_i}{G_y})^2)}{m}}) \Rightarrow \Sigma(\ln \frac{y_i}{G_y}) ^2= (\ln(\sigma_y))^2 \cdot m$ (5)
+$\sigma_y = \exp(\sqrt{\frac{\sum_{i = 1}^{m} (\ln \frac{y_i}{G_y})^2)}{m}}) \Rightarrow \Sigma(\ln \frac{y_i}{G_y}) ^2= (\ln(\sigma_y))^2 \cdot m$ (5)
 
 根据定义：
 
@@ -64,10 +64,12 @@ $\sigma_{x,y} = \exp(\sqrt{\frac{\sum_{i = 1}^{n} (\ln \frac{x_i}{G_x})^2  +\sum
 
 将 (4) (5) 带入 (6) 即可：
 
-\sigma_{x,y} = \exp(\sqrt{\frac{\sum_{i = 1}^{n} (\ln \frac{x_i}{G_x})^2  +\sum_{i = 1}^{m} (\ln \frac{y_i}{G_y})^2)}{n+m}}) = \exp \sqrt{\frac{(\ln \sigma_x)^2 \cdot n + (\ln \sigma_y)^2 \cdot m}{n + m}} (7)
+$\sigma_{x,y} = \exp(\sqrt{\frac{\sum_{i = 1}^{n} (\ln \frac{x_i}{G_x})^2  +\sum_{i = 1}^{m} (\ln \frac{y_i}{G_y})^2)}{n+m}}) = \exp \sqrt{\frac{(\ln \sigma_x)^2 \cdot n + (\ln \sigma_y)^2 \cdot m}{n + m}}$ (7)
 
 推导不难，麻烦的是敲公式。
 
 好吧，其实我就是想试试，用 R 语言的 blogdown 写这样一篇带公式的帖子要多久而已。
 
 大约半小时。
+
+在本页的公式上面鼠标点右键，就可以复制公式代码贴到别的地方了。
