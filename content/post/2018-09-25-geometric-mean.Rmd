@@ -11,7 +11,7 @@ categories: []
 
 如何合并几何平均值和几何标准差？今天，小师妹问了我这样一个棘手的问题。
 
-这两个概念我从前学过，但从来没用过。于是查了一下[维基百科](https://zh.wikipedia.org/wiki/%E5%87%A0%E4%BD%95%E5%B9%B3%E5%9D%87%E6%95%B0):
+算数平均值是 *n* 个数加起来除以 *n*，几何平均值是 *n* 个数乘起来开 *n* 次方。后者的概念我从前学过，但从来没用过。于是查了一下[维基百科](https://zh.wikipedia.org/wiki/%E5%87%A0%E4%BD%95%E5%B9%B3%E5%9D%87%E6%95%B0):
 
 > 几何平均数（Geometric mean），是求一组数值的平均数的方法中的一种。适用于对比率数据的平均，并主要用于计算数据平均增长（变化）率。
 
@@ -35,10 +35,10 @@ $\sigma = \exp(\sqrt{\frac{\sum_{i = 1}^{n} (\ln \frac{x_i}{G})^2)}{n}})$
 
 假定：
 
-- 第 1 组数据是 $(x_1, x_2, ... x_n)$, 其几何平均值是 $G_x$，几何标准差是 $\sigma_x$。
-- 第 2 组数据是 $(y_1, y_2, ... y_n)$, 其几何平均值是 $G_y$，几何标准差是 $\sigma_y$。
+- 第 1 组数据是 $(x_1, x_2, ... x_n)$, 只知道其几何平均值是 $G_x$，几何标准差是 $\sigma_x$，数据个数是 *n*。
+- 第 2 组数据是 $(y_1, y_2, ... y_n)$, 只知道其几何平均值是 $G_y$，几何标准差是 $\sigma_y$，数据个数是 *m*。
 
-那么，这两组数据的合集 $(x_1, x_2, ... x_n, y_1, y_2, ... y_n)$ 的几何平均值 $G_{x,y}$ 和几何标准差$\sigma_{x,y}$如何计算？
+那么，这两组数据的并集 $(x_1, x_2, ... x_n, y_1, y_2, ... y_n)$ 的几何平均值 $G_{x,y}$ 和几何标准差$\sigma_{x,y}$如何计算？
 
 这是一道初中代数题。下面是推导:
 
@@ -48,7 +48,7 @@ $G_x = \sqrt[n]{x_1\cdot x_2 \cdot \cdot \cdot x_n} \Rightarrow G_x^n = x_1\cdot
 
  $G_y = \sqrt[m]{y_1\cdot y_2 \cdot \cdot \cdot y_m} \Rightarrow G_y^m = y_1\cdot y_2 \cdot \cdot \cdot y_m$ (2)
 
-故合集的几何平均值是：
+故并集的几何平均值是：
 
 $G_{x,y} = \sqrt[n + m]{x_1\cdot x_2 \cdot \cdot \cdot x_n \cdot y_1\cdot y_2 \cdot \cdot \cdot y_m}  = \sqrt[n + m]{G_x^n \cdot G_y^m}$ (3)
 
@@ -72,4 +72,8 @@ $\sigma_{x,y} = \exp(\sqrt{\frac{\sum_{i = 1}^{n} (\ln \frac{x_i}{G_x})^2  +\sum
 
 大约半小时。
 
-在本页的公式上面鼠标点右键，就可以复制公式代码贴到别的地方了。
+在本页的公式上面鼠标点右键，就可以复制公式代码贴到别的地方了。具体方法见[这里](http://www.pzhao.org/zh/post/latex-equations-to-word/)。
+
+这是让人上瘾的地方：从此以后，不管在哪里，只要输入一个公式，就想通过 blogdown 发布出来，这样将来再用时就不用重录一次了，方便自己也方便他人。
+
+再次吐槽维基百科：他家的公式居然都是图片格式，没法编辑！
