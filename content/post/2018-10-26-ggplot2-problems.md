@@ -3,7 +3,7 @@ title: '让人纠结的 ggplot2'
 author: "赵鹏"
 date: '2018-10-26'
 slug: ggplot2-problems
-summary: "求助！求助！十万火急！求助帖发布之后，是不是急着等人响应？可惜惊叹号没啥用。如果按以下格式发帖，效果会胜过十万个惊叹号。"
+summary: "推崇 ggplot2 的人经常说， ggplot2 做出的图，如果用基础作图函数来做的话会非常繁琐。然而反过来也一样：基础函数作出的图， 用 ggplot2 实现起来也会很繁琐。"
 tags:
 - post
 categories: []
