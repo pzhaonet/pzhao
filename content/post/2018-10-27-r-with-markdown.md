@@ -54,7 +54,7 @@ categories: []
 | "`#` + 非空格字符"开头的注释行 | 去掉开头的`#`，成为正文文字              |
 | 代码行                         | 前后添加一对连续的三个反引号，成为代码块 |
 
-也就是说，按上标左栏的规则来写注释，以后就可以方便地转成 .Rmd文件了。例如，下面这个 .R 脚本：
+也就是说，按上表左栏的规则来写注释，以后就可以方便地转成 .Rmd文件了。例如，下面这个 .R 脚本：
 
 ```R
 # Calculation --------
@@ -140,5 +140,5 @@ plot(x, y)
 
 mindr 的同心圆闭合了。从此，曲谐，他们过上了幸福的生活。
 
-![Slide3.PNG](https://cdn.steemitimages.com/DQmU2nbFeCQT9Pz1NNShzFEMvdZfGVuBWMg6SpaKmPhuxqB/Slide3.PNG)
+![](https://github.com/pzhaonet/mindr/raw/master/showcase/mindr_concept.png)
 
