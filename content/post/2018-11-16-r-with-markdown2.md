@@ -12,7 +12,7 @@ categories: []
 
 ## 
 
-[上回](http://www.pzhao.org/zh/post/r-with-markdown2/)我抱怨没有现成的函数直接把 .R 脚本直接转换成 .Rmd 文档，于是自作聪明写了一个，结果很快 yihui 就留言说，有啊，`knitr::spin()` 就可以。我就去研究了一下这个函数，发现比我写的那个要漂亮得多。
+[上回](http://www.pzhao.org/zh/post/r-with-markdown2/)我抱怨没有现成的函数直接把 .R 脚本转换成 .Rmd 文档，于是自作聪明写了一个，结果很快 yihui 就留言说，有啊，`knitr::spin()` 就可以。我就去研究了一下这个函数，发现比我写的那个要漂亮得多。
 
 我的心情很复杂。
 
