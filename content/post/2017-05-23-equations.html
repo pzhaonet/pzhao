@@ -44,53 +44,53 @@ P=101.325 \cdot (\frac{293-0.0065z}{293}) ^ {5.26} = 86.838\,\text{kPa}
 <div id="humidity" class="section level3">
 <h3>Humidity</h3>
 <span class="math display">\[\begin{equation}
-    e_{\text s}=6.112\exp\frac {17.62t}{243.12+t}
+​   e_{\text s}=6.112\exp\frac {17.62t}{243.12+t}
 \end{equation}\]</span>
 <p><span class="math inline">\(e_s\)</span>: saturated vapor pressure over water at <span class="math inline">\(-45\)</span> to 60 <span class="math inline">\(^{\circ}\)</span>C (sonntag1990)</p>
 <span class="math display">\[\begin{equation}
-    s_{\text c}=\frac {4284e_{\text s}}{(243.12+t)^2}
+​   s_{\text c}=\frac {4284e_{\text s}}{(243.12+t)^2}
 \end{equation}\]</span>
 <p><span class="math inline">\(s_c\)</span>: slope of the saturation vapor pressure temperature relationship.</p>
 <p>or</p>
 <span class="math display">\[\begin{equation}
-    e_{\text s} = 0.6108\exp\frac {17.27T}{237.3 + T}
+​   e_{\text s} = 0.6108\exp\frac {17.27T}{237.3 + T}
 \end{equation}\]</span>
 <p>and</p>
 <span class="math display">\[\begin{equation}
-    s_{\text c}=\frac {4098 \cdot 0.6108\exp\frac {17.27T}{237.3 + T}}{(237.3 + T)^2}
+​   s_{\text c}=\frac {4098 \cdot 0.6108\exp\frac {17.27T}{237.3 + T}}{(237.3 + T)^2}
 \end{equation}\]</span>
 </div>
 </div>
 <div id="carbon" class="section level2">
 <h2>Carbon</h2>
 <span class="math display">\[\begin{equation}
-    \text {GPP} = \frac{\alpha R_{\mathrm g}\beta }{\alpha R_{\mathrm g}+\beta }
+​   \text {GPP} = \frac{\alpha R_{\mathrm g}\beta }{\alpha R_{\mathrm g}+\beta }
 \end{equation}\]</span>
 <span class="math display">\[\begin{equation}
-    \frac{\text {GPP}}{\text {LAI}_\text{act}}\ = \frac{\alpha&#39; R_{\mathrm g}\beta&#39; }{\alpha&#39; R_{\mathrm g}+\beta&#39; }
+​   \frac{\text {GPP}}{\text {LAI}_\text{act}}\ = \frac{\alpha&#39; R_{\mathrm g}\beta&#39; }{\alpha&#39; R_{\mathrm g}+\beta&#39; }
 \end{equation}\]</span>
 <span class="math display">\[\begin{equation}\label{eGPPLRg}
-    \text{GPP} = \text{LAI}_\text{act}\frac{\alpha&#39; R_{\mathrm g}\beta&#39; }{\alpha&#39; R_{\mathrm g}+\beta&#39; }, 
+​   \text{GPP} = \text{LAI}_\text{act}\frac{\alpha&#39; R_{\mathrm g}\beta&#39; }{\alpha&#39; R_{\mathrm g}+\beta&#39; }, 
 \end{equation}\]</span>
 <span class="math display">\[\begin{equation}\label{eGPPL}
-    \text {GPP} = a_\text {LAI}\text{LAI}_\text {act}.
+​   \text {GPP} = a_\text {LAI}\text{LAI}_\text {act}.
 \end{equation}\]</span>
 <p>Chamber flux calculation:</p>
 <span class="math display">\[\begin{equation}
-    F_c = \frac{10 V P_0 (1 - \frac{W_0}{1000})}{RS  (T_0 + 273.15)} \frac{\partial  C&#39;}{\partial t}
+​   F_c = \frac{10 V P_0 (1 - \frac{W_0}{1000})}{RS  (T_0 + 273.15)} \frac{\partial  C&#39;}{\partial t}
 \end{equation}\]</span>
 <p>flux in μmol m s, p in kpa, volume in cm, w0 in 0.001, t in °C, t in s, c in ppm.</p>
 <span class="math display">\[\begin{equation}
-    C&#39; = C&#39;_x + (C&#39;_0 - C&#39;_x) e ^ {-a(t-t_0)}
+​   C&#39; = C&#39;_x + (C&#39;_0 - C&#39;_x) e ^ {-a(t-t_0)}
 \end{equation}\]</span>
 <span class="math display">\[\begin{equation}
 \frac{\partial C&#39;}{\partial t} | _{t = t_0} = a(C&#39;_x - C&#39;_0)
 \end{equation}\]</span>
 <span class="math display">\[\begin{equation}
-    C&#39; = (C&#39;_x + kt) + (C&#39;_0 - C&#39;_x) e ^ {-a(t-t_0)}
+​   C&#39; = (C&#39;_x + kt) + (C&#39;_0 - C&#39;_x) e ^ {-a(t-t_0)}
 \end{equation}\]</span>
 <span class="math display">\[\begin{equation}
-    \frac{\partial C&#39;}{\partial t} | _{t = t_0} = a(C&#39;_x - C&#39;_0) + k
+​   \frac{\partial C&#39;}{\partial t} | _{t = t_0} = a(C&#39;_x - C&#39;_0) + k
 \end{equation}\]</span>
 </div>
 <div id="energy" class="section level2">
@@ -199,6 +199,17 @@ r_{\text s}= \frac {r_{\text a}s_{\text c} (-R_{\text n}-Q_{\text G}) + \rho c_{
 E=\alpha_{\text {PT}} \frac {s_{\text c}}{s_{\text c} + \gamma}(-Q_{\text A})
 \end{equation}\]</span>
 </div>
+</div>
+<div id="eddy-covariance" class="section level2">
+<h2>Eddy-covariance</h2>
+<p>the net exchange (<em>F</em>) of some non-reactive scalar χ is given as the sum of the storage change flux (i.e. the time-rate-of-change in scalar concentration below the measurement height <em>h</em>) and the vertical turbulent exchange: <span class="math display">\[
+F = {\int\limits_{0}^{h}{\frac{\overline{\delta\chi}}{\delta t}dz}} + \overline{w^{\prime}\chi^{\prime}}\left( h \right)
+\]</span></p>
+<p>where <em>z</em> refers to the vertical direction, and the vertical turbulent term is expressed as the covariance between the vertical wind speed and the scalar χ. The primes denote deviations from the temporal mean calculated by Reynolds decomposition as</p>
+<p><span class="math display">\[
+w^{\prime} = w - \overline{w}\ ,\ \chi^{\prime} = \chi - \overline{\chi}
+\]</span></p>
+<p>with <em>w</em> and χ representing instantaneous values.</p>
 </div>
 <div id="model-evaluation" class="section level2">
 <h2>Model evaluation</h2>

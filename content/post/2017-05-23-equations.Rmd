@@ -55,13 +55,13 @@ $c_p$: specific heat of the air (at constant pressure $1.013 \times 10 ^{-3}$ MJ
 ### Humidity
 
 \begin{equation}
-	e_{\text s}=6.112\exp\frac {17.62t}{243.12+t}
+​	e_{\text s}=6.112\exp\frac {17.62t}{243.12+t}
 \end{equation}
 
 $e_s$: saturated vapor pressure over water at $-45$ to 60 $^{\circ}$C (sonntag1990)
 
 \begin{equation}
-	s_{\text c}=\frac {4284e_{\text s}}{(243.12+t)^2}
+​	s_{\text c}=\frac {4284e_{\text s}}{(243.12+t)^2}
 \end{equation}
 
 $s_c$: slope of the saturation vapor pressure temperature relationship.
@@ -69,44 +69,44 @@ $s_c$: slope of the saturation vapor pressure temperature relationship.
 or
 
 \begin{equation}
-	e_{\text s} = 0.6108\exp\frac {17.27T}{237.3 + T}
+​	e_{\text s} = 0.6108\exp\frac {17.27T}{237.3 + T}
 \end{equation}
 
 and
 
 \begin{equation}
-	s_{\text c}=\frac {4098 \cdot 0.6108\exp\frac {17.27T}{237.3 + T}}{(237.3 + T)^2}
+​	s_{\text c}=\frac {4098 \cdot 0.6108\exp\frac {17.27T}{237.3 + T}}{(237.3 + T)^2}
 \end{equation}
 
 
 ## Carbon
 
 \begin{equation}
-	\text {GPP} = \frac{\alpha R_{\mathrm g}\beta }{\alpha R_{\mathrm g}+\beta }
+​	\text {GPP} = \frac{\alpha R_{\mathrm g}\beta }{\alpha R_{\mathrm g}+\beta }
 \end{equation}
 
 \begin{equation}
-	\frac{\text {GPP}}{\text {LAI}_\text{act}}\ = \frac{\alpha' R_{\mathrm g}\beta' }{\alpha' R_{\mathrm g}+\beta' }
+​	\frac{\text {GPP}}{\text {LAI}_\text{act}}\ = \frac{\alpha' R_{\mathrm g}\beta' }{\alpha' R_{\mathrm g}+\beta' }
 \end{equation}
 
 \begin{equation}\label{eGPPLRg}
-	\text{GPP} = \text{LAI}_\text{act}\frac{\alpha' R_{\mathrm g}\beta' }{\alpha' R_{\mathrm g}+\beta' }, 
+​	\text{GPP} = \text{LAI}_\text{act}\frac{\alpha' R_{\mathrm g}\beta' }{\alpha' R_{\mathrm g}+\beta' }, 
 \end{equation}
 
 \begin{equation}\label{eGPPL}
-	\text {GPP} = a_\text {LAI}\text{LAI}_\text {act}.
+​	\text {GPP} = a_\text {LAI}\text{LAI}_\text {act}.
 \end{equation}
 
 Chamber flux calculation:
 
 \begin{equation}
-	F_c = \frac{10 V P_0 (1 - \frac{W_0}{1000})}{RS  (T_0 + 273.15)} \frac{\partial  C'}{\partial t}
+​	F_c = \frac{10 V P_0 (1 - \frac{W_0}{1000})}{RS  (T_0 + 273.15)} \frac{\partial  C'}{\partial t}
 \end{equation}
 
 flux in μmol m s, p in kpa, volume in cm, w0 in 0.001, t in °C, t in s, c in ppm. 
 
 \begin{equation}
-	C' = C'_x + (C'_0 - C'_x) e ^ {-a(t-t_0)}
+​	C' = C'_x + (C'_0 - C'_x) e ^ {-a(t-t_0)}
 \end{equation}
 
 \begin{equation}
@@ -115,11 +115,11 @@ flux in μmol m s, p in kpa, volume in cm, w0 in 0.001, t in °C, t in s, c in p
 
 
 \begin{equation}
-	C' = (C'_x + kt) + (C'_0 - C'_x) e ^ {-a(t-t_0)}
+​	C' = (C'_x + kt) + (C'_0 - C'_x) e ^ {-a(t-t_0)}
 \end{equation}
 
 \begin{equation}
-	\frac{\partial C'}{\partial t} | _{t = t_0} = a(C'_x - C'_0) + k
+​	\frac{\partial C'}{\partial t} | _{t = t_0} = a(C'_x - C'_0) + k
 \end{equation}
 
 
@@ -276,6 +276,21 @@ r_{\text s}= \frac {r_{\text a}s_{\text c} (-R_{\text n}-Q_{\text G}) + \rho c_{
 E=\alpha_{\text {PT}} \frac {s_{\text c}}{s_{\text c} + \gamma}(-Q_{\text A})
 \end{equation}
 
+## Eddy-covariance
+
+the net exchange (*F*) of some non-reactive scalar χ is given as the sum of the storage change flux (i.e. the time-rate-of-change in scalar concentration below the measurement height *h*) and the vertical turbulent exchange:
+$$
+F = {\int\limits_{0}^{h}{\frac{\overline{\delta\chi}}{\delta t}dz}} + \overline{w^{\prime}\chi^{\prime}}\left( h \right)
+$$
+
+where *z* refers to the vertical direction, and the vertical turbulent term is expressed as the covariance between the vertical wind speed and the scalar χ. The primes denote deviations from the temporal mean calculated by Reynolds decomposition as
+
+
+$$
+w^{\prime} = w - \overline{w}\ ,\ \chi^{\prime} = \chi - \overline{\chi}
+$$
+
+with *w* and χ representing instantaneous values.
 
 ## Model evaluation
 

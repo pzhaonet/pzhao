@@ -42,7 +42,7 @@ categories: []
 
 然而，这样的麻烦在于，同一内容就出现了 .R  和 .Rmd 两个版本，不方便后期维护。
 
-我试过反向操作，就是改为从 .Rmd 为源头，需要其中的代码时，就用 `knitr::purl()` 提取出来。但试过几次就放弃了：调试代码，还是在 .R 里面方便。`knitr::purl()` 为啥就没有个逆函数呢？
+我试过反向操作，就是改为从 .Rmd 为源头，需要其中的代码时，就用 `knitr::purl()` 提取出来。但试过几次就放弃了：调试代码，还是在 .R 里面方便。`knitr::purl()` 为啥就没有个逆函数呢？(更新：`knitr::spin()`可以将 .R 转换成 .Rmd。感谢 yihui 的提示。)
 
 这回，既然走到了 .R 与思维导图转换的这一步，我想要的功能呼之欲出。
 
@@ -139,6 +139,8 @@ plot(x, y)
 一番动手，给 mindr 添加了个 `md2r()` 函数，把这功能实现了。
 
 mindr 的同心圆闭合了。从此，曲谐，他们过上了幸福的生活。
+
+（更新：上述方案并不完美。补充方案见《[用 markdown 的逻辑写 R 脚本注释（2）](http://www.pzhao.org/zh/post/r-with-markdown2/)》）
 
 ![](https://github.com/pzhaonet/mindr/raw/master/showcase/mindr_concept.png)
 

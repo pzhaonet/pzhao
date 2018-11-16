@@ -12,7 +12,7 @@ categories: []
 
 
 <p>如何合并几何平均值和几何标准差？今天，小师妹问了我这样一个棘手的问题。</p>
-<p>这两个概念我从前学过，但从来没用过。于是查了一下<a href="https://zh.wikipedia.org/wiki/%E5%87%A0%E4%BD%95%E5%B9%B3%E5%9D%87%E6%95%B0">维基百科</a>:</p>
+<p>算数平均值是 <em>n</em> 个数加起来除以 <em>n</em>，几何平均值是 <em>n</em> 个数乘起来开 <em>n</em> 次方。后者的概念我从前学过，但从来没用过。于是查了一下<a href="https://zh.wikipedia.org/wiki/%E5%87%A0%E4%BD%95%E5%B9%B3%E5%9D%87%E6%95%B0">维基百科</a>:</p>
 <blockquote>
 <p>几何平均数（Geometric mean），是求一组数值的平均数的方法中的一种。适用于对比率数据的平均，并主要用于计算数据平均增长（变化）率。</p>
 </blockquote>
@@ -30,17 +30,17 @@ categories: []
 <h3>请听题：</h3>
 <p>假定：</p>
 <ul>
-<li>第 1 组数据是 <span class="math inline">\((x_1, x_2, ... x_n)\)</span>, 其几何平均值是 <span class="math inline">\(G_x\)</span>，几何标准差是 <span class="math inline">\(\sigma_x\)</span>。</li>
-<li>第 2 组数据是 <span class="math inline">\((y_1, y_2, ... y_n)\)</span>, 其几何平均值是 <span class="math inline">\(G_y\)</span>，几何标准差是 <span class="math inline">\(\sigma_y\)</span>。</li>
+<li>第 1 组数据是 <span class="math inline">\((x_1, x_2, ... x_n)\)</span>, 只知道其几何平均值是 <span class="math inline">\(G_x\)</span>，几何标准差是 <span class="math inline">\(\sigma_x\)</span>，数据个数是 <em>n</em>。</li>
+<li>第 2 组数据是 <span class="math inline">\((y_1, y_2, ... y_n)\)</span>, 只知道其几何平均值是 <span class="math inline">\(G_y\)</span>，几何标准差是 <span class="math inline">\(\sigma_y\)</span>，数据个数是 <em>m</em>。</li>
 </ul>
-<p>那么，这两组数据的合集 <span class="math inline">\((x_1, x_2, ... x_n, y_1, y_2, ... y_n)\)</span> 的几何平均值 <span class="math inline">\(G_{x,y}\)</span> 和几何标准差<span class="math inline">\(\sigma_{x,y}\)</span>如何计算？</p>
+<p>那么，这两组数据的并集 <span class="math inline">\((x_1, x_2, ... x_n, y_1, y_2, ... y_n)\)</span> 的几何平均值 <span class="math inline">\(G_{x,y}\)</span> 和几何标准差<span class="math inline">\(\sigma_{x,y}\)</span>如何计算？</p>
 <p>这是一道初中代数题。下面是推导:</p>
 </div>
 <div id="-g_xy" class="section level3">
 <h3>几何平均值 <span class="math inline">\(G_{x,y}\)</span>：</h3>
 <p><span class="math inline">\(G_x = \sqrt[n]{x_1\cdot x_2 \cdot \cdot \cdot x_n} \Rightarrow G_x^n = x_1\cdot x_2 \cdot \cdot \cdot x_n\)</span> (1)</p>
 <p><span class="math inline">\(G_y = \sqrt[m]{y_1\cdot y_2 \cdot \cdot \cdot y_m} \Rightarrow G_y^m = y_1\cdot y_2 \cdot \cdot \cdot y_m\)</span> (2)</p>
-<p>故合集的几何平均值是：</p>
+<p>故并集的几何平均值是：</p>
 <p><span class="math inline">\(G_{x,y} = \sqrt[n + m]{x_1\cdot x_2 \cdot \cdot \cdot x_n \cdot y_1\cdot y_2 \cdot \cdot \cdot y_m} = \sqrt[n + m]{G_x^n \cdot G_y^m}\)</span> (3)</p>
 </div>
 <div id="-sigma_xy" class="section level3">
@@ -54,5 +54,7 @@ categories: []
 <p>推导不难，麻烦的是敲公式。</p>
 <p>好吧，其实我就是想试试，用 R 语言的 blogdown 写这样一篇带公式的帖子要多久而已。</p>
 <p>大约半小时。</p>
-<p>在本页的公式上面鼠标点右键，就可以复制公式代码贴到别的地方了。</p>
+<p>在本页的公式上面鼠标点右键，就可以复制公式代码贴到别的地方了。具体方法见<a href="http://www.pzhao.org/zh/post/latex-equations-to-word/">这里</a>。</p>
+<p>这是让人上瘾的地方：从此以后，不管在哪里，只要输入一个公式，就想通过 blogdown 发布出来，这样将来再用时就不用重录一次了，方便自己也方便他人。</p>
+<p>再次吐槽维基百科：他家的公式居然都是图片格式，没法编辑！</p>
 </div>
