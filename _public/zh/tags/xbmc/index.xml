@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Xbmc on Peng Zhao</title>
+    <link>http://www.pzhao.org/zh/tags/xbmc/</link>
+    <description>Recent content in Xbmc on Peng Zhao</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>&amp;copy; 2017 Peng Zhao</copyright>
+    <lastBuildDate>Sun, 01 Apr 2012 08:20:08 +0000</lastBuildDate>
+    
+	<atom:link href="http://www.pzhao.org/zh/tags/xbmc/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>xbmc的ipad遥控器</title>
+      <link>http://www.pzhao.org/archives/14166/</link>
+      <pubDate>Sun, 01 Apr 2012 08:20:08 +0000</pubDate>
+      
+      <guid>http://www.pzhao.org/archives/14166/</guid>
+      <description>XBMC可以使用MCE遥控器来控制，也可以用无线键盘或鼠标当作遥控器，但是小米同学两样都不想再花钱买。偶然地，他在摆弄ipad的时候，发现竟然有免费软件可以把ipad打造成XBMC的遥控器！
+　这个软件叫做XBMoteC。只要在笔记本电脑的XBMC的系统 设置&amp;#8212;&amp;gt;网络&amp;#8212;&amp;gt;服务里选中“允许通过HTTP控制XBMC”，设置好端口、用户名和密码，再在XBMoteC设置里设定同样的内容来配对儿，就可以用ipad作为遥控器完美控制了。
+　从没想过ipad可以这么用。这启发小米同学顺便看看有没有办法让ipad用作笔记本电脑的无线键盘和无线鼠标。搜寻的结果是让人振奋的。有多款免费软件可以实现。他尝试了四个。WiFiSend Free, Remote Mouse Free, Ultimate Control, 以及WiFi Touchpad HD Free。这几个软件的使用方法类似，都是在主机上安装服务器端，ipad上安装客户端，配上对儿就可以无线操作了。区别在于功能上的限制。 WiFiSend Free功能最弱，鼠标双击一下程序就死了，而且连回车键都需要付费才支持。Remote Mouse Free好一点，常用键都可以用，但方向键等不支持。Ultimate Control 比较好，ipad原生键盘上的键支持得不错，但是比笔记本电脑得标准键盘还是少了一点。最后，WiFi Touchpad HD Free 是最给力的，基本上是个完整的标准键盘了。这几款软件都支持windows，有的支持ubuntu。小米想，日后在深入研究吧。
+　果断删除前两个，保留WiFi Touchpad HD Free，另外Ultimate Control留作备用。
+原文链接</description>
+    </item>
+    
+    <item>
+      <title>xbmc的开机自动启动</title>
+      <link>http://www.pzhao.org/archives/14164/</link>
+      <pubDate>Sun, 01 Apr 2012 08:06:01 +0000</pubDate>
+      
+      <guid>http://www.pzhao.org/archives/14164/</guid>
+      <description>东西多了，徒增烦恼。最近换了新电脑，以前用的一台旧笔记本闲置下来。它是三年前买的一款惠普HP540，当时买的时候就属于低端配置，如今该如何处理它？这成为近日挥之不去的困扰。
+这台HP 540 配置是这样的：
+ 处理器：Intel 酷睿2双核 T5670
+处理器主频(GHz)：1.8
+二级缓存(KB) ：2048
+前端总线频率(MHz) ：800
+主板芯片组： Intel GM965+ICH8-M
+内存容量(MB) ：2048
+内存描述：DDR2 667
+硬盘容量(GB) ：160
+硬盘转速(转/分) ：5400
+硬盘缓存(M) ：8
+显示屏尺寸(英寸)：14.1
+显示屏类型：TFT WXGA
+最大分辨率(dpi) ：1280×800
+显卡：集成，Intel GMA X3100
+视频输出：1个VGA端口
+操作系统：Windows XP SP3 和 Ubuntu 11.10 双系统
+  起初我想转让，因为拿它写写论文、听听歌、看看片、上上网，绝对是绰绰有余的。可是，触摸板上的鼠标左键不灵了，显示屏下方时不时会闪一下，恐怕即使卖掉也不值钱了。后来我想给正在上幼儿园的儿子入门用，我甚至安装了一个叫作QIMO的专为学龄前儿童设计的操作系统，可是又打消了这个念头，觉得不应该让孩子过早混淆真实和虚拟世界。最后的决定是，把它改造成一台多媒体播放器，打造一个家庭影院，取代我家古旧的DVD机，用来弥补家里没有电视机、在国外不方便看国内节目的缺憾。
+实现这个目标，非XBMC莫属。
+XBMC是什么？很多复杂的解释经常让初学者一头雾水。就设想它是个播放器软件吧，就像千千静听或smplayer一样。在此基础上增加外围的辅助功能，例如获取相关的艺人介绍、海报等信息，用比较炫的方式展示出来。可以加上天气预报、RSS、查看邮件等附加功能。
+XBMC安装起来容易，网上有太多介绍，这里推荐一个：点我。
+我顺利地完成了XBMC 11.0-RC2 的安装和运行，并在ubuntu 11.10 和windows xp sp3上比较了一下。其实这事儿完全可以到此为止了，可是我的强迫症发作了。我的xbmc，打开的过程繁琐。我希望把笔记本电脑放在电视柜原来放DVD机的位置，接上家里的外接显示器和音响，平时就当DVD机用，合着盖子不再打开了。可是现在必须这样操作：
+按笔记本电脑的电源开关&amp;#8212;&amp;gt;等待&amp;#8212;&amp;gt;登录操作系统&amp;#8212;&amp;gt;等待&amp;#8212;&amp;gt;打开xbmc程序&amp;#8212;&amp;gt;选择节目
+即使再买个无线键盘进行此番操作，我也嫌繁琐。我希望像机顶盒一样，只需按一下开机按钮。
+那就折腾一下试试。
+这个开机自动运行的问题，涉及几个前后相继的步骤：
+1 主板设置为电源接通就自动开机。
+只要一开插线板上的开关，不必按笔记本的电源键就可以开机了。这需要在bios里找到电源选项来设置。除此之外别无他法。遗憾的是，我死活找不到这个选项。咨询了惠普的工程师才确认，原来HP540的主板天生不支持这个功能&amp;#8230;&amp;#8230;
+如果只是需要开机的时候按一下电源键，我还能忍。本步跳过。
+2 无须输入密码就自动登录。
+在Ubuntu上设置一个无密码的标准帐户，并将自动登录开关打开。Ubuntu 11.10 会无须任何操作而默认登录这个帐户。
+在windows xp上，除非只有一个没有密码的帐户，否则总需要点一下才能进去，因此windows xp完败。不过，后续遇到的问题让我一度考虑返回windows xp。此乃后话，暂且不表。后面几步均是在Ubuntu下。</description>
+    </item>
+    
+  </channel>
+</rss>

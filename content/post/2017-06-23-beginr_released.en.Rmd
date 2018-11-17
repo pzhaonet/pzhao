@@ -8,7 +8,7 @@ tags:
 - R
 - beginr
 - post
-bibliography: ["d:/Dropbox/Literature/zhaor.bib"]
+bibliography: ["d:/github/pzhao/content/post/zhaor.bib"]
 categories: []
 output: #md_document
   md_document:

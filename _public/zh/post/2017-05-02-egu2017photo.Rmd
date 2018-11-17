@@ -1,0 +1,13 @@
+---
+title: "2017年欧洲地学年会留影"
+author: 赵鹏
+date: '2017-05-02'
+slug: egu2017photo
+categories: []
+tags: ["EGU", "news"]
+summary: "![](http://www.biomet.co.at/wp/wp-content/uploads/2017/04/IMG_19351.jpeg)"
+---
+
+![](http://www.biomet.co.at/wp/wp-content/uploads/2017/04/IMG_19351.jpeg)
+
+![](http://www.biomet.co.at/wp/wp-content/uploads/2017/04/IMG_1938-e1493284916944.jpeg)

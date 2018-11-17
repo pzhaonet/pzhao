@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Betv on Peng Zhao</title>
+    <link>http://www.pzhao.org/zh/tags/betv/</link>
+    <description>Recent content in Betv on Peng Zhao</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>&amp;copy; 2017 Peng Zhao</copyright>
+    <lastBuildDate>Sat, 09 Feb 2013 09:26:47 +0000</lastBuildDate>
+    
+	<atom:link href="http://www.pzhao.org/zh/tags/betv/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>在海外看春晚的技术手段</title>
+      <link>http://www.pzhao.org/archives/14608/</link>
+      <pubDate>Sat, 09 Feb 2013 09:26:47 +0000</pubDate>
+      
+      <guid>http://www.pzhao.org/archives/14608/</guid>
+      <description>看到土木坛子昨天刚刚发表的题为“在海外流畅收看春节联欢晚会高清直播”的文章，介绍了用SopCast收看春晚的方法。我没有试过，因为我用的BETV网络电视已经很让人满意了。一看CCTV，倪萍在煽情地哭，一种久违的亲切感油然而生。BETV用起来很简单。上官网下载安装，用邮箱免费注册一下，就可以用了。在德国使用起来非常流畅。只是仅有windows版本。Ubuntu下我用虚拟机测试了一下，全屏时一片漆黑，大概还需要进一步的解决方案。
+BETV有个问题就是全屏的长宽比没法调整，这可以利用另打开一个播放器的方法解决。BETV播放窗口不要关闭，只把声音关了，然后用别的播放器（比如vlc或射手播放器）打开网址，网址栏输入&amp;#8221;http://127.0.0.1:8902/tv.mpeg&amp;amp;#8221;，在这个播放器调整长宽比观看就行了。
+其他的技术手段有很多，我总结到另一篇帖子里。
+蔡明每一句话都在嘲笑潘长江的身材矮，观众一阵又一阵的热烈掌声，看到这里，看不下去了。
+原文链接</description>
+    </item>
+    
+  </channel>
+</rss>

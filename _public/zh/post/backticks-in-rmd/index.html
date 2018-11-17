@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme" content="hugo-academic">
+  <meta name="generator" content="Hugo 0.41" />
+  <meta name="author" content="Peng Zhao">
+  <meta name="description" content="Post-doc in Geoecology">
+
+  
+  
+  
+    
+  
+  
+    
+    
+    <link rel="stylesheet" href="/css/highlight.min.css">
+    
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/academicons.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700|Merriweather|Roboto+Mono">
+  <link rel="stylesheet" href="/css/hugo-academic.css">
+  
+
+  <link rel="alternate" href="http://www.pzhao.org/index.xml" type="application/rss+xml" title="Peng Zhao">
+  <link rel="feed" href="http://www.pzhao.org/index.xml" type="application/rss+xml" title="Peng Zhao">
+
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/apple-touch-icon.png">
+
+  <link rel="canonical" href="http://www.pzhao.org/zh/post/backticks-in-rmd/">
+
+  
+
+  <title>如何在 R markdown 里输出 r pi 并前后加上小撇` | Peng Zhao</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71">
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">切换导航</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/zh/">Peng Zhao</a>
+    </div>
+
+    
+    <div class="collapse navbar-collapse">
+
+      
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/zh/#about">
+            
+            <span>关于</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/zh/tags/news">
+            
+            <span>新闻</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/zh/tags/post">
+            
+            <span>日志</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/zh/publication">
+            
+            <span>论文</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/zh/talk">
+            
+            <span>报告</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/zh/#projects">
+            
+            <span>项目</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/zh/#teaching">
+            
+            <span>教学</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/zh/#unclassified">
+            
+            <span>其他</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://cse.google.com/cse/publicurl?cx=006346710622437628329:nxozn9fijm0">
+            
+            <span>搜索</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/en">
+            
+            <span>EN</span>
+          </a>
+        </li>
+
+        
+        
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+  <div class="article-container">
+    <h1 itemprop="name">如何在 R markdown 里输出 r pi 并前后加上小撇`</h1>
+    
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    <time datetime="2017-09-22 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+      Fri, Sep 22, 2017
+    </time>
+  </span>
+
+  
+  
+  
+  
+
+  
+  
+  
+  <span class="article-tags">
+    <i class="fa fa-tags"></i>
+    
+    <a href="/zh/tags/r">R</a
+    >, 
+    
+    <a href="/zh/tags/bookdown">bookdown</a
+    >, 
+    
+    <a href="/zh/tags/bookdownplus">bookdownplus</a
+    >, 
+    
+    <a href="/zh/tags/markdown">markdown</a
+    >, 
+    
+    <a href="/zh/tags/post">post</a
+    >
+    
+  </span>
+  
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=http%3a%2f%2fwww.pzhao.org%2fzh%2fpost%2fbackticks-in-rmd%2f"
+         target="_blank">
+        <i class="fa fa-facebook"></i>
+      </a>
+    </li>
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=%e5%a6%82%e4%bd%95%e5%9c%a8%20R%20markdown%20%e9%87%8c%e8%be%93%e5%87%ba%20r%20pi%20%e5%b9%b6%e5%89%8d%e5%90%8e%e5%8a%a0%e4%b8%8a%e5%b0%8f%e6%92%87%60&amp;url=http%3a%2f%2fwww.pzhao.org%2fzh%2fpost%2fbackticks-in-rmd%2f"
+         target="_blank">
+        <i class="fa fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2fwww.pzhao.org%2fzh%2fpost%2fbackticks-in-rmd%2f&amp;title=%e5%a6%82%e4%bd%95%e5%9c%a8%20R%20markdown%20%e9%87%8c%e8%be%93%e5%87%ba%20r%20pi%20%e5%b9%b6%e5%89%8d%e5%90%8e%e5%8a%a0%e4%b8%8a%e5%b0%8f%e6%92%87%60"
+         target="_blank">
+        <i class="fa fa-linkedin"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=http%3a%2f%2fwww.pzhao.org%2fzh%2fpost%2fbackticks-in-rmd%2f&amp;title=%e5%a6%82%e4%bd%95%e5%9c%a8%20R%20markdown%20%e9%87%8c%e8%be%93%e5%87%ba%20r%20pi%20%e5%b9%b6%e5%89%8d%e5%90%8e%e5%8a%a0%e4%b8%8a%e5%b0%8f%e6%92%87%60"
+         target="_blank">
+        <i class="fa fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=%e5%a6%82%e4%bd%95%e5%9c%a8%20R%20markdown%20%e9%87%8c%e8%be%93%e5%87%ba%20r%20pi%20%e5%b9%b6%e5%89%8d%e5%90%8e%e5%8a%a0%e4%b8%8a%e5%b0%8f%e6%92%87%60&amp;body=http%3a%2f%2fwww.pzhao.org%2fzh%2fpost%2fbackticks-in-rmd%2f">
+        <i class="fa fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    <div class="article-style" itemprop="articleBody">
+      <p>其实本文的标题应该是：如何在文章里显示 <code>`r pi`</code> 这样的文字。但是我不知道怎么把这个格式弄到标题里。所以，就这样凑合过吧。</p>
+<p>这个问题的答案，要分几层意思来说。<code>`r pi`</code> 是代码格式（本博客显示为粉底红字），并且包含的`符号同样是代码格式，并且 pi 并没有被编译成 3.1415927。别看它短，这三点每个都是个坑。</p>
+<p>这个问题在编写 R markdown 教程时常见。其实，等你明白这个问题的答案后，会发现答案并不难，难的是如何描述这个问题。我费了好大劲，都想不出一个准确描述的办法，并且在那些支持 markdown 的论坛上，我连这个小撇都输不出来，这叫人怎么问？最后我只能这么提问：</p>
+<blockquote>
+<p>请问在输出文档里怎么显示’撇 r pi 撇’并且别让它编译出来 3.1415927？</p>
+</blockquote>
+<div id="-1--" class="section level3">
+<h3>第 1 层意思，那个小撇 `，它到底叫什么？总不能总叫“小撇”吧？</h3>
+<div class="figure">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/KB_Germany.svg/550px-KB_Germany.svg.png" />
+
+</div>
+<p>我用的是德语键盘，挪，就是上图第一行右起第二个键的上面那个小可爱。</p>
+<p>查<a href="https://en.wikipedia.org/wiki/Grave_accent">维基百科</a>才知道，` 的学名叫 <em>Grave accent</em> ，中文叫“重音符”。在程序猿的世界里，它又被称作 <em>backquote</em> 或 <em>backtick</em>，中文叫反引号。所以，跟这个有关的问题可以这么问：</p>
+<p><a href="https://meta.stackexchange.com/questions/82718/how-do-i-escape-a-backtick-in-markdown">How do I escape a backtick ` in Markdown?</a></p>
+<p>或者</p>
+<p><a href="https://stackoverflow.com/questions/20409172/how-to-display-verbatim-inline-r-code-with-backticks-using-rmarkdown">How to display verbatim/literal inline r code with backticks using Rmarkdown?</a></p>
+</div>
+<div id="-2-" class="section level3">
+<h3>第 2 层意思：怎么把反引号显示出来？</h3>
+<p>如果仅仅输入个反引号 <code>，在同一段里后面没有了还好办，万一又出现一个反引号</code>，就会把他俩自动配对儿，两者之间的文字当成了代码。瞧，就是上句话这个德性。</p>
+<p>为了棒打鸳鸯不让他俩自动配对儿，那就用转义符\。输入\`，就避免反引号自动配对变代码了。</p>
+</div>
+<div id="-3--r-" class="section level3">
+<h3>第 3 层意思，是怎么把 r 语言的输出结果显示到代码环境里。</h3>
+<p>这个就开始有点绕了。</p>
+<p>比如，我想在Rmd 源文件里输入 pi，而输出的文档里显示 <code>3.1415927</code>。注意，光是输出 3.1415927 这容易，输入<code>`r pi`</code> 就行了，但是怎么显示成代码格式（这里是粉底红字）？在 <code>`r pi`</code> 外边加一层反引号是不行的。</p>
+<p>正确的方法是: <code>两个反引号</code> + <code>一个空格</code> + <code>一个反引号</code> + <code>r</code> + <code>pi</code> + <code>一个反引号</code> + <code>一个空格</code> + <code>两个反引号</code>。</p>
+<p><strong>也就是说，<code>两个反引号</code> + <code>一个空格</code> 相当于更外一层的反引号。 R markdown 先看到内层的反引号，进行编译，得到 3.1415927：然后，看到外层的反引号，于是把内层的编译结果表示成代码格式。</strong></p>
+</div>
+<div id="-4--3.1415927-r-pi-r-pi" class="section level3">
+<h3>第 4 层意思，怎么让上面那个 3.1415927 在输出文档里显示源码’r pi’，并且都在代码环境（粉底红色）里，即 <code>r pi</code>？</h3>
+<p>方法有两种。第一种是用<a href="https://yihui.name/knitr/faq/">knitr</a> 的 <code>inline_expr()</code> 函数：<code>`r knitr::inline_expr('pi')`</code></p>
+<p>第二种是用第 3 层意思里说的方法，即 <code>两个反引号</code> + <code>一个空格</code> <code>r</code> + <code>一个空格</code> + <code>pi</code> + <code>一个空格</code> + <code>两个反引号</code>。</p>
+<p>牢记<strong><code>两个反引号</code> + <code>一个空格</code> = <code>更外一层的反引号</code></strong>，就稍微容易理解一点。</p>
+<p>写到这个地方，我已经要晕车了，但是还没完。</p>
+</div>
+<div id="-5--4-" class="section level3">
+<h3>第 5 层意思，怎么在第 4 层意思的基础上再加两个反引号，并显示成粉底红字，即</h3>
+<p><code>`r pi`</code></p>
+<p>我现在用的方法是：<code>``</code> <code>r '\x60r pi\x60'</code> <code>``</code></p>
+<p>这个 <code>\x60</code> 就是反引号。相当于把反引号弄到字符串里处理。</p>
+</div>
+<div id="-6-" class="section level3">
+<h3>完了吗？还没完，还有第 6 层意思。</h3>
+<p>反引号就像个俄罗斯套娃；上文你看到的结果都是渲染出来的，而实际书写的源文档，总会比你看见的外面再多一层。</p>
+<p>写到这里，我不行了，容我扶墙出去呼吸两颗新鲜空气。</p>
+</div>
+
+    </div>
+  </div>
+
+</article>
+
+<div class="container">
+  <nav>
+  <ul class="pager">
+    
+    <li class="previous"><a href="http://www.pzhao.org/archives/19522/"><span
+      aria-hidden="true">&larr;</span> Typora: 一款无可挑剔的 Markdown 编辑器</a></li>
+    
+
+    
+    <li class="next"><a href="http://www.pzhao.org/zh/post/bookdown-tips/">R bookdown 的小技巧 <span
+      aria-hidden="true">&rarr;</span></a></li>
+    
+  </ul>
+</nav>
+
+</div>
+
+<div class="article-container">
+  
+<section id="comments">
+  <div id="disqus_thread">
+    <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "pzhao" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+</section>
+
+
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="powered-by">
+
+      &copy; 2017 Peng Zhao &middot; 
+
+      Powered by the <a href="https://github.com/gcushen/hugo-academic" target="_blank">Academic
+      theme</a> for <a href="http://gohugo.io" target="_blank">Hugo</a>.
+
+      <span class="pull-right" aria-hidden="true">
+        <a href="#" id="back_to_top">
+          <span class="button_icon">
+            <i class="fa fa-chevron-up fa-2x"></i>
+          </span>
+        </a>
+      </span>
+
+    </p>
+  </div>
+</footer>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/ScrollToPlugin.min.js"></script>
+    <script src="/js/jquery-1.12.3.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/isotope.pkgd.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.1/imagesloaded.pkgd.min.js"></script>
+    <script src="/js/hugo-academic.js"></script>
+    
+
+    
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-99744900-1', 'auto');
+        ga('send', 'pageview');
+
+         
+        var links = document.querySelectorAll('a');
+        Array.prototype.map.call(links, function(item) {
+            if (item.host != document.location.host) {
+                item.addEventListener('click', function() {
+                    var action = item.getAttribute('data-action') || 'follow';
+                    ga('send', 'event', 'outbound', action, item.href);
+                });
+            }
+        });
+    </script>
+    
+
+    
+    
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+
+      
+
+      
+
+      <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+    </script>
+    <script async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML"></script>
+    
+
+  </body>
+</html>
+

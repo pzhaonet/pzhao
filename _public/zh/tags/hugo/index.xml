@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hugo on Peng Zhao</title>
+    <link>http://www.pzhao.org/zh/tags/hugo/</link>
+    <description>Recent content in Hugo on Peng Zhao</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>&amp;copy; 2017 Peng Zhao</copyright>
+    <lastBuildDate>Wed, 19 Apr 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://www.pzhao.org/zh/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hugo 网站的浏览器小图标</title>
+      <link>http://www.pzhao.org/zh/post/hugo-icon/</link>
+      <pubDate>Wed, 19 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.pzhao.org/zh/post/hugo-icon/</guid>
+      <description>网站图标，就是上图的这些东东，用浏览器打开网站时显示在地址栏的顶端。R blogdown安装的hugo-academic主题，默认图标是个蓝色学位帽，挺好看的，不改也行，只是如果大家都用的话，泯然众人，识别度就低了。
+改的方式很简单：将你自己的图标图片保存为.png格式，并命名为icon.png，替换\themes\hugo-academic\static\img\icon.png即可。
+update: 更好的方案来自yang Cao的提议：把icon.png放在static/img/，避免在更新themes时将自定义图标覆盖。</description>
+    </item>
+    
+    <item>
+      <title>Hugo 网站的RSS</title>
+      <link>http://www.pzhao.org/zh/post/hugo-rss/</link>
+      <pubDate>Tue, 18 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.pzhao.org/zh/post/hugo-rss/</guid>
+      <description>R blogdown 搭建的 Hugo 网站，小细节很多，可以一点一点完善，好在都不难搞定。今天添加了个RSS订阅按钮。
+自从 Google Reader 死后，我就觉得 RSS 没有多大趣味，就好像子期死后伯牙摔琴一样。但是，没有 RSS 提醒的话，还真不知道谁的博客更新了，于是就勉强用 feedly 凑合。眼看我的新网站构架基本完成，就在 feedly 里订阅了一下自己的网站，输入 pzhao.org，发现没找到。嗯？研究一下才明白，我的主页完整地址是：
+http://pzhao.org/zh/这个路径对应的本地文件夹下面，不仅有个index.html，还有个index.xml，后者就是 RSS 订阅的文件。所以，在feedly添加：
+http://pzhao.org/zh/index.xml就把我的新网站添进去了。这是订阅全站。如果只想订阅其中的博客，或新发表的学术文章，或新做的报告，那么：
+http://pzhao.org/zh/post/index.xmlhttp://pzhao.org/zh/publication/index.xmlhttp://pzhao.org/zh/talk/index.xml这个RSS链接，我该放到主页的什么位置，来方便网友订阅呢？我决定放到我的头像下面的社交按钮里。
+头像下的社交按钮是在config.toml里设置的，只需添加个[[params.social]]就可以了，图标去fa或ai两个包的主页找便是。 实在缺乏社交，只好把自己卡拉OK的录音和腾讯视频加进去凑数，代码如下：
+ [[params.social]]icon = &amp;quot;rss&amp;quot;icon_pack = &amp;quot;fa&amp;quot;link = &amp;quot;http://www.pzhao.org/zh/index.xml&amp;quot;[[params.social]]icon = &amp;quot;music&amp;quot;icon_pack = &amp;quot;fa&amp;quot;link = &amp;quot;http://kg.qq.com/node/personal?uid=649d9d85212c3489&amp;quot;[[params.social]]icon = &amp;quot;video-camera&amp;quot;icon_pack = &amp;quot;fa&amp;quot;link = &amp;quot;http://v.qq.com/vplus/0f8190586a3f2f22a25e9827b38c171e&amp;quot;</description>
+    </item>
+    
+    <item>
+      <title>R blogdown 搭建个人博客或科研网站</title>
+      <link>http://www.pzhao.org/zh/post/r-blogdown/</link>
+      <pubDate>Tue, 11 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.pzhao.org/zh/post/r-blogdown/</guid>
+      <description>本文收录在《学 R 》一书的附录中。
+互联网时代有个自己的网站，就好像真实世界里有了自己的房子（服务器）和固定地址（域名）；自我介绍时附上自己的网站，就像生活里邀请朋友来访或者职场上递上名片，都甚为方便。然而，建立一个网站并不容易，涉及诸多领域的知识和技能，门槛比较高。好在，我们有万能的R语言，搭建网站只需几分钟，而并不需要多少网络知识。你甚至不用懂 R 语言是什么，照我下面说的做就行，包教包会，学不会免费再教。
+这里，我提供两个示范，演示如何使用 R 语言的 blogdown 扩展包1，用来搭建一个个人博客和一个科研小组网站。截至本文成稿之日，blogdown 含苞待放，尚未正式发布，但是已经能够正常安装使用了。我们来尝尝鲜，提前一睹她的芳容。
+R blogdown 简介和安装R blogdown 是什么
+R语言的一个扩展包，用来制作网站的工具。可以用非常简洁的方式快速搭建静态网页构成的网站。虽然名字里有“博客”（blog）字样，但并不仅限于博客。非常适合搭建一个科研小组的展示窗口。基于 markdown 扩展语法，可以在网页中方便地插入图表、脚注、数学公式、R 代码等元素。非常容易将 bookdown 生成的论文转化成网页展示。非常易于维护，迁移，备份。本书的官方网站就是用 R blogdown 搭建的。网站里给大家提供的 R 示例代码、试读章节、勘误表等，都是直接从书稿中拷贝粘贴到文本文件里，然后运行一下 blogdown 的指令，网站就自动更新了。
+安装
+blogdown 的背景平台是 R 语言，用户界面首选 RStudio ，产生的网站框架是 Hugo ，掰手指头数一数，要安装4样东西，略显繁琐，但并不难，一劳永逸。安装方式如下：
+R。去R的服务器CRAN，点击Download R for Windows（其他操作系统的用户请自便），在打开的新网页最上方点击base，就找到下载链接了。下载完毕后安装，一路“下一步”的傻瓜式安装即可。RStudio。去官网下载安装文件运行即可。blogdown。运行RStudio，在左上面板的代码窗口输入并运行以下代码：if(!require(devtools)) install.packages(&amp;#39;devtools&amp;#39;)devtools::install_github(&amp;#39;rstudio/blogdown&amp;#39;)解释一下：由于 blogdown 目前只发布到了 GitHub 服务器上，尚未发布到CRAN，所以上面第一条代码先安装开发工具 devtools 包，第二行用这个包的install_github() 函数从 GitHub 安装。
+Hugo 框架。在 RStudio 左上面板的代码窗口输入并运行以下代码：blogdown::install_hugo()安装完毕。</description>
+    </item>
+    
+  </channel>
+</rss>

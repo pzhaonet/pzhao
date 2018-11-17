@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme" content="hugo-academic">
+  <meta name="generator" content="Hugo 0.41" />
+  <meta name="author" content="Peng Zhao">
+  <meta name="description" content="Post-doc in Geoecology">
+
+  
+  
+  
+    
+  
+  
+    
+    
+    <link rel="stylesheet" href="/css/highlight.min.css">
+    
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/academicons.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700|Merriweather|Roboto+Mono">
+  <link rel="stylesheet" href="/css/hugo-academic.css">
+  
+
+  <link rel="alternate" href="http://www.pzhao.org/index.xml" type="application/rss+xml" title="Peng Zhao">
+  <link rel="feed" href="http://www.pzhao.org/index.xml" type="application/rss+xml" title="Peng Zhao">
+
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/apple-touch-icon.png">
+
+  <link rel="canonical" href="http://www.pzhao.org/zh/post/postr/">
+
+  
+
+  <title>postr: 用R Markdown做海报 | Peng Zhao</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71">
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">切换导航</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/zh/">Peng Zhao</a>
+    </div>
+
+    
+    <div class="collapse navbar-collapse">
+
+      
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/zh/#about">
+            
+            <span>关于</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/zh/tags/news">
+            
+            <span>新闻</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/zh/tags/post">
+            
+            <span>日志</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/zh/publication">
+            
+            <span>论文</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/zh/talk">
+            
+            <span>报告</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/zh/#projects">
+            
+            <span>项目</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/zh/#teaching">
+            
+            <span>教学</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/zh/#unclassified">
+            
+            <span>其他</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://cse.google.com/cse/publicurl?cx=006346710622437628329:nxozn9fijm0">
+            
+            <span>搜索</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/en">
+            
+            <span>EN</span>
+          </a>
+        </li>
+
+        
+        
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+  <div class="article-container">
+    <h1 itemprop="name">postr: 用R Markdown做海报</h1>
+    
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    <time datetime="2017-05-16 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+      Tue, May 16, 2017
+    </time>
+  </span>
+
+  
+  
+  
+  
+
+  
+  
+  
+  <span class="article-tags">
+    <i class="fa fa-tags"></i>
+    
+    <a href="/zh/tags/r">R</a
+    >, 
+    
+    <a href="/zh/tags/postr">postr</a
+    >, 
+    
+    <a href="/zh/tags/markdown">markdown</a
+    >, 
+    
+    <a href="/zh/tags/post">post</a
+    >
+    
+  </span>
+  
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=http%3a%2f%2fwww.pzhao.org%2fzh%2fpost%2fpostr%2f"
+         target="_blank">
+        <i class="fa fa-facebook"></i>
+      </a>
+    </li>
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=postr%3a%20%e7%94%a8R%20Markdown%e5%81%9a%e6%b5%b7%e6%8a%a5&amp;url=http%3a%2f%2fwww.pzhao.org%2fzh%2fpost%2fpostr%2f"
+         target="_blank">
+        <i class="fa fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2fwww.pzhao.org%2fzh%2fpost%2fpostr%2f&amp;title=postr%3a%20%e7%94%a8R%20Markdown%e5%81%9a%e6%b5%b7%e6%8a%a5"
+         target="_blank">
+        <i class="fa fa-linkedin"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=http%3a%2f%2fwww.pzhao.org%2fzh%2fpost%2fpostr%2f&amp;title=postr%3a%20%e7%94%a8R%20Markdown%e5%81%9a%e6%b5%b7%e6%8a%a5"
+         target="_blank">
+        <i class="fa fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=postr%3a%20%e7%94%a8R%20Markdown%e5%81%9a%e6%b5%b7%e6%8a%a5&amp;body=http%3a%2f%2fwww.pzhao.org%2fzh%2fpost%2fpostr%2f">
+        <i class="fa fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    <div class="article-style" itemprop="articleBody">
+      <p>用R markdown写海报的扩展包<a href="https://github.com/pzhaonet/postr">postr</a>安装使用方法（需要先安装好软件环境，详见<a href="https://github.com/pzhaonet/postr">postr</a>项目主页）：</p>
+<pre class="r"><code>devtools::install_github(&quot;pzhaonet/postr&quot;)
+setwd()
+postr::postr()</code></pre>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+poster_eco.jpg" />
+
+</div>
+<p>益辉的<a href="https://yihui.name/cn/2017/04/r-markdown-poster/">莽撞人项目</a>，悬赏解决“用 R Markdown 做海报”这个技术难题。我私下说，Markdown走的是LaTeX路线，讲究篇章结构和逻辑，而海报追求更多随意性和艺术性，即使学术海报也不例外，所以费劲硬要用Markdown解决，可能吃力不讨好。倒不如Powerpoint来得方便，或者把整个海报在R里当成一个device，用layout画图来实现。话虽这么说，我仍然在留意这件事，因为我在新书<a href="http://xuer.pzhao.org">学R</a>里提出R语言科研方案的整体拼图，被我几乎全部拼完了，只缺海报这一块。这就好比在朋友圈发照片只发八张，看一眼就浑身不自在。</p>
+<p>前几天，做<a href="https://github.com/pzhaonet/bookdownplus">bookdownplus</a>时找模板，在比利时鲁汶大学的一大堆模板当中，我极其偶然地发现，里面暗暗潜伏着的，竟然有用R Markdown制作海报的秘密，淹没在一大堆文件里，搞不清楚各个文件之间的关系，而且说明文档过于简单，用起来不够方便。于是，我花了些工夫，把海报部分择了出来，稍加修改，增添了几个自己做的颜色主题，纳入了<a href="https://github.com/pzhaonet/bookdownplus">bookdownplus</a>里。我的想法是，用户只需下载我这个文件夹，选择好模板，一运行，就出来个Rmd文件，打开一点knit按钮，Duang！海报就出来了。</p>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+poster_ocean.jpg" />
+
+</div>
+<p>于是去揭“莽撞人”榜。榜主说：很好。然后说：做成个包吧！名字都起好了，叫postr。为啥不直接叫poster？我猜大概是postr跟knitr的命名法类似，更容易搜到吧。</p>
+<p>想来也是。我这种下载文件夹的方法毕竟路子太野，不符合R语言的习惯，大家更喜欢的是做包，上传，安装。但是我从来没做过包。而且，我认为做包是R语言里高大上的东西，我不认为自己能很快学会做。于是，我在朋友圈招贤，看有没有谁愿意把这活儿给接过去。消息放出去一天，无人理睬。</p>
+<p>得，自己来吧。</p>
+<p>这天大娃生病了，早上带他看医生。诊所人满为患。排队的时候，我把网上几篇关于R包开发入门的帖子扫了几遍，好像不太难哦。从诊所出来，十点多了，一到办公室，就干劲十足地折腾。事情出乎意料的顺利。我原以要到明年才能把这个包写出来，结果当天下午就写完了。这个过程里，多亏了几位前人的工作，几年前还很繁琐复杂的R包开发，现在分分钟就能写一个玩玩。</p>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+poster_rose.jpg" />
+
+</div>
+<p>既然这么容易，我顺手把<a href="https://github.com/pzhaonet/bookdownplus">bookdownplus</a>也写成了个包。然后把平时常用的方程写成了第三个包。我还准备写个R包开发菜鸟教程，于是又写了个示例包。</p>
+<p>从对R包开发一无所知，到一口气干掉四个包，花了不到两天工夫。用力过猛，有点撑了，我隐隐觉得不妙：好像不该这么顺利吧。</p>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+poster_ice.jpg" />
+
+</div>
+<p>果然，postr放到github当天晚上，就有人留言了。我很好奇这哥们儿是怎么在第一时间发现我这么个无名之辈发布了一个包。这哥们儿先说，postr这个名字起得好，很容易记住。这得感谢益辉，他给我的域名提的建议也让人说容易记。然后这哥们儿说：这个包他运行无法通过。</p>
+<p>这时我陡然发现，这才是R包开发的关键。写个包发布到github并不难，难的是解决用户的问题。</p>
+<p>前面等待的，将是一个又一个的坑。</p>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/pzhaonet/bookdown-plus/master/showcase/bookdown+poster_night.jpg" />
+
+</div>
+
+    </div>
+  </div>
+
+</article>
+
+<div class="container">
+  <nav>
+  <ul class="pager">
+    
+    <li class="previous"><a href="http://www.pzhao.org/archives/19346/"><span
+      aria-hidden="true">&larr;</span> 林火</a></li>
+    
+
+    
+    <li class="next"><a href="http://www.pzhao.org/zh/post/rmickey/">9分钟写个R语言包：菜鸟致简速成 <span
+      aria-hidden="true">&rarr;</span></a></li>
+    
+  </ul>
+</nav>
+
+</div>
+
+<div class="article-container">
+  
+<section id="comments">
+  <div id="disqus_thread">
+    <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "pzhao" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+</section>
+
+
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="powered-by">
+
+      &copy; 2017 Peng Zhao &middot; 
+
+      Powered by the <a href="https://github.com/gcushen/hugo-academic" target="_blank">Academic
+      theme</a> for <a href="http://gohugo.io" target="_blank">Hugo</a>.
+
+      <span class="pull-right" aria-hidden="true">
+        <a href="#" id="back_to_top">
+          <span class="button_icon">
+            <i class="fa fa-chevron-up fa-2x"></i>
+          </span>
+        </a>
+      </span>
+
+    </p>
+  </div>
+</footer>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/ScrollToPlugin.min.js"></script>
+    <script src="/js/jquery-1.12.3.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/isotope.pkgd.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.1/imagesloaded.pkgd.min.js"></script>
+    <script src="/js/hugo-academic.js"></script>
+    
+
+    
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-99744900-1', 'auto');
+        ga('send', 'pageview');
+
+         
+        var links = document.querySelectorAll('a');
+        Array.prototype.map.call(links, function(item) {
+            if (item.host != document.location.host) {
+                item.addEventListener('click', function() {
+                    var action = item.getAttribute('data-action') || 'follow';
+                    ga('send', 'event', 'outbound', action, item.href);
+                });
+            }
+        });
+    </script>
+    
+
+    
+    
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+
+      
+
+      
+
+      <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+    </script>
+    <script async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML"></script>
+    
+
+  </body>
+</html>
+

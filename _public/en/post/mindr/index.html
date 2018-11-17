@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme" content="hugo-academic">
+  <meta name="generator" content="Hugo 0.41" />
+  <meta name="author" content="Peng Zhao">
+  <meta name="description" content="Post-doc in Geoecology">
+
+  
+  
+  
+    
+  
+  
+    
+    
+    <link rel="stylesheet" href="/css/highlight.min.css">
+    
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/academicons.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700|Merriweather|Roboto+Mono">
+  <link rel="stylesheet" href="/css/hugo-academic.css">
+  
+
+  <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Peng Zhao">
+  <link rel="feed" href="/index.xml" type="application/rss+xml" title="Peng Zhao">
+
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/apple-touch-icon.png">
+
+  <link rel="canonical" href="/en/post/mindr/">
+
+  
+
+  <title>R package mindr: convert markdown files to mind maps, and vice versa | Peng Zhao</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71">
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/en">Peng Zhao</a>
+    </div>
+
+    
+    <div class="collapse navbar-collapse">
+
+      
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/en/#about">
+            
+            <span>About</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/en/tags/news">
+            
+            <span>News</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/en/tags/post">
+            
+            <span>Posts</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/en/publication">
+            
+            <span>Publications</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/en/talk">
+            
+            <span>Talks</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/en/#projects">
+            
+            <span>Projects</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/en/#unclassified">
+            
+            <span>Unclassified</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://cse.google.com/cse/publicurl?cx=006346710622437628329:tdbwt2rsqrs">
+            
+            <span>Search</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/zh">
+            
+            <span>中文</span>
+          </a>
+        </li>
+
+        
+        
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+  <div class="article-container">
+    <h1 itemprop="name">R package mindr: convert markdown files to mind maps, and vice versa</h1>
+    
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    <time datetime="2017-05-19 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+      Fri, May 19, 2017
+    </time>
+  </span>
+
+  
+  
+  
+  
+
+  
+  
+  
+  <span class="article-tags">
+    <i class="fa fa-tags"></i>
+    
+    <a href="/en/tags/r">R</a
+    >, 
+    
+    <a href="/en/tags/mindr">mindr</a
+    >, 
+    
+    <a href="/en/tags/markdown">markdown</a
+    >, 
+    
+    <a href="/en/tags/post">post</a
+    >
+    
+  </span>
+  
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=%2fen%2fpost%2fmindr%2f"
+         target="_blank">
+        <i class="fa fa-facebook"></i>
+      </a>
+    </li>
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=R%20package%20mindr%3a%20convert%20markdown%20files%20to%20mind%20maps%2c%20and%20vice%20versa&amp;url=%2fen%2fpost%2fmindr%2f"
+         target="_blank">
+        <i class="fa fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fen%2fpost%2fmindr%2f&amp;title=R%20package%20mindr%3a%20convert%20markdown%20files%20to%20mind%20maps%2c%20and%20vice%20versa"
+         target="_blank">
+        <i class="fa fa-linkedin"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=%2fen%2fpost%2fmindr%2f&amp;title=R%20package%20mindr%3a%20convert%20markdown%20files%20to%20mind%20maps%2c%20and%20vice%20versa"
+         target="_blank">
+        <i class="fa fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=R%20package%20mindr%3a%20convert%20markdown%20files%20to%20mind%20maps%2c%20and%20vice%20versa&amp;body=%2fen%2fpost%2fmindr%2f">
+        <i class="fa fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    <div class="article-style" itemprop="articleBody">
+      <p>This is a preliminary version of the introduction to mindr. Please go to my Github repo <a href="https://github.com/pzhaonet/mindr">mindr</a> for the latest updates.</p>
+<div class="figure">
+<img src="http://cranlogs.r-pkg.org/badges/grand-total/mindr" />
+
+</div>
+<p><img src="/post/2017-05-19-mindr.en_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<div id="quick-start" class="section level2">
+<h2>Quick start</h2>
+<div id="installation" class="section level3">
+<h3>Installation</h3>
+<pre><code>devtools::install_github(&quot;pzhaonet/mindr&quot;)</code></pre>
+</div>
+<div id="convert-a-markdown-files-into-a-mindmap" class="section level3">
+<h3>Convert (a) markdown file(s) into a mindmap</h3>
+<p>Create a folder named <code>mm</code> in the working directory (<code>getwd()</code>), and drop some markdown or rmarkdown files into <code>mm/</code>. Run:</p>
+<pre><code>mindr::md2mm()</code></pre>
+<p>then you will get a <code>mm.mm</code> file. Open it with any mind-map (brainstorm) software, and you will get a mind map.</p>
+<p>Plenty of cross-platform and online mindmap software suits are available (see <a href="https://en.wikipedia.org/wiki/List_of_concept-_and_mind-mapping_software">the list</a>), among which <a href="http://freemind.sourceforge.net/wiki/index.php/Download">freemind</a> and <a href="http://www.xmind.net/download/win/">Xmind</a> are highly recommended.</p>
+</div>
+<div id="convcert-a-mind-maps-into-a-markdown-file" class="section level3">
+<h3>Convcert (a) mind map(s) into a markdown file</h3>
+<p>Drop some mindmap files (.mm) into <code>mm/</code>. Run:</p>
+<pre><code>mindr::mm2md()</code></pre>
+<p>then you will get a <code>mm.md</code> markdown file.</p>
+</div>
+<div id="extract-the-outline-from-a-markdown-files" class="section level3">
+<h3>Extract the outline from (a) markdown files</h3>
+<p>Drop some markdown or rmarkdown files into <code>mm/</code>. Run:</p>
+<pre><code>mindr::outline()</code></pre>
+<p>then you will get an <code>outline.md</code> file with headers in it as an outline.</p>
+<p>Have fun!</p>
+<p>Still being developed. Feel free to give your feedback to me!</p>
+</div>
+</div>
+<div id="showcase" class="section level2">
+<h2>Showcase</h2>
+<ul>
+<li>Mindmap of <a href="https://github.com/rstudio/bookdown/tree/master/inst/examples">bookdown manual</a></li>
+</ul>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/pzhaonet/mindr/master/showcase/mindr_bookdown.jpeg" />
+
+</div>
+<ul>
+<li>Mindmap of <a href="https://github.com/rstudio/blogdown/tree/master/docs">blogdown manual</a></li>
+</ul>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/pzhaonet/mindr/master/showcase/mindr_blogdown.jpg" />
+
+</div>
+<ul>
+<li>Mindmap of my book <em>Learning R</em></li>
+</ul>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/pzhaonet/mindr/master/showcase/mindr_xuer.jpg" />
+
+</div>
+</div>
+<div id="license" class="section level1">
+<h1>License</h1>
+<p>Copyright 2017 <a href="http://pzhao.org">Peng Zhao</a>.</p>
+<p>Released under the <a href="https://github.com/pzhaonet/bookdown-plus/blob/master/LICENSE.md">MIT</a> license.</p>
+</div>
+
+    </div>
+  </div>
+
+</article>
+
+<div class="container">
+  <nav>
+  <ul class="pager">
+    
+    <li class="previous"><a href="/en/post/postr/"><span
+      aria-hidden="true">&larr;</span> R package postr: created posters with R markdown</a></li>
+    
+
+    
+    <li class="next"><a href="/en/post/equations/">LaTeX equations in micrometeorology <span
+      aria-hidden="true">&rarr;</span></a></li>
+    
+  </ul>
+</nav>
+
+</div>
+
+<div class="article-container">
+  
+<section id="comments">
+  <div id="disqus_thread">
+    <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "pzhao" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+</section>
+
+
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="powered-by">
+
+      &copy; 2017 Peng Zhao &middot; 
+
+      Powered by the <a href="https://github.com/gcushen/hugo-academic" target="_blank">Academic
+      theme</a> for <a href="http://gohugo.io" target="_blank">Hugo</a>.
+
+      <span class="pull-right" aria-hidden="true">
+        <a href="#" id="back_to_top">
+          <span class="button_icon">
+            <i class="fa fa-chevron-up fa-2x"></i>
+          </span>
+        </a>
+      </span>
+
+    </p>
+  </div>
+</footer>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/ScrollToPlugin.min.js"></script>
+    <script src="/js/jquery-1.12.3.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/isotope.pkgd.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.1/imagesloaded.pkgd.min.js"></script>
+    <script src="/js/hugo-academic.js"></script>
+    
+
+    
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-99744900-1', 'auto');
+        ga('send', 'pageview');
+
+         
+        var links = document.querySelectorAll('a');
+        Array.prototype.map.call(links, function(item) {
+            if (item.host != document.location.host) {
+                item.addEventListener('click', function() {
+                    var action = item.getAttribute('data-action') || 'follow';
+                    ga('send', 'event', 'outbound', action, item.href);
+                });
+            }
+        });
+    </script>
+    
+
+    
+    
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+
+      
+
+      
+
+      <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+    </script>
+    <script async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML"></script>
+    
+
+  </body>
+</html>
+

@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme" content="hugo-academic">
+  <meta name="generator" content="Hugo 0.41" />
+  <meta name="author" content="Peng Zhao">
+  <meta name="description" content="Post-doc in Geoecology">
+
+  
+  
+  
+    
+  
+  
+    
+    
+    <link rel="stylesheet" href="/css/highlight.min.css">
+    
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/academicons.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700|Merriweather|Roboto+Mono">
+  <link rel="stylesheet" href="/css/hugo-academic.css">
+  
+
+  <link rel="alternate" href="http://www.pzhao.org/index.xml" type="application/rss+xml" title="Peng Zhao">
+  <link rel="feed" href="http://www.pzhao.org/index.xml" type="application/rss+xml" title="Peng Zhao">
+
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/apple-touch-icon.png">
+
+  <link rel="canonical" href="http://www.pzhao.org/archives/17084/">
+
+  
+
+  <title>R 的箭头等号之争 | Peng Zhao</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71">
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">切换导航</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/zh/">Peng Zhao</a>
+    </div>
+
+    
+    <div class="collapse navbar-collapse">
+
+      
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/zh/#about">
+            
+            <span>关于</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/zh/tags/news">
+            
+            <span>新闻</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/zh/tags/post">
+            
+            <span>日志</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/zh/publication">
+            
+            <span>论文</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/zh/talk">
+            
+            <span>报告</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/zh/#projects">
+            
+            <span>项目</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/zh/#teaching">
+            
+            <span>教学</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/zh/#unclassified">
+            
+            <span>其他</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://cse.google.com/cse/publicurl?cx=006346710622437628329:nxozn9fijm0">
+            
+            <span>搜索</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/en">
+            
+            <span>EN</span>
+          </a>
+        </li>
+
+        
+        
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+  <div class="article-container">
+    <h1 itemprop="name">R 的箭头等号之争</h1>
+    
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    <time datetime="2014-03-13 20:40:09 &#43;0000 &#43;0000" itemprop="datePublished">
+      Thu, Mar 13, 2014
+    </time>
+  </span>
+
+  
+  
+  
+  <span class="article-categories">
+    <i class="fa fa-folder"></i>
+    
+    <a href="/zh/categories/%e6%9c%aa%e5%88%86%e7%b1%bb">未分类</a
+    >
+    
+  </span>
+  
+  
+
+  
+  
+  
+  <span class="article-tags">
+    <i class="fa fa-tags"></i>
+    
+    <a href="/zh/tags/r">R</a
+    >
+    
+  </span>
+  
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=http%3a%2f%2fwww.pzhao.org%2farchives%2f17084%2f"
+         target="_blank">
+        <i class="fa fa-facebook"></i>
+      </a>
+    </li>
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=R%20%e7%9a%84%e7%ae%ad%e5%a4%b4%e7%ad%89%e5%8f%b7%e4%b9%8b%e4%ba%89&amp;url=http%3a%2f%2fwww.pzhao.org%2farchives%2f17084%2f"
+         target="_blank">
+        <i class="fa fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2fwww.pzhao.org%2farchives%2f17084%2f&amp;title=R%20%e7%9a%84%e7%ae%ad%e5%a4%b4%e7%ad%89%e5%8f%b7%e4%b9%8b%e4%ba%89"
+         target="_blank">
+        <i class="fa fa-linkedin"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=http%3a%2f%2fwww.pzhao.org%2farchives%2f17084%2f&amp;title=R%20%e7%9a%84%e7%ae%ad%e5%a4%b4%e7%ad%89%e5%8f%b7%e4%b9%8b%e4%ba%89"
+         target="_blank">
+        <i class="fa fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=R%20%e7%9a%84%e7%ae%ad%e5%a4%b4%e7%ad%89%e5%8f%b7%e4%b9%8b%e4%ba%89&amp;body=http%3a%2f%2fwww.pzhao.org%2farchives%2f17084%2f">
+        <i class="fa fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    <div class="article-style" itemprop="articleBody">
+      <p>丐帮净污有两派，华山剑气分二宗。有人的地方就有江湖，R 用户群里存在着箭头和等号之争。说来简单，R 语言里的赋值号，可以是等号“=”，也可以是箭头号“&lt;-”，纯属个人喜好，没有本质区别。比如让 x 的值为 2，那么通常有两种写法：</p>
+
+<pre><code>x = 2
+x &lt;- 2
+</code></pre>
+
+<p>用户多个选择，世界多种颜色，本来是个好事儿。我还曾经把等号赋值的语句表示是引用别人的，箭头赋值的表示是自己写的，以此来表达对代码原作者的尊重。但是，已经有好几次有人问我为啥总用箭头，开始我还觉得奇怪，后来我惊奇地发现，R 用户居然还分箭头党和等号党，两者之间还存在党争。并且我还发现，自己不知不觉已经加入了箭头党。</p>
+
+<p>搜索“赋值 箭头 等号”，第一篇就是益辉的“<a href="http://yihui.name/cn/2012/09/equal-and-arrow/" target="_blank">R的若干基因及争论</a>”，其中的一节介绍了箭头等号之争的前世今生，兼具知识型和趣味性，读罢觉得意犹未尽。英文世界里搜索出来的结果，内容还不如这一篇详实。这其实是个历史问题，大家搁置争议共同开发就行了，连利益纠纷都不涉及，没必要你反对我我反对你的。那么，两党到底争个啥劲呢？</p>
+
+<p>在本文亮相之前，箭头党反对等号党的理由，主要是认为等号存在歧义，除了可以用来赋值，还用来传递函数的参数值，具体例子我也不重复了。这是事实，可惜有漏洞：存在歧义难道就不好吗？</p>
+
+<p>等号党抓住了这个漏洞，反对箭头的理由大体有两点：</p>
+
+<ol>
+<li>第一点是，箭头输入麻烦，要按三个键（“shift+逗号键”来输入<code>&lt;</code>，再输入减号），而等号方便，按一个键就行了。</li>
+<li>第二点是，等号的歧义完全可以从语境上来区分，箭头没有存在必要，并且引起混乱。对此等号党举出了很多例子，这里也不重复了，见上文的链接。</li>
+</ol>
+
+<p>可惜的是，第二点在我看来，举出的例子都无法让我信服，纯粹是为了反对而反对，只怕平时没人会按那些例子来写代码，因为那不是好习惯；只要养成个好习惯，比如赋值语句单独写出来，该加空格的地方加空格，那么这些混乱完全是可以避免的。我觉得用箭头来赋值，用等号来传递函数参数，各司其职，清晰明了。比如想找出代码里所有的赋值语句，搜索一下箭头就行了。等号亦然。</p>
+
+<p>而第一点理由，说等号输入更省事儿，看起来无可辩驳，但事实可能完全超出预料，因为，世界上的电脑键盘何止一种。</p>
+
+<p><img src="http://www.dedecn.com/include/ueditor/php/upload/68331385553003.png" alt="" /></p>
+
+<p><em>插图1 德语键盘布局</em></p>
+
+<p>图 1 显示的是德语键盘布局，跟英语键盘的不同之处大部分都标了出来。你会发现，输入等号需要按“shift+0”键，要按两个键才行，而箭头也是按两个，并不比等号费事。在德国市面上买到的电脑键盘都是这个模样的。等号的输入优势在这里荡然无存。 <a href="http://yangliufr.com/2013/03/18/r-equal-or-arrow/" target="_blank">Yangliufr</a>对这个问题谈了他的理解，其中也提到了法语键盘的问题。有人说，非英文键盘毕竟是少数。可是，人类文明进步的一个标志，就是不忽略小众人群和弱势群体的感受。大概是意识到了这一点，当前流行的 R 集成界面 Rstudio 干脆设置了个快捷键“alt+_”，同样是按两个键，不仅能输入个箭头，还在箭头前后附送两个空格！这绝对是个进步。如果有个快捷键，能一下输入等号并且送两个空格就更好了。</p>
+
+<p>我用德语键盘和RStudio；另外，我从刚接触 R 就按教材用箭头，先入为主习惯了；还有就是 <a href="http://pzhao.org/archives/13207" target="_blank">google 建议用箭头</a>，而我是 google 的粉丝；除了这些现实的理由外，我还觉得箭头更酷，更男人。</p>
+
+<p><img src="http://www.psdgraphics.com/wp-content/uploads/2009/06/male-sign.jpg" alt="" /></p>
+
+<p>这样一来，等号在我面前完败。</p>
+
+<p>但我并不向别人推销箭头。拜巴别塔所赐，世界上使用 R 语言的键盘五花八门，自己怎么方便怎么来，每人背后都有自己的故事和理由，多宽容别人，世界才美好。萝卜青菜，各有所爱，大家各自享受自己的爱好和乐趣好了，不知道有什么可争论的。</p>
+
+<p>R 发展的历史上发现这个问题时，事态有可能朝两个方向走：一是革命，修改 R 的规则，消灭箭头；二是改良，适应 R 的规则，允许共存。历史选择了后者。如果选择的是革命，结果亦未可知，但革命之路上经历的内战和政治斗争等带来的灾难，又是谁能预料呢？</p>
+
+<p><a href="http://dapengde.com/archives/17084" target="_blank">原文链接</a></p>
+
+    </div>
+  </div>
+
+</article>
+
+<div class="container">
+  <nav>
+  <ul class="pager">
+    
+    <li class="previous"><a href="http://www.pzhao.org/archives/17081/"><span
+      aria-hidden="true">&larr;</span> 博客仓库，简书展厅</a></li>
+    
+
+    
+    <li class="next"><a href="http://www.pzhao.org/archives/17089/">春分 <span
+      aria-hidden="true">&rarr;</span></a></li>
+    
+  </ul>
+</nav>
+
+</div>
+
+<div class="article-container">
+  
+<section id="comments">
+  <div id="disqus_thread">
+    <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "pzhao" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+</section>
+
+
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="powered-by">
+
+      &copy; 2017 Peng Zhao &middot; 
+
+      Powered by the <a href="https://github.com/gcushen/hugo-academic" target="_blank">Academic
+      theme</a> for <a href="http://gohugo.io" target="_blank">Hugo</a>.
+
+      <span class="pull-right" aria-hidden="true">
+        <a href="#" id="back_to_top">
+          <span class="button_icon">
+            <i class="fa fa-chevron-up fa-2x"></i>
+          </span>
+        </a>
+      </span>
+
+    </p>
+  </div>
+</footer>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/ScrollToPlugin.min.js"></script>
+    <script src="/js/jquery-1.12.3.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/isotope.pkgd.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.1/imagesloaded.pkgd.min.js"></script>
+    <script src="/js/hugo-academic.js"></script>
+    
+
+    
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-99744900-1', 'auto');
+        ga('send', 'pageview');
+
+         
+        var links = document.querySelectorAll('a');
+        Array.prototype.map.call(links, function(item) {
+            if (item.host != document.location.host) {
+                item.addEventListener('click', function() {
+                    var action = item.getAttribute('data-action') || 'follow';
+                    ga('send', 'event', 'outbound', action, item.href);
+                });
+            }
+        });
+    </script>
+    
+
+    
+    
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+
+      
+
+      
+
+      <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+    </script>
+    <script async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML"></script>
+    
+
+  </body>
+</html>
+

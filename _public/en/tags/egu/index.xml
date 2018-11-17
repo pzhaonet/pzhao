@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Egu on Peng Zhao</title>
+    <link>/en/tags/egu/</link>
+    <description>Recent content in Egu on Peng Zhao</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2017 Peng Zhao</copyright>
+    <lastBuildDate>Tue, 02 May 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/en/tags/egu/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>EGU 2017</title>
+      <link>/en/post/egu2017photo/</link>
+      <pubDate>Tue, 02 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/en/post/egu2017photo/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

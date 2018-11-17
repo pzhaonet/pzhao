@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mindr on Peng Zhao</title>
+    <link>/en/tags/mindr/</link>
+    <description>Recent content in Mindr on Peng Zhao</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2017 Peng Zhao</copyright>
+    <lastBuildDate>Fri, 19 May 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/en/tags/mindr/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>R package mindr: convert markdown files to mind maps, and vice versa</title>
+      <link>/en/post/mindr/</link>
+      <pubDate>Fri, 19 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/en/post/mindr/</guid>
+      <description>This is a preliminary version of the introduction to mindr. Please go to my Github repo mindr for the latest updates.
+Quick startInstallationdevtools::install_github(&amp;quot;pzhaonet/mindr&amp;quot;)Convert (a) markdown file(s) into a mindmapCreate a folder named mm in the working directory (getwd()), and drop some markdown or rmarkdown files into mm/. Run:
+mindr::md2mm()then you will get a mm.mm file. Open it with any mind-map (brainstorm) software, and you will get a mind map.</description>
+    </item>
+    
+  </channel>
+</rss>

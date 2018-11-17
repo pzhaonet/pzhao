@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme" content="hugo-academic">
+  <meta name="generator" content="Hugo 0.41" />
+  <meta name="author" content="Peng Zhao">
+  <meta name="description" content="Post-doc in Geoecology">
+
+  
+  
+  
+    
+  
+  
+    
+    
+    <link rel="stylesheet" href="/css/highlight.min.css">
+    
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/academicons.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700|Merriweather|Roboto+Mono">
+  <link rel="stylesheet" href="/css/hugo-academic.css">
+  
+
+  <link rel="alternate" href="http://www.pzhao.org/index.xml" type="application/rss+xml" title="Peng Zhao">
+  <link rel="feed" href="http://www.pzhao.org/index.xml" type="application/rss+xml" title="Peng Zhao">
+
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/apple-touch-icon.png">
+
+  <link rel="canonical" href="http://www.pzhao.org/archives/14836/">
+
+  
+
+  <title>R 菜鸟入门篇 第05篇 循环 | Peng Zhao</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71">
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">切换导航</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/zh/">Peng Zhao</a>
+    </div>
+
+    
+    <div class="collapse navbar-collapse">
+
+      
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/zh/#about">
+            
+            <span>关于</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/zh/tags/news">
+            
+            <span>新闻</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/zh/tags/post">
+            
+            <span>日志</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/zh/publication">
+            
+            <span>论文</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/zh/talk">
+            
+            <span>报告</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/zh/#projects">
+            
+            <span>项目</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/zh/#teaching">
+            
+            <span>教学</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/zh/#unclassified">
+            
+            <span>其他</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://cse.google.com/cse/publicurl?cx=006346710622437628329:nxozn9fijm0">
+            
+            <span>搜索</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/en">
+            
+            <span>EN</span>
+          </a>
+        </li>
+
+        
+        
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+  <div class="article-container">
+    <h1 itemprop="name">R 菜鸟入门篇 第05篇 循环</h1>
+    
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    <time datetime="2013-03-21 09:48:01 &#43;0000 &#43;0000" itemprop="datePublished">
+      Thu, Mar 21, 2013
+    </time>
+  </span>
+
+  
+  
+  
+  <span class="article-categories">
+    <i class="fa fa-folder"></i>
+    
+    <a href="/zh/categories/%e6%9c%aa%e5%88%86%e7%b1%bb">未分类</a
+    >
+    
+  </span>
+  
+  
+
+  
+  
+  
+  <span class="article-tags">
+    <i class="fa fa-tags"></i>
+    
+    <a href="/zh/tags/r">R</a
+    >
+    
+  </span>
+  
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=http%3a%2f%2fwww.pzhao.org%2farchives%2f14836%2f"
+         target="_blank">
+        <i class="fa fa-facebook"></i>
+      </a>
+    </li>
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=R%20%e8%8f%9c%e9%b8%9f%e5%85%a5%e9%97%a8%e7%af%87%20%e7%ac%ac05%e7%af%87%20%e5%be%aa%e7%8e%af&amp;url=http%3a%2f%2fwww.pzhao.org%2farchives%2f14836%2f"
+         target="_blank">
+        <i class="fa fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2fwww.pzhao.org%2farchives%2f14836%2f&amp;title=R%20%e8%8f%9c%e9%b8%9f%e5%85%a5%e9%97%a8%e7%af%87%20%e7%ac%ac05%e7%af%87%20%e5%be%aa%e7%8e%af"
+         target="_blank">
+        <i class="fa fa-linkedin"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=http%3a%2f%2fwww.pzhao.org%2farchives%2f14836%2f&amp;title=R%20%e8%8f%9c%e9%b8%9f%e5%85%a5%e9%97%a8%e7%af%87%20%e7%ac%ac05%e7%af%87%20%e5%be%aa%e7%8e%af"
+         target="_blank">
+        <i class="fa fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=R%20%e8%8f%9c%e9%b8%9f%e5%85%a5%e9%97%a8%e7%af%87%20%e7%ac%ac05%e7%af%87%20%e5%be%aa%e7%8e%af&amp;body=http%3a%2f%2fwww.pzhao.org%2farchives%2f14836%2f">
+        <i class="fa fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    <div class="article-style" itemprop="articleBody">
+      
+
+<p>前两天 dapeng 用 <strong>R</strong> 给师妹做了一张&rdquo;全国各省 PM10 浓度地图&rdquo;，以省会城市的 PM10 浓度值给各省涂上颜色，结果师妹说：这个用 ArcGIS 能又快又好地做出来。 dapeng 脑子里立刻涌现出多种说法要细数 <strong>R</strong> 的优势，第一条就是：若是有 20 年的数据，每年做一张图，<strong>R</strong> 菜鸟用简单一个循环就能编程搞定，ArcGIS 该怎么又快又好做出来？若不是资深用户的话，我等菜鸟恐怕得一张一张图点出来吧？这种操作费时费力并且毫无乐趣，就应该交给机器来解决，这是懒人的必备技能。本篇就来说说程序的基本结构之一：循环。</p>
+
+<p><em>开胃小菜</em> <em>男人至少要擅长一项运动,一种乐器,一种编程&hellip;.和拿手的几个小炒. (语出<a href="http://hi.baidu.com/cttfssdtvxbgsyr/item/33a1304c9baa55e6bdf451a6" target="_blank">小鸟学AHK</a>)</em></p>
+
+<p>所谓循环，就是兜圈子，就是一件事情重复操作。先从一个简单例子开始。在第 03 篇中，我们对 8 米和 100 米两个高度处测量的 PM2.5 做了日变化图。若要对三个高度的每一个都做日变化图，不用循环，那么是这样的：</p>
+
+<pre><code>pm &lt;- read.csv(file = &quot;c:\\R\\data\\dapengde_DummyR_PM25.csv&quot;)
+par(mfrow=c(1， 3))
+plot(pm[, 1], pm[, 2], cex = 2, type = &quot;l&quot;) # 第一张图
+plot(pm[, 1], pm[, 3], cex = 2, type = &quot;l&quot;) # 第二张图
+plot(pm[, 1], pm[, 4], cex = 2, type = &quot;l&quot;) # 第三张图
+</code></pre>
+
+<p>如果使用循环，是这样的：</p>
+
+<pre><code>par(mfrow=c(1,3))
+for (i in c(2, 3, 4)) plot(pm[, 1], pm[, i], cex = 2, type = &quot;l&quot;) # 让 i 的取值在2, 3, 4这三个数中转一圈，做第 i 张图。
+</code></pre>
+
+<p>这里出现的 <code>for()</code> 就是循环语句。看起来跟不用循环也差不多嘛。是的。但是有一次 dapeng 要给 20 个观测点 一个月的 PM2.5 每天做一张日变化图来，总共要做 600 张，要是不用循环，那恐怕连死的心都有了。话说 dapeng 当年第一次接触计算机程序的时候，就为循环语句兴奋得睡不着觉，那种久旱逢甘露感觉记忆犹新。懒人福音啊！</p>
+
+<p><code>i</code> 转的那个圈，可以是数字，也可以是别的，比如字符串：</p>
+
+<pre><code>for (i in c(&quot;Good&quot;, &quot;Morning&quot;, &quot;!&quot;)) print(i)
+
+
+练习05.1 用`print()` 指令打印 1 到 100 之间的奇数。
+</code></pre>
+
+<p><strong>R</strong> 中常用的循环语句，除了 <code>for()</code> 之外，还有<code>while()</code> 和 <code>until()</code>，相互之间可以换用。</p>
+
+<p>下面我们用循环语句来做一个指数增长模型，再体会一下循环的意义。</p>
+
+<p>指数增长模型，也叫马尔萨斯增长模型，一个函数的增长率与其函数值成比例。举个例子吧，我们用 <code>N1</code> 表示 2008 年世界总人口 66.8 亿，r 表示人口自然增长率，为简化起见假定 <code>r</code> 是个常数 0.011，那么在下一年的总人口就是 <code>N2 = N1 + r * N1</code>。我们想看看今后一百年的人口总数，可以这样做：</p>
+
+<pre><code class="r"># 方法 1：每年分别计算，分别存储人口数。
+N1 &lt;- 66.8
+r &lt;- 0.011
+N2 &lt;- N1 + r * N1
+N3 &lt;- N2 + r * N2  # 如此一直写到 N100。
+
+# 方法 2：每年分别计算，用一个向量来存储各年人口总数。
+N &lt;- numeric(100)
+N[1] &lt;- 66.8
+N[2] &lt;- N[1] + r * N[1]
+N[3] &lt;- N[2] + r * N[2]  # 如此一直写到 N[100]。
+
+# 方法 3： 用循环语句计算，用一个向量来存储各年人口数。
+N &lt;- numeric(100)
+N[1] &lt;- 66.8
+for (t in 1:99) N[t + 1] &lt;- N[t] + r * N[t]  # 不必一直写到N100。
+plot(N)
+</code></pre>
+
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfgAAAH4CAMAAACR9g9NAAAAe1BMVEX9/v0AAAAAAEYAAHMARkYARpoAdHMAdL1GAABGAEZGAHNGRnNGRppGm95zAABzAEZzAHNzRgBzRppzdHNzvv2aRgCaRkaadACavpqa396a3/29dAC9dEa9/r29/v3em0be35re/r3e/t7e/v39vnP935r9/r39/t79/v0YB7Y1AAAAKXRSTlP/////////////////////////////////////////////////////AFL0IIcAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAz4SURBVHic7Z2Nctu4FUZX2XWdpLE3beW0tbdRt7Flvv8TVpBEx7Yk/uECuMB3zkwmM1F8Sfv4uwAokfilA0l+KX0CUAbEi4J4URAvCuJFQbwoiBcF8aIgXhTEi4J4URAvCuJFQbwoiBcF8aIgXhTEi4J4URAvCuJFQbwoiBcF8aIgXhTEi4J4URAvCuJFQbwoiBcF8aIgXhTEi4J4URAvCuJFQbwoiBcF8aIgXhTEi4J4URAvCuJFQbwoiBcF8aIgXhTEi4J4URAvCuJFQbwoiBdlXPzTx1Xg1+8ZzgayMS7+4Wb/1+PVj9TnAhkZFf/87X7/9/YrkW+JcfF3FxO/As9Eit+Z35c5M8aPlIaiRItfXBqKgnhRosVfXs4h3jPR4i8v5xDvmVjxZ5ZzE+eNUJRo8QPLuYWnBDlgOScKs3pREC9KtPjt7Wq1PnutHvGeeD/ZtljOPd9dI945q+6dEJvl3ObqT8S7xlz88QLO5rfPiPeMvfjt7cH86XoO8Z4wH+MHDhXxtZAaxAtw7vI54tvnZHzvzv3DWxDfAIgXBfGqMMbDC4hvnEsfiEF825wd37tL//gTxFcO4kVBvCqM8YIMfdIZ8e1ysc13Qy8cQHzFIF4UxKvCGA8nIL5Rxu5dRHybDI7v3diLiK8WxIuCeFUY4xWZ8FQKxDfIaJ8ffx3xNYJ4URCvCmO8IBMfN4b4xpjS5vv/NwDiawPxoiBeFcZ4GCJaPE+vdsSMBwgbPfyIZ9l6YOr43v/fAWI2I0J8brKK5+nVfsgpnqdXeyLnGL+4NNgyc2cIxDfCnDbf//8BJj29+npDqy9OdvF/3Heb691y/guTu6LkFh+Wc5sbNiMqT+4xnsQ7YEHKGOMbYG6b779mAGb1NYB4URCvSokxfnFpsGHh8in+TZrj2o2tScqwpM33XzfAhMQf35CfXRpMKCd++/v9otJgQjnxS0uDDYXG+OWlIZ6I6+KIr5ilbb7/2gEQ7xnEi4J4VRjjBYn8wAPiKyWmzfdfPwDivYJ4URCvCmO8IAafZEV8hcS2+b7GAIj3COJFQbwqjPGK2NyjhPjasOjz4yUQ7w7Ei4J4VRjjBbG7+RzxNWHU5vtSAyDeFYgXBfGqMMYLYvtUIcTXgmGb78sNgHg3IF4UxKvCGC+I/eMiEV8Dxm2+LzkA4l3gUTybEWXAo3g2I0pNGN/9jfFsRpSaBGnvyw7AZkTFcSqezYhS41X84tIwkTRbPiDeNen2+YgWv71dh25Pq09Bojbflx5gwuRu3T2s2ZokDZ7Ff7vfr+jYjCgFjsV3m3X3eN3t/8wrDRNwPMZ3D/t0n3pHfCRpeyazeq8kbPN9+QEQXwzEi4J4RdK8I/fmCMMvsxlRERKnvT/EAGxGVIQqxLMZkT1ViF9aGgZIf90T8f7IcrUb8e7I0OfHj4D4/CBeFMQrkv7KTX+g4ZcRn5c8ae+PNADi84J4URCvSLbxfX+w4ZcRn498ae+PNgDi84F4URCvStZPpCPeB9lvQ0C8C/K2+f6IAyA+D4gXBfGKZL1w83LQ4ZcRn578ae+POgDi04N4URCvSJHxfX/g4ZcRn5Yyae+PPADi04J4URCvSrFHBSG+HEWfD4X4YpRr8/3RB0B8OhAvCuIVKXbh5uUEhl9GfBrKpr0/gwHYkyYNDYhnT5ol1C+ePWkW4OEZz9Hi2ZNmNuXjPn4C7EmTgDbELy6tC+IVKb6A789j+OWJ4p8+n3Z6xJ/DRdoD8ZM7nmU7h2bEd9vbnfI3iWdPmgHaER/UX/2XVj8FL+N7wGSMf/p4ZjWH+Pe4SXuAWX0+EC8K4hXxNL4HEJ8HV2kPsI7PQ3Pi2ZNmGg2KZ0+aUbyN7wHG+PS4S3sA8elBvCiIV8Tj+B5AfFpcpj2A+LQgXhTEK+J1fA9MEL+9vXhVNqZ0+7hNe2B64jertWnp9mlC/P6jdaalG+f4oUO3P4SJ4jerS2/FLC7dNnvpXsf3wCTxC+I+XrptXKc9MEX844K4j5dumxbEM6ufTQX3FbCOT4D7uHeITwLiRUG8Ip6v074C8cbUkPYA4o1BfBXfvj2Ir+LbN6aS8T2AeENqSXsA8YYgfkrp1vD+Puw7EG+E+/dh34F4I2pKewDxRiB+aumWqGgZ14N4A2pLewDxBiB+TulWqGwZ14P4SGpbxvVEi1ffjKjGtAeixatvRqQqXnszogqXcT3R4pU3I6o17YHoVq+8GZG0+MWla6fSZVwP4hdS6zKuJ1p8uMFqLTi5qzntAYvl3PPdNeJrw2Y5t7n686d4gc2IKl7G9RhdwNn8drodUdU/l0FqT3vAYIw/mFd6Xj3iY0pXS93LuB7Ez+W4jit9GrEgfi4txL1D/HwQv0dsM6IG1nFH4hOvtBlRI2kPxItX2owI8Qalq6Pyt+Pegfip1P523DsQP5WG0h5A/CTaavMBxE+hsTYfQPwUGkt7APFTQLxh6Wpo52rdaxA/RoNpDyB+DMQbl66C9pZxPYgfosFlXA/ih2g07QHEX6TdNh9A/CUabvMBxF+i4bQHEH+Wttt8APHnaLzNBxB/jsbTHkD8Kc23+QDiT2jkVpkREH+CQNw7xJ8B8Z2g+DbffD8D4t+gkfYA4t+A+CNS4tu/XPcKxL8gcLnuFYh/QSftAcQfkGrzAcTv0WrzAcTv0Up7APGCbT6AeME2H4gWX/9mRHppD0SLr3wzIsk2H4gVX/lmRJptPhAtvu7NiDTTHohu9RVvRiTb5gPCs3rdNh9QFS+d9oDocm7VKY/vAdHlnHabDyRYzvnfjEi9zQcUl3MaH5wfQXE5R9w7wVm9/HT+iJp4ZnVHJMWXPgkPSImnzf8kflZfz2ZEtPlXxCe+ns2ISPsr4sVXshkRbf4tKmM8bf4dEuJJ+ykK4nkr7gwy4mnzb2lePG3+PK2LJ+0XkBBf+iQ80rR42vxlWhZPmx+gefGlT8IrzYqnzQ/Tqnja/AhtiiftozQpfhXUI36QVsXz+ekR2hPPrG4SzYlnVjeNtsST9sk0JZ433qfTnnja/CTaEU+bn0Uz4kn7PNoQT9pn04R4JnXzaUc8bX4W9YunzS+ievGkfRl1iyfti6laPJO65dQvnja/iHrF0+ajqFY8aY+jTvGkPZoqxTOpi6de8bT5KCoUT5u3oD7xfITWhGjxeTcqYFZnRbT4rBsVMKszI1Z8xn3n+rTT5y2IFp9towLSbkp0q8+2UQFpN6WSWT2TOmsSiE+wGRFpNyda/PZ2db1J2upJewqixf9x322ud8v5L6kmd0zqkmCxnNvcJFvOsYRLhe/Ek/ZkOB7jSXtK/C7nSHtSnIsn7alwKp4lXGp8iiftyfEonrRnwKH4VcfjCdPjTfzPNVzEkWEcZ+JZw+XCk3iu2GTEkXjSnhMv4kl7ZpyIJ+258SCetBfAgXjSXoLS4kl7IQqLJ+2lKCmetBekoHjSXpJS4kl7YQqJJ+2lKSKetJenhHjecHdAdvG84e6D3OIZ3J2QVTxTeT/kFE/aHZFNPGn3RS7xpN0ZWcWTdj/kTjw4IecYH1ELrCn9QQwoBOJFQbwoiBcF8aIgXhTEi4J4URAvCuJFQbwoKcWDZ9KJf/07YFMmRTVO7SyIL1gN8SmrcWpnQXzBaohPWY1TOwviC1ZDfMpqnNpZjMRDbSBeFMSLgnhREC8K4kVBvCiIFwXxoiBeFAvx29vV1clW08t4+rhare0qPt/ZFXu+W324t6q2+z7DLs0mxZ4+/6w0vaCB+PDTDRuNG7D9/b57+nRvVnGz+y2yKvaw7h6vfthUC9/nxqjYY/gVOlaaUdBA/Pbr98NvXTyP4aQf1lYVn/76t7XV6YUyndU3+/TlR6hkUezhw792FY6VZhQ0EL//Lna/wkbsShlVfP72710CjIo9fflnaPU21Y6JtykWTB8rzShoIH7XAA3FP9/dWFXc3ITWZ1Ts6eP+d8io2mEstikWxB8rzSjoLfHb2xurirsqz5aJn5upoWKf7rvHX79XnnjDMX6fK6uKm/2ny2+sxvi/73+mNtWOyTSaMJQa40NzNprVH7zbVQyJtyr2sD70EItqx8QbFfv8vf8mZxT0tY4/hHTtch2/K2O29N6twewuChRbx0ONIF4UxIuCeFEQLwriRUG8KIgXBfGiIF4UxIuCeFEQLwriRUG8KIgXBfGiIF4UxIuCeFGUxb/9ILLhzUA1gPgexMuwEx/uiDvel/2XnfjDR6gfzO4TcIy6+I83Lzc/f7g/3re3/fqfrzY3BjlGXfzn7/1f4dazcE/Kt/tus7opfW7JQfyh4/8IxsPzOPb3Qn9qf7hH/LvEBx7+0fwQj/i9+P3gfhjj9/n/37fmI4/4w23GL7P61bp/mkLbKIuXBvGiIF4UxIuCeFEQLwriRUG8KIgXBfGiIF4UxIuCeFEQLwriRUG8KIgXBfGi/B+8WPrMeLRnUgAAAABJRU5ErkJggg==" alt="plot of chunk unnamed-chunk-1" /></p>
+
+<p>循环的好处一览无余！</p>
+
+<p>上面的例子里，每次重复的操作只有一条指令，所以直接写在 for () 后面就可以了。实际遇到的情况往往是重复一组指令，比如 每次给 N[t+1] 赋值时想显示一下当年人口和年份，那么可以用花括号把一组指令组合起来：</p>
+
+<pre><code>for(t in 1:99) 
+{
+N[t+1] &lt;- N[t] + r * N[t]
+print(t + 2007)
+print(N[t+1])
+}
+</code></pre>
+
+<p>到目前为止，<strong>R</strong> 中所有的括号都闪亮登场了一遍，这里小结一下它们的角色：</p>
+
+<ul>
+<li>圆括号 ()。用作命令和数学表达式，如 <code>mean(x), (1 + 2) * 3</code>。</li>
+<li>方括号 []。用作下标，调用向量中的某个元素，如<code>x[3], pm[2,6]</code>。</li>
+
+<li><p>花括号 {}。用作编程，把一组指令组合在一起，如<code>for () {}</code>。</p>
+
+<p>练习05.2 生成一个矩阵 m （方法见 matrix 函数的帮助信息），使得 m[i,j] = x[i] * y[j]， 其中 x &lt;- c(2, 3, 5)， y &lt;- c(1, 2, 3, 4)。</p></li>
+</ul>
+
+<h2 id="有用的信息">有用的信息：</h2>
+
+<table>
+<thead>
+<tr>
+<th>&#8211;</th>
+<th>&#8211;</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>循环语句</td>
+<td><code>for(), while(), until()</code></td>
+</tr>
+
+<tr>
+<td>括号的用法</td>
+<td><code>() [] {}</code></td>
+</tr>
+</tbody>
+</table>
+
+<p>( <em>连载中，待续</em> )</p>
+
+<p></body></p>
+
+<p><a href="http://dapengde.com/archives/14836" target="_blank">原文链接</a></p>
+
+    </div>
+  </div>
+
+</article>
+
+<div class="container">
+  <nav>
+  <ul class="pager">
+    
+    <li class="previous"><a href="http://www.pzhao.org/archives/14833/"><span
+      aria-hidden="true">&larr;</span> R 菜鸟入门篇 第04篇 模型</a></li>
+    
+
+    
+    <li class="next"><a href="http://www.pzhao.org/archives/14843/">R 菜鸟入门篇 第06篇 分支 <span
+      aria-hidden="true">&rarr;</span></a></li>
+    
+  </ul>
+</nav>
+
+</div>
+
+<div class="article-container">
+  
+<section id="comments">
+  <div id="disqus_thread">
+    <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "pzhao" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+</section>
+
+
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="powered-by">
+
+      &copy; 2017 Peng Zhao &middot; 
+
+      Powered by the <a href="https://github.com/gcushen/hugo-academic" target="_blank">Academic
+      theme</a> for <a href="http://gohugo.io" target="_blank">Hugo</a>.
+
+      <span class="pull-right" aria-hidden="true">
+        <a href="#" id="back_to_top">
+          <span class="button_icon">
+            <i class="fa fa-chevron-up fa-2x"></i>
+          </span>
+        </a>
+      </span>
+
+    </p>
+  </div>
+</footer>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/ScrollToPlugin.min.js"></script>
+    <script src="/js/jquery-1.12.3.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/isotope.pkgd.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.1/imagesloaded.pkgd.min.js"></script>
+    <script src="/js/hugo-academic.js"></script>
+    
+
+    
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-99744900-1', 'auto');
+        ga('send', 'pageview');
+
+         
+        var links = document.querySelectorAll('a');
+        Array.prototype.map.call(links, function(item) {
+            if (item.host != document.location.host) {
+                item.addEventListener('click', function() {
+                    var action = item.getAttribute('data-action') || 'follow';
+                    ga('send', 'event', 'outbound', action, item.href);
+                });
+            }
+        });
+    </script>
+    
+
+    
+    
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+
+      
+
+      
+
+      <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+    </script>
+    <script async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML"></script>
+    
+
+  </body>
+</html>
+

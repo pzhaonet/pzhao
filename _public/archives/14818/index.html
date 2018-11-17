@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme" content="hugo-academic">
+  <meta name="generator" content="Hugo 0.41" />
+  <meta name="author" content="Peng Zhao">
+  <meta name="description" content="Post-doc in Geoecology">
+
+  
+  
+  
+    
+  
+  
+    
+    
+    <link rel="stylesheet" href="/css/highlight.min.css">
+    
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/academicons.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700|Merriweather|Roboto+Mono">
+  <link rel="stylesheet" href="/css/hugo-academic.css">
+  
+
+  <link rel="alternate" href="http://www.pzhao.org/index.xml" type="application/rss+xml" title="Peng Zhao">
+  <link rel="feed" href="http://www.pzhao.org/index.xml" type="application/rss+xml" title="Peng Zhao">
+
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/apple-touch-icon.png">
+
+  <link rel="canonical" href="http://www.pzhao.org/archives/14818/">
+
+  
+
+  <title>R 菜鸟入门篇 第02篇 数据 | Peng Zhao</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71">
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">切换导航</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/zh/">Peng Zhao</a>
+    </div>
+
+    
+    <div class="collapse navbar-collapse">
+
+      
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/zh/#about">
+            
+            <span>关于</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/zh/tags/news">
+            
+            <span>新闻</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/zh/tags/post">
+            
+            <span>日志</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/zh/publication">
+            
+            <span>论文</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/zh/talk">
+            
+            <span>报告</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/zh/#projects">
+            
+            <span>项目</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/zh/#teaching">
+            
+            <span>教学</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/zh/#unclassified">
+            
+            <span>其他</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://cse.google.com/cse/publicurl?cx=006346710622437628329:nxozn9fijm0">
+            
+            <span>搜索</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/en">
+            
+            <span>EN</span>
+          </a>
+        </li>
+
+        
+        
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+  <div class="article-container">
+    <h1 itemprop="name">R 菜鸟入门篇 第02篇 数据</h1>
+    
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    <time datetime="2013-03-10 07:13:12 &#43;0000 &#43;0000" itemprop="datePublished">
+      Sun, Mar 10, 2013
+    </time>
+  </span>
+
+  
+  
+  
+  <span class="article-categories">
+    <i class="fa fa-folder"></i>
+    
+    <a href="/zh/categories/%e6%9c%aa%e5%88%86%e7%b1%bb">未分类</a
+    >
+    
+  </span>
+  
+  
+
+  
+  
+  
+  <span class="article-tags">
+    <i class="fa fa-tags"></i>
+    
+    <a href="/zh/tags/r">R</a
+    >
+    
+  </span>
+  
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=http%3a%2f%2fwww.pzhao.org%2farchives%2f14818%2f"
+         target="_blank">
+        <i class="fa fa-facebook"></i>
+      </a>
+    </li>
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=R%20%e8%8f%9c%e9%b8%9f%e5%85%a5%e9%97%a8%e7%af%87%20%e7%ac%ac02%e7%af%87%20%e6%95%b0%e6%8d%ae&amp;url=http%3a%2f%2fwww.pzhao.org%2farchives%2f14818%2f"
+         target="_blank">
+        <i class="fa fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2fwww.pzhao.org%2farchives%2f14818%2f&amp;title=R%20%e8%8f%9c%e9%b8%9f%e5%85%a5%e9%97%a8%e7%af%87%20%e7%ac%ac02%e7%af%87%20%e6%95%b0%e6%8d%ae"
+         target="_blank">
+        <i class="fa fa-linkedin"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=http%3a%2f%2fwww.pzhao.org%2farchives%2f14818%2f&amp;title=R%20%e8%8f%9c%e9%b8%9f%e5%85%a5%e9%97%a8%e7%af%87%20%e7%ac%ac02%e7%af%87%20%e6%95%b0%e6%8d%ae"
+         target="_blank">
+        <i class="fa fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=R%20%e8%8f%9c%e9%b8%9f%e5%85%a5%e9%97%a8%e7%af%87%20%e7%ac%ac02%e7%af%87%20%e6%95%b0%e6%8d%ae&amp;body=http%3a%2f%2fwww.pzhao.org%2farchives%2f14818%2f">
+        <i class="fa fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    <div class="article-style" itemprop="articleBody">
+      
+
+<p>在第 01 篇里，我们学会了用 <strong>R</strong> 进行一般的数学运算和统计计算，并且做出了两张图：拜罗伊特降水的季节变化图，北京的 PM2.5 日变化图。很好，只是，这些数据总不能一个一个敲到代码里吧。要是处理保存在其他文件里的大量数据呢？本篇就解决这个问题。</p>
+
+<p><em>开胃小菜： 在 Rstudio 左下窗口输入代码 demo(graphics)，然后按回车，再回车，再回车，再回车……</em></p>
+
+<p>点击<a href="http://pzhao.org/wp-content/uploads/2013/03/dapengde_DummyR_PM25.csv" target="_blank">这里</a>下载一个数据文件，保存到一个文件夹里，比如 <em>c:\R\data</em> 文件夹（为避免不必要的麻烦，文件夹名称中都不要带空格和中文字符），我们看看如何对其中的数据进行操作。</p>
+
+<p>首先，我们要告诉 <strong>R</strong> 数据在哪里。不习惯命令行的用户，可以这样获取这个文件的路径：</p>
+
+<pre><code>mydata1 &lt;- file.choose() # 在弹出的窗口中选择文件，其路径存储到mydata里。
+mydata1
+</code></pre>
+
+<p>这个文件的文件名叫做 <em>dapengde_DummyR_PM25.csv</em> 。鼠标选择文件比较麻烦，为了下次再使用这个代码的时候不必再点一次，一般都是直接输入文件路径：</p>
+
+<pre><code class="r">mydata2 &lt;- "c:\\R\\data\\dapengde_DummyR_PM25.csv"  # 路径要用引号(单双都行)，表示这是一个字符串。
+mydata2
+</code></pre>
+
+<pre><code>## [1] &quot;c:\\R\\data\\dapengde_DummyR_PM25.csv&quot;
+</code></pre>
+
+<p>注意，文件路径中的斜线<code>\</code>本来是一个，但是在 <strong>R</strong> 代码中必须改成两个（ <strong>切记切记！</strong> ），或改成一个反斜线<code>/</code>，其中自有道理，暂时不必深究。</p>
+
+<p>我们先在文件浏览器中双击打开这个文件看看，这是个 csv 文件，用记事本或 Excel 就可以打开，或者在 Rstudio 代码窗口输入</p>
+
+<pre><code>file.show(mydata2) # 查看文件
+</code></pre>
+
+<p>就会用默认程序打开。</p>
+
+<p>这是2003 年 8 月在北京城区的三个高度（8 米，100 米，325 米）测得的 PM2.5 的质量浓度日变化（数据来源：Chan et al., 2005. Atmospheric Environment 39, no. 28 : 5113-5124），共 4 列 25 行。</p>
+
+<p>现在让 <strong>R</strong> 读取文件。如果你喜欢拷贝粘贴的方式，那么可以在 Excel 选中数据区，拷贝，然后在 <strong>R</strong> 中这样读取其中的数据：</p>
+
+<pre><code>pm1 &lt;- read.table(file = &quot;clipboard&quot;, header = TRUE) # 读取剪切板里的数据，保存到 pm1 这个数据框变量里。header 表示数据的第一行为列名称。
+</code></pre>
+
+<p>Rstudio 右上窗就出现了 <code>pm1</code> 的信息，可以单击看内容，也可以用输入代码查看：</p>
+
+<pre><code>pm1
+</code></pre>
+
+<p>&#8216;read.table&#8217; 用来读取数据表格。看起来也太复杂了吧？怎么记得住？对，一般人都记不住，忘了就随手查查帮助，输入并运行：</p>
+
+<pre><code class="r">?read.table
+</code></pre>
+
+<p>Rstudio此时会在右下窗显示帮助信息，有详细的解释和实例。好好读读吧，以后你会发现， <strong>问号+函数名</strong> 是会经常用的命令。</p>
+
+<p><strong>R</strong> 菜鸟入门三大法宝：</p>
+
+<ul>
+<li>第一法宝： <strong>问号</strong> ！问号+函数名，简直就是身边的诸葛亮，随时方便地查看帮助文档。</li>
+<li>第二法宝： <strong>google</strong> 和 <strong>wiki</strong> ！大事不决问维基 ，小事不决问谷歌。</li>
+<li>第三法宝： <strong>论坛</strong> ！内事不决问张昭（中文论坛，如<a href="http://cos.name/cn/" target="_blank">这里</a>），外事不决问周瑜（英文论坛，如<a href="http://r.789695.n4.nabble.com/" target="_blank">这里</a>）。</li>
+</ul>
+
+<p>用拷贝粘贴的方式读取数据，优点是灵活，适合临时用一下。更多情况下，是直接按指定的路径去读文件：</p>
+
+<pre><code class="r">pm2 &lt;- read.table(file = mydata2, header = TRUE, sep = ",")  # 读取逗号分隔的数据。sep 表示数据列的分隔符。
+pm &lt;- read.csv(file = mydata2)  # 与上一个命令等同，专门用来读逗号分隔的文件。
+</code></pre>
+
+<p>你要问 &#8216;read.csv&#8217;是怎么回事？请试试你的第一法宝。</p>
+
+<p>数据画个图看起来更直观：</p>
+
+<pre><code class="r">plot(pm)
+</code></pre>
+
+<p><img src="data:image/png;base64,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" alt="plot of chunk unnamed-chunk-3" /></p>
+
+<p>任意两列的散点图就这么容易地做出来了。如果你有十列八列的，就会发现这是多么省事啊！懒人的福音啊！dapeng 一般在读入数据文件后的第一件事就是<code>plot</code>一下，对数据有个整体的感觉。第二件事一般是看看这个文件的总结报告</p>
+
+<pre><code class="r">summary(pm)
+</code></pre>
+
+<pre><code>##       time             h8             h100            h325      
+##  Min.   : 0.00   Min.   : 46.0   Min.   : 32.0   Min.   : 30.0  
+##  1st Qu.: 5.75   1st Qu.: 75.5   1st Qu.: 48.0   1st Qu.: 42.8  
+##  Median :11.50   Median : 93.5   Median : 67.5   Median : 54.5  
+##  Mean   :11.50   Mean   : 98.7   Mean   : 72.1   Mean   : 65.5  
+##  3rd Qu.:17.25   3rd Qu.:128.0   3rd Qu.:100.0   3rd Qu.: 88.5  
+##  Max.   :23.00   Max.   :150.0   Max.   :123.0   Max.   :126.0
+</code></pre>
+
+<p>这下可省事儿了，上一节我们用的最大值、最小值、中位数、平均值函数，用<code>summary</code>这一条命令就全部搞定，顺便还附送了四分位数（<code>1st Qu.， 3rd Qu.</code>）。啥是四分位数？试试你的第二法宝。</p>
+
+<p>怎么选取 <code>pm</code> 中的指定数值呢，比如说，9 点钟 8 米高处的PM2.5浓度？还记得上一节我们是如何选取 4 月的降水量吗？对，<code>x[4]</code>。类似地：</p>
+
+<pre><code class="r">pm[10, 2]  # 第 10 行, 第 2 列。
+</code></pre>
+
+<pre><code>## [1] 150
+</code></pre>
+
+<p>要选取多个行呢？若记得用<code>c()</code>生成一个向量，那就好办了，比如选取偶数行，即 0、2、4、…、22 点钟8 米处的 PM2.5 浓度：</p>
+
+<pre><code class="r">pm[c(0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22), 2]
+</code></pre>
+
+<pre><code>##  [1]  80  91 100 144 150 106  68  46  68  92 108
+</code></pre>
+
+<p>这个 0 到 22 敲起来太麻烦了吧，懒人的办法是用<code>seq()</code>函数生成个数列：</p>
+
+<pre><code class="r">pm[seq(0, 22, 2), 2]
+</code></pre>
+
+<pre><code>##  [1]  80  91 100 144 150 106  68  46  68  92 108
+</code></pre>
+
+<p><code>seq(0, 22, 2)</code> 表示以 0 为起点，22 为终点，间隔（即步长）为 2 生成一个数列。比如步长是 1 的话，就用<code>seq(2, 22, 1)</code>。当然，更懒的做法是：</p>
+
+<pre><code class="r">pm[2:22, 2]
+</code></pre>
+
+<pre><code>##  [1]  80  64  91  87 100 128 144 150 150 150 106  78  68  62  46  55  68
+## [18]  84  92  95 108
+</code></pre>
+
+<p>这和上一条指令等效。</p>
+
+<p>选取整行或整列：</p>
+
+<pre><code class="r">pm[, 2]  # 第 2 列全部。
+</code></pre>
+
+<pre><code>##  [1]  97  80  64  91  87 100 128 144 150 150 150 106  78  68  62  46  55
+## [18]  68  84  92  95 108 128 138
+</code></pre>
+
+<pre><code class="r">pm[3, ]  # 第 3 行全部。
+</code></pre>
+
+<pre><code>##   time h8 h100 h325
+## 3    2 64   43   50
+</code></pre>
+
+<p>如果列数太多，总不能老去数第几列吧？别急，也可以这样选取：</p>
+
+<pre><code class="r">pm[, "h8"]
+</code></pre>
+
+<pre><code>##  [1]  97  80  64  91  87 100 128 144 150 150 150 106  78  68  62  46  55
+## [18]  68  84  92  95 108 128 138
+</code></pre>
+
+<p>或者用美元符号</p>
+
+<pre><code class="r">pm$h8
+</code></pre>
+
+<pre><code>##  [1]  97  80  64  91  87 100 128 144 150 150 150 106  78  68  62  46  55
+## [18]  68  84  92  95 108 128 138
+</code></pre>
+
+<p><code>h8</code> 是要选取的列的名称。列名称都有哪些呢？用<code>names()</code>函数：</p>
+
+<pre><code class="r">names(pm)
+</code></pre>
+
+<pre><code>## [1] &quot;time&quot; &quot;h8&quot;   &quot;h100&quot; &quot;h325&quot;
+
+
+练习02.1：请做出 100 米高处的 PM2.5 浓度日变化的散点图。
+练习02.2：请计算 100 米高处 PM2.5 浓度的平均值，最大值，最小值，中值。
+</code></pre>
+
+<p>从此以后，只要把你的数据文件保存成.csv文件，<strong>R</strong> 就可以容易地读取，进行后续处理了！</p>
+
+<h2 id="有用的信息">有用的信息：</h2>
+
+<table>
+<thead>
+<tr>
+<th>&#8211;</th>
+<th>&#8211;</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>数据文件存储路径</td>
+<td>不要空格，不要中文，读取时用双斜线。</td>
+</tr>
+
+<tr>
+<td>读取文件</td>
+<td><code>read.table(), read.csv()</code></td>
+</tr>
+
+<tr>
+<td>选取单元格</td>
+<td><code>pm[3, 2]，pm[ , 2]，pm[3, ]，pm[,&quot;h8&quot;]，pm$h8</code></td>
+</tr>
+</tbody>
+</table>
+
+<p>（ <em>连载中，待续</em> ）</p>
+
+<p></body></p>
+
+<p></html></p>
+
+<p><a href="http://dapengde.com/archives/14818" target="_blank">原文链接</a></p>
+
+    </div>
+  </div>
+
+</article>
+
+<div class="container">
+  <nav>
+  <ul class="pager">
+    
+    <li class="previous"><a href="http://www.pzhao.org/archives/14802/"><span
+      aria-hidden="true">&larr;</span> R 菜鸟入门篇 第01篇 超级计算器</a></li>
+    
+
+    
+    <li class="next"><a href="http://www.pzhao.org/archives/14824/">R 菜鸟入门篇 第03篇 画图 <span
+      aria-hidden="true">&rarr;</span></a></li>
+    
+  </ul>
+</nav>
+
+</div>
+
+<div class="article-container">
+  
+<section id="comments">
+  <div id="disqus_thread">
+    <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "pzhao" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+</section>
+
+
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="powered-by">
+
+      &copy; 2017 Peng Zhao &middot; 
+
+      Powered by the <a href="https://github.com/gcushen/hugo-academic" target="_blank">Academic
+      theme</a> for <a href="http://gohugo.io" target="_blank">Hugo</a>.
+
+      <span class="pull-right" aria-hidden="true">
+        <a href="#" id="back_to_top">
+          <span class="button_icon">
+            <i class="fa fa-chevron-up fa-2x"></i>
+          </span>
+        </a>
+      </span>
+
+    </p>
+  </div>
+</footer>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/ScrollToPlugin.min.js"></script>
+    <script src="/js/jquery-1.12.3.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/isotope.pkgd.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.1/imagesloaded.pkgd.min.js"></script>
+    <script src="/js/hugo-academic.js"></script>
+    
+
+    
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-99744900-1', 'auto');
+        ga('send', 'pageview');
+
+         
+        var links = document.querySelectorAll('a');
+        Array.prototype.map.call(links, function(item) {
+            if (item.host != document.location.host) {
+                item.addEventListener('click', function() {
+                    var action = item.getAttribute('data-action') || 'follow';
+                    ga('send', 'event', 'outbound', action, item.href);
+                });
+            }
+        });
+    </script>
+    
+
+    
+    
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+
+      
+
+      
+
+      <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+    </script>
+    <script async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML"></script>
+    
+
+  </body>
+</html>
+

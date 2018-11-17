@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme" content="hugo-academic">
+  <meta name="generator" content="Hugo 0.41" />
+  <meta name="author" content="Peng Zhao">
+  <meta name="description" content="Post-doc in Geoecology">
+
+  
+  
+  
+    
+  
+  
+    
+    
+    <link rel="stylesheet" href="/css/highlight.min.css">
+    
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/academicons.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700|Merriweather|Roboto+Mono">
+  <link rel="stylesheet" href="/css/hugo-academic.css">
+  
+
+  <link rel="alternate" href="http://www.pzhao.org/index.xml" type="application/rss+xml" title="Peng Zhao">
+  <link rel="feed" href="http://www.pzhao.org/index.xml" type="application/rss+xml" title="Peng Zhao">
+
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/apple-touch-icon.png">
+
+  <link rel="canonical" href="http://www.pzhao.org/archives/14845/">
+
+  
+
+  <title>R 菜鸟入门篇 第07篇 因子 | Peng Zhao</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71">
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">切换导航</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/zh/">Peng Zhao</a>
+    </div>
+
+    
+    <div class="collapse navbar-collapse">
+
+      
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/zh/#about">
+            
+            <span>关于</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/zh/tags/news">
+            
+            <span>新闻</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/zh/tags/post">
+            
+            <span>日志</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/zh/publication">
+            
+            <span>论文</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/zh/talk">
+            
+            <span>报告</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/zh/#projects">
+            
+            <span>项目</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/zh/#teaching">
+            
+            <span>教学</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/zh/#unclassified">
+            
+            <span>其他</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://cse.google.com/cse/publicurl?cx=006346710622437628329:nxozn9fijm0">
+            
+            <span>搜索</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/en">
+            
+            <span>EN</span>
+          </a>
+        </li>
+
+        
+        
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+  <div class="article-container">
+    <h1 itemprop="name">R 菜鸟入门篇 第07篇 因子</h1>
+    
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    <time datetime="2013-03-23 16:00:09 &#43;0000 &#43;0000" itemprop="datePublished">
+      Sat, Mar 23, 2013
+    </time>
+  </span>
+
+  
+  
+  
+  <span class="article-categories">
+    <i class="fa fa-folder"></i>
+    
+    <a href="/zh/categories/%e6%9c%aa%e5%88%86%e7%b1%bb">未分类</a
+    >
+    
+  </span>
+  
+  
+
+  
+  
+  
+  <span class="article-tags">
+    <i class="fa fa-tags"></i>
+    
+    <a href="/zh/tags/r">R</a
+    >
+    
+  </span>
+  
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=http%3a%2f%2fwww.pzhao.org%2farchives%2f14845%2f"
+         target="_blank">
+        <i class="fa fa-facebook"></i>
+      </a>
+    </li>
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=R%20%e8%8f%9c%e9%b8%9f%e5%85%a5%e9%97%a8%e7%af%87%20%e7%ac%ac07%e7%af%87%20%e5%9b%a0%e5%ad%90&amp;url=http%3a%2f%2fwww.pzhao.org%2farchives%2f14845%2f"
+         target="_blank">
+        <i class="fa fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2fwww.pzhao.org%2farchives%2f14845%2f&amp;title=R%20%e8%8f%9c%e9%b8%9f%e5%85%a5%e9%97%a8%e7%af%87%20%e7%ac%ac07%e7%af%87%20%e5%9b%a0%e5%ad%90"
+         target="_blank">
+        <i class="fa fa-linkedin"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=http%3a%2f%2fwww.pzhao.org%2farchives%2f14845%2f&amp;title=R%20%e8%8f%9c%e9%b8%9f%e5%85%a5%e9%97%a8%e7%af%87%20%e7%ac%ac07%e7%af%87%20%e5%9b%a0%e5%ad%90"
+         target="_blank">
+        <i class="fa fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=R%20%e8%8f%9c%e9%b8%9f%e5%85%a5%e9%97%a8%e7%af%87%20%e7%ac%ac07%e7%af%87%20%e5%9b%a0%e5%ad%90&amp;body=http%3a%2f%2fwww.pzhao.org%2farchives%2f14845%2f">
+        <i class="fa fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    <div class="article-style" itemprop="articleBody">
+      
+
+<p>前几篇举例子用的 PM2.5 数据来自十年前，这是因为 dapeng 手头碰巧有这么篇论文。今天偶尔发现，网上已经在公布最近国内城市的空气质量数据了，本篇就以北京和郑州两城市最近半个月的 PM2.5 数据举例子(数据来源 <a href="http://www.pm2d5.com/" target="_blank">http://www.pm2d5.com/</a>)。点击<a href="http://pzhao.org/wp-content/uploads/2013/03/dapengde_DummyR_PMBeijing.csv" target="_blank">这里</a>下载北京数据，<a href="http://pzhao.org/wp-content/uploads/2013/03/dapengde_DummyR_PMZhengzhou.csv" target="_blank">这里</a>下载郑州数据，请仍然保存在 _c:\R\data_ 文件夹下面。</p>
+
+<pre><code class="r">bj &lt;- read.csv(file = "c:\\R\\data\\dapengde_DummyR_PMBeijing.csv")
+zz &lt;- read.csv(file = "c:\\R\\data\\dapengde_DummyR_PMZhengzhou.csv")
+bj$city &lt;- "Beijing"
+zz$city &lt;- "Zhengzhou"
+data &lt;- rbind(bj, zz)  # 按行合并数据。
+summary(data)
+</code></pre>
+
+<pre><code>##       date             pm          city          
+##  Min.   : 1.00   Min.   :  5   Length:37         
+##  1st Qu.: 5.00   1st Qu.: 51   Class :character  
+##  Median :10.00   Median : 75   Mode  :character  
+##  Mean   : 9.76   Mean   : 95                     
+##  3rd Qu.:14.00   3rd Qu.:115                     
+##  Max.   :19.00   Max.   :280
+</code></pre>
+
+<pre><code class="r">str(data)
+</code></pre>
+
+<pre><code>## &amp;#39;data.frame&amp;#39;:    37 obs. of  3 variables:
+##  $ date: int  1 2 3 4 5 6 7 8 9 10 ...
+##  $ pm  : int  5 27 75 22 130 228 220 205 63 35 ...
+##  $ city: chr  &quot;Beijing&quot; &quot;Beijing&quot; &quot;Beijing&quot; &quot;Beijing&quot; ...
+</code></pre>
+
+<p>啥是因子（factor）？因子，也可以叫做分类变量，就是对某个向量进行分组的向量。这么说起来很绕，还是举个例子吧。上面得到的数据框 data，其中 data$pm 有 36 个数值，可以按日期分成 18 组，也可以按城市分成两组，这个分组信息就是因子。目前，日期和城市两列数据还不是因子，而是整数和字符。要想转换成因子，就要这样：</p>
+
+<pre><code class="r">data$city &lt;- factor(data$city)
+str(data)
+</code></pre>
+
+<pre><code>## &amp;#39;data.frame&amp;#39;:    37 obs. of  3 variables:
+##  $ date: int  1 2 3 4 5 6 7 8 9 10 ...
+##  $ pm  : int  5 27 75 22 130 228 220 205 63 35 ...
+##  $ city: Factor w/ 2 levels &quot;Beijing&quot;,&quot;Zhengzhou&quot;: 1 1 1 1 1 1 1 1 1 1 ...
+</code></pre>
+
+<p>现在，data$city 是个因子了。因子的取值叫做“水平”(level)。看看因子有几个水平，水平分别是什么：</p>
+
+<pre><code class="r">nlevels(data$city)
+</code></pre>
+
+<pre><code>## [1] 2
+</code></pre>
+
+<pre><code class="r">levels(data$city)
+</code></pre>
+
+<pre><code>## [1] &quot;Beijing&quot;   &quot;Zhengzhou&quot;
+</code></pre>
+
+<p>因子有什么用呢？当然就是用来对数据分类了。请看下面的例子：</p>
+
+<pre><code class="r">plot(x = data$city, y = data$pm)  # 当x是因子时，plot自动画出箱型图。等同于boxplot(data$pm ~ data$city)
+</code></pre>
+
+<p><img src="data:image/png;base64,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" alt="plot of chunk unnamed-chunk-4" /></p>
+
+<pre><code>练习07.1 把示例数据中的日期列转换成因子，并按日期分类做出箱型图。
+</code></pre>
+
+<pre><code class="r"># 分别计算两地最近18天的PM2.5平均值。
+for (i in levels(data$city)) {
+    print(i)
+    print(mean(data$pm[data$city == i]))
+}
+</code></pre>
+
+<pre><code>## [1] &quot;Beijing&quot;
+## [1] 124.7
+## [1] &quot;Zhengzhou&quot;
+## [1] 66.79
+</code></pre>
+
+<pre><code class="r">tapply(data$pm, data$city, mean)  # 跟上一条循环指令的作用相同。懒人的福音又来了！
+</code></pre>
+
+<pre><code>##   Beijing Zhengzhou 
+##    124.72     66.79
+</code></pre>
+
+<p>dapeng 是太喜欢 <code>tapply()</code>了。以前处理过这么个数据文件，有两列，第一列是日期，第二列是日均气温值，每天一行，总共一年，365 行，需要计算月平均气温。因为各月的天数是不同的，dapeng 只好在 Excel 里用鼠标拖，或者数单元格的位置，一共算了 12 次，还庆幸幸好只有 365 行。后来才知道 Excel 有“数据透视表”这个东西，但仍然觉得不灵活。现在有了 <strong>R</strong>，只要增加一列月份因子（方法以后专门介绍），一条 &lsquo;tapply()&rsquo; 就搞定，就算是有三万六千行，也不费吹灰之力了。</p>
+
+<pre><code>练习07.2 用tapply()和示例数据，分别计算北京和郑州两城市最近 PM2.5 日均值的最大值、最小值、中值。
+</code></pre>
+
+<h2 id="有用的信息">有用的信息：</h2>
+
+<table>
+<thead>
+<tr>
+<th>&#8211;</th>
+<th>&#8211;</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>按行合并数据</td>
+<td><code>rbind</code></td>
+</tr>
+
+<tr>
+<td>因子</td>
+<td><code>factor(), nlevels(), levels()</code></td>
+</tr>
+
+<tr>
+<td>分类计算</td>
+<td><code>tapply()</code></td>
+</tr>
+</tbody>
+</table>
+
+<p>( <em>连载中，待续</em> )</p>
+
+<p><a href="http://dapengde.com/archives/14845" target="_blank">原文链接</a></p>
+
+    </div>
+  </div>
+
+</article>
+
+<div class="container">
+  <nav>
+  <ul class="pager">
+    
+    <li class="previous"><a href="http://www.pzhao.org/archives/14843/"><span
+      aria-hidden="true">&larr;</span> R 菜鸟入门篇 第06篇 分支</a></li>
+    
+
+    
+    <li class="next"><a href="http://www.pzhao.org/archives/14850/">R 菜鸟入门篇 第08篇 习题 <span
+      aria-hidden="true">&rarr;</span></a></li>
+    
+  </ul>
+</nav>
+
+</div>
+
+<div class="article-container">
+  
+<section id="comments">
+  <div id="disqus_thread">
+    <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "pzhao" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+</section>
+
+
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="powered-by">
+
+      &copy; 2017 Peng Zhao &middot; 
+
+      Powered by the <a href="https://github.com/gcushen/hugo-academic" target="_blank">Academic
+      theme</a> for <a href="http://gohugo.io" target="_blank">Hugo</a>.
+
+      <span class="pull-right" aria-hidden="true">
+        <a href="#" id="back_to_top">
+          <span class="button_icon">
+            <i class="fa fa-chevron-up fa-2x"></i>
+          </span>
+        </a>
+      </span>
+
+    </p>
+  </div>
+</footer>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/ScrollToPlugin.min.js"></script>
+    <script src="/js/jquery-1.12.3.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/isotope.pkgd.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.1/imagesloaded.pkgd.min.js"></script>
+    <script src="/js/hugo-academic.js"></script>
+    
+
+    
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-99744900-1', 'auto');
+        ga('send', 'pageview');
+
+         
+        var links = document.querySelectorAll('a');
+        Array.prototype.map.call(links, function(item) {
+            if (item.host != document.location.host) {
+                item.addEventListener('click', function() {
+                    var action = item.getAttribute('data-action') || 'follow';
+                    ga('send', 'event', 'outbound', action, item.href);
+                });
+            }
+        });
+    </script>
+    
+
+    
+    
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+
+      
+
+      
+
+      <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+    </script>
+    <script async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML"></script>
+    
+
+  </body>
+</html>
+

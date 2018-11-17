@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pinyin on Peng Zhao</title>
+    <link>http://www.pzhao.org/zh/tags/pinyin/</link>
+    <description>Recent content in Pinyin on Peng Zhao</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>&amp;copy; 2017 Peng Zhao</copyright>
+    <lastBuildDate>Mon, 19 Jun 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://www.pzhao.org/zh/tags/pinyin/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>R包发布记</title>
+      <link>http://www.pzhao.org/zh/post/publish-r-packages/</link>
+      <pubDate>Mon, 19 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.pzhao.org/zh/post/publish-r-packages/</guid>
+      <description>最近，我把mindr，pinyin 和 bookdownplus 三个包都提交到了 CRAN。这三个包都很简单，我就是想体验一下发布R包的流程，免得将来学R那本书出版了被问起来，答不上来就丢人了，另外也算是承接菜鸟致简速成那篇帖子，里面只谈了野包的发布分享，而只有提交到了 CRAN，野包才算转正。
+很快，这三个包都成功转正，可以正常安装了：
+install.packages(&amp;#39;mindr&amp;#39;)install.packages(&amp;#39;pinyin&amp;#39;)install.packages(&amp;#39;bookdownplus&amp;#39;)这里说说发布的过程和我遇到的一些问题。
+自查包发布之前，先自查有没有错误。只需用RStudio打开待发布的R包的.Rproj文件，然后点击右上方面板的 Build - Check 按钮，就可以看到自查结果。
+这里要注意：
+结果里尽量不要包含任何 Notes 和 Warnings。如果有，就去找到问题修改，不然在提交的时候会被退回。
+关于author &amp;lt;author&#39;s email&amp;gt;的那一条 Note 是可以忽略的，只是提醒你再次看看作者信息有没有填错。
+我最初的自查结果有些 Notes 我原以为可以无视。比如，DESCRIPTION 文件里 Title 字段有些词要求首字母大写，我心想，这也算错误？就没理。再比如，告诉我 “no example. no test. no vignette.” 我心想，好像很多包都没有这几样，不也都发布了么？所以我同样无视。结果就是……
+下面接着讲。
+提交把包的压缩文件在 CRAN 的网页上传即可。成功上传后会收到 email 通知，需要点击里面的链接进行确认。
+我两个宝贝儿 mindr 和 pinyin 的1.0.0版是六一那天上传并确认的，之后我就等，一直等到6月16号，我才想起来这事儿，就发信给 CRAN cran@r-project.org 催了一下，当天就得到了 Dr. Uwe Ligges 的回复，说：
+你那两个包在提交当天就被系统自动拒收了，因为系统自动检查时发现了两个 Notes。系统自动发信通知你了，如果没收到，请翻翻垃圾邮件。
+我一翻邮箱的 spam，果然，拒信早就在里面了。
+修改乖乖地修改大小写，添加 vignette 和 examples，把版本号修改成 1.</description>
+    </item>
+    
+    <item>
+      <title>pinyin: 把汉字转换成拼音的R包</title>
+      <link>http://www.pzhao.org/zh/post/pinyin/</link>
+      <pubDate>Fri, 26 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.pzhao.org/zh/post/pinyin/</guid>
+      <description>更新：2017-06-19，‘pinyin 1.0.2’ 在 CRAN 正式发布。
+今天新写了个R包，粗暴地取名为 pinyin，作用是把汉字转换成拼音。
+安装方法：
+稳定版：
+install.packages(&amp;quot;pinyin&amp;quot;)devtools::install_github(&amp;quot;pzhaonet/pinyin&amp;quot;)安装时可能会出现一些关于 locale 的警告，净吓唬人，无视。
+使用方法：
+pinyin 0.0.0版包含3个函数.pinyin()是主函数，可以把一个带汉字的字符串转换成拼音。可以选择:
+转换成标准的全拼 (默认 method = &#39;quanpin&#39;)，或以数字表示声调 (method = &#39;tone&#39;) , 或不含声调(method = &#39;toneless&#39;),也可以选择仅保留每个字的首字母(only_first_letter = TRUE),可以自定义相邻两字拼音的分隔符号(sep = &#39;_&#39;),如果汉字字符串里边包含非汉字字符，可以选择将这些字符保留原样(nonezh_replace = NULL)还是转换成指定字符(如nonezh_replace = &#39;-&#39;)。举例如下：
+library(&amp;#39;pinyin&amp;#39;)pinyin(&amp;#39;羌笛何须怨杨柳春风不度玉门关&amp;#39;)## [1] &amp;quot;qiānɡ_dí_hé_xū_yuàn_yánɡ_liǔ_chūn_fēnɡ_bù/bu/bú_dù/du/duó_yù_mén_ɡuān&amp;quot;pinyin(&amp;#39;羌笛何须怨杨柳春风不度玉门关&amp;#39;, sep = &amp;#39; &amp;#39;)## [1] &amp;quot;qiānɡ dí hé xū yuàn yánɡ liǔ chūn fēnɡ bù/bu/bú dù/du/duó yù mén ɡuān&amp;quot;pinyin(&amp;#39;羌笛何须怨杨柳春风不度玉门关&amp;#39;, sep = &amp;#39; &amp;#39;, method = &amp;#39;tone&amp;#39;)## [1] &amp;quot;qiang1 di2 he2 xu1 yuan4 yang2 liu3 chun1 feng1 bu4/bu/bu2 du4/du/duo2 yu4 men2 guan1&amp;quot;pinyin(&amp;#39;羌笛何须怨杨柳春风不度玉门关&amp;#39;, sep = &amp;#39; &amp;#39;, method = &amp;#39;toneless&amp;#39;)## [1] &amp;quot;qiang di he xu yuan yang liu chun feng bu/bu/bu du/du/duo yu men guan&amp;quot;pinyin(&amp;#39;羌笛何须怨杨柳春风不度玉门关&amp;#39;, sep = &amp;#39;&amp;#39;, only_first_letter = TRUE)## [1] &amp;quot;qdhxyylcfbdymɡ&amp;quot;pinyin(&amp;#39;羌笛何须怨?</description>
+    </item>
+    
+  </channel>
+</rss>

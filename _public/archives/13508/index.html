@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme" content="hugo-academic">
+  <meta name="generator" content="Hugo 0.41" />
+  <meta name="author" content="Peng Zhao">
+  <meta name="description" content="Post-doc in Geoecology">
+
+  
+  
+  
+    
+  
+  
+    
+    
+    <link rel="stylesheet" href="/css/highlight.min.css">
+    
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/academicons.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700|Merriweather|Roboto+Mono">
+  <link rel="stylesheet" href="/css/hugo-academic.css">
+  
+
+  <link rel="alternate" href="http://www.pzhao.org/index.xml" type="application/rss+xml" title="Peng Zhao">
+  <link rel="feed" href="http://www.pzhao.org/index.xml" type="application/rss+xml" title="Peng Zhao">
+
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/apple-touch-icon.png">
+
+  <link rel="canonical" href="http://www.pzhao.org/archives/13508/">
+
+  
+
+  <title>Learning Introductory Time Series with R 中的代码摘录 | Peng Zhao</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71">
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">切换导航</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/zh/">Peng Zhao</a>
+    </div>
+
+    
+    <div class="collapse navbar-collapse">
+
+      
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/zh/#about">
+            
+            <span>关于</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/zh/tags/news">
+            
+            <span>新闻</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/zh/tags/post">
+            
+            <span>日志</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/zh/publication">
+            
+            <span>论文</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/zh/talk">
+            
+            <span>报告</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/zh/#projects">
+            
+            <span>项目</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/zh/#teaching">
+            
+            <span>教学</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/zh/#unclassified">
+            
+            <span>其他</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://cse.google.com/cse/publicurl?cx=006346710622437628329:nxozn9fijm0">
+            
+            <span>搜索</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/en">
+            
+            <span>EN</span>
+          </a>
+        </li>
+
+        
+        
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+  <div class="article-container">
+    <h1 itemprop="name">Learning Introductory Time Series with R 中的代码摘录</h1>
+    
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    <time datetime="2011-09-15 22:18:31 &#43;0000 &#43;0000" itemprop="datePublished">
+      Thu, Sep 15, 2011
+    </time>
+  </span>
+
+  
+  
+  
+  <span class="article-categories">
+    <i class="fa fa-folder"></i>
+    
+    <a href="/zh/categories/%e6%9c%aa%e5%88%86%e7%b1%bb">未分类</a
+    >
+    
+  </span>
+  
+  
+
+  
+  
+  
+  <span class="article-tags">
+    <i class="fa fa-tags"></i>
+    
+    <a href="/zh/tags/r">R</a
+    >
+    
+  </span>
+  
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=http%3a%2f%2fwww.pzhao.org%2farchives%2f13508%2f"
+         target="_blank">
+        <i class="fa fa-facebook"></i>
+      </a>
+    </li>
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=Learning%20Introductory%20Time%20Series%20with%20R%20%e4%b8%ad%e7%9a%84%e4%bb%a3%e7%a0%81%e6%91%98%e5%bd%95&amp;url=http%3a%2f%2fwww.pzhao.org%2farchives%2f13508%2f"
+         target="_blank">
+        <i class="fa fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2fwww.pzhao.org%2farchives%2f13508%2f&amp;title=Learning%20Introductory%20Time%20Series%20with%20R%20%e4%b8%ad%e7%9a%84%e4%bb%a3%e7%a0%81%e6%91%98%e5%bd%95"
+         target="_blank">
+        <i class="fa fa-linkedin"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=http%3a%2f%2fwww.pzhao.org%2farchives%2f13508%2f&amp;title=Learning%20Introductory%20Time%20Series%20with%20R%20%e4%b8%ad%e7%9a%84%e4%bb%a3%e7%a0%81%e6%91%98%e5%bd%95"
+         target="_blank">
+        <i class="fa fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=Learning%20Introductory%20Time%20Series%20with%20R%20%e4%b8%ad%e7%9a%84%e4%bb%a3%e7%a0%81%e6%91%98%e5%bd%95&amp;body=http%3a%2f%2fwww.pzhao.org%2farchives%2f13508%2f">
+        <i class="fa fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    <div class="article-style" itemprop="articleBody">
+      
+
+<p><img class="alignnone aligncenter" src="http://images.springer.com/cda/content/image/cda_displayimage.jpg?SGWID=0-0-16-609207-0" alt="" width="153" height="231" /></p>
+
+<p>　　去年从系里借了一本名为 Learning Introductory Time Series with R 的书，觉得很有用，开始很认真地做笔记，后来越来越难，学得步履维艰，最终还是半途而废了。开头几节我亲手敲下的代码笔记，本来想整理一下分开发到博客上，拖来拖去，到现在也没有实现。今天整理电脑又看见了它，干脆全部放在这里。有些事，越拖越没有意义。</p>
+
+<p>　　后来一查，书里的代码早就被作者全部放到网上了……</p>
+
+<p><a href="http://tur-www1.massey.ac.nz/~pscowper/ts/#Contents" target="_blank">http://tur-www1.massey.ac.nz/~pscowper/ts/#Contents</a></p>
+
+<p>[sourcecode language=&#8221;r&#8221;]</p>
+
+<h2 id="notes-for-learning-introductory-time-series-with-r">Notes for Learning Introductory Time Series with R</h2>
+
+<h2 id="peng-zhao">Peng Zhao</h2>
+
+<h1 id="example-1-1-airpassengers-page-4">Example 1.1: AirPassengers. Page 4.</h1>
+
+<p>data(AirPassengers).</p>
+
+<p>AP &lt;- AirPassengers</p>
+
+<p>class(AP)</p>
+
+<p>start(AP);end(AP);frequency(AP)</p>
+
+<p>plot(AP,ylab=&ldquo;Passenger (1000&#8217;s)&ldquo;)</p>
+
+<p>layout(1:2)</p>
+
+<p>plot(aggregate(AP)) # Peng: aggregate() returns an aggregated annual series.</p>
+
+<p>boxplot(AP ~ cycle(AP)) # Peng: cycle() returns an seasonal series.</p>
+
+<h1 id="example-1-2-maine-page-7">Example 1.2: Maine. Page 7.</h1>
+
+<p>www &lt;- &ldquo;<a href="http://www.massey.ac.nz/~pscowper/ts/Maine.dat&quot;" target="_blank">http://www.massey.ac.nz/~pscowper/ts/Maine.dat&quot;</a></p>
+
+<p>Maine.month &lt;- read.table(www,header = TRUE)</p>
+
+<p>class(Maine.month)</p>
+
+<p>attach(Maine.month) # Peng: attach() and detach() are smart ideas to call Maine.month$unemploy as unemploy for short.</p>
+
+<p>Maine.month.ts &lt;- ts(unemploy, start = c(1996,1), end = c(2001,2), freq=12)</p>
+
+<p>Maine.annual.ts &lt;- aggregate(Maine.month.ts)/12</p>
+
+<p>layout(1:2)</p>
+
+<p>plot(Maine.month.ts, ylab = &ldquo;unemployed (%)&rdquo;)</p>
+
+<p>plot(Maine.annual.ts, ylab = &ldquo;unemployed (%)&rdquo;)</p>
+
+<p>Maine.Feb &lt;- window(Maine.month.ts, start = c(1996,2), freq = TRUE) # Peng: window() can extract a subset of a time series.</p>
+
+<p>Maine.Aug &lt;- window(Maine.month.ts, start = c(1996,8), freq = TRUE)</p>
+
+<p>Feb.ratio &lt;- mean(Maine.Feb) / mean(Maine.month.ts)</p>
+
+<p>Aug.ratio &lt;- mean(Maine.Aug) / mean(Maine.month.ts)</p>
+
+<h1 id="example-1-3-multiple-page-10">Example 1.3: Multiple. Page 10.</h1>
+
+<p>www &lt;- &ldquo;<a href="http://www.massey.ac.nz/~pscowper/ts/cbe.dat&quot;" target="_blank">http://www.massey.ac.nz/~pscowper/ts/cbe.dat&quot;</a></p>
+
+<p>CBE &lt;- read.table(www, header = TRUE)</p>
+
+<p>class(CBE)</p>
+
+<p>Elec.ts &lt;- ts(CBE[,3], start = 1958, freq = 12) # Peng: ts() transfer a data frame into a time series.</p>
+
+<p>Beer.ts &lt;- ts(CBE[,2], start = 1958, freq = 12)</p>
+
+<p>Choc.ts &lt;- ts(CBE[,1], start = 1958, freq = 12)</p>
+
+<p>Mult.ts &lt;- cbind(Elec.ts, Beer.ts, Choc.ts) # Peng: cbind() means column bind.</p>
+
+<p>plot(Mult.ts)</p>
+
+<p>AP.elec &lt;- ts.intersect(AP, Elec.ts) # Peng: ts.intersect() produces the intersection(交集) from different time series.</p>
+
+<p>str(AP.elec)</p>
+
+<p>summary(AP.elec)</p>
+
+<p>start(AP.elec);end(AP.elec)</p>
+
+<p>AP &lt;- AP.elec$AP; Elec &lt;- AP.elec$Elec.ts # Peng: error. why? the following is correct.</p>
+
+<p>AP &lt;- AP.elec[,1]; Elec &lt;- AP.elec[,2]</p>
+
+<p>layout(1:2)</p>
+
+<p>plot(AP, main = &ldquo;&rdquo;, ylab = &ldquo;Air passengers / 1000&#8217;s&rdquo;)</p>
+
+<p>plot(Elec, main = &ldquo;&rdquo;, ylab = &ldquo;Electricity production / MkWh&rdquo;)</p>
+
+<p>plot(as.vector(AP), as.vector(Elec), xlab = &ldquo;Air passengers / 1000&#8217;s&rdquo;, ylab = &ldquo;Electricity producton / MWh&rdquo;) # Peng: why vector?</p>
+
+<p>abline(reg = lm(Elec ~ AP)) # Peng: linear regression.</p>
+
+<h1 id="example-1-4-quarterly-page-14">Example 1.4: Quarterly. Page 14.</h1>
+
+<p>www &lt;- &ldquo;<a href="http://www.massey.ac.nz/~pscowper/ts/pounds_nz.dat&quot;" target="_blank">http://www.massey.ac.nz/~pscowper/ts/pounds_nz.dat&quot;</a></p>
+
+<p>Z &lt;- read.table(www, header = TRUE)</p>
+
+<p>Z.ts &lt;- ts(Z, st = 1991, fr = 4)</p>
+
+<p>plot(Z.ts, xlab = &ldquo;time / years&rdquo;, ylab = &ldquo;Quarterly exchange rate in $NZ / pound&rdquo;)</p>
+
+<p>Z.92.96 &lt;- window(Z.ts, start = c(1992,1), end = c(1996,1))</p>
+
+<p>Z.96.98 &lt;- window(Z.ts, start = c(1996,1), end = c(1998,1))</p>
+
+<p>layout(1:2)</p>
+
+<p>plot(Z.92.96, ylab = &ldquo;Exchange rate in $NZ/pound&rdquo;, xlab = &ldquo;Time (years)&rdquo;)</p>
+
+<p>plot(Z.96.98, ylab = &ldquo;Exchange rate in $NZ/pound&rdquo;, xlab = &ldquo;Time (years)&rdquo;)</p>
+
+<h1 id="example-1-5-temperature-page-16">Example 1.5: Temperature. Page 16.</h1>
+
+<p>www &lt;- &ldquo;<a href="http://www.massey.ac.nz/~pscowper/ts/global.dat&quot;" target="_blank">http://www.massey.ac.nz/~pscowper/ts/global.dat&quot;</a></p>
+
+<p>Global &lt;- scan(www) # Peng: why not read.table() but scan()?</p>
+
+<p>Global.ts &lt;- ts(Global, st = c(1856, 1), end = c(2005, 12), fr = 12)</p>
+
+<p>Global.annual &lt;- aggregate(Global.ts, FUN = mean) # Peng: aggregate() can also produce an annually mean series.</p>
+
+<p>plot(Global.ts)</p>
+
+<p>plot(Global.annual)</p>
+
+<p>abline(reg=lm(Global.ts ~ time(Global.ts)))</p>
+
+<p>New.series &lt;- window(Global.ts, start = c(1970,1),end=c(2005,12))</p>
+
+<p>New.time &lt;- time(New.series) # Peng: time() extract the time stamps.</p>
+
+<p>plot(New.series)</p>
+
+<p>abline(reg=lm(New.series ~ New.time))</p>
+
+<h1 id="example-1-6-decomposition-page-22">Example 1.6: Decomposition. Page 22.</h1>
+
+<p>plot(Elec.ts)</p>
+
+<p>Elec.decompose &lt;- decompose(Elec.ts) # Peng: decompose() returns a trend series, a seasonal series and residuals.</p>
+
+<p>plot(Elec.decompose)</p>
+
+<p>Elec.decompose &lt;- decompose(Elec.ts, type = &ldquo;mult&rdquo;) # Peng: different decomposing method.</p>
+
+<p>plot(Elec.decompose)</p>
+
+<h1 id="example-2-1-covariance-page-29">Example 2.1: Covariance. Page 29.</h1>
+
+<p>www &lt;- &ldquo;<a href="http://www.massey.ac.nz/~pscowper/ts/Herald.dat&quot;" target="_blank">http://www.massey.ac.nz/~pscowper/ts/Herald.dat&quot;</a></p>
+
+<p>Herald.dat &lt;- read.table(www, header = TRUE)</p>
+
+<p>attach(Herald.dat)</p>
+
+<p>x &lt;- CO; y &lt;- Benzoa; n &lt;- length(x)</p>
+
+<p>sum((x &#8211; mean(x)) * (y &#8211; mean(y)))/(n &#8211; 1) # Peng: calculation of covariance.</p>
+
+<p>mean((x &#8211; mean(x)) * (y &#8211; mean(y)))</p>
+
+<p>cov(x,y) # Peng: covariance(协方差). variance(方差) when x and y are the same variable.</p>
+
+<p>sd(x) == (sum((x &#8211; mean(x)) ^ 2) / (n -1)) ^ 0.5 # Peng: standard deviation is the square root of variance.</p>
+
+<p>cov(x,y) / (sd(x) * sd(y)) # Peng: calculation of correlation.</p>
+
+<p>cor(x,y) # Peng: correlation(相关系数).</p>
+
+<h1 id="example-2-2-autocorrelation-page-34">Example 2.2: Autocorrelation. Page 34.</h1>
+
+<p>www &lt;- &ldquo;<a href="http://www.massey.ac.nz/~pscowper/ts/wave.dat&quot;" target="_blank">http://www.massey.ac.nz/~pscowper/ts/wave.dat&quot;</a></p>
+
+<p>layout(1:2)</p>
+
+<p>plot(ts(waveht)); plot(ts(waveht[1:60]))</p>
+
+<p>waveht.acf &lt;- acf(waveht) # Peng: autocorrelation(自相关) function.</p>
+
+<p>waveht.acf.ck &lt;- acf(waveht)$acf</p>
+
+<p>acf(waveht)$acf[2]# Peng: when k = 1.</p>
+
+<p>waveht.acf</p>
+
+<p>length(waveht.acf)</p>
+
+<p>acf(waveht, type = c(&ldquo;covariance&rdquo;))$acf[2]</p>
+
+<p>plot(waveht[1:396], waveht[2:397])</p>
+
+<h1 id="example-2-3-correlogram-page-38">Example 2.3: Correlogram. Page 38.</h1>
+
+<p>data(AirPassengers)</p>
+
+<p>AP &lt;- AirPassengers</p>
+
+<p>AP.decom &lt;- decompose(AP, &ldquo;multiplicative&rdquo;)</p>
+
+<p>plot(ts(AP.decom$random[7:138]))</p>
+
+<p>acf(AP.decom$random[7:138])</p>
+
+<h1 id="example-2-4-font-reservoir-page-40">Example 2.4: Font Reservoir. Page 40.</h1>
+
+<p>www &lt;- &ldquo;<a href="http://www.massey.ac.nz/~pscowper/ts/Fontdsdt.dat&quot;" target="_blank">http://www.massey.ac.nz/~pscowper/ts/Fontdsdt.dat&quot;</a></p>
+
+<p>Fontdsdt.dat &lt;- read.table(www, header = TRUE)</p>
+
+<p>attach(Fontdsdt.dat)</p>
+
+<p>layout(1:2)</p>
+
+<p>plot(ts(adflow), ylab = &#8216;adflow&#8217;)</p>
+
+<p>acf(adflow, xlab = &ldquo;lag (months)&rdquo;, main = &ldquo;&rdquo;)</p>
+
+<h1 id="example-3-1-approvals-page-46">Example 3.1: Approvals. Page 46.</h1>
+
+<p>www &lt;- &ldquo;<a href="http://www.massey.ac.nz/~pscowper/ts/ApprovActiv.dat&quot;" target="_blank">http://www.massey.ac.nz/~pscowper/ts/ApprovActiv.dat&quot;</a></p>
+
+<p>Build.dat &lt;- read.table(www, header = TRUE)</p>
+
+<p>attach(Build.dat)</p>
+
+<p>App.ts &lt;- ts(Approvals,start = c(1996,1),freq=4)</p>
+
+<p>Act.ts &lt;- ts(Activity, start = c(1996,1),freq=4)</p>
+
+<p>ts.plot(App.ts, Act.ts, lty = c(1,3)) # Peng: ts.plot() plots two time series in one figure.</p>
+
+<p>Build.union &lt;- ts.union(App.ts, Act.ts) # Peng: ts.union() binds time series with a common frequency, padding with &ldquo;NA&rdquo;</p>
+
+<p>to the union of their time coverages.</p>
+
+<p>acf(Build.union) # Peng: correlograms and cross-correlograms(互相关)</p>
+
+<p>app.ran &lt;- decompose(App.ts)$random</p>
+
+<p>app.ran.ts &lt;- window(app.ran, start = c(1996,3))</p>
+
+<p>act.ran &lt;- decompose(Act.ts)$random</p>
+
+<p>act.ran.ts &lt;- window(act.ran, start = c(1996,3))</p>
+
+<p>acf(ts.union(app.ran.ts,act.ran.ts))</p>
+
+<p>ccf(app.ran.ts, act.ran.ts)</p>
+
+<p>print(acf(ts.union(app.ran.ts,act.ran.ts)))</p>
+
+<p>[/sourcecode]</p>
+
+<p><a href="http://dapengde.com/archives/13508" target="_blank">原文链接</a></p>
+
+    </div>
+  </div>
+
+</article>
+
+<div class="container">
+  <nav>
+  <ul class="pager">
+    
+    <li class="previous"><a href="http://www.pzhao.org/archives/13494/"><span
+      aria-hidden="true">&larr;</span> 耕读笔记： The Elements of Style</a></li>
+    
+
+    
+    <li class="next"><a href="http://www.pzhao.org/archives/13526/">影片收藏架：蝴蝶效应（Butterfly effect） <span
+      aria-hidden="true">&rarr;</span></a></li>
+    
+  </ul>
+</nav>
+
+</div>
+
+<div class="article-container">
+  
+<section id="comments">
+  <div id="disqus_thread">
+    <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "pzhao" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+</section>
+
+
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="powered-by">
+
+      &copy; 2017 Peng Zhao &middot; 
+
+      Powered by the <a href="https://github.com/gcushen/hugo-academic" target="_blank">Academic
+      theme</a> for <a href="http://gohugo.io" target="_blank">Hugo</a>.
+
+      <span class="pull-right" aria-hidden="true">
+        <a href="#" id="back_to_top">
+          <span class="button_icon">
+            <i class="fa fa-chevron-up fa-2x"></i>
+          </span>
+        </a>
+      </span>
+
+    </p>
+  </div>
+</footer>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/ScrollToPlugin.min.js"></script>
+    <script src="/js/jquery-1.12.3.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/isotope.pkgd.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.1/imagesloaded.pkgd.min.js"></script>
+    <script src="/js/hugo-academic.js"></script>
+    
+
+    
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-99744900-1', 'auto');
+        ga('send', 'pageview');
+
+         
+        var links = document.querySelectorAll('a');
+        Array.prototype.map.call(links, function(item) {
+            if (item.host != document.location.host) {
+                item.addEventListener('click', function() {
+                    var action = item.getAttribute('data-action') || 'follow';
+                    ga('send', 'event', 'outbound', action, item.href);
+                });
+            }
+        });
+    </script>
+    
+
+    
+    
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+
+      
+
+      
+
+      <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+    </script>
+    <script async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML"></script>
+    
+
+  </body>
+</html>
+

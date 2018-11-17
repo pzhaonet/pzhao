@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blogdown on Peng Zhao</title>
+    <link>/en/tags/blogdown/</link>
+    <description>Recent content in Blogdown on Peng Zhao</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2017 Peng Zhao</copyright>
+    <lastBuildDate>Fri, 08 Jun 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/en/tags/blogdown/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Two Achievements by R bookdown</title>
+      <link>/en/post/gource/</link>
+      <pubDate>Fri, 08 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/en/post/gource/</guid>
+      <description>This post is presenting two achievements by bookdown.
+The first one is a paper book I wrote: Learning R: R for Rookies (in Chinese). It was published in May 2018 in Mainland China by the Research Publishing Press. I guess it must be the first ever published paper book written in Chinese and built in the bookdown environment. Hooray!
+I tried using MS Word at the beginning but I failed. The publishing press tried using Adobe InDesign for typesetting and publishing this book but failed as well.</description>
+    </item>
+    
+  </channel>
+</rss>

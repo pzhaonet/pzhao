@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kindle on Peng Zhao</title>
+    <link>http://www.pzhao.org/zh/tags/kindle/</link>
+    <description>Recent content in Kindle on Peng Zhao</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>&amp;copy; 2017 Peng Zhao</copyright>
+    <lastBuildDate>Wed, 10 Apr 2013 17:59:40 +0000</lastBuildDate>
+    
+	<atom:link href="http://www.pzhao.org/zh/tags/kindle/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>R 菜鸟生活篇 整理 Kindle 上的笔记</title>
+      <link>http://www.pzhao.org/archives/15032/</link>
+      <pubDate>Wed, 10 Apr 2013 17:59:40 +0000</pubDate>
+      
+      <guid>http://www.pzhao.org/archives/15032/</guid>
+      <description>自从有了 Kindle 电子书阅读器，读书就得到了解放。dapeng 可以一天不用 iPad，可以一天不看手机，但是不能一天不读 Kindle，因为想读的书，想读的博客（方法见这里），订阅的新闻和微博每天的更新，全都在 Kindle 里。甚至 dapeng 发现，常访问的那些博客，博主们或早或晚都入手了 Kindle，比如最近被墙的坛子，以及刚入手 Kindle 的勺子。使用了一年有余，Kindle 上的常规操作基本都熟悉了，只有一个问题没有好好解决：整理笔记和高亮。
+整理之前 Kindle 的笔记和高亮都保存在根目录下documents文件夹里名为“My Clippings.txt”的文本文件里，在 PC 中直接打开是这样的： 这是按做笔记的时间顺序列下去的，作为摘录型的笔记，日后叫我怎么用啊。应该整理到表格里才方便。
+整理方法 网上有些现成的方法，比如下载word的宏，或有人写了专门的软件，或在线转换，但要么是有安全隐患，要么是要收费，要么是不支持中文。还是请万能的 R 来当一次小秘书，帮忙整理一下，免费，方便，快捷，安全，而且可以随心所欲地修改，浑身上下都是闪光点！dapeng 写的代码是这样的：
+aa &amp;lt;- readLines&amp;#40;&#34;e:\\temp\\My\ Clippings.txt&#34;, encoding=&#34;UTF-8&#34;&amp;#41; length.aa &amp;lt;- length&amp;#40;aa&amp;#41; title &amp;lt;- aa&amp;#91;c&amp;#40;seq&amp;#40;1, length.aa, by = 5&amp;#41;&amp;#41;&amp;#93; title.o &amp;lt;- order&amp;#40;title&amp;#41; title &amp;lt;- title&amp;#91;title.o&amp;#93; location &amp;lt;- aa&amp;#91;c&amp;#40;seq&amp;#40;2, length.aa, by = 5&amp;#41;&amp;#41;&amp;#93;&amp;#91;title.o&amp;#93; time.aa &amp;lt;- substr&amp;#40;location, &amp;#40;regexpr&amp;#40;&#34; Added on &#34;, location&amp;#41; + 10&amp;#41; , nchar&amp;#40;location&amp;#41;&amp;#41;&amp;#91;title.o&amp;#93; loc &amp;lt;- substr&amp;#40;location, 13, regexpr&amp;#40;&#34;</description>
+    </item>
+    
+    <item>
+      <title>在Kindle上读博客</title>
+      <link>http://www.pzhao.org/archives/14785/</link>
+      <pubDate>Tue, 05 Mar 2013 09:28:45 +0000</pubDate>
+      
+      <guid>http://www.pzhao.org/archives/14785/</guid>
+      <description>最近折腾博客过程中，意外结识了几位新朋友，其中，土木坛子给晴耕雨讀志的搬家带来很大帮助。进而，dapeng 又顺着链接溜到了博士牌民工那里去，继续受启发。读了这两位的博客，有一种感觉叫做相见恨晚。他们跟 dapeng 的兴趣类似，观点雷同，有一种发现叫做臭味相投，大概是因为2008到2009年前后赴欧洲留学的人都有类似的经历吧。比如读到坛子关于 Kindle 的帖子， dapeng 觉得眼熟，心想，这不是我写的吗？一看，坛子比 dapeng 写得好。比如读到民工关于奶粉的观点，dapeng 觉得亲切，心想，这不是我写的吗？一比，民工比 dapeng 写得早。这让虚长几岁的 dapeng 情何以堪啊！于是dapeng 决定把他们的博客通读一遍。在 Kindle 上。
+是的，在 Kindle 上。这两位的博客都有二三百篇了，在电脑上看多了费眼，在 iPad 上看多了会被老婆抢走，而在 Kindle 上就方便多了，可以冠冕堂皇地做出一副“我在读书”而非看八卦的姿态。坛子曰，这不算盗版。那好，dapeng 就不客气了——
+上图是坛子博客在 Kindle 上的截图。格式还不完美，dapeng 觉得不影响阅读，就懒得精益求精了。还有民工的，也还能凑合着看：
+坛子的格式比较难看，抱歉，因为是 dapeng 试手的第一个小板凳。民工的加上了段首缩进，进步了一点。
+那么怎么把他们的博客弄到 Kindle 上去呢？下面以坛子的博客为例试做说明。
+下载原文 先把坛子的每篇博客都下载到本地电脑上。dapeng 想到了几个方法实现：
+ 一个一个点击另存。 用迅雷批量下载。 用 firefox 的 vim 插件，再用 vim 的宏功能。 用 wget。  方法 1 太累，不适合 dapeng 这种懒人。方法 2 失败。方法 3 也有点麻烦。最后选用方法 4。
+wget 是个命令行下载工具，linux 用户尽人皆知。dapeng 现在用的是 windows 系统，所以下载 wget 的 windows 版。观察一下坛子博客存档的特点，每篇的地址都是 http://tumutanzi.</description>
+    </item>
+    
+    <item>
+      <title>期待我的Kindle</title>
+      <link>http://www.pzhao.org/archives/13250/</link>
+      <pubDate>Sun, 14 Aug 2011 06:09:53 +0000</pubDate>
+      
+      <guid>http://www.pzhao.org/archives/13250/</guid>
+      <description>期待了一周时间，我的Kindle今天就要到手了！
+这台具有wifi和3G功能的广告版Kindle 3是在淘宝上买的。wifi+3G的Kindle有两种：广告版和非广告版，在美国amazon网站上的售价分别是139和189美元，功能完全一样，只是前者有广告商赞助，机子上多了一些广告屏保而已。那当然要买广告版，可惜这款广告版德国amazon不卖，美国又不往德国邮寄。若是买非广告版，寄到德国再加19％的税，还有邮费，那还不如在德国直接买，189欧。美国的那些朋友们最近又见不到面，没法代购。后来发现在淘宝上卖1080元人民币，合120欧元，算来还是淘宝划算。我又花了140元买了个高仿皮套。
+这是最近两年来给自己买的最贵的数码产品了。我总觉得数码产品贬值太快，不舍得把钱花在这里。可是眼下有个难题，就是我想看书，却还居无定所，书箱对搬家来说每次都是噩梦。为此一直不敢买书。现在有了Kindle，可以甩开膀子读电子书了。网上居然有为Kindle 3专门制作的《上帝掷骰子了吗》，看来我买那本印刷版可以不带在身上了。
+最近做足了功课，期待能很快用上Kindle。安装多看、越狱等高级操作就先不干了，我打算创造一个简单的学习环境，好好读一些英文书籍，比如哈利波特……
+很好的入门教程：点我
+&amp;#8212;&amp;#8212;&amp;#8211;重要参数&amp;#8212;&amp;#8212;&amp;#8211;
+ E-ink电子墨水型电纸书；重量250克，大小为7.5 x 4.8 x 0.335 英寸；屏幕6英寸，分辨率 800*600，16级灰阶，不支持触摸手写；4GB存储，mini usb接口，WIFI和3G无线上网，电池容量1750 mAh，续航时间1个月（不开无线连接）或10天（打开无线连接）；支持英文和简繁中文；文件格式支持Kindle (AZW), TXT, PDF, Audible (Audible Enhanced (AA, AAX)), MP3, unprotected MOBI, PRC natively; HTML, DOC, JPEG, GIF, PNG, BMP。
+ &amp;#8212;&amp;#8212;&amp;#8211;基本操作&amp;#8212;&amp;#8212;&amp;#8211;
+ 开机，关机；睡眠，唤醒；重启，充电，死机：
+开机：找到底部的电源键，向右滑动，绿灯亮起。
+关机：向右滑动电源键并保持五秒钟以上。（通常没有必要，如长期不用Kindle，可以在充满电后再关机。）
+睡眠：向右滑动电源键，出现屏保，即进入睡眠模式。Kindle的睡眠模式很省电，启动时间又比较长，所以通常是不需要关机的。
+唤醒：同开机。
+重启：方法1：拨动机身下面的电源键15秒不放。方法2：home &amp;#8211; menu -setting &amp;#8211; restart。
+充电：系统显示电量低时要充电。充电时底部指示灯为黄色，充满时为绿色。通常完整充电一次需要两个多小时。新机子可以充满再使用。
+死机：第一天看漫画就死机了。我的方法是向右滑动电源键保持10秒左右，直到关机。然后开机，滑动电源键保持了几十秒，直到开机，复原。我还以为变砖头了呢。
+往Kindle上拷贝文件：
+方法1： 用USB连接直接拷贝；
+方法2： 用邮箱发送到自己Kindle账号上。具体步骤是：
+ 在Kindle账号上 Approved E-mail List 添加邮箱。
+ 从上述邮箱往自己的Kindle免费账号邮箱上发送邮件 name@free.kindle.com。可多个附件，可打包zip（RAR不行），TXT格式的文件则会被转换格式到azw。
+ K3 用wifi联网（不要用3G，否则接受邮件会收费），不久会自动同步，或手动选Sync也可以。</description>
+    </item>
+    
+  </channel>
+</rss>

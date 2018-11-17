@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rss on Peng Zhao</title>
+    <link>http://www.pzhao.org/zh/tags/rss/</link>
+    <description>Recent content in Rss on Peng Zhao</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>&amp;copy; 2017 Peng Zhao</copyright>
+    <lastBuildDate>Tue, 22 Jul 2014 08:04:52 +0000</lastBuildDate>
+    
+	<atom:link href="http://www.pzhao.org/zh/tags/rss/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>一台低配置智能手机</title>
+      <link>http://www.pzhao.org/archives/17228/</link>
+      <pubDate>Tue, 22 Jul 2014 08:04:52 +0000</pubDate>
+      
+      <guid>http://www.pzhao.org/archives/17228/</guid>
+      <description>看着锤子手机争议不断，我庆幸我是老罗的粉丝。老罗说，要有独立思考的能力。我照做。所以，任凭老罗怎么忽悠，我就是觉得锤子手机不怎么样。而且，不知怎的，我对自己的一台低配置智能手机越来越喜爱了。
+我用的最后一款NOKIA直板机，里面装的是塞班系统，一直以为这是一台智能手机，一直用到周围的人都在刷微信，才发觉塞班真是不够智能，应该弄个真正的智能机玩玩。所以，2013年5月趁有款安卓手机打折，托朋友买了一个作为入门。这部手机配置很低，与其说是smartphone，不如说是stupidphone。它的配置是这样的：
+插图：Motorola XT319 （图片来源：amazon.com）
+ 型号：摩托罗拉 XT319 售价：人民币387.80元（2013年购入） 屏幕：3.2英寸, TFT触摸屏 摄像头：后置300万像素，前置不清楚。 操作系统：Android 2.3 CPU：800MHz处理器 机身内存：512 RAM, 512 ROM 存储卡：附送2G MicroSD 扩展卡。最大支持32GB。  它有个别具特色的支架，很适合看视频和进行视频电话，这让我选中了它。当然，后来发现Skype的视频功能不支持这款机型，这是后话了。尽管如此，弄个天气图标和时钟竖在桌上，还是挺拉风的。
+插图：Motorola XT319 的竖立模式（图片来源：http://asf-mobiles.net）
+然而，到手之后，就发觉512的内存实在是捉襟见肘。即便是获取root权限后删除了系统预装的人人微博开心等乱七八糟的软件，等装上微信、安卓优化大师、豌豆荚和谷歌地图后，发现只剩余30M了。我想，三百多块钱的手机，还能指望啥呢？凑合吧。后来发现，凑合也没法凑合，微信竟然没法登录，原因下面再讲。所以，买了都快一年了，这只手机只在驾校学车的时候轰轰烈烈亮了一次相，就被闲置了。
+作为有点强迫症的理工男，我对手机无缘无故没法用微信一事耿耿于怀。今年春天，朋友的母亲刺激了我一下。这位老年人对我说：“微信，连我都会用！”我觉得这事儿必须提上日程了。我的微信为什么不能登录呢？输入QQ号和密码后，什么新窗口也不出现，输入栏自动清空。我再输，仍然如此，死到这里了。山重水复，灵感突然来了。我发现，在安装后，没有登录的情况下，我用安卓优化大师把微信搬到了SD卡里，这样导致登录不了（原理不详）；只要安装后先登录，就能成功使用微信，然后再搬到SD卡，就万事大吉了。
+解决了微信的问题，我信心暴涨，决心让这部屌丝手机从实用角度超越大部分人手里的iPhone。事实证明，达到这个目标并不难。安卓系统大量免费的优质软件，只要合理选择安装使用，杂七杂八地，这台低配置的手机，竟然装上了大多数常用的应用，非常神奇。
+         插图：我的手机桌面
+我这台XT319安装的应用程序简述如下。
+翻译：欧路词典 欧陆词典是个强有力的翻译工具。我额外安装了德语词库和维基百科离线版。为了输入德语字符，又安装了Go输入法国际版。这样一来，手头好几本印刷版的词典完全下岗了。
+读书：QQ阅读 原来我装的其实是多看，体验很不错，但是太占空间了。相比之下，QQ阅读小巧够用。
+通讯：微信，Gmail 微信自然不必多说。我用坛子介绍的方法，拿Gmail来订阅rss，所以Gmail除了收发邮件外，兼做rss阅读器，偶尔也用来跟PC之间传个文件。
+日历：Business Calendar free 健忘的人最离不开的是日历提醒。Business Calendar free 可以跟谷歌日历完美同步。
+音频视频：天天动听，QQ影音，TuneIn收音机，喜马拉雅听，Youtube，Hi-Q MP3 Recorder 天天动听和QQ影音分别负责播放本地的声音和视频文件，TuneIn收音机、喜马拉雅听和Youtube用来播放网络音频视频，Hi-Q MP3 Recorder用来录音。其中，TuneIn收音机是我的最爱。有了TuneIn收音机，这台手机即使不当手机用，专门用作WIFI收音机也是超值的。
+地图：Google地图 我常用Google地图作为行车导航仪，中文语音导航，在德国可买不到这样的导航仪。另外，Google地图是可以脱离手机信号使用的。上次去奥地利出差，我这个德国手机号没法使用，但幸好事先下载了离线地图，这台手机帮助我好几次摆脱了迷路的险境。
+吉他：Guitar Tuner, Metronome Guitar Tuner是个定音器，调弦用的。Metronome是个节拍器。
+系统增强：R.E.管理器，多键开关，Shootme R.E.管理器对手机里的文件进行管理操作。多键开关给桌面增加了很多快捷按钮，实现一键锁屏、开关无线网、静音等功能。Shootme用来截屏。</description>
+    </item>
+    
+    <item>
+      <title>博客搬家，订阅源不搬</title>
+      <link>http://www.pzhao.org/archives/14160/</link>
+      <pubDate>Sat, 21 Jan 2012 08:04:21 +0000</pubDate>
+      
+      <guid>http://www.pzhao.org/archives/14160/</guid>
+      <description>**
+[摘要]
+本文介绍博客RSS订阅的一些技巧：用feedburner生成固定地址的源，用Google Reader合并多个源，以及在wordpress中如何为不同分类的文章生成源。
+**
+　这次博客搬家，acrobat网友发现我爱折腾，建议用feedburner制作一个固定的RSS feed，以后不管博客地址怎么变，订阅这个固定feed的读者都不受影响。
+　听起来不错，但这是什么技术？我听都没听说过。
+　快过年了，反正也没心情干正经事儿，就折腾吧。折腾了大半个下午，明白了。这里简单说一下这道难题的解决方法。
+**
+壹：搬
+**
+　先解释一下题目：
+　我的博客经常搬家，地址从A搬到B，害得读者也跟着搬。解决的办法是，固定一个F地址永远不变，把F和A或B绑定，读者只要访问F就行了。博客每搬家一次就重新绑定一次，不必给读者添麻烦。问题是，怎么绑定？怎么获取F？
+　这个任务交给feedburner完成。
+　在feedburner的主页用google帐号登录，然后输入当前博客的feed地址（A），feedburner会生成一个新的feed地址（F）。博客搬家时在feedburner把A改成B，这事儿就成了。
+　feedburner不光可以生成F这个地址，还提供了向读者公布F的各种方法。我用feedburner提供的一段代码，贴到博客侧边栏， 替代了新博客上自带的RSS源widget，这样读者就不会误订A了。但有个问题我没有解决，就是有些博客模板上默认显示A这个RSS源，比如notepad这个模板。估计得修改CSS，但我不知道具体怎么做，索性换了模板。
+　问题解决，但是事儿还没完。因为这次搬家是把原来的博客一分为二。也就是说，原来的博客是A，现在是B1和B2，这种情况下怎么把B1和B2同时绑定到F上？
+**
+貳：合
+**
+　上面这个问题的答案是：先把B1和B2合并成B，再和F绑定。
+　合并的工具吓了我一跳：Google Reader。
+　话说Google Reader我用了两年了，都不知道这个功能。
+　把B1和B2订阅到Google Reader，放在一个文件夹里。点击文件夹，选择生成一个bundle。这个bundle的地址就是B。这事儿就成了。
+**
+叁：分
+**
+　有合就有分。上面合并的逆操作是什么？我的博客A，有些读者只想订阅其中关于育儿话题的，有些只想订阅软件相关的。我怎么把A分成F1和F2两个feed？
+　方法是利用文章分类。
+　在wordpress后台的posts下找到catagories，建立A1和A2分类。鼠标放在分类名称上，会看到浏览器底部出现一个长的地址，找到里面ID=xxxxxxx，这一串数字就是这个分类的代码。
+　批处理把育儿文章分到A1类，软件文章分到A2类。这时就可以给两类文章分别生成feed了。假设整个博客A的地址是：
+　http://happy2012.wordpress.com/feed
+那么分类订阅的A1或A2就是：
+　http://happy2012.wordpress.com/feed/?cat=xxxxxxxx
+　再用feedburner为A1和A2分别生成两个固定feed就是F1和F2，这事儿就成了。
+原文链接</description>
+    </item>
+    
+    <item>
+      <title>RSS订阅感兴趣的育儿博客</title>
+      <link>http://www.pzhao.org/archives/10867/</link>
+      <pubDate>Wed, 10 Feb 2010 19:08:00 +0000</pubDate>
+      
+      <guid>http://www.pzhao.org/archives/10867/</guid>
+      <description>我的igoogle（点击这里看大图）
+
+这两天试着用igoogle定制了自己的页面，包括翻译工具，地图，邮箱，天气预报，农历日历，资讯等等，颇有鸟瞰世界的感觉。设置为浏览器的主页，每次打开firefox全看一遍，很省事。我真土啊，这么好的服务现在才开始用。
+其中一部分是我关注的博客RSS形式的集合，这样就可以看到是否更新，没更新的就不用一个一个点进去看了。发现现在很多博客都提供RSS订阅了，甚至包括我的好爸爸日记：
+http://pzhao.spaces.live.com/feed.rss
+不知道igoogle在国内是否能好好使用。不能用的话，用其他的RSS阅读器应该也可以。
+
+原文链接</description>
+    </item>
+    
+  </channel>
+</rss>
