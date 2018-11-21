@@ -1,47 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Markdown on Peng Zhao</title>
-    <link>/en/tags/markdown/</link>
-    <description>Recent content in Markdown on Peng Zhao</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; 2017 Peng Zhao</copyright>
-    <lastBuildDate>Fri, 19 May 2017 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/en/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>R package mindr: convert markdown files to mind maps, and vice versa</title>
-      <link>/en/post/mindr/</link>
-      <pubDate>Fri, 19 May 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/en/post/mindr/</guid>
-      <description>This is a preliminary version of the introduction to mindr. Please go to my Github repo mindr for the latest updates.
-Quick startInstallationdevtools::install_github(&amp;quot;pzhaonet/mindr&amp;quot;)Convert (a) markdown file(s) into a mindmapCreate a folder named mm in the working directory (getwd()), and drop some markdown or rmarkdown files into mm/. Run:
-mindr::md2mm()then you will get a mm.mm file. Open it with any mind-map (brainstorm) software, and you will get a mind map.</description>
-    </item>
-    
-    <item>
-      <title>R package postr: created posters with R markdown</title>
-      <link>/en/post/postr/</link>
-      <pubDate>Tue, 16 May 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/en/post/postr/</guid>
-      <description>This is a preliminary version of the introduction to postr. Please go to my Github repo postr for the latest updates.
-This package is modified from kuleuven-template, where you can see the requirements before using this package. Here I picked out the instruction for Windows users as follows.
-Install a LaTeX distribution, e.g. MiKTeX. For Chinese users CTeX is highly recommended.Install TexmakerInstall RInstall RStudioInstall Python 2Install Python filter support for Pandoc: on a Windows command prompt, type pip install pandocfiltersInstall SumatraPDF for auto-refresh of PDF previewsAfterwards, add the Python directory to the system PATH variable.</description>
-    </item>
-    
-    <item>
-      <title>R bookdown cheatsheet</title>
-      <link>/en/post/bookdown-cheatsheet/</link>
-      <pubDate>Tue, 14 Mar 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/en/post/bookdown-cheatsheet/</guid>
-      <description>Quick StartWhat is R bookdownA software for writing books or documents.More elegant than MS Word. Much easier than \(\LaTeX\).Users can easily insert table of contents, figures and tables with cross-reference, footnotes, and index.Users can easily embed equations, citations, R scripts.pdf, word and html files can be exported.best choice to write reproducible documents.InstallationDownload R and install it.Download RStudio and install it.</description>
-    </item>
-    
-  </channel>
-</rss>

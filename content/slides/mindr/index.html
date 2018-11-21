@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>mindr: an R package for creating mind maps via markdown</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Peng Zhao" />
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https:\\cdnjs.cloudflare.com\ajax\libs\animate.css\3.7.0\animate.min.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# mindr: an R package for creating mind maps via markdown
+### Peng Zhao
+### 2018/11/16 
+(updated: 2018-11-21)
+
+---
+
+
+
+background-image: url(img/stories.jpg)
+class: inverse, right, bottom
+
+# Let's begin with some stories...
+
+???
+I wish my audience won't fall asleep. 
+
+---
+
+## The story of md2mm()
+
+### The book *Learning R* 
+
+.pull-left[
+![:width 100%](img/xuer.jpg)
+]
+
+--
+
+.pull-right[
+[![:width 68.4%](img/mindr_xuer.jpg)](img/mindr_xuer.jpg)
+]
+
+---
+
+## The story of md2mm()
+
+### The book *Learning R* 
+
+
+.pull-left[
+[![:width 100%](img/rmarkdown.jpg)](img/rmarkdown.jpg)
+]
+.pull-right[
+![:width 68.4%](img/mindr_xuer.jpg)
+]
+
+---
+
+### Mind map tools
+
+.pull-left[
+![:height 50px](img/xmind-logo.png)
+[![:height 300px](img/xmind-demo.png)](img/xmind-demo.png)
+]
+--
+.pull-right[
+![:height 50px](img/freemind-logo.png)
+[![:height 300px](img/freemind.demo.png)](img/freemind.demo.png)
+]
+
+---
+
+### Mind map codes
+
+.pull-left[
+![:height 50px](img/xmind-logo.png)
+[![](img/xmind-code.png)](img/xmind-code.png)
+]
+.pull-right[
+![:height 50px](img/freemind-logo.png)
+[![](img/freemind-code.png)](img/freemind.code.png)
+]
+
+---
+
+### when md2mm() was born
+
+[![](img/mindr_blogdown.jpg)](img/mindr_blogdown.jpg)
+
+The author was unhappy...
+
+---
+
+### Growing Pains (Episode 1): the bookdown style
+
+[![](img/mindr_the_blogdown_book.png)](img/mindr_the_blogdown_book.png)
+
+---
+
+### Growing Pains (Episode 2): hyperlinks
+.pull-left[
+[![](img/hyperlink-request.png)](img/hyperlink-request.png)
+]
+--
+.pull-right[
+
+```
+# Introduction {#introduction}
+## What is 'bookdown' {#what_is__bookdown_}
+## What is ['bookdownplus'](https://github.com/pzhaonet/bookdownplus) #&lt;&lt;
+## Why 'bookdownplus' {#why__bookdownplus_}
+## Giants' Shoulders {#giants__shoulders}
+# Quick Start {#quick_start}
+## Preparation {#preparation}
+## Installation of 'bookdownplus' {#installation_of__bookdownplus_}
+## How to use {#how_to_use}
+## More output formats
+## More templates
+## A magic trick
+## Recommendations
+```
+
+[![](img/mindr-links.png)](img/mindr-links.png)
+]
+
+---
+
+### Growing Pains (Episode 3): equations
+
+.pull-left[
+```
+## More output formats
+$$f(k) = {n \choose k} p^{k} (1-p)^{n-k}$$
+
+## More templates
+## A magic trick
+$$\begin{array}{ccc}
+x_{11} &amp; x_{12} &amp; x_{13}\\
+x_{21} &amp; x_{22} &amp; x_{23}
+\end{array}$$
+
+## Recommendations
+```
+]
+
+.pull-right[
+![](img/equation.png)
+]
+
+- docear
+
+---
+
+## The story of r2rmd()
+
+### Home-made cheatsheet for ggplot2
+
+.pull-left[
+```r
+# 语法模板 --------
+## 简化版 --------
+### 数据 + 几何对象 --------
+### ggplot(data) + geom_xxx(mapping = aes()) --------
+## 完整版 --------
+### 数据  + 几何对象(属性映射 + 统计转换 + 位置调整) + 坐标系 + 块面结构 --------
+### ggplot(data) + geom_xxx(mapping = aes(),  stat, positon) + coordinate_xxx() + facet_xxx() --------
+
+#附加变量 --------
+ggplot(data = da) +
+  geom_point(mapping = aes(x = GDP, y = car, color = region))
+# 块面结构 --------
+
+## facet_wrap() --------
+```
+]
+
+.pull-right[
+[![](img/ggplot2.png)](img/ggplot2.png)
+]
+
+---
+
+### How to write comments
+
+.pull-left[
+![](img/outline.jpg)
+]
+
+--
+.pull-right[
+
+````markdown
+# Calculation
+This is a chapter about calculation.
+## Assign x
+Assign x some values.
+
+```r
+x &lt;- 1:6
+```
+## Assign y
+Assign y some values.
+
+```r
+y &lt;- 11:16
+```
+# Plot
+
+```r
+plot(x, y)
+```
+
+![](mindr_files/figure-html/unnamed-chunk-3-1.png)&lt;!-- --&gt;
+````
+]
+
+`r2md()`
+
+---
+### Feedback came once again...
+.pull-left[
+![](img/feedback.png)
+]
+--
+.pull-right[
+![](img/hint.png)
+]
+
+---
+
+### Write .R with markdown: Rules
+
+| .R 脚本书写规则                   | `spin(.R脚本)`得到的 .Rmd 文档             |
+| ------------------------------ | ---------------------------------------- |
+| 1. `#' `  开头的注释行      | 成为正文文字                             |
+| 2. `#+ ` 开头的注释行 | 成为代码块的选项（chunk options） |
+| 3. 双重花括号（如`{{mean(x)}}`） | 成为行内代码（如 r mean(x)） |
+| 4. 代码行                     | 前后添加一对连续的三个反引号，成为代码块 |
+| 5. `# `开头的普通注释行 | 保留不变，成为代码块里的注释 |
+| 6. `# /*` 与 `# */` 之间的部分 | 跳过，不进入 .Rmd |
+| 7. `#= `  开头的注释行 | 成为章节标题                   |
+
+
+---
+### Write .R with markdown: Codes
+
+.pull-left[
+
+```r
+#= ## A Simple Example ----
+#' The report begins here.
+
+#+ test-a, cache=FALSE
+# boring examples as usual
+set.seed(123)
+x = rnorm(5)
+mean(x)
+
+```
+
+]
+
+.pull-right[
+
+````markdown
+## A Simple Example 
+The report begins here.
+
+
+```r
+# boring examples as usual
+set.seed(123)
+x = rnorm(5)
+mean(x)
+```
+
+```
+## [1] 0.1935703
+```
+````
+
+]
+
+.center[
+`$$\text{.R}\rightleftharpoons\text{.Rmd}$$`
+
+`knitr::spin()` and  `knitr::purl()`
+
+`mindr::r2rmd()` and `mindr::rmd2r()`
+]
+---
+
+class: center, middle
+
+# Usages
+
+---
+background-image: url(https://github.com/pzhaonet/mindr/raw/master/showcase/mindr_concept_1.1.8.png)
+
+## Concept
+
+---
+## Installation
+
+.pull-left[
+- R
+- mindr
+- freemind
+]
+
+.pull-right[
+- RStudio *
+- xmind *
+- docear *
+]
+
+
+```r
+# from CRAN (stable)
+install.packages('mindr')
+# from github (development)
+install.packages('devtools')
+devtools::install_github('pzhaonet/mindr')
+# load
+library('mindr)
+```
+
+.footnote[
+\* Recommended
+]
+
+---
+## Citation
+
+
+```r
+citation('mindr')
+```
+
+```
+## 
+## To cite package 'mindr' in publications use:
+## 
+##   Peng Zhao (2018). mindr: Convert Files Between Markdown or
+##   Rmarkdown Files and Mindmaps. R package version 1.1.8.
+##   https://github.com/pzhaonet/mindr
+## 
+## A BibTeX entry for LaTeX users is
+## 
+##   @Manual{,
+##     title = {mindr: Convert Files Between Markdown or Rmarkdown Files and Mindmaps},
+##     author = {Peng Zhao},
+##     year = {2018},
+##     note = {R package version 1.1.8},
+##     url = {https://github.com/pzhaonet/mindr},
+##   }
+## 
+## ATTENTION: This citation information has been auto-generated from
+## the package DESCRIPTION file and may need manual editing, see
+## 'help("citation")'.
+```
+
+---
+## Main functions
+.pull-left[
+```r
+md2mm()
+mm2r()
+r2rmd()
+```
+]
+.pull-right[
+```r
+mm2md()
+r2mm()
+rmd2r()
+```
+]
+
+```r
+example(function_name)
+```
+
+--
+
+## More...
+
+```r
+example(markmap)
+```
+
+```r
+dir2()
+outline()
+tree2mm()
+```
+
+--
+
+```r
+mindr::&lt;tab&gt;
+```
+
+---
+background-image: url(img/end.jpg)
+class: inverse, right, bottom
+
+# More features are coming soon...
+
+---
+
+# Acknowledgements
+
+- [**xaringan**](https://github.com/yihui/xaringan).
+
+
+```r
+citation('xaringan')
+```
+
+```
+## 
+## To cite package 'xaringan' in publications use:
+## 
+##   Yihui Xie (2018). xaringan: Presentation Ninja. R package
+##   version 0.8. https://CRAN.R-project.org/package=xaringan
+## 
+## A BibTeX entry for LaTeX users is
+## 
+##   @Manual{,
+##     title = {xaringan: Presentation Ninja},
+##     author = {Yihui Xie},
+##     year = {2018},
+##     note = {R package version 0.8},
+##     url = {https://CRAN.R-project.org/package=xaringan},
+##   }
+```
+
+---
+class: center, bottom
+
+**Syntax of xaringan slides**
+
+| syntax | meaning |
+| ------ | ------- |
+| `---`     | new slide        |
+--
+| `--`      | new line         |
+--
+| `#` `##`  `###`  |  headings |
+--
+
+| `&lt;sup&gt;*&lt;/sup&gt;` `.footnote[[*]]`    |  footnotes |
+--
+| `knitr::kable(format = 'html')` | tables |
+--
+
+| `DT::datatable()` | interactive tables |
+--
+
+|`???`| instert notes (press p to display) |
+--
+
+| `background-image: url()` | backgroun image |
+--
+
+| `class: inverse, center, middle`       |   alignment      |
+--
+|`layout:true` and `layout: false`| for a series of slides| 
+--
+
+| `background-position: 50% 50%` | background position |
+--
+
+| `background-size: cover` | background size |
+--
+
+| `.pull-left[]` | columns |
+--
+
+|`.center[]`| center |
+--
+
+| `code #&lt;&lt;` | highlight code lines |
+--
+
+| `names(xaringan:::list_css())` | show themes |
+--
+
+| `h` | show help |
+--
+
+|`?xaringan::moon_reader` | show available options |
+
+---
+class: center
+![](img/mindr-slides.png)
+
+```r
+mindr::md2mm()
+```
+    </textarea>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script src="macro/macro.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function() {
+  var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})();
+(function(time) {
+  var d2 = function(number) {
+    return ('0' + number).slice(-2); // left-pad 0 to minutes/seconds
+  },
+
+  time_format = function(total) {
+    var secs = Math.abs(total) / 1000;
+    var h = Math.floor(secs / 3600);
+    var m = Math.floor(secs % 3600 / 60);
+    var s = Math.round(secs % 60);
+    var res = d2(m) + ':' + d2(s);
+    if (h > 0) res = h + ':' + res;
+    return res;  // [hh:]mm:ss
+  },
+
+  slide_number_div = function(i) {
+    return document.getElementsByClassName('remark-slide-number').item(i);
+  },
+
+  current_page_number = function(i) {
+    return slide_number_div(i).firstChild.textContent;  // text "i / N"
+  };
+
+  var timer = document.createElement('span'); timer.id = 'slide-time-left';
+  var time_left = time, k = slideshow.getCurrentSlideIndex(),
+      last_page_number = current_page_number(k);
+
+  setInterval(function() {
+    time_left = time_left - 1000;
+    timer.innerHTML = ' ' + time_format(time_left);
+    if (time_left < 0) timer.style.color = 'red';
+  }, 1000);
+
+  slide_number_div(k).appendChild(timer);
+
+  slideshow.on('showSlide', function(slide) {
+    var i = slide.getSlideIndex(), n = current_page_number(i);
+    // reset timer when a new slide is shown and the page number is changed
+    if (last_page_number !== n) {
+      time_left = time; last_page_number = n;
+      timer.innerHTML = ' ' + time_format(time); timer.style.color = null;
+    }
+    slide_number_div(i).appendChild(timer);
+  });
+})(60000);</script>
+
+<script>
+(function() {
+  var i, text, code, codes = document.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+})();
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

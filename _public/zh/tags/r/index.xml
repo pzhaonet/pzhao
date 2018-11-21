@@ -1,1399 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>R on Peng Zhao</title>
-    <link>http://www.pzhao.org/zh/tags/r/</link>
-    <description>Recent content in R on Peng Zhao</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
-    <copyright>&amp;copy; 2017 Peng Zhao</copyright>
-    <lastBuildDate>Thu, 18 Jan 2018 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://www.pzhao.org/zh/tags/r/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Windows 的又一个坑：R writeLines() 函数的换行符</title>
-      <link>http://www.pzhao.org/zh/post/r-writelines-line-break/</link>
-      <pubDate>Thu, 18 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/zh/post/r-writelines-line-break/</guid>
-      <description>昨天，又被 Windows 坑到了。
-事情的背景是，我的工作环境是 Windows 操作系统。由于一些众所周知的原因，有些事情在 Linux 下做起来比较顺当。于是，我就用 virtualbox 装了个虚拟的 Ubuntu。由于不熟，只用到其中很小一部分功能，所以，凡是能在 Windows 下做的事情，我绝不去 Ubuntu。
-昨天，我要写一批 bash 批处理文件，打算在 Ubuntu 里运行。这批 .sh 文件结构格式相同，只是内容略有不同。于是，我就动了点小心思，用 R 语言批量写好了文件内容，最后用 writeLines() 函数生成了这批 .sh 文件。
-前面我提到了，这些操作都是在 windows 下完成了。保险起见，我特地指定了 writeLines(useBytes = TRUE)，来保证这批 .sh 文件的编码 UTF-8，心想这下应该没问题了吧。
-但是，在 Ubuntu 里执行 这批 .sh 文件，居然出错！说什么文件找不到……
-为了简化问题，我把从这批运行失败的 .sh 文件里面随便拎出一个，里面删得只剩两条指令：
-cd ~ls然后另存为 test.sh 文件，用来测试。运行 test.sh，结果：
-这么两条命令，居然还有错？
-我记得在 Ubuntu 下直接写的 .sh 文件没这个问题啊。
-那好，我就在 ubuntu 的文本编辑器里写了一个一模一样的文件，取名 test2.sh，内容也是只有这两条指令。然后运行，居然好了！
-肉眼去看，两个文件都完全相同！我对比了一下两个文件的编码，都是 UTF-8。
-这是遇见孙悟空和六耳猕猴了？
-我祭出两面照妖镜：一个是 Totalcommander 的文本比较工具，一个是 notepad++ 的文本比较插件。比较的结果是，两个文件完全相同！</description>
-    </item>
-    
-    <item>
-      <title>我把青春献给你：排版 (4)</title>
-      <link>http://www.pzhao.org/zh/post/latex-and-me-4/</link>
-      <pubDate>Wed, 17 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/zh/post/latex-and-me-4/</guid>
-      <description>9
-bookdown 或者说 Pandoc 的伟大之处，就是把原先必须在 LaTeX 里做的事情，99.9% 都可以用 markdown 语法完成。剩下的 0.1%，例如公式、索引、控制换行、临时改变字体字号、强制分页等操作，所涉及的 LaTeX 命令都很简单（$$, \index{}、\mbox{}、\small、\newpage），偶尔用一下无伤大雅。只需找个漂亮的编辑器，在 bookdown 下写作就有不错的体验，而生成的 pdf 文档处处透露着 LaTeX 的优雅。平时自用一下，美得不行，仿佛梅开二度，枯木逢春。我为 bookdown 量身制作了 bookdownplus，pinyin 和 mindr 几个扩展包，沉浸在美妙之中不可自拔。
-但是，直到这次真正给《学 R》排版，真正要送到印刷厂印个几千本的时候，光有 bookdown 的现成模板就不够用了。《学 R》是本中文书，LaTeX 对中文的支持先天不足，很多细小的问题，得自己一个一个抠。
-比如中文里夹杂的英文词的中断换行（hyphenation），总是在不该断的地方瞎断。找不到完美的解决方案，最后我手动添加了 \mbox{} 凑合。
-比如段首空两格。我明明记得原先是自动空两格的，不知哪一次升级以后，这个设置就不见了。好在这个不难解决。
-比如脚注和上标。bookdown 里^[]表示脚注，两个^之间表示上标。问题是两个脚注连在一起怎么办？要是写成杨过^[]和小龙女^[]，那两个^之间的文字就变成了上标。我试来试去，最简单的就是在中间偷偷摸摸塞进去个空格，把上标结构破坏掉。想来英文不存在这个问题，到处都是空格。
-10
-所幸，我算是挺过来了。最后排出的文档，虽然不是尽善尽美，但已经达到了我能力的天花板。想要更多也没有了。
-只是年轻的时候我从没想过，将来自己会跟排版这件事纠缠。那些投进去的时间和精力，花在别处，会不会更好？无论本职工作，还是业余爱好，我都不是干排版的啊。
-可是，怪就怪在，排版里这些一个一个的坑，你不去亲自填，就没人给你填。就像自己的娃，打扮成啥样，全在爹妈。自己的书，正式的出版物，难看的排版，你能忍吗？诸葛亮是怎么死的？事无巨细事必躬亲累死的。可是难道诸葛亮自己想被累死吗？
-回头看看来时的路，我把青春的尾巴献给了 R，LaTeX，Linux。Linux 已然渐行渐远，LaTeX 曾经聚聚散散，只有 R 自始至终在我身边，成为了长久的陪伴。而这次，LaTeX 想甩也甩不掉了，她借着 bookdown 这匹木马，藏在了 R 的深处，彻底把我攻陷。
-用 LaTex 排出的《学 R》这本书，就当是青春的纪念。</description>
-    </item>
-    
-    <item>
-      <title>我把青春献给你：排版 (3)</title>
-      <link>http://www.pzhao.org/zh/post/latex-and-me-3/</link>
-      <pubDate>Sat, 23 Dec 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/zh/post/latex-and-me-3/</guid>
-      <description>7
-LaTeX 做出来的文档，确实漂亮。这种漂亮不是那种一眼就能看出哪儿漂亮的漂亮，而是一种说不出来的气质。这种气质来自字体、间距、断字等等诸多细节的堆积和交互作用。只要是用过 LaTeX 的人，拿来个文档用鼻子一闻，就知道是 Word 做的还是 LaTeX 做的。就好像你遇到了你的另一半，让你神魂颠倒，可就是说不出她究竟好在哪里; 她走在人群里，你一眼就能找到她。因为你眼里没别人。
-然而，这种气质不是能轻易把握的。LaTeX 最为奇特的是，你为她投入了无数的时间，却竟然说不清楚到底是因为她太好还是她太糟。如果她太好，为何这么难用？如果她太糟，为何你甘心为她付出？
-之所以能用 LaTeX 写完博士论文，我想来想去，这个奇迹是以下四点一起促成的：
-组里的同事提供了现成的论文模板，
-身边有同事可以随时问，
-老板只看结果，对我实现的手段并不介意，
-论文是英文写的，不需要跟中文排版死磕。
-想学 LaTeX 的注意了！以上四点，只要缺了一样，那么学 LaTeX 的阻力就会提高一个数量级。此坑慎入！
-如果有了这四个条件，那么基本上就不用额外操心，只管埋头写论文就是了。
-然而，LaTeX 下埋头写作的体验并不美好。那感觉根本就不是写论文，而是写代码。不编译出来，你根本不知道自己写了几页，每页是啥模样。一天下来，脑袋胀胀的，心里乱乱的。相比之下，用 Word 写论文，每敲一个字符都有一点成就感，敲完一页后，就像已经出版了一样心满意足。
-LaTeX 就像个绝世美人，不时让你为她的美貌倾倒。更大的诱惑是，你心里清楚，只要你努力，就能距离她的美貌更接近一点。于是，你就身不由己地投入大把大把的精力，把你的文档弄得越来越漂亮，虽然每次只是漂亮了那么一点点。
-不像 Word，你知道，无论再怎么使劲，做出来的论文顶多也就那样了，不可能更美，所以心态反而平静下来，老老实实过日子。
-一个像恋爱，一个像婚姻。
-8
-当完成博士论文的时候，我决定结束天天心惊胆战的 LaTeX 爱情长跑，回到 Word 的温柔乡。我把城墙修高加厚，厚得就像特洛伊城，把 LaTeX 拦住墙外，从此一刀两断。曾经在同一个战壕里的战友，变成了洪水猛兽。
-到了新工作单位，观察了一下，老板和同事全部是正常人，不是 X-men。我松了一口气。
-有一次，有个名叫 LyX 的使者来敲我的城门。从三个字母参差不齐的模样，我一眼就识破了他的伪装，知道是 LaTeX 派来的奸细，于是我轻轻吐出一个字：滚。
-我以为，从此就跟 LaTeX 形同陌路了。
-有一天，我在使用 R 语言的时候，神使鬼差地装上了一个名叫 bookdown 的扩展包。
-很久以后，再次回忆那一刻，仍然不由得感慨万千。命中注定的事，逃不掉的劫数。
-bookdown，就是攻陷特洛伊的木马; 里面藏着的，除了我的旧爱 LaTeX，还有 Pandoc 这个魔鬼。后者从名字上一看，就知道是潘多拉放出来的。
-安装 bookdown 的那一瞬间，我把木马轰隆隆地拉进了我的城，而我却浑然不知。</description>
-    </item>
-    
-    <item>
-      <title>R bookdownplus 升级手记，以及北大论文模板</title>
-      <link>http://www.pzhao.org/zh/post/-bookdownplus-update/</link>
-      <pubDate>Sun, 26 Nov 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/zh/post/-bookdownplus-update/</guid>
-      <description>bookdownplus 这个 R 语言程序包，自用起来感觉不错，当初发布的时候还小得意了一把。时过境迁，现在回头看起来是越来越不满意。CRAN 上，bookdownplus 的总下载量接近三千（与此相比，bookdown 的总下载量是七万），大约每小时就有一次下载。Google ‘bookdownplus’ 可以搜到 已经有中文用户在写使用体验了。越是这样，我越惶恐，因为我知道，这个包写得粗糙，可改进的地方数都数不过来。
-向我反馈问题的用户超出了预期，主要是兼容性的问题：在 macOS上如何，在 Linux 上如何，这些问题我都没有办法回答，因为我只在 Windows 7 上测试了，其他操作系统既无精力也无条件测试。开发个软件，自用是一回事，让别人能用完全是另外一回事，这两回事之间真是相差了一个筋斗云。
-所以我决定先把自己看不过去的问题解决一下，那就是代码的构架问题。
-bookdownplus v.1.3 以后的版本包含了 20 个模板。写这个包的时候，因为懒，我就把所有模板的 .tex 文件混到一个文件夹里，style 和 cls 文件混在另一文件夹里，到最后自己都搞不清楚哪个模板用哪个文件了。用户每次想运行 bookdownplus() 生成一个新文档时，都把所有有用没用的文件一股脑考进来（反正也不大），连我自己都看不下去了。此外，我还指望着别人贡献一些新模板，可是目前乱糟糟的，谁愿意把好东西往垃圾堆里扔呢？
-于是这两天我花了一个上午，把这些文件重新整理归类，让他们各回各家各找各妈，每个 bookdown 模板都对应一个 zip 压缩文件，扔在 bookdownplus 的安装目录里。而且，如果再开发新 bookdown 模板，只需按照现有模板 zip 文件里的结构，将所需文件压缩并甩进 bookdownplus 安装目录，就可以用 bookdownplus() 直接调用了，连升级都不用。
-虽然功能上没有多大增强，但架构上舒服多了，所以我把版本号从1.3.x 升到了 1.4.0。
-我还有一块心病，是北京大学学位论文的 LaTeX 模板，我迟迟没能转成 bookdown 模板。原因是这个 LaTeX 模板本身在我电脑上就编译不成功。这次不知怎么开了窍，突然被我搞定了，作为第 21 个模板，收进了 bookdownplus v.1.4.0 里。
-此外，新增了一下几个模板：
-益辉制作了 Chapman &amp;amp; Hall 出版社的模板，现成的，我稍微改了一下。看上去是这样的：这提醒我，直接去 bookdown.</description>
-    </item>
-    
-    <item>
-      <title>我把青春献给你：排版 (2)</title>
-      <link>http://www.pzhao.org/zh/post/latex-and-me-2/</link>
-      <pubDate>Wed, 22 Nov 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/zh/post/latex-and-me-2/</guid>
-      <description>5
-如果上一篇帖子让你以为我在为 \(\LaTeX\) 做广告，呵呵，那你就上当了。为啥？
-因为我早就抛弃 LaTeX 了。
-几年前，把用 LaTeX 排版排得漂漂亮亮的博士论文提交的那一刻，我咬牙切齿地想：老子终于可以跟 LaTeX 这个怪物永别了。
-想不起来第一次是从哪里知道 LaTeX 的。好像是从 Linux 的学习里，得知 LaTeX 是科研圈常用的写作工具。作为一个混科研圈的工具控，我居然没听说过？而且身边全是搞科研的，居然没人用过？怪哉怪哉。
-于是，我就去问见多识广的朋友：“你用过 LaTeX 吗？”
-朋友正穿着白大褂，在中科院化学所的有机实验室忙活，一听我的问题，痛痛快快地回答：
-latex 啊？用过用过，我们经常从美国买。你要做什么？要多少克？1
-我愣了，赶紧说：
-不急不急。你先忙，我需要的时候找你买。
-这就是我初学 LaTeX 时的生态。圈里没人懂，身边没人带，全凭好奇和兴趣。作为一个寻常百姓，学起来的难度可想而知。
-当时虽然已经奔三的年岁，但血气犹存;还没当爹，手头还有一点闲置光阴。于是，磕磕碰碰，我终于用 LaTeX 把工作总结做了个 beamer 幻灯片，准备在单位作报告时用。花了这么多时间，如果不好用，那还学个啥劲呢？所以，要不要继续学，在此一举。
-就在这关键时刻，单位领导一句话，把我仅有的热情抛进了万丈深渊。领导说：
-工作总结的 ppt 你不是说你做完了？发给我来修改。
-6
-LaTeX 在我这里真正派上用武之地，是来德国读博士的时候。
-刚到这个研究组，我就大吃一惊：组里清一色的 Linux 操作系统，大家拿 LaTeX 写各种文档，用 R 语言处理数据。
-Linux，LaTeX，R，这是耗尽我青春尾巴的三大怪物。此外还有个 vim，但是跟这仨货比起来，属于小巫见大巫。
-Linux 和 R 的血泪史按下不表，今天只说 LaTeX。
-当时我无奈地想，嫁鸡随鸡嫁狗随狗，就跟着这帮 X-men 一起混吧。
-很快，我又大吃一惊：在这个变种人小组里，牵头的老板，居然是个正常人，用的是 Windows 系统，Word 写文档，Excel 处理数据。话说一个正常老板跟一群变种人下属之间是怎么交流的？</description>
-    </item>
-    
-    <item>
-      <title>我把青春献给你：排版 (1)</title>
-      <link>http://www.pzhao.org/zh/post/latex-and-me-1/</link>
-      <pubDate>Tue, 21 Nov 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/zh/post/latex-and-me-1/</guid>
-      <description>1
-2017 年快要过去了。如果剩下这四十天不出什么幺蛾子的话，我今年的最蠢事情排行榜，基本是板上钉钉。名列榜首的，就是过早给《学 R》一书大肆宣传。跟罗永浩当年头一回卖锤子手机一样一样的，还没量产，就先吹牛，结果吹破了，打了自己的脸。
-其实，这本书早在今年 6 月就写完了，7 月做了最后一次修改。当时书号已经批了，封面也有了模样，我以为马上就能印出来了，于是告诉了我能告诉的每一个朋友。朋友们都很讲义气，把白花花的银子拍在桌上，就等着付钱买了。当了教授的老同学说：放心，到时候我送给我的学生人手一本！
-谁知道，一晃四个多月过去了，书还没出来。我的前期宣传算是白费了。让人欣慰的是，直到现在，仍然有铁杆粉丝惦记着我，时不时发来鼓励的短信：“喂，你那书烂尾了吧？啊哈哈哈哈~~~~”
-谢谢。
-那么，四个月里，这书干嘛去了？
-在排版。
-《学 R》这本书，一直排不出理想的模样。
-四个月是在反反复复修改排版里度过的。一直拖到上周，我们仍然看不到任何排版成功的迹象。2017 年所剩无几的耐心消耗殆尽，一咬牙一跺脚，我们决定壮士断腕。合作作者 Y 从出版社讨来排版文件，并且自己花钱购买了专业软件，自己排；我同时用 \(\LaTeX\) 排，齐头并进。谁先排好就用谁的。我们谁都不想再拖，再拖就真的要吐血了。
-当做出这个决定的第二天，Y 看到我用 \(\LaTeX\) 做出的 pdf 书稿小样得到了印刷厂的认可，就放下了手里的专业软件，决定不干了：“\(\LaTeX\) 真厉害，有空我学一下……”
-我立马拦住：“最好别去学。这个坑太大。一入 \(\LaTeX\)，坑深似海。”
-2
-出版社负责录入和排版的工作，简称“录排”。
-这四个月来，录排可谓兢兢业业，全心全力为《学 R》排版。可惜，辛苦不一定有回报，排出的书稿，一直有层出不穷的问题。
-比如说，丢失公式和特殊字符。原稿里的诸如 R2， \(\pi\) 等都莫名其妙消失了。
-比如说，字体。原稿里的代码都是用等宽字体表示的，录排之后都成了跟正文一样的字体。
-比如说，标点符号。原稿里的所有标点符号，包括代码里的逗号、引号、括号、冒号，都变成了中文标点符号。加上非等宽字体，书里的代码惨不忍睹。
-最要命的是，原稿里的很多空格也都不翼而飞。比如录排稿：
-是不是一头雾水？实际上原稿是：
-每次从录排稿里挑问题，都恨不得把一双近视眼珠子抠出来，再拿着放大镜逐字逐句看。后来，索性放弃了很多想法。比如说，原先代码是彩色的，得知需要录排逐个字符手动修改，算了不要了；原先打算增加个小贴士目录，得知需要排完页码手动添加，算了不要了；原先打算给常用函数做个索引，方便读者从书里找示例，看样子也得手动做，算了不要了……
-即便如此，每次的排版仍然会出现奇奇怪怪的问题。如此往返三次，《学 R》这本书我已经读得想呕吐了。
-我百思不得其解：这到底是怎么回事？
-3
-来回折磨了四个月。终于， Y 试用了一下录排用的排版软件—— Adobe InDesign，俗称 ID，是国内出版业主流的专业排版软件。
-Y 立刻对我说：“我明白问题出在哪里了！”
-原来，录排是把我们提交的原稿，转成了 txt 文本文件；书里的插图，全部转成了 tif 图片。然后，把这些素材导入 ID，然后手动按照原稿 pdf 的样子做调整。
-这正是录排一贯的工作流程。
-这个流程，对文学类书籍没有问题。一篇小说，重要的是内容，不是格式；只要把文字分好段，就不会有大错。
-然而，这个流程用在《学 R》 这本书上，就是个灾难。因为这本书，内容和格式，都很重要。</description>
-    </item>
-    
-    <item>
-      <title>R bookdown 的小技巧</title>
-      <link>http://www.pzhao.org/zh/post/bookdown-tips/</link>
-      <pubDate>Fri, 22 Sep 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/zh/post/bookdown-tips/</guid>
-      <description>本帖用来收集整理 R 语言 bookdown 扩展包的一些使用技巧。有些是在网上搜来的，有些是我在别处讨论得来的，有些是我尚未发布的，都写在这里备用。
-输出 Markdown 文件使用 bookdown 编译 Rmd 文件，可以得到的输出格式五花八门。对此，bookdown 的官方文档 有详细介绍，包括 github， pdf，epub，word，html 单个文档等，偏偏没有提 markdown 格式。
-其实，markdown 文件是有的，在编译过程里作为过渡文档存在，编译结束后自动删除。编译顺利的时候，在文件夹里“刷”地闪一下就消失了。我以前的做法是“快手”，在它消失之前迅速用 notepad++ 打开，就存下来了。这显然不是办法，凑合着过日子而已。
-一般来说，如果仅仅是使用 rmarkdown，只需在 yaml 设置里声明一下：
-output:md_document:variant: markdown_github然后 knit 一下，就可以得到 markdown 文件了。想当然地，我把这段代码加到了 bookdown 的yaml 里，却得到警告，说 bookdown 不支持。
-这事儿被我搁置了很久，最后我终于在 bookdown 的项目主页找到了答案：参数 clean = FALSE 。
-bookdown::render_book(&#39;index.Rmd&#39;, clean = FALSE)
-我很喜欢 markdown 格式。我用 bookdown 写论文，Rmd 的正文里插了不少诸如 r pi 这样的调用。跟合作作者讨论时，看 Rmd 文件吧不直观，看 html 吧不方便修改，md 大概是最好的格式。
-bookdown 的编译，我习惯按快捷键 ctrl+alt+b，或者点击右上方面板的 Build 按钮编译的，输出格式取决于 yaml。这样就得不到 md 文件。要想得到 md 文件，看来以后得改成命令行编译了。</description>
-    </item>
-    
-    <item>
-      <title>如何在 R markdown 里输出 r pi 并前后加上小撇`</title>
-      <link>http://www.pzhao.org/zh/post/backticks-in-rmd/</link>
-      <pubDate>Fri, 22 Sep 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/zh/post/backticks-in-rmd/</guid>
-      <description>其实本文的标题应该是：如何在文章里显示 `r pi` 这样的文字。但是我不知道怎么把这个格式弄到标题里。所以，就这样凑合过吧。
-这个问题的答案，要分几层意思来说。`r pi` 是代码格式（本博客显示为粉底红字），并且包含的`符号同样是代码格式，并且 pi 并没有被编译成 3.1415927。别看它短，这三点每个都是个坑。
-这个问题在编写 R markdown 教程时常见。其实，等你明白这个问题的答案后，会发现答案并不难，难的是如何描述这个问题。我费了好大劲，都想不出一个准确描述的办法，并且在那些支持 markdown 的论坛上，我连这个小撇都输不出来，这叫人怎么问？最后我只能这么提问：
-请问在输出文档里怎么显示’撇 r pi 撇’并且别让它编译出来 3.1415927？
-第 1 层意思，那个小撇 `，它到底叫什么？总不能总叫“小撇”吧？我用的是德语键盘，挪，就是上图第一行右起第二个键的上面那个小可爱。
-查维基百科才知道，` 的学名叫 Grave accent ，中文叫“重音符”。在程序猿的世界里，它又被称作 backquote 或 backtick，中文叫反引号。所以，跟这个有关的问题可以这么问：
-How do I escape a backtick ` in Markdown?
-或者
-How to display verbatim/literal inline r code with backticks using Rmarkdown?
-第 2 层意思：怎么把反引号显示出来？如果仅仅输入个反引号 ，在同一段里后面没有了还好办，万一又出现一个反引号，就会把他俩自动配对儿，两者之间的文字当成了代码。瞧，就是上句话这个德性。
-为了棒打鸳鸯不让他俩自动配对儿，那就用转义符\。输入\`，就避免反引号自动配对变代码了。
-第 3 层意思，是怎么把 r 语言的输出结果显示到代码环境里。这个就开始有点绕了。</description>
-    </item>
-    
-    <item>
-      <title>bookdownplus 的两个魔法</title>
-      <link>http://www.pzhao.org/zh/post/bookdownplus-magic/</link>
-      <pubDate>Tue, 27 Jun 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/zh/post/bookdownplus-magic/</guid>
-      <description>bookdown 是个好东西，只是入手有点难，酒香巷深。
-对于 R 初学者来说，如果身边没有人指导，使用者可能需要花大量精力应付 LaTeX，YAML，Pandoc，而很多初学者可能从来没听说过这些，站在 bookdown 的门口往里张望了一下，说不定就被吓跑了，从而错过了门里的精彩世界。
-bookdownplus 扩展包，可以让新手对 bookdown 快速上手。从此，bookdown 这坛好酒就不必去深巷苦寻，它就放在你手边。
-从 v1.2.0 开始，bookdownplus 增加了两个魔法，更是让新手对 bookdown 一见钟情。如果你对 bookdown 感兴趣却苦于入门的烦恼，那么可以试试这两个魔法。
-准备工作首先，安装好必需的软件，包括 R, RStudio, \(\LaTeX\)等。详见 bookdown 官方手册。然后，安装开发版的bookdownplus：
-devtools::install_github(&amp;quot;pzhaonet/bookdownplus&amp;quot;)再用 setwd() 将R的工作目录设置到一个空文件夹里。
-一切准备就绪后，接下来就是见证奇迹的时刻。
-第一个魔法在 R 里运行下面的代码，然后去喝个茶：
-for (i in template()[1:19])bookdownplus(template = i, more_output = more_output()[1:3])回来以后，你会在工作目录里看到很多文件和文件夹。打开那个叫做 _book/的文件夹，Duang！19个示例文档，每个都以 pdf、Word、网页和电子书格式乖乖地等在那里，等你打开了。其中，电子书 epub 格式可以在手机上阅读，也可以在台式机用免费的Calibre软件打开阅读。
-这些示例文档，从学术论文到诗歌乐谱，从中文到英文，展示了 bookdown 能胜任的工作。是不是动心了？
-第二个魔法运行下面的代码，然后看两眼窗外的风景，bookdownplus 就把事情做完了：
-for (mf in mail_font()) {for (ms in mail_style()) {for (mt in mail_theme()) {outputname &amp;lt;- paste(&amp;#39;mail&amp;#39;, ms, mf, mt, sep = &amp;#39;_&amp;#39;)bookdownplus(template = &amp;#39;mail&amp;#39;, mail_style = ms, mail_font = mf, mail_theme = mt, output_name = outputname)}}}仍然打开那个叫做 _book/的文件夹，Duang！ 不同字体、不同主题、不同布局的信件示例文档就全部在那里了。</description>
-    </item>
-    
-    <item>
-      <title>征求意见: &lt;学R&gt;一书的封面</title>
-      <link>http://www.pzhao.org/archives/19396/</link>
-      <pubDate>Mon, 26 Jun 2017 12:56:04 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/archives/19396/</guid>
-      <description>我正在出版的&amp;lt;学R&amp;gt;一书, 美编为封面设计提供了三个方案, 大家看看最喜欢哪一个?
-
-
-
-原文链接</description>
-    </item>
-    
-    <item>
-      <title>发布了 4 个 R 语言包：bookdownplus, pinyin, mindr, beginr</title>
-      <link>http://www.pzhao.org/archives/19377/</link>
-      <pubDate>Fri, 23 Jun 2017 18:29:38 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/archives/19377/</guid>
-      <description>最近，一口气往 CRAN 提交了四个 R 扩展包，所幸都被发布了，这里简单介绍一下。详细情况请来我的新网站围观。
- bookdownplus (Zhao 2017b)。 ![CRAN downloads][2]  这个包是对 bookdown 包 (Xie 2016) 的增强和简化。bookdown 就好比 Microsoft Word 或 LaTeX，可以用来写文档，而 bookdownplus 提供了很多有用的模板，可以很方便地在 bookdown 平台写期刊论文、学位论文、学术海报、化学分子式、信件、日记、日历、诗集、吉他谱等各种常用文档和书籍。这是功能上的增强（+）。bookdownplus 使用时只需指定一个模板，给定作者和书名，就可以一键生成模板文件，用户在模板文件里照猫画虎写自己的文字就可以了，不必再花力气上网找模板、设置 YAML 和 LaTeX。这是操作上的简化（-）。详见相关帖子。安装方法：
-# 稳定版： install.packages(&#39;bookdownplus&#39;) # 开发版： devtools::install_github(&#34;pzhaonet/bookdownplus&#34;)  mindr (Zhao 2017c)。 ![CRAN downloads][4]  用来从 markdown 或 R markdown 格式的书稿中提取纲要，并且生成思维导图。也可以将思维导图转换成 markdown 文件。详见相关帖子。安装方法：
-# 稳定版： install.packages(&#39;mindr&#39;) # 开发版： devtools::install_github(&#34;pzhaonet/mindr&#34;)  pinyin (Zhao 2017d)。 ![CRAN downloads][6]  用来把汉字转换成拼音，格式可选。可以转换给定汉字，也可以批量转换文本文件。这个包里有个特别的函数，专门为 bookdown 书稿的章节标题自动生成‘{#ID}’，原标题里的拉丁字母自动改为小写，汉字自动转换成拼音，而其他字符替换为_。详见相关帖子。安装方法：
-# 稳定版： install.</description>
-    </item>
-    
-    <item>
-      <title>R 初学者包 beginr 在 CRAN 正式发布</title>
-      <link>http://www.pzhao.org/zh/post/beginr-released/</link>
-      <pubDate>Fri, 23 Jun 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/zh/post/beginr-released/</guid>
-      <description>又一次高兴地宣布, 我的 R 语言扩展包 ‘beginr’ (Zhao 2017a) 在 CRAN 正式发布了.
-简介beginr是我为 R 语言初学者和自己写的工具包, 是我这些年来收集和自己编写的一些简化操作的函数和备忘录, 可能对中级用户也有帮助. 其实这个包的文档我写得不够详细, 有些函数还没来及整理进去, 之所以匆匆发布, 是想先把 ‘beginr’ 这个名字给占住. 毕竟, 我中意的名字如 ‘learnr’, ’startr’都被别人用过了.
-安装方法：
-# 稳定版：install.packages(&amp;#39;beginr&amp;#39;)# 开发版：devtools::install_github(&amp;quot;pzhaonet/beginr&amp;quot;)下面分类介绍一下其中的函数.
-备忘函数我初学 R 的时候用 plot() 作图时, 常常忘记不同形状数据点(pch)对应的编号, 实线虚线(lty)的编号, 散点图类型(type)的代码, 以及最难选择的颜色代码. 每次忘了都要上网搜一下. 现在, beginr 里提供了 plotpch(), plotlty(), plottype(), plotcolors(), plotcolorbar()等函数, 想不起来的时候运行一下就行了.
-beginr::plotpch()beginr::plotlty()beginr::plottype()beginr::plotcolors()beginr::plotcolorbar()快速作图函数我常常需要做线性拟合, 每次又是作图又是添加拟合方程, 繁琐. 现在, beginr 里的一个 plotlm()函数就搞定.</description>
-    </item>
-    
-    <item>
-      <title>R 包 bookdownplus 正式发布</title>
-      <link>http://www.pzhao.org/zh/post/bookdownplus-released/</link>
-      <pubDate>Thu, 22 Jun 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/zh/post/bookdownplus-released/</guid>
-      <description>很高兴地宣布，我的 R 语言扩展包 ‘bookdownplus v1.0.2’ (Zhao 2017a) 在 CRAN 正式发布了。本文是对’bookdownplus v1.0.2’的简要描述. 由于最近更新频繁, 最新版的’bookdownplus’更加强大和易用, 例如 ‘bookdownplus v1.2.0’ 可以一条指令生成19个模板文档的 pdf, word, html 和 epub 四种格式. 建议移步位于 GitHub 的 bookdownplus 项目主页.
-简介bookdownplus 是对 bookdown 包 (Xie 2016) 的增强和简化, 是快速使用 bookdown 的最简洁方法。bookdown 就好比 Microsoft Word 或 \(\LaTeX\)，可以用来写文档，而 bookdownplus 提供了很多有用的模板，可以很方便地在 bookdown 平台写期刊论文、学位论文、学术海报、化学分子式、信件、日记、日历、诗集、吉他谱等各种常用文档和书籍。这是功能上的增强（+）。
-bookdownplus 使用时只需指定一个模板，给定作者和书名，就可以一键生成模板文件，用户在模板文件里照猫画虎写自己的文字就可以了，不必再花力气上网找模板、设置 YAML 和 LaTeX。这是操作上的简化（-）。
-bookdownplus 各个模板的使用方法详见 R bookdownplus Textbook。这本电子书本身就是用 bookdownplus 生成的，尤其是它的 pdf 版本很美观。此书的源码开放，可以作为使用 bookdownplus写书的示例。
-下面是 bookdownplus 的简介和快速使用方法。
-快速入门准备在开始前，需要安装 R, RStudio, bookdown，和其他依赖的软件和包(例如 Pandoc, \(\LaTeX\), rmarkdown, rticle, knitr等)，作为准备。详见 bookdown 官方手册。</description>
-    </item>
-    
-    <item>
-      <title>R包发布记</title>
-      <link>http://www.pzhao.org/zh/post/publish-r-packages/</link>
-      <pubDate>Mon, 19 Jun 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/zh/post/publish-r-packages/</guid>
-      <description>最近，我把mindr，pinyin 和 bookdownplus 三个包都提交到了 CRAN。这三个包都很简单，我就是想体验一下发布R包的流程，免得将来学R那本书出版了被问起来，答不上来就丢人了，另外也算是承接菜鸟致简速成那篇帖子，里面只谈了野包的发布分享，而只有提交到了 CRAN，野包才算转正。
-很快，这三个包都成功转正，可以正常安装了：
-install.packages(&amp;#39;mindr&amp;#39;)install.packages(&amp;#39;pinyin&amp;#39;)install.packages(&amp;#39;bookdownplus&amp;#39;)这里说说发布的过程和我遇到的一些问题。
-自查包发布之前，先自查有没有错误。只需用RStudio打开待发布的R包的.Rproj文件，然后点击右上方面板的 Build - Check 按钮，就可以看到自查结果。
-这里要注意：
-结果里尽量不要包含任何 Notes 和 Warnings。如果有，就去找到问题修改，不然在提交的时候会被退回。
-关于author &amp;lt;author&#39;s email&amp;gt;的那一条 Note 是可以忽略的，只是提醒你再次看看作者信息有没有填错。
-我最初的自查结果有些 Notes 我原以为可以无视。比如，DESCRIPTION 文件里 Title 字段有些词要求首字母大写，我心想，这也算错误？就没理。再比如，告诉我 “no example. no test. no vignette.” 我心想，好像很多包都没有这几样，不也都发布了么？所以我同样无视。结果就是……
-下面接着讲。
-提交把包的压缩文件在 CRAN 的网页上传即可。成功上传后会收到 email 通知，需要点击里面的链接进行确认。
-我两个宝贝儿 mindr 和 pinyin 的1.0.0版是六一那天上传并确认的，之后我就等，一直等到6月16号，我才想起来这事儿，就发信给 CRAN cran@r-project.org 催了一下，当天就得到了 Dr. Uwe Ligges 的回复，说：
-你那两个包在提交当天就被系统自动拒收了，因为系统自动检查时发现了两个 Notes。系统自动发信通知你了，如果没收到，请翻翻垃圾邮件。
-我一翻邮箱的 spam，果然，拒信早就在里面了。
-修改乖乖地修改大小写，添加 vignette 和 examples，把版本号修改成 1.</description>
-    </item>
-    
-    <item>
-      <title>《学R》序（朱彤）</title>
-      <link>http://www.pzhao.org/zh/post/preface_zhu/</link>
-      <pubDate>Wed, 14 Jun 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/zh/post/preface_zhu/</guid>
-      <description>我读硕士研究生时的导师是朱彤教授。在朱老师科研小组 ZTGroup 学习的三年如沐春风，我从中得到的收获受益终生。正值北京大学环境大楼落成不久，又逢毕业季，作为环境科学与工程学院的院长，朱老师在极其繁忙的工作中抽出时间来为本书欣然作序，实属不易，仅凭“感激”二字岂能表达我们的谢意？
-下面是朱老师为本书写的序言。
- 受作者邀请为此书写序，感到惶恐和高兴。两名作者分别是我以前的硕士和博士生，多年来我们小组很多同学都在学习和使用R语言，作为老师的我却从来没有用过，要为一本关于R语言的书写序，自然感到很惶恐。而当我打开这本书，没有看到晦涩难懂的概念、公式，在风趣易懂的语言、引人入胜的描述下，很快阅读完了前几章，不仅迅速跨越了零基础的障碍，更为两名作者为广大的数据统计分析和R语言学习人员提供这样一本独特、有趣的入门书而感到高兴。
-随着科技的高速发展，对大量数据的处理和分析已成为科研甚至日常生活的必需，掌握一门强大的数据分析工具非常必要。作为一种开源、免费且不断更新的语言，R不仅拥有数据分析、统计、作图等强大功能，其应用范围还在不断扩大：赵鹏博士可以用它来撰写学术论文、做备忘录、制作幻灯片、整理读书笔记、整理照片、写书、记录吉他谱、写博客、做网站等。R语言拥有越来越多的使用者和爱好者，也使得其功能越来越广泛、强大。
-与其它介绍R语言的书籍不同，这本书以两名作者自身学习的经验娓娓道来，没有多少枯燥的术语和公式，是一本非常适合自学R语言和统计学的入门书，尤其适合零基础和不懂统计学的读者。这本书可作为大学本科生和研究生自学用，也可作为高校教师教案。相信这读者们不仅会发现这本书很有用，更会发现关于R语言和统计学的书可以写的很有趣。
-&amp;mdash; 朱彤，2017年6月13日
- </description>
-    </item>
-    
-    <item>
-      <title>pinyin: 把汉字转换成拼音的R包</title>
-      <link>http://www.pzhao.org/zh/post/pinyin/</link>
-      <pubDate>Fri, 26 May 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/zh/post/pinyin/</guid>
-      <description>更新：2017-06-19，‘pinyin 1.0.2’ 在 CRAN 正式发布。
-今天新写了个R包，粗暴地取名为 pinyin，作用是把汉字转换成拼音。
-安装方法：
-稳定版：
-install.packages(&amp;quot;pinyin&amp;quot;)devtools::install_github(&amp;quot;pzhaonet/pinyin&amp;quot;)安装时可能会出现一些关于 locale 的警告，净吓唬人，无视。
-使用方法：
-pinyin 0.0.0版包含3个函数.pinyin()是主函数，可以把一个带汉字的字符串转换成拼音。可以选择:
-转换成标准的全拼 (默认 method = &#39;quanpin&#39;)，或以数字表示声调 (method = &#39;tone&#39;) , 或不含声调(method = &#39;toneless&#39;),也可以选择仅保留每个字的首字母(only_first_letter = TRUE),可以自定义相邻两字拼音的分隔符号(sep = &#39;_&#39;),如果汉字字符串里边包含非汉字字符，可以选择将这些字符保留原样(nonezh_replace = NULL)还是转换成指定字符(如nonezh_replace = &#39;-&#39;)。举例如下：
-library(&amp;#39;pinyin&amp;#39;)pinyin(&amp;#39;羌笛何须怨杨柳春风不度玉门关&amp;#39;)## [1] &amp;quot;qiānɡ_dí_hé_xū_yuàn_yánɡ_liǔ_chūn_fēnɡ_bù/bu/bú_dù/du/duó_yù_mén_ɡuān&amp;quot;pinyin(&amp;#39;羌笛何须怨杨柳春风不度玉门关&amp;#39;, sep = &amp;#39; &amp;#39;)## [1] &amp;quot;qiānɡ dí hé xū yuàn yánɡ liǔ chūn fēnɡ bù/bu/bú dù/du/duó yù mén ɡuān&amp;quot;pinyin(&amp;#39;羌笛何须怨杨柳春风不度玉门关&amp;#39;, sep = &amp;#39; &amp;#39;, method = &amp;#39;tone&amp;#39;)## [1] &amp;quot;qiang1 di2 he2 xu1 yuan4 yang2 liu3 chun1 feng1 bu4/bu/bu2 du4/du/duo2 yu4 men2 guan1&amp;quot;pinyin(&amp;#39;羌笛何须怨杨柳春风不度玉门关&amp;#39;, sep = &amp;#39; &amp;#39;, method = &amp;#39;toneless&amp;#39;)## [1] &amp;quot;qiang di he xu yuan yang liu chun feng bu/bu/bu du/du/duo yu men guan&amp;quot;pinyin(&amp;#39;羌笛何须怨杨柳春风不度玉门关&amp;#39;, sep = &amp;#39;&amp;#39;, only_first_letter = TRUE)## [1] &amp;quot;qdhxyylcfbdymɡ&amp;quot;pinyin(&amp;#39;羌笛何须怨?</description>
-    </item>
-    
-    <item>
-      <title>R mindr: 把 Markdown 转成思维导图</title>
-      <link>http://www.pzhao.org/zh/post/mindr/</link>
-      <pubDate>Fri, 19 May 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/zh/post/mindr/</guid>
-      <description>更新：2017-06-19，‘mindr 1.0.4’ 在 CRAN 正式发布。
-将 markdown (.md, .Rmd) 文件转换成思维导图的 R 扩展包 mindr 是我写的第五个 R 包，安装方法如下：
-稳定版：
-install.packages(&amp;quot;mindr&amp;quot;)开发版：
-devtools::install_github(&amp;quot;pzhaonet/mindr&amp;quot;)使用方法：
-在R的工作目录创建个名叫 mm/ 的文件夹，丢进去一堆 markdown 文件 (.md, .Rmd)，然后运行：
-mindr::md2mm()就得到个 mm.mm 的思维导图文件，用免费的思维导图软件 freemind 可以直接打开。界面比较简陋。或者用漂亮的免费软件 Xmind，需要选择导入 freemind 导图。
-mindr包还有另外两个函数：mm2md()是反向操作，将思维导图转换成markdown;outline()是从markdown文件里提取出各级标题生成大纲。
-我的书稿《学R》最初是先用思维导图拟定框架，然后在 Word 里写，后来转到 bookdown 里完成的。今天下午，我在书稿的旧思维导图里照着新稿修改，想把两者统一了。改着改着，觉得不对劲儿呀，R markdown 的哲学是维护一份文档，导出多个格式，我怎么又开始维护两份内容相同只是格式不同的文档了？
-这肯定不是什么新问题，肯定有办法直接把 markdown 转成思维导图。于是我搜。我搜搜搜，竟然没搜到！
-这就怪了。从常识上判断，我认为这个工具肯定有，说不定藏在某个 R 包里，只是太隐蔽了。
-是应该继续搜呢，还是自己动手？有时候真是难以权衡。我掂量了一下轻重，选择了后者。
-晚上，写好了。
-先拿 bookdown 书稿当小白鼠练手，用 freemind 直接打开：
-freemind 确实简陋。再拿 blogdown 书稿 试试，导入 Xmind 看看：
-还不错。好了，实验成熟了，放心地用在自己的书稿上，并且挑个最漂亮的款式：
-</description>
-    </item>
-    
-    <item>
-      <title>R blogdown 科研网站的公式和参考文献</title>
-      <link>http://www.pzhao.org/zh/post/rblogdown-bib/</link>
-      <pubDate>Thu, 18 May 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/zh/post/rblogdown-bib/</guid>
-      <description>本网站的公式和参考文献一直未能正常显示，直到今天我才把这两个问题解决。
-公式公式的问题迟迟未解决，是因为我看到人们在讨论往html文件里加 Load mathjax 代码这种解决方案，一看就头大，不想做。
-其实，我用的hugo-academic主题，据说是支持数学环境的，据说在 config.toml 里设置 math = true就开启全站支持，在单篇post的yml头里这样设置就开启单篇支持。可是我两样都试过，然后运行 blogdown::serve_site()测试，在RStudio的Viewer里都不能成功显示公式。
-今天突然灵光一现，心想不会是RStudio Viewer的问题吧？于是点击Viewer左上角的 Show in new window 按钮，用外部浏览器打开一看，Duang！帖子里的公式就都可以正常显示了！这里秀一个：
-帖子里输入下面的 \(\LaTeX\) 公式：
-$$\int_0^\infty e^{-x^2} dx=\frac{\sqrt{\pi}}{2}$$网页就会显示：
-\[\int_0^\infty e^{-x^2} dx=\frac{\sqrt{\pi}}{2}\]
-参考文献两个多月前，就有个哥们儿问“有没有可能在blogdown创建的网站里添加参考文献?”作者回答得干脆：“有。”两人对话戛然而止，让我目瞪口呆。由于在blogdown 官方手册里并未看到添加参考文献的方法，我一直以为这个功能尚在开发中，直到今天也没见动静，有些起疑，就随便试了一下，步骤跟在 bookdown 里一样：
-把参考文献库 .bib 文件考到 content\post\.在帖子 .Rmd 文档的 yml 头里声明 .bib 文件的名称和路径。这里我设成 bibliography: [book.bib, packages.bib].在帖子里引用 .bib 里的文献条目，例如 [@R-blogdown].运行建站函数 blogdown::build_site().就这样，说时迟那时快，只见Duang！帖子里的引用就显示成了 (Xie 2017) ！而帖子末尾的参考文献列表就自动出来了！
-blogdown 可以如此方便地往帖子里插入计算代码、图表、公式、参考文献，我实在找不出第二个这样的工具。建科研网站，非 blogdown 莫属！
-最后顺便提一下：虽然最新正式版的 RStudio 1.0.143 并 没有 blogdown 和 bookdown 的入口，但是我欣喜地发现，在 RStudio 的开发版 1.</description>
-    </item>
-    
-    <item>
-      <title>9分钟写个R语言包：菜鸟致简速成</title>
-      <link>http://www.pzhao.org/zh/post/rmickey/</link>
-      <pubDate>Tue, 16 May 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/zh/post/rmickey/</guid>
-      <description>前言写R包这种高大上的工作，原以为学会怎么写得花个一年半载，学会之后写一个包怎么着也得个把月，谁料想周一上午下了决心，到周二下午就一口气写了4个包，算起来从学到写，只花了一天多时间。这里是个小结。
-学写R包，我主要参考了3份资料：
-谢益辉的开发R程序包之忍者篇，2011年。反复读了好几遍。黄俊文的极简R包建立方法, 2013年。反复读了好几遍。Hadley Wickham 的R packages, 2015年。反复扫了好几眼。有了这3份很好的资料，那我还写本篇帖子做什么？
-这是因为，他们都是高手中的高手，只是我觉得他们写得，就好比教授写幼儿园教材，仍然不太合小朋友的胃口，不足以让我等菜鸟快速入门。比如读到roxygen2是多么美妙，我起初完全没体验，不知道“举头望文档，低头思函数”到底说的是什么（what the hell was Yihui talking about? 当然，一天之后我就体会到了静夜思的精妙），再一看Emacs就被吓得河水倒流，当年光一个vim就把我折腾个半死。而极简篇里，我觉得既然是极简，能减掉的步骤尽量减，所以还能继续剪。可能当年是极简，时过境迁，人类进步，现在可以比极简更简。
-下面，我试试写个减到不能再减的一剑封喉致简版，只需小改两个文本文件，不出十分钟就写出一个能用的R包。
-准备跟前期准备和后期维护相比，写包本身其实是最简单的环节。假定你已经安装好了R和RStudio，那么，运行R，安装几个包：
-install.packages(c(&amp;quot;devtools&amp;quot;, &amp;quot;roxygen2&amp;quot;, &amp;quot;testthat&amp;quot;, &amp;quot;knitr&amp;quot;))然后：
-Windows用户，安装 rtools.Linux用户，安装对应的 R 开发包，sudo apt-get install r-base-dev.OS X 用户，安装command-line-tools，Terminal 运行 git 或者 xcode-select.致简四部曲参照益辉的rmini，我做了个更简单的模板（Update：根据Dong的建议，也可以RStudio - File - New project - New directory - R package），叫做rmickey。点击下载并解压缩，得到个名叫rmickey文件夹。这个文件夹名字可以随便改。
-双击rmickey.Rproj（这个文件名也可以随便改），就会用RStudio打开这个项目。后续步骤全部在RStudio里操作。
-点击打开RStudio右下窗口Files下的DESCRIPTION文件（这个文件名千万别改）和R/foo.R文件（这个文件名可以随便改）。DESCRIPTION里是你的包的描述信息。可以看到包名称，版本，日期，包标题，包作者，维护者，依赖性，描述等信息。把其中每一条冒号后面的信息改成你自己的信息，比如把第一行包的名称改成mymickey，保存。R/foo.R里是你的包里包含的自定义函数，模板里只列了一条做示例。函数的写法跟平时没区别。而函数前面的几行，就是所谓的说明文档，都以#&#39;开头，第一行是简要介绍，以@param开头的行逐个介绍函数的自变量（懒得介绍的话就像示例里的x2那一行一样空着，但x2后面必须有一个空格），@return开头的行介绍因变量（必填），@export @examples两行可以不修改。有更多函数的话，照葫芦画瓢在文件里往下继续写就是了。保存。
-点击RStudio右上窗口的Build标签下的Build &amp;amp; Reload按钮，包就编译并自动安装好了！</description>
-    </item>
-    
-    <item>
-      <title>postr: 用R Markdown做海报</title>
-      <link>http://www.pzhao.org/zh/post/postr/</link>
-      <pubDate>Tue, 16 May 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/zh/post/postr/</guid>
-      <description>用R markdown写海报的扩展包postr安装使用方法（需要先安装好软件环境，详见postr项目主页）：
-devtools::install_github(&amp;quot;pzhaonet/postr&amp;quot;)setwd()postr::postr()益辉的莽撞人项目，悬赏解决“用 R Markdown 做海报”这个技术难题。我私下说，Markdown走的是LaTeX路线，讲究篇章结构和逻辑，而海报追求更多随意性和艺术性，即使学术海报也不例外，所以费劲硬要用Markdown解决，可能吃力不讨好。倒不如Powerpoint来得方便，或者把整个海报在R里当成一个device，用layout画图来实现。话虽这么说，我仍然在留意这件事，因为我在新书学R里提出R语言科研方案的整体拼图，被我几乎全部拼完了，只缺海报这一块。这就好比在朋友圈发照片只发八张，看一眼就浑身不自在。
-前几天，做bookdownplus时找模板，在比利时鲁汶大学的一大堆模板当中，我极其偶然地发现，里面暗暗潜伏着的，竟然有用R Markdown制作海报的秘密，淹没在一大堆文件里，搞不清楚各个文件之间的关系，而且说明文档过于简单，用起来不够方便。于是，我花了些工夫，把海报部分择了出来，稍加修改，增添了几个自己做的颜色主题，纳入了bookdownplus里。我的想法是，用户只需下载我这个文件夹，选择好模板，一运行，就出来个Rmd文件，打开一点knit按钮，Duang！海报就出来了。
-于是去揭“莽撞人”榜。榜主说：很好。然后说：做成个包吧！名字都起好了，叫postr。为啥不直接叫poster？我猜大概是postr跟knitr的命名法类似，更容易搜到吧。
-想来也是。我这种下载文件夹的方法毕竟路子太野，不符合R语言的习惯，大家更喜欢的是做包，上传，安装。但是我从来没做过包。而且，我认为做包是R语言里高大上的东西，我不认为自己能很快学会做。于是，我在朋友圈招贤，看有没有谁愿意把这活儿给接过去。消息放出去一天，无人理睬。
-得，自己来吧。
-这天大娃生病了，早上带他看医生。诊所人满为患。排队的时候，我把网上几篇关于R包开发入门的帖子扫了几遍，好像不太难哦。从诊所出来，十点多了，一到办公室，就干劲十足地折腾。事情出乎意料的顺利。我原以要到明年才能把这个包写出来，结果当天下午就写完了。这个过程里，多亏了几位前人的工作，几年前还很繁琐复杂的R包开发，现在分分钟就能写一个玩玩。
-既然这么容易，我顺手把bookdownplus也写成了个包。然后把平时常用的方程写成了第三个包。我还准备写个R包开发菜鸟教程，于是又写了个示例包。
-从对R包开发一无所知，到一口气干掉四个包，花了不到两天工夫。用力过猛，有点撑了，我隐隐觉得不妙：好像不该这么顺利吧。
-果然，postr放到github当天晚上，就有人留言了。我很好奇这哥们儿是怎么在第一时间发现我这么个无名之辈发布了一个包。这哥们儿先说，postr这个名字起得好，很容易记住。这得感谢益辉，他给我的域名提的建议也让人说容易记。然后这哥们儿说：这个包他运行无法通过。
-这时我陡然发现，这才是R包开发的关键。写个包发布到github并不难，难的是解决用户的问题。
-前面等待的，将是一个又一个的坑。
-</description>
-    </item>
-    
-    <item>
-      <title>R bookdown&#43;: 用 R bookdown 写期刊论文、日记、信件、日历、吉他书、化学方程式</title>
-      <link>http://www.pzhao.org/zh/post/bookdown-plus/</link>
-      <pubDate>Tue, 09 May 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/zh/post/bookdown-plus/</guid>
-      <description>注意：本文所述的bookdown+这个项目已经停止开发，继承者是我新开的R包项目bookdownplus ，这是因为我学会了写R包。当然，说不定有些朋友不喜欢安装R包，喜欢下载个文件夹直接免安装用，那么本文所述的方法仍然可以继续使用，只是我不再更新了而已。
-R bookdown 能做的事情很多，可是那些功能迟迟不来，我只好自己动手，写了个 bookdown+，目前大体实现了用 bookdown 写期刊论文、化学分子式、信件、日记、日历等功能。当然，有些还没完全实现，革命不够彻底，带着浓重的\(\LaTeX\)旧社会的气息。革命尚未成功，同志仍需努力。
-下面是 bookdown+ 的简介和快速使用方法。
-背景R bookdown+，听起来像是跟R[@R-base]的扩展包bookdown[@R-bookdown]有关吧?
-一点没错！我们知道，bookdown天生是个用来写编程书籍的称手工具。只是，这仅仅是硬币的一面。bookdown的功能远远不止如此。它就像一个美味的蛋糕，我等啊等啊，等着谁把它切开，实在等不及了，就自己下手吧。所以，我弄了个bookdown+。
-bookdown+是bookdown的扩展。我数年前收集了一些\(\LaTeX\)模板，现在我把他们整理到bookdown+里，这样就可以开开心心在bookdown的环境里做喜欢的事情。bookdown+ 展示了硬币的另一面：你可以用它来写写期刊论文、化学分子式、信件、日历、甚至日记。
-另一方面，我从个人角度对bookdown的使用做了简化。官方提供的bookdown模板虽然很好用，但对新手来说略显繁琐，需要：
-在index.Rmd和_output.yml两个文件里设置yaml，需要在_bookdown.yml里设置文件名；对中文用户来说，还得跟LaTeX打交道，需要考虑before_body.tex, after_body, preamble.tex里面的设置。这些操作可能让新手望而生畏。
-R bookdown+用起来就容易多了，只需在一个叫做_runme.R的文件里设置好书名、作者，选好模板，binggo！就可以开始放心写自己的文字了。
-功能扩展，操作简化，这就是R bookdown+。
-在不久的未来，肯定会出现很多官方的bookdown模板，但是我不想等了。你要是也等不及，就跟我来一起使用或开发[bookdown+]吧！
-快速入门预备在开始前，你需要安装 R, RStudio, bookdown，和其他依赖的软件和包(例如 Pandoc, \(\LaTeX\), rmarkdown, rticle, knitr等)。详见bookdown官方手册.
-准备好后，从Github下载bookdown+压缩文件。解压缩到你的电脑里，在得到的文件夹里找到 _start.Rproj文件，双击就会在RStudio里打开一个项目。
-文件夹里还有个_runme.R文件。你可以双击打开并运行。下面是对这个文件里代码的详细解释。
-第1步：标题和作者改成你自己书的标题和作者名。
-title &amp;lt;- &amp;#39;bookdown+: Authoring Articles, Mails, Guitar books, Chemical Molecular Formulae and Equations with R bookdown&amp;#39;author &amp;lt;- &amp;#39;Peng Zhao&amp;#39;第2步: 模板在给定的可用模板里选择你想要的。这里我们选第8个。</description>
-    </item>
-    
-    <item>
-      <title>R vs Python: 2017年欧洲地学年会</title>
-      <link>http://www.pzhao.org/zh/post/egu2017/</link>
-      <pubDate>Thu, 20 Apr 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/zh/post/egu2017/</guid>
-      <description>欧洲地学学会EGU年会每年一次，都在维也纳国际会议中心举办，原因是别的地方很难找到这样一个会场，能容得下这么大的规模。为期一周的会议，参加人数上万，分会场有五百个以上。因为离得近，乘火车4小时，我们组年年都参加。去年我申请到一个口头报告，今年再次申请，会议协调人说：你们组申请了两个口头报告，但只能给你们组一个名额，你们内部定吧。我和同事商量了一下，决定他做口头报告，我做海报。
-这两天，准备海报和年会日程时，我发现个有趣的新现象。一打开“短期课程”类日程表，就感到一股杀气扑面而来。年会擂台的两位选手即将上阵，一个叫R，一个叫Python。
-首先亮相的是Python。第一天的第一批分会场，Python先发制人，发起个课程叫做“使用Python和Jupiter做数据分析”，一个半小时，要求携带笔记本电脑，手把手教你用Python语言读取不同格式数据、分析和作图，并使用 Jupyter Notebook 来记录和分享工作。Python语言就相当于R语言，Jupyter Notebook就相当于 R markdown。这是明摆着对R的挑衅啊！我决定放弃另外一个感兴趣的学术分会场，来参加这一个。
-R当然不甘示弱，见招拆招。当天下午有个课程，叫做“水文学中使用R”，内容是学习用R语言进行水文学的时间序列分析和地理信息系统GIS数据处理、水文建模。水文学不是我的专业，但是有关联。好想参加，可惜跟我必须参加的另一个会场时间冲突了，只能忍痛割爱，暗暗希望R在这个回合打败Python。
-问题是Python还有后招。星期四，Python有个课程叫做“Python处理多维度地理科学大数据：xarray扩展包入门教程”。课程将介绍Python处理数据的基本用法，包括下标系统、选择、分组、作图、计算、自定义函数，并演示如何用 Python+xarry+Jupyter来轻松教没有编程经验的硕士生处理气候模型数据。这课听起来好诱人。一看行程表，我到时候没安排，那必须去了。
-R会如何应战？我发现还有个课程，叫做“出版流程里的可重复计算研究”——这是R markdown的强项啊。此课时长3小时，前1.5小时是手把手教你用R, Python和ReproZip对地理空间数据进行分析，并撰写可重复性报告：后1.5小时是讨论，参与者有出版方、审稿人、教育工作者等各个领域的专家学者。看这架势，不知R跟Python是要对决还是要合作呢？真想去目睹这一盛况，但是，又跟我专业的分会场冲突了。真难取舍。
-除了明争，还有暗斗。星期四晚上有一门课程叫做“一图胜千言：利用数据可视化进行科学交流”，讲的是如何制作高效精辟的数据图表，没有明说，但暗藏玄机，不知主角是R，还是Python，还是Matlab，还是别的新秀？
-除了R语言这种跟科研密切相关的技术活，居然还有一门课程叫做“WordPress写博客详解”，居然还有一门课程教你写诗，说什么博客和诗都能更好地传播科学……
-回头一看我的私人日程表，乖乖，这哪像个学术会议呀……</description>
-    </item>
-    
-    <item>
-      <title>Hugo 网站的浏览器小图标</title>
-      <link>http://www.pzhao.org/zh/post/hugo-icon/</link>
-      <pubDate>Wed, 19 Apr 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/zh/post/hugo-icon/</guid>
-      <description>网站图标，就是上图的这些东东，用浏览器打开网站时显示在地址栏的顶端。R blogdown安装的hugo-academic主题，默认图标是个蓝色学位帽，挺好看的，不改也行，只是如果大家都用的话，泯然众人，识别度就低了。
-改的方式很简单：将你自己的图标图片保存为.png格式，并命名为icon.png，替换\themes\hugo-academic\static\img\icon.png即可。
-update: 更好的方案来自yang Cao的提议：把icon.png放在static/img/，避免在更新themes时将自定义图标覆盖。</description>
-    </item>
-    
-    <item>
-      <title>Hugo 网站的RSS</title>
-      <link>http://www.pzhao.org/zh/post/hugo-rss/</link>
-      <pubDate>Tue, 18 Apr 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/zh/post/hugo-rss/</guid>
-      <description>R blogdown 搭建的 Hugo 网站，小细节很多，可以一点一点完善，好在都不难搞定。今天添加了个RSS订阅按钮。
-自从 Google Reader 死后，我就觉得 RSS 没有多大趣味，就好像子期死后伯牙摔琴一样。但是，没有 RSS 提醒的话，还真不知道谁的博客更新了，于是就勉强用 feedly 凑合。眼看我的新网站构架基本完成，就在 feedly 里订阅了一下自己的网站，输入 pzhao.org，发现没找到。嗯？研究一下才明白，我的主页完整地址是：
-http://pzhao.org/zh/这个路径对应的本地文件夹下面，不仅有个index.html，还有个index.xml，后者就是 RSS 订阅的文件。所以，在feedly添加：
-http://pzhao.org/zh/index.xml就把我的新网站添进去了。这是订阅全站。如果只想订阅其中的博客，或新发表的学术文章，或新做的报告，那么：
-http://pzhao.org/zh/post/index.xmlhttp://pzhao.org/zh/publication/index.xmlhttp://pzhao.org/zh/talk/index.xml这个RSS链接，我该放到主页的什么位置，来方便网友订阅呢？我决定放到我的头像下面的社交按钮里。
-头像下的社交按钮是在config.toml里设置的，只需添加个[[params.social]]就可以了，图标去fa或ai两个包的主页找便是。 实在缺乏社交，只好把自己卡拉OK的录音和腾讯视频加进去凑数，代码如下：
- [[params.social]]icon = &amp;quot;rss&amp;quot;icon_pack = &amp;quot;fa&amp;quot;link = &amp;quot;http://www.pzhao.org/zh/index.xml&amp;quot;[[params.social]]icon = &amp;quot;music&amp;quot;icon_pack = &amp;quot;fa&amp;quot;link = &amp;quot;http://kg.qq.com/node/personal?uid=649d9d85212c3489&amp;quot;[[params.social]]icon = &amp;quot;video-camera&amp;quot;icon_pack = &amp;quot;fa&amp;quot;link = &amp;quot;http://v.qq.com/vplus/0f8190586a3f2f22a25e9827b38c171e&amp;quot;</description>
-    </item>
-    
-    <item>
-      <title>Hugo 网站 academic 主题的多语言界面</title>
-      <link>http://www.pzhao.org/zh/post/hugo-multilingual/</link>
-      <pubDate>Sun, 16 Apr 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/zh/post/hugo-multilingual/</guid>
-      <description>几年前我弄过双语博客， 后来放弃了，因为 WordPress 的双语方案有些遗留问题让我不爽，另外我没有精力写英文博客。现在，新网站是个科研网站，博客可以只出现在中文版里，而英文版只放自己的学术情况就行了，不用像博客更新那么频繁。所以，双语界面几乎是排在第一梯队的需求。
-我对Hugo的架构并不熟悉，原以为会很麻烦，结果弄一会儿就搞定了，原来这么简单。有些步骤在主题的说明文档里提到了，但不够全。完整的步骤是这样的(看起来长，是因为我啰嗦，其实很快就能设置完)：
-1、开启双语。这需要在config.toml里末尾找到：
-[languages.en] languageCode = &amp;quot;en-us&amp;quot;  这说明网站现在是英文的。在后面添加中文，也就是：
-[languages.en] languageCode = &amp;quot;en-us&amp;quot; [languages.zh] languageCode = &amp;quot;zh-cn&amp;quot;  2、设置默认语言。这需要在config.toml里开头不远处找到：
-# Default language to use (if you setup multilingual support) defaultContentLanguage = &amp;quot;zh&amp;quot; defaultContentLanguageInSubdir = true  原先是en，改成zh就可以让网站默认打开是中文。
-3、菜单栏增加中文界面。菜单栏就是网页顶部那一排按钮。这需要在config.toml里找到菜单栏的设定：
-[[menu.main]] name = &amp;quot;Home&amp;quot; url = &amp;quot;#about&amp;quot; weight = 1  上面是默认语言英语的设置。在下面添加中文设置，格式是
-[[languages.zh.menu.main]] name = &amp;quot;主页&amp;quot; url = &amp;quot;#about&amp;quot; weight = 1  这样，就把Home按钮替换成了主页按钮。其他按钮类似。
-4、其他地方的翻译。这需要把\themes\hugo-academic\i18n\ 文件夹拷贝到根目录，然后删掉里边不需要的语言文件。我们只保留en.yaml和zh.yaml。用文本编辑器打开zh.yaml，把里边翻译不当的地方修改一下，比如 interests 翻译成了“兴趣爱好”，我改成了“研究领域”。
-5、新增帖子的双语。这个最好办，每次在content\文件夹里新增文件时，如果要增加英文，就在文件扩展名前面加个.en就行了。例如，我在content\talk\下面新建了个egu-2017.md，里面是中文，会出现在中文界面上。那么我想让这个项目也在英文版出现，只需把egu-2017.md复制一份，命名为egu-2017.en.md，那么这个项目就会在英文界面出现了。打开egu-2017.en.md把里面的中文改成英文即可。</description>
-    </item>
-    
-    <item>
-      <title>Word 永远转不成 Markdown</title>
-      <link>http://www.pzhao.org/zh/post/word-never-markdown/</link>
-      <pubDate>Sun, 16 Apr 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/zh/post/word-never-markdown/</guid>
-      <description>R bookdown 用扩展的 Markdown 语法来写书，可以很方便地导出 Word 格式，虽然不完美，但只需稍微调一下样式，就是一个漂漂亮亮的文档。但是，如果在 Word 里做了修改，想转回 Markdown 该怎么办？
-多年来，我一直奢望能找到这样一款软件，哪怕是把 Word 转成 LaTeX 也行。随着时间的流逝，希望却是越来越渺茫; 我越来越深信，这样的软件过去不曾有，现在还没有，将来永远都不会有。因为，逻辑上是不可能实现的。
-Markdown 和 LaTeX 能相互转换，是因为两者都是标记语言，是逻辑上有对应关系的。Markdown 里的标题标记#，翻译成 LaTeX 标记就是\section{}; Markdown里的粗体标记** **，翻译成 LaTeX 标记就是\textbf{}。这就是所想即所得，大家虽然你说英语我说德语，但想法是一样的，只要有本字典，以词为单位互换，那么大体意思就能通。想完美的话，根据各自的语法规则调整调整就行了。
-但是 Word 不是这样的。你看见一个大字体加粗的词，看上去像是标题，乐观一点可能是用 Word 的标题样式设置的，一般情况下是用户把正文样式的文字直接点加粗换字号得到的，悲观一点说不定是插入的文本框或图片&amp;hellip;&amp;hellip;所见即所得，你永远猜不透一个大字体背后的逻辑是什么。这就好比你说英语而我画了一幅水墨山水画，你猜我是什么意思？你猜我大量的留白该翻译成那句英语？就像小说《三体》里说的：
- 教授挂出了两幅大图片，一幅是画面庞杂精细的《清明上河图》，另一幅是一张空旷的天空照片，空荡荡的蓝天上只有一缕似有似无的白云。教授问这两幅画中哪一幅所包含的信息量更大，答案是后者要比前者大一至两个数量级!
- Word 的一个简单格式背后，藏着的信息量比 Markdown 大几个数量级，你怎么转换？
-Markdown 跟 LaTeX 对话，就像男人跟男人对话，说什么就是什么; Markdown 跟 Word 对话，就像男人跟女人对话，男人永远猜不透女人到底是哪层意思。所以还是歇了吧。
-那么，难道 Markdown 永远理解不了 Word 吗？
-也不是。我觉得等人工智能成熟的时候就可以了。你只需吩咐一句“小A，把这篇Word 书稿转换成 Markdown，我要在 R bookdown 里修改”就行了。
-但人工智能可能会回答你：“主人，我已经全部帮你把书改好并且已经出版了。”</description>
-    </item>
-    
-    <item>
-      <title>迁都</title>
-      <link>http://www.pzhao.org/archives/19323/</link>
-      <pubDate>Sat, 15 Apr 2017 18:31:46 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/archives/19323/</guid>
-      <description>话说天下大势，汾酒必喝，喝酒必汾。北京市政府某些部门迁往通州不久，雄安开始作为新区开发，而我的博客，也迎来了迁站的好时机。
-4 年前，这个博客开始使用 WordPress 框架；3 年前，开始使用 suffision 主题。从那以后，就再也没有折腾过。弱水三千只取一瓢，我对博客的框架一直是很满意的，用Stackedit 的 Markdown 书写，用 WordPress 的 Markdown 插件发布，从此不操心格式的问题，只想专心写内容。生活类帖子本来就用不着太多格式，而技术类帖子顶多就是折腾一下 R 语言，顶多就是把 Rmd 文件编织成 html 格式再发布，知足常乐嘛。
-不过，隐隐之中，总觉得哪里有点缺憾，但又说不出来。
-直到最近，我才闹明白是怎么回事。
-原来，缺憾在于，我是个做科研的，心底有种写科研博客的诉求，只是我自己不知道。科研工作里的一些方法，未成形的科学想法，我想用博客的形式来记录和分享。我需要在帖子里插入图表、公式、参考文献，而我手头的图表、公式和参考文献都是 R 语言和 LaTeX 完成的。插进 WordPress，不是不可以，但我嫌麻烦，懒得折腾，就不知不觉放弃了写科研博客的念头。并且，pzhao.org 这个域名，当初申请时并不太严肃，有种“先玩玩再说”的意思。而科研博客，怎么着也得实名吧。
-因为只有腿，我就只想着跑，顶多就是跑快点儿，从未想过，自己心底其实是想飞的。
-这时，神说要有光， R blogdown 就来了，并且在益辉同学的指点下，我申请到一个满意的实名域名 pzhao.org。我感觉，这就是我等待已久的那对儿翅膀。
-不能再等了。本博客就此一分为三。主站转移到我的实名网站 pzhao.org(RSS)，以科研和技术（包括 R 语言）为主，正经一点；而关于最近出书的动态，全部记录在该书的专属网站上 xuer.pzhao.net(RSS)；“大鹏志”的繁华我还不忍心拆掉，那就作为陪都吧，记录生活博客，估计主要是育儿。
-从今天起，开始飞翔。
-原文链接</description>
-    </item>
-    
-    <item>
-      <title>出书</title>
-      <link>http://www.pzhao.org/archives/19320/</link>
-      <pubDate>Sat, 15 Apr 2017 15:29:22 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/archives/19320/</guid>
-      <description>小时候，大人和小孩都节衣缩食。记得我最爱吃的是一种黑色的分成小格子的东西。考试成绩好的时候，过生日的时候，生病的时候，我妈会给我买一块。有两种包装，一种叫“巧克力”，另一种叫做“朱古力”，味道有点差异，都是1块钱。最外面是一层纸，绿底，印着一头花花奶牛。像拆信一样拆开，把包装纸像邮票一样铺平，压在书页里当书签。里面是一层锡纸。撕开锡纸的一端，露出巧克力的头，小心掰下一格，搁在嘴里，从来不舍得用牙齿嚼碎，而是含在舌头上，等着慢慢融化，那种滋味美妙极了。剩下的包好，放进抽屉里，第二天再掰一格，如此，一块巧克力能吃一两个星期。
-从前真是慢。
-虽然如此舍不得吃舍不得穿，但家人从来都舍得给我买书。拿我妈的话说，吃够了不识字的亏，老家发个电报过来都要求邻居念，所以，就算勒紧裤腰带，也要让我识字。但问题是他们不知道该给我买什么书，所以就任我挑，我要什么书就买什么书。于是，从小我就读了很多故事大王、故事会、读者文摘之类的文学著作，以致于如今我总觉得我跟凤姐的知识结构是类似的。
-那时候，童话大王还是双月刊。读完上一本，熬啊熬啊，就跟现在等新一季权力的游戏一样，终于等来了新的一期，买回家就直奔公共厕所，蹲在臭气熏天的茅坑上，嗅着新书的墨香，我一翻开就根本停不下来，一口气把书读完，才舍得从茅坑上站起来。腿麻得失去了知觉，心里一片失落，因为下一期又得等两个月。真是搞不懂，出这么本小书，为啥要等这么久？
-不只是我，小朋友们普遍对书的出版和印刷充满了疑惑。同班有同学家长在印刷厂工作，这个同学经常带一些来自印刷厂的新糖纸发给我们，我们把糖纸放在手心，哈一口气，看谁的糖纸卷曲得最厉害。有一回，忘了是学校组织还是我们自发，在这个同学的带领下参观了印刷厂，每人得到了一块铅字。我们窥见了出书过程里小小的一角，然而对于整个流程，却依然是好奇的。随着岁月的流逝，这种好奇渐渐被磨灭，几乎让人记不起来了。
-最近，承蒙朋友推荐，有出版社看上了我博客上关于 R 语言的旧帖子，觉得有出版的价值，问我愿不愿意出一本书。我受宠若惊，积极配合，从酝酿到完稿，现在基本有了个样子。原以为交稿就算完事了，后来得知，我还得提出封面的设计意见，而且以后要全程参与。拿出版方的话说：书就像你的孩子，穿什么衣服你总得操心吧？
-对我这个岁数的人来说，还能经历人生的几个第一次呢？对我这样一个nobody来说，这可能是个千载难逢的机会，来亲历一本书的出版过程，解开自小埋在心底的困惑。所以，我为这本书建了个网站，从现在起，全程直播出书的全过程。任何动态和相关帖子都发在这个网站上，不再发在个人博客上了。
-如果你这本书感兴趣，对如何出书感兴趣，欢迎访问这个网站，地址和二维码是：
-http://xuer.pzhao.net
-原文链接</description>
-    </item>
-    
-    <item>
-      <title>Hugo 网站 academic 主题首页的文摘显示问题</title>
-      <link>http://www.pzhao.org/zh/post/hugo-academic-summary/</link>
-      <pubDate>Sat, 15 Apr 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/zh/post/hugo-academic-summary/</guid>
-      <description>在 RStudio 里用 R blogdown 来维护网站时，可以通过点击工具栏的 Addins - New Post 来创建新帖子，很方便。但是，如果用的是 Hugo 的 academic 主题，那么创建的新帖子在网站首页会显示全文，不大好看，尤其是全文很长的时候，根本就不像个首页了。这是因为，academic 首页的 posts 模块默认显示文摘。如果没有为每篇帖子设置文摘，就会显示全文。而上面说的创建新帖的方法里，并没有设置文摘的选项。那么，文摘在哪里设置呢？
-直接说答案：手动在新帖的YAML文件头添加一行：
-summary: &amp;quot;我的文摘别太长。&amp;quot;答案来自blogdown 项目主页。
-就这么个小问题，让我走了点弯路。我发现问题后，首先观察了一下主题自带的示例文档，文件头是这样的：
-+++date = &amp;quot;2016-04-20T11:00:00&amp;quot;draft = falsetags = [&amp;quot;academic&amp;quot;, &amp;quot;hugo&amp;quot;]title = &amp;quot;Customizing the homepage with widgets&amp;quot;math = falsesummary = &amp;quot;&amp;quot;&amp;quot;Enable/disable and configure widgets to customize your homepage.&amp;quot;&amp;quot;&amp;quot;+++跟 R blogdown 生成的 .md 和 .Rmd 文件的文件头不同，这个文件头居然是用前后各三个加号表示的。里面的summary开始数三行，就是用来设置文摘的。
-于是我就把这三行拷贝粘贴到 .Rmd 文件里，当然是编译出错了。接着我想当然地把上面这段前后共六个加号的文件头拷贝粘贴到 .Rmd 里，仍然报错。问题搁置了几天，才想起去 blogdown 项目主页搜搜看，就找到了答案。</description>
-    </item>
-    
-    <item>
-      <title>Hugo 网站的 Disqus 加载问题</title>
-      <link>http://www.pzhao.org/archives/19317/</link>
-      <pubDate>Fri, 14 Apr 2017 17:27:05 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/archives/19317/</guid>
-      <description>今天，复活节假期前夕，同事们都休假了。我虽然在办公室，却无心上班，发了一会儿呆，想想与其痛苦地工作，不如快乐地解决一下新网站的一个小问题：disqus 评论框的加载。
-打建好站，disqus评论框就一直没成功加载过。后来听说是config.toml里 disqus shortname指的不是我的disqus ID，而是要专门设置一下， 我说“啊,还有这事儿？”于是就设置了一下，但是仍然不能成功加载。这个问题放了几天，今天心血来潮一搜，嗯，兴许是路径的问题，于是就把config.toml开头的路径改为
-baseurl = &amp;quot;http://www.pzhao.org&amp;quot; # relativeurls = true  然后运行R语言的建站函数：
-blogdown::build_site(local=FALSE) Disqus评论框就乖乖出现了。欢迎来留言测试。
-啥，你看不见？嗯，听说好像是被墙了。
-原文链接</description>
-    </item>
-    
-    <item>
-      <title>Hugo 网站的 Disqus 加载问题</title>
-      <link>http://www.pzhao.org/zh/post/hogo-disques-problem/</link>
-      <pubDate>Fri, 14 Apr 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/zh/post/hogo-disques-problem/</guid>
-      <description>今天，复活节假期前夕，同事们都休假了。我虽然在办公室，却无心上班，发了一会儿呆，想想与其痛苦地工作，不如快乐地解决一下新网站的一个小问题：disqus 评论框的加载。
-用 R blogdown 打建好站，disqus评论框就一直没成功加载过。后来听说是config.toml里 disqus shortname指的不是我的disqus ID，而是要专门设置一下， 我说“啊,还有这事儿？”于是就设置了一下，但是仍然不能成功加载。这个问题放了几天，今天心血来潮一搜，嗯，兴许是路径的问题，于是就把config.toml开头的路径改为
-baseurl = &amp;quot;http://www.pzhao.org&amp;quot;# relativeurls = true然后运行R语言的建站函数：
-blogdown::build_site(local=FALSE)注意！此处千万不要运行blogdown::serve_site()，不然新生成的文件就又没法加载 Disqus 了。网上说是serve_site()忽略了config.toml里的某些设置而造成的。我不懂，总之就是建站函数运行完就直接上传。
-然后GitHub同步，几秒钟后，Netlify上完成了更新，Disqus评论框就乖乖出现了。
-欢迎来留言测试。
-啥，你看不见？嗯，听说好像是被墙了。</description>
-    </item>
-    
-    <item>
-      <title>侠气</title>
-      <link>http://www.pzhao.org/archives/19309/</link>
-      <pubDate>Thu, 13 Apr 2017 12:49:17 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/archives/19309/</guid>
-      <description>我这个博客，访问量最大的帖子就是《 R 菜鸟入门》。这是写给 R 语言新手的。四年前发布以来，浏览量累计大约 2 万。也就是说，如果只计算工作时间的话，平均每天每小时都有2个人在浏览这些帖子，如此连续了四年，对于这样一个小站来说，我还是挺得意的。就算是在高校讲课，如果每个班20人，每个学期一个班，我得教500年，才能这么大规模地普及 R 语言。但是500年后R语言早就不存在了。
-网友们的反馈也很鼓励人。除了留言点赞的网友外，我甚至在真实世界里偶遇过网友跟我聊这帖子。好几次，有学生朋友来信索取习题答案，说他们老师拿我的博客当讲义，出的题目是我博客上现成的题目，但是他们不会做。我不知道是该喜该忧，于是答复说，如果看了我的博客你还没学会，这不是打我的脸么……
-最近，承蒙朋友推荐，这些帖子被一家出版社看上了，打算出一本书。我想，出书的话，博客上的文字显得太水了，把好好的纸张弄湿了终归是不好，于是就在原有的框架和风格上全部重写，并且加了很多干货。其中有一样，就是加入了一些侠气。
-上图左栏是书的目录。你会发现，各章标题我都有意用了两个字。如果你是武侠迷，会迅速联想到，这个跟《笑傲江湖》的章节风格是一致的（歌迷也许会认为是跟张信哲的专辑名称一致）。这是因为，我书里潜伏了一条暗线，那就是金庸，书里前后引用过天龙八部，倚天屠龙记，射雕英雄传，是一脉贯通的，是暗藏的精气神。两个字，快刀乱麻，干净利索，十步杀一人，千里不留行。学 R 就得这么学才爽快。
-但是，你会发现，有两章标题是四个字。这是因为，此书是我跟我师姐合写的。这两章我不懂，写不了，但学习 R 语言又少不了，于是请我师姐写。她不同意改成两个字，认为这不重要，让读者一眼就明白主题才重要，你个讲编程的书关金庸什么事，虽然她比我还金迷。于是，你会看到两个字的标题里突然冒出了四个字。
-我觉得，这硬生生破坏了全书的侠气。
-就好像益辉吐槽 ReporteRs 一样：
- 我早年的时候也有这个倾向，喜欢把包名里的 R 大写，如 formatR，后来基本上只用纯小写的名字了。一个包名开头要按一次 Shift 键，然后哗啦啦敲几个字母，正中间急停，再按一次 Shift 键，然后又是小写。就问你想不想掀桌。
- 嗯，我也有同感。
-大家觉得怎么样？谁有办法劝劝我师姐？劝我入院看病的请闭嘴，谢谢。
-原文链接</description>
-    </item>
-    
-    <item>
-      <title>用 R blogdown 搭建个人博客或科研网站</title>
-      <link>http://www.pzhao.org/archives/19304/</link>
-      <pubDate>Tue, 11 Apr 2017 14:10:56 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/archives/19304/</guid>
-      <description>我正在撰写新书《 R 菜鸟入门》，新书预计今年下半年出版。本文是其中一个章节。
- 用 R blogdown 搭建个人博客或科研网站   互联网时代有个自己的网站，就好像真实世界里有了自己的房子（服务器）和固定地址（域名）；自我介绍时附上自己的网站，就像生活里邀请朋友来访或者职场上递上名片，都甚为方便。然而，建立一个网站并不容易，涉及诸多领域的知识和技能，门槛比较高。好在，我们有万能的R语言，搭建网站只需几分钟，而并不需要多少网络知识。你甚至不用懂 R 语言是什么，照我下面说的做就行，包教包会，学不会免费再教。  这里，我提供两个示范，演示如何使用 R 语言的 blogdown 扩展包1，用来搭建一个个人博客和一个科研小组网站。截至本文成稿之日，blogdown 含苞待放，尚未正式发布，但是已经能够正常安装使用了。我们来尝尝鲜，提前一睹她的芳容。  R blogdown 简介和安装   R blogdown 是什么   R语言的一个扩展包，用来制作网站的工具。   可以用非常简洁的方式快速搭建静态网页构成的网站。   虽然名字里有“博客”（blog）字样，但并不仅限于博客。非常适合搭建一个科研小组的展示窗口。   基于 markdown 扩展语法，可以在网页中方便地插入图表、脚注、数学公式、R 代码等元素。   非常容易将 bookdown 生成的论文转化成网页展示。   非常易于维护，迁移，备份。    本书的官方网站就是用 R blogdown 搭建的。网站里给大家提供的 R 示例代码、试读章节、勘误表等，都是直接从书稿中拷贝粘贴到文本文件里，然后运行一下 blogdown 的指令，网站就自动更新了。  安装  blogdown 的背景平台是 R 语言，用户界面首选 RStudio ，产生的网站框架是 Hugo ，掰手指头数一数，要安装4样东西，略显繁琐，但并不难，一劳永逸。安装方式如下：   R。去R的服务器CRAN，点击Download R for Windows（其他操作系统的用户请自便），在打开的新网页最上方点击base，就找到下载链接了。下载完毕后安装，一路“下一步”的傻瓜式安装即可。   RStudio。去官网下载安装文件运行即可。   blogdown。运行RStudio，在左上面板的代码窗口输入并运行以下代码：   if(!</description>
-    </item>
-    
-    <item>
-      <title>R blogdown 搭建个人博客或科研网站</title>
-      <link>http://www.pzhao.org/zh/post/r-blogdown/</link>
-      <pubDate>Tue, 11 Apr 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/zh/post/r-blogdown/</guid>
-      <description>本文收录在《学 R 》一书的附录中。
-互联网时代有个自己的网站，就好像真实世界里有了自己的房子（服务器）和固定地址（域名）；自我介绍时附上自己的网站，就像生活里邀请朋友来访或者职场上递上名片，都甚为方便。然而，建立一个网站并不容易，涉及诸多领域的知识和技能，门槛比较高。好在，我们有万能的R语言，搭建网站只需几分钟，而并不需要多少网络知识。你甚至不用懂 R 语言是什么，照我下面说的做就行，包教包会，学不会免费再教。
-这里，我提供两个示范，演示如何使用 R 语言的 blogdown 扩展包1，用来搭建一个个人博客和一个科研小组网站。截至本文成稿之日，blogdown 含苞待放，尚未正式发布，但是已经能够正常安装使用了。我们来尝尝鲜，提前一睹她的芳容。
-R blogdown 简介和安装R blogdown 是什么
-R语言的一个扩展包，用来制作网站的工具。可以用非常简洁的方式快速搭建静态网页构成的网站。虽然名字里有“博客”（blog）字样，但并不仅限于博客。非常适合搭建一个科研小组的展示窗口。基于 markdown 扩展语法，可以在网页中方便地插入图表、脚注、数学公式、R 代码等元素。非常容易将 bookdown 生成的论文转化成网页展示。非常易于维护，迁移，备份。本书的官方网站就是用 R blogdown 搭建的。网站里给大家提供的 R 示例代码、试读章节、勘误表等，都是直接从书稿中拷贝粘贴到文本文件里，然后运行一下 blogdown 的指令，网站就自动更新了。
-安装
-blogdown 的背景平台是 R 语言，用户界面首选 RStudio ，产生的网站框架是 Hugo ，掰手指头数一数，要安装4样东西，略显繁琐，但并不难，一劳永逸。安装方式如下：
-R。去R的服务器CRAN，点击Download R for Windows（其他操作系统的用户请自便），在打开的新网页最上方点击base，就找到下载链接了。下载完毕后安装，一路“下一步”的傻瓜式安装即可。RStudio。去官网下载安装文件运行即可。blogdown。运行RStudio，在左上面板的代码窗口输入并运行以下代码：if(!require(devtools)) install.packages(&amp;#39;devtools&amp;#39;)devtools::install_github(&amp;#39;rstudio/blogdown&amp;#39;)解释一下：由于 blogdown 目前只发布到了 GitHub 服务器上，尚未发布到CRAN，所以上面第一条代码先安装开发工具 devtools 包，第二行用这个包的install_github() 函数从 GitHub 安装。
-Hugo 框架。在 RStudio 左上面板的代码窗口输入并运行以下代码：blogdown::install_hugo()安装完毕。</description>
-    </item>
-    
-    <item>
-      <title>用 R bookdown 写吉他谱</title>
-      <link>http://www.pzhao.org/archives/19291/</link>
-      <pubDate>Thu, 06 Apr 2017 09:15:36 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/archives/19291/</guid>
-      <description>前情提要：
- 用 R 语言的 bookdown 写书 用 R 语言的 bookdown 写诗集 用 R 语言的 bookdown 写学术论文 R 语言 bookdown 快速入门和语法速查  本篇说说如何用 R 语言的 bookdown 写吉他谱。别拦着我，让我陷进bookdown的怀抱里爽死吧。
-中国的民谣吉他伴奏谱常见的一般是六线谱，格式是这样的：
- 第一行是和弦谱，包括和弦名称和左手按琴弦的指法图； 第二行是六线谱，右手拨弦的方式（当然也夹杂左手按和弦外音的变化）； 第三行是歌曲旋律的简谱； 第四行是歌词。  前两行的和弦谱和六线谱在录入时需要专业软件，太麻烦；歌曲旋律一般是跟着原唱学，基本用不着；歌词最容易录入。由于和弦谱最为重要，任何乐器伴奏都用得着，为了省事儿，上图可以只保留和弦名称和歌词，简化为文字谱：
- C Em F G C Em 让我掉下眼泪的不只昨夜的酒，让我依依不舍的不……  文字谱的好处是用不着任何专业软件，录入很方便。但是，这比较坑菜鸟。想不起来Em和弦的指法该怎么办？Em还好办，看见个G#7sus4，我崩溃了，自认水平不行，乖乖翻和弦字典去。如果标注了指法图——
-还是更方便一些，吉他和钢琴都可以用。我觉得等我老得掉光牙齿的时候，估计连C和弦的指法都忘光了，给孙子连个《成都》都唱不成，这时候指法图就有用了。
-以前我玩过LaTeX输入指法图的游戏。由于对LaTeX心怀恐惧，这个游戏没敢多玩。现在有了R语言的bookdown来取代LaTeX，自然想把这个游戏拿回来找找年轻的感觉。
-这个主意早就有了，原以为会很麻烦（恐惧心理），一直没行动。昨天在送大娃和接二娃之间空出半个小时，鼓捣了一下，居然鼓捣出来了上面那个样子。其实很简单：用 bookdown 的壳，LaTeX的核。上面那句歌词，录入的文字是这样的：
-让\CM 我掉下\Em 眼泪的　不\F 只昨夜的\GM 酒　让\CM 我依依\Em 不舍的　不……  我打算以后陆陆续续把喜欢的歌弄成一本书（pdf），样子是：
-并且把bookdown录入吉他谱的源代码在GitHub开了个bookdown-guitar的项目。毕竟，中文的对齐不太完美，看看有没有高手来帮帮我。
-其实跟LaTeX里一样。那我在LaTeX里用就行了，干嘛来bookdown里用？
-因为这样的话，就可以在同一本书里同时呈现R代码、作图、分析结果和吉他谱啊。
-啊？把他们弄在一起有什么用？
-呃……这是个好问题……容我清清脑子想一想……听说数学领域很多理论在提出时都没啥用，后来都用上了，除了数论……
-原文链接</description>
-    </item>
-    
-    <item>
-      <title>用 R bookdown 写学术论文</title>
-      <link>http://www.pzhao.org/archives/19190/</link>
-      <pubDate>Fri, 24 Mar 2017 09:53:23 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/archives/19190/</guid>
-      <description>1
-最近，我使用 R 语言的 bookdown 扩展包接连做了三件事：先是整理出一本跟 R 语言有关的书，然后把博客的帖子整理出一本纯文本的中文书，这两天我又在用它来写一篇打算投稿的学术期刊论文。
-用 bookdown 写英文的科研期刊论文，配置起来是很简单的，只需在bookdown提供的官方演示文档里做简单修改如下：
-首先，index.Rmd 的文件头 yaml 部分，将 documentclass 设为 article，并关闭图表目录和文章目录即可：
-documentclass: article lof: no lot: no toc: no  然后，_output.yml 文件内容全部清空，然后添加指令生成 word&amp;#95;document2 文档、 pdf&amp;#95;document2 文档和 html&amp;#95;document2 文档，参数为default即可。也就是说，&amp;#95;output.yml 文件内容只需3行：
-bookdown::word_document2: default bookdown::pdf_document2: default bookdown::html_document2: default  就能生成足够美观的三种格式的文档了。
-2
-写论文期间发生了一件事，让我饱受刺激。
-我的科研论文有个计算公式，昨天发现其中一个数值不小心敲错了。后续计算都是建立在这个计算的基础上，所以后续计算全错。虽然不影响结论，但严格来讲，论文里所有的数据都得改。
-放在以前，这是让人崩溃的灾难。幸亏，这次我写论文用了 bookdown。
-这篇研究论文是用 Rmd 格式写的，里面绝大部分数据不是手动敲进去的，而是调用了 R 代码，图表也是用 R 代码插入的，走的是“可重复性研究”的思路。现在，我只要把 R 代码里那个敲错的数据改过来，运行代码，后续计算就全部自动更新，而论文 Rmd 文件里调用代码的输出结果，会在导出的 pdf 或 word 文档也相应自动更新，节省了大量时间，还减少了敲数字或拷贝粘贴出错的可能，怎一个爽字了得！
-在 bookdown 发布之前，其实 rmarkdown 也有这个功能，但因为公式、交叉引用、参考文献方面的欠缺， rmarkdown 对我来讲比较鸡肋，一直未能用在论文写作上。现在有了 bookdown ，可以甩开膀子使劲儿用。可以说， bookdown 把 rmarkdown 原有的价值做了更充分的挖掘。</description>
-    </item>
-    
-    <item>
-      <title>R bookdown 写学术论文</title>
-      <link>http://www.pzhao.org/zh/post/r-bookdown/</link>
-      <pubDate>Fri, 24 Mar 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/zh/post/r-bookdown/</guid>
-      <description>1
-最近，我使用 R 语言的 bookdown 扩展包接连做了三件事：先是整理出一本跟R 语言有关的书，然后把博客的帖子整理出一本纯文本的中文书，这两天我又在用它来写一篇打算投稿的学术期刊论文。
-用 bookdown 写英文的科研期刊论文，配置起来是很简单的，只需在bookdown提供的官方演示文档里做简单修改如下：
-首先，index.Rmd 的文件头 yaml 部分，将 documentclass 设为 article，并关闭图表目录和文章目录即可：
-documentclass: article lof: no lot: no toc: no  然后，_output.yml 文件内容全部清空，然后添加指令生成 word_document2 文档、 pdf_document2 文档和 html_document2 文档，参数为default即可。也就是说，_output.yml 文件内容只需3行：
-bookdown::word_document2: default bookdown::pdf_document2: default bookdown::html_document2: default  就能生成足够美观的三种格式的文档了。
-2
-写论文期间发生了一件事，让我饱受刺激。
-我的科研论文有个计算公式，昨天发现其中一个数值不小心敲错了。后续计算都是建立在这个计算的基础上，所以后续计算全错。虽然不影响结论，但严格来讲，论文里所有的数据都得改。
-放在以前，这是让人崩溃的灾难。幸亏，这次我写论文用了 bookdown。
-这篇研究论文是用 Rmd 格式写的，里面绝大部分数据不是手动敲进去的，而是调用了 R 代码，图表也是用 R 代码插入的，走的是“可重复性研究”的思路。现在，我只要把 R 代码里那个敲错的数据改过来，运行代码，后续计算就全部自动更新，而论文 Rmd 文件里调用代码的输出结果，会在导出的 pdf 或 word 文档也相应自动更新，节省了大量时间，还减少了敲数字或拷贝粘贴出错的可能，怎一个爽字了得！
-在 bookdown 发布之前，其实 rmarkdown 也有这个功能，但因为公式、交叉引用、参考文献方面的欠缺， rmarkdown 对我来讲比较鸡肋，一直未能用在论文写作上。现在有了 bookdown ，可以甩开膀子使劲儿用。可以说， bookdown 把 rmarkdown 原有的价值做了更充分的挖掘。</description>
-    </item>
-    
-    <item>
-      <title>如果用bookdown来写诗集</title>
-      <link>http://www.pzhao.org/archives/19150/</link>
-      <pubDate>Wed, 15 Mar 2017 14:21:56 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/archives/19150/</guid>
-      <description>update-2017-07-03：bookdownplus包里附带了诗集模板，可以用bookdown制作下图这样的诗集：
-今天，我用R的bookdown做出了第一本电子书：&amp;lt;爸爸三定律&amp;gt;。内容是从我博客上选的育儿相关帖。
-益辉在bookdown的官方文档里讲到：
- This book is primarily about the R package bookdown, so you need to at least install R and the bookdown package. However, your book does not have to be related to the R language at all. It can use other computing languages (C++, SQL, Python, and so on; see Appendix B), and it can even be totally irrelevant to computing (e.g., you can write a novel, or a collection of poems)</description>
-    </item>
-    
-    <item>
-      <title>R bookdown 快速入门和语法速查</title>
-      <link>http://www.pzhao.org/archives/19141/</link>
-      <pubDate>Wed, 15 Mar 2017 07:29:47 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/archives/19141/</guid>
-      <description>快速开始
-  R bookdown 是什么
-   一个用来写书写文章的软件。   比Word更美观，比LaTeX更易用，比Markdown格式更丰富。   可以方便地插入目录、图表、交叉引用、脚注、索引。   可以方便地插入公式、参考文献、R代码。   可以生成漂亮的pdf、word和网页文件。   撰写可重复性报告的不二之选。     安装
-
-&amp;lt;ol style=&amp;quot;list-style-type: decimal&amp;quot;&amp;gt; &amp;lt;li&amp;gt; &amp;lt;a href=&amp;quot;https://cran.r-project.org/bin/windows/base/&amp;quot;&amp;gt;下载R&amp;lt;/a&amp;gt;并安装。 &amp;lt;/li&amp;gt; &amp;lt;li&amp;gt; &amp;lt;a href=&amp;quot;https://www.rstudio.com/products/rstudio/download/&amp;quot;&amp;gt;下载RStudio&amp;lt;/a&amp;gt;并安装。 &amp;lt;/li&amp;gt; &amp;lt;li&amp;gt; &amp;lt;a href=&amp;quot;http://www.ctex.org/CTeXDownload&amp;quot;&amp;gt;下载CTEX&amp;lt;/a&amp;gt;并安装。建议安装完整版。 &amp;lt;/li&amp;gt; &amp;lt;li&amp;gt; &amp;lt;a href=&amp;quot;http://pandoc.org/installing.html&amp;quot;&amp;gt;下载Pandoc&amp;lt;/a&amp;gt;并安装。 &amp;lt;/li&amp;gt; &amp;lt;li&amp;gt; 运行RStudio。在左上面板的代码窗口输入并运行以下代码（安装bookdown扩展包）： &amp;lt;/li&amp;gt; &amp;lt;/ol&amp;gt; &amp;lt;pre class=&amp;quot;r&amp;quot;&amp;gt;&amp;lt;code&amp;gt;install.packages(&amp;quot;bookdown&amp;quot;)  
-&amp;lt;p&amp;gt; 好了，安装完毕。 &amp;lt;/p&amp;gt;&amp;lt;/p&amp;gt;  
- 从模板开始
-
-&amp;lt;ol style=&amp;quot;list-style-type: decimal&amp;quot;&amp;gt; &amp;lt;li&amp;gt; 下载模板文档（到下载页面点击&amp;lt;code&amp;gt;Clone or download&amp;lt;/code&amp;gt; &amp;amp;#8211; &amp;lt;code&amp;gt;Download ZIP&amp;lt;/code&amp;gt;）： &amp;lt;/li&amp;gt; &amp;lt;/ol&amp;gt; &amp;lt;ul&amp;gt; &amp;lt;li&amp;gt; 如果你要写英文文档，那么下载&amp;lt;a href=&amp;quot;https://github.</description>
-    </item>
-    
-    <item>
-      <title>不可挡的bookdown</title>
-      <link>http://www.pzhao.org/archives/19122/</link>
-      <pubDate>Tue, 14 Mar 2017 14:36:57 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/archives/19122/</guid>
-      <description>最近，我打算把博客上关于R语言的帖子整理成一本书，希望弄得帅气一点，整齐一点，将来容易维护一点。涌进脑子的第一个念头是 (\LaTeX) ，第二个念头是想吐。
-是的，虽然我推崇 (\LaTeX) ，觉得这个工具排出来的文档很漂亮，但自从弄完博士论文1{#fnref1.footnoteRef} 之后，除了帮别人备份一下博客2{#fnref2.footnoteRef} 、往论文里插几个公式和玩玩吉他谱3{#fnref3.footnoteRef}，我再也没碰过她。惰性开始代替折腾，我宁可点点鼠标写出一份不太美观的Word文档，也不想面对 (\LaTeX) 那让人头疼的代码。大概我是真上了岁数罢。
-对于 (\LaTeX)，我想自己的内心深处是怀有恐惧的。她的美丽让我着迷，她的复杂令人生畏。
-所以，这次整理博客，我决定在Word里做。用了这么多年，对Word的秉性我算是略知一二，从一开始就用主控文档和子文档的方式管理，以防单个文档太大而死机；从标题到R代码，我预先都设置好了样式以及样式的快捷键，方便调整格式；每写几句话，就左手抽筋一样ctrl+s一下，以防万一。其间，发现帖子里有些R代码要修改调试，我就咬牙忍着在RStudio和Word之间频繁拷贝粘贴的煎熬。反正换回 (\LaTeX) 也是一样想吐，既来之则安之，嫁鸡随鸡嫁狗随狗吧。
-我天真地以为，这样就万无一失了。
-有一天，我正在Word里改某篇帖子，改之前我留意了一下总页数是160多页。改了几个段落之后，我惊奇地发现，总页数成了220多页。再仔细找，发现有些代码区的文字无缘无故变成了乱码，一乱就新增几十页。进而测试发现，我正在好端端敲字，Word左下角的页数突然就刷刷地增加了，翻回去看，乱码已经被填进去了。试了好几次，都是这样。我甚至给文档权限设置为凭密码修订，仍然挡不住Word疯狂的脚步。
-对着那自动呼呼上涨的页码，我想：认识十来年，想不到对你依然不了解。
-(\LaTeX) 的倩影再度闪现在我脑海。她虽然复杂，但至少源文件是纯文本，不会胡来，不像Word这么没有底线。
-为什么就没有个像Word那么界面简单，像 (\LaTeX) 那么源码单纯的两全其美方案呢？
-“叮”的一声，脑子里冒出刚刚发布不久的bookdown(Xie 2016b)(Xie 2016a)。这是R语言的一个扩展包，专门用来写书，可以看作是R markdown的升级版。我的博客原文都是以markdown写成的，弄到bookdown里应当是顺理成章的事。只是大约因为上了岁数，我近几年对新工具越来越排斥，所以一直懒得尝试。这次被逼无奈，要不就试试吧。反正都是折腾，与其把精力花在让人心碎的Word里或让人心焦的 (\LaTeX) 里，还不如花在崭新的bookdown里。就算是有缺点，还能比Word和 (\LaTeX) 更不能忍么？
-然后，刷！一晃十来天。春宵苦短日高起，从此君王不早朝。
-这大半个月，我陶醉在bookdown的魅力里不可自拔。bookdown秉承拿来主义，把一大串工具链里的精华整合起来，让以前繁琐的步骤无比简化，怎一个爽快了得！她近乎完美地解决了我遇到的所有问题：纯文本操作，满足了我的控制欲；在导出完美的网页格式同时，还能导出为pdf和word文档，足够拿出来跟依赖Word的人交流；公式、脚注、交叉引用、目录、参考文献，功能齐全而不臃肿，格式标记简洁而优雅。我不再需要为Word的自以为是而抑郁，也不再需要为 (\LaTeX) 的纷繁复杂而烦恼了。
-我用bookdown生成的书稿  一种亲切之美扑面而来，我感到无法抗拒无法阻挡。有了bookdown在手，写东西我还需要别的什么呢？想来想去，我不需要别的了。在Word和(\LaTeX) 之间摇摆了十来年，到头来才发现bookdown才是真爱。
-不过，bookdown绝非完美。如果不了解rmarkdown(Allaire et al. 2016)，没见过 (\LaTeX) ，没听过pandoc，没用过knitr (Xie 2016c)(Xie 2015)(Xie 2014)，那么bookdown对新手来说，门槛仍然有点高。幸运的是，这几样工具我都用过，那么投入bookdown的怀抱就属于水到渠成了。即便如此，在使用初期仍然遇到了一些难以解决的问题，好在有bookdown的开发者益辉同学4{#fnref4.footnoteRef} 和其他同道中人热心地提供帮助，才能一路披荆斩棘，最后走上了幸福的康庄大道。
-下面，我把我那些散落在各处的提问和解决方法汇总在这里。
- 编译   起初我连bookdown的界面都没搞清楚，想编译却不知该点哪儿。益辉一直说build，build，我一直以为是菜单栏的build，后来才看到是在RStudio右上面板的build按钮。
-bookdown是可以直接导出为word文档的。这么重要的功能，却隐藏得很深，在官方文档里都没有强调。导出方法是，在_output.yml里添加一行：
-bookdown::word_document2: default  注意，default这个词是不能少的，不管它是不是默认。我也不知道为什么。
-导出的word文档相当令人满意，参考文献的版式、图表的交叉引用都堪称完美。唯一不足之处，是公式的编号和交叉引用。bookdown的官方文档5{#fnref5.footnoteRef}给出的公式书写方案是，利用 (\LaTeX) 的公式环境来编号和引用，这一点在生成pdf时没问题，但生成word时，会发现别说编号，连公式本身都消失了。这大概是因为pandoc未能将公式环境正确转换的缘故。解决办法是，不使用公式环境，而使用行内公式（即公式前后有一个美元符号），公式前面用圆括号里加公式标签就可以了。例如，输入：
-(@eq-mc) $E = mc^2$ I like Eq.</description>
-    </item>
-    
-    <item>
-      <title>R bookdown 语法标记速查</title>
-      <link>http://www.pzhao.org/zh/post/bookdown-cheatsheet/</link>
-      <pubDate>Tue, 14 Mar 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/zh/post/bookdown-cheatsheet/</guid>
-      <description>快速开始R bookdown 是什么一个用来写书写文章的软件。比Word更美观，比LaTeX更易用，比Markdown格式更丰富。可以方便地插入目录、图表、交叉引用、脚注、索引。可以方便地插入公式、参考文献、R代码。可以生成漂亮的pdf、word和网页文件。撰写可重复性报告的不二之选。安装下载R并安装。下载RStudio并安装。下载CTEX并安装。建议安装完整版。下载Pandoc并安装。运行RStudio。在左上面板的代码窗口输入并运行以下代码（安装bookdown扩展包）：install.packages(&amp;quot;bookdown&amp;quot;)install.packages(&amp;#39;servr&amp;#39;)好了，安装完毕。
-从模板开始下载模板文档（到下载页面点击Clone or download - Download ZIP）：如果你要写英文文档，那么下载通用模板;如果你要写中文文档，那么下载中文模板。将模板文档解压缩到任意文件夹。
-在解压缩后得到的文件里找到扩展名为.Rproj的文件。双击，默认会用RSudio打开。
-在RStudio右上面板点击Build标签，再点击build book。好了，模板书出现在名为_book的子文件夹里。
-在RStudio右下面板里会看到该文件夹里的文件，其中有一些扩展名为.Rmd的文件。逐个点击打开，把其中的内容修改成你自己的内容。除了index.Rm外，不需要的.Rmd文件可以删掉。
-重复第4步，就得到了你自己的书。
-对照一下.Rmd的文件内容和生成的文档，体会两者之间是如何对应的。
-基本标记标记输出*斜体*斜体**粗体**粗体CO~2~CO2下标R^2^R2上标$E = mc^2$\(E = mc^2\) 行内公式（双美元符号为行间公式）[大鹏志](http://dapengde.</description>
-    </item>
-    
-    <item>
-      <title>不可挡的bookdown</title>
-      <link>http://www.pzhao.org/zh/post/inresistible-bookdown/</link>
-      <pubDate>Mon, 13 Mar 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/zh/post/inresistible-bookdown/</guid>
-      <description>最近，我打算把博客上关于R语言的帖子整理成一本书，希望弄得帅气一点，整齐一点，将来容易维护一点。涌进脑子的第一个念头是 \(\LaTeX\) ，第二个念头是想吐。
-是的，虽然我推崇 \(\LaTeX\) ，觉得这个工具排出来的文档很漂亮，但自从弄完博士论文1 之后，除了帮别人备份一下博客2 、往论文里插几个公式和玩玩吉他谱3，我再也没碰过她。惰性开始代替折腾，我宁可点点鼠标写出一份不太美观的Word文档，也不想面对 \(\LaTeX\) 那让人头疼的代码。大概我是真上了岁数罢。
-对于 \(\LaTeX\)，我想自己的内心深处是怀有恐惧的。她的美丽让我着迷，她的复杂令人生畏。
-所以，这次整理博客，我决定在Word里做。用了这么多年，对Word的秉性我算是略知一二，从一开始就用主控文档和子文档的方式管理，以防单个文档太大而死机；从标题到R代码，我预先都设置好了样式以及样式的快捷键，方便调整格式；每写几句话，就左手抽筋一样ctrl+s一下，以防万一。其间，发现帖子里有些R代码要修改调试，我就咬牙忍着在RStudio和Word之间频繁拷贝粘贴的煎熬。反正换回 \(\LaTeX\) 也是一样想吐，既来之则安之，嫁鸡随鸡嫁狗随狗吧。
-我天真地以为，这样就万无一失了。
-有一天，我正在Word里改某篇帖子，改之前我留意了一下总页数是160多页。改了几个段落之后，我惊奇地发现，总页数成了220多页。再仔细找，发现有些代码区的文字无缘无故变成了乱码，一乱就新增几十页。进而测试发现，我正在好端端敲字，Word左下角的页数突然就刷刷地增加了，翻回去看，乱码已经被填进去了。试了好几次，都是这样。我甚至给文档权限设置为凭密码修订，仍然挡不住Word疯狂的脚步。
-对着那自动呼呼上涨的页码，我想：认识十来年，想不到对你依然不了解。
-\(\LaTeX\) 的倩影再度闪现在我脑海。她虽然复杂，但至少源文件是纯文本，不会胡来，不像Word这么没有底线。
-为什么就没有个像Word那么界面简单，像 \(\LaTeX\) 那么源码单纯的两全其美方案呢？
-“叮”的一声，脑子里冒出刚刚发布不久的bookdown(Xie 2016b)(Xie 2016a)。这是R语言的一个扩展包，专门用来写书，可以看作是R markdown的升级版。我的博客原文都是以markdown写成的，弄到bookdown里应当是顺理成章的事。只是大约因为上了岁数，我近几年对新工具越来越排斥，所以一直懒得尝试。这次被逼无奈，要不就试试吧。反正都是折腾，与其把精力花在让人心碎的Word里或让人心焦的 \(\LaTeX\) 里，还不如花在崭新的bookdown里。就算是有缺点，还能比Word和 \(\LaTeX\) 更不能忍么？
-然后，刷！一晃十来天。春宵苦短日高起，从此君王不早朝。
-这大半个月，我陶醉在bookdown的魅力里不可自拔。bookdown秉承拿来主义，把一大串工具链里的精华整合起来，让以前繁琐的步骤无比简化，怎一个爽快了得！她近乎完美地解决了我遇到的所有问题：纯文本操作，满足了我的控制欲；在导出完美的网页格式同时，还能导出为pdf和word文档，足够拿出来跟依赖Word的人交流；公式、脚注、交叉引用、目录、参考文献，功能齐全而不臃肿，格式标记简洁而优雅。我不再需要为Word的自以为是而抑郁，也不再需要为 \(\LaTeX\) 的纷繁复杂而烦恼了。
-我用bookdown生成的书稿
-一种亲切之美扑面而来，我感到无法抗拒无法阻挡。有了bookdown在手，写东西我还需要别的什么呢？想来想去，我不需要别的了。在Word和\(\LaTeX\) 之间摇摆了十来年，到头来才发现bookdown才是真爱。
-不过，bookdown绝非完美。如果不了解rmarkdown(Allaire et al. 2017)，没见过 \(\LaTeX\) ，没听过pandoc，没用过knitr (Xie 2016c)(Xie 2015)(Xie 2014)，那么bookdown对新手来说，门槛仍然有点高。幸运的是，这几样工具我都用过，那么投入bookdown的怀抱就属于水到渠成了。即便如此，在使用初期仍然遇到了一些难以解决的问题，好在有bookdown的开发者益辉同学4 和其他同道中人热心地提供帮助，才能一路披荆斩棘，最后走上了幸福的康庄大道。
-下面，我把我那些散落在各处的提问和解决方法汇总在这里。
-编译起初我连bookdown的界面都没搞清楚，想编译却不知该点哪儿。益辉一直说build，build，我一直以为是菜单栏的build，后来才看到是在RStudio右上面板的build按钮。
-bookdown是可以直接导出为word文档的。这么重要的功能，却隐藏得很深，在官方文档里都没有强调。导出方法是，在_output.yml里添加一行：
-bookdown::word_document2: default 注意，default这个词是不能少的，不管它是不是默认。我也不知道为什么。
-导出的word文档相当令人满意，参考文献的版式、图表的交叉引用都堪称完美。唯一不足之处，是公式的编号和交叉引用。bookdown的官方文档5给出的公式书写方案是，利用 \(\LaTeX\) 的公式环境来编号和引用，这一点在生成pdf时没问题，但生成word时，会发现别说编号，连公式本身都消失了。这大概是因为pandoc未能将公式环境正确转换的缘故。解决办法是，不使用公式环境，而使用行内公式（即公式前后有一个美元符号），公式前面用圆括号里加公式标签就可以了。例如，输入：
-(@eq-mc) $E = mc^2$I like Eq. (@eq-mc) so much that I am falling love with her.</description>
-    </item>
-    
-    <item>
-      <title>人生无处不相逢</title>
-      <link>http://www.pzhao.org/archives/18994/</link>
-      <pubDate>Fri, 06 Jan 2017 01:41:55 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/archives/18994/</guid>
-      <description>北京 黄昏时分，我离开北大环境大楼。楼新路生，好在有D，一路曲折引我到地铁站。
-D和我虽初次见面，却如同故人。不过，“一见如故”用在这里却似乎并不贴切。路上，D说起如何从我的博客学到R语言和LaTeX，又如何在工作中使用。D甚至记得我博客里写过的句子，我倍感惊讶，因为这些句子连我自己都忘却了。我们还顺便讨论了用WordPress建立科研小组网站的可能性。
-大言不惭地说，D是我的一位粉丝。
-四年前，当我在博客上百无聊赖地发布“R菜鸟入门”时，绝没有料到，四年后的今天，北大有一位新入职的老师，会因为这些帖子而当面向我表达谢意。用“受宠若惊”不足以表达我的感受。不仅如此，我们是不约而同地去另一位老师的办公室的，无论我或他早到十分钟还是晚来十分钟，我们就会错过这次邂逅。这样戏剧性的巧遇，简直不可思议。
-在地铁站，我们挥手作别。我不由得想起一句电影台词：
- 世间所有的相遇，都是久别重逢。
- 深圳 一听说要去深圳出差，我就想起了深圳的两个人，其中一个就是L。我们是在独立博客圈结识的。当年我在德国，L在法国，学的都属于生态学的范畴，自然多了几分亲近。后来，L给一首外语歌曲填上了中文歌词，我为他配上了吉他谱和自弹自唱的视频，颇有伯牙子期之乐。我们甚至打算合写两篇学术论文，草稿都有了，最后却因为种种原因没有完成。
-两个文艺青（中）年能不能一起搞学术呢？
-这次深圳之行，一定是要当面问问的。
-可惜天意弄人，我们最终没有在深圳见面，见面的地点却是东莞；也没有讨论写论文的事情，见面之后L很快就醉倒了。
-这全是因为我见了另一个人。
-东莞 独立博客圈的人，只要来广东，就必须要拜拜码头，一睹老大风采。
-来之前，我对YY哥说：初次见面，找个星巴克喝个咖啡聊聊天就好，如果能赐墨宝便再好不过。
-有句话是怎么说的？
- 当我走向你的时候 我原想收获一缕春风 你却给了我整个春天
- YY哥：不如来虎门吧。
-我：“虎门硝烟”的虎门？
-YY哥：是的。
-东莞虎门，YY哥大设酒宴，并邀请当地社会名流与我们共进晚餐。我和L的见面也被YY哥一手包办了。
-席间推杯换盏，畅谈人生。别人问我：你跟YY哥认识多久了？我答道：神交已久，初次谋面。
-私下我说：YY你搞的排场太大了。
-YY哥不以为然。后来我才知道，酒宴只是计划的一部分。
-
-酒后，我们K歌到凌晨三点，然后留宿酒店。次日，YY哥专程开车送我去深圳朋友处，临别前赠我亲笔书法作品与当地特产，还有一套《浮生六记》。
-这套书陪我从深圳一路回河南。书作者是一位清朝人，内容是生活琐记，读罢我大笑不止。这不就是二百年前的人写的博客嘛。YY哥与我通过博客结识，送的这个礼物大有深意。
-
-古书记载，有一位士绅生性豪爽，常仗义疏财，喜结交名士，曾致信给一位读书人说：“先生好游乎？此处有十里桃花。先生好饮乎？此处有万家酒店。”读书人闻讯而至。士绅每日以美酒相待，别时送名马官锦，并设宴饯行，拍手踏脚而歌。读书人作诗一首，曰：
- 李白乘舟将欲行，忽闻岸上踏歌声。
-大鹏湾水深千尺，不及勺子送我情。
- 
-原文链接</description>
-    </item>
-    
-    <item>
-      <title>再谈《中华字经》</title>
-      <link>http://www.pzhao.org/archives/18869/</link>
-      <pubDate>Fri, 30 Sep 2016 07:34:07 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/archives/18869/</guid>
-      <description>最近，收到一位热心网友长长的留言，对我的博文《中华字经里的重复字》提出了看法。我一看，这篇帖子写于两年半前，读起来却觉陌生，自己几乎都忘了，乃至不敢相信出自我的手笔。想来当时正在熬论文盼毕业，心情焦急烦躁，文字里充斥着对理科生的调侃，却难免被误读成作为理科生的狂妄。何必呢？如果删去那些轻狂的文字，应该会更容易被人接受吧。
-为了回复这位网友，我找到当时处理《中华字经》的R代码，想运行一遍，却发现连编译都通不过，看来需要更改电脑的区域设置，麻烦，索性任由它去吧。这也是近来不大更新博客的原因：有些话，如果放在以前，哪怕是两年前，可能会奋笔写到博客上，现在则是却上心头，欲说还休。
-不过，这次有个意外的发现：这篇跟中华字经较劲儿的帖子，当时我只贴出了一部分；剩下的一部分，躺在电脑偏僻的一个文件夹里，许久没有理会了。我完全记不起，当年为何没有一并贴出来。如今读来，不觉莞尔：若不为无益之事，何以遣有涯之生？
-下面是未贴出的后半部分，浅薄之处，让大家见笑了。
-免责声明：本文以及上一篇帖子里提到的《中华字经》，指的是网上流传的版本，并非正版。
-《中华字经》里4000字是否真的没有一个字重复，事实上，没有人真正在乎，也没有人在乎字经的文采如何。大家关心的，是这字经对教孩子认字到底有没有用。那么有没有用呢？
-1988年，我国出版了《现代汉语常用字表》，多年来是现行规范汉字的重要依据。字表收录常用字2500个和次常用字1000个。掌握了这3500个汉字，基本上就算是识字了。我们看看中华字经跟这3500字有什么关系。这里的中华字经仍然以浪版为依据。
-首先，把错别字订正了，并把重复字去掉。“糜”字暂不订正。
-y = readLines(&#39;http://pastebin.com/raw.php?i=R5pc3XBJ&#39;, encoding = &#39;UTF-8&#39;, warn = FALSE) y &amp;lt;- y[c(2,4,6,8)] y &amp;lt;- gsub(&#39;,|，|，|。&#39;, &#39;&#39;, y) y &amp;lt;- gsub(substr(y[1], 5,5), &#39;&#39;, y) y &amp;lt;- paste(y, collapse=&amp;quot;&amp;quot;) y1 &amp;lt;- unlist(strsplit(y, &#39;&#39;)) y1[which(y1 %in% c(&#39;府&#39;,&#39;丁&#39;, &#39;私&#39;))+1] &amp;lt;- c(&#39;第&#39;,&#39;歌&#39;, &#39;己&#39;) z &amp;lt;- unique(y1) length(z) ## [1] 3961  常用字表的3500字来自在线新华字典。虽然这个网站经常出现错别字，但我实在不知道那个网站没有错别字，凑合用吧（2016-09-29更新：汉典更可靠）。
-a &amp;lt;- readLines(&#39;http://pastebin.com/raw.php?i=ptMvt1yY&#39;, encoding = &#39;UTF-8&#39;, warn = FALSE) a &amp;lt;- a[c(-1, -48)] a &amp;lt;- a[seq(2, length(a), 2)] a &amp;lt;- gsub(substr(a[1], 1, 1), &#39;&#39;, a) a &amp;lt;- paste(a, collapse=&amp;quot;&amp;quot;); a1 &amp;lt;- unlist(strsplit(a, &#39;&#39;)) a1[duplicated(a1)] ## [1] &amp;quot;货&amp;quot; &amp;quot;三&amp;quot; &amp;quot;耕&amp;quot; &amp;quot;干&amp;quot; &amp;quot;徒&amp;quot;  这 3500 个常用字里竟然有 5 个重复的！果然是错别字，这里不多说了，凑合用。</description>
-    </item>
-    
-    <item>
-      <title>DataJoy</title>
-      <link>http://www.pzhao.org/archives/18843/</link>
-      <pubDate>Wed, 03 Aug 2016 12:02:11 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/archives/18843/</guid>
-      <description>我有个习惯：Google Drive里有个名为“blog”的文件夹。一旦有题材可以写成博客，我就甩进去个文件，以题材为文件名，闲时再细写。
-去年夏天，我收到一封来自 ShareLaTeX.com 的邮件。这是个LaTeX在线排版和协作的网站，我以前注册过。来信里说，他们新开发了名为 DataJoy 的项目，是个在线的Python和R编辑器。跟ShareLaTeX类似，只要访问getdatajoy.com，就可以在浏览器使用Python或R编程和调试，免去了本地安装的麻烦，而且方便协作。网站还提供了大量的代码示例和教程。
-我大感兴趣，试了一下，觉得很棒。界面清爽，使用流畅，跟本地运行R没有多大区别。将来如果有机会从事跟R有关的教学，我就用这个网站作为教具了。这样想着，我就往博客文件夹里甩进一个名为 DataJoy.md 的文件，准备有空好好为此写一篇博客。
-一晃一年过去了。
-我现在所在的这个研究组，跟以前读博士时的研究组有很大不同。以前那个研究组，大家常用的操作系统是Ubuntu，数据处理用R语言，写论文用LaTeX，文献管理用Jabref+bibtex，于是我手头积累了一些有用的软件、代码和模板。到了现在这个研究组，我指望着把这些东西分享出来，并且跟同事在原有基础上做一些新东西。
-然而，理想跟现实总是有距离。
-现在这个研究组，操作系统用Windows，数据处理用MatLab，写论文用Word，文献管理用EndNote。跟以前比起来，可以算是豪华阵容。我攒的那些经验自用还可以，但是在协作和共享上就大打折扣。
-于是，我对R的热情缺少了依托的平台，文件夹里那篇DataJoy.md就一直懒得写。
-直到今天，我收到DataJoy发给用户的电邮。他们遗憾地通知用户，DataJoy将于2017年1月初关闭。原因是，在过去的两年里，用户增长得太慢，网站缺少投资，没有形成良好的商业模式，无力支撑他们的团队，尽管团队并不大。
-这就关闭了？我心里喊，我还没来得及在博客上给你们做广告呢！要知道，每天都有几十甚至上百人来我的博客学习R语言呢！
-发邮件的是DataJoy的两位创始人。看得出来，邮件的语气里充满了沮丧和低落，甚至像是没完全写完就匆匆发出来了。
-我给他们回了一封信，表达惋惜和感谢，并希望将来DataJoy会有归来的那一天。
-办公室窗外，蓝天白云，阳光明媚。这是阿尔卑斯山里凉爽宜人的夏季。然而，看着我那个“blog”文件夹里，堆积了很多题材想些而未写，再想想DataJoy，我的心情怎么也好不起来。
-原文链接</description>
-    </item>
-    
-    <item>
-      <title>有趣的派派节</title>
-      <link>http://www.pzhao.org/archives/18740/</link>
-      <pubDate>Mon, 14 Mar 2016 15:49:52 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/archives/18740/</guid>
-      <description>今天是3月14日，圆周率日，昵称派派节。你能背出圆周率的前几位？
-我只能背出“山巅一寺一壶酒”。刚好够用，因为圆周率节一般在3月14日1:59开始庆祝，这样至少我不会错过开场的红酒。小时候背到这里就到此为止了，属于童子功。如果像《少年派的奇幻漂流》里的少年派那样，一口气背了满满一黑板，那么现在就可以在儿子面前炫耀了。
-德国同事像发现新大陆一样，兴高采烈地说：“你知道吗？披萨（pizza）这个词其实告诉了我们怎么计算披萨的体积。如果披萨的半径是z，厚度是a，那么体积就是 pi * z *z *a！哦耶！”
-呃……好吧。
-去年，我们经历了百年一遇的圆周率时：3月14日15年9时26分53秒。这时辰够猛，不知有多少孩子在这个时辰出生。不过，这还不是最猛的，最猛的是1592年3月14日上午6时53分58秒，记作3/14/1592 6:53:58，被称为“终极圆周率日”，绝无仅有，空前绝后。照理说，当时的人们应该热烈庆祝吧？呵呵， 错了，当时的人类还没有把圆周率算到这么多位。当时，欧洲刚刚把圆周率推算到3.1415926到3.1415927之间。而在遥远的东方，中国人完成这项工作时，比欧洲早了1000年。
-圆周率是非常神奇的数字。不管你怎么画圆，它的周长和直径总是这样一个比值，一点也不多，一点也不少，充满了神秘的宿命感，冥冥之中似乎蕴藏着一个天大的道理。荒唐的是，它偏偏被称为“无理数”。人类对圆周率的认识，从某种程度上显示了对这个宇宙认识的水平。古代中国的水平世界领先，可是雏凤清于老凤声，欧洲比我们晚，但却给我们带来了现代科学，这是更值得我们反思的。
-我的博客有一次发福利的时候，需要从留言中随机挑选几位幸运者。如何做到真正的随机？我就借鉴了土木坛子的算法用到了圆周率，略作改动。方法是这样的：
- 取最后一名留言者留言时的两位分钟数； 找到这个数在圆周率中第一次出现的位置，抽出其后面的十个数字（假设留言者总数不超过99位，如果是超过99位不到1000位则需要取15个数字，以此类推），依次两两分成五组，得到五个两位数； 剔除我自己和重复发留言的网友后，将所有的留言者按先后顺序排队，每人有一个编号（最早的为01号，以此类推），并得到总人数； 将上述五个数字百分化，即除以99(假如是多于99位则需要千分化，以此类推)，再乘上总人数，四舍五入取整数，这五组整数就是对应的幸运编号。  这个方法的R代码，我列在后面。只要把urlink更改成本博客任何一篇帖子的网址，就可以看任何一篇帖子幸运留言者的名单了。
-祝大家派派节快乐！
-lucky &amp;lt;- function(urlink){ clear &amp;lt;- function(x) { # 处理字符串 y &amp;lt;- gsub(&#39;^[^&amp;lt;]*&#39;, &#39;&#39;, x) y &amp;lt;- gsub(&#39;says:.*&#39;, &#39;&#39;, y) y &amp;lt;- gsub(&#39;&amp;lt;[^&amp;gt;]+&amp;gt;&#39;, &#39;&#39;, y) y &amp;lt;- gsub(&#39; &#39;, &#39;&#39;, y) return(y) } mypi &amp;lt;- &#39;3.1415926535897932384626433832795028841971693993751058209749445923078164062862089986280348253421170679821480865132823066470938446095505822317253594081284811174502841027019385211055596446229489549303819644288109756659334461284756482337867831652712019091456485669234603486104543266482133936072602491412737245870066063155881748815209209628292540917153643678925903600113305305488204665213841469519415116094330572703657595919530921861173819326117931051185480744623799627495673518857527248912279381830119491298336733624406566430860213949463952247371907021798609437027705392171762931767523846748184676694051320005681271452635608277857713427577896091736371787214684409012249534301465495853710507922796892589235420199561121290219608640344181598136297747713099605187072113499999983729780499510597317328160963185950244594553469083026425223082533446850352619311881710100031378387528865875332083814206171776691473035982534904287554687311595628638823537875937519577818577805321712268066130019278766111959092164201989&#39; #http://pi.911cha.com/ commentformat &amp;lt;- &#39;class=&amp;quot;fn&amp;quot;&#39; webpage &amp;lt;- readLines(urlink, encoding=&#39;UTF-8&#39;) id.ps &amp;lt;- grep(commentformat, webpage) id &amp;lt;- clear(webpage[id.</description>
-    </item>
-    
-    <item>
-      <title>R 编程：抢勺子的书</title>
-      <link>http://www.pzhao.org/archives/18635/</link>
-      <pubDate>Fri, 22 Jan 2016 13:52:30 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/archives/18635/</guid>
-      <description>这是2年前写就的一篇帖子。一直藏在草稿箱里至今没有发，是因为里边提到的方案一直没能实施：勺子先生两年来一直不搞赠书活动了。
-前两天，我又去勺子的博客调侃道：
- 勺子好久不搞赠书活动了哦，我一直在等。
- 勺子很大方地回复：
- 过去一段时间以及未来一段时间，没太有时间来打理博客了，赠书活动就。。。你如果在等的话，你在这里选一个吧
- 我只想说：其实你不懂我的心。
-原文略作改动，比如把justyy改成chenghouwen等等。毕竟，2年之内发生的事情够多了。
-正如文中所述：遵守规则的永远玩不过制订规则的。
-本文里使用的R代码，可以作为学习R中字符串处理和弹窗设置的示例。
-下面是这篇雪藏两年的博文。
-有个爱读书的博主名叫勺子，逢年过节给读者发福利，在他博客上发布第 n 条评论的网友会获得赠书，附赠勺子的亲笔签名。这个 n 就像在 ebay 上拍，我一次也没抢到过，于是开玩笑地说要抵制这个活动。勺子说，可以雇人在电脑前不断刷屏。这个抵制方法太贵，我想到了万能的 R。琢磨了多次，终于笑逐颜开。
-用 R 抢勺子的书，思路是这样的：用 R 每隔一段时间就查一次博客的评论数目，一旦发现到了 n-1，立刻触发一个抢书动作。这个思路相当于IFTTT，不仅可以用来抢书，举一反三，我就不多说了。
-我写的 R 代码贴在下面。运行后，如果当前评论数距离目标尚远，就查得懒一些，以便减轻服务器负担；如果越接近目标值，就查得越勤。直到当前评论数达到 n-1，触发的抢书动作是弹出对话框，提示你去发抢书评论。
-如果弹出对话框时，你碰巧不在电脑前呢？其实还有另一段代码，触发的动作是自动打开网页发评论，这样就实现整个抢书过程全自动完成。这段代码暂不公布。
-勺子用他的方式，把爱读书的火种洒遍世界。跟他一样，我不是为了抢书，只是以抢书为诱饵，希望能有更多的人对 R 产生兴趣（有兴趣的请读 R 菜鸟入门）。另外，抢书代码不可滥用，抢一次玩玩就适可而止，一旦勺子为此一怒之下更改发书规则或者干脆不发书了，或者封了你我的ip，我们就没的玩了。遵守规则的永远玩不过制订规则的。
-######## 设置 ######## aim &amp;lt;- 10974 # 目标评论数 y &amp;lt;- &#39;http://justyy.com/&#39; #目标网页 i &amp;lt;- 1320 # 在网页搜索包含评论数的初始行号。如果不知道，则设为 1 。 rt &amp;lt;- 600 # 查看网页的间隔时间，单位为秒。 ######### 开始 ######### print(Sys.time()) aim &amp;lt;- aim - 1 repeat{ # 每间隔一段时间就读一次网页。 x &amp;lt;- readLines(y, encoding=&#39;UTF-8&#39;) repeat{ # 查找含有评论数目的行 ln &amp;lt;- regexpr(&#39;\t\t\t这里是勺子的个人网站，内容原创，已经运行了&#39;, x[i])[1] if (ln == 1) { # 挑出需要的链接行 z &amp;lt;- as.</description>
-    </item>
-    
-    <item>
-      <title>答L网友来信：批量处理电脑里的大量文件</title>
-      <link>http://www.pzhao.org/archives/17950/</link>
-      <pubDate>Thu, 02 Apr 2015 08:27:49 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/archives/17950/</guid>
-      <description>今天一早，收到L网友的来信，问我关于用R批量处理多个数据文件的问题。如果你电脑里有很多个文件需要像L这样对他们重命名、删掉一些没用信息，甚至做更多的事情，比如合并、调整顺序、整理照片等等，那么R完全可以胜任。我曾经给很多博主备份过博客，就是用R完成的。
-“R菜鸟入门”系列是我的博客访问量最大的帖子。自发布以来，我收到很多网友来信，咨询一些R语言的问题。常见的情况是，来来往往好几封邮件，我才搞明白到底问题是什么。像L网友这样，能用一封邮件把他的需求说清楚，非常难能可贵。提问是需要智慧的。好的提问方式，这样不仅节省时间，也让回答者乐于解决问题。所以，我一读完信，就高高兴兴地打开Rstudio，把这个问题解决了。快乐的一天开始了。
-经L网友同意，我把他的来信和我的答复都贴在下面，供R初学者参考。
-L网友来信（略作修改）：  博主，我的文件夹有几百条这样文件名的表格文件：
- jhu-usc.edu_KIRC.HumanMethylation450.2.lvl-3.TCGA-B0-5104-01A-01D-1418-05.txt jhu-usc.edu_KIRC.HumanMethylation450.2.lvl-3.TCGA-B0-5104-11A-01D-1418-05.txt jhu-usc.edu_KIRC.HumanMethylation450.2.lvl-3.TCGA-B0-5106-01A-01D-1418-05.txt jhu-usc.edu_KIRC.HumanMethylation450.2.lvl-3.TCGA-B0-5106-11A-01D-1418-05.txt jhu-usc.edu_KIRC.HumanMethylation450.2.lvl-3.TCGA-B0-5107-01A-01D-1418-05.txt jhu-usc.edu_KIRC.HumanMethylation450.2.lvl-3.TCGA-B0-5107-11A-01D-1418-05.txt jhu-usc.edu_KIRC.HumanMethylation450.2.lvl-3.TCGA-B0-5108-01A-01D-1418-05.txt jhu-usc.edu_KIRC.HumanMethylation450.2.lvl-3.TCGA-B0-5108-11A-01D-1418-05.txt jhu-usc.edu_KIRC.HumanMethylation450.2.lvl-3.TCGA-B0-5109-01A-02D-1418-05.txt jhu-usc.edu_KIRC.HumanMethylation450.2.lvl-3.TCGA-B0-5109-11A-01D-1418-05.txt   前一个数字5104是一个人的代码，后面01A和11A分别是这个人的两份标本。Excel打开后都是这样的模式：
- Hybridization REF TCGA-B0-5104-01A-01D-1418-05 TCGA-B0-5104-01A-01D-1418-05 TCGA-B0-5104-01A-01D-1418-05 TCGA-B0-5104-01A-01D-1418-05 Composite Element REF Beta_value Gene_Symbol Chromosome Genomic_Coordinate cg00000029 0.450732228872884 RBL2 16 53468112 cg00000108 NA C3orf35 3 37459206 cg00000109 NA FNDC3B 3 171916037 cg00000165 0.108395613370022 1 91194674 cg00000236 0.911981104797718 VDAC3 8 42263294 cg00000289 0.707225259319108 ACTN1 14 69341139   我现在想把第一行删除，第3、4、5列也删除。将第二列改名：比如第一个人代码4814，01A的标本改成1T，11A的标本改成1N；第二个人代码4817,01A改成2T，11A改成2N，依此类推。最后按照这个1T，1N，2T，2N。。。。重新建立文件，保存在一个文件夹，文件名和第二列的名字一致：
- 1N.txt 1T.txt 2N.</description>
-    </item>
-    
-    <item>
-      <title>精品网络应用：计算和单位转换篇</title>
-      <link>http://www.pzhao.org/archives/17742/</link>
-      <pubDate>Sat, 15 Nov 2014 16:00:07 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/archives/17742/</guid>
-      <description>Windows自带的计算器太简陋了，连个储存变量的功能都没有。这里介绍几款用于计算的在线应用，能够满足日常的大多数需要。
-单位换算器 单位换算器不用多做解释，用途当然是各种单位之间的换算了。它支持各种常见的单位转换，包括长度、角度、面积、密度、能量、货币、时间等各种转换。使用它的过程中，还可以学一点相关的英语。
-另外，还有一款更专业一点的货币汇率换算器 可用。
-单位转换这个任务，也可以直接在google搜索栏直接输入自然语言就行了，比如输入 1欧元=?人民币，1磅=?公斤，同样出结果。
-Instacalc计算器 Instacalc在线计算器的界面分左右两栏，其实左边就够了，用来输入和输出，右边相当于是帮助信息。首页底部给出了很多示例。
-它最大的特点有三个：
- 支持自然语言。比如想计算30天等于多少秒，只要像说话一样输入30 days in second 就得到结果了。
- 可以储存变量。比如将计算的中间步骤某个结果保存在变量x里，后面直接调用x就行了。
- 最有趣的一样，是创建自己的计算器，把自己常用的公式保存起来，并和别人分享。分享方式是发给对方链接，或直接嵌入网页。
-  这个计算器甚至支持简单的编程。上面我自制的计算器可以计算身高体重指数，最后一行用编程语言来判断体重是否正常，要不你试用一下？
-不过，这个编程毕竟是太简单了。需要复杂一点的编程计算，可以看下面这一款应用。
-Ideone在线编程 Ideone实现了用浏览器来进行编程和调试，支持多种语言，包括C++和Java等几十种编程语言，当然也包括我的最爱：R。使用的时候，只需将代码敲入输入窗口，点运行按钮就出结果了，非常方便。喜欢的话，可以注册个免费账号，这样就可以将一些代码保存在自己名下，方便以后调用了。
-它还支持把代码嵌入到网页里，以便分享。下面是个简单的嵌入示例。
-由于输入输出端口的限制，Ideone里的R语言不能读入外部数据，也不能实现作图。下面这款R在线编程的应用则弥补了这两点。
-R在线编程 R在线编程是一个强大的R编程环境。本地无需安装任何软件，只用一个网页浏览器，就可以编写R代码了，并且支持从本地或网络上导入数据，并可以输出图片。
-有了它，R就可以伴我走天涯了。
-原文链接</description>
-    </item>
-    
-    <item>
-      <title>博客全站下载备份（含评论）</title>
-      <link>http://www.pzhao.org/archives/17635/</link>
-      <pubDate>Tue, 21 Oct 2014 16:43:55 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/archives/17635/</guid>
-      <description>以前我写过一篇题为在 Kindle 上读博客 的帖子，讲的是如何把一些独立博客全站的博文扒下来，整理后放到 Kindle 上阅读的方法。用这个方法，我扒下来好几个精彩的独立博客，在 Kindle 上着实过了一把博客瘾。然而，过完瘾后发现了一个问题：别人的可以，自己的博客反倒是扒不下来了。而本文介绍的方法，可以通杀全部含有归档页的网络日志。
-仔细研究了一下，原来，能扒下来的博客，归档的帖子地址都有规律可循，比如土木坛子和博士牌民工的归档地址规律都是 http://yourdomain.com/archives/i，其中i是个自然数。这是博主在wordpress后台这样设置的。因此，[用 wget 下载]1时设置个循环让 i 递增就可以了。而我的博客，归档地址是按帖子标题来的，比如 “http://pzhao.org/2013-04-02-深情相拥（吉他谱）”这个帖子，地址中的汉字被自动转换成了乱七八糟的字符：
-http://pzhao.org/2013-04-02-%e6%b7%b1%e6%83%85%e7%9b%b8%e6%8b%a5%ef%bc%88%e5%90%89%e4%bb%96%e8%b0%b1%ef%bc%89/  难怪扒不下来啊！如果别人的博客也是这样，那该怎么下载呢？
-在万能的R面前，这是小菜一碟。思路跟前两天写的&amp;lt;批量下载网页上的图片&amp;gt;一文完全相同：从博客的归档页中获取全部博文的链接，对这些链接的文本进行处理，删除冗余信息，下载所需的博文。
-博客一般都有个归档页，显示了全部博文的目录。“大鹏志”的归档页地址是http://pzhao.org/contents，所有带链接的博文都在这里。在 R 中利用 readLines() 函数读取这个页面。查看得到的文本，发现里边链接很多，要下载链接的文本行其规律是以“\t\t\t&amp;lt;li&amp;gt;”开头的。这就好办了，只要用正则表达式挑出这些链接就行了。这一步很关键。后面的步骤就容易了。
-下载备份“大鹏志”全部博文（含评论）到本地 e:\dapengde 文件夹的 R 代码如下：
-dir.create(&#39;d:\\dapengde&#39;) setwd(&#39;d:\\dapengde&#39;) aa &amp;lt;- readLines(&#39;http://pzhao.org/contents/&#39;, encoding=&#39;UTF-8&#39;) # 读取网页 for (i in 1:length(aa)) # 逐行处理 { print(i) if (regexpr(&#39;\t\t\t&amp;lt;li&amp;gt;&#39;, aa[i])[1] == 1) # 挑出需要的链接行 { link &amp;lt;- substring(aa[i], regexpr(&amp;quot;http&amp;quot;, aa[i])[1], regexpr(&amp;quot;\&amp;quot; &amp;gt;&amp;quot;, aa[i])[1]-2) # 获取链接 output &amp;lt;- paste(i, &amp;quot;.html&amp;quot;, sep = &amp;quot;&amp;quot;) # 指定文件名 download.</description>
-    </item>
-    
-    <item>
-      <title>批量下载网页上的图片</title>
-      <link>http://www.pzhao.org/archives/17610/</link>
-      <pubDate>Tue, 14 Oct 2014 09:48:03 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/archives/17610/</guid>
-      <description>新工作单位的网页做得简洁大方，ctrl+u一看网页源代码，发现竟然是拿wordpress建的。网站下面有个图片展示页面，展示的是我们这个研究组的野外观测照片缩略图，按站点分了类。作为一个新来的，自然要把本组的工作了解一番；看图的时候，需要逐个点开才能看大图，不如下载到本地方便。但是这几百张图，一一点开下载也太累了。如何批量下载网页上的图片呢？
-方案有很多，列举如下：
- 可以通过浏览器的&amp;#8217;保存网页全部内容&amp;#8217;来实现，本地生成一个文件夹，包含了网页上的图片。这个我试了，但只保存下来了缩略图，没有大图。 可以安装迅雷、快车之类的软件，但是我不想装。有些软件臃肿庞大也就算了，关键是不知道他们在背后悄悄做了些什么。另外，他们无法解决图片分类的问题，详见第4条。 傲游、360等浏览器有批量下载功能，或者firefox+BatchDownload 插件也行，但我不想装，并且他们也无法解决图片分类的问题。我只用chrome。 chrome有个fatkun插件，专门用来批量下载图片，能下载大图，是我最满意的方案了，但也并非完美。下载的图片文件名要么是原始文件名，要么只能简单编号。这样一来，所有观测站点的图片都混在了一起，这仍然不是我想要的。我希望下载到本地的图片能自动按观测站分类保存。  其实，每张图片所属站点的信息，包含在了图片的链接里。比如Neustift观测站某图的链接是:
-http://www.biomet.co.at/wp/wp-content/gallery/neustift/img_8260_59_58_tonemapped_a1_w3000px.jpg  这个链接里是含有站名信息的。这就好办了，可以自己动手用代码实现。
-R代码好久不写，手都生了。下面是我写的R代码，先是从网页源代码里获取图片的下载链接，然后从链接中截取站名，并为下载到本地的图片重命名，只需要十几行。这个代码比较笨，如果我还能记得R里的正则表达式，就可以写得更漂亮些。
-dir.create(&#39;d:\\dapengde&#39;) setwd(&#39;d:\\dapengde&#39;) linkformat &amp;lt;- &#39;src=&amp;quot;http://www.biomet.co.at/wp/wp-content/gallery&#39; urlink &amp;lt;- &#39;http://www.biomet.co.at/pictures/&#39; aa &amp;lt;- readLines(urlink, encoding=&#39;UTF-8&#39;) # 读取网页 bb &amp;lt;- aa[grep(linkformat, aa)] for (i in 1:length(bb)) # 逐行处理 { bb[i] &amp;lt;- substring(bb[i], regexpr(&amp;quot;http&amp;quot;, bb[i])[1], regexpr(&amp;quot;.jpg\&amp;quot;&amp;quot;, bb[i])[1]+3) # 获取链接 } bb &amp;lt;- unique(bb) filename &amp;lt;- substring(bb, 47, 50) for (i in 1:length(bb)) # 逐行处理 { download.file(bb[i], paste(filename[i], i, &#39;.jpg&#39;, sep = &amp;quot;&amp;quot;), method = &#39;curl&#39;, quiet = TRUE) # 下载网页 # Sys.</description>
-    </item>
-    
-    <item>
-      <title>一道小学数学题</title>
-      <link>http://www.pzhao.org/archives/15908/</link>
-      <pubDate>Sun, 03 Aug 2014 17:29:52 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/archives/15908/</guid>
-      <description>还记得小学时做过的数学题吗？记得那时候做过的什么“相遇问题”、“追及问题”、“鸡兔同笼问题”，解决方法是四则运算。后来学会了方程，就把从前的解法全忘了。有一次收拾书柜，翻出一张小学试卷，有一道题目，我只用了两步的四则运算就做出来了，换现在我只会列二元一次方程组来求解。我看着当时的算式发呆，因为怎么也看不懂每一步是什么意思。
-有人在统计之都提出了一道小学生的数学题：
-请问如何用R编程：A,B,C,D为0到9的整数， A B C D × 9 ----------- D C B A 求 A,B,C,D的值。  看到此帖，我仿佛回到了小学时光里。当时解决这种问题不在话下，现在却是人越来越懒，脑子越来越笨了。能用机器的，就不想思考。有人回复的 R 代码是这样的：
-for(i in 1001:9999){ if(as.character(i) == paste(rev(strsplit(as.character(i*9), NULL)[[1]]), collapse=&amp;quot;&amp;quot;)){ print(i) } }  看来简洁，读起来却费劲。事实上，这短短的代码背后藏着很多步骤，换个写法展开后就容易看懂了：
-for(i in 1001:9999){ # 穷举，每个数都试一下 i.char = as.character(i) # 把数i转换成字符串 j = i * 9 j.char = as.character(j) # 把数j转换成字符串 j.char.array = strsplit(j.char, NULL)[[1]] # 把字符串拆成单个字符 j.char.array.rev =rev(j.char.array) # 把字符按倒序排列 j.char.rev = paste(j.char.array.rev, collapse = &amp;quot;&amp;quot;) # 把字符合并成字符串 if(i.</description>
-    </item>
-    
-    <item>
-      <title>R 的箭头等号之争</title>
-      <link>http://www.pzhao.org/archives/17084/</link>
-      <pubDate>Thu, 13 Mar 2014 20:40:09 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/archives/17084/</guid>
-      <description>丐帮净污有两派，华山剑气分二宗。有人的地方就有江湖，R 用户群里存在着箭头和等号之争。说来简单，R 语言里的赋值号，可以是等号“=”，也可以是箭头号“&amp;lt;-”，纯属个人喜好，没有本质区别。比如让 x 的值为 2，那么通常有两种写法：
-x = 2 x &amp;lt;- 2  用户多个选择，世界多种颜色，本来是个好事儿。我还曾经把等号赋值的语句表示是引用别人的，箭头赋值的表示是自己写的，以此来表达对代码原作者的尊重。但是，已经有好几次有人问我为啥总用箭头，开始我还觉得奇怪，后来我惊奇地发现，R 用户居然还分箭头党和等号党，两者之间还存在党争。并且我还发现，自己不知不觉已经加入了箭头党。
-搜索“赋值 箭头 等号”，第一篇就是益辉的“R的若干基因及争论”，其中的一节介绍了箭头等号之争的前世今生，兼具知识型和趣味性，读罢觉得意犹未尽。英文世界里搜索出来的结果，内容还不如这一篇详实。这其实是个历史问题，大家搁置争议共同开发就行了，连利益纠纷都不涉及，没必要你反对我我反对你的。那么，两党到底争个啥劲呢？
-在本文亮相之前，箭头党反对等号党的理由，主要是认为等号存在歧义，除了可以用来赋值，还用来传递函数的参数值，具体例子我也不重复了。这是事实，可惜有漏洞：存在歧义难道就不好吗？
-等号党抓住了这个漏洞，反对箭头的理由大体有两点：
- 第一点是，箭头输入麻烦，要按三个键（“shift+逗号键”来输入&amp;lt;，再输入减号），而等号方便，按一个键就行了。 第二点是，等号的歧义完全可以从语境上来区分，箭头没有存在必要，并且引起混乱。对此等号党举出了很多例子，这里也不重复了，见上文的链接。  可惜的是，第二点在我看来，举出的例子都无法让我信服，纯粹是为了反对而反对，只怕平时没人会按那些例子来写代码，因为那不是好习惯；只要养成个好习惯，比如赋值语句单独写出来，该加空格的地方加空格，那么这些混乱完全是可以避免的。我觉得用箭头来赋值，用等号来传递函数参数，各司其职，清晰明了。比如想找出代码里所有的赋值语句，搜索一下箭头就行了。等号亦然。
-而第一点理由，说等号输入更省事儿，看起来无可辩驳，但事实可能完全超出预料，因为，世界上的电脑键盘何止一种。
-插图1 德语键盘布局
-图 1 显示的是德语键盘布局，跟英语键盘的不同之处大部分都标了出来。你会发现，输入等号需要按“shift+0”键，要按两个键才行，而箭头也是按两个，并不比等号费事。在德国市面上买到的电脑键盘都是这个模样的。等号的输入优势在这里荡然无存。 Yangliufr对这个问题谈了他的理解，其中也提到了法语键盘的问题。有人说，非英文键盘毕竟是少数。可是，人类文明进步的一个标志，就是不忽略小众人群和弱势群体的感受。大概是意识到了这一点，当前流行的 R 集成界面 Rstudio 干脆设置了个快捷键“alt+_”，同样是按两个键，不仅能输入个箭头，还在箭头前后附送两个空格！这绝对是个进步。如果有个快捷键，能一下输入等号并且送两个空格就更好了。
-我用德语键盘和RStudio；另外，我从刚接触 R 就按教材用箭头，先入为主习惯了；还有就是 google 建议用箭头，而我是 google 的粉丝；除了这些现实的理由外，我还觉得箭头更酷，更男人。
-这样一来，等号在我面前完败。
-但我并不向别人推销箭头。拜巴别塔所赐，世界上使用 R 语言的键盘五花八门，自己怎么方便怎么来，每人背后都有自己的故事和理由，多宽容别人，世界才美好。萝卜青菜，各有所爱，大家各自享受自己的爱好和乐趣好了，不知道有什么可争论的。
-R 发展的历史上发现这个问题时，事态有可能朝两个方向走：一是革命，修改 R 的规则，消灭箭头；二是改良，适应 R 的规则，允许共存。历史选择了后者。如果选择的是革命，结果亦未可知，但革命之路上经历的内战和政治斗争等带来的灾难，又是谁能预料呢？
-原文链接</description>
-    </item>
-    
-    <item>
-      <title>中华字经里的重复字</title>
-      <link>http://www.pzhao.org/archives/17072/</link>
-      <pubDate>Sat, 01 Mar 2014 00:50:35 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/archives/17072/</guid>
-      <description>按：本文可以供 R 初学者用来练习字符串的合并、分割、查找、替换……
-前不久写了一篇闲谈《千字文》里重复用字的帖子。碧云飘鹤的博主马光留言说，还有一部类似的《中华字经》，并提供了一个转载的链接。这部字经初读来真是膜拜万分，想不到二十一世纪的中国还有这样的神作。后来，无聊的我点到了《中华字经》的官方网站，发现上面是这么介绍的：
- 《中华字经》是世界上最奇妙的汉字学习课本。……全文4000汉字没有一个字是重复使用的。
- 这个是国际网站，有繁体字版，还有英文介绍：
- The book does not repeat any characters…… “Chinese Character Canon” is a poem composed of 4,000 characters…..
- 听听，用了 any 这个词，读起来多痛快。在网上一搜，“无一字重复”这几个字铺天盖地。比如有一篇说：“谁能相信！谁能做到！写篇4000字的文章，竟无一字重复，简直不可思议！”人民日报也说：中华字经共收录无重复汉字4000个。其他网站多是人云亦云的转载和添油加醋的吹捧。
-我顿时感觉不妙。字经既然涵盖了天文地理历史文化等知识，那么想必作者和推广者深谙国学，应该懂得物极必反、过犹不及的道理吧？干嘛把话说那么死呢？在“世界上最奇妙的汉字学习课本”后面加上个“之一”不算过谦吧？为啥不用汉字“四千”或者科学记数法“4.00 x 10 ^ 3”，而非要用“4000”这种精确到个位的表达呢？难道你们不知道世界上有一种东西，唤作“理科生”吗？
-果然，有理科生看不下去了。益辉同学挺身而出，写了一篇有趣的文章，用寥寥几行 R 代码对字经进行了分析，并且严肃指出，字经里其实有 44 个字是重复出现的。他还指出：字经有句意不通、文字拼凑之嫌，并且对这种识字方法持怀疑态度。
-作为益辉的铁杆粉丝，我完全赞同他的观点。但是我想说一句：
- 益辉啊，你分析的那个中华字经，好像是盗版的，因为里边有错别字耶。
- 不过，论点的光辉不会被论据材料的错误所掩盖。下面我对益辉的观点作些补充和延伸，来说说这重复的 44 个字是怎么回事。
-先纠正 5 个字 我用的 R 代码，凡是用等号“=”来赋值的，都是从益辉那里抄来的；用箭头“&amp;lt;-”赋值的，是我新添的。
-con = url(&#34;http://pastebin.com/raw.php?i=ZaQiHU1m&#34;, encoding = &#34;UTF-8&#34;) x = readLines(con, warn = FALSE) close(con) # 去掉奇数行的注音，去掉空格，去掉标点，合并。 x = x[seq(2, length(x), 2)] x = gsub(&#34;</description>
-    </item>
-    
-    <item>
-      <title>统计模型（译文）</title>
-      <link>http://www.pzhao.org/archives/15283/</link>
-      <pubDate>Wed, 24 Apr 2013 07:10:53 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/archives/15283/</guid>
-      <description>dapeng 按：本文由 dapeng 译自 Crawley 所著的 The R Book 。yangliufr 提醒这可能造成侵权，故2013年4月发布之后就删除了。到现在（2016年1月）已经过去了快三年，其间有很多朋友来信，提出的问题很多都能在本文中找到答案。所以，我再次贴出来，如有侵权，请告知我，我会迅速处理。
-统计工作中最艰难的部分就要开始了。这即将开始的最艰难部分之一，是选择正确的统计分析方法。而如何选择，取决于你数据的性质和你想要回答的具体问题。关键在于，应当理解你有哪种 响应 变量，以及了解你的 解释 变量的性质。响应变量是你要处理的东西，它的变化正是你所试图了解的，它是作图时处在 y 轴的变量。而解释变量则处于 x 轴。你感兴趣的是，响应变量的变化与解释变量的变化关联到何种程度。你也需要考虑你分析的变量是以何种 方法 来测量它们的测量目标的。一种连续的测量，例如高度和重量，是一个可能得到任何实数值的变量。一个分类变量则是具有两个或更多水平的因子：性别是具有两个水平的因子（男和女），而颜色可能是一个具有七个水平的因子（红橙黄绿蓝靛紫）。
-因此，从本质上来说，你要回答下列问题：
- 你的哪个变量是响应变量？ 哪个是解释变量？ 解释变量是连续的，还是分类的，或者是两者兼具？ 你有哪种响应变量？它是连续的测量，还是计数，还是比例，还是死亡时间，或者是分类？  这些简单的要点将引导你找到合适的统计方法：
-解释变量
-( a ) 所有的解释变量都是连续的 回归
-( b ) 所有的解释变量都是分类的 方差分析 (ANOVA)
-( c ) 解释变量既是连续的也是分类的 方差分析 (ANCOVA)
-响应变量
-( a ) 连续 普通回归，ANOVA 或 ANCOVA
-( b ) 比例 逻辑回归
-( c ) 计数 对数-线性模型
-( d ) 二项式 二元逻辑分析</description>
-    </item>
-    
-    <item>
-      <title>R 中的日期和时间（译文）</title>
-      <link>http://www.pzhao.org/archives/15261/</link>
-      <pubDate>Sat, 13 Apr 2013 14:46:35 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/archives/15261/</guid>
-      <description>dapeng 按：本文由 dapeng 译自 Crawley 所著的 The R Book 。yangliufr 提醒这可能造成侵权，故2013年4月发布之后就删除了。到现在（2016年1月）已经过去了快三年，其间有很多朋友来信，提出的问题很多都能在本文中找到答案。所以，我再次贴出来，如有侵权，请告知我，我会迅速处理。
-时间的度量非常特殊。一年的第一天是星期几，这在相继的年份中是不同的。各月份的天数不尽相同，而闰年在 2 月份会多出一天。美国人和英国人把月和日放在不同的位置： 3 / 4 / 2006 在前者看来是 3 月 4 日，而后者看来则是 4 月 3 日。偶尔有些年会多出一个“闰秒”，这是由于自从标准时间于 1900 年以回归年为基础建立以来，潮汐的摩擦减慢了地球的转速。原子钟设置得过慢，其累积效应导致需要不断地加入闰秒（自 1958 年以来有 32 次之多（译者注：截至本书英文版出版年份））。目前，尚有争议认为应当废除闰秒制，改为每个世纪增加一个“闰分”的方法（译者注：世界无线电会议将于 2015 年对此问题做出决议）。不同国家的时区制和光节约时制（译者注：俗称夏时制）增加了关于时间计算的复杂性。所有这些意味着，涉及日期和时间的工作是极其复杂的。幸好 R 具有一个强大的系统来处理这种复杂性。要了解 R 是如何处理日期和时间，我们先看看 Sys.time() 函数:
-Sys.time()  ## [1] &amp;quot;2005-10-23 10:17:42 GMT Daylight Time&amp;quot;  返回值按从左到右的严格顺序依次是：首先是最长的时间尺度（年），然后是用连字符（减号）分隔的月和日，接着是空格和时间，小时在前（24 小时制），后面是用冒号分隔的分钟和秒。最后有一个字符串来注明时区。你可以从Sys.time() 中获取日期，这要使用 substr，代码如下：
-substr(as.character(Sys.time()), 1, 10)  ## [1] &amp;quot;2005-10-23&amp;quot;  或者获取时间
-substr(as.character(Sys.time()), 12, 19)  ## [1] &amp;quot;10:17:42&amp;quot;  如果输入</description>
-    </item>
-    
-    <item>
-      <title>R 菜鸟生活篇 整理 Kindle 上的笔记</title>
-      <link>http://www.pzhao.org/archives/15032/</link>
-      <pubDate>Wed, 10 Apr 2013 17:59:40 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/archives/15032/</guid>
-      <description>自从有了 Kindle 电子书阅读器，读书就得到了解放。dapeng 可以一天不用 iPad，可以一天不看手机，但是不能一天不读 Kindle，因为想读的书，想读的博客（方法见这里），订阅的新闻和微博每天的更新，全都在 Kindle 里。甚至 dapeng 发现，常访问的那些博客，博主们或早或晚都入手了 Kindle，比如最近被墙的坛子，以及刚入手 Kindle 的勺子。使用了一年有余，Kindle 上的常规操作基本都熟悉了，只有一个问题没有好好解决：整理笔记和高亮。
-整理之前 Kindle 的笔记和高亮都保存在根目录下documents文件夹里名为“My Clippings.txt”的文本文件里，在 PC 中直接打开是这样的： 这是按做笔记的时间顺序列下去的，作为摘录型的笔记，日后叫我怎么用啊。应该整理到表格里才方便。
-整理方法 网上有些现成的方法，比如下载word的宏，或有人写了专门的软件，或在线转换，但要么是有安全隐患，要么是要收费，要么是不支持中文。还是请万能的 R 来当一次小秘书，帮忙整理一下，免费，方便，快捷，安全，而且可以随心所欲地修改，浑身上下都是闪光点！dapeng 写的代码是这样的：
-aa &amp;lt;- readLines&amp;#40;&#34;e:\\temp\\My\ Clippings.txt&#34;, encoding=&#34;UTF-8&#34;&amp;#41; length.aa &amp;lt;- length&amp;#40;aa&amp;#41; title &amp;lt;- aa&amp;#91;c&amp;#40;seq&amp;#40;1, length.aa, by = 5&amp;#41;&amp;#41;&amp;#93; title.o &amp;lt;- order&amp;#40;title&amp;#41; title &amp;lt;- title&amp;#91;title.o&amp;#93; location &amp;lt;- aa&amp;#91;c&amp;#40;seq&amp;#40;2, length.aa, by = 5&amp;#41;&amp;#41;&amp;#93;&amp;#91;title.o&amp;#93; time.aa &amp;lt;- substr&amp;#40;location, &amp;#40;regexpr&amp;#40;&#34; Added on &#34;, location&amp;#41; + 10&amp;#41; , nchar&amp;#40;location&amp;#41;&amp;#41;&amp;#91;title.o&amp;#93; loc &amp;lt;- substr&amp;#40;location, 13, regexpr&amp;#40;&#34;</description>
-    </item>
-    
-    <item>
-      <title>R 菜鸟生活篇 复活节到底是哪一天</title>
-      <link>http://www.pzhao.org/archives/14974/</link>
-      <pubDate>Thu, 04 Apr 2013 08:13:23 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/archives/14974/</guid>
-      <description>地球上的人类爱过节，男人可以趁机放假，女人可以借机购物。人类最重要的节日，在东方当属春节、中国国庆节和劳动节，在西方当属圣诞节、元旦和复活节。前五个都好说，阳历或阴历上的日期是确定的，那么，聪明的你，我提个问题：最后那个，就是复活节，是在哪一天？
-你回答说：
- 复活节是每年春分月圆之后第一个星期日。
- OK。那么，再问：那它到到到到到底是哪一天……
-三个关键词：春分，这是阳历；月圆，这是阴历；星期日，这是不阴不阳的历。敢问这是哪位高人定的，是在考验人类的计算水平吗？够狠。
-一查才知道，的确是在考计算。英文的 computer 是“计算机”，compute 和 computation 分别是动词和名词的“计算”，他们均来自拉丁语的Computus，而这个词的本意就是“计算复活节的方法”！
-我又问了：为啥是这样规定呢？
-你说：
- 春分，是因为此后北半球开始日长夜短，意味着光明；月圆，是因为夜晚也洒满光辉，也意味着光明；星期日，是因为这天大家都休息，不用倒休。
- 我脑海中立刻浮现出明教、日月神教等字眼，嘴上只好说，好吧，算你有理。我算是勉强被说服了，但是听到你的下一句话，我崩溃了，你说：
- 只不过啊，天主教和东正教的复活节是两种不同的计算方法……
- 基督教有三大主要派别，其中天主教和基督新教（华语圈常简称基督教）属于西方罗马教会，使用公历；东正教属于东方教会，使用儒略历。
-我不信教，这已经超出我大脑能理解的极限了。没啥说的，请 R 出马，自己写个自定义函数，看看这个 Computus 是怎么计算的吧。计算方法可以选择高斯还是米乌斯，日历可以选择公历还是儒略历。因此，整个函数的结构是两个大分支下各有两个小分支。
-computus &amp;lt;- function(year = 2013, method = &#34;Meeus&#34;, calendar = &#34;Gregorian&#34;) { Y &amp;lt;- year # 高斯算法 if (method == &#34;Gauss&#34;) # 适用于 1583 - 2299 年 { # 公历（天主教） if (calendar == &#34;Gregorian&#34;) { k &amp;lt;- (Y - 1500) %/% 100 + 1 M &amp;lt;- c(22,22,23,23,24,24,24,25)[k] N &amp;lt;- c(2,2,3,4,5,5,6,0)[k] } else if (calendar == &#34;</description>
-    </item>
-    
-    <item>
-      <title>R 菜鸟生活篇 夏令时</title>
-      <link>http://www.pzhao.org/archives/14924/</link>
-      <pubDate>Sat, 30 Mar 2013 18:47:18 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/archives/14924/</guid>
-      <description>真令人难以置信，昨天还在下雪，明天凌晨竟然要改夏令时了。谁能告诉我，春天在哪里？藏在小朋友的眼睛里？
-夏时制，学名叫做日光节约时制。土木坛子曾经撰文详细介绍过（点我）。大家总是说某天要把表拨快或拨慢一小时，以前我一直弄不清楚到底是拨快还是拨慢，直到有一天发现了一个窍门，才再也不出错了。这个窍门就是：
-夏天到的时候，欧洲的时间距离中国更近了。  为啥这就好记呢？因为给家中老人打电话的适宜时间（我睡醒后并且老人睡着前）就多出了一小时。亲近祖国，这跟德国的夏天一样给人的感觉是美好的。美好的感觉是容易记住的。
-上面用 R 做出的这张拜罗伊特日出日落时刻图，虚线和实线分别显示的是不使用和使用夏时制的日出日落时刻。很容易看出夏时制的好处：夏天把这一小时往后挪了之后，不至于天亮之后过很久才需要上班，并且下班后距离天黑还有很长时间可以让人去泡吧，泡网，泡妞&amp;hellip;&amp;hellip;不挪到下午的话，这一个小时在早上只够泡个澡。
-R 在处理时间数据的时候充分考虑了夏时制，说起来这也是我用 R 处理数据时遇到的一件趣事，至今记忆犹新。由于明天凌晨 2 点钟要把时钟拨到 3 点，因此在德国时间里，2013 年 3 月 31 日 2:00:00 到 2:59:59 这段时间在地球上是不存在的！不信你可以在 R 里边试试，看看这段时间发生了什么：
-a &amp;lt;- as.POSIXlt(&#34;2013-03-31 03:00:00&#34;, tz = &#34;CET&#34;) # 中欧时间 a ## [1] &#34;2013-03-31 03:00:00 CET&#34; # 3 点钟的前一秒难道不是 2:59:59 吗？ a - 1 ## [1] &#34;2013-03-31 01:59:59 CET&#34; # 换个函数试试。 # a &amp;lt;- strptime(&#34;2013-03-31 03:00:00&#34;, format = &#34;%Y-%m-%d %H:%M:%S&#34;, tz = &#34;CET&#34;) a ## [1] &#34;</description>
-    </item>
-    
-    <item>
-      <title>R 菜鸟入门篇 第13篇 延伸阅读</title>
-      <link>http://www.pzhao.org/archives/14909/</link>
-      <pubDate>Fri, 29 Mar 2013 07:17:50 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/archives/14909/</guid>
-      <description>写完这个系列的时候，复活节假期即将开始，拜罗伊特的晴天渐渐多了，春天早就迫不及待要到来了，可是冬天死活赖着不走，雪竟然飘了一夜，今早外面又是白茫茫一片。
-这一系列帖子，本来是打算整理一下拜罗伊特大学 Introduction to R 的课程讲义，后来 dapeng 觉得可能没有几个人会对斑马纹贻贝的分布情况感兴趣，因此就把举例用的数据换成了更有趣的 PM2.5，当然，也是为了吸引眼球，盼望着那些搜索 PM2.5 的网友误打误撞摸到这里来邂逅 R。这样写着写着，就变成了 dapeng 自己的学习心得，离讲义倒是越来越远了。不过，讲义中 90 % 的要点都包含进来了。另外 10 % 呢？因为，因为整理得不及时，这部分给忘掉了，现在已经看不懂了。不过并不要紧，让菜鸟入门的目的应该基本可以达到。
-虽然可能只有几个好友来读，不过写完之后，还是松了一口气，算是给了自己一个交代。每次 dapeng 看着老婆对着经常崩溃的 sigmaplot 和经常用鼠标拖来拖去的 Excel 唉声叹气的时候，真心希望她能用上 R。不过后来发现，这多半是一种奢望。R 再好，LATEX 再好，Vim 再好，自己享用而已，即便身边最亲近的人也难以强加。那么，这个系列就算是写给过去的自己吧。如果真能穿越回到五年前，dapeng 会把这套学习笔记悄悄发到当时所用的email信箱里。想想当时的 dapeng 正在硬着头皮读 Introduction to R 和 R for beginners 这两本书，正在奇怪这两本号称入门级的教材为何自己无论如何就是读不懂，正在羡慕师姐书架上那厚厚的统计学教材。dapeng 一度怀疑自己的智商有问题。后来，加入了现在所在的研究组。周围的人都在用，R 代码满天飞，抓住一个，抓耳挠腮地修改一下，凑合着用到自己的数据处理上，几次下来总算是开了窍，这个过程很艰辛。回过头来看，那两本书真的不适合菜鸟。希望 R 菜鸟入门 能够让一些人跳过这个艰辛的阶段。
-一旦跳过这个阶段，有些书就容易读了。 dapeng 推荐菜鸟们下一步读读下面这些资料。虽然这些资料在网上都能找得到下载，但是请恕 dapeng 只提供了部分下载的链接，这是考虑到版权，有些书的下载是侵权的。为了保护对原书作者的起码尊重，为了以后我们仍然有书可读，能买正版的还是尽量去买正版吧。
- Zuur, Ieno, Meesters 的 A beginners&amp;rsquo; guide to R  入门首选的第一本书。再也找不到哪本书能比这一本写得更浅显易懂了（R 菜鸟入门 除外）。也是从课程讲义发展而来的。话说当年 dapeng 在学校图书馆找到这本书时，怎一个惊喜了得。点击上面的链接可以下载书中举例的数据和代码。有中译本。
- Teetor 的 25 Recipes for Getting Started with R</description>
-    </item>
-    
-    <item>
-      <title>R 菜鸟入门篇 第12篇 动画</title>
-      <link>http://www.pzhao.org/archives/14907/</link>
-      <pubDate>Thu, 28 Mar 2013 06:07:28 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/archives/14907/</guid>
-      <description>R 有很多种制作动画的方法，一般都是先做出多幅静态图片，再连续播放就可以了。下面这个例子是用 image() 函数做出静态图片，用循环指令来连续播放。
-# 康威生命游戏。内容请咨询维基。 require(simecol) # 调用这个扩展包是为了使用其中的 eightneighbours() 函数。 m &amp;lt;- matrix(0, 40, 40) m[5:35,19:21] &amp;lt;- 1 # 初始条件。0 表示该位置没有细胞，1 表示有细胞。 image(m, col=c(&amp;quot;white&amp;quot;, &amp;quot;darkgreen&amp;quot;), axes=FALSE) # 白色表示没有细胞，绿色有细胞。 for (i in 1:200) { nn &amp;lt;- eightneighbours(m) m.old &amp;lt;- m m[m.old == 0 &amp;amp; nn == 3] &amp;lt;- 1 # 当周围有三个细胞时该位置产生细胞。 m[m.old == 1 &amp;amp; (nn &amp;lt; 2 | nn &amp;gt; 3)] &amp;lt;- 0 # 当周围细胞少于 2 个（太孤单）或大于 3 个（太拥挤）时，该位置细胞死亡。 image(m, col=c(&amp;quot;white&amp;quot;, &amp;quot;darkgreen&amp;quot;), axes=FALSE) Sys.</description>
-    </item>
-    
-    <item>
-      <title>R 菜鸟入门篇 第11篇 空间数据</title>
-      <link>http://www.pzhao.org/archives/14905/</link>
-      <pubDate>Wed, 27 Mar 2013 07:45:12 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/archives/14905/</guid>
-      <description>写到这里，三大秘诀和三大法宝亮过相了，基本操作介绍过了，扩展包也华丽登过场了，基本上，菜鸟们已经可以独立折腾了，这个系列的帖子也写不下去了。不过，第 05 篇提到过画地图的问题，就再多写一篇介绍一下空间数据吧。
-开胃小菜: 这就是 R。这里没有做不到，只有想不到。（This is R. There is no if. Only how. by Simon Blomberg.)
-空间数据，也就是地理信息系统 GIS 的数据，很多人都用昂贵的 ArcGIS 软件来处理。其实，免费的R 配上强大的扩展包，也能够处理很多 GIS 问题，有时甚至更灵活。老实说， dapeng 对 GIS 用得不多，这一篇也就不得不讲得浅显，见谅了。感兴趣的菜鸟可以看这里、这里以及这本书。
-这里，我们一起在中国地图上，各省份区域用不同颜色来区分，颜色代表该省 PM10 的质量浓度。请先点击这里下载地图。这是个压缩包，下载后请解压缩到 _c:\R\data\chinamap_ 文件夹。这个文件夹下应该有三个文件，即 bou2_4p.dbf，bou2_4p.shp，bou2_4p.shx。
-require(rgdal) # 用来处理 GIS 数据的扩展包。若是第一次使用，请自行安装。  ## Loading required package: rgdal ## Warning: package &amp;amp;#39;rgdal&amp;amp;#39; was built under R version 2.15.3 ## Loading required package: sp ## Warning: package &amp;amp;#39;sp&amp;amp;#39; was built under R version 2.</description>
-    </item>
-    
-    <item>
-      <title>R 菜鸟入门篇 第10篇 函数和包</title>
-      <link>http://www.pzhao.org/archives/14862/</link>
-      <pubDate>Tue, 26 Mar 2013 06:48:43 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/archives/14862/</guid>
-      <description>终于轮到介绍 R 的精髓了，那就是包，package。欲知包，必先知函数，function。
-我们已经遇到过很多函数了。R 中大多数工作都是函数完成的。经验告诉我们，调用函数的格式是：函数名(变量1 = 某个值，变量2 = 某个值，...)。我们以前用过的，都是 R 基础安装包里有限的一些预先设置好的函数。比如：
-x &amp;lt;- 1:5 sd(x) # sd 是函数名, x 是自变量。  ## [1] 1.581  sd()用来计算标准差。当我们发出这条指令时，R 在幕后到底忙活个啥呢？输入函数名就能看到了：
-sd  ## function (x, na.rm = FALSE) ## { ## if (is.matrix(x)) { ## msg &amp;lt;- &amp;quot;sd(&amp;lt;matrix&amp;gt;) is deprecated.\n Use apply(*, 2, sd) instead.&amp;quot; ## warning(paste(msg, collapse = &amp;quot;&amp;quot;), call. = FALSE, domain = NA) ## apply(x, 2, sd, na.rm = na.</description>
-    </item>
-    
-    <item>
-      <title>R 菜鸟入门篇 第09篇 字符串</title>
-      <link>http://www.pzhao.org/archives/14858/</link>
-      <pubDate>Mon, 25 Mar 2013 08:56:51 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/archives/14858/</guid>
-      <description>R 用单引号或双引号来表示字符串。其实前面我们已经接触过了：
-pm &amp;lt;- &#34;c:\\R\\data\\dapengde_DummyR_PM25.csv&#34; pm  ## [1] &amp;quot;c:\\R\\data\\dapengde_DummyR_PM25.csv&amp;quot;  class(pm)  ## [1] &amp;quot;character&amp;quot;  R 可以很灵活地把多个字符串 合并。
-paste(&#34;A&#34;, &#34;B&#34;)  ## [1] &amp;quot;A B&amp;quot;  paste(&#34;A&#34;, &#34;B&#34;, sep = &#34;_&#34;)  ## [1] &amp;quot;A_B&amp;quot;  paste(c(&#34;A&#34;, &#34;B&#34;), 3)  ## [1] &amp;quot;A 3&amp;quot; &amp;quot;B 3&amp;quot;  paste(c(&#34;A&#34;, &#34;B&#34;), 3:4)  ## [1] &amp;quot;A 3&amp;quot; &amp;quot;B 4&amp;quot;  paste(c(&#34;A&#34;, &#34;B&#34;), 3:4, sep = &#34;_&#34;)  ## [1] &amp;quot;A_3&amp;quot; &amp;quot;B_4&amp;quot;  paste(c(&#34;</description>
-    </item>
-    
-    <item>
-      <title>R 菜鸟入门篇 第08篇 习题</title>
-      <link>http://www.pzhao.org/archives/14850/</link>
-      <pubDate>Sun, 24 Mar 2013 13:57:58 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/archives/14850/</guid>
-      <description>纸上谈兵没有用，实战是练兵最有效的方法。本篇是习题集。做习题之前，对前面的某些内容作个小结，顺便热热身。
-开胃小菜：你大可以邊用邊學啊！需要用到的先學，其它的就放一邊，只要能善用一些常用到的功能，又何必要那麼深入呢？而且您在使用當中經常會發現一些新功能，這又會馬上讓您給賺到了。&amp;#8211;语出大家來學VIM
-到目前为止，我们遇到过向量、矩阵、数据框，这些都叫做对象的类型。它们的区别和联系在哪里？
-向量，vector，是最简单的对象。向量由一个或多个同类变量组成。
-x &amp;lt;- c(1, 1, 2, 2, 3) # 生成一个向量。 is.character(x) # x 是字符型吗？  ## [1] FALSE  is.numeric(x) # x 是数字型吗？  ## [1] TRUE  mode(x) # 是数字型。  ## [1] &amp;quot;numeric&amp;quot;  y &amp;lt;- c(3, 4, 4, 5, 5) z &amp;lt;- c(x, y) # 多个向量并在一起。 z  ## [1] 1 1 2 2 3 3 4 4 5 5  z[4] # 向量的下标。  ## [1] 2  矩阵，matrix，与向量差不多，不同的是分成了行和列。</description>
-    </item>
-    
-    <item>
-      <title>R 菜鸟入门篇 第07篇 因子</title>
-      <link>http://www.pzhao.org/archives/14845/</link>
-      <pubDate>Sat, 23 Mar 2013 16:00:09 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/archives/14845/</guid>
-      <description>前几篇举例子用的 PM2.5 数据来自十年前，这是因为 dapeng 手头碰巧有这么篇论文。今天偶尔发现，网上已经在公布最近国内城市的空气质量数据了，本篇就以北京和郑州两城市最近半个月的 PM2.5 数据举例子(数据来源 http://www.pm2d5.com/)。点击这里下载北京数据，这里下载郑州数据，请仍然保存在 _c:\R\data_ 文件夹下面。
-bj &amp;lt;- read.csv(file = &#34;c:\\R\\data\\dapengde_DummyR_PMBeijing.csv&#34;) zz &amp;lt;- read.csv(file = &#34;c:\\R\\data\\dapengde_DummyR_PMZhengzhou.csv&#34;) bj$city &amp;lt;- &#34;Beijing&#34; zz$city &amp;lt;- &#34;Zhengzhou&#34; data &amp;lt;- rbind(bj, zz) # 按行合并数据。 summary(data)  ## date pm city ## Min. : 1.00 Min. : 5 Length:37 ## 1st Qu.: 5.00 1st Qu.: 51 Class :character ## Median :10.00 Median : 75 Mode :character ## Mean : 9.76 Mean : 95 ## 3rd Qu.</description>
-    </item>
-    
-    <item>
-      <title>R 菜鸟入门篇 第06篇 分支</title>
-      <link>http://www.pzhao.org/archives/14843/</link>
-      <pubDate>Fri, 22 Mar 2013 21:01:11 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/archives/14843/</guid>
-      <description>顺序、循环和分支是编程的三大结构。上一篇说了循环，这一篇说说分支。啥是分支？分支就是你到了一个路口，向左向右向前看，要选择到底往哪个方向走。每时每刻我们都要做出选择：渴了，是喝咖啡还是茶？见了人，是上去打招呼还是悄悄躲开？这篇帖子，是关掉还是继续读下去？其实仔细想想，岂止是编程，那三大结构简直就是整个生活的基本结构：日出日落，月圆月缺，年尾年头，这是循环；上学还是就业，单身还是结婚，丁克还是生娃，这是分支；不管是循环还是分支，都嵌入在生老病死的时间轴上，这是顺序。所谓尽人事听天命，想来就是心平气和地接受顺序结构，小心翼翼地制订循环结构，在关键时刻控制好分支结构，就这样度过一生罢。
-扯远了。简单来说，分支就是先判断再选择。
-先判断。判断要用逻辑运算。我们先来做一套健脑操热热身：
-3 &amp;gt; 2 # 3比2大吗？是的。  ## [1] TRUE  1 &amp;gt; 2 # 1比2大吗？不是的。  ## [1] FALSE  !(1 &amp;gt; 2) # 1不比2大吗？呃......  ## [1] TRUE  3 &amp;gt; 2 &amp; 1 &amp;gt; 2 # 3比2大，并且1比2大吗？不是的。  ## [1] FALSE  3 &amp;gt; 2 | 1 &amp;gt; 2 # 3比2大，或者1比2大吗？是的。  ## [1] TRUE  3 &amp;gt; 2 &amp; !(1 &amp;gt; 2) # 3比2大，并且1不比2大吗？好像是吧.</description>
-    </item>
-    
-    <item>
-      <title>R 菜鸟入门篇 第05篇 循环</title>
-      <link>http://www.pzhao.org/archives/14836/</link>
-      <pubDate>Thu, 21 Mar 2013 09:48:01 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/archives/14836/</guid>
-      <description>前两天 dapeng 用 R 给师妹做了一张&amp;rdquo;全国各省 PM10 浓度地图&amp;rdquo;，以省会城市的 PM10 浓度值给各省涂上颜色，结果师妹说：这个用 ArcGIS 能又快又好地做出来。 dapeng 脑子里立刻涌现出多种说法要细数 R 的优势，第一条就是：若是有 20 年的数据，每年做一张图，R 菜鸟用简单一个循环就能编程搞定，ArcGIS 该怎么又快又好做出来？若不是资深用户的话，我等菜鸟恐怕得一张一张图点出来吧？这种操作费时费力并且毫无乐趣，就应该交给机器来解决，这是懒人的必备技能。本篇就来说说程序的基本结构之一：循环。
-开胃小菜 男人至少要擅长一项运动,一种乐器,一种编程&amp;hellip;.和拿手的几个小炒. (语出小鸟学AHK)
-所谓循环，就是兜圈子，就是一件事情重复操作。先从一个简单例子开始。在第 03 篇中，我们对 8 米和 100 米两个高度处测量的 PM2.5 做了日变化图。若要对三个高度的每一个都做日变化图，不用循环，那么是这样的：
-pm &amp;lt;- read.csv(file = &amp;quot;c:\\R\\data\\dapengde_DummyR_PM25.csv&amp;quot;) par(mfrow=c(1， 3)) plot(pm[, 1], pm[, 2], cex = 2, type = &amp;quot;l&amp;quot;) # 第一张图 plot(pm[, 1], pm[, 3], cex = 2, type = &amp;quot;l&amp;quot;) # 第二张图 plot(pm[, 1], pm[, 4], cex = 2, type = &amp;quot;l&amp;quot;) # 第三张图  如果使用循环，是这样的：</description>
-    </item>
-    
-    <item>
-      <title>R 菜鸟入门篇 第04篇 模型</title>
-      <link>http://www.pzhao.org/archives/14833/</link>
-      <pubDate>Tue, 12 Mar 2013 05:57:10 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/archives/14833/</guid>
-      <description>这一篇，我们试着进行线性拟合，示例所用的数据仍然是前两篇中的北京 PM2.5 质量浓度。
-开胃小菜： 在 Rstudio 左下窗口输入代码 example(nls)，然后按回车，再回车。
-经过了前几篇的练习，相信你已经熟悉了 # 号注释的方式。从今往后，我们尽量以这种方式来缩短文字篇幅。
-pm &amp;lt;- read.csv(file = &#34;c:\\R\\data\\dapengde_DummyR_PM25.csv&#34;) m &amp;lt;- lm(pm$h100 ~ pm$h8) # 线性拟合 m # 查看模型，显示斜率和截距。  ## ## Call: ## lm(formula = pm$h100 ~ pm$h8) ## ## Coefficients: ## (Intercept) pm$h8 ## -11.471 0.846  summary(m) # 模型的详细总结报告。  ## ## Call: ## lm(formula = pm$h100 ~ pm$h8) ## ## Residuals: ## Min 1Q Median 3Q Max ## -14.</description>
-    </item>
-    
-    <item>
-      <title>R 菜鸟入门篇 第03篇 画图</title>
-      <link>http://www.pzhao.org/archives/14824/</link>
-      <pubDate>Mon, 11 Mar 2013 08:25:27 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/archives/14824/</guid>
-      <description>在上两篇中，我们都用到了 plot 命令来作图。如果说 Excel 作图的方法是先按照默认的格式画好之后再让你涂涂改改，那么 R 作图的流程更亲切：铺开一张白纸，打好格，画数据点，画坐标轴，加图例。就像用纸笔画图。不像 Excel 那样自作聪明。每一步都清清楚楚掌控在你手里。
-开胃小菜： 在 Rstudio 左下窗口输入代码 demo(persp)，然后按回车，再回车，再回车，再回车……
-这里，我们接着上一篇读取的数据 pm，来画一些更漂亮的图片。
-pm &amp;lt;- read.csv(file = &#34;c:\\R\\data\\dapengde_DummyR_PM25.csv&#34;) plot(x = pm$time, y = pm$h8, xlab = &#34;Time&#34;, ylab = &#34;PM2.5&#34;, type = &#34;l&#34;, ylim = c(0, 200)) # 以小时为 x 轴，8 米处的 PM2.5 浓度为 y 轴作图。设定两个坐标的名称。数据点类型为 l 即线型。设定 y 轴范围。 lines(x = pm$time, y = pm$h100, col = &#34;red&#34;) # 添加 100 米处 PM2.5 浓度曲线。 legend(x = 15, y = 180, legend = c(&#34;</description>
-    </item>
-    
-    <item>
-      <title>R 菜鸟入门篇 第02篇 数据</title>
-      <link>http://www.pzhao.org/archives/14818/</link>
-      <pubDate>Sun, 10 Mar 2013 07:13:12 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/archives/14818/</guid>
-      <description>在第 01 篇里，我们学会了用 R 进行一般的数学运算和统计计算，并且做出了两张图：拜罗伊特降水的季节变化图，北京的 PM2.5 日变化图。很好，只是，这些数据总不能一个一个敲到代码里吧。要是处理保存在其他文件里的大量数据呢？本篇就解决这个问题。
-开胃小菜： 在 Rstudio 左下窗口输入代码 demo(graphics)，然后按回车，再回车，再回车，再回车……
-点击这里下载一个数据文件，保存到一个文件夹里，比如 c:\R\data 文件夹（为避免不必要的麻烦，文件夹名称中都不要带空格和中文字符），我们看看如何对其中的数据进行操作。
-首先，我们要告诉 R 数据在哪里。不习惯命令行的用户，可以这样获取这个文件的路径：
-mydata1 &amp;lt;- file.choose() # 在弹出的窗口中选择文件，其路径存储到mydata里。 mydata1  这个文件的文件名叫做 dapengde_DummyR_PM25.csv 。鼠标选择文件比较麻烦，为了下次再使用这个代码的时候不必再点一次，一般都是直接输入文件路径：
-mydata2 &amp;lt;- &#34;c:\\R\\data\\dapengde_DummyR_PM25.csv&#34; # 路径要用引号(单双都行)，表示这是一个字符串。 mydata2  ## [1] &amp;quot;c:\\R\\data\\dapengde_DummyR_PM25.csv&amp;quot;  注意，文件路径中的斜线\本来是一个，但是在 R 代码中必须改成两个（ 切记切记！ ），或改成一个反斜线/，其中自有道理，暂时不必深究。
-我们先在文件浏览器中双击打开这个文件看看，这是个 csv 文件，用记事本或 Excel 就可以打开，或者在 Rstudio 代码窗口输入
-file.show(mydata2) # 查看文件  就会用默认程序打开。
-这是2003 年 8 月在北京城区的三个高度（8 米，100 米，325 米）测得的 PM2.5 的质量浓度日变化（数据来源：Chan et al., 2005. Atmospheric Environment 39, no.</description>
-    </item>
-    
-    <item>
-      <title>R 菜鸟入门篇 第01篇 超级计算器</title>
-      <link>http://www.pzhao.org/archives/14802/</link>
-      <pubDate>Sat, 09 Mar 2013 07:12:09 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/archives/14802/</guid>
-      <description>R 菜鸟入门三大秘诀：
- 第一秘诀： 不要害怕 ！学 R 非难事，Anyone can R （谁都可以贰）. 第二秘诀： 能用就行 ！只要能完成工作就行，R 代码写得漂亮与否并不重要。一个问题如果你有两个解决办法，那就选用你曾用过的那个。时间有富余的话再试另一个。 第三秘诀： 与人分享 ！跟同学或同事分享 R 代码。这就是为啥 dapeng 写这个系列的帖子。  初见 R，可以用在线版品尝一下，点这里，用法在这里不做介绍了，因为 dapeng 还是建议菜鸟从下载安装开始。点击这里下载 R 程序。R 是跨平台的，一般来说，Linux 用户自己善于折腾，不必 dapeng 在这里唧唧歪歪了，因此晴耕雨讀志以 Windows 系统为例作介绍。目前 R 的最新版 2.15.3 安装程序只有 47 M，比起几个G的 Matlab 要苗条多了。下载完毕后安装，一路下一步的傻瓜式安装即可。安装完毕之后就可以用了。
-不过，初见的 R 在裸奔，界面丑陋， dapeng 建议给 R 穿上一件衣服，奔时看上去体面一些。能穿的免费衣服很多，人们各有所爱。dapeng 用过 Tinn-R、 RKward、 Vim+插件之后，最后选定了 Rstudio (点这里下载，免费正版哦)。选用 Rstudio 有诸多好处，最明显的就是把 R 常用的界面整合到了一起。 看吧，华丽丽的就像 Matlab ，默认四个子窗口：左上窗输入代码，左下窗看结果，右上窗显示变量值，右下窗显示作图和帮助：
-图01.1. Rstudio 工作窗口。图片来自 Rstudio 官网，中文解释是 dapeng 加的。</description>
-    </item>
-    
-    <item>
-      <title>R 菜鸟入门篇 第00篇 缘起</title>
-      <link>http://www.pzhao.org/archives/14752/</link>
-      <pubDate>Thu, 07 Mar 2013 21:57:00 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/archives/14752/</guid>
-      <description>如果你和当初的 dapeng 一样是个菜鸟，对 R 有浓厚的兴趣，只是苦于入不了门，在门口纠结徘徊不忍离去，那么，这个系列的帖子就是写给你的。
-以前 dapeng 曾为两个难题烦恼不已，一个是谈恋爱，一个是学习 R 。两件事情的共同特点是：在它们面前 dapeng 一直是个菜鸟，任凭花费多少时间去读入门教材，什么 _The R Book_， _An Introduction to R_，R for Beginners 等等，这扇门就是推不开。越推不开越想推。在dapeng修了大学里开设的 Introduction to R 课程之后，学习 R 的困境才有了改观。这门课程是拜罗伊特大学生态地理模拟研究组的 Björn Reineking 教授为全校公开开设的，链接点这里。一个学期下来，受益匪浅。课程结束后， dapeng 特意征求 Reineking 教授的同意把讲义分享给在中国的朋友，他欣然应允。于是 dapeng 打算公开之前整理一下，哪知道一整理，一晃两年过去了。
-这两年间， R 助 dapeng 完成了博士研究期间全部的数据处理，论文中几乎所有的作图都是 R 实现的。可以说，如果没有学习 R 和使用 R 带来的乐趣，那么 dapeng 的博士研究生活必定会枯燥很多。然而，回顾学习 R 的历程，奇怪的是， dapeng 始终没有找到像 Reineking 教授课程那样菜鸟入门级的 R 教材。事实上，关于 R 的教材不是太少，而是太多，而即便是入门级的，那些标有 Introduction 或 Beginners 字样的，对于 dapeng 这种非统计学非计算机专业的，只在大学公选课修过 普通统计学 的人来说，还是门槛太高。如今快要毕业， dapeng 觉得，是时候把 Reineking 教授课程笔记梳理一下了，希望那些和 dapeng 一样的菜鸟们，碰巧读到这些文字后，学习 R 的情形有所不同。</description>
-    </item>
-    
-    <item>
-      <title>小情人的小把戏：RStudio的Markdown</title>
-      <link>http://www.pzhao.org/archives/14639/</link>
-      <pubDate>Thu, 14 Feb 2013 07:44:06 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/archives/14639/</guid>
-      <description>情人节是上大学时我们寝室的室节，没有情人的情人节是我们寝室的室歌，因为&amp;#8212;&amp;#8212;我们宿舍门牌号是214。昨天得知我们宿舍最年轻的小伙儿刚刚成了亲，热烈祝贺！祝天下眷属永远是彼此的小情人！话说我们寝室谈恋爱的顺序和结婚的顺序基本上是反着的：最先谈恋爱的最晚结婚。结了婚，就不能去外面找情人了，但是不找又违背了男人的本性，所以只能寄情于物，比如我的私家小情人骨感的有吉他和kindle，肉感的有博客、LATEX和R。有人说弄这些东西太费劲儿，我要说，兄弟，弄懂这些比弄懂女人还是要更容易一些的。
-今天这个情人节说说跟小情人R有关的RStudio。
-
-RStudio用了好久，几个月前才发现RStudio的Vim模式，高兴了一下。这两天又发现了RStudio的Markdown组件，又高兴了一下，在这里测试测试。Markdown组件是什么？它是为在网页上发布R代码而设计的一种简单的格式工具。简单来说，想让自己的R代码和运行结果在网上显示得好看一点，就可以考虑用Markdown组件。因此，我这个博客以后分享R学习心得的时候就打算用Markdown了。
-本文就是Markdown生成的。我是新手，因此本文的内容主要是我从Markdown示例文档翻译过来的。
-在RStudio中新建一个Markdown文档，然后输入R指令，比如：
- {r}&amp;lt;/span&amp;gt;&amp;lt;br /&amp;gt; summary(cars) 
-生成的html文件出来的结果就是添加了格式的指令以及指令运行结果：
-summary(cars)  ## speed dist ## Min. : 4.0 Min. : 2 ## 1st Qu.:12.0 1st Qu.: 26 ## Median :15.0 Median : 36 ## Mean :15.4 Mean : 43 ## 3rd Qu.:19.0 3rd Qu.: 56 ## Max. :25.0 Max. :120   还可以插图，比如输入：
- {r fig.width=7, fig.height=6}&amp;lt;br / plot(cars) 
-生成的html文件出来的是添加了格式的指令以及图片，而图片是以html代码而并非图片格式保存的： plot(cars)    怎么生成这个html文件呢？简单，在RStudio写完R指令后点击窗口的Knit HTML按钮就可以了。  制作Markdown文档需要给R安装谢益辉开发的&amp;#8221;knitr&amp;#8221;包。如果在线安装不成功，那么去cran下载离线安装，R版本2.</description>
-    </item>
-    
-    <item>
-      <title>Learning Introductory Time Series with R 中的代码摘录</title>
-      <link>http://www.pzhao.org/archives/13508/</link>
-      <pubDate>Thu, 15 Sep 2011 22:18:31 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/archives/13508/</guid>
-      <description>去年从系里借了一本名为 Learning Introductory Time Series with R 的书，觉得很有用，开始很认真地做笔记，后来越来越难，学得步履维艰，最终还是半途而废了。开头几节我亲手敲下的代码笔记，本来想整理一下分开发到博客上，拖来拖去，到现在也没有实现。今天整理电脑又看见了它，干脆全部放在这里。有些事，越拖越没有意义。
-　后来一查，书里的代码早就被作者全部放到网上了……
-http://tur-www1.massey.ac.nz/~pscowper/ts/#Contents
-[sourcecode language=&amp;#8221;r&amp;#8221;]
-Notes for Learning Introductory Time Series with R Peng Zhao Example 1.1: AirPassengers. Page 4. data(AirPassengers).
-AP &amp;lt;- AirPassengers
-class(AP)
-start(AP);end(AP);frequency(AP)
-plot(AP,ylab=&amp;ldquo;Passenger (1000&amp;#8217;s)&amp;ldquo;)
-layout(1:2)
-plot(aggregate(AP)) # Peng: aggregate() returns an aggregated annual series.
-boxplot(AP ~ cycle(AP)) # Peng: cycle() returns an seasonal series.
-Example 1.2: Maine. Page 7. www &amp;lt;- &amp;ldquo;http://www.massey.ac.nz/~pscowper/ts/Maine.dat&amp;quot;
-Maine.month &amp;lt;- read.table(www,header = TRUE)</description>
-    </item>
-    
-    <item>
-      <title>R代码风格</title>
-      <link>http://www.pzhao.org/archives/13207/</link>
-      <pubDate>Sat, 06 Aug 2011 09:40:10 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/archives/13207/</guid>
-      <description>有的人写的程序代码真是漂亮，就像一篇好作文，思路清晰，维护容易，交流方便，读了真是赏心悦目。要是早学过来，不至于遇到一些不必要的麻烦。我觉得编程语言是一门语法和词汇都比较简单的外语，而编写代码就是用这门简单外语把自己的想法写成作文表达和实现出来。
-Google有一篇题为“Google的R风格指南”的文章，对于R用户来说提供了了编程习惯方面很好的借鉴。地址是https://google.github.io/styleguide/Rguide.xml。我试图翻译，刚开了个头，觉得自己傻了，怎么能不搜现成的就自己动手呢？果然，搜到了很多翻译版本，比如这个：http://xccds1977.blogspot.co.at/2012/01/google-r.html。
-重要的挑在下面。其中提到代码的组织问题，我设计了一个起承转合的模板，附在最后。自己以后写代码就往这个模板里套就可以了。越说越像写八股文了。我觉得应该提出一套标准化的方案来。谁知道，也许已经有了呢？
- 总结：R编程代码风格  1.符号和命名
- 标识符：variable.name, FunctionName, kConstantName（注意大小写和分隔号）。  2.语法
- 行长度：不超过 80 个字符。 缩进：用两个空格，不用制表符（我觉得只要同一篇代码用同一种缩进的方式就行了）。 操作符(=, +, -, &amp;lt;-, etc.)左右都要有空格。逗号前不要空格，后面跟一个空格。 括号：圆括号()和方括号[]前后都不要空格。花括号{}前一个用在代码同一行，后一个自己单独一行。 赋值：用箭头 &amp;lt;-，不用等号 =。 分号：不使用。  3.组织
- 注释： 所有的注释以井号 # 开头，接一个空格；行内注释在 # 前插入两个空格。 函数定义和调用：函数定义在开头应用注释说明该函数的用途，自变量，函数值。  我的R代码模板：
-# Script Name: # Author: ###### ############## Description # This script works for.... # Input: # Processing: # Output: ###### ############# Update history # YYYY-MM-DD, created by ..... # YYYY-MM-DD, modified by .</description>
-    </item>
-    
-    <item>
-      <title>R包判断昼与夜</title>
-      <link>http://www.pzhao.org/archives/13115/</link>
-      <pubDate>Tue, 12 Jul 2011 20:54:50 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/archives/13115/</guid>
-      <description>我遇到了一个难题，要给我去年为期半年、每半小时一条的观测数据每条都加上一个标识，来反映当时属于白天还是黑夜。这个标识是根据当地经纬度和日期用天文学一系列公式计算出来的，比较复杂。我们组有现成的matlab代码，但是跟我的需求有差距，需要改，无奈我matlab我不熟，只能看懂，改起来在很多细节上有困难。我就想把matlab代码改写成R代码，然后就可以随心所欲地进行后续工作了。
-　这个事情花了我整整一个下午，最后成型的是几十行代码。结果跟NOAA在线计算相比，我的R代码算出来的日出总是晚几分钟，日落总是早几分钟。到最后也没有搞定。这其实不是什么大不了的，够用了，可是我觉得不爽。
-　快下班的时候，我灵机一动搜了一下，果然搜到了一个现成的R包，叫做maptools。用这个包的一个函数，两行代码就算出来了。跟NOAA的完全一致。仔细一看，作者说用的就是NOAA的算法。NOAA怎么算的，我懒得找了。
-　这可是太开心了。
-　这件事刺激了我的惰性。我想起一直想写一段代码来计算 index of agreement　和coefficient of efficiency，用来比较模拟值和观测值的吻合程度。其实很容易写，可我懒得写了，不如搜一搜吧。果然，又找到了一个R包，叫做hydroGOF，模型和观测进行比较时常用的统计量都可以算。
-　以前光顾闷头自己从零写代码，其实很多东西都有人写好了。
-　R真是个好东西。
-原文链接</description>
-    </item>
-    
-    <item>
-      <title>新年快乐动画的R代码</title>
-      <link>http://www.pzhao.org/archives/14162/</link>
-      <pubDate>Sat, 23 Jan 2010 08:05:18 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/archives/14162/</guid>
-      <description>animation是R的一个动画包，很有趣，很值得好好学习学习。作者是谢益辉。下面是一段放烟花的动画演示。新春快乐。
-install.packages(&amp;#8220;animation&amp;#8221;)
-library(animation)
-demo(&amp;#8216;fireworks&amp;#8217;)
-原文链接</description>
-    </item>
-    
-  </channel>
-</rss>

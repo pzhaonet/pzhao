@@ -1,316 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Bookdown on Peng Zhao</title>
-    <link>http://www.pzhao.org/zh/tags/bookdown/</link>
-    <description>Recent content in Bookdown on Peng Zhao</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
-    <copyright>&amp;copy; 2017 Peng Zhao</copyright>
-    <lastBuildDate>Sun, 26 Nov 2017 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://www.pzhao.org/zh/tags/bookdown/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>R bookdownplus 升级手记，以及北大论文模板</title>
-      <link>http://www.pzhao.org/zh/post/-bookdownplus-update/</link>
-      <pubDate>Sun, 26 Nov 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/zh/post/-bookdownplus-update/</guid>
-      <description>bookdownplus 这个 R 语言程序包，自用起来感觉不错，当初发布的时候还小得意了一把。时过境迁，现在回头看起来是越来越不满意。CRAN 上，bookdownplus 的总下载量接近三千（与此相比，bookdown 的总下载量是七万），大约每小时就有一次下载。Google ‘bookdownplus’ 可以搜到 已经有中文用户在写使用体验了。越是这样，我越惶恐，因为我知道，这个包写得粗糙，可改进的地方数都数不过来。
-向我反馈问题的用户超出了预期，主要是兼容性的问题：在 macOS上如何，在 Linux 上如何，这些问题我都没有办法回答，因为我只在 Windows 7 上测试了，其他操作系统既无精力也无条件测试。开发个软件，自用是一回事，让别人能用完全是另外一回事，这两回事之间真是相差了一个筋斗云。
-所以我决定先把自己看不过去的问题解决一下，那就是代码的构架问题。
-bookdownplus v.1.3 以后的版本包含了 20 个模板。写这个包的时候，因为懒，我就把所有模板的 .tex 文件混到一个文件夹里，style 和 cls 文件混在另一文件夹里，到最后自己都搞不清楚哪个模板用哪个文件了。用户每次想运行 bookdownplus() 生成一个新文档时，都把所有有用没用的文件一股脑考进来（反正也不大），连我自己都看不下去了。此外，我还指望着别人贡献一些新模板，可是目前乱糟糟的，谁愿意把好东西往垃圾堆里扔呢？
-于是这两天我花了一个上午，把这些文件重新整理归类，让他们各回各家各找各妈，每个 bookdown 模板都对应一个 zip 压缩文件，扔在 bookdownplus 的安装目录里。而且，如果再开发新 bookdown 模板，只需按照现有模板 zip 文件里的结构，将所需文件压缩并甩进 bookdownplus 安装目录，就可以用 bookdownplus() 直接调用了，连升级都不用。
-虽然功能上没有多大增强，但架构上舒服多了，所以我把版本号从1.3.x 升到了 1.4.0。
-我还有一块心病，是北京大学学位论文的 LaTeX 模板，我迟迟没能转成 bookdown 模板。原因是这个 LaTeX 模板本身在我电脑上就编译不成功。这次不知怎么开了窍，突然被我搞定了，作为第 21 个模板，收进了 bookdownplus v.1.4.0 里。
-此外，新增了一下几个模板：
-益辉制作了 Chapman &amp;amp; Hall 出版社的模板，现成的，我稍微改了一下。看上去是这样的：这提醒我，直接去 bookdown.</description>
-    </item>
-    
-    <item>
-      <title>R bookdown 的小技巧</title>
-      <link>http://www.pzhao.org/zh/post/bookdown-tips/</link>
-      <pubDate>Fri, 22 Sep 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/zh/post/bookdown-tips/</guid>
-      <description>本帖用来收集整理 R 语言 bookdown 扩展包的一些使用技巧。有些是在网上搜来的，有些是我在别处讨论得来的，有些是我尚未发布的，都写在这里备用。
-输出 Markdown 文件使用 bookdown 编译 Rmd 文件，可以得到的输出格式五花八门。对此，bookdown 的官方文档 有详细介绍，包括 github， pdf，epub，word，html 单个文档等，偏偏没有提 markdown 格式。
-其实，markdown 文件是有的，在编译过程里作为过渡文档存在，编译结束后自动删除。编译顺利的时候，在文件夹里“刷”地闪一下就消失了。我以前的做法是“快手”，在它消失之前迅速用 notepad++ 打开，就存下来了。这显然不是办法，凑合着过日子而已。
-一般来说，如果仅仅是使用 rmarkdown，只需在 yaml 设置里声明一下：
-output:md_document:variant: markdown_github然后 knit 一下，就可以得到 markdown 文件了。想当然地，我把这段代码加到了 bookdown 的yaml 里，却得到警告，说 bookdown 不支持。
-这事儿被我搁置了很久，最后我终于在 bookdown 的项目主页找到了答案：参数 clean = FALSE 。
-bookdown::render_book(&#39;index.Rmd&#39;, clean = FALSE)
-我很喜欢 markdown 格式。我用 bookdown 写论文，Rmd 的正文里插了不少诸如 r pi 这样的调用。跟合作作者讨论时，看 Rmd 文件吧不直观，看 html 吧不方便修改，md 大概是最好的格式。
-bookdown 的编译，我习惯按快捷键 ctrl+alt+b，或者点击右上方面板的 Build 按钮编译的，输出格式取决于 yaml。这样就得不到 md 文件。要想得到 md 文件，看来以后得改成命令行编译了。</description>
-    </item>
-    
-    <item>
-      <title>如何在 R markdown 里输出 r pi 并前后加上小撇`</title>
-      <link>http://www.pzhao.org/zh/post/backticks-in-rmd/</link>
-      <pubDate>Fri, 22 Sep 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/zh/post/backticks-in-rmd/</guid>
-      <description>其实本文的标题应该是：如何在文章里显示 `r pi` 这样的文字。但是我不知道怎么把这个格式弄到标题里。所以，就这样凑合过吧。
-这个问题的答案，要分几层意思来说。`r pi` 是代码格式（本博客显示为粉底红字），并且包含的`符号同样是代码格式，并且 pi 并没有被编译成 3.1415927。别看它短，这三点每个都是个坑。
-这个问题在编写 R markdown 教程时常见。其实，等你明白这个问题的答案后，会发现答案并不难，难的是如何描述这个问题。我费了好大劲，都想不出一个准确描述的办法，并且在那些支持 markdown 的论坛上，我连这个小撇都输不出来，这叫人怎么问？最后我只能这么提问：
-请问在输出文档里怎么显示’撇 r pi 撇’并且别让它编译出来 3.1415927？
-第 1 层意思，那个小撇 `，它到底叫什么？总不能总叫“小撇”吧？我用的是德语键盘，挪，就是上图第一行右起第二个键的上面那个小可爱。
-查维基百科才知道，` 的学名叫 Grave accent ，中文叫“重音符”。在程序猿的世界里，它又被称作 backquote 或 backtick，中文叫反引号。所以，跟这个有关的问题可以这么问：
-How do I escape a backtick ` in Markdown?
-或者
-How to display verbatim/literal inline r code with backticks using Rmarkdown?
-第 2 层意思：怎么把反引号显示出来？如果仅仅输入个反引号 ，在同一段里后面没有了还好办，万一又出现一个反引号，就会把他俩自动配对儿，两者之间的文字当成了代码。瞧，就是上句话这个德性。
-为了棒打鸳鸯不让他俩自动配对儿，那就用转义符\。输入\`，就避免反引号自动配对变代码了。
-第 3 层意思，是怎么把 r 语言的输出结果显示到代码环境里。这个就开始有点绕了。</description>
-    </item>
-    
-    <item>
-      <title>bookdownplus 的两个魔法</title>
-      <link>http://www.pzhao.org/zh/post/bookdownplus-magic/</link>
-      <pubDate>Tue, 27 Jun 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/zh/post/bookdownplus-magic/</guid>
-      <description>bookdown 是个好东西，只是入手有点难，酒香巷深。
-对于 R 初学者来说，如果身边没有人指导，使用者可能需要花大量精力应付 LaTeX，YAML，Pandoc，而很多初学者可能从来没听说过这些，站在 bookdown 的门口往里张望了一下，说不定就被吓跑了，从而错过了门里的精彩世界。
-bookdownplus 扩展包，可以让新手对 bookdown 快速上手。从此，bookdown 这坛好酒就不必去深巷苦寻，它就放在你手边。
-从 v1.2.0 开始，bookdownplus 增加了两个魔法，更是让新手对 bookdown 一见钟情。如果你对 bookdown 感兴趣却苦于入门的烦恼，那么可以试试这两个魔法。
-准备工作首先，安装好必需的软件，包括 R, RStudio, \(\LaTeX\)等。详见 bookdown 官方手册。然后，安装开发版的bookdownplus：
-devtools::install_github(&amp;quot;pzhaonet/bookdownplus&amp;quot;)再用 setwd() 将R的工作目录设置到一个空文件夹里。
-一切准备就绪后，接下来就是见证奇迹的时刻。
-第一个魔法在 R 里运行下面的代码，然后去喝个茶：
-for (i in template()[1:19])bookdownplus(template = i, more_output = more_output()[1:3])回来以后，你会在工作目录里看到很多文件和文件夹。打开那个叫做 _book/的文件夹，Duang！19个示例文档，每个都以 pdf、Word、网页和电子书格式乖乖地等在那里，等你打开了。其中，电子书 epub 格式可以在手机上阅读，也可以在台式机用免费的Calibre软件打开阅读。
-这些示例文档，从学术论文到诗歌乐谱，从中文到英文，展示了 bookdown 能胜任的工作。是不是动心了？
-第二个魔法运行下面的代码，然后看两眼窗外的风景，bookdownplus 就把事情做完了：
-for (mf in mail_font()) {for (ms in mail_style()) {for (mt in mail_theme()) {outputname &amp;lt;- paste(&amp;#39;mail&amp;#39;, ms, mf, mt, sep = &amp;#39;_&amp;#39;)bookdownplus(template = &amp;#39;mail&amp;#39;, mail_style = ms, mail_font = mf, mail_theme = mt, output_name = outputname)}}}仍然打开那个叫做 _book/的文件夹，Duang！ 不同字体、不同主题、不同布局的信件示例文档就全部在那里了。</description>
-    </item>
-    
-    <item>
-      <title>R 包 bookdownplus 正式发布</title>
-      <link>http://www.pzhao.org/zh/post/bookdownplus-released/</link>
-      <pubDate>Thu, 22 Jun 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/zh/post/bookdownplus-released/</guid>
-      <description>很高兴地宣布，我的 R 语言扩展包 ‘bookdownplus v1.0.2’ (Zhao 2017a) 在 CRAN 正式发布了。本文是对’bookdownplus v1.0.2’的简要描述. 由于最近更新频繁, 最新版的’bookdownplus’更加强大和易用, 例如 ‘bookdownplus v1.2.0’ 可以一条指令生成19个模板文档的 pdf, word, html 和 epub 四种格式. 建议移步位于 GitHub 的 bookdownplus 项目主页.
-简介bookdownplus 是对 bookdown 包 (Xie 2016) 的增强和简化, 是快速使用 bookdown 的最简洁方法。bookdown 就好比 Microsoft Word 或 \(\LaTeX\)，可以用来写文档，而 bookdownplus 提供了很多有用的模板，可以很方便地在 bookdown 平台写期刊论文、学位论文、学术海报、化学分子式、信件、日记、日历、诗集、吉他谱等各种常用文档和书籍。这是功能上的增强（+）。
-bookdownplus 使用时只需指定一个模板，给定作者和书名，就可以一键生成模板文件，用户在模板文件里照猫画虎写自己的文字就可以了，不必再花力气上网找模板、设置 YAML 和 LaTeX。这是操作上的简化（-）。
-bookdownplus 各个模板的使用方法详见 R bookdownplus Textbook。这本电子书本身就是用 bookdownplus 生成的，尤其是它的 pdf 版本很美观。此书的源码开放，可以作为使用 bookdownplus写书的示例。
-下面是 bookdownplus 的简介和快速使用方法。
-快速入门准备在开始前，需要安装 R, RStudio, bookdown，和其他依赖的软件和包(例如 Pandoc, \(\LaTeX\), rmarkdown, rticle, knitr等)，作为准备。详见 bookdown 官方手册。</description>
-    </item>
-    
-    <item>
-      <title>R bookdown&#43;: 用 R bookdown 写期刊论文、日记、信件、日历、吉他书、化学方程式</title>
-      <link>http://www.pzhao.org/zh/post/bookdown-plus/</link>
-      <pubDate>Tue, 09 May 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/zh/post/bookdown-plus/</guid>
-      <description>注意：本文所述的bookdown+这个项目已经停止开发，继承者是我新开的R包项目bookdownplus ，这是因为我学会了写R包。当然，说不定有些朋友不喜欢安装R包，喜欢下载个文件夹直接免安装用，那么本文所述的方法仍然可以继续使用，只是我不再更新了而已。
-R bookdown 能做的事情很多，可是那些功能迟迟不来，我只好自己动手，写了个 bookdown+，目前大体实现了用 bookdown 写期刊论文、化学分子式、信件、日记、日历等功能。当然，有些还没完全实现，革命不够彻底，带着浓重的\(\LaTeX\)旧社会的气息。革命尚未成功，同志仍需努力。
-下面是 bookdown+ 的简介和快速使用方法。
-背景R bookdown+，听起来像是跟R[@R-base]的扩展包bookdown[@R-bookdown]有关吧?
-一点没错！我们知道，bookdown天生是个用来写编程书籍的称手工具。只是，这仅仅是硬币的一面。bookdown的功能远远不止如此。它就像一个美味的蛋糕，我等啊等啊，等着谁把它切开，实在等不及了，就自己下手吧。所以，我弄了个bookdown+。
-bookdown+是bookdown的扩展。我数年前收集了一些\(\LaTeX\)模板，现在我把他们整理到bookdown+里，这样就可以开开心心在bookdown的环境里做喜欢的事情。bookdown+ 展示了硬币的另一面：你可以用它来写写期刊论文、化学分子式、信件、日历、甚至日记。
-另一方面，我从个人角度对bookdown的使用做了简化。官方提供的bookdown模板虽然很好用，但对新手来说略显繁琐，需要：
-在index.Rmd和_output.yml两个文件里设置yaml，需要在_bookdown.yml里设置文件名；对中文用户来说，还得跟LaTeX打交道，需要考虑before_body.tex, after_body, preamble.tex里面的设置。这些操作可能让新手望而生畏。
-R bookdown+用起来就容易多了，只需在一个叫做_runme.R的文件里设置好书名、作者，选好模板，binggo！就可以开始放心写自己的文字了。
-功能扩展，操作简化，这就是R bookdown+。
-在不久的未来，肯定会出现很多官方的bookdown模板，但是我不想等了。你要是也等不及，就跟我来一起使用或开发[bookdown+]吧！
-快速入门预备在开始前，你需要安装 R, RStudio, bookdown，和其他依赖的软件和包(例如 Pandoc, \(\LaTeX\), rmarkdown, rticle, knitr等)。详见bookdown官方手册.
-准备好后，从Github下载bookdown+压缩文件。解压缩到你的电脑里，在得到的文件夹里找到 _start.Rproj文件，双击就会在RStudio里打开一个项目。
-文件夹里还有个_runme.R文件。你可以双击打开并运行。下面是对这个文件里代码的详细解释。
-第1步：标题和作者改成你自己书的标题和作者名。
-title &amp;lt;- &amp;#39;bookdown+: Authoring Articles, Mails, Guitar books, Chemical Molecular Formulae and Equations with R bookdown&amp;#39;author &amp;lt;- &amp;#39;Peng Zhao&amp;#39;第2步: 模板在给定的可用模板里选择你想要的。这里我们选第8个。</description>
-    </item>
-    
-    <item>
-      <title>用 R bookdown 写吉他谱</title>
-      <link>http://www.pzhao.org/archives/19291/</link>
-      <pubDate>Thu, 06 Apr 2017 09:15:36 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/archives/19291/</guid>
-      <description>前情提要：
- 用 R 语言的 bookdown 写书 用 R 语言的 bookdown 写诗集 用 R 语言的 bookdown 写学术论文 R 语言 bookdown 快速入门和语法速查  本篇说说如何用 R 语言的 bookdown 写吉他谱。别拦着我，让我陷进bookdown的怀抱里爽死吧。
-中国的民谣吉他伴奏谱常见的一般是六线谱，格式是这样的：
- 第一行是和弦谱，包括和弦名称和左手按琴弦的指法图； 第二行是六线谱，右手拨弦的方式（当然也夹杂左手按和弦外音的变化）； 第三行是歌曲旋律的简谱； 第四行是歌词。  前两行的和弦谱和六线谱在录入时需要专业软件，太麻烦；歌曲旋律一般是跟着原唱学，基本用不着；歌词最容易录入。由于和弦谱最为重要，任何乐器伴奏都用得着，为了省事儿，上图可以只保留和弦名称和歌词，简化为文字谱：
- C Em F G C Em 让我掉下眼泪的不只昨夜的酒，让我依依不舍的不……  文字谱的好处是用不着任何专业软件，录入很方便。但是，这比较坑菜鸟。想不起来Em和弦的指法该怎么办？Em还好办，看见个G#7sus4，我崩溃了，自认水平不行，乖乖翻和弦字典去。如果标注了指法图——
-还是更方便一些，吉他和钢琴都可以用。我觉得等我老得掉光牙齿的时候，估计连C和弦的指法都忘光了，给孙子连个《成都》都唱不成，这时候指法图就有用了。
-以前我玩过LaTeX输入指法图的游戏。由于对LaTeX心怀恐惧，这个游戏没敢多玩。现在有了R语言的bookdown来取代LaTeX，自然想把这个游戏拿回来找找年轻的感觉。
-这个主意早就有了，原以为会很麻烦（恐惧心理），一直没行动。昨天在送大娃和接二娃之间空出半个小时，鼓捣了一下，居然鼓捣出来了上面那个样子。其实很简单：用 bookdown 的壳，LaTeX的核。上面那句歌词，录入的文字是这样的：
-让\CM 我掉下\Em 眼泪的　不\F 只昨夜的\GM 酒　让\CM 我依依\Em 不舍的　不……  我打算以后陆陆续续把喜欢的歌弄成一本书（pdf），样子是：
-并且把bookdown录入吉他谱的源代码在GitHub开了个bookdown-guitar的项目。毕竟，中文的对齐不太完美，看看有没有高手来帮帮我。
-其实跟LaTeX里一样。那我在LaTeX里用就行了，干嘛来bookdown里用？
-因为这样的话，就可以在同一本书里同时呈现R代码、作图、分析结果和吉他谱啊。
-啊？把他们弄在一起有什么用？
-呃……这是个好问题……容我清清脑子想一想……听说数学领域很多理论在提出时都没啥用，后来都用上了，除了数论……
-原文链接</description>
-    </item>
-    
-    <item>
-      <title>来，跟我一起玩泥巴</title>
-      <link>http://www.pzhao.org/archives/19276/</link>
-      <pubDate>Fri, 31 Mar 2017 03:32:33 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/archives/19276/</guid>
-      <description>去年五月份，跟坛子君一起开始玩微信公众号。这个生猛的小伙伴获得原创保护功能只用了11天，获得赞赏功能只用了20天。而我硬挺了大概两个月，除了几十的订阅量让人感到欣慰外，没有获得其他实质性进展。这就好比Derek在博客说google“美国”搜到的结果里他的美国攻略排第5，我就google了一下“德国”想看看自己的博客排第几，结果&amp;#8230;&amp;#8230;跟猛人PK，就是自取其辱。
-这样懒散了八个月，2月9号下午，我在博客上抱怨了一下，然后，原创保护就突然开通了！
-我想：我去，按照坛子君的节奏，下一步开通赞赏还得等8/11*9=7个月吧。所以基本不指望了，开通之后我就没再管，忙着玩bookdown了。忙完之后已经到了3月份，想起来我还有个公众号呢，打开一看吓一跳，系统信息里有三条一模一样的信息，猛一看还以为是垃圾邮件，标题全部是“公共平台邀请你使用赞赏功能”，发于2月10日、16日和22日。
-我以为会等7个月，其实只花了1天。
-我禁不住嘀咕：腾讯怎么搞的，标题应该用“您”字吧！
-不管怎样，算是撞了大运，我就开开心心地开启了留言和赞赏。据说这些功能是很多小号求之不得的，每天可以用一次。第一篇带赞赏按钮的帖子得到了朋友们的鼎力支持，打赏让我发了一笔小财，够在北京买25平方厘米的房子，或者支付博客一年的域名费（感谢！）。无以为报，我恨不得每天更新一篇。但是，试过后凄惨地发现，我没那个本事。
-这不就亏了吗？公众号的这些功能晾在那里，不用白不用，用了也白用。
-既然我自己用不了那么多，不如大家一起用。所以，我的公众号（注意，是公众号，不是博客）开始接受投稿。
-征稿启事
-“大鹏志”公众号接受投稿。稿件可以任何形式发给我，推荐用email发送markdown格式的纯文本文件到我的邮箱 dapengde 艾特 live 刀 com。一经采纳，我会注明作者并开启原创保护和打赏，版权和打赏全部归作者所有。
-目前，无其他稿费来源，所以靠投稿挣钱就别指望了。我们就当交个朋友，一起玩玩泥巴，培养个兴趣爱好。往高处想，说不定将来一起出本书; 往低处看，至少给生活留下了一点记录。我已经把现有的投稿文章（无论是否在公众号采纳）同步做成了电子书，放在了bookdown官方网站首页（点击可见），书名暂称为《爸爸三定律》（pdf）。目前投稿的都是妈妈。书的排版还有待改进，这个容我多花点时间折腾。
-稿件要求：
- 题材以育儿为中心，婚姻家庭为外围; 字数800字以上; 主题不要求积极向上（我自己都做不到），但要求有真情实感（我来判断）; 体裁不限，但每篇错别字不能超过三个（改到第三个就退稿）。  稿件内容：
- 标题：必填。 作者：必填。 正文：必填。 封面图：可以不填，我会按内容酌情配图。 封面文字：可以不填，我酌情添加。 文中插图：可以不填，我不添加。 是否允许我添加按语：可以不填，我会酌情添加。 接受赞赏的微信号或支付宝： 最好填上。小号，填了也不会收到多少，就是玩玩而已。  梦想一定要有，万一赚他一个亿呢？
-原文链接</description>
-    </item>
-    
-    <item>
-      <title>用 R bookdown 写学术论文</title>
-      <link>http://www.pzhao.org/archives/19190/</link>
-      <pubDate>Fri, 24 Mar 2017 09:53:23 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/archives/19190/</guid>
-      <description>1
-最近，我使用 R 语言的 bookdown 扩展包接连做了三件事：先是整理出一本跟 R 语言有关的书，然后把博客的帖子整理出一本纯文本的中文书，这两天我又在用它来写一篇打算投稿的学术期刊论文。
-用 bookdown 写英文的科研期刊论文，配置起来是很简单的，只需在bookdown提供的官方演示文档里做简单修改如下：
-首先，index.Rmd 的文件头 yaml 部分，将 documentclass 设为 article，并关闭图表目录和文章目录即可：
-documentclass: article lof: no lot: no toc: no  然后，_output.yml 文件内容全部清空，然后添加指令生成 word&amp;#95;document2 文档、 pdf&amp;#95;document2 文档和 html&amp;#95;document2 文档，参数为default即可。也就是说，&amp;#95;output.yml 文件内容只需3行：
-bookdown::word_document2: default bookdown::pdf_document2: default bookdown::html_document2: default  就能生成足够美观的三种格式的文档了。
-2
-写论文期间发生了一件事，让我饱受刺激。
-我的科研论文有个计算公式，昨天发现其中一个数值不小心敲错了。后续计算都是建立在这个计算的基础上，所以后续计算全错。虽然不影响结论，但严格来讲，论文里所有的数据都得改。
-放在以前，这是让人崩溃的灾难。幸亏，这次我写论文用了 bookdown。
-这篇研究论文是用 Rmd 格式写的，里面绝大部分数据不是手动敲进去的，而是调用了 R 代码，图表也是用 R 代码插入的，走的是“可重复性研究”的思路。现在，我只要把 R 代码里那个敲错的数据改过来，运行代码，后续计算就全部自动更新，而论文 Rmd 文件里调用代码的输出结果，会在导出的 pdf 或 word 文档也相应自动更新，节省了大量时间，还减少了敲数字或拷贝粘贴出错的可能，怎一个爽字了得！
-在 bookdown 发布之前，其实 rmarkdown 也有这个功能，但因为公式、交叉引用、参考文献方面的欠缺， rmarkdown 对我来讲比较鸡肋，一直未能用在论文写作上。现在有了 bookdown ，可以甩开膀子使劲儿用。可以说， bookdown 把 rmarkdown 原有的价值做了更充分的挖掘。</description>
-    </item>
-    
-    <item>
-      <title>R bookdown 写学术论文</title>
-      <link>http://www.pzhao.org/zh/post/r-bookdown/</link>
-      <pubDate>Fri, 24 Mar 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/zh/post/r-bookdown/</guid>
-      <description>1
-最近，我使用 R 语言的 bookdown 扩展包接连做了三件事：先是整理出一本跟R 语言有关的书，然后把博客的帖子整理出一本纯文本的中文书，这两天我又在用它来写一篇打算投稿的学术期刊论文。
-用 bookdown 写英文的科研期刊论文，配置起来是很简单的，只需在bookdown提供的官方演示文档里做简单修改如下：
-首先，index.Rmd 的文件头 yaml 部分，将 documentclass 设为 article，并关闭图表目录和文章目录即可：
-documentclass: article lof: no lot: no toc: no  然后，_output.yml 文件内容全部清空，然后添加指令生成 word_document2 文档、 pdf_document2 文档和 html_document2 文档，参数为default即可。也就是说，_output.yml 文件内容只需3行：
-bookdown::word_document2: default bookdown::pdf_document2: default bookdown::html_document2: default  就能生成足够美观的三种格式的文档了。
-2
-写论文期间发生了一件事，让我饱受刺激。
-我的科研论文有个计算公式，昨天发现其中一个数值不小心敲错了。后续计算都是建立在这个计算的基础上，所以后续计算全错。虽然不影响结论，但严格来讲，论文里所有的数据都得改。
-放在以前，这是让人崩溃的灾难。幸亏，这次我写论文用了 bookdown。
-这篇研究论文是用 Rmd 格式写的，里面绝大部分数据不是手动敲进去的，而是调用了 R 代码，图表也是用 R 代码插入的，走的是“可重复性研究”的思路。现在，我只要把 R 代码里那个敲错的数据改过来，运行代码，后续计算就全部自动更新，而论文 Rmd 文件里调用代码的输出结果，会在导出的 pdf 或 word 文档也相应自动更新，节省了大量时间，还减少了敲数字或拷贝粘贴出错的可能，怎一个爽字了得！
-在 bookdown 发布之前，其实 rmarkdown 也有这个功能，但因为公式、交叉引用、参考文献方面的欠缺， rmarkdown 对我来讲比较鸡肋，一直未能用在论文写作上。现在有了 bookdown ，可以甩开膀子使劲儿用。可以说， bookdown 把 rmarkdown 原有的价值做了更充分的挖掘。</description>
-    </item>
-    
-    <item>
-      <title>如果用bookdown来写诗集</title>
-      <link>http://www.pzhao.org/archives/19150/</link>
-      <pubDate>Wed, 15 Mar 2017 14:21:56 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/archives/19150/</guid>
-      <description>update-2017-07-03：bookdownplus包里附带了诗集模板，可以用bookdown制作下图这样的诗集：
-今天，我用R的bookdown做出了第一本电子书：&amp;lt;爸爸三定律&amp;gt;。内容是从我博客上选的育儿相关帖。
-益辉在bookdown的官方文档里讲到：
- This book is primarily about the R package bookdown, so you need to at least install R and the bookdown package. However, your book does not have to be related to the R language at all. It can use other computing languages (C++, SQL, Python, and so on; see Appendix B), and it can even be totally irrelevant to computing (e.g., you can write a novel, or a collection of poems)</description>
-    </item>
-    
-    <item>
-      <title>R bookdown 快速入门和语法速查</title>
-      <link>http://www.pzhao.org/archives/19141/</link>
-      <pubDate>Wed, 15 Mar 2017 07:29:47 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/archives/19141/</guid>
-      <description>快速开始
-  R bookdown 是什么
-   一个用来写书写文章的软件。   比Word更美观，比LaTeX更易用，比Markdown格式更丰富。   可以方便地插入目录、图表、交叉引用、脚注、索引。   可以方便地插入公式、参考文献、R代码。   可以生成漂亮的pdf、word和网页文件。   撰写可重复性报告的不二之选。     安装
-
-&amp;lt;ol style=&amp;quot;list-style-type: decimal&amp;quot;&amp;gt; &amp;lt;li&amp;gt; &amp;lt;a href=&amp;quot;https://cran.r-project.org/bin/windows/base/&amp;quot;&amp;gt;下载R&amp;lt;/a&amp;gt;并安装。 &amp;lt;/li&amp;gt; &amp;lt;li&amp;gt; &amp;lt;a href=&amp;quot;https://www.rstudio.com/products/rstudio/download/&amp;quot;&amp;gt;下载RStudio&amp;lt;/a&amp;gt;并安装。 &amp;lt;/li&amp;gt; &amp;lt;li&amp;gt; &amp;lt;a href=&amp;quot;http://www.ctex.org/CTeXDownload&amp;quot;&amp;gt;下载CTEX&amp;lt;/a&amp;gt;并安装。建议安装完整版。 &amp;lt;/li&amp;gt; &amp;lt;li&amp;gt; &amp;lt;a href=&amp;quot;http://pandoc.org/installing.html&amp;quot;&amp;gt;下载Pandoc&amp;lt;/a&amp;gt;并安装。 &amp;lt;/li&amp;gt; &amp;lt;li&amp;gt; 运行RStudio。在左上面板的代码窗口输入并运行以下代码（安装bookdown扩展包）： &amp;lt;/li&amp;gt; &amp;lt;/ol&amp;gt; &amp;lt;pre class=&amp;quot;r&amp;quot;&amp;gt;&amp;lt;code&amp;gt;install.packages(&amp;quot;bookdown&amp;quot;)  
-&amp;lt;p&amp;gt; 好了，安装完毕。 &amp;lt;/p&amp;gt;&amp;lt;/p&amp;gt;  
- 从模板开始
-
-&amp;lt;ol style=&amp;quot;list-style-type: decimal&amp;quot;&amp;gt; &amp;lt;li&amp;gt; 下载模板文档（到下载页面点击&amp;lt;code&amp;gt;Clone or download&amp;lt;/code&amp;gt; &amp;amp;#8211; &amp;lt;code&amp;gt;Download ZIP&amp;lt;/code&amp;gt;）： &amp;lt;/li&amp;gt; &amp;lt;/ol&amp;gt; &amp;lt;ul&amp;gt; &amp;lt;li&amp;gt; 如果你要写英文文档，那么下载&amp;lt;a href=&amp;quot;https://github.</description>
-    </item>
-    
-    <item>
-      <title>不可挡的bookdown</title>
-      <link>http://www.pzhao.org/archives/19122/</link>
-      <pubDate>Tue, 14 Mar 2017 14:36:57 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/archives/19122/</guid>
-      <description>最近，我打算把博客上关于R语言的帖子整理成一本书，希望弄得帅气一点，整齐一点，将来容易维护一点。涌进脑子的第一个念头是 (\LaTeX) ，第二个念头是想吐。
-是的，虽然我推崇 (\LaTeX) ，觉得这个工具排出来的文档很漂亮，但自从弄完博士论文1{#fnref1.footnoteRef} 之后，除了帮别人备份一下博客2{#fnref2.footnoteRef} 、往论文里插几个公式和玩玩吉他谱3{#fnref3.footnoteRef}，我再也没碰过她。惰性开始代替折腾，我宁可点点鼠标写出一份不太美观的Word文档，也不想面对 (\LaTeX) 那让人头疼的代码。大概我是真上了岁数罢。
-对于 (\LaTeX)，我想自己的内心深处是怀有恐惧的。她的美丽让我着迷，她的复杂令人生畏。
-所以，这次整理博客，我决定在Word里做。用了这么多年，对Word的秉性我算是略知一二，从一开始就用主控文档和子文档的方式管理，以防单个文档太大而死机；从标题到R代码，我预先都设置好了样式以及样式的快捷键，方便调整格式；每写几句话，就左手抽筋一样ctrl+s一下，以防万一。其间，发现帖子里有些R代码要修改调试，我就咬牙忍着在RStudio和Word之间频繁拷贝粘贴的煎熬。反正换回 (\LaTeX) 也是一样想吐，既来之则安之，嫁鸡随鸡嫁狗随狗吧。
-我天真地以为，这样就万无一失了。
-有一天，我正在Word里改某篇帖子，改之前我留意了一下总页数是160多页。改了几个段落之后，我惊奇地发现，总页数成了220多页。再仔细找，发现有些代码区的文字无缘无故变成了乱码，一乱就新增几十页。进而测试发现，我正在好端端敲字，Word左下角的页数突然就刷刷地增加了，翻回去看，乱码已经被填进去了。试了好几次，都是这样。我甚至给文档权限设置为凭密码修订，仍然挡不住Word疯狂的脚步。
-对着那自动呼呼上涨的页码，我想：认识十来年，想不到对你依然不了解。
-(\LaTeX) 的倩影再度闪现在我脑海。她虽然复杂，但至少源文件是纯文本，不会胡来，不像Word这么没有底线。
-为什么就没有个像Word那么界面简单，像 (\LaTeX) 那么源码单纯的两全其美方案呢？
-“叮”的一声，脑子里冒出刚刚发布不久的bookdown(Xie 2016b)(Xie 2016a)。这是R语言的一个扩展包，专门用来写书，可以看作是R markdown的升级版。我的博客原文都是以markdown写成的，弄到bookdown里应当是顺理成章的事。只是大约因为上了岁数，我近几年对新工具越来越排斥，所以一直懒得尝试。这次被逼无奈，要不就试试吧。反正都是折腾，与其把精力花在让人心碎的Word里或让人心焦的 (\LaTeX) 里，还不如花在崭新的bookdown里。就算是有缺点，还能比Word和 (\LaTeX) 更不能忍么？
-然后，刷！一晃十来天。春宵苦短日高起，从此君王不早朝。
-这大半个月，我陶醉在bookdown的魅力里不可自拔。bookdown秉承拿来主义，把一大串工具链里的精华整合起来，让以前繁琐的步骤无比简化，怎一个爽快了得！她近乎完美地解决了我遇到的所有问题：纯文本操作，满足了我的控制欲；在导出完美的网页格式同时，还能导出为pdf和word文档，足够拿出来跟依赖Word的人交流；公式、脚注、交叉引用、目录、参考文献，功能齐全而不臃肿，格式标记简洁而优雅。我不再需要为Word的自以为是而抑郁，也不再需要为 (\LaTeX) 的纷繁复杂而烦恼了。
-我用bookdown生成的书稿  一种亲切之美扑面而来，我感到无法抗拒无法阻挡。有了bookdown在手，写东西我还需要别的什么呢？想来想去，我不需要别的了。在Word和(\LaTeX) 之间摇摆了十来年，到头来才发现bookdown才是真爱。
-不过，bookdown绝非完美。如果不了解rmarkdown(Allaire et al. 2016)，没见过 (\LaTeX) ，没听过pandoc，没用过knitr (Xie 2016c)(Xie 2015)(Xie 2014)，那么bookdown对新手来说，门槛仍然有点高。幸运的是，这几样工具我都用过，那么投入bookdown的怀抱就属于水到渠成了。即便如此，在使用初期仍然遇到了一些难以解决的问题，好在有bookdown的开发者益辉同学4{#fnref4.footnoteRef} 和其他同道中人热心地提供帮助，才能一路披荆斩棘，最后走上了幸福的康庄大道。
-下面，我把我那些散落在各处的提问和解决方法汇总在这里。
- 编译   起初我连bookdown的界面都没搞清楚，想编译却不知该点哪儿。益辉一直说build，build，我一直以为是菜单栏的build，后来才看到是在RStudio右上面板的build按钮。
-bookdown是可以直接导出为word文档的。这么重要的功能，却隐藏得很深，在官方文档里都没有强调。导出方法是，在_output.yml里添加一行：
-bookdown::word_document2: default  注意，default这个词是不能少的，不管它是不是默认。我也不知道为什么。
-导出的word文档相当令人满意，参考文献的版式、图表的交叉引用都堪称完美。唯一不足之处，是公式的编号和交叉引用。bookdown的官方文档5{#fnref5.footnoteRef}给出的公式书写方案是，利用 (\LaTeX) 的公式环境来编号和引用，这一点在生成pdf时没问题，但生成word时，会发现别说编号，连公式本身都消失了。这大概是因为pandoc未能将公式环境正确转换的缘故。解决办法是，不使用公式环境，而使用行内公式（即公式前后有一个美元符号），公式前面用圆括号里加公式标签就可以了。例如，输入：
-(@eq-mc) $E = mc^2$ I like Eq.</description>
-    </item>
-    
-    <item>
-      <title>R bookdown 语法标记速查</title>
-      <link>http://www.pzhao.org/zh/post/bookdown-cheatsheet/</link>
-      <pubDate>Tue, 14 Mar 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/zh/post/bookdown-cheatsheet/</guid>
-      <description>快速开始R bookdown 是什么一个用来写书写文章的软件。比Word更美观，比LaTeX更易用，比Markdown格式更丰富。可以方便地插入目录、图表、交叉引用、脚注、索引。可以方便地插入公式、参考文献、R代码。可以生成漂亮的pdf、word和网页文件。撰写可重复性报告的不二之选。安装下载R并安装。下载RStudio并安装。下载CTEX并安装。建议安装完整版。下载Pandoc并安装。运行RStudio。在左上面板的代码窗口输入并运行以下代码（安装bookdown扩展包）：install.packages(&amp;quot;bookdown&amp;quot;)install.packages(&amp;#39;servr&amp;#39;)好了，安装完毕。
-从模板开始下载模板文档（到下载页面点击Clone or download - Download ZIP）：如果你要写英文文档，那么下载通用模板;如果你要写中文文档，那么下载中文模板。将模板文档解压缩到任意文件夹。
-在解压缩后得到的文件里找到扩展名为.Rproj的文件。双击，默认会用RSudio打开。
-在RStudio右上面板点击Build标签，再点击build book。好了，模板书出现在名为_book的子文件夹里。
-在RStudio右下面板里会看到该文件夹里的文件，其中有一些扩展名为.Rmd的文件。逐个点击打开，把其中的内容修改成你自己的内容。除了index.Rm外，不需要的.Rmd文件可以删掉。
-重复第4步，就得到了你自己的书。
-对照一下.Rmd的文件内容和生成的文档，体会两者之间是如何对应的。
-基本标记标记输出*斜体*斜体**粗体**粗体CO~2~CO2下标R^2^R2上标$E = mc^2$\(E = mc^2\) 行内公式（双美元符号为行间公式）[大鹏志](http://dapengde.</description>
-    </item>
-    
-    <item>
-      <title>不可挡的bookdown</title>
-      <link>http://www.pzhao.org/zh/post/inresistible-bookdown/</link>
-      <pubDate>Mon, 13 Mar 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.pzhao.org/zh/post/inresistible-bookdown/</guid>
-      <description>最近，我打算把博客上关于R语言的帖子整理成一本书，希望弄得帅气一点，整齐一点，将来容易维护一点。涌进脑子的第一个念头是 \(\LaTeX\) ，第二个念头是想吐。
-是的，虽然我推崇 \(\LaTeX\) ，觉得这个工具排出来的文档很漂亮，但自从弄完博士论文1 之后，除了帮别人备份一下博客2 、往论文里插几个公式和玩玩吉他谱3，我再也没碰过她。惰性开始代替折腾，我宁可点点鼠标写出一份不太美观的Word文档，也不想面对 \(\LaTeX\) 那让人头疼的代码。大概我是真上了岁数罢。
-对于 \(\LaTeX\)，我想自己的内心深处是怀有恐惧的。她的美丽让我着迷，她的复杂令人生畏。
-所以，这次整理博客，我决定在Word里做。用了这么多年，对Word的秉性我算是略知一二，从一开始就用主控文档和子文档的方式管理，以防单个文档太大而死机；从标题到R代码，我预先都设置好了样式以及样式的快捷键，方便调整格式；每写几句话，就左手抽筋一样ctrl+s一下，以防万一。其间，发现帖子里有些R代码要修改调试，我就咬牙忍着在RStudio和Word之间频繁拷贝粘贴的煎熬。反正换回 \(\LaTeX\) 也是一样想吐，既来之则安之，嫁鸡随鸡嫁狗随狗吧。
-我天真地以为，这样就万无一失了。
-有一天，我正在Word里改某篇帖子，改之前我留意了一下总页数是160多页。改了几个段落之后，我惊奇地发现，总页数成了220多页。再仔细找，发现有些代码区的文字无缘无故变成了乱码，一乱就新增几十页。进而测试发现，我正在好端端敲字，Word左下角的页数突然就刷刷地增加了，翻回去看，乱码已经被填进去了。试了好几次，都是这样。我甚至给文档权限设置为凭密码修订，仍然挡不住Word疯狂的脚步。
-对着那自动呼呼上涨的页码，我想：认识十来年，想不到对你依然不了解。
-\(\LaTeX\) 的倩影再度闪现在我脑海。她虽然复杂，但至少源文件是纯文本，不会胡来，不像Word这么没有底线。
-为什么就没有个像Word那么界面简单，像 \(\LaTeX\) 那么源码单纯的两全其美方案呢？
-“叮”的一声，脑子里冒出刚刚发布不久的bookdown(Xie 2016b)(Xie 2016a)。这是R语言的一个扩展包，专门用来写书，可以看作是R markdown的升级版。我的博客原文都是以markdown写成的，弄到bookdown里应当是顺理成章的事。只是大约因为上了岁数，我近几年对新工具越来越排斥，所以一直懒得尝试。这次被逼无奈，要不就试试吧。反正都是折腾，与其把精力花在让人心碎的Word里或让人心焦的 \(\LaTeX\) 里，还不如花在崭新的bookdown里。就算是有缺点，还能比Word和 \(\LaTeX\) 更不能忍么？
-然后，刷！一晃十来天。春宵苦短日高起，从此君王不早朝。
-这大半个月，我陶醉在bookdown的魅力里不可自拔。bookdown秉承拿来主义，把一大串工具链里的精华整合起来，让以前繁琐的步骤无比简化，怎一个爽快了得！她近乎完美地解决了我遇到的所有问题：纯文本操作，满足了我的控制欲；在导出完美的网页格式同时，还能导出为pdf和word文档，足够拿出来跟依赖Word的人交流；公式、脚注、交叉引用、目录、参考文献，功能齐全而不臃肿，格式标记简洁而优雅。我不再需要为Word的自以为是而抑郁，也不再需要为 \(\LaTeX\) 的纷繁复杂而烦恼了。
-我用bookdown生成的书稿
-一种亲切之美扑面而来，我感到无法抗拒无法阻挡。有了bookdown在手，写东西我还需要别的什么呢？想来想去，我不需要别的了。在Word和\(\LaTeX\) 之间摇摆了十来年，到头来才发现bookdown才是真爱。
-不过，bookdown绝非完美。如果不了解rmarkdown(Allaire et al. 2017)，没见过 \(\LaTeX\) ，没听过pandoc，没用过knitr (Xie 2016c)(Xie 2015)(Xie 2014)，那么bookdown对新手来说，门槛仍然有点高。幸运的是，这几样工具我都用过，那么投入bookdown的怀抱就属于水到渠成了。即便如此，在使用初期仍然遇到了一些难以解决的问题，好在有bookdown的开发者益辉同学4 和其他同道中人热心地提供帮助，才能一路披荆斩棘，最后走上了幸福的康庄大道。
-下面，我把我那些散落在各处的提问和解决方法汇总在这里。
-编译起初我连bookdown的界面都没搞清楚，想编译却不知该点哪儿。益辉一直说build，build，我一直以为是菜单栏的build，后来才看到是在RStudio右上面板的build按钮。
-bookdown是可以直接导出为word文档的。这么重要的功能，却隐藏得很深，在官方文档里都没有强调。导出方法是，在_output.yml里添加一行：
-bookdown::word_document2: default 注意，default这个词是不能少的，不管它是不是默认。我也不知道为什么。
-导出的word文档相当令人满意，参考文献的版式、图表的交叉引用都堪称完美。唯一不足之处，是公式的编号和交叉引用。bookdown的官方文档5给出的公式书写方案是，利用 \(\LaTeX\) 的公式环境来编号和引用，这一点在生成pdf时没问题，但生成word时，会发现别说编号，连公式本身都消失了。这大概是因为pandoc未能将公式环境正确转换的缘故。解决办法是，不使用公式环境，而使用行内公式（即公式前后有一个美元符号），公式前面用圆括号里加公式标签就可以了。例如，输入：
-(@eq-mc) $E = mc^2$I like Eq. (@eq-mc) so much that I am falling love with her.</description>
-    </item>
-    
-  </channel>
-</rss>

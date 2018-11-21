@@ -1,115 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>News on Peng Zhao</title>
-    <link>/en/tags/news/</link>
-    <description>Recent content in News on Peng Zhao</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; 2017 Peng Zhao</copyright>
-    <lastBuildDate>Wed, 20 Apr 2016 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/en/tags/news/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>News</title>
-      <link>/en/home/news/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>/en/home/news/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Advection campaign at Torgnon started </title>
-      <link>/en/post/advection-tn/</link>
-      <pubDate>Wed, 19 Jul 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/en/post/advection-tn/</guid>
-      <description>At the beginning of July, Kathi and I went to the Aosta Valley to set up the advection measurement at Torgnon. Thanks a lot to Marta and other colleagues!
-Our institute is collecting post cards from the fieldwork in the meanwhile. Here is one from us.</description>
-    </item>
-    
-    <item>
-      <title>EGU 2017</title>
-      <link>/en/post/egu2017photo/</link>
-      <pubDate>Tue, 02 May 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/en/post/egu2017photo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Advection campaign at Neustift started </title>
-      <link>/en/post/advection-ns/</link>
-      <pubDate>Sat, 08 Oct 2016 00:00:00 +0000</pubDate>
-      
-      <guid>/en/post/advection-ns/</guid>
-      <description>Last Thursday, Kathi^2, Peng and Georg were at Neustift to set up the advection equipment for the final campaign this year. Here you can find a video which compresses a few hours of work into 25 s.
-</description>
-    </item>
-    
-    <item>
-      <title>EcoBot measurements during ScaleX 2016 </title>
-      <link>/en/post/ecobot-ft/</link>
-      <pubDate>Fri, 08 Jul 2016 00:00:00 +0000</pubDate>
-      
-      <guid>/en/post/ecobot-ft/</guid>
-      <description>Yesterday Kathi and Peng went to Fendt to support UAV-based thermal imaging by Claire Brenner (BOKU, Vienna) with ground-validation EcoBot measurements.</description>
-    </item>
-    
-    <item>
-      <title>Advection campaign within ScaleX 2016</title>
-      <link>/en/post/advection-ft/</link>
-      <pubDate>Thu, 30 Jun 2016 00:00:00 +0000</pubDate>
-      
-      <guid>/en/post/advection-ft/</guid>
-      <description>The last two days part of the group was in Fendt (Bavaria) to set up the advection measurement system as part of the 2016 ScaleX campaign.</description>
-    </item>
-    
-    <item>
-      <title>First advection campaign completed </title>
-      <link>/en/post/advection-mb1/</link>
-      <pubDate>Fri, 13 Nov 2015 00:00:00 +0000</pubDate>
-      
-      <guid>/en/post/advection-mb1/</guid>
-      <description>Last week Peng, Albin, Kathi and Felix went back to Monte Bondone to dismantle the equipment of our first grassland advection campaign- looking forward to some exciting data!</description>
-    </item>
-    
-    <item>
-      <title>Advection experiment at Monte Bondone started</title>
-      <link>/en/post/advection-mb/</link>
-      <pubDate>Thu, 24 Sep 2015 00:00:00 +0000</pubDate>
-      
-      <guid>/en/post/advection-mb/</guid>
-      <description>Earlier this week, Peng, Albin, Kathi and Georg were at Monte Bondone to set up the first grassland advection experiment. The pictures below show some impressions of the field work and setup; here a short fun movie can be found.
-</description>
-    </item>
-    
-    <item>
-      <title>Biomet hike</title>
-      <link>/en/post/biomet-hike/</link>
-      <pubDate>Wed, 01 Jul 2015 00:00:00 +0000</pubDate>
-      
-      <guid>/en/post/biomet-hike/</guid>
-      <description>This week we used the excellent weather conditions for a group hike.
-After we had figured out where actually to go,
-… and some involved grass scrambling
-… we finally reached our “summit”, where we took a well-deserved break
-… and marveled the gorgeous view.
-“What goes up must come down” and so we eventually returned back and cooled down with a beer or two,
-… replenished the burnt calories,</description>
-    </item>
-    
-    <item>
-      <title>EGU 2015</title>
-      <link>/en/post/egu-2015-photo/</link>
-      <pubDate>Wed, 22 Apr 2015 00:00:00 +0000</pubDate>
-      
-      <guid>/en/post/egu-2015-photo/</guid>
-      <description></description>
-    </item>
-    
-  </channel>
-</rss>
