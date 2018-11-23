@@ -3,8 +3,6 @@
   <head>
     <title>zoomInUp</title>
     <meta charset="utf-8">
-    <meta name="author" content="Peng Zhao" />
-    <meta name="date" content="2018-11-23" />
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
     <link rel="stylesheet" href="https:\\cdnjs.cloudflare.com\ajax\libs\animate.css\3.7.0\animate.min.css" type="text/css" />
@@ -14,13 +12,12 @@
 class: center, middle, inverse, title-slide
 
 # zoomInUp
-### Peng Zhao
-### 2018-11-23
+## Click me and press the left or right arrow to see the zoomInUp effect.
 
 ---
 
 layout: true
-class: inverse, center, middle, animated, zoomOutUp
+class: inverse, center, middle, animated, zoomInUp
 background-image: url(https://upload.wikimedia.org/wikipedia/commons/b/be/Sharingan_triple.svg)
 
 ---
@@ -33,14 +30,39 @@ background-image: url(https://upload.wikimedia.org/wikipedia/commons/b/be/Sharin
 
 ---
 layout: false
-class: inverse, left, center, middle
+class: inverse, left, middle, animated, zoomInUp
 
-# Click me and press the left or right arrow to see the zoomInUp effect.
+# Source codes of the previous slides
+
+```markdown
+---
+title: "zoomInUp"
+subtitle: "Click me and press the left or right arrow to see the zoomInUp effect."
+output:
+  xaringan::moon_reader:
+    css:
+      - default
+      - default-fonts
+      - "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css"
+    lib_dir: libs
+---
+layout: true
+class: inverse, center, middle, animated, zoomInUp
+background-image: url(https://upload.wikimedia.org/wikipedia/commons/b/be/Sharingan_triple.svg)
+
+---
+
+# Yeah, Xaringan has animations...
+
+---
+
+# if animate.css!
+
+
+```
     </textarea>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
-<script>var slideshow = remark.create({
-"slideNumberFormat": "<div class=\"progress-bar-container\">   <div class=\"progress-bar\" style=\"width: calc(%current% / %total% * 100%);\">   </div> </div>`"
-});
+<script>var slideshow = remark.create();
 if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   window.dispatchEvent(new Event('resize'));
 });
@@ -49,8 +71,7 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   if (!r) return;
   s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
   d.head.appendChild(s);
-})();
-setInterval(function() {slideshow.gotoNextSlide();}, 1000);</script>
+})();</script>
 
 <script>
 (function() {
