@@ -19,10 +19,10 @@ knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE, signif = 3
 This is an anouncement of a 4.5-hour course for:
 
   - beginners without progamming background,
-  - students and earliy career scientists who are interested in R, and 
-  - senior scientists who are interesed in reproducible research.
+  - students and early career scientists who are interested in R, and 
+  - senior scientists who are interested in reproducible research.
 
-This poster was created via R. It is reproducible, accessful online, and interactive (try the demo data table below). Wanna know how? Come and join us!
+This poster was created via R. It is reproducible, accessible online, and interactive (try the demo data table below). Wanna know how? Come and join us!
 
 ## *When* and *where*
 
@@ -32,7 +32,7 @@ This poster was created via R. It is reproducible, accessful online, and interac
 
 ## *How* to participate
 
-- This course is devided into four parts (see the headings in this post). Feel free to take part in any one or all of them. 
+- This course is divided into four parts (see the headings in this post). Feel free to take part in any one or all of them. 
 - Send a registration email (mentioning which part you would participate) to peng.zhao@mpic.de by Monday, 3 Dec., 2018.
 - Bring a laptop for live practice. Although examples are give on Windows, other OS will be compatible. R and RStudio must be installed in advance. See below.
 
@@ -46,7 +46,7 @@ This poster was created via R. It is reproducible, accessful online, and interac
 
 - Installation of R: [Windows](https://cran.r-project.org/bin/windows/base/R-3.5.1-win.exe), [macOS](https://cran.r-project.org/bin/macosx/R-3.5.1.pkg),[Linux](https://cran.r-project.org/bin/linux/)
 - Installation of RStudio: [download](https://www.rstudio.com/products/rstudio/download/#download)
-- Recommended: [Typora](https://typora.io/), [StackEdit](https://stackedit.io/), [Notepad++](https://notepad-plus-plus.org/download), [Sublime Text](https://www.sublimetext.com/).
+- Recommended: [Typora](https://typora.io/), [StackEdit](https://stackedit.io/), [Notepad++](https://notepad-plus-plus.org/download), [Sublime Text](https://www.sublimetext.com/)
 - Demo data: airquality 
 
 ```{r}
@@ -61,7 +61,7 @@ DT::datatable(
 
 # {.col-2}
 
-## *Part I*: Basic operation (Tue. 14:00)
+## *Part I*: Basic operations (Tue. 14:00)
 
 ### Maths
 
@@ -92,7 +92,7 @@ ggpairs(airquality[, 1:5], aes(color = Month, alpha = 0.4))
 
 ### Dissertations/books
 - Introduction to R bookdown/bookdownplus packages
-- Write a dissertation of PKU
+- Write a dissertation of PKU/UBT
 
 ### Slides
 - Introduction to R xaringan package
@@ -102,11 +102,11 @@ ggpairs(airquality[, 1:5], aes(color = Month, alpha = 0.4))
 - Introduction to R drposter package
 - A live example: this poster
 
-### Mindmaps with R
+### Mindmaps
 - Introduction to R mindr package
 - Create mindmpas from a dissertation
 
-### Research website with R
+### Research websites
 - Introduction to R blogdown package
 - A live example
 
@@ -128,6 +128,8 @@ Or visit [AG Cheng](https://www.mpic.de/en/research/further-groups/cheng-group.h
 
 # {.col-2}
 
-## Acknowledgement
+## Acknowledgements
 
-Many thanks to Dr.David Walter and Dr. Jiandong Wang for the discussions which inspired the idea of giving this course and to Prof. Yafang Cheng and Prof. Hang Su for supporting it.
+Many thanks to Dr.David Walter and Dr. Jiandong Wang for the discussions which inspired the idea of giving this course.
+
+Great thanks to Prof. Yafang Cheng and Prof. Hang Su for supporting this course.
