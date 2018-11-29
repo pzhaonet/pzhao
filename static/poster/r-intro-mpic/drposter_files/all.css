@@ -1,0 +1,507 @@
+/* This CSS is from the drposter template for pandoc/rmarkdown and is released into the public domain (CC0).  Have fun! */
+
+/* CSS styles are organized into separate stylesheets for clarity. */
+/* In general, that's suboptimal for page load times (at least without minification), but maintainability is far more important for a static poster. */
+/* The local custom.css is a good way to override the defaults from drposter_files/, to ensure decoupling of your changes from the package. */
+/* See examples.css for a few examples on how to effectively modify these styles in your custom CSS */
+
+
+@import url("page.css");
+@import url("short_tags.css");
+
+@import url("grid.css");
+@import url("header.css");
+@import url("sections.css");
+
+@import url("fonts.css");
+@import url("theme.css");
+
+/* Examples of how to customize the template, e.g. in your custom.css file */
+/* None of these styles are loaded within drposter.css.  This file is purely for documentation and brainstorming. */
+
+
+html {
+	/* Custom poster backgrounds */
+	background-color: #395831;
+	/* One option is an overall background gradient */
+	background: linear-gradient(to bottom, #eee9ee, white);
+	/* Alternatively, here is the old example of a circuit board as the background image */
+	background: url("Resources/rotated-circuit-board.svg");  /* Path to svg resource */
+	background-repeat: no-repeat;
+	background-size: cover;
+	/* See below for other considerations when using custom backgrounds other than solid white */
+}
+
+.slides > header {
+	/* If the background is a complex image, then an overlay may be necessary: */
+	background: lightgray;
+	background: linear-gradient(to bottom, lightgray, white);  /* Overwrites the previous style */
+	border-radius: var(--block-padding);
+	border: 0.25cm solid var(--header-color);
+		color: white;
+}
+
+
+.level2 {
+	/* Chrome is not handling the background opacity correctly when printing: https://bugs.chromium.org/p/chromium/issues/detail?id=226137 */
+	/* background-color: rgba(255, 255, 255, 0.9); */
+	background-color: rgb(224, 222, 222);
+}
+
+img {
+	/* Address the lack of transparency with borders, which isn't necessary if the background is white */
+	border: 0.1cm solid black;
+}
+
+/* Default fonts and colors for drposter */
+
+/* Download fonts. @import must come before any rules in the document */
+/*@import url(https://fonts.googleapis.com/css?family=Roboto:400,700|Monda:400,700);*/
+@import url("./load_fonts.css");  /* Consider this local copy instead of online */
+
+:root {
+	--base-font-family: 'Roboto', sans-serif;
+	--header-font-family: 'Monda', sans-serif;
+}
+
+/* Font-sizes could also be set proportionally to the base html size */
+html {
+	/* Note that rem is set proportionally to the html root font size: https://css-tricks.com/html-vs-body-in-css/ */
+	font-family: var(--base-font-family);
+	font-size: 1cm;
+	line-height: 1.375; /* Use proportional line spacing so everything is self-consistent */
+}
+
+h1, h2:not(.author), h3 {
+	font-family: var(--header-font-family);
+}
+
+h1, h2 {
+	font-size: 1.5cm;
+}
+
+.author {
+	font-weight: normal;
+}
+
+.title {
+	font-size: 2.5cm;
+	color: var(--header-color);
+}
+
+.slides > header ol.affiliations {
+	font-size: 0.8em;
+}
+
+.references {
+	font-size: 0.8em;
+}
+
+caption {
+	font-size: inherit;
+}
+
+h3 {
+	color: var(--header-color);
+	font-size: 1.3em;
+}
+/* Overall grid layout for the poster */
+
+/* Let's set up the grid to be similar to bootstrap, where there are 12 equal columns which are combined via .col-x classes, e.g. .col-6 for half of the width */
+/* See https://css-tricks.com/things-ive-learned-css-grid-layout/ and https://hacks.mozilla.org/2017/04/replace-bootstrap-layouts-with-css-grid/ for inspiration */
+/* See also https://css-tricks.com/snippets/css/complete-guide-grid/ and https://gridbyexample.com/examples/ for general help */
+/* The presentation [CSS Grid Changes Everything](https://www.youtube.com/watch?v=txZq7Laz7_4) is also inspirational. */
+
+.slides {
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	grid-column-gap: 1.5cm;  /* gap between columns */
+}
+
+/* Note: these classes are based on number of desired equal columns, not the fraction out of 12 */
+.slides .col-1 {
+	grid-column: span 12;
+}
+
+.slides .col-2 {
+	grid-column: span 6;
+}
+
+.slides .col-3 {
+	grid-column: span 4;
+}
+
+.slides .col-4 {
+	grid-column: span 3;
+}
+/* Poster title/header block */
+
+.slides > header {
+	grid-column: span 12;  /* full width of the poster */
+	text-align: center;
+	width: 100%;
+	box-sizing: border-box;
+	padding: 0 var(--block-padding);  /* Preventing the header edges extending beyond the content, which would look strange */
+	color: white;
+}
+
+.slides > header ol.affiliations {
+	margin-top: 0.5em;
+	list-style-type: none;
+	counter-reset: institution-counter;
+}
+
+.slides > header ol.affiliations li:before {
+	content: counter(institution-counter);  /* Comment out this line if there is only one institution */
+	counter-increment: institution-counter;
+	/* Superscripting copied from .cite at bottom */
+	vertical-align: baseline;
+	position: relative;
+	top: -0.4em;
+	right: -0.25em;
+	font-size: 0.8em;
+}
+
+.slides > header ol.affiliations li:after {
+	/* Get glyph information from https://css-tricks.com/snippets/html/glyphs/ */
+	content: "\2022";
+	padding: 0 0.3em 0 0.5em;  /* Not sure why the li formatting is inconsistent */
+}
+
+.slides > header ol.affiliations li:nth-child(2n+2):after, .reveal .slides > header ol.affiliations li:last-child:after {
+	content: none;
+	padding: 0;
+} /* I had six affiliations in my original poster.  Added the last-child rule for the demo */
+
+
+.slides > header ol.affiliations li {
+	display: inline-block;
+	margin-top: 0;  /* Avoids grabbing a huge h2 margin from the * + * rule */
+}
+
+.author {
+	margin-top: 1rem;
+}
+
+.presenter {
+	font-weight: bold;
+}
+/* Loads local versions of fonts to remove the project's internet connection dependency */
+/* Adapted from Google Fonts and https://github.com/majodev/google-webfonts-helper */
+/* We could use WOFF2 or other formats, but ttf is also pretty easy */
+
+/* Roboto (body, default) */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'),
+       url('./External/Roboto-Regular.ttf') format('truetype')
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Roboto Italic'), local('Roboto-Italic'),
+       url('./External/Roboto-Italic.ttf') format('truetype')
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Roboto Bold'), local('Roboto-Bold'),
+       url('./External/Roboto-Bold.ttf') format('truetype')
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Roboto Bold Italic'), local('Roboto-BoldItalic'),
+       url('./External/Roboto-Bold.ttf') format('truetype')
+}
+
+
+/* Monda (headers) */
+@font-face {
+  font-family: 'Monda';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Monda Regular'), local('Monda-Regular'),
+       url('./External/Monda-Regular.ttf') format('truetype')
+}
+
+@font-face {
+  font-family: 'Monda';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Monda Bold'), local('Monda-Bold'),
+       url('./External/Monda-Bold.ttf') format('truetype')
+}
+
+/* Page setup for the overall poster */
+
+/* reveal.js:536 sets it as @page{size:'+ pageWidth +'px '+ pageHeight +'px; margin: 0;} */
+/* Google Chrome recognizes this keyword, but not yet in Firefox (so PDF settings must be manually specified) */
+/* See draft spec information at https://developer.mozilla.org/en-US/docs/Web/CSS/@page/size */
+@page {
+	size: 841mm 1189mm;  /* A0 paper for now */
+	margin: 0;
+}
+
+html {
+	margin: 0;
+	width: 841mm;
+	height: 1189mm;
+	padding: 2.5cm;  /* Overall document "margins" (while keeping the background, etc.) */
+}
+
+@media screen {
+	html {
+		zoom: 0.33;
+		margin: auto;
+	}
+}
+
+body {
+	margin: 0;
+	height: inherit;
+	-webkit-print-color-adjust: exact;  /* Enable background printing in Chrome: http://stackoverflow.com/questions/3893986/css-media-print-issues-with-background-color */
+}
+
+.slides.fill_page {
+	/* Space the content to fill the entire poster, if the fill_page variable is set */
+	align-content: space-between;
+	height: inherit;  /* Through a series of steps, height eventually inherits from the html page size */
+}
+
+/******** Poster background ********/
+
+html {
+	background: white;
+}
+
+/******** General poster spacing ********/
+
+/* Apply whitespace using a single direction of margins, etc.  See these two helpful articles: https://css-tricks.com/margin-bottom-margin-top/ and https://alistapart.com/article/axiomatic-css-and-lobotomized-owls */
+* {
+	margin: 0;
+}
+
+* + * {
+	/*margin-top: 1.5em;*/
+	margin-top: 1em;
+}
+
+/* There are a few exceptions to the generic top-margin */
+
+li + li , li > ul, li > ol {
+	margin-top: 0;
+}
+
+/* Exclude mathjax which has custom HTML tags, and doesn't fit with the generic spacing */
+[class^="mjx-"] {
+	margin-top: 0;
+}
+/* Also override the custom margins of "display equations" since they're already governed by an enclosing block of some sort, like a paragraph */
+.MJXc-display {
+	margin: 0 !important;
+}
+
+/* Layout of subsection boxes and their contents */
+
+/* An h1 section layout block (grid item) can contain multiple h2 poster blocks that are automatically spaced */
+/* The header does not have the class .section, so it will not be selected by this rule */
+.slides > .section {
+	display: flex;
+	flex-flow: column;
+	justify-content: space-between;
+	flex: 1 1 auto;
+}
+
+:root {
+	--block-padding: 1rem;
+	--h2-height: 3rem;  /* 2 * h2 */
+	--bullet-spacing: calc(2/3 * var(--block-padding));
+	--inter-block-spacing: 1rem;
+	--flex-gutter: calc(1/2 * var(--block-padding));
+}
+
+.level2 h2 {
+	width: 100%;
+	vertical-align: middle;
+	box-sizing: border-box;
+}
+
+.level2 {
+	--adj-padding-incl-margins: calc(var(--block-padding) - var(--flex-gutter));
+	/* This variable splits the interior spacing into the adjusted-margins + a flex-gutter, since we can't directly specify the gutter of flexbox items (the gutter margins spill out into the left and right) */
+	/* To test this calculation, try changing the --flex-gutter to a bigger fixed value, e.g. 2rem */
+	/* Mozilla confirms that there isn't a better way than margins currently to handle the flexbox spacing: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Mastering_Wrapping_of_Flex_Items#Creating_gutters_between_items */
+	padding: 0 var(--adj-padding-incl-margins) var(--block-padding) var(--adj-padding-incl-margins);
+	box-sizing: border-box;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;  /* space between columns */
+	align-content: flex-start;
+}
+
+.level1 {
+	margin-top: 0;  /* These should only be pseudo-type structures to set up the grid; no intrinsic spacing */
+}
+
+.level2:only-of-type {
+	/* If there is only one block, stretch it, because there are no adjacent elements for space-between */
+	flex-grow: 1;
+}
+
+.level1 h1 {
+	/* An h1 tag is still generated when using # {.col-2}, etc. specification for a block. */
+	/* For now, let's ignore these h1 tags, but later these could be stylized for overall section headings, etc. */
+	/* It might also be interesting to set the background-color of the section, which is a .level1 block */
+	display: none;
+}
+
+.level2 > * {
+	/* p, pre, ul, .figure, etc. */
+	/* flex-grow=1 and flex-shrink=0 by default, so this will expand to fill whitespace */
+	flex: 40%;  /* This is set to be two-column: enough leeway for the gutter but not too much for 3 cols */
+	box-sizing: border-box;
+	margin-left: var(--flex-gutter);
+	margin-right: var(--flex-gutter);
+}
+
+pre {
+	min-width: 0;  /* Fixes a flexbox incompatibility for pre, per recommendation from http://stackoverflow.com/questions/32035406/how-to-limit-pre-tag-width-inside-flex-container */
+}
+
+img {
+	width: 100%;  /* Make it fit inside the 2-column, etc, flexbox */
+	height: auto;
+	background-color: white;  /* Eliminate transparency for consistency among all images with non-white backgrounds */
+}
+
+.level2 h2, .level2 h3 {
+	flex: 100%;
+}
+
+.fullwidth {
+	flex: 100%;
+}
+
+/* Nudge the li bullet points closer to the content (partway into the padding) while keeping the text aligned */
+.level2 ul {
+	list-style-type: none;
+	margin-left: calc(-1 * var(--bullet-spacing) + var(--flex-gutter));
+	padding-left: var(--bullet-spacing);  /* Allocate room within the ul block for li::before to move left */
+}
+ul li::before {
+	content: "\2022";
+	display: inline-block;
+	margin-left: calc(-1 * var(--bullet-spacing));
+	width: var(--bullet-spacing);
+}
+/* Short, specific styles for specialized classes and tags */
+
+a {
+	text-decoration: none;
+	color: inherit;  /* text color instead of blue/purple hyperlinks */
+	font-family: monospace;
+}
+
+a::before {
+	content: "<"
+}
+
+a::after {
+	content: ">"
+}
+
+/* Adapted from Chris Coyier: https://css-tricks.com/snippets/css/prevent-superscripts-and-subscripts-from-affecting-line-height/ */
+sup, sub, .cite {
+	vertical-align: baseline;
+	position: relative;
+	top: -0.4em;
+	font-size: 0.8em;
+}
+sub { 
+  top: 0.4em; 
+}
+
+.references div, .references p {
+	margin: 0;  /* avoid paragraph spaces between individual references, which are enclosed in paragraphs */
+}
+
+.warning {
+	color: red;
+}
+
+/* special QR code handling */
+[alt="QR code"] {
+	width: 5cm;
+	float: left;
+	margin-right: 1.5cm;
+	border: none;
+}
+
+.qr {
+	box-sizing: border-box;
+	flex: 0 0 92%;
+	margin: 1em auto 0 auto; /* Offset by 8% for emphasis */
+}
+
+/* Prevent tables from being scrunched together */
+td, th {
+	padding: 0.2em 0.5em;
+	vertical-align: top;
+}
+/* Overall colors, etc., for the poster, powered by CSS variables and the cascade */
+
+:root {
+	--header-color: #400040;
+}
+
+/******** Default theme, including the background gradients ********/
+:root {
+	--other-color-for-h2-gradient: #800080;
+}
+
+.level2 h2 {
+	--h2-padding: var(--block-padding);
+	--h2-border-radius: var(--h2-padding);
+	height: var(--h2-height);
+	color: white;
+	background: linear-gradient(to left, var(--other-color-for-h2-gradient), var(--header-color));
+	border-radius: var(--h2-border-radius);
+	padding: calc(var(--h2-padding)/2) var(--h2-padding);
+	margin: calc(-1/2 * var(--h2-height)) var(--flex-gutter) 0 var(--flex-gutter);  /* Move h2 into the center of the top border */
+}
+
+.level2 {
+	border-radius: var(--block-padding);
+	margin-top: calc(1/2 * var(--h2-height) + var(--inter-block-spacing));  /* Technically might need the border, too */
+	border: 0.25cm solid var(--header-color);
+}
+
+
+/******** More minimalist theme using less ink ********/
+.theme-minimalist .level2 h2, .level1 .theme-minimalist.level2 h2 {
+	/* This is really tricky: we need to completely override themes if accepted rule.  Inheritance will only work if things are actually specified */
+	background: none;
+	color: var(--header-color);
+	border-bottom: 0.25cm dotted var(--header-color);
+	border-radius: 0;
+	padding: 0;
+	margin-top: 0;
+	/*height: auto;*/  /* Some rules like this won't be necessary once the default theme is separated into its own theme class */
+	line-height: 2em;
+}
+
+.theme-minimalist .level2, .level1 .theme-minimalist.level2 {
+	border: none;
+	margin-top: var(--inter-block-spacing);
+}
+
+

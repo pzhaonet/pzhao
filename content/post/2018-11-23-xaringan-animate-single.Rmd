@@ -47,394 +47,471 @@ class: inverse, left, center, middle
 
 ```
 
-文末是开头幻灯片的 gif 动画版（感谢 [\@zhouyisu](https://github.com/zhouyisu) 制作）。
+下面是开头幻灯片的 gif 动画版（感谢 [\@zhouyisu](https://github.com/zhouyisu) 制作）。
+
+![](http://www.pzhao.org/slides/img/xaringan-animation.gif)
 
 下面是 animate.css 提供的 77 个转场效果示例。点击片子按箭头键即可预览。
 
 
 bounceIn
+
 ```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate-bounceIn")
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate-bounceIn")
 ```
 
 bounceInDown
+
 ```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate-bounceInDown")
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate-bounceInDown")
 ```
 
 bounceInLeft
+
 ```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate-bounceInLeft")
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate-bounceInLeft")
 ```
 
 bounceInRight
+
 ```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate-bounceInRight")
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate-bounceInRight")
 ```
 
 bounceInUp
+
 ```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate-bounceInUp")
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate-bounceInUp")
 ```
 
 fadeIn
+
 ```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate-fadeIn")
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate-fadeIn")
 ```
 
 fadeInDown
+
 ```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate-fadeInDown")
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate-fadeInDown")
 ```
 
 fadeInDownBig
+
 ```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate-fadeInDownBig")
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate-fadeInDownBig")
 ```
 
 fadeInLeft
+
 ```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate-fadeInLeft")
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate-fadeInLeft")
 ```
 
 fadeInLeftBig
+
 ```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate-fadeInLeftBig")
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate-fadeInLeftBig")
 ```
 
 fadeInRight
+
 ```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate-fadeInRight")
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate-fadeInRight")
 ```
 
 fadeInRightBig
+
 ```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate-fadeInRightBig")
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate-fadeInRightBig")
 ```
 
 fadeInUp
+
 ```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate-fadeInUp")
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate-fadeInUp")
 ```
 
 fadeInUpBig
+
 ```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate-fadeInUpBig")
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate-fadeInUpBig")
 ```
 
 flipInX
+
 ```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate-flipInX")
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate-flipInX")
 ```
 
 flipInY
+
 ```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate-flipInY")
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate-flipInY")
 ```
 
 jackInTheBox
+
 ```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate-jackInTheBox")
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate-jackInTheBox")
 ```
 
 lightSpeedIn
+
 ```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate-lightSpeedIn")
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate-lightSpeedIn")
 ```
 
 rollIn
+
 ```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate-rollIn")
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate-rollIn")
 ```
 
 rotateIn
+
 ```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate-rotateIn")
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate-rotateIn")
 ```
 
 rotateInDownLeft
+
 ```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate-rotateInDownLeft")
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate-rotateInDownLeft")
 ```
 
 rotateInDownRight
+
 ```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate-rotateInDownRight")
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate-rotateInDownRight")
 ```
 
 rotateInUpLeft
+
 ```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate-rotateInUpLeft")
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate-rotateInUpLeft")
 ```
 
 rotateInUpRight
+
 ```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate-rotateInUpRight")
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate-rotateInUpRight")
 ```
 
 slideInDown
+
 ```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate-slideInDown")
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate-slideInDown")
 ```
 
 slideInLeft
+
 ```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate-slideInLeft")
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate-slideInLeft")
 ```
 
 slideInRight
+
 ```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate-slideInRight")
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate-slideInRight")
 ```
 
 slideInUp
+
 ```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate-slideInUp")
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate-slideInUp")
 ```
 
 zoomIn
+
 ```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate-zoomIn")
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate-zoomIn")
 ```
 
 zoomInDown
+
 ```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate-zoomInDown")
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate-zoomInDown")
 ```
 
 zoomInLeft
+
 ```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate-zoomInLeft")
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate-zoomInLeft")
 ```
 
 zoomInRight
+
 ```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate-zoomInRight")
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate-zoomInRight")
 ```
 
 zoomInUp
+
 ```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate-zoomInUp")
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate-zoomInUp")
 ```
 
 bounce
+
 ```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate-bounce")
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate-bounce")
 ```
 
 flash
+
 ```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate-flash")
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate-flash")
 ```
 
 headShake
+
 ```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate-headShake")
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate-headShake")
 ```
 
 heartBeat
+
 ```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate-heartBeat")
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate-heartBeat")
 ```
 
 hinge
+
 ```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate-hinge")
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate-hinge")
 ```
 
 jello
+
 ```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate-jello")
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate-jello")
 ```
 
 pulse
+
 ```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate-pulse")
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate-pulse")
 ```
 
 rubberBand
+
 ```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate-rubberBand")
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate-rubberBand")
 ```
 
 shake
+
 ```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate-shake")
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate-shake")
 ```
 
 swing
+
 ```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate-swing")
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate-swing")
 ```
 
 tada
+
 ```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate-tada")
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate-tada")
 ```
 
 wobble
+
 ```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate-wobble")
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate-wobble")
 ```
 
 bounceOut
+
 ```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate-bounceOut")
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate-bounceOut")
 ```
 
 bounceOutDown
+
 ```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate-bounceOutDown")
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate-bounceOutDown")
 ```
 
 bounceOutLeft
+
 ```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate-bounceOutLeft")
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate-bounceOutLeft")
 ```
 
 bounceOutRight
+
 ```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate-bounceOutRight")
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate-bounceOutRight")
 ```
 
 bounceOutUp
+
 ```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate-bounceOutUp")
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate-bounceOutUp")
 ```
 
 fadeOut
+
 ```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate-fadeOut")
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate-fadeOut")
 ```
 
 fadeOutDown
+
 ```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate-fadeOutDown")
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate-fadeOutDown")
 ```
 
 fadeOutDownBig
+
 ```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate-fadeOutDownBig")
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate-fadeOutDownBig")
 ```
 
 fadeOutLeft
+
 ```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate-fadeOutLeft")
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate-fadeOutLeft")
 ```
 
 fadeOutLeftBig
+
 ```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate-fadeOutLeftBig")
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate-fadeOutLeftBig")
 ```
 
 fadeOutRight
+
 ```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate-fadeOutRight")
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate-fadeOutRight")
 ```
 
 fadeOutRightBig
+
 ```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate-fadeOutRightBig")
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate-fadeOutRightBig")
 ```
 
 fadeOutUp
+
 ```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate-fadeOutUp")
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate-fadeOutUp")
 ```
 
 fadeOutUpBig
+
 ```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate-fadeOutUpBig")
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate-fadeOutUpBig")
 ```
 
 flipOutX
+
 ```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate-flipOutX")
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate-flipOutX")
 ```
 
 flipOutY
+
 ```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate-flipOutY")
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate-flipOutY")
 ```
 
 lightSpeedOut
+
 ```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate-lightSpeedOut")
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate-lightSpeedOut")
 ```
 
 rollOut
+
 ```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate-rollOut")
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate-rollOut")
 ```
 
 rotateOut
+
 ```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate-rotateOut")
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate-rotateOut")
 ```
 
 rotateOutDownLeft
+
 ```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate-rotateOutDownLeft")
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate-rotateOutDownLeft")
 ```
 
 rotateOutDownRight
+
 ```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate-rotateOutDownRight")
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate-rotateOutDownRight")
 ```
 
 rotateOutUpLeft
+
 ```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate-rotateOutUpLeft")
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate-rotateOutUpLeft")
 ```
 
 rotateOutUpRight
+
 ```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate-rotateOutUpRight")
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate-rotateOutUpRight")
 ```
 
 slideOutDown
+
 ```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate-slideOutDown")
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate-slideOutDown")
 ```
 
 slideOutLeft
+
 ```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate-slideOutLeft")
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate-slideOutLeft")
 ```
 
 slideOutRight
+
 ```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate-slideOutRight")
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate-slideOutRight")
 ```
 
 slideOutUp
+
 ```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate-slideOutUp")
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate-slideOutUp")
 ```
 
 zoomOut
+
 ```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate-zoomOut")
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate-zoomOut")
 ```
 
 zoomOutDown
+
 ```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate-zoomOutDown")
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate-zoomOutDown")
 ```
 
 zoomOutLeft
+
 ```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate-zoomOutLeft")
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate-zoomOutLeft")
 ```
 
 zoomOutRight
+
 ```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate-zoomOutRight")
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate-zoomOutRight")
 ```
 
 zoomOutUp
-```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate-zoomOutUp")
-```
 
-![](http://www.pzhao.org/slides/img/xaringan-animation.gif)
+```{r, echo = FALSE}
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate-zoomOutUp")
+```

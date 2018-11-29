@@ -1,0 +1,133 @@
+---
+title: "[ShoRt CouRse] R and RepRoducible ReseaRch"
+author: ["<span class=\"presenter\">Peng Zhao<sup>1</sup></span>, Someone Else<sup>1, 2</sup><ol class=\"affiliations\"><li>Max Planck Institute for Chemistry, Mainz, Germany peng.zhao@mpic.de</li><li>Far Far Away</li></ol>"]
+output:
+  drposter::drposter_poster:
+    self_contained: false
+    css: custom.css
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE, signif = 3)
+```
+
+
+# {.col-2}
+
+## *What* is this
+
+This is an anouncement of a 4.5-hour course for:
+
+  - beginners without progamming background,
+  - students and earliy career scientists who are interested in R, and 
+  - senior scientists who are interesed in reproducible research.
+
+This poster was created via R. It is reproducible, accessful online, and interactive (try the demo data table below). Wanna know how? Come and join us!
+
+## *When* and *where*
+
+- Seminar Room on the first floor at Max Planck Institute for Chemistry.
+- Tuesday (4^*th*^ Dec. 2018) afternoon and Wednesday (5^*th*^ Dec.) morning.
+
+
+## *How* to participate
+
+- This course is devided into four parts (see the headings in this post). Feel free to take part in any one or all of them. 
+- Send a registration email (mentioning which part you would participate) to peng.zhao@mpic.de by Monday, 3 Dec., 2018.
+- Bring a laptop for live practice. Although examples are give on Windows, other OS will be compatible. R and RStudio must be installed in advance. See below.
+
+## *Why* this course
+
+| Fig. 1: Before the course.  | Fig.2: After the course. |
+| --- | --- |
+| ![](https://slides.yihui.name/gif/latex-tweak.gif) | ![](https://slides.yihui.name/gif/git-push-force.gif) |
+
+## *Part 0*: Preparation (Tue. 13:30)
+
+- Installation of R: [Windows](https://cran.r-project.org/bin/windows/base/R-3.5.1-win.exe), [macOS](https://cran.r-project.org/bin/macosx/R-3.5.1.pkg),[Linux](https://cran.r-project.org/bin/linux/)
+- Installation of RStudio: [download](https://www.rstudio.com/products/rstudio/download/#download)
+- Recommended: [Typora](https://typora.io/), [StackEdit](https://stackedit.io/), [Notepad++](https://notepad-plus-plus.org/download), [Sublime Text](https://www.sublimetext.com/).
+- Demo data: airquality 
+
+```{r}
+airquality$Month <- as.factor(airquality$Month)
+DT::datatable(
+  airquality, 
+  fillContainer = FALSE, options = list(pageLength = 4)
+)
+
+```
+
+
+# {.col-2}
+
+## *Part I*: Basic operation (Tue. 14:00)
+
+### Maths
+
+- Fundamentel calculation
+- Data structure
+- Statistics
+
+### Programming
+
+- Read and save data
+- Conditional statements: `if`...`else`...
+- Loop: `for`
+
+## *Part II*: Plot diagrams (Tue. 15:00)
+
+
+```{r fig1, echo=FALSE, message=FALSE, fig.cap='Fig. 3: An example of R ggplot2.'}
+library(GGally)
+ggpairs(airquality[, 1:5], aes(color = Month, alpha = 0.4))
+```
+
+## *Part III*: Reproducible Research (Wed. 10:00)
+
+### Journal articles
+
+- Introduction to R rticle package
+- Write a draft for ACP
+
+### Dissertations/books
+- Introduction to R bookdown/bookdownplus packages
+- Write a dissertation of PKU
+
+### Slides
+- Introduction to R xaringan package
+- Make slides
+
+### Posters
+- Introduction to R drposter package
+- A live example: this poster
+
+### Mindmaps with R
+- Introduction to R mindr package
+- Create mindmpas from a dissertation
+
+### Research website with R
+- Introduction to R blogdown package
+- A live example
+
+## *Part IV*: Project Management (Wed. 11:00)
+
+How to manage a project, including data, programming scripts, documents, slides, posters, etc., in an R way.
+
+# {.col-2}
+
+## Contact {style="--header-color:darkred; --other-color-for-h2-gradient:red;"}
+
+<p class="qr">
+![QR code](img/qr-code.png)
+Scan this QR code to visit this poster online.
+</p>
+
+Or visit [AG Cheng](https://www.mpic.de/en/research/further-groups/cheng-group.html) and [AG Su](https://www.mpic.de/en/research/multiphase-chemistry/su-group.html).
+
+
+# {.col-2}
+
+## Acknowledgement
+
+Many thanks to Dr.David Walter and Dr. Jiandong Wang for the discussions which inspired the idea of giving this course and to Prof. Yafang Cheng and Prof. Hang Su for supporting it.
