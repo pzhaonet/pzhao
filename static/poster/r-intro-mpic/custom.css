@@ -10,7 +10,7 @@
 	border-radius: var(--block-padding);
 	border: 0.25cm solid var(--header-color);
 	background-image: url("img/mpic-logo-white.png"), url("img/r-chem.png");
-	background-position: 3% 50%, 97% 50%; 
+	background-position: 3% 50%, 97% -200%; 
     background-size: 350px, 350px;
     background-color: #0B5282;
 	background-repeat: no-repeat;
