@@ -90,7 +90,7 @@ aqi$aqi[aqi$aqi == -1] <- NA
 pvs <- regionNames("china")
 loc <- match(pvs, aqi$province)
 aqi2 <- data.frame(name = pvs, value = aqi$aqi[loc])
-geojsonMap(dat = aqi2, mapName = "china",
+geojsonMap(dat = aqi2, mapName = "china", palette = rev(heat.colors(2)),
            popup =  paste(aqi2$name, aqi2$value),
            legendTitle = "AQI")
 ```
