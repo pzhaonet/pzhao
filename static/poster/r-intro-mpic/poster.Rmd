@@ -27,7 +27,7 @@ R created this poster with me. Wanna know how to make it? Join this **4.5-hour t
 ## *How* to participate
 
 - **Four (or five) parts** (see the headings in this post). Feel free to take part in any one or all of them. 
-- Send a **registration email** to peng.zhao@mpic.de by Monday evening, 3 Dec., 2018. Please mention which part you would participate.
+- Send a **registration email** to peng.zhao@mpic.de by Monday morning, 3 Dec., 2018. Please mention which part you would participate.
 - Bring a **laptop for live practice**. Examples are give on Windows, while other OS will be compatible. Install R and RStudio in advance if you can.
 
 ## *Why* this course
@@ -36,7 +36,7 @@ R created this poster with me. Wanna know how to make it? Join this **4.5-hour t
 | --- | --- |
 | Fig. 1: Before this course.  | Fig.2: After this courseö. |
 
-## *Part 0*: Preparation (Tue. 13:30)
+## *Part 0*: Preparation (Mon. 13:30, Smnr Rm 1)
 
 - Install R: [Windows](https://cran.r-project.org/bin/windows/base/R-3.5.1-win.exe), [macOS](https://cran.r-project.org/bin/macosx/R-3.5.1.pkg),[Linux](https://cran.r-project.org/bin/linux/)
 - Install RStudio: [download](https://www.rstudio.com/products/rstudio/download/#download)
@@ -56,13 +56,14 @@ DT::datatable(
 # {.col-2}
 
 
-## *When* and *where*
+## *Where* and *when*
 
-- Seminar Room on the first floor at Max Planck Institute for Chemistry, Mainz, Germany.
-- Tuesday (4^*th*^ Dec. 2018) afternoon and Wednesday (5^*th*^ Dec.) morning.
+- Max Planck Institute for Chemistry, Mainz, Germany.
+- Monday (3^*th*^ Dec. 2018) afternoon 13:30, **Seminar Room 1** on the ground floor.
+- Tuesday (4^*th*^ Dec.) morning 10:00, **Conference Room** on the first floor.
 
 
-## *Part I*: Basic operations (Tue. 14:00)
+## *Part I*: Basic operations (Mon. 14:00, Smnr Rm 1)
 
 ### Maths
 
@@ -76,7 +77,7 @@ DT::datatable(
 - Conditional statements: `if`...`else`...
 - Loop: `for`
 
-## *Part II*: Plot diagrams (Tue. 15:00)
+## *Part II*: Plot diagrams (Mon. 15:00, Smnr Rm 1)
 
 
 ```{r fig3, echo=FALSE, message=FALSE, fig.cap='Fig. 3: An interactive map of the air quality in China on 2016-12-30, 14:00 (use your mouse to zoom in).', out.width= '100%', fig.height=8}
@@ -95,7 +96,7 @@ geojsonMap(dat = aqi2, mapName = "china", palette = rev(heat.colors(2)),
            legendTitle = "AQI")
 ```
 
-## *Part III*: Reproducible Research (Wed. 10:00)
+## *Part III*: Reproducible Research (Tue. 10:00, Cnfrnc Rm)
 
 ### Journal articles
 
@@ -122,7 +123,7 @@ geojsonMap(dat = aqi2, mapName = "china", palette = rev(heat.colors(2)),
 - Introduction to R blogdown package
 - A live example
 
-## *Part IV*: Project Management (Wed. 11:00)
+## *Part IV*: Project Management (Tue. 11:00, Cnfrnc Rm)
 
 Manage a project, including data, programming scripts, documents, slides, posters, etc., in an R way.
 
