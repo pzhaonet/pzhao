@@ -20,8 +20,8 @@ R, a fully **open access** environment for data analysis, which is open source, 
 
 R created this poster with me. Wanna know how to make it? Join this **4.5-hour training course**, if you are:
 
-  - a beginner without progamming background,
-  - a student or an early career scientist who are interested in R language, or
+  - a beginner without a programming background,
+  - a student or an early career scientist who is interested in R language, or
   - a senior scientist who is interested in reproducible research.
 
 ## *How* to participate
@@ -33,10 +33,10 @@ R created this poster with me. Wanna know how to make it? Join this **4.5-hour t
 ## *Why* this course
 
 | ![](https://slides.yihui.name/gif/latex-tweak.gif) | ![](https://slides.yihui.name/gif/git-push-force.gif) |
-| --- | --- |
-| Fig. 1: Before this course.  | Fig.2: After this courseö. |
+| -------------------------------------------------- | ----------------------------------------------------- |
+| Fig. 1: Before this course.                        | Fig.2: After this course.                             |
 
-## *Part 0*: Preparation (Mon. 13:30, Smnr Rm 1)
+## *Part 0*: Preparation (Mon. 13:30)
 
 - Install R: [Windows](https://cran.r-project.org/bin/windows/base/R-3.5.1-win.exe), [macOS](https://cran.r-project.org/bin/macosx/R-3.5.1.pkg),[Linux](https://cran.r-project.org/bin/linux/)
 - Install RStudio: [download](https://www.rstudio.com/products/rstudio/download/#download)
@@ -63,11 +63,11 @@ DT::datatable(
 - Tuesday (4^*th*^ Dec.) morning 10:00, **Conference Room** on the first floor.
 
 
-## *Part I*: Basic operations (Mon. 14:00, Smnr Rm 1)
+## *Part 1*: Basic operations (Mon. 14:00)
 
 ### Maths
 
-- Fundamentel calculation
+- Fundamental calculation
 - Data structure
 - Statistics
 
@@ -77,7 +77,7 @@ DT::datatable(
 - Conditional statements: `if`...`else`...
 - Loop: `for`
 
-## *Part II*: Plot diagrams (Mon. 15:00, Smnr Rm 1)
+## *Part 2*: Plot diagrams (Mon. 15:00)
 
 
 ```{r fig3, echo=FALSE, message=FALSE, fig.cap='Fig. 3: An interactive map of the air quality in China on 2016-12-30, 14:00 (use your mouse to zoom in).', out.width= '100%', fig.height=8}
@@ -96,7 +96,7 @@ geojsonMap(dat = aqi2, mapName = "china", palette = rev(heat.colors(2)),
            legendTitle = "AQI")
 ```
 
-## *Part III*: Reproducible Research (Tue. 10:00, Cnfrnc Rm)
+## *Part 3*: Reproducible Research (Tue. 10:00)
 
 ### Journal articles
 
@@ -123,7 +123,7 @@ geojsonMap(dat = aqi2, mapName = "china", palette = rev(heat.colors(2)),
 - Introduction to R blogdown package
 - A live example
 
-## *Part IV*: Project Management (Tue. 11:00, Cnfrnc Rm)
+## *Part 4*: Project Management (Tue. 11:00)
 
 Manage a project, including data, programming scripts, documents, slides, posters, etc., in an R way.
 
@@ -145,3 +145,4 @@ Scan this QR code to visit this poster online.
 ## Acknowledgements
 
 Many thanks to Dr.David Walter, Dr. Jiandong Wang, Dr. Yihui Xie, Prof. Yafang Cheng, Prof. Hang Su for inspiring the idea of this course and sharing their experience.
+
