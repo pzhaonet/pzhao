@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta charset="utf-8">
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css\extra.css" type="text/css" />
+    <link rel="stylesheet" href="https:\\cdnjs.cloudflare.com\ajax\libs\animate.css\3.7.0\animate.min.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+
+
+layout: true
+name:title-slide
+background-image: url(http://www.pzhao.org/poster/r-intro-mpic/img/mpic-logo-white.png), url(http://www.pzhao.org/poster/r-intro-mpic/img/r-chem.png)
+background-position: center 5%, left 106% 
+background-size: 15%, 100px
+class: inverse, center, middle, animated, fadeIn
+
+# R, Open Science, and reproducible reSearch
+# {{content}}
+### Peng Zhao
+&amp;#9993; peng.zhao@mpic.de
+### Max Planck Institute for Chemistry
+### 2018-12-02
+
+---
+layout: false
+template:title-slide
+
+# ROSS: Ice-breaking
+
+
+???
+- Run GitHub Desktop and commit every part.
+- Organize folders from the very beginning.
+- Main topic of Part 0: software
+
+---
+layout: false
+name: rg
+class: inverse, center, middle, animated, fadeIn
+
+![](img/fine-by-me.gif)
+
+Dr. Ross Geller
+
+---
+name: me
+class: center, middle, animated, fadeIn
+
+![:height 300px](img/qr-code-ross-mpic.png)
+
+Link to these slides: &lt;http://www.pzhao.org/slides/ross-mpic&gt;
+
+---
+class: animated, fadeIn
+
+## Installation
+
+.pull-left[
+### R
+
+- [Windows](https://cran.r-project.org/bin/windows/base/R-3.5.1-win.exe)
+- [macOS](https://cran.r-project.org/bin/macosx/R-3.5.1.pkg)
+- [Linux](https://cran.r-project.org/bin/linux/)
+
+### RStudio
+
+- [Download](https://www.rstudio.com/products/rstudio/download/#download)
+]
+
+--
+
+.pull-right[
+
+### Recommended: 
+
+- [Notepad++](https://notepad-plus-plus.org/download)
+- [Typora](https://typora.io/)
+- [StackEdit](https://stackedit.io/)
+- [Sublime Text](https://www.sublimetext.com/)
+- [FreeMind](http://freemind.sourceforge.net/wiki/index.php/Main_Page)
+- [Xmind](http://www.xmind.net/)
+]
+
+---
+name: motivation
+class: center, middle, animated, fadeIn
+
+## Motivation
+
+.pull-left[
+
+### Dr. D. Walter: Data management
+
+![:width 80%](img/walter.png)
+
+]
+
+
+.pull-right[
+
+### Prof. U. Pöschl: Open Access
+
+![](https://aoasg.files.wordpress.com/2013/02/cc-by_logo.png)
+
+]
+
+---
+class: center, animated, fadeIn
+
+.pull-left[
+
+### Before
+
+![](https://slides.yihui.name/gif/latex-tweak.gif)
+]
+
+--
+
+.pull-right[
+
+### After
+
+![](https://slides.yihui.name/gif/git-push-force.gif)
+
+May the Force be with you
+
+]
+    </textarea>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script src="macro/macro.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function() {
+  var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})();
+(function(time) {
+  var d2 = function(number) {
+    return ('0' + number).slice(-2); // left-pad 0 to minutes/seconds
+  },
+
+  time_format = function(total) {
+    var secs = Math.abs(total) / 1000;
+    var h = Math.floor(secs / 3600);
+    var m = Math.floor(secs % 3600 / 60);
+    var s = Math.round(secs % 60);
+    var res = d2(m) + ':' + d2(s);
+    if (h > 0) res = h + ':' + res;
+    return res;  // [hh:]mm:ss
+  },
+
+  slide_number_div = function(i) {
+    return document.getElementsByClassName('remark-slide-number').item(i);
+  },
+
+  current_page_number = function(i) {
+    return slide_number_div(i).firstChild.textContent;  // text "i / N"
+  };
+
+  var timer = document.createElement('span'); timer.id = 'slide-time-left';
+  var time_left = time, k = slideshow.getCurrentSlideIndex(),
+      last_page_number = current_page_number(k);
+
+  setInterval(function() {
+    time_left = time_left - 1000;
+    timer.innerHTML = ' ' + time_format(time_left);
+    if (time_left < 0) timer.style.color = 'red';
+  }, 1000);
+
+  slide_number_div(k).appendChild(timer);
+
+  slideshow.on('showSlide', function(slide) {
+    var i = slide.getSlideIndex(), n = current_page_number(i);
+    // reset timer when a new slide is shown and the page number is changed
+    if (last_page_number !== n) {
+      time_left = time; last_page_number = n;
+      timer.innerHTML = ' ' + time_format(time); timer.style.color = null;
+    }
+    slide_number_div(i).appendChild(timer);
+  });
+})(120000);</script>
+
+<script>
+(function() {
+  var i, text, code, codes = document.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+})();
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
