@@ -417,6 +417,282 @@ for(i in x){
 
 ---
 template: me
+
+---
+template:title-slide
+
+# ROSS 2: Plot diagrams
+
+???
+
+- Main topic of Part 2: packages
+
+---
+template: rg
+
+---
+
+## Plot
+
+--
+
+
+```r
+plot(aq$Ozone)
+plot(aq$Ozone, aq$Temp)
+plot(aq$Ozone, aq$Temp, col = 'red')
+plot(aq$Ozone, aq$Temp, col = ifelse(aq$Month == 6, 'red', 'blue'))
+```
+
+--
+
+
+```r
+plot(aq[, 2:5])
+```
+
+--
+
+```r
+hist()
+barplot()
+boxplot()
+```
+
+---
+
+## Control the details
+
+
+
+```r
+plot(aq$Ozone, axes = FALSE)
+axis(1)
+axis(2)
+axis(3, 
+     at = c(10, 40, 120), 
+     labels = c(30^2, log(40), 60^0.5))
+axis(4)
+box()
+```
+
+--
+
+.pull-left[
+
+
+```r
+lines()
+points()
+abline()
+axis()
+legend()
+text()
+mtext()
+expression()
+```
+
+]
+
+--
+
+.pull-right[
+
+
+```r
+install.packages('beginr')
+require(beginr)
+plotlm(aq$Temp, aq$Ozone)
+demo(plotmath)
+
+example(plot)
+demo(graphics)
+demo(persp)
+```
+
+
+]
+
+---
+
+## Packages
+
+.pull-left[
+### What are packages
+
+- MatLab: toolboxes
+- python: libraries
+- MS Office: modules
+- Chrome: add-ons/plugins
+- `&gt;` 13,000 packages on CRAN + countless packages on GitHub + ...
+]
+
+--
+
+.pull-right[
+### Examples
+
+
+```r
+install.packages('pinyin')
+require(pinyin)
+py('张明辉', dic = pydic())
+```
+
+
+```r
+install.packages("fortunes")
+require(fortunes)
+fortune()
+```
+
+]
+
+--
+
+### [Task views](https://cran.r-project.org/web/views/)
+
+### Cite a package
+
+
+```r
+citation('pinyin')
+```
+
+---
+
+- lattice
+
+
+```r
+install.packages('lattice')
+require(lattice)
+demo(lattice)
+citation('lattice')
+```
+
+--
+
+
+- plotrix
+
+
+```r
+install.packages('plotrix')
+require(plotrix)
+demo(plotrix)
+citation('plotrix')
+```
+
+--
+
+- ggplot2
+
+
+```r
+install.packages('ggplot2')
+require(ggplot2)
+example(qplot)
+citation('ggplot2')
+```
+
+---
+
+## Homework
+
+### Play with your real data
+
+- Read into R (.csv)
+- Data briefing and calculation
+- Plot figures
+
+--
+
+Problems? 
+
+--
+
+Come early tomorrow morning.
+
+---
+
+### Install packages
+
+
+```r
+# from CRAN (something like peer reviewed)
+install.packages("xaringan") # for making slides
+install.packages("devtools") # for installation from github
+install.packages('prodigenr') # for project management
+install.packages('tinytex') # for compling LaTeX to pdf
+require(tinytex)
+install_tinytex()
+# from github (something like grey papers or self-published)
+require(devtools)
+install_github('bbucior/drposter') # for making posters
+install_github('pzhaonet/bookdownplus') # for writing dissertations/books
+install_github('pzhaonet/mindr') # for making mindmaps
+```
+
+---
+
+### Furthur Readings
+
+.pull-left[
+![](https://images.gr-assets.com/books/1348830965l/6693811.jpg)
+
+*A beginner's Guide to R*
+
+]
+
+--
+
+.pull-right[
+![](https://i.imgur.com/ICvLmEQ.jpg)
+*ggplot2 - Elegant Graphics for Data Analysis*
+]
+
+
+---
+class: inverse, middle
+## Tomorrow: Conference Room (1st floor)
+
+- 9:30, Questions and Discussions
+- 10:00, ROSS 3: Reproducible Research
+- 11:00, ROSS 4: Project Management and Open Science
+
+---
+template: me
+
+---
+template:title-slide
+
+# Questions and Discussions
+
+---
+
+### Help
+
+
+- F1
+- [stackoverflow](https://stackoverflow.com/questions/tagged/r)
+- [capital of statistics (in Chinese)](https://d.cosx.org/t/r)
+
+--
+
+### How to ask questions
+
+- search before asking: Google `keywords + r (+ cran)`
+
+
+1. what you want to get
+2. what you have tried
+3. your data sample, your reproducible codes and session information
+
+
+```r
+sessionInfo()
+```
     </textarea>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
 <script src="macro/macro.js"></script>
