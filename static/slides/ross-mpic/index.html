@@ -140,6 +140,283 @@ class: center, middle, animated, fadeIn
 ![:height 300px](img/qr-code-ross-mpic.png)
 
 Link to these slides: &lt;http://www.pzhao.org/slides/ross-mpic&gt;
+
+
+---
+template:title-slide
+
+# ROSS 1: Basic operations
+
+???
+
+- Thread of Part 1: Hotkeys
+
+---
+template: rg
+
+---
+class: animated, fadeIn
+
+
+## Use RStudio
+
+.pull-left[
+
+### Layout
+
+![](http://www.sthda.com/sthda/RDoc/images/rstudio.png)
+
+]
+
+--
+
+.pull-right[
+
+### Hotkeys
+
+- ctrl + enter
+
+- F1
+
+- TAB
+
+### Project
+
+]
+
+---
+
+## Maths
+
+### Fundamental calculations
+
+```r
++ - * / ^
+round()
+sqrt()
+exp()
+log()
+log10()
+=
+&lt;-  (alt + _)
+```
+
+-- 
+
+### Comments
+
+
+```r
+# a comment starts with a #.
+```
+
+---
+
+## Demo data
+
+
+```r
+write.csv(airquality, 'aq.csv')
+```
+
+--
+
+### Read data
+
+
+```r
+aq &lt;- read.csv('data/aq.csv')
+```
+
+
+```r
+aq
+```
+
+---
+
+### Data structure
+
+- indexing
+
+
+```r
+$
+[, ]
+```
+
+
+--
+
+- vector
+
+
+```r
+x &lt;- aq$Ozone
+x
+str(x)
+```
+
+--
+
+- data frame
+
+
+```r
+str(aq)
+class(aq)
+is.data.frame(aq)
+```
+
+---
+
+### Statistics
+
+
+```r
+length(aq$Solar.R)
+sum(aq$Solar.R)
+sum(aq$Solar.R, na.rm = TRUE)
+sum(aq$Solar.R, na.rm = TRUE) / length(aq$Solar.R)
+mean(aq$Ozone)
+o3mean &lt;- mean(aq$Ozone)
+o3mean
+aq$ozone2 &lt;- aq$Ozone - o3mean
+```
+
+--
+
+```r
+max()
+min()
+range()
+median()
+sd()
+var()
+```
+
+---
+
+### Grouping
+
+
+```r
+aq$Month &lt;- as.factor(aq$Month)
+str(aq)
+tapply(aq$Ozone, aq$Month, mean)
+```
+
+--
+
+### Data briefing
+
+
+```r
+summary(aq)
+plot(aq)
+```
+
+--
+
+
+```r
+new_pkg &lt;- c('ggplot2', 'GGally')
+install.packages(new_pkg)
+library('GGally')
+ggpairs(aq[, 2:5])
+ggpairs(aq[, 2:6], aes(color = Month, alpha = 0.2))
+```
+
+---
+
+### Save
+
+- data
+
+
+```r
+write.csv(aq, 'data/aq2.csv')
+```
+
+--
+
+- figures
+
+
+```r
+pdf('aq.pdf')
+ggpairs(aq[, 2:6], aes(color = Month, alpha = 0.2))
+dev.off()
+```
+--
+
+- script
+
+--
+
+- workspace
+
+--
+
+- history
+
+---
+
+## Programming
+
+### Conditional statements
+
+
+```r
+1 &gt; 2
+1 &lt;= 2
+hour &lt;- 12
+if(hour == 12) {
+  print('Time for lunch. Go!')
+}
+
+o3 &lt;- 10
+if(o3 &lt; o3mean) {
+  print('Low.')
+} else {
+  print('High.')
+}
+
+lh &lt;- ifelse(o3 &lt; o3mean, print('low'), print('high'))
+
+aq$test &lt;- ifelse(aq$Ozone &gt; o3mean, 'high', 'low')
+```
+
+---
+
+### Loop
+
+
+```r
+x &lt;- 1:10
+x
+for(i in x){
+  print('Hello World!')
+}
+
+for(i in x){
+  print(i)
+}
+```
+
+--
+
+
+
+```r
+# Too tired.
+# Let's have a piece of cake.
+# 15:00, 1st floor, in front of the conference room.
+# Paul Crutzen's 85. birthday.
+```
+
+---
+template: me
     </textarea>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
 <script src="macro/macro.js"></script>
