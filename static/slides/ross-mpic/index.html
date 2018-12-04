@@ -976,6 +976,259 @@ class: center middle
 
 ---
 template: me
+
+---
+template:title-slide
+
+# ROSS 4: Project Management and Open Science
+
+???
+
+- Main topic: open
+- Thomas Foken is writing a book. What will our data be like 40 years later? Think about it. What were they 40 years ago?
+
+---
+template: motivation
+
+---
+## What is Science
+
+Science is 
+--
+ a well-known journal
+--
+ where you publish a paper before you can easily find an academic job.
+
+--
+
+&gt; Science is a systematic enterprise that builds and organizes knowledge in the form of .red[testable] explanations and predictions about the universe... After the results of an experiment are announced or published, it is normal practice for independent researchers to .red[double-check] how the research was performed, and to follow up by performing similar experiments to determine how dependable the results might be.
+&gt; 
+&gt; --- WIKIPEDIA
+
+--
+
+## What is Open Science
+
+Open Science is 
+--
+ a bean from EGU.
+
+---
+background-image: url(img/open-science-bean.jpg)
+background-position: center middle
+background-size: cover
+class: inverse, center, middle, animated, fadeIn
+
+.footnote[
+Photograph by Peng Zhao, April 2016
+]
+
+--
+
+.pull-left[
+&gt; If I have seen further it is by standing on the shoulders of Giants.
+&gt;
+&gt; ---Isaac Newton
+]
+
+.pull-right[
+![](img/bean-grow.jpg)
+]
+
+---
+
+&gt; Open Science is about extending the principles of openness to the whole research cycle, fostering sharing and collaboration as early as possible thus entailing a systemic change to the way science and research is done.
+&gt;
+&gt; --- FOSTER
+
+![](https://www.fosteropenscience.eu/sites/default/files/images/OpenScienceBuildingBlocks.JPG)
+
+---
+
+## Project Management
+
+### prodigenr
+
+
+```r
+require(prodigenr)
+setup_project()
+create_abstract()
+```
+
+--
+
+### update and sync
+
+--
+
+### a new package
+
+... is to be expected.
+--
+ but
+--
+ the most challenging task is
+--
+ naming it.
+
+
+--
+ How about
+--
+ "ross"?
+
+---
+template: rg
+
+---
+background-image: url(img/workflow.png)
+background-size: cover
+background-position: center bottom
+class: animated fadeIn
+
+R solution for Open Science (adapted from *Learning R* by Zhao and Li, 2018)
+
+
+--
+ Reproducible,
+--
+ Self-compatible,
+--
+ Plain text.
+
+---
+
+## Plain text
+
+--
+
+- open: easy to read
+
+--
+
+- independent: low/no cost
+
+--
+
+- small
+
+--
+
+- stable
+
+--
+
+- downstream process
+
+---
+
+## Version control
+
+### Install git
+
+- [git](https://git-scm.com/downloads), or
+- [GitHub Desktop](https://desktop.github.com/)
+
+--
+
+### Use RStudio
+
+RStudio: 
+
+1. Tools &amp;#10142; Global Options &amp;#10142; Git/SVN
+--
+
+2. Tools &amp;#10142; Project Options &amp;#10142; Git/SVN
+
+--
+
+Now the time machine is starting up.
+
+---
+background-color: black
+
+.pull-left[
+![](img/foken.jpg)
+]
+
+.pull-right[
+![](img/micrometeorology.jpg)
+]
+
+---
+background-image: url(img/deaths-end.jpg)
+background-position: right bottom
+background-size: 150px
+background-color: black
+class: inverse, center, middle, animated, fadeIn
+
+## How to preserve data for 100 million years?
+
+---
+background-image: url(img/deaths-end.jpg)
+background-position: right bottom
+background-size: 150px
+background-color: black
+class: inverse, left, middle, animated, fadeIn
+
+Modern quantum memory can store data for .red[&lt; 2,000] years. Flash drives and hard disks can save information for .red[5,000] years. The patterns on prehistoric pottery have been preserved for .red[10,000] years. The wall paintings found in European caves are .red[40,000] years old. The information left by the ancestors of human beings on stone tools has been .red[2.5 million] years. The information preserved over .red[100 million] years is the footprints of dinosaurs. Based on the most advanced theories and techniques in various disciplines, as well as on the results of a large number of theoretical studies and experiments, through comprehensive analysis and comparison of a large number of programs, scientists have come to the conclusion of the only method for saving information for 100 million years: .red[ENGRAVE ON THE STONE]!
+
+--- Cixin Liu, *The Three Body Problem Trilogy: Death's End*
+
+现代量子存储器的信息最多只能保存两千年左右；U盘和硬盘可以把信息保存五千年；史前古陶器上的图案保存了一万年左右；欧洲岩洞里发现的壁画，大约有四万年历史；人类的人猿祖先为制造工具在石头上砸出的刻痕，距今约二百五十万年。一亿年前留下来的信息是恐龙的脚印。基于现代科学在各个学科最先进的理论和技术，根据大量的理论研究和实验的结果，通过对大量方案的综合分析和比较，人类科学家得出了把信息保存一亿年左右的方法，那就是——把字刻在石头上！
+
+——刘慈欣《三体3：死神永生》
+
+---
+background-size: 150px
+background-color: black
+class: inverse, center, middle, animated, fadeIn
+
+## How to preserve your research for your entire life?
+
+---
+background-size: 150px
+background-color: black
+class: inverse, center, middle, animated, zoomInDown
+
+# Use R!
+
+---
+background-image: url(img/open-science-bean-grow.jpg)
+background-size: cover
+class: center bottom
+
+
+# Acknowledgements
+
+--
+
+### Prof. Urich Pöschl, Dr. David Walter, Dr. Jiandong Wang
+
+--
+
+### Dr. Yihui Xie
+
+--
+
+### Prof. Yafang Cheng, Prof. Hang Su, Dr. Lei Han
+
+--
+
+
+## .red[If this is the future and we know it, ]
+
+--
+
+## .red[why not get prepared right now?]
+
+--
+
+### THANK YOU
+
+---
+template: me
     </textarea>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
 <script src="macro/macro.js"></script>
