@@ -1,18 +1,25 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title></title>
-    <meta charset="utf-8">
-    <link href="libs/remark-css/default.css" rel="stylesheet" />
-    <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
-    <link rel="stylesheet" href="css\extra.css" type="text/css" />
-    <link rel="stylesheet" href="https:\\cdnjs.cloudflare.com\ajax\libs\animate.css\3.7.0\animate.min.css" type="text/css" />
-  </head>
-  <body>
-    <textarea id="source">
+---
+output:
+  xaringan::moon_reader:
+    css:
+      - default
+      - default-fonts
+      - css/extra.css 
+      - "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css"  # animation in transition, https://github.com/yihui/xaringan/issues/184
+    lib_dir: libs
+    seal: false # disable the title slide
+    nature:
+      highlightStyle: github
+      highlightLines: true #highlight code lines that start with *, or are wrapped in {{ }}, or have trailing comments #<<
+      countIncrementalSlides: false
+      beforeInit: "macro/macro.js" # controlling the figure size
+      countdown: 120000
+---
 
-
-
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(eval = FALSE, message = FALSE, warning = FALSE)
+```
 
 layout: true
 name:title-slide
@@ -24,7 +31,7 @@ class: inverse, center, middle, animated, fadeIn
 # .yellow[R], .yellow[O]pen .yellow[S]cience, and reproducible re.yellow[S]earch
 # {{content}}
 ### Peng Zhao
-&amp;#9993; peng.zhao@mpic.de
+&#9993; peng.zhao@mpic.de
 ### Max Planck Institute for Chemistry
 ### 2018-12-04
 
@@ -139,7 +146,7 @@ class: center, middle, animated, fadeIn
 
 ![:height 300px](img/qr-code-ross-mpic.png)
 
-Link to these slides: &lt;http://www.pzhao.org/slides/ross-mpic&gt;
+Link to these slides: <http://www.pzhao.org/slides/ross-mpic>
 
 
 ---
@@ -198,15 +205,14 @@ exp()
 log()
 log10()
 =
-&lt;-  (alt + _)
+<-  (alt + _)
 ```
 
 --
 
 ### Comments
 
-
-```r
+```{r}
 # a comment starts with a #.
 ```
 
@@ -214,8 +220,7 @@ log10()
 
 ## Demo data
 
-
-```r
+```{r}
 write.csv(airquality, 'aq.csv')
 ```
 
@@ -223,13 +228,11 @@ write.csv(airquality, 'aq.csv')
 
 ### Read data
 
-
-```r
-aq &lt;- read.csv('data/aq.csv')
+```{r, eval=TRUE, echo=TRUE}
+aq <- read.csv('data/aq.csv')
 ```
 
-
-```r
+```{r}
 aq
 ```
 
@@ -250,9 +253,8 @@ $
 
 - vector
 
-
-```r
-x &lt;- aq$Ozone
+```{r}
+x <- aq$Ozone
 x
 str(x)
 ```
@@ -261,8 +263,7 @@ str(x)
 
 - data frame
 
-
-```r
+```{r}
 str(aq)
 class(aq)
 is.data.frame(aq)
@@ -272,16 +273,15 @@ is.data.frame(aq)
 
 ### Statistics
 
-
-```r
+```{r}
 length(aq$Solar.R)
 sum(aq$Solar.R)
 sum(aq$Solar.R, na.rm = TRUE)
 sum(aq$Solar.R, na.rm = TRUE) / length(aq$Solar.R)
 mean(aq$Ozone)
-o3mean &lt;- mean(aq$Ozone)
+o3mean <- mean(aq$Ozone)
 o3mean
-aq$ozone2 &lt;- aq$Ozone - o3mean
+aq$ozone2 <- aq$Ozone - o3mean
 ```
 
 --
@@ -299,9 +299,8 @@ var()
 
 ### Grouping
 
-
-```r
-aq$Month &lt;- as.factor(aq$Month)
+```{r}
+aq$Month <- as.factor(aq$Month)
 str(aq)
 tapply(aq$Ozone, aq$Month, mean)
 ```
@@ -310,17 +309,15 @@ tapply(aq$Ozone, aq$Month, mean)
 
 ### Data briefing
 
-
-```r
+```{r}
 summary(aq)
 plot(aq)
 ```
 
 --
 
-
-```r
-new_pkg &lt;- c('ggplot2', 'GGally')
+```{r}
+new_pkg <- c('ggplot2', 'GGally')
 install.packages(new_pkg)
 library('GGally')
 ggpairs(aq[, 2:5])
@@ -333,8 +330,7 @@ ggpairs(aq[, 2:6], aes(color = Month, alpha = 0.2))
 
 - data
 
-
-```r
+```{r}
 write.csv(aq, 'data/aq2.csv')
 ```
 
@@ -342,8 +338,7 @@ write.csv(aq, 'data/aq2.csv')
 
 - figures
 
-
-```r
+```{r}
 pdf('aq.pdf')
 ggpairs(aq[, 2:6], aes(color = Month, alpha = 0.2))
 dev.off()
@@ -366,34 +361,32 @@ dev.off()
 
 ### Conditional statements
 
-
-```r
-1 &gt; 2
-1 &lt;= 2
-hour &lt;- 12
+```{r}
+1 > 2
+1 <= 2
+hour <- 12
 if(hour == 12) {
   print('Time for lunch. Go!')
 }
 
-o3 &lt;- 10
-if(o3 &lt; o3mean) {
+o3 <- 10
+if(o3 < o3mean) {
   print('Low.')
 } else {
   print('High.')
 }
 
-lh &lt;- ifelse(o3 &lt; o3mean, print('low'), print('high'))
+lh <- ifelse(o3 < o3mean, print('low'), print('high'))
 
-aq$test &lt;- ifelse(aq$Ozone &gt; o3mean, 'high', 'low')
+aq$test <- ifelse(aq$Ozone > o3mean, 'high', 'low')
 ```
 
 ---
 
 ### Loop
 
-
-```r
-x &lt;- 1:10
+```{r}
+x <- 1:10
 x
 for(i in x){
   print('Hello World!')
@@ -407,8 +400,7 @@ for(i in x){
 --
 
 
-
-```r
+```{r}
 # Too tired.
 # Let's have a piece of cake.
 # 15:00, 1st floor, in front of the conference room.
@@ -436,8 +428,7 @@ template: rg
 
 --
 
-
-```r
+```{r}
 plot(aq$Ozone)
 plot(aq$Ozone, aq$Temp)
 plot(aq$Ozone, aq$Temp, col = 'red')
@@ -446,8 +437,7 @@ plot(aq$Ozone, aq$Temp, col = ifelse(aq$Month == 6, 'red', 'blue'))
 
 --
 
-
-```r
+```{r}
 plot(aq[, 2:5])
 ```
 
@@ -464,8 +454,7 @@ boxplot()
 ## Control the details
 
 
-
-```r
+```{r}
 plot(aq$Ozone, axes = FALSE)
 axis(1)
 axis(2)
@@ -480,8 +469,7 @@ box()
 
 .pull-left[
 
-
-```r
+```{r}
 lines()
 points()
 abline()
@@ -498,8 +486,7 @@ expression()
 
 .pull-right[
 
-
-```r
+```{r}
 install.packages('beginr')
 require(beginr)
 plotlm(aq$Temp, aq$Ozone)
@@ -524,7 +511,7 @@ demo(persp)
 - python: libraries
 - MS Office: modules
 - Chrome: add-ons/plugins
-- `&gt;` 13,000 packages on CRAN + countless packages on GitHub + ...
+- `>` 13,000 packages on CRAN + countless packages on GitHub + ...
 ]
 
 --
@@ -532,15 +519,13 @@ demo(persp)
 .pull-right[
 ### Examples
 
-
-```r
+```{r}
 install.packages('pinyin')
 require(pinyin)
 py('张明辉', dic = pydic())
 ```
 
-
-```r
+```{r}
 install.packages("fortunes")
 require(fortunes)
 fortune()
@@ -556,8 +541,7 @@ fortune()
 
 ### Cite a package
 
-
-```r
+```{r}
 citation('pinyin')
 ```
 
@@ -565,8 +549,7 @@ citation('pinyin')
 
 - lattice
 
-
-```r
+```{r}
 install.packages('lattice')
 require(lattice)
 demo(lattice)
@@ -578,8 +561,7 @@ citation('lattice')
 
 - plotrix
 
-
-```r
+```{r}
 install.packages('plotrix')
 require(plotrix)
 demo(plotrix)
@@ -590,8 +572,7 @@ citation('plotrix')
 
 - ggplot2
 
-
-```r
+```{r}
 install.packages('ggplot2')
 require(ggplot2)
 example(qplot)
@@ -620,8 +601,7 @@ Come early tomorrow morning.
 
 ### Install packages
 
-
-```r
+```{r}
 # from CRAN (something like peer reviewed)
 install.packages("xaringan") # for making slides
 install.packages("devtools") # for installation from github
@@ -691,8 +671,7 @@ template:title-slide
 2. what you have tried
 3. your data sample, your reproducible codes and session information
 
-
-```r
+```{r}
 sessionInfo()
 ```
 
@@ -709,10 +688,10 @@ template:title-slide
 
 ## Reproducible
 
-&gt; The term reproducible research refers to the idea that the ultimate product of academic research is the paper along with the laboratory notebooks and full computational environment used to produce the results in the paper such as the code, data, etc. that can be used to reproduce the results and create new work based on the research.
-&gt;
-&gt; --- WIKIPEDIA
-&gt;
+> The term reproducible research refers to the idea that the ultimate product of academic research is the paper along with the laboratory notebooks and full computational environment used to produce the results in the paper such as the code, data, etc. that can be used to reproduce the results and create new work based on the research.
+>
+> --- WIKIPEDIA
+>
 
 --
 
@@ -720,10 +699,10 @@ template:title-slide
 
 --
 
-&gt; Markdown is a lightweight markup language with plain text formatting syntax. Its design allows it to be converted to many output formats, but the original tool by the same name only supports HTML. Markdown is often used to format readme files, for writing messages in online discussion forums, and to create rich text using a plain text editor.
-&gt;
-&gt; --- WIKIPEDIA
-&gt;
+> Markdown is a lightweight markup language with plain text formatting syntax. Its design allows it to be converted to many output formats, but the original tool by the same name only supports HTML. Markdown is often used to format readme files, for writing messages in online discussion forums, and to create rich text using a plain text editor.
+>
+> --- WIKIPEDIA
+>
 
 ---
 
@@ -733,9 +712,9 @@ template:title-slide
 |  -------------------------------  | ----- | 
 | `*italic*`                  |         *italic* | 
 | `**bold**`        |                **bold** | 
-| `PM~2.5~`         |                  subscript `\(\text{PM}_{2.5}\)` | 
-| `R^2^`            |                superscript `\(\text{R}^2\)` | 
-|  `$E = mc^2$`     |               equations: `\(E = mc^2\)`, `\(G = \sqrt[n]{\prod_{i = 1}^{n} x_i}\)` | 
+| `PM~2.5~`         |                  subscript $\text{PM}_{2.5}$ | 
+| `R^2^`            |                superscript $\text{R}^2$ | 
+|  `$E = mc^2$`     |               equations: $E = mc^2$, $G = \sqrt[n]{\prod_{i = 1}^{n} x_i}$ | 
 |  `[link](http://mpic.de)`  |  hyperlink [link](http://mpic.de) | 
 |  `![](image)`     |          insert an image | 
 |  `# Chapter 1`      |                headings | 
@@ -752,7 +731,7 @@ Markdown editor: any text editor, e.g. notepad, notepad++, typora, stackedit
 
 ### rticle package
 
-RStudio: File &amp;#10142; New File &amp;#10142; R Markdown &amp;#10142; From Template &amp;#10142; Copernicus Journal Article
+RStudio: File &#10142; New File &#10142; R Markdown &#10142; From Template &#10142; Copernicus Journal Article
 
 ---
 
@@ -788,8 +767,7 @@ RStudio: File &amp;#10142; New File &amp;#10142; R Markdown &amp;#10142; From Te
 
 - Calculations
 
-
-```r
+```{r}
 source('../../r/calc.R')
 ```
 
@@ -797,8 +775,7 @@ source('../../r/calc.R')
 
 - Figures
 
-
-```r
+```{r}
 require(GGally)
 ggpairs(aq, aes(color = Month, alpha = 0.2))
 ```
@@ -811,7 +788,7 @@ ggpairs(aq, aes(color = Month, alpha = 0.2))
 
 ### bookdown/bookdownplus packages
 
-RStudio: File &amp;#10142; New Project &amp;#10142; New Directory &amp;#10142; Book Project using bookdown
+RStudio: File &#10142; New Project &#10142; New Directory &#10142; Book Project using bookdown
 
 ]
 
@@ -831,14 +808,13 @@ RStudio: File &amp;#10142; New Project &amp;#10142; New Directory &amp;#10142; B
 
 .pull-left[
 
-
-```r
+```{r}
 install.packages('bookdownplus')
 require(bookdownplus)
 bookdownplus(template = 'ubt')
 ```
 
-- bookdownplus gallery: &lt;https://bookdownplus.netlify.com&gt;
+- bookdownplus gallery: <https://bookdownplus.netlify.com>
 
 ]
 
@@ -860,7 +836,7 @@ bookdownplus(template = 'ubt')
 
 ### xaringan package
 
-RStudio: File &amp;#10142; New File &amp;#10142; R Markdown &amp;#10142; From Template &amp;#10142; Ninja Presentation
+RStudio: File &#10142; New File &#10142; R Markdown &#10142; From Template &#10142; Ninja Presentation
 
 ### Make slides
 
@@ -871,7 +847,9 @@ RStudio: File &amp;#10142; New File &amp;#10142; R Markdown &amp;#10142; From Te
 .pull-right[
 
 
-&lt;iframe src="http://www.pzhao.org/slides/ross-mpic" width="100%" height="400px"&gt;&lt;/iframe&gt;
+```{r, echo=FALSE, eval=TRUE}
+knitr::include_url('http://www.pzhao.org/slides/ross-mpic')
+```
 
 ]
 
@@ -881,13 +859,12 @@ RStudio: File &amp;#10142; New File &amp;#10142; R Markdown &amp;#10142; From Te
 
 ### drposter package
 
-
-```r
+```{r}
 require(devtools)
 install_github('bbucior/drposter')
 ```
 
-RStudio: File &amp;#10142; New File &amp;#10142; R Markdown &amp;#10142; From Template &amp;#10142; drposter Poster
+RStudio: File &#10142; New File &#10142; R Markdown &#10142; From Template &#10142; drposter Poster
 
 --
 
@@ -906,7 +883,7 @@ RStudio: File &amp;#10142; New File &amp;#10142; R Markdown &amp;#10142; From Te
 .pull-left[
 ### blogdown package
 
-RStudio: File &amp;#10142; New Project &amp;#10142; New Directory &amp;#10142; Website using blogdown
+RStudio: File &#10142; New Project &#10142; New Directory &#10142; Website using blogdown
 
 ### Build a research website
 
@@ -927,8 +904,7 @@ RStudio: File &amp;#10142; New Project &amp;#10142; New Directory &amp;#10142; W
 
 ### mindr package
 
-
-```r
+```{r}
 require(devtools)
 install_github('pzhaonet/mindr')
 require(mindr)
@@ -939,8 +915,7 @@ example(markmap)
 
 ### Create mindmaps
 
-
-```r
+```{r}
 markmap(path = 'thesis')
 md2mm(path = 'thesis')
 ```
@@ -1003,9 +978,9 @@ Science is
 
 --
 
-&gt; Science is a systematic enterprise that builds and organizes knowledge in the form of .red[testable] explanations and predictions about the universe... After the results of an experiment are announced or published, it is normal practice for independent researchers to .red[double-check] how the research was performed, and to follow up by performing similar experiments to determine how dependable the results might be.
-&gt; 
-&gt; --- WIKIPEDIA
+> Science is a systematic enterprise that builds and organizes knowledge in the form of .red[testable] explanations and predictions about the universe... After the results of an experiment are announced or published, it is normal practice for independent researchers to .red[double-check] how the research was performed, and to follow up by performing similar experiments to determine how dependable the results might be.
+> 
+> --- WIKIPEDIA
 
 --
 
@@ -1028,9 +1003,9 @@ Photograph by Peng Zhao, April 2016
 --
 
 .pull-left[
-&gt; If I have seen further it is by standing on the shoulders of Giants.
-&gt;
-&gt; ---Isaac Newton
+> If I have seen further it is by standing on the shoulders of Giants.
+>
+> ---Isaac Newton
 ]
 
 .pull-right[
@@ -1039,9 +1014,9 @@ Photograph by Peng Zhao, April 2016
 
 ---
 
-&gt; Open Science is about extending the principles of openness to the whole research cycle, fostering sharing and collaboration as early as possible thus entailing a systemic change to the way science and research is done.
-&gt;
-&gt; --- FOSTER
+> Open Science is about extending the principles of openness to the whole research cycle, fostering sharing and collaboration as early as possible thus entailing a systemic change to the way science and research is done.
+>
+> --- FOSTER
 
 ![](https://www.fosteropenscience.eu/sites/default/files/images/OpenScienceBuildingBlocks.JPG)
 
@@ -1051,8 +1026,7 @@ Photograph by Peng Zhao, April 2016
 
 ### prodigenr
 
-
-```r
+```{r}
 require(prodigenr)
 setup_project()
 create_abstract()
@@ -1138,10 +1112,10 @@ R solution for Open Science (adapted from [*Learning R* by Zhao and Li, 2018](ht
 
 RStudio: 
 
-1. Tools &amp;#10142; Global Options &amp;#10142; Git/SVN
+1. Tools &#10142; Global Options &#10142; Git/SVN
 --
 
-2. Tools &amp;#10142; Project Options &amp;#10142; Git/SVN
+2. Tools &#10142; Project Options &#10142; Git/SVN
 
 --
 
@@ -1174,7 +1148,7 @@ background-size: 150px
 background-color: black
 class: inverse, left, middle, animated, fadeIn
 
-Modern quantum memory can store data for .red[&lt; 2,000] years. Flash drives and hard disks can save information for .red[5,000] years. The patterns on prehistoric pottery have been preserved for .red[10,000] years. The wall paintings found in European caves are .red[40,000] years old. The information left by the ancestors of human beings on stone tools has been .red[2.5 million] years. The information preserved over .red[100 million] years is the footprints of dinosaurs. Based on the most advanced theories and techniques in various disciplines, as well as on the results of a large number of theoretical studies and experiments, through comprehensive analysis and comparison of a large number of programs, scientists have come to the conclusion of the only method for saving information for 100 million years: .red[ENGRAVE ON THE STONE]!
+Modern quantum memory can store data for .red[< 2,000] years. Flash drives and hard disks can save information for .red[5,000] years. The patterns on prehistoric pottery have been preserved for .red[10,000] years. The wall paintings found in European caves are .red[40,000] years old. The information left by the ancestors of human beings on stone tools has been .red[2.5 million] years. The information preserved over .red[100 million] years is the footprints of dinosaurs. Based on the most advanced theories and techniques in various disciplines, as well as on the results of a large number of theoretical studies and experiments, through comprehensive analysis and comparison of a large number of programs, scientists have come to the conclusion of the only method for saving information for 100 million years: .red[ENGRAVE ON THE STONE]!
 
 --- Cixin Liu, *The Three Body Problem Trilogy: Death's End*
 
@@ -1232,98 +1206,4 @@ class: center bottom
 ---
 template: me
 
-Source code of these slides: &lt;https://github.com/rbind/pzhao/tree/master/static/slides/ross-mpic&gt;
-    </textarea>
-<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
-<script src="macro/macro.js"></script>
-<script>var slideshow = remark.create({
-"highlightStyle": "github",
-"highlightLines": true,
-"countIncrementalSlides": false
-});
-if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
-  window.dispatchEvent(new Event('resize'));
-});
-(function() {
-  var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
-  if (!r) return;
-  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
-  d.head.appendChild(s);
-})();
-(function(time) {
-  var d2 = function(number) {
-    return ('0' + number).slice(-2); // left-pad 0 to minutes/seconds
-  },
-
-  time_format = function(total) {
-    var secs = Math.abs(total) / 1000;
-    var h = Math.floor(secs / 3600);
-    var m = Math.floor(secs % 3600 / 60);
-    var s = Math.round(secs % 60);
-    var res = d2(m) + ':' + d2(s);
-    if (h > 0) res = h + ':' + res;
-    return res;  // [hh:]mm:ss
-  },
-
-  slide_number_div = function(i) {
-    return document.getElementsByClassName('remark-slide-number').item(i);
-  },
-
-  current_page_number = function(i) {
-    return slide_number_div(i).firstChild.textContent;  // text "i / N"
-  };
-
-  var timer = document.createElement('span'); timer.id = 'slide-time-left';
-  var time_left = time, k = slideshow.getCurrentSlideIndex(),
-      last_page_number = current_page_number(k);
-
-  setInterval(function() {
-    time_left = time_left - 1000;
-    timer.innerHTML = ' ' + time_format(time_left);
-    if (time_left < 0) timer.style.color = 'red';
-  }, 1000);
-
-  slide_number_div(k).appendChild(timer);
-
-  slideshow.on('showSlide', function(slide) {
-    var i = slide.getSlideIndex(), n = current_page_number(i);
-    // reset timer when a new slide is shown and the page number is changed
-    if (last_page_number !== n) {
-      time_left = time; last_page_number = n;
-      timer.innerHTML = ' ' + time_format(time); timer.style.color = null;
-    }
-    slide_number_div(i).appendChild(timer);
-  });
-})(120000);</script>
-
-<script>
-(function() {
-  var i, text, code, codes = document.getElementsByTagName('code');
-  for (i = 0; i < codes.length;) {
-    code = codes[i];
-    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
-      text = code.textContent;
-      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
-          /^\$\$(.|\s)+\$\$$/.test(text) ||
-          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
-        code.outerHTML = code.innerHTML;  // remove <code></code>
-        continue;
-      }
-    }
-    i++;
-  }
-})();
-</script>
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-(function () {
-  var script = document.createElement('script');
-  script.type = 'text/javascript';
-  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
-  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
-    script.src  = script.src.replace(/^https?:/, '');
-  document.getElementsByTagName('head')[0].appendChild(script);
-})();
-</script>
-  </body>
-</html>
+Source code of these slides: <https://github.com/rbind/pzhao/tree/master/static/slides/ross-mpic>
