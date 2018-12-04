@@ -26,7 +26,7 @@ class: inverse, center, middle, animated, fadeIn
 ### Peng Zhao
 &amp;#9993; peng.zhao@mpic.de
 ### Max Planck Institute for Chemistry
-### 2018-12-03
+### 2018-12-04
 
 ---
 layout: false
@@ -693,6 +693,289 @@ template:title-slide
 ```r
 sessionInfo()
 ```
+
+---
+template:title-slide
+
+# ROSS 3: Reproducible Research
+
+???
+
+- Main topic: ASCII files
+
+---
+
+## Reproducible
+
+&gt; The term reproducible research refers to the idea that the ultimate product of academic research is the paper along with the laboratory notebooks and full computational environment used to produce the results in the paper such as the code, data, etc. that can be used to reproduce the results and create new work based on the research.
+&gt;
+&gt; --- WIKIPEDIA
+&gt;
+
+--
+
+## Markdown
+
+--
+
+&gt; Markdown is a lightweight markup language with plain text formatting syntax. Its design allows it to be converted to many output formats, but the original tool by the same name only supports HTML. Markdown is often used to format readme files, for writing messages in online discussion forums, and to create rich text using a plain text editor.
+&gt;
+&gt; --- WIKIPEDIA
+&gt;
+
+---
+
+### Syntax
+
+| You type                    |     You get | 
+|  -------------------------------  | ----- | 
+| `*italic*`                  |         *italic* | 
+| `**bold**`        |                **bold** | 
+| `PM~2.5~`         |                  subscript `\(\text{PM}_{2.5}\)` | 
+| `R^2^`            |                superscript `\(\text{R}^2\)` | 
+|  `$E = mc^2$`     |               equations: `\(E = mc^2\)`, `\(G = \sqrt[n]{\prod_{i = 1}^{n} x_i}\)` | 
+|  `[link](http://mpic.de)`  |  hyperlink [link](http://mpic.de) | 
+|  `![](image)`     |          insert an image | 
+|  `# Chapter 1`      |                headings | 
+|  `1. list...`     |               numbered list | 
+| `- list...`       |                unnumbered list | 
+
+.footnote[
+Markdown editor: any text editor, e.g. notepad, notepad++, typora, stackedit
+]
+
+---
+
+## Journal articles
+
+### rticle package
+
+RStudio: File &amp;#10142; New File &amp;#10142; R Markdown &amp;#10142; From Template &amp;#10142; Copernicus Journal Article
+
+---
+
+###  Write a draft for ACP
+
+- Title and authors
+
+--
+
+- Sections
+
+--
+
+- Equations
+
+--
+
+  - [My collections](http://www.pzhao.org/zh/post/equations/)
+
+--
+
+  - [Atmospheric Environment](https://www.sciencedirect.com/science/article/pii/S1352231018306599)
+
+--
+
+  - [Chinese Journal of Eco-Agriculture](http://www.ecoagri.ac.cn/html/zgstny/2018/8/2018-0802.htm)
+
+--
+
+- Citations
+
+--
+
+- Calculations
+
+
+```r
+source('../../r/calc.R')
+```
+
+--
+
+- Figures
+
+
+```r
+require(GGally)
+ggpairs(aq, aes(color = Month, alpha = 0.2))
+```
+
+---
+
+## Dissertations/books
+
+.pull-left[
+
+### bookdown/bookdownplus packages
+
+RStudio: File &amp;#10142; New Project &amp;#10142; New Directory &amp;#10142; Book Project using bookdown
+
+]
+
+--
+
+.pull-right[
+
+![:width 70%](https://bookdown.org/yihui/bookdown/images/cover.jpg)
+
+*[bookdown: Authoring Books and Technical Documents with R Markdown](https://bookdown.org/yihui/bookdown/)*
+
+]
+
+---
+
+### Write a dissertation of PKU/UBT
+
+.pull-left[
+
+
+```r
+install.packages('bookdownplus')
+require(bookdownplus)
+bookdownplus(template = 'ubt')
+```
+
+- bookdownplus gallery: &lt;https://bookdownplus.netlify.com&gt;
+
+]
+
+--
+
+.pull-right[
+
+![:width 70%](img/bookdownplus-textbook.jpg)
+
+*[R bookdownplus Textbook: Authoring Varied Types of Books and Documents Easily with R bookdown](https://bookdown.org/baydap/bookdownplus/)*
+
+]
+
+---
+
+## Slides
+
+.pull-left[
+
+### xaringan package
+
+RStudio: File &amp;#10142; New File &amp;#10142; R Markdown &amp;#10142; From Template &amp;#10142; Ninja Presentation
+
+### Make slides
+
+]
+
+--
+
+.pull-right[
+
+
+&lt;iframe src="http://www.pzhao.org/slides/ross-mpic" width="100%" height="400px"&gt;&lt;/iframe&gt;
+
+]
+
+---
+
+## Posters
+
+### drposter package
+
+
+```r
+require(devtools)
+install_github('bbucior/drposter')
+```
+
+RStudio: File &amp;#10142; New File &amp;#10142; R Markdown &amp;#10142; From Template &amp;#10142; drposter Poster
+
+--
+
+### A live example
+
+![:height 100px](http://www.pzhao.org/poster/r-intro-mpic/img/qr-code.png)
+
+[The poster for this course](http://www.pzhao.org/poster/r-intro-mpic/)
+
+
+
+---
+
+## Research websites
+
+.pull-left[
+### blogdown package
+
+RStudio: File &amp;#10142; New Project &amp;#10142; New Directory &amp;#10142; Website using blogdown
+
+### Build a research website
+
+]
+
+--
+
+.pull-right[
+
+![:width 70%](https://bookdown.org/yihui/blogdown/images/cover.png)
+
+*[blogdown: Creating Websites with R Markdown](https://bookdown.org/yihui/blogdown/)*
+]
+
+---
+
+## Mindmaps
+
+### mindr package
+
+
+```r
+require(devtools)
+install_github('pzhaonet/mindr')
+require(mindr)
+example(markmap)
+```
+
+--
+
+### Create mindmaps
+
+
+```r
+markmap(path = 'thesis')
+md2mm(path = 'thesis')
+```
+
+---
+class: animated, rotateIn
+
+background-image: url(https://github.com/pzhaonet/mindr/raw/master/showcase/mindr_concept_1.1.8.png)
+
+---
+background-image: url(img/ross-mindmap.png)
+background-size: contain
+class: center, top
+
+### A mindmap of this presentation
+
+.footnote[
+
+A lot to learn, huh... How can we make it...R LANGUAGE
+
+]
+
+---
+
+background-image: url(img/pack-survives.jpg)
+background-size: contain
+background-color: black
+
+---
+class: center middle
+
+# Coffee break
+
+## Make your own slides
+
+---
+template: me
     </textarea>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
 <script src="macro/macro.js"></script>
