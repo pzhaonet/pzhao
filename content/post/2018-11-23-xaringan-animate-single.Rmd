@@ -10,7 +10,7 @@ categories: []
 ---
 
 ```{r, echo = FALSE}
-knitr::include_url("http://www.pzhao.org/slides/xaringan-animate")
+knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-animate")
 ```
 
 Xaringan 的动画转场效果，可以用 animate.css 实现。只需在 yaml 里声明一下 animate.css 的路径，然后每张幻灯片开头声明一下 class 即可（或者用 layout 来批量控制连续若干片子的转场效果）。下面是个完整的 Rmd 文件示例：
@@ -49,7 +49,7 @@ class: inverse, left, center, middle
 
 下面是开头幻灯片的 gif 动画版（感谢 [\@zhouyisu](https://github.com/zhouyisu) 制作）。
 
-![](http://www.pzhao.org/slides/img/xaringan-animation.gif)
+![](http://www.pzhao.org/img/xaringan-animation.gif)
 
 下面是 animate.css 提供的 77 个转场效果示例。点击片子按箭头键即可预览。
 

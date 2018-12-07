@@ -22,7 +22,7 @@ defaultContentLanguageInSubdir = true
 [params]
   name = "Peng Zhao"
   role = "Post-doc in Geoecology"
-  organization = "University of Innsbruck"
+  organization = "Max Planck Institute for Chemistry"
   organization_url = ""
   avatar = "zhao.jpg"
   email = ""

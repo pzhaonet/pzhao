@@ -37,4 +37,4 @@ weight = 1
 
 # Biography
 
-Peng Zhao is a scientific researcher. He is employed as a post-doc in the Max-Planck-Institute of Chemistry.
+Peng Zhao is a scientific researcher. He is employed as a post-doc at the Max Planck Institute for Chemistry.

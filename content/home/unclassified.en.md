@@ -16,38 +16,37 @@ weight = 65
 
 +++
 
-### Blog
+### Websites
 
-- [dapengde.com](http://dapengde.com) (2005 -- , in Chinese)
+- [Personal website](https://pzhao.org)
+- [Meteorobot](https://sciwis.shinyapps.io/meteorobot/): an online tool to display or process meteorological data
+- [EddyPoster](https://sciwis.shinyapps.io/eddyposter/): eddy covariance data post processor
+- [Blog](http://dapengde.com) (2005 -- in Chinese)
+- [Wings of the Wind](https://zhaopian.netlify.com)
+- [BOOKDOWNPLUS GALLERY](https://bookdownplus.netlify.com/portfolio/)
 
 ### Books
 
-- Zhao, P.; Li, Y.. 2017. [Learning R](http://xuer.pzhao.org/). Yanjiu Press. Beijing. Forthcoming.
-- Zhao, P.. 2017. [R bookdownplus Textbook](https://bookdown.org/baydap/bookdownplus/).
+- Zhao, P.; Li, Y.. 2018. [Learning R](http://xuer.pzhao.org/). Yanjiu Press. Beijing. 
+
 
 #### R Packages
 
-- Zhao, P.. 2017. bookdownplus ([CRAN](https://CRAN.R-project.org/package=bookdownplus), [GitHub](https://github.com/pzhaonet/bookdownplus)): Generate Varied Types of Books and Documents with R 'bookdown' Package 
+- Zhao, P.. 2017. bookdownplus ([CRAN](https://CRAN.R-project.org/package=bookdownplus), [GitHub](https://github.com/pzhaonet/bookdownplus)): Generate Varied Types of Books and Documents with R 'bookdown' Package. 
 ![bookdownplus](http://cranlogs.r-pkg.org/badges/grand-total/bookdownplus)
 
-- Zhao, P.. 2017. mindr ([CRAN](https://CRAN.R-project.org/package=mindr), [GitHub](https://github.com/pzhaonet/mindr)): Convert Files Between Markdown or Rmarkdown Files and Mindmaps
+- Zhao, P.. 2017. mindr ([CRAN](https://CRAN.R-project.org/package=mindr), [GitHub](https://github.com/pzhaonet/mindr)): Convert Files Between Markdown or Rmarkdown Files and Mindmaps.
 ![mindr](http://cranlogs.r-pkg.org/badges/grand-total/mindr)
 
-- Zhao, P.. 2017. pinyin ([CRAN](https://CRAN.R-project.org/package=pinyin), [GitHub](https://github.com/pzhaonet/pinyin)): Convert Chinese Characters into Pinyin
+- Zhao, P.. 2017. pinyin ([CRAN](https://CRAN.R-project.org/package=pinyin), [GitHub](https://github.com/pzhaonet/pinyin)): Convert Chinese Characters into Pinyin.
 ![pinyin](http://cranlogs.r-pkg.org/badges/grand-total/pinyin)
 
-- Zhao, P.. 2017. beginr ([CRAN](https://CRAN.R-project.org/package=beginr), [GitHub](https://github.com/pzhaonet/beginr): Functions for R Beginners
+- Zhao, P.. 2017. beginr ([CRAN](https://CRAN.R-project.org/package=beginr), [GitHub](https://github.com/pzhaonet/beginr): Functions for R Beginners.
 ![beginr](http://cranlogs.r-pkg.org/badges/grand-total/beginr)
 
-- Zhao, P.. 2017. postr ([GitHub](https://github.com/pzhaonet/postr)): Create posters with R markdown
+- Zhao, P.. 2017. mf ([Github](https://github.com/pzhaonet/mf)): Functions I often use in micrometeorology and other work.
 
-- Zhao, P.. 2017. mf ([Github](https://github.com/pzhaonet/mf)): Functions I often use in micrometeorology and other work
+- steemr ([CRAN](https://CRAN.R-project.org/package=steemr), [GitHub](https://github.com/pzhaonet/steemr)): Process Steem data.
+![steemr](https://cranlogs.r-pkg.org/badges/grand-total/steemr)
 
-### Templates
-
-- [Thesis (word, in Chinese, Peking University)](https://github.com/pzhaonet/pku-thesis-word/archive/master.zip)
-- [Thesis (LaTeX, in Chinese, Peking University)](https://github.com/pzhaonet/pku-thesis-latex/archive/master.zip)
-- [Thesis (LyX, in Chinese, Peking University)](https://github.com/pzhaonet/pku-thesis-lyx/archive/master.zip)
-- [Thesis (LaTeX, in English/German, University of Bayreuth)](https://github.com/pzhaonet/ubt_thesis_latex/archive/master.zip)
-- [Thesis (R bookdown)](https://github.com/pzhaonet/bookdownplus)
-- [Postcard Farewell to Bayreuth (ppt)](https://github.com/pzhaonet/postcard/archive/master.zip)
+- Zhao, P.. 2018. advr ([GitHub](https://github.com/pzhaonet/advr)): Functions I use for processing advection  flux data.

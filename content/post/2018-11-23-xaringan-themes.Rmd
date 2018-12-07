@@ -21,87 +21,103 @@ Xaringan 自带 16 套主题（themes），其中 10 套配有对应的 fonts.cs
 
 
 chocolate
+
 ```{r, echo = FALSE}
 knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-theme-chocolate/xaringan-theme-chocolate")
 ```
 
 default
+
 ```{r, echo = FALSE}
 knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-theme-default/xaringan-theme-default")
 ```
 
 lucy
+
 ```{r, echo = FALSE}
 knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-theme-lucy/xaringan-theme-lucy")
 ```
 
 metropolis
+
 ```{r, echo = FALSE}
 knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-theme-metropolis/xaringan-theme-metropolis")
 ```
 
 middlebury
+
 ```{r, echo = FALSE}
 knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-theme-middlebury/xaringan-theme-middlebury")
 ```
 
 mpic
+
 ```{r, echo = FALSE}
 knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-theme-mpic/xaringan-theme-mpic")
 ```
 
 rladies
+
 ```{r, echo = FALSE}
 knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-theme-rladies/xaringan-theme-rladies")
 ```
 
 robot
+
 ```{r, echo = FALSE}
 knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-theme-robot/xaringan-theme-robot")
 ```
 
 rutgers
+
 ```{r, echo = FALSE}
 knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-theme-rutgers/xaringan-theme-rutgers")
 ```
 
 tamu
+
 ```{r, echo = FALSE}
 knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-theme-tamu/xaringan-theme-tamu")
 ```
 
 uo
+
 ```{r, echo = FALSE}
 knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-theme-uo/xaringan-theme-uo")
 ```
 
 duke-blue
+
 ```{r, echo = FALSE}
 knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-theme-duke-blue/xaringan-theme-duke-blue")
 ```
 
 hygge-duke
+
 ```{r, echo = FALSE}
 knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-theme-hygge-duke/xaringan-theme-hygge-duke")
 ```
 
 hygge
+
 ```{r, echo = FALSE}
 knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-theme-hygge/xaringan-theme-hygge")
 ```
 
 kunoichi
+
 ```{r, echo = FALSE}
 knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-theme-kunoichi/xaringan-theme-kunoichi")
 ```
 
 ninjutsu
+
 ```{r, echo = FALSE}
 knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-theme-ninjutsu/xaringan-theme-ninjutsu")
 ```
 
 shinobi
+
 ```{r, echo = FALSE}
 knitr::include_url("http://www.pzhao.org/slides/xaringan-showcase/xaringan-theme-shinobi/xaringan-theme-shinobi")
 ```
-
