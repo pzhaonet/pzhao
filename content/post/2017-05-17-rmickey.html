@@ -12,7 +12,7 @@ categories: []
 
 
 
-<div class="section level2">
+<div id="section" class="section level2">
 <h2>前言</h2>
 <p>写R包这种高大上的工作，原以为学会怎么写得花个一年半载，学会之后写一个包怎么着也得个把月，谁料想周一上午下了决心，到周二下午就一口气写了4个包，算起来从学到写，只花了一天多时间。这里是个小结。</p>
 <p>学写R包，我主要参考了3份资料：</p>
@@ -25,7 +25,7 @@ categories: []
 <p>这是因为，他们都是高手中的高手，只是我觉得他们写得，就好比教授写幼儿园教材，仍然不太合小朋友的胃口，不足以让我等菜鸟快速入门。比如读到roxygen2是多么美妙，我起初完全没体验，不知道“举头望文档，低头思函数”到底说的是什么（what the hell was Yihui talking about? 当然，一天之后我就体会到了静夜思的精妙），再一看Emacs就被吓得河水倒流，当年光一个vim就把我折腾个半死。而极简篇里，我觉得既然是极简，能减掉的步骤尽量减，所以还能继续剪。可能当年是极简，时过境迁，人类进步，现在可以比极简更简。</p>
 <p>下面，我试试写个减到不能再减的一剑封喉致简版，只需小改两个文本文件，不出十分钟就写出一个能用的R包。</p>
 </div>
-<div class="section level2">
+<div id="section-1" class="section level2">
 <h2>准备</h2>
 <p>跟前期准备和后期维护相比，写包本身其实是最简单的环节。假定你已经安装好了R和RStudio，那么，运行R，安装几个包：</p>
 <pre class="r"><code>install.packages(c(&quot;devtools&quot;, &quot;roxygen2&quot;, &quot;testthat&quot;, &quot;knitr&quot;))</code></pre>
@@ -36,7 +36,7 @@ categories: []
 <li>OS X 用户，安装command-line-tools，Terminal 运行 git 或者 xcode-select.</li>
 </ul>
 </div>
-<div class="section level2">
+<div id="section-2" class="section level2">
 <h2>致简四部曲</h2>
 <ol style="list-style-type: decimal">
 <li><p>参照益辉的<a href="https://github.com/yihui/rmini">rmini</a>，我做了个更简单的模板（Update：根据<a href="http://www.pzhao.org/zh/post/rmickey/#comment-3312847859">Dong的建议</a>，也可以RStudio - File - New project - New directory - R package），叫做rmickey。<a href="https://github.com/pzhaonet/rmickey/archive/master.zip">点击下载</a>并解压缩，得到个名叫rmickey文件夹。这个文件夹名字可以随便改。</p></li>
@@ -47,7 +47,7 @@ categories: []
 <p>试着运行一下你刚才自定义的函数，记得用tab键补全功能和F1查看帮助信息，体会一下刚才你在foo.R文件里修改的内容是如何在tab和F1里体现出来的，然后就自然知道如何把foo.R写得更好。</p>
 <p><strong>下载模板–打开项目–修改模板–编译，这就是R包的9分钟致简开发四步曲。</strong></p>
 </div>
-<div class="section level2">
+<div id="section-3" class="section level2">
 <h2>发布和分享</h2>
 <p>史书分正史和野史，R包分正包和野包。正包是通过R官方认可并且发布在CRAN网站上的，等于领到了认证和许可，可以用<code>install.package()</code>直接安装；野包就是自己私下写的，随便放在自己喜欢的地方小范围使用的。很多包转正之前都是野包，经过反复测试和升级后才转的正，而有的野包会永远野下去，永不接受招安。我目前写的几个包都是野包，将来转不转正走着瞧，所以这里只介绍野包的发布和分享方法。</p>
 <ul>
@@ -71,12 +71,12 @@ foo()</code></pre>
 <p>你要做的，就是随便以任何方式，不管是email、qq、网盘，还是优盘、手机、移动硬盘，只要让用户能得到你这个压缩文件就行了。</p>
 <p>用户要做的，就是拿到文件后在他们的电脑上安装，方法是在RStudio菜单栏点<code>Tools</code> – <code>Install Packages</code> – <code>Install from Package Archive File</code>，选上你的包，就行了。</p>
 </div>
-<div class="section level2">
+<div id="section-4" class="section level2">
 <h2>进阶</h2>
 <p>欲穷千里目，更上一层楼。</p>
 <p>用9分钟致简四步法写出的R包，足够自用了。在这个高度，看到的风景已经够美。你可以在这个水平的观景台休整休整，再考虑是否继续往上攀登。孔子登东山而小鲁，登泰山而小天下。如果想看到更高处的风景，那么就继续读本帖前言部分的3份资料，以及他们介绍的更多资料，把你的包写得更好。</p>
 </div>
-<div class="section level2">
+<div id="section-5" class="section level2">
 <h2>心得</h2>
 <p>现在，让我们回过头来谈一个问题：<strong>我们为什么要写R包？</strong></p>
 <p><strong>首先是方便自用。</strong></p>
@@ -94,14 +94,8 @@ foo()</code></pre>
 <p>以史为鉴，可以知兴替：</p>
 <p>以R包为鉴，可以知本我、自我和超我。</p>
 </blockquote>
-<div class="figure">
-<img src="http://dapengde.com/wp-content/uploads/2017/03/2017-03-19.jpg" />
-
-</div>
+<p><img src="http://dapengde.com/wp-content/uploads/2017/03/2017-03-19.jpg" /></p>
 <p>PS. 星期三下午，我壮着胆子把Emacs装上，战战兢兢试了一下就惊呆了。这个ctrl+coo快捷键(可以读作“control 酷”，太好记了)来维护R包简直不要太逆天。昨天我花了四五个小时来为我那51个函数写文档，要是用Emacs，估计最多一小时就够了。省事的话，可能不到10分钟就能写出个包含这51个函数的能用的致简包。最让我受刺激的还不是这个。自打学了vim之后，我就坚信，我永远用不着，也永远学不会Emacs，而实际上，学会上面这个办法，只用了三五分钟……Emacs我不打算学更多，光这一招就够酷……(Update: 根据 <a href="http://www.pzhao.org/zh/post/rmickey/#comment-3314475182">Yihui Xie</a>的留言，RStudio 里 ctrl+shift+alt+r也能同样实现)</p>
 <p>到底是什么阻挡了尝试新事物的可能？</p>
-<div class="figure">
-<img src="/img/emacs-coo.gif" />
-
-</div>
+<p><img src="/img/emacs-coo.gif" /></p>
 </div>

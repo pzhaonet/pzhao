@@ -18,10 +18,7 @@ output: #md_document
 
 
 <p>I’m glad to announce that ‘beginr’ <span class="citation">(Zhao 2017)</span> is now on <a href="https://CRAN.R-project.org/package=beginr">CRAN</a>. This post is a brief documentation of ‘beginr 0.1.0’. Subsequent updates can be found on the <a href="http://github.com/pzhaonet/beginr">GitHub site of beginr</a>.</p>
-<div class="figure">
-<img src="http://cranlogs.r-pkg.org/badges/grand-total/beginr" />
-
-</div>
+<p><img src="http://cranlogs.r-pkg.org/badges/grand-total/beginr" /></p>
 <div id="introduction" class="section level1">
 <h1>Introduction</h1>
 <p>‘beginr’ is a collection of useful functions for R beginners, including hints for the arguments of the ‘plot()’ function, self-defined functions for error bars, user-customized pair plots and hist plots, enhanced linear regression figures, etc.. This package could be helpful to R experts as well.</p>
@@ -57,12 +54,12 @@ y &lt;- 1:10 + rnorm(10)
 beginr::plotlm(x, y)</code></pre>
 <p><img src="/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 <pre><code>## [[1]]
-##              Estimate Std. Error  t value     Pr(&gt;|t|)
-## (Intercept) 1.2404796  0.6569697 1.888184 0.0956930298
-## x           0.7604808  0.1058803 7.182461 0.0000940501
+##               Estimate Std. Error    t value     Pr(&gt;|t|)
+## (Intercept) -0.5934996  0.8526888 -0.6960331 5.061224e-01
+## x            1.0362034  0.1374232  7.5402343 6.669316e-05
 ## 
 ## [[2]]
-## [1] 0.8657442</code></pre>
+## [1] 0.8766482</code></pre>
 <p>If you want to display the distribution of a data-set, use <code>plothist()</code>, which gives you a histogram with markers of the median, mean, quantiles, standard deviation, sample number and the skewness.</p>
 <pre class="r"><code>x &lt;- rnorm(10000)
 beginr::plothist(x)</code></pre>
@@ -74,7 +71,7 @@ beginr::plotpairs(df)</code></pre>
 <pre class="r"><code>beginr::plotpairs2(df)</code></pre>
 <pre><code>## [1] &quot;p&lt;0.01&quot;</code></pre>
 <pre><code>## [1] &quot;p&lt;0.01&quot;</code></pre>
-<pre><code>## [1] &quot;p&lt;0.05&quot;</code></pre>
+<pre><code>## [1] &quot;p&lt;0.01&quot;</code></pre>
 <p><img src="/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-5-2.png" width="672" /></p>
 <p>I often have to plot one independent variable (x) and multiple dependent variables (y<sub>1</sub>, y<sub>2</sub>, …, y<sub>n</sub>) in one 2-D coordinate system, or one dependent variable (y) against multiple independent variables (x<sub>1</sub>, x<sub>2</sub>, …, x<sub>n</sub>) with their error bars. Use <code>dfplot()</code> or <code>dfplot2()</code> in ‘beginr’.</p>
 <pre class="r"><code>x &lt;- seq(0, 2 * pi, length.out = 100)
@@ -96,20 +93,20 @@ beginr::errorbar(x, y, yupper = 0.1, ylower = 0.1)</code></pre>
 <p><code>lmdf()</code> performs the linear regression between every two columns in a data frame.</p>
 <pre class="r"><code>df &lt;- data.frame(a = 1:10, b = 1:10 + rnorm(10), c = 1:10 + rnorm(10))
 beginr::lmdf(df)</code></pre>
-<pre><code>##   x y r.squared adj.r.squared  intercept     slope Std.Error.intercept
-## 1 a b 0.9546449     0.9489755  0.6171705 0.9206305           0.4402132
-## 2 a c 0.9103184     0.8991082  0.1910661 0.9653818           0.6647211
-## 3 b a 0.9546449     0.9489755 -0.3905198 1.0369469           0.5028284
-## 4 b c 0.8688661     0.8524744 -0.1853958 1.0009547           0.8651003
-## 5 c a 0.9103184     0.8991082  0.3130807 0.9429621           0.6509973
-## 6 c b 0.8688661     0.8524744  0.9058546 0.8680374           0.7417362
+<pre><code>##   x y r.squared adj.r.squared   intercept     slope Std.Error.intercept
+## 1 a b 0.9166902     0.9062765 -0.32224344 1.0617542           0.7021761
+## 2 a c 0.9672163     0.9631184  0.22645282 1.0231476           0.4132290
+## 3 b a 0.9166902     0.9062765  0.73642007 0.8633733           0.5862540
+## 4 b c 0.9334718     0.9251557  0.85285240 0.9063885           0.5450262
+## 5 c a 0.9672163     0.9631184 -0.03376328 0.9453341           0.4044151
+## 6 c b 0.9334718     0.9251557 -0.51127280 1.0298804           0.6388725
 ##   Std.Error.slope t.intercept   t.slope Pr.intercept     Pr.slope
-## 1      0.07094678   1.4019810 12.976354    0.1985086 1.178689e-06
-## 2      0.10712950   0.2874379  9.011353    0.7810821 1.836021e-05
-## 3      0.07991050  -0.7766462 12.976354    0.4597122 1.178689e-06
-## 4      0.13748347  -0.2143055  7.280546    0.8356704 8.548211e-05
-## 5      0.10464157   0.4809247  9.011353    0.6434474 1.836021e-05
-## 6      0.11922696   1.2212626  7.280546    0.2567535 8.548211e-05</code></pre>
+## 1      0.11316592 -0.45892116  9.382279    0.6585022 1.363493e-05
+## 2      0.06659788  0.54800809 15.363066    0.5986400 3.200850e-07
+## 3      0.09202170  1.25614501  9.382279    0.2445042 1.363493e-05
+## 4      0.08555035  1.56479159 10.594796    0.1562625 5.505280e-06
+## 5      0.06153291 -0.08348669 15.363066    0.9355158 3.200850e-07
+## 6      0.09720626 -0.80027360 10.594796    0.4466637 5.505280e-06</code></pre>
 <p>There are two functions as improvements of <code>tapply()</code> for factor calculation.</p>
 <pre class="r"><code>beginr::tapplydf()
 beginr::tapplydfv()</code></pre>
@@ -139,7 +136,7 @@ beginr::list2ascii(alist)</code></pre>
 ##   title = {bookdownplus: Generate Assorted Books and Documents with R &#39;bookdown&#39; Package},
 ##   author = {Peng Zhao},
 ##   year = {2018},
-##   note = {R package version 1.5.2.1},
+##   note = {R package version 1.5.4},
 ##   url = {https://github.com/pzhaonet/bookdownplus},
 ## }
 ## @Manual{R-mindr,
@@ -154,8 +151,8 @@ beginr::list2ascii(alist)</code></pre>
 ## Codes},
 ##   author = {Peng Zhao},
 ##   year = {2018},
-##   note = {R package version 1.1.4},
-##   url = {https://CRAN.R-project.org/package=pinyin},
+##   note = {R package version 1.1.5},
+##   url = {https://github.com/pzhaonet/pinyin},
 ## }</code></pre>
 <p><code>plotpkg()</code> displays a figure showing the downloads of packages.</p>
 <pre class="r"><code>beginr::plotpkg(&quot;beginr&quot;, from = &quot;2017-06-23&quot;)</code></pre>
@@ -168,7 +165,7 @@ beginr::list2ascii(alist)</code></pre>
 <h1>References</h1>
 <div id="refs" class="references">
 <div id="ref-R-beginr">
-<p>Zhao, Peng. 2017. <em>Beginr: Functions for R Beginners</em>. <a href="https://github.com/pzhaonet/beginr" class="uri">https://github.com/pzhaonet/beginr</a>.</p>
+<p>Zhao, Peng. 2017. <em>Beginr: Functions for R Beginners</em>. <a href="https://github.com/pzhaonet/beginr">https://github.com/pzhaonet/beginr</a>.</p>
 </div>
 </div>
 </div>
