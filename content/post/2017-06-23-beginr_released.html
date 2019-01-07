@@ -51,12 +51,12 @@ y &lt;- 1:10 + rnorm(10)
 beginr::plotlm(x, y)</code></pre>
 <p><img src="/post/2017-06-23-beginr_released_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 <pre><code>## [[1]]
-##              Estimate Std. Error   t value     Pr(&gt;|t|)
-## (Intercept) 0.1908650  0.6703288 0.2847334 7.830801e-01
-## x           0.9318458  0.1080333 8.6255443 2.529957e-05
+##               Estimate Std. Error    t value     Pr(&gt;|t|)
+## (Intercept) -0.7081026  1.1873758 -0.5963593 0.5674225025
+## x            1.0671400  0.1913629  5.5765244 0.0005244275
 ## 
 ## [[2]]
-## [1] 0.9029126</code></pre>
+## [1] 0.795384</code></pre>
 <p>经常需要了解一组数据的分布, 看看是不是正态分布. beginr 里的 <code>plothist()</code> 函数不仅做出直方图和平滑曲线, 并且标出中值, 中位数, 四分位数, 标准偏差, 样本数, 以及用来判断是否正态分布的 skewness 值.</p>
 <pre class="r"><code>x &lt;- rnorm(10000)
 beginr::plothist(x)</code></pre>
@@ -91,19 +91,19 @@ beginr::errorbar(x, y, yupper = 0.1, ylower = 0.1)</code></pre>
 <pre class="r"><code>df &lt;- data.frame(a = 1:10, b = 1:10 + rnorm(10), c = 1:10 + rnorm(10))
 beginr::lmdf(df)</code></pre>
 <pre><code>##   x y r.squared adj.r.squared  intercept     slope Std.Error.intercept
-## 1 a b 0.8731462     0.8572894  0.5457300 0.8324462           0.6960651
-## 2 a c 0.9238643     0.9143473 -0.5343466 1.0772470           0.6784079
-## 3 b a 0.8731462     0.8572894  0.1252842 1.0488920           0.8095859
-## 4 b c 0.8303658     0.8091615 -0.4838131 1.1463923           1.0492501
-## 5 c a 0.9238643     0.9143473  0.8770108 0.8576160           0.5465106
-## 6 c b 0.8303658     0.8091615  1.2196769 0.7243296           0.7267310
+## 1 a b 0.8737596     0.8579795 -0.5617788 1.0615761           0.8851966
+## 2 a c 0.8988491     0.8862052  1.1977488 0.7563714           0.5566241
+## 3 b a 0.8737596     0.8579795  1.1567099 0.8230776           0.6862007
+## 4 b c 0.7068231     0.6701760  2.2412713 0.5905979           0.8342735
+## 5 c a 0.8988491     0.8862052 -0.8670388 1.1883701           0.8213194
+## 6 c b 0.7068231     0.6701760 -1.1352745 1.1967925           1.5879879
 ##   Std.Error.slope t.intercept  t.slope Pr.intercept     Pr.slope
-## 1      0.11218104   0.7840216 7.420560    0.4556118 7.471264e-05
-## 2      0.10933533  -0.7876479 9.852689    0.4536048 9.481713e-06
-## 3      0.14134944   0.1547509 7.420560    0.8808507 7.471264e-05
-## 4      0.18319356  -0.4611037 6.257820    0.6570013 2.436375e-04
-## 5      0.08704385   1.6047460 9.852689    0.1472172 9.481713e-06
-## 6      0.11574791   1.6783059 6.257820    0.1318054 2.436375e-04</code></pre>
+## 1      0.14266236  -0.6346373 7.441179   0.54338355 7.325784e-05
+## 2      0.08970809   2.1518093 8.431473   0.06359578 2.986158e-05
+## 3      0.11061119   1.6856729 7.441179   0.13034678 7.325784e-05
+## 4      0.13447959   2.6864945 4.391729   0.02764637 2.312192e-03
+## 5      0.14094453  -1.0556658 8.431473   0.32195561 2.986158e-05
+## 6      0.27251057  -0.7149138 4.391729   0.49499303 2.312192e-03</code></pre>
 <p>还有两个函数对<code>tapply()</code>进行了改善, 用来进行因子计算.</p>
 <pre class="r"><code>beginr::tapplydf()
 beginr::tapplydfv()</code></pre>
@@ -132,8 +132,8 @@ beginr::list2ascii(alist)</code></pre>
 ## @Manual{R-mindr,
 ##   title = {mindr: Convert Files Between Markdown or Rmarkdown Files and Mindmaps},
 ##   author = {Peng Zhao},
-##   year = {2018},
-##   note = {R package version 1.1.9},
+##   year = {2019},
+##   note = {R package version 1.1.10},
 ##   url = {https://github.com/pzhaonet/mindr},
 ## }
 ## @Manual{R-pinyin,
@@ -154,8 +154,8 @@ beginr::list2ascii(alist)</code></pre>
 <pre><code>## @Manual{R-beginr,
 ##   title = {beginr: Functions for R Beginners},
 ##   author = {Peng Zhao},
-##   year = {2018},
-##   note = {R package version 0.1.3},
+##   year = {2019},
+##   note = {R package version 0.1.4},
 ##   url = {https://github.com/pzhaonet/beginr},
 ## }</code></pre>
 <div id="section-6" class="section level2 unnumbered">

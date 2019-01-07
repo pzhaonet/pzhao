@@ -54,12 +54,12 @@ y &lt;- 1:10 + rnorm(10)
 beginr::plotlm(x, y)</code></pre>
 <p><img src="/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 <pre><code>## [[1]]
-##               Estimate Std. Error    t value     Pr(&gt;|t|)
-## (Intercept) -0.5934996  0.8526888 -0.6960331 5.061224e-01
-## x            1.0362034  0.1374232  7.5402343 6.669316e-05
+##              Estimate Std. Error   t value     Pr(&gt;|t|)
+## (Intercept) 0.7405320 0.53941245  1.372849 2.070478e-01
+## x           0.9090128 0.08693419 10.456333 6.077306e-06
 ## 
 ## [[2]]
-## [1] 0.8766482</code></pre>
+## [1] 0.9318191</code></pre>
 <p>If you want to display the distribution of a data-set, use <code>plothist()</code>, which gives you a histogram with markers of the median, mean, quantiles, standard deviation, sample number and the skewness.</p>
 <pre class="r"><code>x &lt;- rnorm(10000)
 beginr::plothist(x)</code></pre>
@@ -93,20 +93,20 @@ beginr::errorbar(x, y, yupper = 0.1, ylower = 0.1)</code></pre>
 <p><code>lmdf()</code> performs the linear regression between every two columns in a data frame.</p>
 <pre class="r"><code>df &lt;- data.frame(a = 1:10, b = 1:10 + rnorm(10), c = 1:10 + rnorm(10))
 beginr::lmdf(df)</code></pre>
-<pre><code>##   x y r.squared adj.r.squared   intercept     slope Std.Error.intercept
-## 1 a b 0.9166902     0.9062765 -0.32224344 1.0617542           0.7021761
-## 2 a c 0.9672163     0.9631184  0.22645282 1.0231476           0.4132290
-## 3 b a 0.9166902     0.9062765  0.73642007 0.8633733           0.5862540
-## 4 b c 0.9334718     0.9251557  0.85285240 0.9063885           0.5450262
-## 5 c a 0.9672163     0.9631184 -0.03376328 0.9453341           0.4044151
-## 6 c b 0.9334718     0.9251557 -0.51127280 1.0298804           0.6388725
-##   Std.Error.slope t.intercept   t.slope Pr.intercept     Pr.slope
-## 1      0.11316592 -0.45892116  9.382279    0.6585022 1.363493e-05
-## 2      0.06659788  0.54800809 15.363066    0.5986400 3.200850e-07
-## 3      0.09202170  1.25614501  9.382279    0.2445042 1.363493e-05
-## 4      0.08555035  1.56479159 10.594796    0.1562625 5.505280e-06
-## 5      0.06153291 -0.08348669 15.363066    0.9355158 3.200850e-07
-## 6      0.09720626 -0.80027360 10.594796    0.4466637 5.505280e-06</code></pre>
+<pre><code>##   x y r.squared adj.r.squared  intercept     slope Std.Error.intercept
+## 1 a b 0.9017164     0.8894309 -0.1776259 1.0136605           0.7341477
+## 2 a c 0.8474658     0.8283990 -0.2571953 1.0357178           0.9639386
+## 3 b a 0.9017164     0.8894309  0.6985696 0.8895645           0.6445549
+## 4 b c 0.6648444     0.6229500  0.8007689 0.8593752           1.3391306
+## 5 c a 0.8474658     0.8283990  1.0493857 0.8182400           0.7764999
+## 6 c b 0.6648444     0.6229500  1.1895000 0.7736369           1.2286792
+##   Std.Error.slope t.intercept  t.slope Pr.intercept     Pr.slope
+## 1       0.1183186  -0.2419485 8.567210    0.8149069 2.658358e-05
+## 2       0.1553528  -0.2668171 6.666877    0.7963588 1.580210e-04
+## 3       0.1038336   1.0838016 8.567210    0.3100325 2.658358e-05
+## 4       0.2157253   0.5979767 3.983656    0.5663945 4.040987e-03
+## 5       0.1227321   1.3514306 6.666877    0.2135277 1.580210e-04
+## 6       0.1942028   0.9681128 3.983656    0.3613410 4.040987e-03</code></pre>
 <p>There are two functions as improvements of <code>tapply()</code> for factor calculation.</p>
 <pre class="r"><code>beginr::tapplydf()
 beginr::tapplydfv()</code></pre>
@@ -128,8 +128,8 @@ beginr::list2ascii(alist)</code></pre>
 <pre><code>## @Manual{R-beginr,
 ##   title = {beginr: Functions for R Beginners},
 ##   author = {Peng Zhao},
-##   year = {2018},
-##   note = {R package version 0.1.3},
+##   year = {2019},
+##   note = {R package version 0.1.4},
 ##   url = {https://github.com/pzhaonet/beginr},
 ## }
 ## @Manual{R-bookdownplus,
@@ -142,8 +142,8 @@ beginr::list2ascii(alist)</code></pre>
 ## @Manual{R-mindr,
 ##   title = {mindr: Convert Files Between Markdown or Rmarkdown Files and Mindmaps},
 ##   author = {Peng Zhao},
-##   year = {2018},
-##   note = {R package version 1.1.9},
+##   year = {2019},
+##   note = {R package version 1.1.10},
 ##   url = {https://github.com/pzhaonet/mindr},
 ## }
 ## @Manual{R-pinyin,
