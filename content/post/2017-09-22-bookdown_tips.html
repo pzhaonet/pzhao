@@ -16,7 +16,7 @@ categories: []
 
 
 <p>本帖用来收集整理 R 语言 bookdown 扩展包的一些使用技巧。有些是在网上搜来的，有些是我在别处讨论得来的，有些是我尚未发布的，都写在这里备用。</p>
-<div id="markdown-" class="section level2">
+<div id="-markdown-" class="section level2">
 <h2>输出 Markdown 文件</h2>
 <p>使用 bookdown 编译 Rmd 文件，可以得到的输出格式五花八门。对此，<a href="https://bookdown.org/yihui/bookdown/output-formats.html">bookdown 的官方文档</a> 有详细介绍，包括 github， pdf，epub，word，html 单个文档等，偏偏没有提 markdown 格式。</p>
 <p>其实，markdown 文件是有的，在编译过程里作为过渡文档存在，编译结束后自动删除。编译顺利的时候，在文件夹里“刷”地闪一下就消失了。我以前的做法是“快手”，在它消失之前迅速用 notepad++ 打开，就存下来了。这显然不是办法，凑合着过日子而已。</p>
@@ -45,7 +45,7 @@ categories: []
 </ul>
 <p>更新：经 Yihui 提示，应当用 <code>[@zhao2017; @xie2016]</code>.</p>
 </div>
-<div id="pdf--1" class="section level2">
+<div id="-pdf-" class="section level2">
 <h2>往 pdf 里插入网络图片</h2>
 <p>假定往文档里插入下面这张网络图片：</p>
 <p><code>url &lt;- 'https://bookdown.org/yihui/bookdown/images/cover.jpg'</code></p>
@@ -65,7 +65,7 @@ knitr::include_graphics(&#39;cover.jpg&#39;)</code></pre>
 knitr::include_graphics(if (identical(knitr:::pandoc_to(), &#39;html&#39;)) url else cover_file)</code></pre>
 <p>这段代码自动判断，如果输出网页文档，就插入原始图片链接，否则就下载到本地再插入。</p>
 </div>
-<div id="section" class="section level2">
+<div class="section level2">
 <h2>主控文档和子文档</h2>
 <p>Word 有个很好的功能，叫做“主控文档”：如果文件太大，那么各章可以分别写在一个 word 文档（子文档）里，然后插入到另一个文档里合并。LaTeX 里也有同样的功能，用 include 指令就行了。</p>
 <p>bookdown 当然也可以。官方文档对此有<a href="https://bookdown.org/yihui/bookdown/usage.html">说明</a>，只需在’_bookdown.yml’里声明即可：</p>
@@ -88,8 +88,7 @@ knitr::include_graphics(if (identical(knitr:::pandoc_to(), &#39;html&#39;)) url 
 <p>首先，我用 <code>bookdown::publish_book()</code> 的 <code>account</code> 参数指定一个新账号，得到了错误信息:</p>
 <pre><code>Error: Unknown account name &#39;newaccount&#39; (you can use the setAccountInfo function to add a new account)</code></pre>
 <p>一查 setAccountInfo，不是 bookdown 包的函数，而是 rsconnect 包的函数：<code>rsconnect::setAccountInfo()</code>。然后就不知道怎么办了。</p>
-<p>其实，添加账号应该点击 Rstudio 左上面板的发布按钮- Manage Account - Connect - RStudio
-Connect - 输入 bookdown.org，然后往下照提示走就行了。</p>
+<p>其实，添加账号应该点击 Rstudio 左上面板的发布按钮- Manage Account - Connect - RStudio Connect - 输入 bookdown.org，然后往下照提示走就行了。</p>
 <p>添加账号后，照理说用 <code>bookdown::publish_book()</code> 的 <code>account</code>指定一下账号，就应该能发布了吧？不，还是失败了，说 <code>name</code> 参数有问题。其实没问题。</p>
 <p>怎么办？我发现必须从 Mange Account 里删掉旧 bookdown 的账号，就可以用新的账号成功发布了。</p>
 <p>上面说了这么多，其实就是一句话：用不同账号往 bookdown.org 发布书稿，只需在 Manage Account 里添加并保留唯一一个账号即可。</p>

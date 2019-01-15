@@ -23,20 +23,32 @@ categories: []
 <p>于是这两天我花了一个上午，把这些文件重新整理归类，让他们各回各家各找各妈，每个 bookdown 模板都对应一个 zip 压缩文件，扔在 bookdownplus 的安装目录里。而且，如果再开发新 bookdown 模板，只需按照现有模板 zip 文件里的结构，将所需文件压缩并甩进 bookdownplus 安装目录，就可以用 <code>bookdownplus()</code> 直接调用了，连升级都不用。</p>
 <p>虽然功能上没有多大增强，但架构上舒服多了，所以我把版本号从1.3.x 升到了 1.4.0。</p>
 <p>我还有一块心病，是北京大学学位论文的 <a href="https://github.com/CasperVector/pkuthss">LaTeX 模板</a>，我迟迟没能转成 bookdown 模板。原因是这个 LaTeX 模板本身在我电脑上就编译不成功。这次不知怎么开了窍，突然被我搞定了，作为第 21 个模板，收进了 bookdownplus v.1.4.0 里。</p>
-<p><img src="https://raw.githubusercontent.com/pzhaonet/bookdownplus/master/inst2/showcase/bookdownplus_thesis_pku.jpg" /></p>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/pzhaonet/bookdownplus/master/inst2/showcase/bookdownplus_thesis_pku.jpg" />
+
+</div>
 <p>此外，新增了一下几个模板：</p>
 <ul>
 <li>益辉制作了 <a href="https://disq.us/url?url=https%3A%2F%2Fgithub.com%2Fyihui%2Fbookdown-crc%3A5wtgG3vpge_i9bq1JupLLfeTiOI&amp;cuid=5083260">Chapman &amp; Hall 出版社的模板</a>，现成的，我稍微改了一下。看上去是这样的：</li>
 </ul>
-<p><img src="https://raw.githubusercontent.com/pzhaonet/bookdownplus/master/inst2/showcase/bookdownplus_yihui_crc.jpg" /></p>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/pzhaonet/bookdownplus/master/inst2/showcase/bookdownplus_yihui_crc.jpg" />
+
+</div>
 <ul>
 <li>这提醒我，直接去 bookdown.org 找现成的嘛！于是找到了Eduardo García Portugués 写的 <a href="https://bookdown.org/egarpor/nonpar-eafit/">A short course on nonparametric curve estimation</a>，是在 yihui_demo 模板基础上增加了一个自定义环境。</li>
 </ul>
-<p><img src="https://raw.githubusercontent.com/pzhaonet/bookdownplus/master/inst2/showcase/bookdownplus_nonpar.jpg" /></p>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/pzhaonet/bookdownplus/master/inst2/showcase/bookdownplus_nonpar.jpg" />
+
+</div>
 <ul>
 <li>以前搜集过一个很有趣的 LaTeX 模板叫 dnd，这次虽然没有完全改为 bookdown 模板，但是我仍然收进来了，作为开发版，以后慢慢想办法吧。</li>
 </ul>
-<p><img src="https://raw.githubusercontent.com/pzhaonet/bookdownplus/master/inst2/showcase/bookdownplus_dnd_dev.jpg" /></p>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/pzhaonet/bookdownplus/master/inst2/showcase/bookdownplus_dnd_dev.jpg" />
+
+</div>
 <p>bookdownplus v.1.4.0 已经在 GitHub 发布，安装和使用方法是在 R 语言环境下运行：</p>
 <pre class="r"><code>devtools::install_github(&quot;pzhaonet/bookdownplus&quot;)
 require(bookdownplus)

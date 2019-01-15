@@ -1,0 +1,20 @@
+<map version="1.0.1">
+<node TEXT="Root name">
+<node TEXT="Path A">
+<node TEXT="Product A">
+<node TEXT="Process A">
+<node TEXT="Step A">
+<node TEXT="Record 1">
+<node TEXT="Analyses">
+<node TEXT="Object 1">
+<node TEXT="Type: data source"></node>
+<node TEXT="Version: 3"></node></node>
+<node TEXT="Object 2"></node>
+<node TEXT="Object 3"></node></node>
+<node TEXT="Setup Parts">
+<node TEXT="Par 1"></node>
+<node TEXT="Par 2"></node>
+<node TEXT="Par 3"></node></node></node></node></node></node></node>
+<node TEXT="Path B"></node>
+<node TEXT="Path C"></node>
+</node></map>
