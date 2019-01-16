@@ -63,7 +63,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">mindr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.1.10</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.1.12</span>
       </span>
     </div>
 
@@ -74,9 +74,6 @@
     <span class="fa fa-home fa-lg"></span>
      
   </a>
-</li>
-<li>
-  <a href="../articles/mindr.html">Get started</a>
 </li>
 <li>
   <a href="../reference/index.html">Reference</a>
@@ -137,6 +134,10 @@
       <td><p>logical. Whether to show files in a directory.</p></td>
     </tr>
     <tr>
+      <th>widget_name</th>
+      <td><p>The file name of the html widget to save.</p></td>
+    </tr>
+    <tr>
       <th>width</th>
       <td><p>the width of the markmap</p></td>
     </tr>
@@ -160,7 +161,7 @@
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>For LinUx OS and mac OS, the 'tree' command must be pre-installed.</p><ul>
+    <p>For LinUx OS and mac OS, the 'tree' command must be pre-installed before using 'show_files = FALSE'.</p><ul>
 <li><p>Linux: <code>sudo apt-get install tree</code></p></li>
 <li><p>mac: install <a href='https://brew.sh/'>Homebrew</a> first. Then in the terminal: <code>brew install tree</code>.</p></li>
 </ul>
@@ -169,7 +170,7 @@
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><span class='co'># NOT RUN {</span>
 <span class='fu'>tree</span>()
-<span class='no'>input</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/paste'>paste0</a></span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/libPaths'>.libPaths</a></span>(), <span class='st'>"/mindr"</span>)[<span class='fl'>1</span>]
+<span class='no'>input</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/system.file'>system.file</a></span>(<span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"mindr"</span>)
 <span class='fu'>tree</span>(<span class='no'>input</span>)
 <span class='fu'>tree</span>(<span class='no'>input</span>, <span class='kw'>root</span> <span class='kw'>=</span> <span class='st'>"mindr"</span>, <span class='kw'>show_files</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
 <span class='fu'>tree</span>(<span class='no'>input</span>, <span class='kw'>root</span> <span class='kw'>=</span> <span class='st'>"mindr"</span>, <span class='kw'>show_files</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>to</span> <span class='kw'>=</span> <span class='st'>"mindr.mm"</span>)

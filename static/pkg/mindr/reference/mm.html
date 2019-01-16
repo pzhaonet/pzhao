@@ -63,7 +63,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">mindr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.1.10</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.1.12</span>
       </span>
     </div>
 
@@ -74,9 +74,6 @@
     <span class="fa fa-home fa-lg"></span>
      
   </a>
-</li>
-<li>
-  <a href="../articles/mindr.html">Get started</a>
 </li>
 <li>
   <a href="../reference/index.html">Reference</a>
@@ -151,6 +148,10 @@
       <td><p>logical. whether the markdown files are in bookdown style, i.e. index.Rmd at the beginning, <code># (PART)</code>, <code># (APPENDIX)</code> and <code># References</code> as an upper level of normal <code>#</code> title</p></td>
     </tr>
     <tr>
+      <th>widget_name</th>
+      <td><p>The file name of the html widget to save.</p></td>
+    </tr>
+    <tr>
       <th>width</th>
       <td><p>the width of the markmap</p></td>
     </tr>
@@ -176,44 +177,60 @@
 
     <p>A HTML widget object rendered from a given document.</p>
     
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>For LinUx OS and mac OS, the 'tree' command must be pre-installed before using 'show_files = FALSE'.</p><ul>
+<li><p>Linux: <code>sudo apt-get install tree</code></p></li>
+<li><p>mac: install <a href='https://brew.sh/'>Homebrew</a> first. Then in the terminal: <code>brew install tree</code>.</p></li>
+</ul>
+    
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'>### text -&gt; widget</span>
+    <pre class="examples"><span class='co'># NOT RUN {</span>
+<span class='co'>### text -&gt; widget</span>
 <span class='no'>input</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"# Chapter 1"</span>, <span class='st'>"## Section 1.1"</span>, <span class='st'>"## Section 1.2"</span>, <span class='st'>"# Chapter 2"</span>)
 <span class='fu'>mm</span>(<span class='kw'>from</span> <span class='kw'>=</span> <span class='no'>input</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"text"</span>, <span class='kw'>root</span> <span class='kw'>=</span> <span class='st'>"mindr"</span>)
 
 <span class='co'>### directory -&gt; widget</span>
 <span class='no'>input</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/paste'>paste0</a></span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/libPaths'>.libPaths</a></span>(), <span class='st'>"/mindr"</span>)[<span class='fl'>1</span>]
 <span class='fu'>mm</span>(<span class='kw'>from</span> <span class='kw'>=</span> <span class='no'>input</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"dir"</span>)
-<span class='fu'>mm</span>(<span class='kw'>from</span> <span class='kw'>=</span> <span class='no'>input</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"dir"</span>, <span class='kw'>show_files</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+<span class='fu'>mm</span>(<span class='kw'>from</span> <span class='kw'>=</span> <span class='no'>input</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"dir"</span>, <span class='kw'>widget_name</span> <span class='kw'>=</span> <span class='st'>"mindrtest.html"</span>)
 <span class='co'>### directory -&gt; mm</span>
-<span class='fu'>mm</span>(<span class='kw'>from</span> <span class='kw'>=</span> <span class='no'>input</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"dir"</span>, <span class='kw'>to</span> <span class='kw'>=</span> <span class='st'>"test.mm"</span>)</div><div class='output co'>#&gt; <span class='message'>test.mm was generated!</span></div><div class='input'><span class='co'>### directory -&gt; md</span>
-<span class='fu'>mm</span>(<span class='kw'>from</span> <span class='kw'>=</span> <span class='no'>input</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"dir"</span>, <span class='kw'>to</span> <span class='kw'>=</span> <span class='st'>"test.md"</span>)</div><div class='output co'>#&gt; <span class='message'>test.md was generated!</span></div><div class='input'><span class='co'>### directory -&gt; txt</span>
-<span class='fu'>mm</span>(<span class='kw'>from</span> <span class='kw'>=</span> <span class='no'>input</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"dir"</span>, <span class='kw'>to</span> <span class='kw'>=</span> <span class='st'>"test.txt"</span>)</div><div class='output co'>#&gt; <span class='message'>test.txt was generated!</span></div><div class='input'>
+<span class='fu'>mm</span>(<span class='kw'>from</span> <span class='kw'>=</span> <span class='no'>input</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"dir"</span>, <span class='kw'>to</span> <span class='kw'>=</span> <span class='st'>"test.mm"</span>)
+<span class='co'>### directory -&gt; md</span>
+<span class='fu'>mm</span>(<span class='kw'>from</span> <span class='kw'>=</span> <span class='no'>input</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"dir"</span>, <span class='kw'>to</span> <span class='kw'>=</span> <span class='st'>"test.md"</span>)
+<span class='co'>### directory -&gt; txt</span>
+<span class='fu'>mm</span>(<span class='kw'>from</span> <span class='kw'>=</span> <span class='no'>input</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"dir"</span>, <span class='kw'>to</span> <span class='kw'>=</span> <span class='st'>"test.txt"</span>)
+
 <span class='co'>### Rmd -&gt; widget</span>
 <span class='no'>input</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/system.file'>system.file</a></span>(<span class='st'>"examples/r/rmd2r.Rmd"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"mindr"</span>)
 <span class='fu'>mm</span>(<span class='kw'>from</span> <span class='kw'>=</span> <span class='no'>input</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"file"</span>, <span class='kw'>root</span> <span class='kw'>=</span> <span class='st'>"mindr"</span>)
 <span class='co'>### Rmd -&gt; r</span>
-<span class='fu'>mm</span>(<span class='kw'>from</span> <span class='kw'>=</span> <span class='no'>input</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"file"</span>, <span class='kw'>root</span> <span class='kw'>=</span> <span class='st'>"mindr"</span>, <span class='kw'>to</span> <span class='kw'>=</span> <span class='st'>"test.r"</span>)</div><div class='output co'>#&gt; <span class='message'></span>
-#&gt; <span class='message'></span>
-#&gt; <span class='message'>processing file: mindr-rmd2r-temp.R</span></div><div class='output co'>#&gt;   |                                                                         |                                                                 |   0%  |                                                                         |.....                                                            |   8%  |                                                                         |...........                                                      |  17%  |                                                                         |................                                                 |  25%  |                                                                         |......................                                           |  33%  |                                                                         |...........................                                      |  42%  |                                                                         |................................                                 |  50%  |                                                                         |......................................                           |  58%  |                                                                         |...........................................                      |  67%  |                                                                         |.................................................                |  75%  |                                                                         |......................................................           |  83%  |                                                                         |............................................................     |  92%  |                                                                         |.................................................................| 100%</div><div class='output co'>#&gt; <span class='message'>output file: mindr-rmd2r-temp.R</span></div><div class='output co'>#&gt; <span class='message'>test.r was generated!</span></div><div class='input'><span class='co'>### Rmd -&gt; mm</span>
-<span class='fu'>mm</span>(<span class='kw'>from</span> <span class='kw'>=</span> <span class='no'>input</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"file"</span>, <span class='kw'>root</span> <span class='kw'>=</span> <span class='st'>"mindr"</span>, <span class='kw'>to</span> <span class='kw'>=</span> <span class='st'>"test.mm"</span>)</div><div class='output co'>#&gt; <span class='message'>test-2019-01-15-17-03-53.mm was generated!</span></div><div class='input'>
+<span class='fu'>mm</span>(<span class='kw'>from</span> <span class='kw'>=</span> <span class='no'>input</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"file"</span>, <span class='kw'>root</span> <span class='kw'>=</span> <span class='st'>"mindr"</span>, <span class='kw'>to</span> <span class='kw'>=</span> <span class='st'>"test.r"</span>)
+<span class='co'>### Rmd -&gt; mm</span>
+<span class='fu'>mm</span>(<span class='kw'>from</span> <span class='kw'>=</span> <span class='no'>input</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"file"</span>, <span class='kw'>root</span> <span class='kw'>=</span> <span class='st'>"mindr"</span>, <span class='kw'>to</span> <span class='kw'>=</span> <span class='st'>"test.mm"</span>)
+
 <span class='co'>### mm -&gt; widget</span>
 <span class='no'>input</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/system.file'>system.file</a></span>(<span class='st'>"examples/mm/bookdownplus.mm"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"mindr"</span>)
 <span class='fu'>mm</span>(<span class='kw'>from</span> <span class='kw'>=</span> <span class='no'>input</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"file"</span>, <span class='kw'>root</span> <span class='kw'>=</span> <span class='st'>"mindr"</span>)
 <span class='co'>### mm -&gt; Rmd</span>
-<span class='fu'>mm</span>(<span class='kw'>from</span> <span class='kw'>=</span> <span class='no'>input</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"file"</span>, <span class='kw'>root</span> <span class='kw'>=</span> <span class='st'>"mindr"</span>, <span class='kw'>to</span> <span class='kw'>=</span> <span class='st'>"test.Rmd"</span>)</div><div class='output co'>#&gt; <span class='message'>test.Rmd was generated!</span></div><div class='input'><span class='co'>### mm -&gt; r</span>
-<span class='fu'>mm</span>(<span class='kw'>from</span> <span class='kw'>=</span> <span class='no'>input</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"file"</span>, <span class='kw'>root</span> <span class='kw'>=</span> <span class='st'>"mindr"</span>, <span class='kw'>to</span> <span class='kw'>=</span> <span class='st'>"test.r"</span>)</div><div class='output co'>#&gt; <span class='message'>bookdownplus-2019-01-15-17-03-54.mm was generated!</span></div><div class='output co'>#&gt; <span class='message'>test-2019-01-15-17-03-54.r was generated!</span></div><div class='input'>
+<span class='fu'>mm</span>(<span class='kw'>from</span> <span class='kw'>=</span> <span class='no'>input</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"file"</span>, <span class='kw'>root</span> <span class='kw'>=</span> <span class='st'>"mindr"</span>, <span class='kw'>to</span> <span class='kw'>=</span> <span class='st'>"test.Rmd"</span>)
+<span class='co'>### mm -&gt; r</span>
+<span class='fu'>mm</span>(<span class='kw'>from</span> <span class='kw'>=</span> <span class='no'>input</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"file"</span>, <span class='kw'>root</span> <span class='kw'>=</span> <span class='st'>"mindr"</span>, <span class='kw'>to</span> <span class='kw'>=</span> <span class='st'>"test.r"</span>)
+
 <span class='co'>### r -&gt; widget</span>
 <span class='no'>input</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/system.file'>system.file</a></span>(<span class='st'>"examples/r/r2rmd.R"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"mindr"</span>)
 <span class='fu'>mm</span>(<span class='kw'>from</span> <span class='kw'>=</span> <span class='no'>input</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"file"</span>, <span class='kw'>root</span> <span class='kw'>=</span> <span class='st'>"mindr"</span>)
 <span class='co'>### r -&gt; Rmd</span>
 <span class='fu'>mm</span>(<span class='kw'>from</span> <span class='kw'>=</span> <span class='no'>input</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"file"</span>, <span class='kw'>root</span> <span class='kw'>=</span> <span class='st'>"mindr"</span>, <span class='kw'>to</span> <span class='kw'>=</span> <span class='st'>"test.Rmd"</span>)
 <span class='co'>### r -&gt; mm</span>
-<span class='fu'>mm</span>(<span class='kw'>from</span> <span class='kw'>=</span> <span class='no'>input</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"file"</span>, <span class='kw'>root</span> <span class='kw'>=</span> <span class='st'>"mindr"</span>, <span class='kw'>to</span> <span class='kw'>=</span> <span class='st'>"test.mm"</span>)</div><div class='output co'>#&gt; <span class='message'>test-2019-01-15-17-03-54.mm was generated!</span></div><div class='input'>
+<span class='fu'>mm</span>(<span class='kw'>from</span> <span class='kw'>=</span> <span class='no'>input</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"file"</span>, <span class='kw'>root</span> <span class='kw'>=</span> <span class='st'>"mindr"</span>, <span class='kw'>to</span> <span class='kw'>=</span> <span class='st'>"test.mm"</span>)
+
 <span class='co'>### The outline of the book Learning R</span>
 <span class='no'>input</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/system.file'>system.file</a></span>(<span class='st'>"examples/xuer/xuer.md"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"mindr"</span>)
-<span class='fu'>mm</span>(<span class='kw'>from</span> <span class='kw'>=</span> <span class='no'>input</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"file"</span>, <span class='kw'>root</span> <span class='kw'>=</span> <span class='st'>"Learning R"</span>, <span class='kw'>to</span> <span class='kw'>=</span> <span class='st'>"learningr.mm"</span>)</div><div class='output co'>#&gt; <span class='message'>learningr.mm was generated!</span></div></pre>
+<span class='fu'>mm</span>(<span class='kw'>from</span> <span class='kw'>=</span> <span class='no'>input</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"file"</span>, <span class='kw'>root</span> <span class='kw'>=</span> <span class='st'>"Learning R"</span>, <span class='kw'>to</span> <span class='kw'>=</span> <span class='st'>"learningr.mm"</span>)
+<span class='co'># }</span><div class='input'>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -221,6 +238,8 @@
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
+
+      <li><a href="#details">Details</a></li>
       
       <li><a href="#examples">Examples</a></li>
     </ul>

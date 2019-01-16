@@ -18,37 +18,63 @@ weight = 65
 
 ### 网站
 
-- [个人网站](https://pzhao.org)
-- [Meteorobot](https://sciwis.shinyapps.io/meteorobot/): an online tool to display or process meteorological data
-- [EddyPoster](https://sciwis.shinyapps.io/eddyposter/): eddy covariance data post processor
-- 旧博客：[大鹏志](http://dapengde.com) (2005 -- )
-- 多媒体：[风之翼](https://zhaopian.netlify.com)
-- [BOOKDOWNPLUS GALLERY](https://bookdownplus.netlify.com/portfolio/)
+- [个人网站](https://pzhao.org)。
+- [大鹏志](http://dapengde.com) (2005 -- )：旧博客，已停止维护。
+- [风之翼](https://zhaopian.netlify.com)：我的多媒体网站。
+
+- [Meteorobot](https://sciwis.shinyapps.io/meteorobot/)：在线工具，处理气象数据和作图。
+- [EddyPoster](https://sciwis.shinyapps.io/eddyposter/)：在线工具，处理微气象学通量数据。 
+- [Bookdownplus Gallery](https://bookdownplus.netlify.com/portfolio/)：在线工具，展示 R bookdown 模板。
+
+- [dapeng@steem](https://steemit.netlify.com/)：dapeng 的 steem 帖子备份博客。
+- [deanliu@steem](https://deancrypto.netlify.com/)：deanliu 的 steem 帖子备份博客。
+- [dancingapple@steem](https://dancingapple.netlify.com/)：dancingapple 的 steem 帖子备份博客。
+
+- [Steemg](http://ec2-35-157-142-69.eu-central-1.compute.amazonaws.com:3838/myapp/)（停用）：在线工具，展示和统计 steem 上的活动。
+- [Steemr](https://pzhao.shinyapps.io/steemr/)（停用）：在线工具，展示和统计 steem 上的帖子和用户信息。
+- ZTGroup BBS（停用）：朱彤教授科研小组 BBS。
 
 ### 书籍
 
-- 《我要当个气象学家》，译作，已完稿。
-- [学R —— 零基础学习 R 语言](http://xuer.pzhao.org/)，研究出版社，2018。
-- [爸爸三定律](https://bookdown.org/baydap/papasdiary/)：我的育儿帖子合集。
-- 留学德国 DIY：从计划到启程 (《[选择德国---德国留学工作定居全攻略](https://www.amazon.cn/%E5%9B%BE%E4%B9%A6/dp/B00KL3KLPU/ref=sr_1_1?ie=UTF8&qid=1491993521&sr=8-1&keywords=%E9%80%89%E6%8B%A9%E5%BE%B7%E5%9B%BD)》，徐徐编，红旗出版社，2014年)
+- 我要当个气象学家。Felicia Law （著）, 赵鹏（译）。2019。面向中小学生和家长的科普读物。已完稿，即将出版。
+- 学 R：零基础学习 R 语言。赵鹏，李怡。2018。最浅显的 R 语言入门指南。研究出版社，北京。([链接]((http://xuer.pzhao.org/))
+- 留学德国 DIY：从计划到启程。赵鹏。2014。收进《选择德国：德国留学工作定居全攻略》，徐徐编，红旗出版社，北京。
+
+- Steem 基础与开发指南。赵鹏（主编）。2018。([链接](https://bookdown.org/baydap/steemh))
+- R bookdownplus Textbook. Peng Zhao. 2017. A guide to the R 'bookdownplus' package. ([链接](https://bookdown.org/baydap/bookdownplus/))
+- 爸爸三定律。赵鹏。2017。育儿帖子合集。([链接](https://bookdown.org/baydap/papasdiary/))
+- 群英谱。范晓太，赵鹏。2017。中学生活文集。([链接](https://bookdown.org/baydap/qyp/))
 
 #### R 语言扩展包
 
-- bookdownplus ([CRAN](https://CRAN.R-project.org/package=bookdownplus), [GitHub](https://github.com/pzhaonet/bookdownplus)): 学术期刊论文、学位论文、各种不同格式书稿的 bookdown 模板合集. 
-![bookdownplus](http://cranlogs.r-pkg.org/badges/grand-total/bookdownplus)
+- et ([docs](https://pzhao.org/pkg/et)): R 语言包，包含了一个动力学模型，用来评估微气象学梯度法测量大气中活性物种通量。
 
-- mindr ([CRAN](https://CRAN.R-project.org/package=mindr), [GitHub](https://github.com/pzhaonet/mindr)): 用来将 markdown 文件与思维导图相互转换.
-![mindr](http://cranlogs.r-pkg.org/badges/grand-total/mindr)
+- rosr ([docs](https://pzhao.org/pkg/rosr)): R 语言包，用来生成开放科学与可重复性研究的综合项目。
 
-- pinyin ([CRAN](https://CRAN.R-project.org/package=pinyin), [GitHub](https://github.com/pzhaonet/pinyin)): 用来将中文字符转换成拼音.
-![pinyin](http://cranlogs.r-pkg.org/badges/grand-total/pinyin)
+- biber ([docs](https://pzhao.org/pkg/biber)): R 语言包，用于文献计量。
 
-- beginr ([CRAN](https://CRAN.R-project.org/package=beginr), [GitHub](https://github.com/pzhaonet/beginr): 一个帮助R语言初学者的工具集.
-![beginr](http://cranlogs.r-pkg.org/badges/grand-total/beginr)
+- blogdownplus ([docs](https://pzhao.org/pkg/blogdownplus)): R 语言包，blogdown 建站助手。
 
-- steemr ([CRAN](https://CRAN.R-project.org/package=steemr), [GitHub](https://github.com/pzhaonet/steemr)): 用来处理 Steem 数据。
-![steemr](https://cranlogs.r-pkg.org/badges/grand-total/steemr)
+- rmd ([docs](https://pzhao.org/pkg/rmd), [CRAN](https://CRAN.R-project.org/package=rmd), [GitHub](https://github.com/pzhaonet/rmd)): R 语言包，用来方便地安装和加载 R markdown 系列扩展包。
+  ![rmd](http://cranlogs.r-pkg.org/badges/grand-total/rmd)
 
-- mf ([GitHub](https://github.com/pzhaonet/mf)): 我自用的自定义函数集，比较杂.
+- packr ([docs](https://pzhao.org/pkg/packr), [GitHub](https://github.com/pzhaonet/packr)): R 语言包，是一个用来生成一组 R 扩展包的安装器。
 
-- advr ([GitHub](https://github.com/pzhaonet/advr)): 用来处理平流通量的函数集。
+- advr ([docs](https://pzhao.org/pkg/advr), [GitHub](https://github.com/pzhaonet/advr)): R 语言包，是一个用来处理平流通量的函数集。
+
+- steemr ([docs](https://pzhao.org/pkg/steemr), [CRAN](https://CRAN.R-project.org/package=steemr), [GitHub](https://github.com/pzhaonet/steemr)): R 语言包，用来获取和处理 Steem 社交网络数据。
+  ![steemr](https://cranlogs.r-pkg.org/badges/grand-total/steemr)
+
+- mf ([docs](https://pzhao.org/pkg/mf), [GitHub](https://github.com/pzhaonet/mf)): R 语言包，是一个生态学、微气象学常用函数集。
+
+- beginr ([docs](https://pzhao.org/pkg/beginr), [CRAN](https://CRAN.R-project.org/package=beginr), [GitHub](https://github.com/pzhaonet/beginr): R 语言包，是一个帮助 R 语言初学者的 函数集。
+  ![beginr](http://cranlogs.r-pkg.org/badges/grand-total/beginr)
+
+- bookdownplus ([docs](https://pzhao.org/pkg/bookdownplus), [CRAN](https://CRAN.R-project.org/package=bookdownplus), [GitHub](https://github.com/pzhaonet/bookdownplus)): R 语言包，利用 R bookdown 来撰写学术期刊论文、学位论文、各种不同格式书稿。 
+  ![bookdownplus](http://cranlogs.r-pkg.org/badges/grand-total/bookdownplus)
+
+- mindr ([docs](https://pzhao.org/pkg/mindr), [CRAN](https://CRAN.R-project.org/package=mindr), [GitHub](https://github.com/pzhaonet/mindr)): R 语言包，用来制作思维导图，亦可用来在 markdown 文件、思维导图和 R 脚本之间相互转换。
+  ![mindr](http://cranlogs.r-pkg.org/badges/grand-total/mindr)
+
+- pinyin ([docs](https://pzhao.org/pkg/pinyin), [CRAN](https://CRAN.R-project.org/package=pinyin), [GitHub](https://github.com/pzhaonet/pinyin)): R 语言包，将中文字符转换成拼音、五笔字型码、四角号码。
+  ![pinyin](http://cranlogs.r-pkg.org/badges/grand-total/pinyin)
