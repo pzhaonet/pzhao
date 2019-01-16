@@ -21,54 +21,39 @@ weight = 65
 - [Personal website](https://pzhao.org).
 - [Former blog](http://dapengde.com) (2005 -- ) . Only in Chinese.
 - [Wings of the Wind](https://zhaopian.netlify.com). My multimedia website.
-
 - [Meteorobot](https://sciwis.shinyapps.io/meteorobot/). An online tool to display or process meteorological data.
 - [EddyPoster](https://sciwis.shinyapps.io/eddyposter/). Eddy covariance data post processor.
 - [Bookdownplus Gallery](https://bookdownplus.netlify.com/portfolio/). Collect and display R bookdown templates.
-
 - [dapeng@steem](https://steemit.netlify.com/). dapeng's posts on steem.
 - [deanliu@steem](https://deancrypto.netlify.com/). deanliu's posts on steem.
 - [dancingapple@steem](https://dancingapple.netlify.com/). dancingapple's posts on steem.
-
 - [Steemg](http://ec2-35-157-142-69.eu-central-1.compute.amazonaws.com:3838/myapp/). An online tool to display the contests on steem..
 - [Steemr](https://pzhao.shinyapps.io/steemr/). An online tool to display the posts and users on steem.
 - ZTGroup BBS. 
 
 ### Books
 
-- Zhao, P.; Li, Y.. 2018. [Learning R](http://xuer.pzhao.org/). Yanjiu Press. Beijing. 
+- Zhao, P.; Li, Y.. 2018. [Learning R](https://xuer.pzhao.org/). Yanjiu Press. Beijing. 
 
 
 #### R Packages
 
 - et ([docs](https://pzhao.org/pkg/et)): A kenitic model for evaluating the gradient method for surface-atmosphere flux measurement of reactive gases.
-
 - rosr ([docs](https://pzhao.org/pkg/rosr)): Creating a project for open science and reproducilbe research.
-
 - biber ([docs](https://pzhao.org/pkg/biber)): A tool for bibliometrics.
-
 - blogdownplus ([docs](https://pzhao.org/pkg/blogdownplus)): Asistant for building blogdown sites.
-
 - rmd ([docs](https://pzhao.org/pkg/rmd), [CRAN](https://CRAN.R-project.org/package=rmd), [GitHub](https://github.com/pzhaonet/rmd)):  Easily installs and loads the R Markdown family.
   ![rmd](http://cranlogs.r-pkg.org/badges/grand-total/rmd)
-
 - packr ([docs](https://pzhao.org/pkg/packr), [GitHub](https://github.com/pzhaonet/packr)): Create an R package that can easily install and load a group of R packages.
-
 - advr ([docs](https://pzhao.org/pkg/advr), [GitHub](https://github.com/pzhaonet/advr)): Functions I use for processing advection  flux data.
-
 - steemr ([docs](https://pzhao.org/pkg/steemr), [CRAN](https://CRAN.R-project.org/package=steemr), [GitHub](https://github.com/pzhaonet/steemr)):  Process Steem data.
   ![steemr](https://cranlogs.r-pkg.org/badges/grand-total/steemr)
-
 - mf ([docs](https://pzhao.org/pkg/mf), [GitHub](https://github.com/pzhaonet/mf)): Functions I often use in micrometeorology and other work.
-
-- beginr ([docs](https://pzhao.org/pkg/beginr), [CRAN](https://CRAN.R-project.org/package=beginr), [GitHub](https://github.com/pzhaonet/beginr): Functions for R Beginners.
+- beginr ([docs](https://pzhao.org/pkg/beginr), [CRAN](https://CRAN.R-project.org/package=beginr), [GitHub](https://github.com/pzhaonet/beginr)): Functions for R Beginners.
   ![beginr](http://cranlogs.r-pkg.org/badges/grand-total/beginr)
-
 - bookdownplus ([docs](https://pzhao.org/pkg/bookdownplus), [CRAN](https://CRAN.R-project.org/package=bookdownplus), [GitHub](https://github.com/pzhaonet/bookdownplus)): Generate Varied Types of Books and Documents with R 'bookdown' Package. 
   ![bookdownplus](http://cranlogs.r-pkg.org/badges/grand-total/bookdownplus)
-
 - mindr ([docs](https://pzhao.org/pkg/mindr), [CRAN](https://CRAN.R-project.org/package=mindr), [GitHub](https://github.com/pzhaonet/mindr)): Convert Files Between Markdown or Rmarkdown Files and Mindmaps.
   ![mindr](http://cranlogs.r-pkg.org/badges/grand-total/mindr)
-
 - pinyin ([docs](https://pzhao.org/pkg/pinyin), [CRAN](https://CRAN.R-project.org/package=pinyin), [GitHub](https://github.com/pzhaonet/pinyin)): Convert Chinese Characters into Pinyin.
   ![pinyin](http://cranlogs.r-pkg.org/badges/grand-total/pinyin)
