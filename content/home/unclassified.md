@@ -19,7 +19,8 @@ weight = 65
 ### 网站
 
 - [个人网站](https://pzhao.org)。
-- [大鹏志](http://dapengde.com) (2005 -- )：旧博客，已停止维护。
+-- [学 R](https://xuer.pzhao.org/): 《学 R：零基础学习 R 语言》一书的官方网站。
+- [大鹏志](http://dapengde.com) (2005 -- 2018)：旧博客，已停止维护。
 - [风之翼](https://zhaopian.netlify.com)：我的多媒体网站。
 - [Meteorobot](https://sciwis.shinyapps.io/meteorobot/)：在线工具，处理气象数据和作图。
 - [EddyPoster](https://sciwis.shinyapps.io/eddyposter/)：在线工具，处理微气象学通量数据。 
@@ -45,6 +46,7 @@ weight = 65
 
 - et ([docs](https://pzhao.org/pkg/et)): R 语言包，包含了一个动力学模型，用来评估微气象学梯度法测量大气中活性物种通量。
 - rosr ([docs](https://pzhao.org/pkg/rosr)): R 语言包，用来生成开放科学与可重复性研究的综合项目。
+- eddyr ([docs](https://pzhao.org/pkg/eddyr)): R 语言包，涡度相关法测得的通量数据的后期处理。
 - biber ([docs](https://pzhao.org/pkg/biber)): R 语言包，用于文献计量。
 - blogdownplus ([docs](https://pzhao.org/pkg/blogdownplus)): R 语言包，blogdown 建站助手。
 - rmd ([docs](https://pzhao.org/pkg/rmd), [CRAN](https://CRAN.R-project.org/package=rmd), [GitHub](https://github.com/pzhaonet/rmd)): R 语言包，用来方便地安装和加载 R markdown 系列扩展包。

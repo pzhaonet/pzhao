@@ -19,6 +19,7 @@ weight = 65
 ### Websites
 
 - [Personal website](https://pzhao.org).
+-- [Learning R](https://xuer.pzhao.org/): Official website of the book *Learning R*.
 - [Former blog](http://dapengde.com) (2005 -- ) . Only in Chinese.
 - [Wings of the Wind](https://zhaopian.netlify.com). My multimedia website.
 - [Meteorobot](https://sciwis.shinyapps.io/meteorobot/). An online tool to display or process meteorological data.
@@ -39,6 +40,7 @@ weight = 65
 #### R Packages
 
 - et ([docs](https://pzhao.org/pkg/et)): A kenitic model for evaluating the gradient method for surface-atmosphere flux measurement of reactive gases.
+- eddyr ([docs](https://pzhao.org/pkg/eddyr)): Post-processing eddy covariance data.
 - rosr ([docs](https://pzhao.org/pkg/rosr)): Creating a project for open science and reproducilbe research.
 - biber ([docs](https://pzhao.org/pkg/biber)): A tool for bibliometrics.
 - blogdownplus ([docs](https://pzhao.org/pkg/blogdownplus)): Asistant for building blogdown sites.

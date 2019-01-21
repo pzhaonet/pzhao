@@ -5,6 +5,7 @@
 public/
 private/
 _*.*
+r/
 
 # Windows image file caches
 Thumbs.db

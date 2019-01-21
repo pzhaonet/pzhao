@@ -7,15 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <meta name="author" content="赵鹏" />
-    <meta name="date" content="2019-01-16" />
+    <meta name="date" content="2019-01-19" />
     <title>赵鹏的简历</title>
 
         <link href="cv_files/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
     <link href="cv_files/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
-    <link href="cv_files/paged-0.1/css/resume.css" rel="stylesheet" />
-    <script src="cv_files/paged-0.1/js/config.js"></script>
-    <script src="cv_files/paged-0.1/js/paged.js"></script>
-    <script src="cv_files/paged-0.1/js/hooks.js"></script>
+    <link href="cv_files/paged-0.1.2/css/resume.css" rel="stylesheet" />
+    <script src="cv_files/paged-0.1.2/js/config.js"></script>
+    <script src="cv_files/paged-0.1.2/js/paged.js"></script>
+    <script src="cv_files/paged-0.1.2/js/hooks.js"></script>
     
     
   </head>
@@ -45,7 +45,7 @@
 </div>
 <div id="disclaimer" class="section level2">
 <h2>Disclaimer</h2>
-<p>更新日期：2019-01-16.</p>
+<p>更新日期：2019-01-19.</p>
 </div>
 </div>
 <div id="main" class="section level1">
@@ -210,6 +210,13 @@
 <p>2019</p>
 <p>详见：<a href="https://pzhao.org/pkg/rosr" class="uri">https://pzhao.org/pkg/rosr</a></p>
 </div>
+<div id="eddyr" class="section level3">
+<h3>eddyr</h3>
+<p>R 语言包，用来对涡度相关法测得的通量数据进行后期处理。</p>
+<p>N/A</p>
+<p>2019</p>
+<p>详见：<a href="https://pzhao.org/pkg/et" class="uri">https://pzhao.org/pkg/et</a></p>
+</div>
 <div id="biber" class="section level3">
 <h3>biber</h3>
 <p>R 语言包，用于文献计量。</p>
@@ -365,16 +372,18 @@
 <script>
 (function() {
   var i, s, j, el, els;
-  var create_el = function(type, className, content) {
+  var create_el = function(type, className, content, isHTML) {
     var el = document.createElement(type);
     if (className) el.className = className;
-    if (content) el.innerText = content;
+    if (content) {
+      if (isHTML) {el.innerHTML = content;} else {el.innerText = content;}
+    }
     return el;
   }
 
   // replace h2 title with h1
   var title = document.getElementById('title').querySelector('h2');
-  title.parentNode.replaceChild(create_el('h1', false, title.innerText), title);
+  title.parentNode.replaceChild(create_el('h1', false, title.innerHTML, true), title);
 
   // add the class .aside to #aside
   el = document.getElementById('aside');
@@ -402,7 +411,8 @@
     var ps = el.querySelectorAll('p');
     // move the date paragraph to the date div
     if (ps.length >= 3) {
-      s = ps[2].innerText.split(' - ');
+      s = ps[2].innerText;
+      s = s === 'N/A' ? [] : s.split(' - ');
       el.removeChild(ps[2]);
       for (j = 0; j < s.length && j < 2; j++) {
         el.children[0].appendChild(create_el('span', false, s[j]))
@@ -411,14 +421,14 @@
     // move title, description, location to the details div
     (function(h) {
       h.appendChild(el.children[3]);
-      var p = el.children[3], s = p.innerText;  // description
-      if (s !== 'N/A') {
-        h.appendChild(create_el('span', 'place', s));
+      var p = el.children[3];  // description
+      if (p.innerText !== 'N/A') {
+        h.appendChild(create_el('span', 'place', p.innerHTML, true));
       }
       el.removeChild(p);
-      p = el.children[3], s = p.innerText;  // location
-      if (s !== 'N/A') {
-        s = create_el('span', 'location', s);
+      p = el.children[3];  // location
+      if (p.innerText !== 'N/A') {
+        s = create_el('span', 'location', p.innerHTML, true);
         s.innerHTML = '<i class="fa fa-map-marker-alt"></i> ' + s.innerHTML;
         h.appendChild(s);
       }

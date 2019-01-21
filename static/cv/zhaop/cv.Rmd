@@ -246,6 +246,15 @@ N/A
 
 详见：<https://pzhao.org/pkg/rosr>
 
+### eddyr
+
+R 语言包，用来对涡度相关法测得的通量数据进行后期处理。
+
+N/A
+
+2019
+
+详见：<https://pzhao.org/pkg/et>
 
 ### biber
 
