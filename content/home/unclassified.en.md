@@ -39,11 +39,11 @@ weight = 65
 
 #### R Packages
 
-- et ([docs](https://pzhao.org/pkg/et)): A kenitic model for evaluating the gradient method for surface-atmosphere flux measurement of reactive gases.
+- et ([docs](https://pzhao.org/pkg/et)): A kinetic model for evaluating the gradient method for surface-atmosphere flux measurement of reactive gases.
 - eddyr ([docs](https://pzhao.org/pkg/eddyr)): Post-processing eddy covariance data.
-- rosr ([docs](https://pzhao.org/pkg/rosr)): Creating a project for open science and reproducilbe research.
+- rosr ([docs](https://pzhao.org/pkg/rosr)): Creating a project for open science and reproducible research.
 - biber ([docs](https://pzhao.org/pkg/biber)): A tool for bibliometrics.
-- blogdownplus ([docs](https://pzhao.org/pkg/blogdownplus)): Asistant for building blogdown sites.
+- blogdownplus ([docs](https://pzhao.org/pkg/blogdownplus)): Assistant for building blogdown sites.
 - rmd ([docs](https://pzhao.org/pkg/rmd), [CRAN](https://CRAN.R-project.org/package=rmd), [GitHub](https://github.com/pzhaonet/rmd)):  Easily installs and loads the R Markdown family.
   ![rmd](http://cranlogs.r-pkg.org/badges/grand-total/rmd)
 - packr ([docs](https://pzhao.org/pkg/packr), [GitHub](https://github.com/pzhaonet/packr)): Create an R package that can easily install and load a group of R packages.

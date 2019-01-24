@@ -13,26 +13,26 @@ output:
 ![Peng Zhao](https://github.com/rbind/pzhao/raw/master/static/img/zhao2.jpg){width=80%}
 
 
-## 联系方式 {#contact}
+## <i class="fa fa-address-card"></i> 联系方式 {#contact}
 
 - <i class="fa fa-envelope"></i> pzhao@pzhao.net
 - <i class="fa fa-home"></i> http://pzhao.net
 - <i class="fa fa-phone"></i> +49(6131)305-7202
 
 
-## 著作 {#pub}
+## <i class="fa fa-pencil-square"></i> 著作 {#pub}
 
-<i class="fa fa-pencil"></i> 学 R：零基础学习 R 语言（著）
+- <i class="fa fa-pencil-square"></i> 学 R：零基础学习 R 语言（著）
 
-<i class="fa fa-pencil"></i> 我要当个气象学家（译）
+- <i class="fa fa-pencil-square"></i> 我要当个气象学家（译）
 
-## 研究领域 {#major}
+## <i class="fa fa-map-marker"></i> 研究领域 {#major}
 
-<i class="fa fa-hand-o-right"></i> 大气科学
+- <i class="fa fa-map-marker"></i> 大气科学
 
-<i class="fa fa-hand-o-right"></i> 微气象学
+- <i class="fa fa-map-marker"></i> 微气象学
 
-<i class="fa fa-hand-o-right"></i> 环境科学
+- <i class="fa fa-map-marker"></i> 环境科学
 
 
 ## Disclaimer {#disclaimer}
@@ -142,6 +142,14 @@ Beijing, China
 
 2006-2005
 
+::: aside
+
+### <i class="fa fa-pencil-square"></i> 著作封面
+
+![](https://img13.360buyimg.com/imgzone/jfs/t20623/322/820019448/357842/349d584c/5b1917daNdf552bd2.jpg){width=80%}
+
+:::
+
 ## 论文/著作 {data-icon=pencil}
 
 ### 我要当个气象学家
@@ -152,7 +160,7 @@ Felicia Law （著）, 赵鹏（译）。已完稿，即将出版。
 
 2019
 
-### 学 R：零基础学习 R 语言
+### 学R：零基础学习R语言
 
 赵鹏, 李怡.
 
@@ -191,6 +199,21 @@ Zhao, P., Lüers, J..
 N/A
 
 2016
+
+::: aside 
+
+### <i class="fa fa-pencil-square"></i> 发表期刊
+
+- <i class="fa fa-pencil-square"></i> *Agricultural and Forest Meteorology*, IF 4.039
+
+- <i class="fa fa-pencil-square"></i> *Atmosphere*, IF 1.704
+
+- <i class="fa fa-pencil-square"></i> *Science China Earth Sciences*, IF 2.058
+
+- <i class="fa fa-pencil-square"></i> *Remote Sensing of Environment*, IF 6.457
+
+- <i class="fa fa-pencil-square"></i> *环境科学*, IF 2.937
+:::
 
 ### Performance Evaluation of Four Different Land Surface Models in WRF. *Asian Journal of Atmospheric Environment*, 10(1): 42–50.
 
@@ -236,6 +259,16 @@ N/A
 
 详见：<https://pzhao.org/pkg/et>
 
+::: aside
+### <i class="fa fa-star"></i> 开发兴趣
+
+- <i class="fa fa-star"></i> 大气动力学模型
+
+- <i class="fa fa-star"></i> 大气观测数据的在线处理、质量控制和可视化
+
+- <i class="fa fa-star"></i> 开放科学与可重复性研究
+:::
+
 ### rosr
 
 R 语言包，用来生成开放科学与可重复性研究的综合项目。
@@ -276,6 +309,16 @@ N/A
 2019
 
 详见：<https://pzhao.org/pkg/blogdownplus>
+
+::: aside
+### <i class="fa fa-github-square"></i> 开发工具
+
+- <i class="fa fa-github-square"></i> R 语言
+
+- <i class="fa fa-github-square"></i> MatLab
+
+- <i class="fa fa-github-square"></i> python
+:::
 
 
 ### rmd
@@ -409,6 +452,18 @@ University of Bayreuth
 
 2014
 
+::: aside
+
+### <i class="fa fa-file-text"></i> 报告类型
+
+- <i class="fa fa-file-text"></i> 野外观测记录
+
+- <i class="fa fa-file-text"></i> 软件开发手册
+
+- <i class="fa fa-file-text"></i> 行业标准
+
+:::
+
 ### Application of a multi-step error filter for post-processing atmospheric flux and meteorological basic data. ISSN 1614-8916, Work Report 58, 22 pp.
 
 Lüers, J., Detsch, F., Zhao, P.. 
@@ -464,3 +519,157 @@ University of Bayreuth
 气象出版社, 北京
 
 2011
+
+## 海报/口头报告 {data-icon=line-chart}
+
+### Poster: On the calculation of daytime CO~2~ fluxes measured by automated closed transparent chambers
+
+EGU General Assembly
+
+Vienna, Austria
+
+2018.04
+
+::: aside
+
+### <i class="fa fa-area-chart"></i> 参加会议
+
+- <i class="fa fa-area-chart"></i> 欧洲地学年会（EGU）
+
+- <i class="fa fa-area-chart"></i> 东亚生态学会联盟国际研讨会（EAFES）
+
+- <i class="fa fa-area-chart"></i> 国内青年学者论坛
+
+- <i class="fa fa-area-chart"></i> 院系和项目座谈会
+:::
+
+### Oral: Role of advection for the ecosystem-atmosphere carbon dioxide exchange of alpine grasslands
+
+ACINN seminar, Institute of Atmospheric and Cryospheric Sciences
+
+University of Innsbruck, Austria
+
+2018.01
+
+### Poster: Role of advection for the ecosystem-atmosphere CO~2~ exchange of alpine grasslands
+
+EGU General Assembly
+
+Vienna, Austria.
+
+2017.04
+
+### Oral: Contribution of the advection terms for NEE in short-statured ecosystems
+
+ScaleX Workshop
+
+Garmisch-Partenkirchen, Germany
+
+2017.03
+
+### 口头报告：农业生态系统-大气之间的二氧化碳和能量交换
+
+中山大学青年学者论坛
+
+广州，中国
+
+2016.12
+
+### Oral: The role of advection for CO~2~ exchange ﬂux over a mountainous grassland in the Alps
+
+EGU General Assembly
+
+Vienna, Austria
+
+2016.04
+
+### Oral: Contribution of the advection term for NEE in short-statured ecosystems
+
+ScaleX Workshop
+
+Garmisch-Partenkirchen, Germany
+
+2016.02
+
+
+### Poster: Measurement of advection of CO2 over grasslands in complex terrain in the Alps
+
+EGU General Assembly
+
+Vienna, Austria.
+
+2015.04
+
+### Oral: Dynamics of CO~2~ exchange in croplands in Haean Catchment, South Korea
+
+TERRECO Workshop
+
+Bayreuth, Germany
+
+2013,01
+
+### Poster: Dynamics of CO~2~ exchange in irrigated and non-irrigated croplands in Haean Catchment, South Korea
+
+TERRECO Workshop
+
+Bayreuth, Germany
+
+2012.11
+
+### Oral: Energy and CO~2~ exchange between agro-ecosystems and the atmosphere over a complex terrain in Korea
+
+TERRECO Workshop
+
+Bayreuth, Germany
+
+2012.01
+
+### Oral: Energy and CO~2~ exchange between agro-ecosystems and the atmosphere over a complex terrain in Korea
+
+TERRECO Workshop
+
+Bayreuth, Germany
+
+2011.11
+
+### Poster: Gap-filling strategy for daytime net ecosystem exchange of carbon dioxide at a fast-growing cropland in South Korea. 
+
+3rd iLEAPS Science Conference
+
+Garmisch- Partenkirchen, Germany
+
+2011.10
+
+### Poster: Energy and matter exchange in an atmosphere-ecosystem over a complex terrain in Korea
+
+EGU General Assembly
+
+Vienna, Austria. 
+
+2011.04
+
+
+### Oral: The 2010 experiment in South Korea
+
+Seminar of the Department of Micrometeorolgoy
+
+Bayreuth, Germany
+
+2011.01
+
+
+### Oral: Spatial assessment of atmosphere- ecosystem exchanges via micrometeorological measurements and footprint modelling: Preliminary results of eddy covariance measurement. 
+
+East Asian Federation of Ecological Societies (EAFES) 4th International Congress
+
+Sangju, South Korea. 
+
+2010.07
+
+### Poster: Spatial assessment of atmosphere-ecosystem exchanges via micrometeorological measurements and footprint modelling
+
+EGU General Assembly
+
+Vienna, Austria.
+
+2010.04
