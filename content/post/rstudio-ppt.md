@@ -32,7 +32,7 @@ xaringan 也一样。
 
 ````
 ```{r, echo=FALSE, results='asis'}
-imgs <- dir('d:/Dropbox/Temp/Lopap', full.names = TRUE)
+imgs <- dir('c:/image', full.names = T)
 for (img in imgs) cat('![](', img, ')\n---\n')
 ```
 ````
