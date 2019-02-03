@@ -51,7 +51,7 @@ Mendeley - Tools - Options - BibTeX - Enable BibTeX Syncing
 
 同时还要取消勾选 Escape LaTeX special characters，让 LaTeX 的格式符号保留，这样，在用 LaTeX 编译你的文稿时，不会丢失应有的格式。
 
-如果在 PC 甲和 PC 乙上都安装 Menderley 并同步，会有个坑，容易坑到人：新安装的 Menderley 会从云端将关联的 pdf 文件下载下来，并重新命名。
+如果在 PC 甲和 PC 乙上都安装 Mendeley 并同步，会有个坑，容易坑到人：新安装的 Mendeley 会从云端将关联的 pdf 文件下载下来，并重新命名。
 
 这本身是体贴之举，然而坑到了我，因为我 PC 甲的文献库里关联的 pdf 文件都是以 ”一作+年代“命名的，例如 zhao2017.pdf。这样命名的好处是在 listary 里容易定位。现在，被 Mendeley 重新命名后，我的 pdf 库在 PC 乙重复出现了一份。
 
