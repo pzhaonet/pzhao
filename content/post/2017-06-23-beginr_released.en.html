@@ -57,12 +57,12 @@ y &lt;- 1:10 + rnorm(10)
 beginr::plotlm(x, y)</code></pre>
 <p><img src="/post/2017-06-23-beginr_released.en_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 <pre><code>## [[1]]
-##              Estimate Std. Error  t value     Pr(&gt;|t|)
-## (Intercept) 1.4093501 0.58405326 2.413051 4.230633e-02
-## x           0.7498026 0.09412871 7.965716 4.503875e-05
+##                Estimate Std. Error    t value     Pr(&gt;|t|)
+## (Intercept) -0.09219925  0.7482876 -0.1232137 9.049772e-01
+## x            1.00964018  0.1205975  8.3719848 3.143801e-05
 ## 
 ## [[2]]
-## [1] 0.8880377</code></pre>
+## [1] 0.8975543</code></pre>
 <p>If you want to display the distribution of a data-set, use <code>plothist()</code>, which gives you a histogram with markers of the median, mean, quantiles, standard deviation, sample number and the skewness.</p>
 <pre class="r"><code>x &lt;- rnorm(10000)
 beginr::plothist(x)</code></pre>
@@ -96,20 +96,20 @@ beginr::errorbar(x, y, yupper = 0.1, ylower = 0.1)</code></pre>
 <p><code>lmdf()</code> performs the linear regression between every two columns in a data frame.</p>
 <pre class="r"><code>df &lt;- data.frame(a = 1:10, b = 1:10 + rnorm(10), c = 1:10 + rnorm(10))
 beginr::lmdf(df)</code></pre>
-<pre><code>##   x y r.squared adj.r.squared  intercept     slope Std.Error.intercept
-## 1 a b 0.8915396     0.8779821  0.7969791 0.8884589           0.6798107
-## 2 a c 0.9099747     0.8987215  0.2706313 0.9570650           0.6603810
-## 3 b a 0.8915396     0.8779821 -0.2032104 1.0034675           0.7787673
-## 4 b c 0.7334955     0.7001824  0.3444023 0.9131845           1.2247605
-## 5 c a 0.9099747     0.8987215  0.2378239 0.9507971           0.6597516
-## 6 c b 0.7334955     0.7001824  1.2380454 0.8032282           1.0681133
-##   Std.Error.slope t.intercept  t.slope Pr.intercept     Pr.slope
-## 1       0.1095614   1.1723545 8.109232    0.2747806 3.960159e-05
-## 2       0.1064300   0.4098108 8.992434    0.6926989 1.864611e-05
-## 3       0.1237438  -0.2609386 8.109232    0.8007313 3.960159e-05
-## 4       0.1946109   0.2811997 4.692361    0.7856933 1.556764e-03
-## 5       0.1057330   0.3604750 8.992434    0.7278243 1.864611e-05
-## 6       0.1711778   1.1590956 4.692361    0.2798424 1.556764e-03</code></pre>
+<pre><code>##   x y r.squared adj.r.squared    intercept     slope Std.Error.intercept
+## 1 a b 0.8754948     0.8599317 -0.002491852 1.0202717           0.8440498
+## 2 a c 0.8633649     0.8462856  0.275776895 0.8812874           0.7691071
+## 3 b a 0.8754948     0.8599317  0.686916670 0.8580997           0.7349830
+## 4 b c 0.8884609     0.8745185  0.524146835 0.8198803           0.6598080
+## 5 c a 0.8633649     0.8462856  0.481324314 0.9796633           0.7994779
+## 6 c b 0.8884609     0.8745185  0.057633122 1.0836470           0.7876405
+##   Std.Error.slope  t.intercept  t.slope Pr.intercept     Pr.slope
+## 1       0.1360309 -0.002952258 7.500291    0.9977167 6.925838e-05
+## 2       0.1239528  0.358567633 7.109861    0.7291968 1.010050e-04
+## 3       0.1144089  0.934602173 7.500291    0.3773411 6.925838e-05
+## 4       0.1027070  0.794392983 7.982713    0.4498876 4.435343e-05
+## 5       0.1377894  0.602048310 7.109861    0.5638114 1.010050e-04
+## 6       0.1357492  0.073171859 7.982713    0.9434658 4.435343e-05</code></pre>
 <p>There are two functions as improvements of <code>tapply()</code> for factor calculation.</p>
 <pre class="r"><code>beginr::tapplydf()
 beginr::tapplydfv()</code></pre>
@@ -132,22 +132,22 @@ beginr::list2ascii(alist)</code></pre>
 ##   title = {beginr: Functions for R Beginners},
 ##   author = {Peng Zhao},
 ##   year = {2019},
-##   note = {R package version 0.1.4},
+##   note = {R package version 0.1.5},
 ##   url = {https://github.com/pzhaonet/beginr},
 ## }
 ## @Manual{R-bookdownplus,
 ##   title = {bookdownplus: Generate Assorted Books and Documents with R &#39;bookdown&#39; Package},
 ##   author = {Peng Zhao},
 ##   year = {2019},
-##   note = {R package version 1.5.5},
+##   note = {R package version 1.5.6},
 ##   url = {https://github.com/pzhaonet/bookdownplus},
 ## }
 ## @Manual{R-mindr,
 ##   title = {mindr: Convert Files Between Markdown or Rmarkdown Files and Mindmaps},
 ##   author = {Peng Zhao},
 ##   year = {2019},
-##   note = {R package version 1.1.12},
-##   url = {https://github.com/pzhaonet/mindr},
+##   note = {R package version 1.2.0},
+##   url = {https://CRAN.R-project.org/package=mindr},
 ## }
 ## @Manual{R-pinyin,
 ##   title = {pinyin: Convert Chinese Characters into Pinyin, Sijiao, Wubi or Other

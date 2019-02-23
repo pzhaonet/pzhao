@@ -41,8 +41,10 @@ weight = 65
 
 - et ([docs](https://pzhao.org/pkg/et)): A kinetic model for evaluating the gradient method for surface-atmosphere flux measurement of reactive gases.
 - eddyr ([docs](https://pzhao.org/pkg/eddyr)): Post-processing eddy covariance data.
-- rosr ([docs](https://pzhao.org/pkg/rosr)): Creating a project for open science and reproducible research.
+- rosr ([docs](https://pzhao.org/pkg/rosr), [CRAN](https://CRAN.R-project.org/package=rosr), [GitHub](https://github.com/pzhaonet/rosr)): Creating a project for open science and reproducible research.
+  ![rosr](http://cranlogs.r-pkg.org/badges/grand-total/rosr)
 - biber ([docs](https://pzhao.org/pkg/biber)): A tool for bibliometrics.
+- sinx ([docs](https://pzhao.org/pkg/sinx), [GitHub](https://github.com/pzhaonet/sinx)): R fortunes in Chinese.
 - blogdownplus ([docs](https://pzhao.org/pkg/blogdownplus)): Assistant for building blogdown sites.
 - rmd ([docs](https://pzhao.org/pkg/rmd), [CRAN](https://CRAN.R-project.org/package=rmd), [GitHub](https://github.com/pzhaonet/rmd)):  Easily installs and loads the R Markdown family.
   ![rmd](http://cranlogs.r-pkg.org/badges/grand-total/rmd)

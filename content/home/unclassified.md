@@ -45,13 +45,14 @@ weight = 65
 #### R 语言扩展包
 
 - et ([docs](https://pzhao.org/pkg/et)): R 语言包，包含了一个动力学模型，用来评估微气象学梯度法测量大气中活性物种通量。
-- rosr ([docs](https://pzhao.org/pkg/rosr)): R 语言包，用来生成开放科学与可重复性研究的综合项目。
+- rosr ([docs](https://pzhao.org/pkg/rosr), [CRAN](https://CRAN.R-project.org/package=rosr), [GitHub](https://github.com/pzhaonet/rosr)): R 语言包，用来生成开放科学与可重复性研究的综合项目。
+  ![rosr](http://cranlogs.r-pkg.org/badges/grand-total/rosr)
 - eddyr ([docs](https://pzhao.org/pkg/eddyr)): R 语言包，涡度相关法测得的通量数据的后期处理。
 - biber ([docs](https://pzhao.org/pkg/biber)): R 语言包，用于文献计量。
+- sinx ([docs](https://pzhao.org/pkg/sinx), [GitHub](https://github.com/pzhaonet/sinx)): R 语言包，R 语言中文社区语录火花集锦。
 - blogdownplus ([docs](https://pzhao.org/pkg/blogdownplus)): R 语言包，blogdown 建站助手。
 - rmd ([docs](https://pzhao.org/pkg/rmd), [CRAN](https://CRAN.R-project.org/package=rmd), [GitHub](https://github.com/pzhaonet/rmd)): R 语言包，用来方便地安装和加载 R markdown 系列扩展包。
   ![rmd](http://cranlogs.r-pkg.org/badges/grand-total/rmd)
-- packr ([docs](https://pzhao.org/pkg/packr), [GitHub](https://github.com/pzhaonet/packr)): R 语言包，是一个用来生成一组 R 扩展包的安装器。
 - advr ([docs](https://pzhao.org/pkg/advr), [GitHub](https://github.com/pzhaonet/advr)): R 语言包，是一个用来处理平流通量的函数集。
 - steemr ([docs](https://pzhao.org/pkg/steemr), [CRAN](https://CRAN.R-project.org/package=steemr), [GitHub](https://github.com/pzhaonet/steemr)): R 语言包，用来获取和处理 Steem 社交网络数据。
   ![steemr](https://cranlogs.r-pkg.org/badges/grand-total/steemr)
