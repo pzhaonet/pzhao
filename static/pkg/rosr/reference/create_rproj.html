@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Install dependencies — install_packages • rosr</title>
+<title>Create a .Rproj file — create_rproj • rosr</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -30,9 +30,9 @@
 
 
 
-<meta property="og:title" content="Install dependencies — install_packages" />
+<meta property="og:title" content="Create a .Rproj file — create_rproj" />
 
-<meta property="og:description" content="Install dependencies" />
+<meta property="og:description" content="Create a .Rproj file" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -99,37 +99,37 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Install dependencies</h1>
-    <small class="dont-index">Source: <a href='https://github.com/pzhaonet/rosr/blob/master/R/begin.R'><code>R/begin.R</code></a></small>
-    <div class="hidden name"><code>install_packages.Rd</code></div>
+    <h1>Create a .Rproj file</h1>
+    <small class="dont-index">Source: <a href='https://github.com/pzhaonet/rosr/blob/master/R/main.R'><code>R/main.R</code></a></small>
+    <div class="hidden name"><code>create_rproj.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Install dependencies</p>
+    <p>Create a .Rproj file</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>install_packages</span>(<span class='kw'>server</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"cran"</span>, <span class='st'>"github"</span>))</pre>
+    <pre class="usage"><span class='fu'>create_rproj</span>(<span class='no'>project</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>server</th>
-      <td><p>character. The server from where to install the dependencies.</p></td>
+      <th>project</th>
+      <td><p>the name of the .Rproj file</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>install packages</p>
+    <p>a .Rproj.file</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>install_packages</span>()</div><div class='output co'>#&gt; [[1]]
-#&gt; NULL
-#&gt; </div></pre>
+    <pre class="examples"><div class='input'><span class='no'>oldwd</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/getwd'>getwd</a></span>()
+<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/getwd'>setwd</a></span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/tempfile'>tempdir</a></span>())
+<span class='fu'>create_rproj</span>(<span class='st'>"test"</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/getwd'>setwd</a></span>(<span class='no'>oldwd</span>)</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Install dependencies — install_packages • rosr</title>
+<title>Display available templates in a list — template_ls • rosr</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -30,9 +30,9 @@
 
 
 
-<meta property="og:title" content="Install dependencies — install_packages" />
+<meta property="og:title" content="Display available templates in a list — template_ls" />
 
-<meta property="og:description" content="Install dependencies" />
+<meta property="og:description" content="Display available templates in a list" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -99,42 +99,70 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Install dependencies</h1>
+    <h1>Display available templates in a list</h1>
     <small class="dont-index">Source: <a href='https://github.com/pzhaonet/rosr/blob/master/R/begin.R'><code>R/begin.R</code></a></small>
-    <div class="hidden name"><code>install_packages.Rd</code></div>
+    <div class="hidden name"><code>template_ls.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Install dependencies</p>
+    <p>Display available templates in a list</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>install_packages</span>(<span class='kw'>server</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"cran"</span>, <span class='st'>"github"</span>))</pre>
-    
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>server</th>
-      <td><p>character. The server from where to install the dependencies.</p></td>
-    </tr>
-    </table>
-    
+    <pre class="usage"><span class='fu'>template_ls</span>()</pre>
+        
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>install packages</p>
+    <p>a list of templates</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>install_packages</span>()</div><div class='output co'>#&gt; [[1]]
-#&gt; NULL
+    <pre class="examples"><div class='input'><span class='fu'>template_ls</span>()</div><div class='output co'>#&gt; $rticles
+#&gt;  [1] "acm_article"        "acs_article"        "aea_article"       
+#&gt;  [4] "amq_article"        "ams_article"        "asa_article"       
+#&gt;  [7] "biometrics_article" "copernicus_article" "ctex"              
+#&gt; [10] "elsevier_article"   "ieee_article"       "jss_article"       
+#&gt; [13] "mdpi_article"       "mnras_article"      "peerj_article"     
+#&gt; [16] "plos_article"       "pnas_article"       "rjournal_article"  
+#&gt; [19] "rsos_article"       "rss_article"        "sage_article"      
+#&gt; [22] "sim_article"        "springer_article"  
+#&gt; 
+#&gt; $drposter
+#&gt; [1] "drposter"
+#&gt; 
+#&gt; $pagedown
+#&gt; [1] "business-card"  "html-letter"    "html-paged"     "html-resume"   
+#&gt; [5] "poster-jacobs"  "poster-relaxed"
+#&gt; 
+#&gt; $xaringan
+#&gt; [1] "xaringan"       "xaringan_zh-CN"
+#&gt; 
+#&gt; $rosr
+#&gt; [1] "beamer"     "powerpoint"
+#&gt; 
+#&gt; $bookdownplus
+#&gt;  [1] "classic"    "copernicus" "crc"        "demo"       "demo_zh"   
+#&gt;  [6] "docsens"    "elsevier"   "journal"    "mail"       "mdpi"      
+#&gt; [11] "mini"       "nonpar"     "nte_zh"     "paper_zh"   "pku_zh"    
+#&gt; [16] "poem"       "rbasics"    "thesis_zh"  "ubt"        "ucas_zh"   
+#&gt; 
+#&gt; $blogdown
+#&gt;  [1] "AlexFinn/simple-a"                           
+#&gt;  [2] "devcows/hugo-universal-theme"                
+#&gt;  [3] "gcushen/hugo-academic"                       
+#&gt;  [4] "jbub/ghostwriter"                            
+#&gt;  [5] "kakawait/hugo-tranquilpeak-theme"            
+#&gt;  [6] "kishaningithub/hugo-creative-portfolio-theme"
+#&gt;  [7] "mattstratton/castanet"                       
+#&gt;  [8] "road2stat/hugo-tanka"                        
+#&gt;  [9] "yihui/hugo-lithium"                          
+#&gt; [10] "yihui/hugo-xmin"                             
 #&gt; </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
       

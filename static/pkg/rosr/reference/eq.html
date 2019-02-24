@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Install dependencies — install_packages • rosr</title>
+<title>Insert an equation. — eq • rosr</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -30,9 +30,9 @@
 
 
 
-<meta property="og:title" content="Install dependencies — install_packages" />
+<meta property="og:title" content="Insert an equation. — eq" />
 
-<meta property="og:description" content="Install dependencies" />
+<meta property="og:description" content="Insert an equation." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -99,37 +99,52 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Install dependencies</h1>
-    <small class="dont-index">Source: <a href='https://github.com/pzhaonet/rosr/blob/master/R/begin.R'><code>R/begin.R</code></a></small>
-    <div class="hidden name"><code>install_packages.Rd</code></div>
+    <h1>Insert an equation.</h1>
+    <small class="dont-index">Source: <a href='https://github.com/pzhaonet/rosr/blob/master/R/eq.R'><code>R/eq.R</code></a></small>
+    <div class="hidden name"><code>eq.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Install dependencies</p>
+    <p>Insert an equation.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>install_packages</span>(<span class='kw'>server</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"cran"</span>, <span class='st'>"github"</span>))</pre>
+    <pre class="usage"><span class='fu'>eq</span>(<span class='kw'>eqs</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>label</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>number</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>style</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"numbered"</span>, <span class='st'>"display"</span>, <span class='st'>"inline"</span>,
+    <span class='st'>"none"</span>), <span class='kw'>skip</span> <span class='kw'>=</span> <span class='fl'>6</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>server</th>
-      <td><p>character. The server from where to install the dependencies.</p></td>
+      <th>eqs</th>
+      <td><p>Character. The path to the equation text file, or a data frame of the equations.</p></td>
+    </tr>
+    <tr>
+      <th>label</th>
+      <td><p>Character. The label of the equation.</p></td>
+    </tr>
+    <tr>
+      <th>number</th>
+      <td><p>integer. The number of the equation.</p></td>
+    </tr>
+    <tr>
+      <th>style</th>
+      <td><p>character. The style of the equation.</p></td>
+    </tr>
+    <tr>
+      <th>skip</th>
+      <td><p>integer. the number of lines of the data file to skip before beginning to read data.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>install packages</p>
+    <p>A string of the equation.</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>install_packages</span>()</div><div class='output co'>#&gt; [[1]]
-#&gt; NULL
-#&gt; </div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>eq</span>()</div><div class='output co'>#&gt; <span class='message'>A source file of the equations must be give.</span></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
