@@ -113,8 +113,8 @@
     
     </div>
 
-    <pre class="usage"><span class='fu'>sinx</span>(<span class='kw'>which</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>sinxs.data</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>fixed</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>showMatches</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>author</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/character'>character</a></span>(), <span class='no'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>sinx</span>(<span class='kw'>which</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>sinxs.data</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>fixed</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>showMatches</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+    <span class='kw'>author</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/character'>character</a></span>(), <span class='no'>...</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -160,7 +160,7 @@
 #&gt;    -- dapengde (&lt;https://d.cosx.org/d/420469/2&gt;)
 #&gt;       d.cosx.org (2018-12)
 #&gt; </div><div class='input'>
-<span class='kw'>for</span>(<span class='no'>i</span> <span class='kw'>in</span> <span class='fl'>1</span>:<span class='fl'>4</span>) <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/print'>print</a></span>(<span class='fu'>sinx</span>(<span class='no'>i</span>))</div><div class='output co'>#&gt; 
+<span class='kw'>for</span> (<span class='no'>i</span> <span class='kw'>in</span> <span class='fl'>1</span>:<span class='fl'>4</span>) <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/print'>print</a></span>(<span class='fu'>sinx</span>(<span class='no'>i</span>))</div><div class='output co'>#&gt; 
 #&gt; 这个问题我很感兴趣。能否提供一个可以重现问题的数据和代码示例，让我直接拷贝粘贴就能运行？最好附带 `session_info()` 信息。
 #&gt; 
 #&gt; 提问题的方式可以参考“[新手须知 1.2 正确的发帖姿势](https://d.cosx.org/d/1553)”。
@@ -204,7 +204,7 @@
 #&gt; </div><div class='input'>
 <span class='no'>path_f</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/system.file'>system.file</a></span>(<span class='st'>"fortunes/fortunes.csv"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"fortunes"</span>)
 <span class='no'>path_s</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/system.file'>system.file</a></span>(<span class='st'>"sinxs/sinxs.csv"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"sinx"</span>)
-<span class='no'>ftns</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>sinx</span><span class='kw ns'>::</span><span class='fu'><a href='https://www.rdocumentation.org/packages/sinx/topics/read.sinxs'>read.sinxs</a></span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='no'>path_f</span>, <span class='no'>path_s</span>), <span class='kw'>sep</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>';'</span>, <span class='st'>','</span>))
+<span class='no'>ftns</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>sinx</span><span class='kw ns'>::</span><span class='fu'><a href='https://www.rdocumentation.org/packages/sinx/topics/read.sinxs'>read.sinxs</a></span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='no'>path_f</span>, <span class='no'>path_s</span>), <span class='kw'>sep</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>";"</span>, <span class='st'>","</span>))
 <span class='kw pkg'>sinx</span><span class='kw ns'>::</span><span class='fu'><a href='https://www.rdocumentation.org/packages/sinx/topics/sinx'>sinx</a></span>(<span class='kw'>sinxs.data</span> <span class='kw'>=</span> <span class='no'>ftns</span>)</div><div class='output co'>#&gt; 
 #&gt; Jeremy Koster: My students were looking at the estimated varying intercepts for each higher-level group (or the "BLUP's", as some people seem to call them).&lt;x&gt;Douglas Bates: As Alan James once said, "these values are just like the BLUPs - Best Linear Unbiased Predictors - except that they aren't linear and they aren't unbiased and there is no clear sense in which they are "best", but other than that ..."
 #&gt; 
@@ -212,7 +212,7 @@
 #&gt;    -- Jeremy Koster and Douglas Bates
 #&gt;       R-SIG-Mixed-Models (July 2012)
 #&gt; </div><div class='input'>
-<span class='no'>jinyong</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='read.sinxs.html'>read.sinxs</a></span>(<span class='kw'>lib</span> <span class='kw'>=</span> <span class='st'>'jinyong'</span>)
+<span class='no'>jinyong</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='read.sinxs.html'>read.sinxs</a></span>(<span class='kw'>lib</span> <span class='kw'>=</span> <span class='st'>"jinyong"</span>)
 <span class='fu'>sinx</span>(<span class='kw'>sinxs.data</span> <span class='kw'>=</span> <span class='no'>jinyong</span>)</div><div class='output co'>#&gt; 
 #&gt; 他强由他强，清风拂山冈；他横任他横，明月照大江。
 #&gt; 
@@ -220,7 +220,8 @@
 #&gt;    -- 金庸 (55、 他强由他强，清风拂山冈；他横任他横，明月照大江。 ——金庸)
 #&gt;       
 #&gt; </div><div class='input'>
-<span class='no'>libs</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='read.sinxs.html'>read.sinxs</a></span>(<span class='kw'>lib</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"tangshi"</span>, <span class='st'>"songshi"</span>, <span class='st'>"chinese"</span>, <span class='st'>"yangsheng"</span>, <span class='st'>"english"</span>,<span class='st'>"jinyong"</span>))
+<span class='no'>libs</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='read.sinxs.html'>read.sinxs</a></span>(<span class='kw'>lib</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"tangshi"</span>, <span class='st'>"songshi"</span>, <span class='st'>"chinese"</span>, <span class='st'>"yangsheng"</span>, <span class='st'>"english"</span>,
+    <span class='st'>"jinyong"</span>))
 <span class='fu'>sinx</span>(<span class='kw'>sinxs.data</span> <span class='kw'>=</span> <span class='no'>libs</span>)</div><div class='output co'>#&gt; 
 #&gt; 人没钱就像弓没箭
 #&gt; 

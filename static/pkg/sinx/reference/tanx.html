@@ -113,9 +113,9 @@
     
     </div>
 
-    <pre class="usage"><span class='fu'>tanx</span>(<span class='kw'>which</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>sinxs.data</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>what</span> <span class='kw'>=</span> <span class='st'>"Hello world!"</span>,
-  <span class='kw'>by</span> <span class='kw'>=</span> <span class='st'>"random"</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"message"</span>, <span class='kw'>what_color</span> <span class='kw'>=</span> <span class='st'>"steelblue3"</span>,
-  <span class='kw'>by_color</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>length</span> <span class='kw'>=</span> <span class='fl'>18</span>, <span class='no'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>tanx</span>(<span class='kw'>which</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>sinxs.data</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>what</span> <span class='kw'>=</span> <span class='st'>"Hello world!"</span>, <span class='kw'>by</span> <span class='kw'>=</span> <span class='st'>"random"</span>,
+    <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"message"</span>, <span class='kw'>what_color</span> <span class='kw'>=</span> <span class='st'>"steelblue3"</span>, <span class='kw'>by_color</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>length</span> <span class='kw'>=</span> <span class='fl'>18</span>,
+    <span class='no'>...</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -240,7 +240,7 @@ properly in R on Windows.</p>
 #&gt; <span class='message'>            @@@@@@@### ## ### ###@@@@</span>
 #&gt; <span class='message'>             @ @  @              @  @</span>
 #&gt; <span class='message'>               @                    @</span></div><div class='input'>
-<span class='kw'>for</span>(<span class='no'>i</span> <span class='kw'>in</span> <span class='fl'>1</span>:<span class='fl'>4</span>) <span class='fu'>tanx</span>(<span class='no'>i</span>)</div><div class='output co'>#&gt; <span class='message'></span>
+<span class='kw'>for</span> (<span class='no'>i</span> <span class='kw'>in</span> <span class='fl'>1</span>:<span class='fl'>4</span>) <span class='fu'>tanx</span>(<span class='no'>i</span>)</div><div class='output co'>#&gt; <span class='message'></span>
 #&gt; <span class='message'> -------------- </span>
 #&gt; <span class='message'></span><span style='color: #555555;'>这个问题我很感兴趣。能否提供一个可以重现问题的数据和代码示例，让我直接拷贝粘贴就能运行？最好附带 `session_info()` 信息。</span>
 #&gt; <span class='message'></span>
@@ -338,7 +338,7 @@ properly in R on Windows.</p>
 #&gt; <span class='message'>                                   \/</span></div><div class='input'>
 <span class='no'>path_f</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/system.file'>system.file</a></span>(<span class='st'>"fortunes/fortunes.csv"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"fortunes"</span>)
 <span class='no'>path_s</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/system.file'>system.file</a></span>(<span class='st'>"sinxs/sinxs.csv"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"sinx"</span>)
-<span class='no'>ftns</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>sinx</span><span class='kw ns'>::</span><span class='fu'><a href='https://www.rdocumentation.org/packages/sinx/topics/read.sinxs'>read.sinxs</a></span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='no'>path_f</span>, <span class='no'>path_s</span>), <span class='kw'>sep</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>';'</span>, <span class='st'>','</span>))
+<span class='no'>ftns</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>sinx</span><span class='kw ns'>::</span><span class='fu'><a href='https://www.rdocumentation.org/packages/sinx/topics/read.sinxs'>read.sinxs</a></span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='no'>path_f</span>, <span class='no'>path_s</span>), <span class='kw'>sep</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>";"</span>, <span class='st'>","</span>))
 <span class='kw pkg'>sinx</span><span class='kw ns'>::</span><span class='fu'><a href='https://www.rdocumentation.org/packages/sinx/topics/tanx'>tanx</a></span>(<span class='kw'>sinxs.data</span> <span class='kw'>=</span> <span class='no'>ftns</span>)</div><div class='output co'>#&gt; <span class='message'></span>
 #&gt; <span class='message'> ----- </span>
 #&gt; <span class='message'></span><span style='color: #555555;'>Ted Harding: But you can also do these with 'any' and 'all', e.g. any(v==TRUE).&lt;x&gt;Thomas Lumley: or any( (v==TRUE)==TRUE), or any( ((v==TRUE)==TRUE)==TRUE)... Or, perhaps, any(v). Lewis Carroll wrote a nice piece on this theme.</span>
@@ -367,7 +367,7 @@ properly in R on Windows.</p>
 #&gt; <span class='message'>        ______( (_  / \______</span>
 #&gt; <span class='message'>      ,'  ,-----'   |        \</span>
 #&gt; <span class='message'>      `--{__________)        \/ [nosig]</span></div><div class='input'>
-<span class='no'>jinyong</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='read.sinxs.html'>read.sinxs</a></span>(<span class='kw'>lib</span> <span class='kw'>=</span> <span class='st'>'jinyong'</span>)
+<span class='no'>jinyong</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='read.sinxs.html'>read.sinxs</a></span>(<span class='kw'>lib</span> <span class='kw'>=</span> <span class='st'>"jinyong"</span>)
 <span class='fu'>tanx</span>(<span class='kw'>sinxs.data</span> <span class='kw'>=</span> <span class='no'>jinyong</span>)</div><div class='output co'>#&gt; <span class='message'></span>
 #&gt; <span class='message'> ----- </span>
 #&gt; <span class='message'></span><span style='color: #555555;'>一梦如是。</span>
@@ -379,7 +379,8 @@ properly in R on Windows.</p>
 #&gt; <span class='message'>        (__)\         )\ /\ </span>
 #&gt; <span class='message'>             ||------w|</span>
 #&gt; <span class='message'>             ||      ||</span></div><div class='input'>
-<span class='no'>libs</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='read.sinxs.html'>read.sinxs</a></span>(<span class='kw'>lib</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"tangshi"</span>, <span class='st'>"songshi"</span>, <span class='st'>"chinese"</span>, <span class='st'>"yangsheng"</span>, <span class='st'>"english"</span>,<span class='st'>"jinyong"</span>))
+<span class='no'>libs</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='read.sinxs.html'>read.sinxs</a></span>(<span class='kw'>lib</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"tangshi"</span>, <span class='st'>"songshi"</span>, <span class='st'>"chinese"</span>, <span class='st'>"yangsheng"</span>, <span class='st'>"english"</span>,
+    <span class='st'>"jinyong"</span>))
 <span class='fu'>tanx</span>(<span class='fl'>42</span>, <span class='kw'>sinxs.data</span> <span class='kw'>=</span> <span class='no'>libs</span>)</div><div class='output co'>#&gt; <span class='message'></span>
 #&gt; <span class='message'></span>
 #&gt; <span class='message'> ----- </span>

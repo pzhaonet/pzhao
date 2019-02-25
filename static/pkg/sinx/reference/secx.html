@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Create a pagedown book from a sinx library — secx • sinx</title>
+<title>Create a book/slides from a sinx library — secx • sinx</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -30,9 +30,9 @@
 
 
 
-<meta property="og:title" content="Create a pagedown book from a sinx library — secx" />
+<meta property="og:title" content="Create a book/slides from a sinx library — secx" />
 
-<meta property="og:description" content="Create a pagedown book from a sinx library" />
+<meta property="og:description" content="Create a book/slides from a sinx library" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -102,20 +102,20 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Create a pagedown book from a sinx library</h1>
+    <h1>Create a book/slides from a sinx library</h1>
     <small class="dont-index">Source: <a href='https://github.com/pzhaonet/sinx/blob/master/R/secx.R'><code>R/secx.R</code></a></small>
     <div class="hidden name"><code>secx.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Create a pagedown book from a sinx library</p>
+    <p>Create a book/slides from a sinx library</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>secx</span>(<span class='kw'>lib</span> <span class='kw'>=</span> <span class='st'>"tangshi"</span>, <span class='kw'>title</span> <span class='kw'>=</span> <span class='st'>"A Pagedown Book"</span>, <span class='kw'>editor</span> <span class='kw'>=</span> <span class='st'>"dapeng"</span>,
-  <span class='kw'>section</span> <span class='kw'>=</span> <span class='st'>"author"</span>, <span class='kw'>subsection</span> <span class='kw'>=</span> <span class='st'>"context"</span>, <span class='kw'>file</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>if_render</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+    <pre class="usage"><span class='fu'>secx</span>(<span class='kw'>lib</span> <span class='kw'>=</span> <span class='st'>"tangshi"</span>, <span class='kw'>file</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>title</span> <span class='kw'>=</span> <span class='st'>"A Sinx Book"</span>, <span class='kw'>author</span> <span class='kw'>=</span> <span class='st'>"dapeng"</span>,
+    <span class='kw'>section</span> <span class='kw'>=</span> <span class='st'>"author"</span>, <span class='kw'>subsection</span> <span class='kw'>=</span> <span class='st'>"context"</span>, <span class='kw'>style</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"pagedown"</span>, <span class='st'>"bookdown"</span>,
+        <span class='st'>"xaringan"</span>), <span class='kw'>bookdown_template</span> <span class='kw'>=</span> <span class='st'>"demo_zh"</span>, <span class='kw'>to</span> <span class='kw'>=</span> <span class='st'>"sinx_book"</span>, <span class='kw'>if_render</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -125,12 +125,16 @@
       <td><p>library name of the sayings. See `?read.sinxs`.</p></td>
     </tr>
     <tr>
+      <th>file</th>
+      <td><p>file name of source spread sheet. See '?read.sinxs()'.</p></td>
+    </tr>
+    <tr>
       <th>title</th>
       <td><p>title of the book</p></td>
     </tr>
     <tr>
-      <th>editor</th>
-      <td><p>editor name</p></td>
+      <th>author</th>
+      <td><p>author's name</p></td>
     </tr>
     <tr>
       <th>section</th>
@@ -141,12 +145,20 @@
       <td><p>name of a sinx libary column, in which the characters are the subsections in the book</p></td>
     </tr>
     <tr>
-      <th>file</th>
-      <td><p>file name of the book. Without extension.</p></td>
+      <th>style</th>
+      <td><p>'pagedown' or 'bookdown' or 'xaringan'</p></td>
+    </tr>
+    <tr>
+      <th>to</th>
+      <td><p>the book directory.</p></td>
     </tr>
     <tr>
       <th>if_render</th>
       <td><p>if render the book</p></td>
+    </tr>
+    <tr>
+      <th>template</th>
+      <td><p>template name. only valid when the style is 'bookdown'. See '?bookdownplus'.</p></td>
     </tr>
     </table>
     
@@ -159,7 +171,7 @@
     <pre class="examples"><span class='co'># NOT RUN {</span>
 <span class='fu'>secx</span>()
 
-<span class='fu'>secx</span>(<span class='kw'>lib</span> <span class='kw'>=</span> <span class='st'>'sinxs'</span>, <span class='kw'>title</span> <span class='kw'>=</span> <span class='st'>'cosx'</span>, <span class='kw'>subsection</span> <span class='kw'>=</span> <span class='st'>'date'</span>)
+<span class='fu'>secx</span>(<span class='kw'>lib</span> <span class='kw'>=</span> <span class='st'>"sinxs"</span>, <span class='kw'>title</span> <span class='kw'>=</span> <span class='st'>"cosx"</span>, <span class='kw'>subsection</span> <span class='kw'>=</span> <span class='st'>"date"</span>)
 <span class='co'># }</span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
