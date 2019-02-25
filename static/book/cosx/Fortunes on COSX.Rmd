@@ -1,5 +1,5 @@
 ---
-title: cosx
+title: Fortunes on COSX
 author: dapeng
 output:
   pagedown::html_paged:
@@ -7,16 +7,6 @@ output:
     self_contained: false
 paged-footnotes: true
 ---
-#   yihui
-
-##  2007-12
-
-如果你去看医生，去医院了对医生说，我生病了，你别管我生了什么病，马上给我开药吧。
-
-
-
-医生能开么？另：Mac和Unix怎么扯上关系了？……
-
 #  dapengde
 
 ##  2018-12
@@ -68,4 +58,15 @@ paged-footnotes: true
 ##  2007-10
 
 Sweave 好像就是一边编译 LaTeX 的时候就可以一边执行程序源代码并即时输出结果，我也没正式用过……
+
+
+
+
+##  2007-12
+
+如果你去看医生，去医院了对医生说，我生病了，你别管我生了什么病，马上给我开药吧。
+
+
+
+医生能开么？另：Mac和Unix怎么扯上关系了？……
 
