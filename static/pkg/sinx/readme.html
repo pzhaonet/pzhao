@@ -60,7 +60,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">sinx</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.7</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.8</span>
       </span>
     </div>
 
@@ -103,23 +103,27 @@
     </div>
 
 
-<div id="sinx-r-" class="section level1">
+<div id="sinx-r-语言中文社区火花集锦" class="section level1">
 
-<div class="section level2">
-<h2>简介</h2>
+<div id="简介" class="section level2">
+<h2 class="hasAnchor">
+<a href="#%E7%AE%80%E4%BB%8B" class="anchor"></a>简介</h2>
 <p>sinx 包是个语录集，默认素材主要来自<a href="http://d.cosx.org">统计之都</a>，附送唐诗、宋诗、金庸语录、中文名言、英文名言、养生语录……未来也不排除采集其他来源的语录。欢迎大家贡献精彩语录。直接 PR 到<a href="https://github.com/pzhaonet/sinx/blob/master/inst/sinxs">项目主页</a> 即可。</p>
 <p>相关链接：<a href="https://d.cosx.org/d/7673/156">缘起</a>，<a href="https://d.cosx.org/d/420467">讨论</a>。</p>
-<div class="section level3">
-<h3>安装</h3>
+<div id="安装" class="section level3">
+<h3 class="hasAnchor">
+<a href="#%E5%AE%89%E8%A3%85" class="anchor"></a>安装</h3>
 <pre><code>if(!require('remotes')) install.packages('remotes')
 remotes::install_github('pzhaonet/sinx', build = TRUE, 
                         build_opts = c("--no-resave-data", "--no-manual"))</code></pre>
 </div>
-<div class="section level3">
-<h3>使用</h3>
+<div id="使用" class="section level3">
+<h3 class="hasAnchor">
+<a href="#%E4%BD%BF%E7%94%A8" class="anchor"></a>使用</h3>
 <p>主要函数：</p>
 <pre><code><a href="reference/sinx.html">sinx() # 打印一条语录
 tanx()  # 小猫小狗说语录
+secx() # 把语录做成一本电子书
 ctanx() #  往 ~/.Rprofile 里添加一条代码，在 R 启动时随机显示一条语录
 read.sinxs() # 读取语录文件
 vignette('sinx') # 语录合集</a></code></pre>
@@ -135,7 +139,7 @@ vignette('sinx') # 语录合集</a></code></pre>
 ## 提问题的方式详见[新手须知 1.2 正确的发帖姿势](https://d.cosx.org/d/1553-1553)。
 ##    -- dapengde (耐心温馨欢欣地回答一个不规范的提问)
 ##       d.cosx.org (2018 年 12 月)</code></pre>
-<p>需要多说一下的是，语录文件是可以随意扩展的，只需用 <code><a href="reference/read.sinxs.html">read.sinxs()</a></code> 一次读入多个文件即可。下面这个例子，将所有自带语录合并进来，随机显示：</p>
+<p>值得一提的是，语录文件是可以随意扩展的，只需用 <code><a href="reference/read.sinxs.html">read.sinxs()</a></code> 一次读入多个文件即可。下面这个例子，将所有自带语录合并进来，随机显示：</p>
 <pre><code>libs &lt;- read.sinxs(lib = c("tangshi", "songshi", "chinese", "yangsheng", "english","jinyong"))
 tanx(sinxs.data = libs)</code></pre>
 </div>
@@ -146,6 +150,7 @@ tanx(sinxs.data = libs)</code></pre>
 <a href="#license" class="anchor"></a>License</h1>
 <p>Copyright <a href="http://pzhao.org">Peng Zhao</a>.</p>
 <p>Released under the GPL-3 license.</p>
+<p><img src="https://github.com/pzhaonet/sinx/raw/master/img/logo-sinx1.png"></p>
 </div>
 
 
