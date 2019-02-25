@@ -5,11 +5,11 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sayings in Chinese about R • sinx</title>
+<title>Sino Xmen's Sayings • sinx</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- sticky kit --><script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
-<script src="pkgdown.js"></script><meta property="og:title" content="Sayings in Chinese about R">
+<script src="pkgdown.js"></script><meta property="og:title" content="Sino Xmen's Sayings">
 <meta property="og:description" content="A collection of R sayings in Chinese. External sayings are supported.">
 <meta name="twitter:card" content="summary">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
@@ -30,7 +30,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">sinx</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.6</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.7</span>
       </span>
     </div>
 
@@ -73,7 +73,7 @@
 <a href="#sinx-r-" class="anchor"></a>sinx: R 语言中文社区火花集锦</h1></div>
 <div class="section level2">
 <h2>简介</h2>
-<p>sinx 包是个中文语录集，素材主要来自<a href="http://d.cosx.org">统计之都</a>，未来也不排除采集其他来源的语录。欢迎大家贡献精彩语录。直接 PR 到<a href="https://github.com/pzhaonet/sinx/blob/master/inst/sinxs/sinxs.csv">项目主页</a> 即可。</p>
+<p>sinx 包是个语录集，默认素材主要来自<a href="http://d.cosx.org">统计之都</a>，附送唐诗、宋诗、金庸语录、中文名言、英文名言、养生语录……未来也不排除采集其他来源的语录。欢迎大家贡献精彩语录。直接 PR 到<a href="https://github.com/pzhaonet/sinx/blob/master/inst/sinxs">项目主页</a> 即可。</p>
 <p>相关链接：<a href="https://d.cosx.org/d/7673/156">缘起</a>，<a href="https://d.cosx.org/d/420467">讨论</a>。</p>
 <div class="section level3">
 <h3>安装</h3>
@@ -101,11 +101,9 @@ vignette('sinx') # 语录合集</a></code></pre>
 ## 提问题的方式详见[新手须知 1.2 正确的发帖姿势](https://d.cosx.org/d/1553-1553)。
 ##    -- dapengde (耐心温馨欢欣地回答一个不规范的提问)
 ##       d.cosx.org (2018 年 12 月)</code></pre>
-<p>需要多说一下的是，语录文件是可以随意扩展的，只需用 <code><a href="reference/read.sinxs.html">read.sinxs()</a></code> 一次读入多个文件即可。下面这个例子，将 fortunes 包里的语录合并进来，一起显示：</p>
-<pre><code>path_f &lt;- system.file("fortunes/fortunes.csv", package = "fortunes")
-path_s &lt;- system.file("sinxs/sinxs.csv", package = "sinx")
-ftns &lt;- sinx::read.sinxs(c(path_f, path_s), sep = c(";", ","))
-sinx::tanx(sinxs.data = ftns)</code></pre>
+<p>需要多说一下的是，语录文件是可以随意扩展的，只需用 <code><a href="reference/read.sinxs.html">read.sinxs()</a></code> 一次读入多个文件即可。下面这个例子，将所有自带语录合并进来，随机显示：</p>
+<pre><code>libs &lt;- read.sinxs(lib = c("tangshi", "songshi", "chinese", "yangsheng", "english","jinyong"))
+tanx(sinxs.data = libs)</code></pre>
 </div>
 </div>
 </div>
