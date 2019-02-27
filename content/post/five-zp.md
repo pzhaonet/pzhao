@@ -32,7 +32,7 @@ tags:
 
 ![](https://gss3.bdstatic.com/-Po3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike80%2C5%2C5%2C80%2C26/sign=0232e6ae31d3d539d53007915bee8235/f9dcd100baa1cd11b953b470be12c8fcc2ce2dfd.jpg)
 
-这位著名运动员生于安徽，曾效力于河南建业队，这让我一度以为是个河南老乡。他还曾经进过国家队。前两年听说他结婚了。
+这位著名运动员曾效力于河南建业队，这让我一度以为是个河南老乡。其实他生于安徽，曾进过国家队。前两年听说他结婚了。祝福他。
 
 ## 3
 
