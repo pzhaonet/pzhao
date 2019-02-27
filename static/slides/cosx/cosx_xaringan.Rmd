@@ -1,6 +1,5 @@
 ---
 title: cosx
-author: dapeng
 output:
   xaringan::moon_reader:
     css: [default, zh-CN.css]

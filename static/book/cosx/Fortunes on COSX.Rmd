@@ -1,6 +1,5 @@
 ---
 title: Fortunes on COSX
-author: dapeng
 output:
   pagedown::html_paged:
     toc: true
@@ -8,6 +7,8 @@ output:
 paged-footnotes: true
 ---
 #  dapengde
+
+---
 
 ##  2018-12
 
@@ -18,12 +19,14 @@ paged-footnotes: true
 提问题的方式可以参考“[新手须知 1.2 正确的发帖姿势](https://d.cosx.org/d/1553)”。
 
 #  tctcab
+---
 
 ##  2018-09
 
 奇怪了你的代码在我的机器上完全没有问题啊
 
 #  wglaive
+---
 
 ##  2018-10
 
@@ -54,6 +57,7 @@ paged-footnotes: true
 而且惰性是人类固有的东西，就比如打以上这段话的时间都够把网上培训班教程再看两遍再写一个脚本了，但是我还是懒得去做这些麻烦的事情而选择在这里慢慢打字，因为这样不费脑子，至少不费管理科的脑子。。。。。
 
 #  yihui
+---
 
 ##  2007-10
 
