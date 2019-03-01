@@ -6,6 +6,7 @@ slug: song-dreamt
 summary: 朋友评语：你这是老了，想家了。
 tags: 
   - post
+  - blog
 ---
 
 
