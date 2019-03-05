@@ -5,8 +5,8 @@ date: '2017-12-03'
 slug: logical-kid-3
 summary: "最近，逻辑娃的逻辑出了点毛病。"
 tags:
-- blog
-- post
+  - blog
+  - post
 bibliography: [zhaor.bib]
 categories: []
 ---

@@ -6,7 +6,8 @@ slug: stadt-buecherei
 type: post
 date: 2018-04-06T00:00:00+00:00
 tags:
-- post
+  - post
+  - blog
 categories: []
 ---
 

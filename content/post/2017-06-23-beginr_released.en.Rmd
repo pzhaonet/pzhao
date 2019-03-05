@@ -5,10 +5,10 @@ date: '2017-06-23'
 slug: beginr-released
 summary: "beginr is a collection of useful functions for R beginners. It might be helpful to R experts as well."
 tags:
-- R
-- beginr
-- post
-bibliography: ["d:/github/pzhao/content/post/zhaor.bib"]
+  - R
+  - beginr
+  - post
+bibliography: ["zhaor.bib"]
 categories: []
 output: #md_document
   md_document:

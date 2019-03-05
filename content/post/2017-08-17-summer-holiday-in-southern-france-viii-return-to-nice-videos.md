@@ -3,13 +3,10 @@ title: "Summer Holiday in Southern France (VIII): Return to Nice (Videos) 带着
 author: dapeng
 date: "2017-08-17 15:22:06"
 slug: summer-holiday-in-southern-france-viii-return-to-nice-videos
-categories: [cn]
 tags: 
-  - cn
-  - travel
-  - life
-  - phtograph
-  - video
+  - post
+  - blog
+  - family
 ---
 
 原文链接: [steemit](https://steemit.com/cn/@dapeng/summer-holiday-in-southern-france-viii-return-to-nice-videos), [cnsteem](https://cnsteem.com/cn/@dapeng/summer-holiday-in-southern-france-viii-return-to-nice-videos), [chainbb](https://chainbb.com/cn/@dapeng/summer-holiday-in-southern-france-viii-return-to-nice-videos), [busy](https://busy.org/cn/@dapeng/summer-holiday-in-southern-france-viii-return-to-nice-videos), [markdown](https://raw.githubusercontent.com/pzhaonet/steem_mirror/master/content/post/summer-holiday-in-southern-france-viii-return-to-nice-videos.md)

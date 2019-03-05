@@ -4,7 +4,9 @@ author: 赵鹏
 date: '2017-05-03'
 slug: cawas
 categories: []
-tags: ["post"]
+tags: 
+  - post
+  - blog
 summary: "把工作热情与爱情相比，其中的幽默感当真是可歌可泣。"
 ---
 

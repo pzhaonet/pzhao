@@ -5,8 +5,11 @@ date: '2018-10-18'
 slug: bookdownplus-one-year
 summary: "是时候做个了断了。"
 tags:
-- post
-- bookdown
+  - post
+  - bookdown
+  - bookdownplus
+  - markdown
+  - R
 categories: []
 ---
 

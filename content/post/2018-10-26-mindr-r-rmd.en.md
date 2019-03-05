@@ -6,6 +6,8 @@ slug: mindr-r-rmd
 tags: 
   - utopian-io
   - post
+  - R
+  - mindr
 ---
 
 ### New Features

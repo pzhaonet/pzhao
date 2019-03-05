@@ -5,7 +5,10 @@ date: '2018-11-23'
 slug: xaringan-themes
 summary: "xaringan-themes"
 tags:
-- post
+  - post
+  - R
+  - markdown
+  - xaringan
 categories: []
 ---
 

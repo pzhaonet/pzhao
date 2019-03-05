@@ -6,6 +6,8 @@ slug: steemr-sfollow-diagrams
 tags: 
   - utopian-io
   - post
+  - R
+  - steemr
 ---
 
 ### New Features

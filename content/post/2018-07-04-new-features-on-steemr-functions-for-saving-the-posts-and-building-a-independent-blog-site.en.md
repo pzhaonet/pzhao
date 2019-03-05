@@ -6,6 +6,8 @@ slug: new-features-on-steemr-functions-for-saving-the-posts-and-building-a-indep
 tags: 
   - utopian-io
   - post
+  - R
+  - steemr
 ---
 
 ### New Features

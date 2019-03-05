@@ -6,6 +6,8 @@ slug: new-features-on-steemr-supports-appbase-api-and-plots-active-hour-diagrams
 tags: 
   - utopian-io
   - post
+  - steemr
+  - R
 ---
 
 ### New Features

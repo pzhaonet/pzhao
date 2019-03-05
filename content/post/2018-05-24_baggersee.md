@@ -6,7 +6,8 @@ slug: baggersee
 type: post
 date: 2018-05-24T00:00:00+00:00
 tags:
-- post
+  - post
+  - blog
 categories: []
 ---
 

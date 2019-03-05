@@ -6,6 +6,8 @@ slug: new-features-on-steemr-functions-for-accounts-and-comments-report
 tags: 
   - utopian-io
   - post
+  - steemr
+  - R
 ---
 
 ### New Features

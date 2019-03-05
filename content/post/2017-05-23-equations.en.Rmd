@@ -6,6 +6,8 @@ slug: equations
 summary: "Right click your mouse on an equation in this post - Show Math As - TeX Commands, and I get the LaTeX code of the equation immediately."
 tags:
 - post
+- blogdown
+- markdown
 categories: []
 ---
 

@@ -5,10 +5,11 @@ date: '2017-06-27'
 slug: bookdownplus-magic
 summary: "bookdown 虽好，但入手并不容易。怎么样能让人对 bookdown 一见钟情呢？ 用 bookdownplus 的两个魔法，一剑封喉。"
 tags:
-- R
-- bookdown
-- bookdownplus
-- post
+  - R
+  - bookdown
+  - bookdownplus
+  - post
+  - markdown
 bibliography: [zhaor.bib]
 categories: []
 ---

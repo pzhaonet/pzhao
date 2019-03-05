@@ -5,7 +5,11 @@ date: '2018-12-04'
 slug: r-course-slides
 summary: "我觉得这个课件需要花一周来讲。"
 tags:
-- post
+  - post
+  - R
+  - teaching
+  - markdown
+  - LaTeX
 categories: []
 ---
 

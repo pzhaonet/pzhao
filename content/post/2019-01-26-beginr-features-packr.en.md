@@ -6,6 +6,8 @@ slug: beginr-features-packr
 tags: 
   - utopian-io
   - post
+  - R
+  - beginr
 ---
 
 

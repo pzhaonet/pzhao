@@ -8,6 +8,8 @@ tags:
 - R
 - bookdown
 - post
+- bookdownplus
+- markdown
 categories: []
 ---
 

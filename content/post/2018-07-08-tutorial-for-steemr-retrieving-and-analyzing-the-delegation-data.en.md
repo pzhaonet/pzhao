@@ -6,6 +6,9 @@ slug: tutorial-for-steemr-retrieving-and-analyzing-the-delegation-data
 tags: 
   - utopian-io
   - post
+  - steemr
+  - R
+  - tutorial
 ---
 
 ### What Will I Learn?

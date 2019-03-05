@@ -6,6 +6,9 @@ slug: steemr-tutorial-gid
 tags: 
   - utopian-io
   - post
+  - steemr
+  - R
+  - tutorial
 ---
 
 ### What Will I Learn?

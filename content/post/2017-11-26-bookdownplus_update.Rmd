@@ -5,11 +5,12 @@ date: '2017-11-26'
 slug: -bookdownplus-update
 summary: "bookdownplus 自发布以来最大的一次升级，包含了北京大学学位论文的 bookdown 模板。"
 tags:
-- R
-- latex
-- bookdown
-- bookdownplus
-- post
+  - R
+  - LaTeX
+  - bookdown
+  - bookdownplus
+  - post
+  - markdown
 bibliography: [zhaor.bib]
 categories: []
 ---

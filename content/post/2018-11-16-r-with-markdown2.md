@@ -5,7 +5,10 @@ date: '2018-11-16'
 slug: r-with-markdown2
 summary: "照“约法三章”以及我加的第四章来为 .R 脚本写注释就行了。"
 tags:
-- post
+  - post
+  - R
+  - markdown
+  - mindr
 categories: []
 ---
 

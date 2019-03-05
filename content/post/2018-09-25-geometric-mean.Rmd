@@ -5,7 +5,9 @@ date: '2018-09-25'
 slug: geometric-mean
 summary: "如何合并几何平均值和几何标准差？今天，小师妹问了我这样一个棘手的问题。"
 tags:
-- post
+  - post
+  - blogdown
+  - R
 categories: []
 ---
 

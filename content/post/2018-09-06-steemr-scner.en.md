@@ -6,6 +6,8 @@ slug: steemr-scner
 tags: 
   - utopian-io
   - post
+  - steemr
+  - R
 ---
 
 

@@ -5,8 +5,11 @@ date: '2017-11-25'
 slug: migrated-to-hugo
 summary: "从今天起，我的旧博客 dapengde.com 停止更新。旧博客的全部帖子已经搬到了 pzhao.org."
 tags:
-- blog
-- post
+  - blog
+  - post
+  - blogdown
+  - R
+  - markdown
 bibliography: [zhaor.bib]
 categories: []
 ---

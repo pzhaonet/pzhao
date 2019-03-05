@@ -2,11 +2,14 @@
 title: "bookdownplus gallery: a web app for displaying and sharing bookdown templates"
 author: dapeng
 date: "2018-09-23 16:34:39"
-slug: bookdownplusgalleryawebappfordisplayingandsharingbookdowntemplates-6otvxd8fc5
+slug: bookdownplus-gallery
 tags: 
 tags: 
   - utopian-io
   - post
+  - bookdown
+  - bookdownplus
+  - R
 ---
 
 

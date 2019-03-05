@@ -6,7 +6,8 @@ slug: bosch-stabmixer
 type: post
 date: 2018-05-14T00:00:00+00:00
 tags:
-- post
+  - post
+  - blog
 categories: []
 ---
 

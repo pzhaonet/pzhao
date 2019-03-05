@@ -5,8 +5,9 @@ date: '2019-01-28'
 slug: rstudio-ppt
 summary: "别说 500 张，5000 张也不在话下。"
 tags:
-- post
-- markdown
+  - post
+  - markdown
+  - R
 categories: []
 ---
 

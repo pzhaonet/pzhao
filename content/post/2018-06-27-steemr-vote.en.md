@@ -6,6 +6,8 @@ slug: steemr-vote
 tags: 
   - utopian-io
   - post
+  - R
+  - steemr
 ---
 
 

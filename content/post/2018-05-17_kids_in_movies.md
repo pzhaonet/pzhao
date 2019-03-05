@@ -6,7 +6,8 @@ slug: kids-in-movies
 type: post
 date: 2018-05-17T00:00:00+00:00
 tags:
-- post
+  - post
+  - blog
 categories: []
 ---
 

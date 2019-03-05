@@ -6,6 +6,8 @@ slug: pinyin-wubi
 tags: 
   - utopian-io
   - post
+  - pinyin
+  - R
 ---
 
 ### New Features

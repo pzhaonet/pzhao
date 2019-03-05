@@ -6,7 +6,8 @@ slug: kids-in-forest
 type: post
 date: 2018-05-10T00:00:00+00:00
 tags:
-- post
+  - post
+  - blog
 categories: []
 ---
 

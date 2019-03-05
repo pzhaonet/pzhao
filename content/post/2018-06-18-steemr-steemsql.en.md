@@ -6,6 +6,8 @@ slug: steemr-steemsql
 tags: 
   - utopian-io
   - post
+  - R
+  - steemr
 ---
 
 

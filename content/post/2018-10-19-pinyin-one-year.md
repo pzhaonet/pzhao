@@ -5,8 +5,10 @@ date: '2018-10-19'
 slug: pinyin-one-year
 summary: "这样一个爹不疼妈不爱的包，原以为就这样了此残生，没想到突然意外焕发了生机。"
 tags:
-- post
-- bookdown
+  - post
+  - bookdown
+  - R
+  - pinyin
 categories: []
 ---
 

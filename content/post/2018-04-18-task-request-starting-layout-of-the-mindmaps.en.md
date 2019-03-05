@@ -6,6 +6,8 @@ slug: task-request-starting-layout-of-the-mindmaps
 tags: 
   - utopian-io
   - post
+  - R
+  - mindr
 ---
 
 #### Details

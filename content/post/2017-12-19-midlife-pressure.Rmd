@@ -5,7 +5,8 @@ date: '2017-12-20'
 slug: midlife-pressure
 summary: "你渣，自有人更渣，他们都不跳楼，你跳什么？"
 tags:
-- post
+  - post
+  - blog
 ---
 
 1

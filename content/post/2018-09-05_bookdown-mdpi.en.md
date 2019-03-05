@@ -6,7 +6,10 @@ slug: bookdown-mdpi
 categories: []
 summary: "Write academic papers of Copernicus journals with R markdown syntax."
 tags:
-- post
+  - post
+  - bookdown
+  - bookdownplus
+  - R
 ---
 
 This is a submission to the [1st bookdown contest](https://blog.rstudio.com/2018/07/27/first-bookdown-contest/).

@@ -5,7 +5,10 @@ date: '2018-11-23'
 slug: xaringan-animate-single
 summary: "animate.css。"
 tags:
-- post
+  - post
+  - R
+  - markdown
+  - xaringan
 categories: []
 ---
 

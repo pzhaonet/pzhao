@@ -6,8 +6,9 @@ slug: bookdown-contest
 categories: []
 summary: "人少奖多速来。"
 tags:
-- post
-
+  - post
+  - R
+  - bookdown
 ---
 
 这是令我感到非常困惑的一件事情：首届 bookdown 大奖赛已经开赛一个多月了，距离截止日期还剩三周，奖品超级丰厚，可是参赛的稿件只有寥寥十篇。目前看来，只要参加就有奖！奖品价值 150 元到 3000 元不等！

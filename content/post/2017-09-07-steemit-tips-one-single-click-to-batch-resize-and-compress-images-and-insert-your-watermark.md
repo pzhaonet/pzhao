@@ -5,9 +5,8 @@ date: "2017-09-07 21:04:57"
 slug: steemit-tips-one-single-click-to-batch-resize-and-compress-images-and-insert-your-watermark
 categories: [cn]
 tags: 
-  - cn
-  - howto
-  - steemit
+  - blog
+  - post
   - tutorial
 ---
 

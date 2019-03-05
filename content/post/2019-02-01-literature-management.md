@@ -6,6 +6,7 @@ slug: literature-management
 summary: 草木竹石均可为剑。自此精修，渐进于无剑胜有剑之境。
 tags: 
   - post
+  - LaTeX
 ---
 
 ​	

@@ -5,10 +5,9 @@ date: "2017-09-06 20:24:06"
 slug: steemit-tips-create-your-steemit-watermark-using-powerpoint-steemit
 categories: [cn]
 tags: 
-  - cn
-  - howto
-  - steemit
   - tutorial
+  - blog
+  - post
 ---
 
 原文链接: [steemit](https://steemit.com/cn/@dapeng/steemit-tips-create-your-steemit-watermark-using-powerpoint-steemit), [cnsteem](https://cnsteem.com/cn/@dapeng/steemit-tips-create-your-steemit-watermark-using-powerpoint-steemit), [chainbb](https://chainbb.com/cn/@dapeng/steemit-tips-create-your-steemit-watermark-using-powerpoint-steemit), [busy](https://busy.org/cn/@dapeng/steemit-tips-create-your-steemit-watermark-using-powerpoint-steemit), [markdown](https://raw.githubusercontent.com/pzhaonet/steem_mirror/master/content/post/steemit-tips-create-your-steemit-watermark-using-powerpoint-steemit.md)

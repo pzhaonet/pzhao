@@ -6,6 +6,8 @@ slug: mindr-bookdown
 tags: 
   - utopian-io
   - post
+  - R
+  - mindr
 ---
 
 ### New Features

@@ -5,8 +5,8 @@ date: '2018-02-04'
 slug: sync
 summary: "而今，软件越来越大，视频越来越清，而我们的快乐并没有增加多少。标清，高清，超清......这条路没有止境，我倒要看看人类还会发明出什么词来攀比清晰度。"
 tags:
-- linux
-- post
+  - linux
+  - post
 bibliography: [zhaor.bib]
 categories: []
 ---

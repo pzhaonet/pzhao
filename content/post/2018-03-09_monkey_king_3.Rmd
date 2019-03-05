@@ -5,7 +5,8 @@ date: '2018-03-09'
 slug: monkey-king-3
 summary: "然而，细细考察，这两句却并非仓央嘉措的原句。"
 tags:
-- post
+  - post
+  - blog
 bibliography: [zhaor.bib]
 categories: []
 ---

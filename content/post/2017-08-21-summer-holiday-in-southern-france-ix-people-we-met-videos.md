@@ -3,13 +3,10 @@ title: "Summer Holiday in Southern France (IX): People We Met (Videos) 带着俩
 author: dapeng
 date: "2017-08-21 09:33:21"
 slug: summer-holiday-in-southern-france-ix-people-we-met-videos
-categories: [cn]
 tags: 
-  - cn
-  - travel
-  - life
-  - video
-  - cn-reader
+  - post
+  - blog
+  - family
 ---
 
 原文链接: [steemit](https://steemit.com/cn/@dapeng/summer-holiday-in-southern-france-ix-people-we-met-videos), [cnsteem](https://cnsteem.com/cn/@dapeng/summer-holiday-in-southern-france-ix-people-we-met-videos), [chainbb](https://chainbb.com/cn/@dapeng/summer-holiday-in-southern-france-ix-people-we-met-videos), [busy](https://busy.org/cn/@dapeng/summer-holiday-in-southern-france-ix-people-we-met-videos), [markdown](https://raw.githubusercontent.com/pzhaonet/steem_mirror/master/content/post/summer-holiday-in-southern-france-ix-people-we-met-videos.md)

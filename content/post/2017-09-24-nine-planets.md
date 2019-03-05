@@ -5,9 +5,9 @@ date: "2017-09-24 17:42:33"
 slug: nine-planets
 categories: [cn]
 tags: 
-  - cn
-  - cn-reader
-  - education
+  - blog
+  - post
+  - family
 ---
 
 原文链接: [steemit](https://steemit.com/cn/@dapeng/nine-planets), [cnsteem](https://cnsteem.com/cn/@dapeng/nine-planets), [chainbb](https://chainbb.com/cn/@dapeng/nine-planets), [busy](https://busy.org/cn/@dapeng/nine-planets), [markdown](https://raw.githubusercontent.com/pzhaonet/steem_mirror/master/content/post/nine-planets.md)

@@ -6,6 +6,8 @@ slug: steemr-delegation-cner
 tags: 
   - utopian-io
   - post
+  - R
+  - steemr
 ---
 
 ### New Features

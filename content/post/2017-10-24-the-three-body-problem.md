@@ -5,10 +5,8 @@ date: "2017-10-24 12:50:39"
 slug: the-three-body-problem
 categories: [cn-book]
 tags: 
-  - cn-book
-  - cn
-  - cn-reader
-  - writing
+  - blog
+  - post
 ---
 
 原文链接: [steemit](https://steemit.com/cn-book/@dapeng/the-three-body-problem), [cnsteem](https://cnsteem.com/cn-book/@dapeng/the-three-body-problem), [chainbb](https://chainbb.com/cn-book/@dapeng/the-three-body-problem), [busy](https://busy.org/cn-book/@dapeng/the-three-body-problem), [markdown](https://raw.githubusercontent.com/pzhaonet/steem_mirror/master/content/post/the-three-body-problem.md)

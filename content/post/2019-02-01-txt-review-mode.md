@@ -6,6 +6,9 @@ slug: txt-review-mode
 summary: 似乎没有完美的解决方案。
 tags: 
   - post
+  - R
+  - git
+  - LaTeX
 ---
 
 这里说的审阅模式，指的是像 Microsoft Office Word 里的 Review 模式，可以显示修订前后的不同，界面是这样的：

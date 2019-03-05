@@ -6,6 +6,8 @@ slug: pinyin-user-defined
 tags: 
   - utopian-io
   - post
+  - R
+  - pinyin
 ---
 
 ### New Features

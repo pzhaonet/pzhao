@@ -6,6 +6,8 @@ slug: beginr-task-documentation
 tags: 
   - utopian-io
   - post
+  - R
+  - beginr
 ---
 
 

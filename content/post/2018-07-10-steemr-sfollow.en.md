@@ -6,6 +6,8 @@ slug: steemr-sfollow
 tags: 
   - utopian-io
   - post
+  - steemr
+  - R
 ---
 
 ### New Features

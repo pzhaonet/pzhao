@@ -6,6 +6,8 @@ slug: new-project-steemr-an-r-package-to-download-play-with-and-visualize-steem-
 tags: 
   - utopian-io
   - post
+  - R
+  - steemr
 ---
 
 #### The story

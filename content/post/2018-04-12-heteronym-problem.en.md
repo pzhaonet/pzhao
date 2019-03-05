@@ -6,6 +6,8 @@ slug: heteronym-problem
 tags: 
   - utopian-io
   - post
+  - R
+  - pinyin
 ---
 
 #### Details

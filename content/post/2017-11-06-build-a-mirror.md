@@ -6,6 +6,10 @@ slug: build-a-mirror-backup-site-for-your-own-steem-posts-in-30-minutes-or-30-st
 tags: 
   - utopian-io
   - post
+  - steemr
+  - R
+  - blogdown
+  - markdown
 ---
 
 Yesterday, I built two mirror sites for my steem posts ([mirror 1](https://dapeng.netlify.com/)，[mirror 2](https://steemit.netlify.com/)) as backups, which are synced automatically everyday, thanks to steemsql and steemdata. The mirror sites are very useful:

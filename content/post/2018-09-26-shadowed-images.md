@@ -5,7 +5,11 @@ date: '2018-09-26'
 slug: shadowed-images
 summary: "做了个 bookdownplus 的展示网站，想给所有插图添加个阴影。"
 tags:
-- post
+  - post
+  - bookdownplus
+  - css
+  - blogdown
+  - markdown
 categories: []
 ---
 

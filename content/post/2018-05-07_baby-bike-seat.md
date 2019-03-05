@@ -6,7 +6,8 @@ slug: baby-bike-seat
 type: post
 date: 2018-05-07T00:00:00+00:00
 tags:
-- post
+  - post
+  - blog
 categories: []
 ---
 

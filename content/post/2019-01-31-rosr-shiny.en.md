@@ -6,6 +6,8 @@ slug: rosr-shiny
 tags: 
   - utopian-io
   - post
+  - R
+  - rosr
 ---
 
 ### Brief Intro and curriculum
