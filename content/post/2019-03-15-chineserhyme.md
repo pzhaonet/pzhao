@@ -2,7 +2,7 @@
 title: '声律启蒙第一周'
 author: 赵鹏
 date: '2019-03-15'
-slug: openr
+slug: chinese-rhyme
 summary: "长太息以掩涕兮，哀娃生之多艰。"
 tags:
   - post
