@@ -19,7 +19,8 @@ weight = 65
 ### Websites
 
 - [Personal website](https://pzhao.org).
--- [Learning R](https://xuer.pzhao.org/): Official website of the book *Learning R*.
+- [Learning R](https://xuer.pzhao.org/): Official website of the book *Learning R*.
+- [Open R](https://openr.netlify.com/): R and Open Science.
 - [Former blog](http://dapengde.com) (2005 -- ) . Only in Chinese.
 - [Wings of the Wind](https://zhaopian.netlify.com). My multimedia website.
 - [Meteorobot](https://sciwis.shinyapps.io/meteorobot/). An online tool to display or process meteorological data.
@@ -44,7 +45,8 @@ weight = 65
 - rosr ([docs](https://pzhao.org/pkg/rosr), [CRAN](https://CRAN.R-project.org/package=rosr), [GitHub](https://github.com/pzhaonet/rosr)): Creating a project for open science and reproducible research.
   ![rosr](http://cranlogs.r-pkg.org/badges/grand-total/rosr)
 - biber ([docs](https://pzhao.org/pkg/biber)): A tool for bibliometrics.
-- sinx ([docs](https://pzhao.org/pkg/sinx), [GitHub](https://github.com/pzhaonet/sinx)): R fortunes in Chinese.
+- sinx ([docs](https://pzhao.org/pkg/sinx), [CRAN](https://CRAN.R-project.org/package=sinx), [GitHub](https://github.com/pzhaonet/sinx)): R fortunes in Chinese.
+  ![sinx](http://cranlogs.r-pkg.org/badges/grand-total/sinx)
 - blogdownplus ([docs](https://pzhao.org/pkg/blogdownplus)): Assistant for building blogdown sites.
 - rmd ([docs](https://pzhao.org/pkg/rmd), [CRAN](https://CRAN.R-project.org/package=rmd), [GitHub](https://github.com/pzhaonet/rmd)):  Easily installs and loads the R Markdown family.
   ![rmd](http://cranlogs.r-pkg.org/badges/grand-total/rmd)

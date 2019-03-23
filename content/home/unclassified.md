@@ -19,7 +19,8 @@ weight = 65
 ### 网站
 
 - [个人网站](https://pzhao.org)。
--- [学 R](https://xuer.pzhao.org/): 《学 R：零基础学习 R 语言》一书的官方网站。
+- [学 R](https://xuer.pzhao.org/): 《学 R：零基础学习 R 语言》一书的官方网站。
+- [Open R](https://openr.netlify.com/): R 语言与开放科学。
 - [大鹏志](http://dapengde.com) (2005 -- 2018)：旧博客，已停止维护。
 - [风之翼](https://zhaopian.netlify.com)：我的多媒体网站。
 - [Meteorobot](https://sciwis.shinyapps.io/meteorobot/)：在线工具，处理气象数据和作图。
@@ -49,7 +50,8 @@ weight = 65
   ![rosr](http://cranlogs.r-pkg.org/badges/grand-total/rosr)
 - eddyr ([docs](https://pzhao.org/pkg/eddyr)): R 语言包，涡度相关法测得的通量数据的后期处理。
 - biber ([docs](https://pzhao.org/pkg/biber)): R 语言包，用于文献计量。
-- sinx ([docs](https://pzhao.org/pkg/sinx), [GitHub](https://github.com/pzhaonet/sinx)): R 语言包，R 语言中文社区语录火花集锦。
+- sinx ([docs](https://pzhao.org/pkg/sinx), [CRAN](https://CRAN.R-project.org/package=sinx), [GitHub](https://github.com/pzhaonet/sinx)): R 语言包，R 语言中文社区语录火花集锦。
+  ![sinx](http://cranlogs.r-pkg.org/badges/grand-total/sinx)
 - blogdownplus ([docs](https://pzhao.org/pkg/blogdownplus)): R 语言包，blogdown 建站助手。
 - rmd ([docs](https://pzhao.org/pkg/rmd), [CRAN](https://CRAN.R-project.org/package=rmd), [GitHub](https://github.com/pzhaonet/rmd)): R 语言包，用来方便地安装和加载 R markdown 系列扩展包。
   ![rmd](http://cranlogs.r-pkg.org/badges/grand-total/rmd)

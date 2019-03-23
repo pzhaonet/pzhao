@@ -63,7 +63,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">rosr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.6</span>
       </span>
     </div>
 
@@ -110,7 +110,8 @@
     
     </div>
 
-    <pre class="usage"><span class='fu'>create_book</span>(<span class='kw'>to</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/getwd'>getwd</a></span>(), <span class='kw'>template</span> <span class='kw'>=</span> <span class='st'>"demo"</span>, <span class='kw'>if_render</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"bookdownplus"</span>)</pre>
+    <pre class="usage"><span class='fu'>create_book</span>(<span class='kw'>to</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/getwd'>getwd</a></span>(), <span class='kw'>template</span> <span class='kw'>=</span> <span class='st'>"demo"</span>, <span class='kw'>if_render</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"bookdownplus"</span>,
+    <span class='kw'>bdp_output</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -130,6 +131,10 @@
     <tr>
       <th>package</th>
       <td><p>the package name where the template comes from.</p></td>
+    </tr>
+    <tr>
+      <th>bdp_output</th>
+      <td><p>the type of bookdownplus output. Only valid when package = 'bookdownplus'.</p></td>
     </tr>
     </table>
     
