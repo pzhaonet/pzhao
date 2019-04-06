@@ -6,5 +6,9 @@
 /slides/*						https://slides.pzhao.org/:splat
 http://openr.netlify.com/*		https://openr.pzhao.org/:splat
 https://openr.netlify.com/*		https://openr.pzhao.org/:splat
-http://openr.netlify.com/*		https://openr.pzhao.org/:splat
-http://zhaopian.netlify.com/*	https://media.pzhao.org/:splat
+https://zhaopian.netlify.com/*	https://media.pzhao.org/:splat
+https://bookdownplus.netlify.com/*	https://bookdownplus.pzhao.org/:splat
+https://steemit.netlify.com/*	https://steemit.pzhao.org/:splat
+https://dapeng.netlify.com/*	https://dapeng.pzhao.org/:splat
+https://dancingapple.netlify.com/*	https://dancingapple.pzhao.org/:splat
+https://deancrypto.netlify.com/	https://deanliu.pzhao.org/:splat
