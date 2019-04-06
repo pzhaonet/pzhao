@@ -1,0 +1,10 @@
+/book/*							https://book.pzhao.org/:splat
+/cv/*							https://cv.pzhao.org/:splat
+/mindmap/*						https://mindmap.pzhao.org/:splat
+/pkg/*							https://pkg.pzhao.org/:splat
+/poster/*						https://poster.pzhao.org/:splat
+/slides/*						https://slides.pzhao.org/:splat
+http://openr.netlify.com/*		https://openr.pzhao.org/:splat
+https://openr.netlify.com/*		https://openr.pzhao.org/:splat
+http://openr.netlify.com/*		https://openr.pzhao.org/:splat
+http://zhaopian.netlify.com/*	https://media.pzhao.org/:splat
