@@ -40,6 +40,7 @@ weight = 65
 
 #### R Packages
 
+- wibsr ([docs](https://pzhao.org/pkg/wibsr)): Processing raw data from Wideband Integrated Bioaerosol Sensors (WIBS-NEO).
 - et ([docs](https://pzhao.org/pkg/et)): A kinetic model for evaluating the gradient method for surface-atmosphere flux measurement of reactive gases.
 - eddyr ([docs](https://pzhao.org/pkg/eddyr)): Post-processing eddy covariance data.
 - rosr ([docs](https://pzhao.org/pkg/rosr), [CRAN](https://CRAN.R-project.org/package=rosr), [GitHub](https://github.com/pzhaonet/rosr)): Creating a project for open science and reproducible research.
