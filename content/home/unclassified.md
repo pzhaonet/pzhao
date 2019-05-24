@@ -35,6 +35,7 @@ weight = 65
 
 ### 书籍
 
+- 声律精编。车万育，李渔（原著），赵鹏（选编）。([链接](https://www.pzhao.org/book/chineserhyme/))
 - 我要当个气象学家。Felicia Law （著）, 赵鹏（译）。2019。面向中小学生和家长的科普读物。已完稿，即将出版。
 - 学 R：零基础学习 R 语言。赵鹏，李怡。2018。最浅显的 R 语言入门指南。研究出版社，北京。([链接](https://xuer.pzhao.org/))
 - 留学德国 DIY：从计划到启程。赵鹏。2014。收进《选择德国：德国留学工作定居全攻略》，徐徐编，红旗出版社，北京。
@@ -45,6 +46,7 @@ weight = 65
 
 #### R 语言扩展包
 
+- wibsr ([docs](https://pzhao.org/pkg/wibsr)): R 语言包，用来处理 WIBS-NEO 生物气溶胶观测数据。
 - et ([docs](https://pzhao.org/pkg/et)): R 语言包，包含了一个动力学模型，用来评估微气象学梯度法测量大气中活性物种通量。
 - rosr ([docs](https://pzhao.org/pkg/rosr), [CRAN](https://CRAN.R-project.org/package=rosr), [GitHub](https://github.com/pzhaonet/rosr)): R 语言包，用来生成开放科学与可重复性研究的综合项目。
   ![rosr](http://cranlogs.r-pkg.org/badges/grand-total/rosr)
