@@ -1,4 +1,4 @@
-baseurl = "http://www.pzhao.org"
+baseurl = "https://www.pzhao.org"
 # relativeurls = true
 title = "Peng Zhao"
 copyright = "&copy; 2017 Peng Zhao"
