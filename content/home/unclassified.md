@@ -26,6 +26,7 @@ weight = 65
 - [Meteorobot](https://sciwis.shinyapps.io/meteorobot/)：在线工具，处理气象数据和作图。
 - [EddyPoster](https://sciwis.shinyapps.io/eddyposter/)：在线工具，处理微气象学通量数据。 
 - [Bookdownplus Gallery](https://bookdownplus.netlify.com/portfolio/)：在线工具，展示 R bookdown 模板。
+- [Rchive](https://sciwis.shinyapps.io/rdev-shiny/)：在线工具，展示 R 邮件列表及统计数据。
 - [dapeng@steem](https://steemit.netlify.com/)：dapeng 的 steem 帖子备份博客。
 - [deanliu@steem](https://deancrypto.netlify.com/)：deanliu 的 steem 帖子备份博客。
 - [dancingapple@steem](https://dancingapple.netlify.com/)：dancingapple 的 steem 帖子备份博客。
