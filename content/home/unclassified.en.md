@@ -41,6 +41,7 @@ weight = 65
 
 #### R Packages
 
+- OutlierFlag ([docs](http://meteothink.org/products/outlierflag.html), [BitBucket](https://bitbucket.org/yaqiang/outlierflag)): A standalone desktop program as well as a toolbox application in MeteoInfoLab for outlier check in scientific datasets. Written in Java.
 - wibsr ([docs](https://pzhao.org/pkg/wibsr)): Processing raw data from Wideband Integrated Bioaerosol Sensors (WIBS-NEO).
 - et ([docs](https://pzhao.org/pkg/et)): A kinetic model for evaluating the gradient method for surface-atmosphere flux measurement of reactive gases.
 - eddyr ([docs](https://pzhao.org/pkg/eddyr)): Post-processing eddy covariance data.
@@ -65,3 +66,5 @@ weight = 65
   ![mindr](http://cranlogs.r-pkg.org/badges/grand-total/mindr)
 - pinyin ([docs](https://pzhao.org/pkg/pinyin), [CRAN](https://CRAN.R-project.org/package=pinyin), [GitHub](https://github.com/pzhaonet/pinyin)): Convert Chinese Characters into Pinyin.
   ![pinyin](http://cranlogs.r-pkg.org/badges/grand-total/pinyin)
+- GaFiR ([docs](https://www.bayceer.uni-bayreuth.de/mm/de/software/software/software_dl.php?id_obj=124194)): A user-friendly open source package for filling data gaps in turbulent flux observations of evapotranspiration and carbon dioxide.
+- MSEF ([docs](https://epub.uni-bayreuth.de/1759/)): A new multi-step error filter in addition to the quality checks implemented in the TK3-software or any other eddycovariance software package.

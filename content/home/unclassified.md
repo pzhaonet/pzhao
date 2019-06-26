@@ -45,8 +45,9 @@ weight = 65
 - 爸爸三定律。赵鹏。2017。育儿帖子合集。([链接](https://bookdown.org/baydap/papasdiary/))
 - 群英谱。范晓太，赵鹏。2017。中学生活文集。([链接](https://bookdown.org/baydap/qyp/))
 
-#### R 语言扩展包
+#### 软件开发
 
+- OutlierFlag（[docs](http://meteothink.org/products/outlierflag.html), [BitBucket](https://bitbucket.org/yaqiang/outlierflag)）：Java 程序包，MeteoInfo 模块，用来检查科研数据里的异常值和质量控制。
 - wibsr ([docs](https://pzhao.org/pkg/wibsr)): R 语言包，用来处理 WIBS-NEO 生物气溶胶观测数据。
 - et ([docs](https://pzhao.org/pkg/et)): R 语言包，包含了一个动力学模型，用来评估微气象学梯度法测量大气中活性物种通量。
 - rosr ([docs](https://pzhao.org/pkg/rosr), [CRAN](https://CRAN.R-project.org/package=rosr), [GitHub](https://github.com/pzhaonet/rosr)): R 语言包，用来生成开放科学与可重复性研究的综合项目。
@@ -70,3 +71,5 @@ weight = 65
   ![mindr](http://cranlogs.r-pkg.org/badges/grand-total/mindr)
 - pinyin ([docs](https://pzhao.org/pkg/pinyin), [CRAN](https://CRAN.R-project.org/package=pinyin), [GitHub](https://github.com/pzhaonet/pinyin)): R 语言包，将中文字符转换成拼音、五笔字型码、四角号码。
   ![pinyin](http://cranlogs.r-pkg.org/badges/grand-total/pinyin)
+- GaFiR（[docs](https://www.bayceer.uni-bayreuth.de/mm/de/software/software/software_dl.php?id_obj=124194)）：R 语言包，用于湍流通量数据的缺失值插补。
+- MSEF（[docs](https://epub.uni-bayreuth.de/1759/)）：R 语言包，用于湍流通量数据的质量控制。
