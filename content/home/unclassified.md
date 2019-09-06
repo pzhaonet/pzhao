@@ -36,13 +36,14 @@ weight = 65
 
 ### 书籍
 
-- 声律精编。车万育，李渔（原著），赵鹏（选编）。([链接](https://www.pzhao.org/book/chineserhyme/))
-- 我要当个气象学家。Felicia Law （著）, 赵鹏（译）。2019。面向中小学生和家长的科普读物。已完稿，即将出版。
 - 学 R：零基础学习 R 语言。赵鹏，李怡。2018。最浅显的 R 语言入门指南。研究出版社，北京。([链接](https://xuer.pzhao.org/))
+- TNT 擂台赛。赵鹏（编）。2019。用 Base R 和 Tidyverse 两种方案来解决数据处理、作图等方面的问题。正在编写中。（[链接](https://pzhaonet.github.io/btcookbook/)）
+- 我要当个气象学家。Felicia Law （著）, 赵鹏（译）。2019。面向中小学生和家长的科普读物。已完稿，即将出版。
 - 留学德国 DIY：从计划到启程。赵鹏。2014。收进《选择德国：德国留学工作定居全攻略》，徐徐编，红旗出版社，北京。
 - Steem 基础与开发指南。赵鹏（主编）。2018。([链接](https://bookdown.org/baydap/steemh))
 - R bookdownplus Textbook. Peng Zhao. 2017. A guide to the R 'bookdownplus' package. ([链接](https://bookdown.org/baydap/bookdownplus/))
 - 爸爸三定律。赵鹏。2017。育儿帖子合集。([链接](https://bookdown.org/baydap/papasdiary/))
+- 声律精编。车万育，李渔（原著），赵鹏（选编）。正在编写中。([链接](https://www.pzhao.org/book/chineserhyme/))
 - 群英谱。范晓太，赵鹏。2017。中学生活文集。([链接](https://bookdown.org/baydap/qyp/))
 
 #### 软件开发
