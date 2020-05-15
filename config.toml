@@ -1,7 +1,7 @@
 baseurl = "https://www.pzhao.org"
-# relativeurls = true
+relativeurls = true
 title = "Peng Zhao"
-copyright = "&copy; 2017 Peng Zhao"
+copyright = "&copy; Peng Zhao"
 theme = "hugo-academic"
 enableEmoji = true
 footnotereturnlinkcontents = "<sup>^</sup>"
@@ -21,13 +21,13 @@ defaultContentLanguageInSubdir = true
 
 [params]
   name = "Peng Zhao"
-  role = "Post-doc in Geoecology"
-  organization = "Max Planck Institute for Chemistry"
-  organization_url = ""
-  avatar = "zhao.jpg"
+  role = "Lecturer"
+  organization = "Xi'an Jiaotong-Liverpool University"
+  organization_url = "https://www.xjtlu.edu.cn/en/departments/academic-departments/health-and-environmental-sciences/staff/peng-zhao"
+  avatar = "https://www.xjtlu.edu.cn/en/assets/image-cache/upload/BqxR0Pu9gsA1j6oDbrGO.5217ba1e.jpg"
   email = ""
   address = ""
-  office_hours = "Monday 10:00 to 13:00 or email for appointment"
+  office_hours = ""
   phone = ""
   skype = ""
 
@@ -175,12 +175,12 @@ defaultContentLanguageInSubdir = true
 [[menu.main]]
   name = "News"
   url = "/tags/news"
-  weight = 20
+  weight = 30
 
 [[menu.main]]
   name = "Posts"
   url = "/tags/post"
-  weight = 30
+  weight = 20
 
 [[menu.main]]
   name = "Publications"
@@ -196,6 +196,11 @@ defaultContentLanguageInSubdir = true
   name = "Projects"
   url = "#projects"
   weight = 50
+
+[[menu.main]]
+  name = "Teaching"
+  url = "#teaching"
+  weight = 60
 
 [[menu.main]]
   name = "Unclassified"
@@ -220,12 +225,12 @@ defaultContentLanguageInSubdir = true
 [[languages.zh.menu.main]]
   name = "新闻"
   url = "/tags/news"
-  weight = 20
+  weight = 30
 
 [[languages.zh.menu.main]]
   name = "日志"
   url = "/tags/post"
-  weight = 30
+  weight = 20
 
 [[languages.zh.menu.main]]
   name = "论文"

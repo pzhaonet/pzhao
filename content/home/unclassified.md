@@ -18,23 +18,26 @@ weight = 65
 
 ### 网站
 
-- [个人网站](https://pzhao.org)。
 - [学 R](https://xuer.pzhao.org/): 《学 R：零基础学习 R 语言》一书的官方网站。
-- [Open R](https://openr.netlify.com/): R 语言与开放科学。
+
+- [个人网站](https://pzhao.org)。
 - [大鹏志](http://dapengde.com) (2005 -- 2018)：旧博客，已停止维护。
-- [风之翼](https://zhaopian.netlify.com)：我的多媒体网站。
-- [Meteorobot](https://sciwis.shinyapps.io/meteorobot/)：在线工具，处理气象数据和作图。
-- [EddyPoster](https://sciwis.shinyapps.io/eddyposter/)：在线工具，处理微气象学通量数据。 
-- [Bookdownplus Gallery](https://bookdownplus.netlify.com/portfolio/)：在线工具，展示 R bookdown 模板。
-- [Rchive](https://sciwis.shinyapps.io/rdev-shiny/)：在线工具，展示 R 邮件列表及统计数据。
-- [dapeng@steem](https://steemit.netlify.com/)：dapeng 的 steem 帖子备份博客。
-- [deanliu@steem](https://deancrypto.netlify.com/)：deanliu 的 steem 帖子备份博客。
-- [dancingapple@steem](https://dancingapple.netlify.com/)：dancingapple 的 steem 帖子备份博客。
-- [Steemg](http://ec2-35-157-142-69.eu-central-1.compute.amazonaws.com:3838/myapp/)（停用）：在线工具，展示和统计 steem 上的活动。
-- [Steemr](https://pzhao.shinyapps.io/steemr/)（停用）：在线工具，展示和统计 steem 上的帖子和用户信息。
+- [风之翼](https://gallery.pzhao.org)：照片，录像，录音。
 - ZTGroup BBS（停用）：朱彤教授科研小组 BBS。
 
-### 书籍
+- [nCoV2020](https://ncov2020.org)：COVID-19 新型冠状病毒疫情报告。
+- [OpenR](https://openr.pzhao.org/): R 语言与开放科学。
+- [Bookdownplus Gallery](https://bookdownplus.netlify.com/portfolio/)：在线工具，展示 R bookdown 模板。
+
+### 在线工具
+
+- [Meteorobot](https://sciwis.shinyapps.io/meteorobot/)：处理气象数据和作图。
+- [EddyPoster](https://sciwis.shinyapps.io/eddyposter/)：处理微气象学通量数据。 
+- [Rchive](https://sciwis.shinyapps.io/rchive/)：在线工具，展示 R 邮件列表及统计数据。
+- [Steemg](http://ec2-35-157-142-69.eu-central-1.compute.amazonaws.com:3838/myapp/)（停用）：在线工具，展示和统计 steem 上的活动。
+- [Steemr](https://pzhao.shinyapps.io/steemr/)（停用）：在线工具，展示和统计 steem 上的帖子和用户信息。
+
+### 书稿
 
 - 学 R：零基础学习 R 语言。赵鹏，李怡。2018。最浅显的 R 语言入门指南。研究出版社，北京。([链接](https://xuer.pzhao.org/))
 - 现代统计图形。谢益辉，黄湘云，赵鹏。2019。以 R 语言作图为例，介绍各类统计图形。（[链接](https://msg-book.netlify.com/)）
@@ -49,7 +52,7 @@ weight = 65
 
 #### 软件开发
 
-- OutlierFlag（[docs](http://meteothink.org/products/outlierflag.html), [BitBucket](https://bitbucket.org/yaqiang/outlierflag)）：Java 程序包，MeteoInfo 模块，用来检查科研数据里的异常值和质量控制。
+- ncovr ([GitHub](https://github.com/pzhaonet/ncovr)): R 语言包，用来获取 COVID-19 新冠肺炎疫情数据并进行处理。
 - wibsr ([docs](https://pzhao.org/pkg/wibsr)): R 语言包，用来处理 WIBS-NEO 生物气溶胶观测数据。
 - et ([docs](https://pzhao.org/pkg/et)): R 语言包，包含了一个动力学模型，用来评估微气象学梯度法测量大气中活性物种通量。
 - rosr ([docs](https://pzhao.org/pkg/rosr), [CRAN](https://CRAN.R-project.org/package=rosr), [GitHub](https://github.com/pzhaonet/rosr)): R 语言包，用来生成开放科学与可重复性研究的综合项目。
@@ -75,3 +78,5 @@ weight = 65
   ![pinyin](http://cranlogs.r-pkg.org/badges/grand-total/pinyin)
 - GaFiR（[docs](https://www.bayceer.uni-bayreuth.de/mm/de/software/software/software_dl.php?id_obj=124194)）：R 语言包，用于湍流通量数据的缺失值插补。
 - MSEF（[docs](https://epub.uni-bayreuth.de/1759/)）：R 语言包，用于湍流通量数据的质量控制。
+- OutlierFlag（[docs](http://meteothink.org/products/outlierflag.html), [BitBucket](https://bitbucket.org/yaqiang/outlierflag)）：Java 程序包，MeteoInfo 模块，用来检查科研数据里的异常值和质量控制。
+

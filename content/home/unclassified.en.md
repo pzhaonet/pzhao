@@ -18,30 +18,33 @@ weight = 65
 
 ### Websites
 
+- [Learning R](https://xuer.pzhao.org/): Official website of the book *Learning R: From the Very Beginning*.
+
 - [Personal website](https://pzhao.org).
-- [Learning R](https://xuer.pzhao.org/): Official website of the book *Learning R*.
-- [Open R](https://openr.netlify.com/): R and Open Science.
 - [Former blog](http://dapengde.com) (2005 -- ) . Only in Chinese.
 - [Wings of the Wind](https://zhaopian.netlify.com). My multimedia website.
+- ZTGroup BBS. 
+
+- [nCoV2020](https://ncov2020.org): COVID-19 Pandemic Reports.
+- [OpenR](https://openr.netlify.com/): R and Open Science.
+- [Bookdownplus Gallery](https://bookdownplus.netlify.com/portfolio/). Collect and display R bookdown templates.
+
+### Online Tools
+
 - [Meteorobot](https://sciwis.shinyapps.io/meteorobot/). An online tool to display or process meteorological data.
 - [EddyPoster](https://sciwis.shinyapps.io/eddyposter/). Eddy covariance data post processor.
-- [Bookdownplus Gallery](https://bookdownplus.netlify.com/portfolio/). Collect and display R bookdown templates.
-- [Rchive](https://sciwis.shinyapps.io/rdev-shiny/). An online tool to display the public discussion list on R development and R help.
-- [dapeng@steem](https://steemit.netlify.com/). dapeng's posts on steem.
-- [deanliu@steem](https://deancrypto.netlify.com/). deanliu's posts on steem.
-- [dancingapple@steem](https://dancingapple.netlify.com/). dancingapple's posts on steem.
+- [Rchive](https://sciwis.shinyapps.io/rchive/). An online tool to display the public discussion list on R development and R help.
 - [Steemg](http://ec2-35-157-142-69.eu-central-1.compute.amazonaws.com:3838/myapp/). An online tool to display the contests on steem..
 - [Steemr](https://pzhao.shinyapps.io/steemr/). An online tool to display the posts and users on steem.
-- ZTGroup BBS. 
 
 ### Books
 
 - Zhao, P.; Li, Y.. 2018. [Learning R](https://xuer.pzhao.org/). Yanjiu Press. Beijing. 
-
+- Zhao, P. 2017. R bookdownplus Textbook. A guide to the R 'bookdownplus' package. ([link](https://bookdown.org/baydap/bookdownplus/))
 
 #### Software development
 
-- OutlierFlag ([docs](http://meteothink.org/products/outlierflag.html), [BitBucket](https://bitbucket.org/yaqiang/outlierflag)): A standalone desktop program as well as a toolbox application in MeteoInfoLab for outlier check in scientific datasets. Written in Java.
+- ncovr ([GitHub](https://github.com/pzhaonet/ncovr)): Downloading and analyzing COVID-19 pandemic data.
 - wibsr ([docs](https://pzhao.org/pkg/wibsr)): Processing raw data from Wideband Integrated Bioaerosol Sensors (WIBS-NEO).
 - et ([docs](https://pzhao.org/pkg/et)): A kinetic model for evaluating the gradient method for surface-atmosphere flux measurement of reactive gases.
 - eddyr ([docs](https://pzhao.org/pkg/eddyr)): Post-processing eddy covariance data.
@@ -68,3 +71,4 @@ weight = 65
   ![pinyin](http://cranlogs.r-pkg.org/badges/grand-total/pinyin)
 - GaFiR ([docs](https://www.bayceer.uni-bayreuth.de/mm/de/software/software/software_dl.php?id_obj=124194)): A user-friendly open source package for filling data gaps in turbulent flux observations of evapotranspiration and carbon dioxide.
 - MSEF ([docs](https://epub.uni-bayreuth.de/1759/)): A new multi-step error filter in addition to the quality checks implemented in the TK3-software or any other eddycovariance software package.
+- OutlierFlag ([docs](http://meteothink.org/products/outlierflag.html), [BitBucket](https://bitbucket.org/yaqiang/outlierflag)): A standalone desktop program as well as a toolbox application in MeteoInfoLab for outlier check in scientific datasets. Written in Java.
