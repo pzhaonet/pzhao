@@ -20,11 +20,11 @@ defaultContentLanguageInSubdir = true
   hrefTargetBlank = true
 
 [params]
-  name = "Peng Zhao"
+  name = "Dr. Peng Zhao"
   role = "Lecturer"
   organization = "Xi'an Jiaotong-Liverpool University"
   organization_url = "https://www.xjtlu.edu.cn/en/departments/academic-departments/health-and-environmental-sciences/staff/peng-zhao"
-  avatar = "https://www.xjtlu.edu.cn/en/assets/image-cache/upload/BqxR0Pu9gsA1j6oDbrGO.5217ba1e.jpg"
+  avatar = "zhao2.jpg"
   email = ""
   address = ""
   office_hours = ""
@@ -174,33 +174,33 @@ defaultContentLanguageInSubdir = true
 
 [[menu.main]]
   name = "News"
-  url = "/tags/news"
+  url = "#news"
   weight = 30
 
 [[menu.main]]
   name = "Posts"
-  url = "/tags/post"
+  url = "#posts"
   weight = 20
 
 [[menu.main]]
   name = "Publications"
-  url = "/publication"
+  url = "#publications"
   weight = 40
 
 [[menu.main]]
   name = "Talks"
-  url = "/talk"
+  url = "#talks"
   weight = 45
 
 [[menu.main]]
   name = "Projects"
   url = "#projects"
-  weight = 50
+  weight = 60
 
 [[menu.main]]
   name = "Teaching"
   url = "#teaching"
-  weight = 60
+  weight = 50
 
 [[menu.main]]
   name = "Unclassified"
@@ -224,33 +224,33 @@ defaultContentLanguageInSubdir = true
 
 [[languages.zh.menu.main]]
   name = "新闻"
-  url = "/tags/news"
+  url = "#news"
   weight = 30
 
 [[languages.zh.menu.main]]
   name = "日志"
-  url = "/tags/post"
+  url = "#posts"
   weight = 20
 
 [[languages.zh.menu.main]]
   name = "论文"
-  url = "/publication"
+  url = "#publications"
   weight = 40
 
 [[languages.zh.menu.main]]
   name = "报告"
-  url = "/talk"
+  url = "#talks"
   weight = 45
   
 [[languages.zh.menu.main]]
   name = "项目"
   url = "#projects"
-  weight = 50
+  weight = 60
 
 [[languages.zh.menu.main]]
   name = "教学"
   url = "#teaching"
-  weight = 60
+  weight = 50
 
 [[languages.zh.menu.main]]
   name = "其他"

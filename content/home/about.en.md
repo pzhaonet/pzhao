@@ -19,19 +19,19 @@ weight = 1
 
 # List your qualifications (such as academic degrees).
 [[education.courses]]
-  course = "PhD in Geoecology"
-  institution = "University of Bayreuth"
-  year = 2014
+  course = "PhD in Geoecology | University of Bayreuth"
+#  institution = "University of Bayreuth"
+#  year = 2014
 
 [[education.courses]]
-  course = "MSc in Environmental Sciences"
-  institution = "Peking University"
-  year = 2005
+  course = "MSc in Environmental Sciences | Peking University"
+#  institution = "Peking University"
+#  year = 2005
 
 [[education.courses]]
-  course = "BSc in Chemistry"
-  institution = "Peking University"
-  year = 2002
+  course = "BSc in Chemistry | Peking University"
+#  institution = "Peking University"
+#  year = 2002
  
 +++
 
