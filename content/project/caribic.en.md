@@ -6,7 +6,7 @@ date = "2019-05-01"
 title = "CARIBIC"
 
 # Project summary to display on homepage.
-summary = "Civil Aircraft for the Regular Investigation of the atmosphere Based on an Instrument Container (CARIBIC). IAGOS CARIBIC is an innovative scientific project to study and monitor important chemical and physical processes in the Earth's atmosphere. Detailed and extensive measurements are made during long distance flights. CARIBIC deploys a modified airfreight container with automated scientific apparatus which are connected to an air and particle (aerosol) inlet underneath the aircraft. Using a passenger Airbus A340-600 from Lufthansa in total more than 530 flights are succesfully completed."
+summary = "The project Civil Aircraft for the Regular Investigation of the atmosphere Based on an Instrument Container (CARIBIC) deploys a modified airfreight container with automated scientific apparatus which are connected to an air and particle (aerosol) inlet underneath the aircraft. "
 
 # Optional image to display on homepage (relative to `static/img/` folder).
 image_preview = "pj-caribic.png"

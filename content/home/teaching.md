@@ -20,10 +20,10 @@ weight = 40
 - DPH206 "公共卫生分析方法：数据实践"
   
 ### 2019, 中央财经大学
-- “R 语言支持可续研究”
+- “R 语言支持可续研究” ([海报](https://openr.pzhao.org/slides/cufe2019/))
 
 ### 2018，马普化学所
-- “R 语言，开放科学与可重复性研究”
+- “R 语言，开放科学与可重复性研究”([幻灯片](http://www.pzhao.org/slides/ross-mpic), [海报](http://www.pzhao.org/poster/r-intro-mpic))
 
 ### 2016，因斯布鲁克大学
 - “生态学实验”

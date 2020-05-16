@@ -5,7 +5,7 @@
 date = "2016-04-20T00:00:00"
 draft = false
 
-title = "teaching"
+title = "Teaching"
 subtitle = ""
 widget = "custom"
 
@@ -20,10 +20,11 @@ weight = 40
 - DPH206: *Methods for Analysing Public Health IV: Working in the Field: Data* (Leader)
 
 ### 2019, Central University of Economics and Finance
-- *R language Supports Scientific Research* (Leader)
+- *R language Supports Scientific Research* (Leader) ([poster](ttps://openr.pzhao.org/slides/cufe2019/))
 
 ### 2018, Max Planck Institute for Chemistry
-- *R, Open Science, and Reproducible Research* (Leader)
+- *R, Open Science, and Reproducible Research* (Leader) ([slides](http://www.pzhao.org/slides/ross-mpic), [poster](http://www.pzhao.org/poster/r-intro-mpic))
+
 
 ### 2016, University of Innsbruck
 - *Field Experiments in Atmospheric Science* (Assistant)

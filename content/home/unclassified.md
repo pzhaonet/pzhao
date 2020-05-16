@@ -49,6 +49,8 @@ weight = 65
 
 #### 进行中
 - TNT 擂台赛。赵鹏（编）。2019。用 Base R 和 Tidyverse 两种方案来解决数据处理、作图等方面的问题。（[在线阅读](https://pzhaonet.github.io/btcookbook/)）
+- 现代统计图形之极乐净土。谢益辉，黄湘云，赵鹏，张列弛。2019。（[在线阅读](https://pzhaonet.github.io/msgtv/)）
+- 学 R 一百问。赵鹏（编）。2019。（[在线阅读](https://pzhao.org/book/r100q/)）
 - R bookdownplus 教程（英文）. 赵鹏。 2017。R 'bookdownplus' 包使用指南。([在线阅读](https://bookdown.org/baydap/bookdownplus/))
 - 爸爸三定律。赵鹏。2017。育儿帖子合集。([在线阅读](https://bookdown.org/baydap/papasdiary/))
 
