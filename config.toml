@@ -168,7 +168,7 @@ defaultContentLanguageInSubdir = true
 #   The weight parameter defines the order that the links will appear in.
 
 [[menu.main]]
-  name = "About"
+  name = "Profile"
   url = "#about"
   weight = 10
 
@@ -218,7 +218,7 @@ defaultContentLanguageInSubdir = true
   weight = 80
 
 [[languages.zh.menu.main]]
-  name = "关于"
+  name = "简介"
   url = "#about"
   weight = 10
 

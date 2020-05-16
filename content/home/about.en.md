@@ -35,7 +35,7 @@ weight = 1
  
 +++
 
-# Biography
+# Profile
 
 Dr. Peng Zhao is a scientific researcher. He worked as an assistant research scientist at the Chinese Academy of Meteorological Sciences (China), a post-doc at the Institute of Ecology, University of Innsbruck (Austria), and a post-doc at the Max Planck Institute for Chemistry (Germany). In 2020, he joined Xi'an Jiaotong-Liverpool University (China).
 

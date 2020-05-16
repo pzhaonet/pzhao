@@ -19,12 +19,10 @@ weight = 65
 ### 网站
 
 - [学 R](https://xuer.pzhao.org/): 《学 R：零基础学习 R 语言》一书的官方网站。
-
 - [个人网站](https://pzhao.org)。
 - [大鹏志](http://dapengde.com) (2005 -- 2018)：旧博客，已停止维护。
 - [风之翼](https://gallery.pzhao.org)：照片，录像，录音。
 - ZTGroup BBS（停用）：朱彤教授科研小组 BBS。
-
 - [nCoV2020](https://ncov2020.org)：COVID-19 新型冠状病毒疫情报告。
 - [OpenR](https://openr.pzhao.org/): R 语言与开放科学。
 - [Bookdownplus Gallery](https://bookdownplus.pzhao.org/)：展示 R bookdown 模板。

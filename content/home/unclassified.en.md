@@ -19,12 +19,10 @@ weight = 65
 ### Websites
 
 - [Learning R](https://xuer.pzhao.org/): Official website of the book *Learning R: From the Very Beginning*.
-
 - [Personal website](https://pzhao.org).
 - [Former blog](http://dapengde.com) (2005 -- , deactivated). Only in Chinese.
 - [Wings of the Wind](https://gallery.pzhao.org). Photographs. Videos. Audios. 
 - ZTGroup BBS (deactivated). 
-
 - [nCoV2020](https://ncov2020.org): COVID-19 Pandemic Reports.
 - [OpenR](https://openr.pzhao.org): R and Open Science.
 - [Bookdownplus Gallery](https://bookdownplus.pzhao.org/). Collect and display R bookdown templates.
