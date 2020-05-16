@@ -1,5 +1,5 @@
 ---
-title: 'Farewell to Innsbruck'
+title: '再见，因村'
 author: "赵鹏"
 date: '2018-07-06'
 slug: farewell-uibk
