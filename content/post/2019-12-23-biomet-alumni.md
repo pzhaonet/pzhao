@@ -2,7 +2,7 @@
 title: '因村老同事聚会'
 author: "赵鹏"
 date: '2019-12-23'
-slug: advection-lc
+slug: biomet-alumni
 summary: '![](img/20191224.jpg)'
 tags:
 - pj-advection

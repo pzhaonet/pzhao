@@ -39,7 +39,7 @@ weight = 65
 
 - Zhao, P.; Li, Y.. 2018. *Learning R*. Yanjiu Press, Beijing ([website](https://xuer.pzhao.org/)). 
 - Xie, Y.; Huang, X.; Zhao, P.; Zhang, L.. 2019. Modern Statistical Graphics with Tidyverse ([fulltext](https://pzhaonet.github.io/msgtv/)).
-- Zhao, P.. 2019. 100 Q & A in R ([在线阅读](https://pzhao.org/book/r100q/)).
+- Zhao, P.. 2019. 100 Q & A in R ([fulltext](https://pzhao.org/book/r100q/)).
 - Zhao, P.. 2017. *R bookdownplus Textbook*. A guide to the R 'bookdownplus' package ([fulltext](https://bookdown.org/baydap/bookdownplus/)).
 - Law, F. (author); Zhao, P. (translator). 2019. *I'm Going to Be a Meteorologist*.
 - Xie, Y.; Huang, X.; Zhao, P.. 2019. *Modern Statistical Graphics* ([fulltext](https://msg-book.netlify.com/)).
