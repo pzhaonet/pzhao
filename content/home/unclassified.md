@@ -59,7 +59,7 @@ weight = 65
 #### 专业类
 - wibsr ([docs](https://pzhao.org/pkg/wibsr)): R 语言包，用来处理 WIBS-NEO 生物气溶胶观测数据。
 - et ([docs](https://pzhao.org/pkg/et)): R 语言包，包含了一个动力学模型，用来评估微气象学梯度法测量大气中活性物种通量。
-- ncovr ([GitHub](https://github.com/pzhaonet/ncovr)): R 语言包，用来获取 COVID-19 新冠肺炎疫情数据并进行处理。
+- ncovr ([docs](https://pzhao.org/pkg/ncovr), [GitHub](https://github.com/pzhaonet/ncovr)): R 语言包，用来获取 COVID-19 新冠肺炎疫情数据并进行处理。
 - eddyr ([docs](https://pzhao.org/pkg/eddyr)): R 语言包，涡度相关法测得的通量数据的后期处理。
 - advr ([docs](https://pzhao.org/pkg/advr), [GitHub](https://github.com/pzhaonet/advr)): R 语言包，是一个用来处理平流通量的函数集。
 - mf ([docs](https://pzhao.org/pkg/mf), [GitHub](https://github.com/pzhaonet/mf)): R 语言包，是一个生态学、微气象学常用函数集。

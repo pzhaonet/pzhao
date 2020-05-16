@@ -53,7 +53,7 @@ weight = 65
 
 - wibsr ([docs](https://pzhao.org/pkg/wibsr)): Processing raw data from Wideband Integrated Bioaerosol Sensors (WIBS-NEO).
 - et ([docs](https://pzhao.org/pkg/et)): A kinetic model for evaluating the gradient method for surface-atmosphere flux measurement of reactive gases.
-- ncovr ([GitHub](https://github.com/pzhaonet/ncovr)): Downloading and analyzing COVID-19 pandemic data.
+- ncovr ([docs](https://pzhao.org/pkg/et), [GitHub](https://github.com/pzhaonet/ncovr)): Downloading and analyzing COVID-19 pandemic data.
 - eddyr ([docs](https://pzhao.org/pkg/eddyr)): Post-processing eddy covariance data.
 - advr ([docs](https://pzhao.org/pkg/advr), [GitHub](https://github.com/pzhaonet/advr)): Functions I use for processing advection  flux data.
 - mf ([docs](https://pzhao.org/pkg/mf), [GitHub](https://github.com/pzhaonet/mf)): Functions I often use in micrometeorology and other work.
