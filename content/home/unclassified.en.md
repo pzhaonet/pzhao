@@ -67,6 +67,7 @@ weight = 65
 - biber ([docs](https://pzhao.org/pkg/biber)): A tool for bibliometrics.
 
 #### Technical
+- xjtlu: An R package for Xi'an Jiaotong-Liverpool University.
 - sinx ([docs](https://pzhao.org/pkg/sinx), [CRAN](https://CRAN.R-project.org/package=sinx), [GitHub](https://github.com/pzhaonet/sinx)): R fortunes in Chinese.
   ![sinx](http://cranlogs.r-pkg.org/badges/grand-total/sinx)
 - blogdownplus ([docs](https://pzhao.org/pkg/blogdownplus)): Assistant for building blogdown sites.

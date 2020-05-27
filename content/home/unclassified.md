@@ -73,6 +73,7 @@ weight = 65
 - biber ([docs](https://pzhao.org/pkg/biber)): R 语言包，用于文献计量。
 
 #### 技术类
+- xjtlu: R 语言包，西交利物浦大学专用。
 - sinx ([docs](https://pzhao.org/pkg/sinx), [CRAN](https://CRAN.R-project.org/package=sinx), [GitHub](https://github.com/pzhaonet/sinx)): R 语言包，R 语言中文社区语录火花集锦。
 ![sinx](http://cranlogs.r-pkg.org/badges/grand-total/sinx)
 - blogdownplus ([docs](https://pzhao.org/pkg/blogdownplus)): R 语言包，blogdown 建站助手。
