@@ -19,12 +19,13 @@ weight = 65
 ### 网站
 
 - [学 R](https://xuer.pzhao.org/): 《学 R：零基础学习 R 语言》一书的官方网站。
+- [***HESLAB***](https://pzhaonet.github.io/hes/): 西交利物浦大学健康与环境科学系实验室在线展示平台。
+- [OpenR](https://openr.pzhao.org/): R 语言与开放科学。
 - [个人网站](https://pzhao.org)。
 - [大鹏志](http://dapengde.com) (2005 -- 2018)：旧博客，已停止维护。
 - [风之翼](https://gallery.pzhao.org)：照片，录像，录音。
 - ZTGroup BBS（停用）：朱彤教授科研小组 BBS。
 - [nCoV2020](https://ncov2020.org)：COVID-19 新型冠状病毒疫情报告。
-- [OpenR](https://openr.pzhao.org/): R 语言与开放科学。
 - [Bookdownplus Gallery](https://bookdownplus.pzhao.org/)：展示 R bookdown 模板。
 
 ### 在线工具
@@ -48,6 +49,7 @@ weight = 65
 - 群英谱。范晓太，赵鹏。2017。中学生活文集。([在线阅读](https://bookdown.org/baydap/qyp/))
 
 #### 进行中
+- 教材：公共卫生数据处理。赵鹏（编）。2020。
 - TNT 擂台赛。赵鹏（编）。2019。用 Base R 和 Tidyverse 两种方案来解决数据处理、作图等方面的问题。（[在线阅读](https://pzhaonet.github.io/btcookbook/)）
 - 现代统计图形之极乐净土。谢益辉，黄湘云，赵鹏，张列弛。2019。（[在线阅读](https://pzhaonet.github.io/msgtv/)）
 - 学 R 一百问。赵鹏（编）。2019。（[在线阅读](https://pzhao.org/book/r100q/)）

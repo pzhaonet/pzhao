@@ -18,14 +18,15 @@ weight = 65
 
 ### Websites
 
-- [Learning R](https://xuer.pzhao.org/): Official website of the book *Learning R: From the Very Beginning*.
-- [Personal website](https://pzhao.org).
+- [***Learning R***](https://xuer.pzhao.org/): Official website of the book *Learning R: From the Very Beginning*.
+- [***HESLAB***](https://pzhaonet.github.io/hes/): Gallery for the laboratory, Department of Health and Environmental Sciences, Xi'an Jiaotong-Liverpool University.
+- [***OpenR***](https://openr.pzhao.org): R and Open Science.
+- [***Personal website***](https://pzhao.org).
 - [Former blog](http://dapengde.com) (2005 -- , deactivated). Only in Chinese.
 - [Wings of the Wind](https://gallery.pzhao.org). Photographs. Videos. Audios. 
-- ZTGroup BBS (deactivated). 
 - [nCoV2020](https://ncov2020.org): COVID-19 Pandemic Reports.
-- [OpenR](https://openr.pzhao.org): R and Open Science.
 - [Bookdownplus Gallery](https://bookdownplus.pzhao.org/). Collect and display R bookdown templates.
+- ZTGroup BBS (deactivated). 
 
 ### Online Tools
 
@@ -38,6 +39,7 @@ weight = 65
 ### Books
 
 - Zhao, P.; Li, Y.. 2018. *Learning R*. Yanjiu Press, Beijing ([website](https://xuer.pzhao.org/)). 
+- Zhao, P., 2020. Textbook for Processing Data in Public Health.
 - Xie, Y.; Huang, X.; Zhao, P.; Zhang, L.. 2019. Modern Statistical Graphics with Tidyverse ([fulltext](https://pzhaonet.github.io/msgtv/)).
 - Zhao, P.. 2019. 100 Q & A in R ([fulltext](https://pzhao.org/book/r100q/)).
 - Zhao, P.. 2017. *R bookdownplus Textbook*. A guide to the R 'bookdownplus' package ([fulltext](https://bookdown.org/baydap/bookdownplus/)).
