@@ -20,6 +20,7 @@ weight = 65
 
 - [***Learning R***](https://xuer.pzhao.org/): Official website of the book *Learning R: From the Very Beginning*.
 - [***HESLAB***](https://pzhaonet.github.io/hes/): Gallery for the laboratory, Department of Health and Environmental Sciences, Xi'an Jiaotong-Liverpool University.
+- [***R Markdown Gallery***](https://rmd.pzhao.org/): Collection of R Markdown templates and themes.
 - [***OpenR***](https://openr.pzhao.org): R and Open Science.
 - [***Personal website***](https://pzhao.org).
 - [Former blog](http://dapengde.com) (2005 -- , deactivated). Only in Chinese.

@@ -16,7 +16,7 @@ weight = 40
 
 ### 2020, Xi'an Jiaotong-Liverpool University
 - ENV203: *Statistics for Environmental Scientists* (Leader)
-- ENV206: *Environmental Science Field Skills* (Leader)
+- DPH101: *Methods for Analysing Public Health II: Biostatistics I* (Leader)
 - DPH206: *Methods for Analysing Public Health IV: Working in the Field: Data* (Leader)
 
 ### 2019, Central University of Economics and Finance
