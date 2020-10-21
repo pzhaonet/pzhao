@@ -1,0 +1,51 @@
+n,Gender,Zodiac,Height,Weight,Shoe,Hometown,Suzhou,Temperature
+1,Female,scorpio,168,62,38,2,yes,36.6
+2,Female,cancer,150,46,35,2,yes,36.4
+3,Female,aries,163,54,36,1,hard to say,36.5
+4,Female,leo,158,53,37,2,yes,36.1
+5,Male,sagittarius,175,70.2,42.5,1,very much,36.4
+6,Male,taurus,177,75,42,2,very much,36
+10,Female,libra,173,60,39,1,yes,36.8
+11,Male,aries,176,58,41,1,yes,36.6
+12,Male,scorpio,170,55,41,1,yes,36.6
+14,Male,sagittarius,186,94,44,1,yes,36.7
+15,Female,NA,170,NA,39,2,very much,36.6
+16,Female,NA,174,53,38,2,very much,36.4
+17,Female,leo,173,51,38.5,2,yes,36.3
+18,Female,aries,163,54,36,1,NA,36.5
+19,Female,sagittarius,175,95,41,2,yes,36.2
+20,Female,cancer,150,46,35,2,yes,36.4
+21,Female,sagittarius,170,48,37,2,yes,36.5
+22,Female,leo,160,46,36,2,yes,36.5
+23,Female,gemini,170,59,37,2,yes,36.5
+24,Female,gemini,172,59,39,2,yes,36.4
+25,Male,gemini,177,73,41,1,NA,36.2
+28,Male,taurus,175,80,43,2,yes,36.5
+29,Female,NA,168,50,48,1,yes,36.5
+30,Female,aries,166,65,38,2,yes,36.8
+31,Female,cancer,161,47,37,1,yes,36.2
+32,Female,gemini,163,52,37,2,yes,36.8
+33,Female,virgo,169,NA,39,1,yes,36.4
+34,Female,virgo,165,50,37,1,yes,NA
+35,Male,cancer,174,71,43,1,yes,36.5
+36,Female,leo,166,NA,NA,1,yes,NA
+37,Female,virgo,170,60,38,2,yes,36.4
+39,Female,gemini,165,58,37,1,yes,36.5
+40,Female,capricorn,155,45,36,2,yes,36.5
+41,Female,taurus,174,59,39,1,yes,36.4
+42,Female,capricorn,165,70,37,2,yes,36.5
+43,Female,scorpio,165,45,37.5,1,hard to say,36.6
+44,Female,virgo,168,53,38.5,1,yes,36.6
+45,Female,taurus,165,53,37,2,yes,36
+47,Female,sagittarius,165,55,38,1,hard to say,36.5
+48,Female,sagittarius,158,46,35,1,yes,36.5
+49,Female,pisces,167,55,39,1,yes,36.2
+50,Female,aries,168,50,37.5,1,yes,36.5
+51,Male,aquarius,173,58,41,1,yes,36.6
+52,Male,scorpio,182,68,43,1,yes,36.2
+53,Female,sagittarius,163,50.5,36,1,hard to say,NA
+54,Female,pisces,162,65,36,1,yes,36.3
+55,Female,cancer,168,56,38,1,yes,36
+57,Female,pisces,170,53,38,1,yes,36.8
+58,Male,sagittarius,175,70,42.5,1,very much,36.4
+59,Male,leo,176,68,41,2,yes,36.5
