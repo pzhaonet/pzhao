@@ -1,0 +1,783 @@
+<meta charset="utf-8">
+
+**Week 07**
+ Two-sample Hypothesis Testing
+ Dr. Peng Zhao
+ 2020-10-28
+
+
+
+
+
+
+
+
+
+# Ice breaking
+
+The R package **animation**: learn statistics from animations.
+
+- Demonstration of the concept of confidence intervals:
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~ r linenumbers
+animation::conf.int()
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Demonstration of the Central Limit Theorem
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~ r linenumbers
+animation::clt.ani()
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+# Q & A
+
+!!! Tip: Q1: The textbook says, we can use the sample standard deviation *s* as the best estimate of $\sigma$ ($\sigma = s$). But in CLT, $s = \sigma /\sqrt n$. Why the difference?
+    
+    A1. In $\sigma = s$, $s$ stands for the sample standard deviation. In $s = \sigma /\sqrt n$, $s$ is the standard deviation of the sampling distribution, called the standard error of the mean.
+    They are different. For the latter one, we use $se$ more often than s.
+
+!!! Tip: Q2: In the R code `legend("topright", bty = "n", legend = paste("mean: ", round(mean(population), 1)))`, what is the meaning of `bty = "n"` and `paste()`?
+    
+    A2: `bty` is the setting for the border of the legend frame. `paste()` connects multiple strings into one. Check the help document.
+
+# Objectives
+
+1. Use the $z$ test and the $t$ test for two-sample hypothesis testing in environmental research. 
+2. Understand the $F$ test.
+3. Plot graphs to display the test results.
+4. Learn the R functions which are often used in distributions.
+
+# Revisit one-sample test
+
+One-sample test
+:   Test whether a population mean is significantly different from some hypothesized value.
+
+    See Table [one-sample-test].
+
+|        $H_0$        |        $H_1$        | Tails |
+| :-------------: | :--------------------: | :-------------: |
+|      $\mu = M$      |       $\mu \ne M$       |        2        |
+|      $\mu \ge M$      |        $\mu < M$       |        1        |
+|      $\mu \le M$      |        $\mu > M$       |        1        |
+Table [one-sample-test]: One-sample test.
+
+# Two-sample test
+
+Two-sample Test
+:   Test the difference between two population means. 
+
+    -
+    
+The sampling distribution of the difference between means
+:   the distribution of all possible values of differences between pairs of sample means with the sample sizes held constant from pair to pair.
+
+*********************************************************************************************
+*+-------------------------------------------+ +-------------------------------------------+
+*| Population 1                              | | Population 2                              |
+*|               +----------------+          | |               +----------------+          |
+*|               |Sample 1.2      |          | |               |Sample 2.2      |          |
+*|               |x1, x2, ..., xn |          | |               |x1, x2, ..., xm |          |
+*|               |      x1.2      |          | |               |      x2.2      |          |
+*|               +------+---------+          | |               +------+---------+          |
+*| +----------------+   | +----------------+ | | +----------------+   | +----------------+ |
+*| |Sample 1.1      |   | |Sample 1.3      | | | |Sample 2.1      |   | |Sample 2.3      | |
+*| |x1, x2, ..., xn |   | |x1, x2, ..., xn | | | |x1, x2, ..., xm |   | |x1, x2, ..., xm | |
+*| |     x1.1       |   | |      x1.3      | | | |     x2.1       |   | |      x2.3      | |
+*| +------------+---+   | +---------+------+ | | +---+------------+   | +-----+----------+ |
+*+--------------|-------|-----------|--------+ +-----|----------------|-------|------------+
+*               |       |           |                |                |       |
+*               +----------+-------------------------+                |       |
+*                       |  |        |                                 |       |
+*                       +--|------------------------------------------+       |
+*                          |        |   |                                     |
+*                          |        +---|-----------+-------------------------+
+*                          |            |           |
+*                  +-------|------------|-----------|----------------------+
+*                  |       v            v           v                      |
+*                  |x1.1 - x2.1, x1.2 - x2.2, x1.3 - x2.3, ...             |
+*                  |                                                       |
+*                  +-------------------------------------------------------+
+*  
+*********************************************************************************************
+
+A distribution curve (Figure [twodist]):
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~ r linenumbers
+curve(dnorm(x), 
+      xlab = expression(bar(x)[1] - bar(x)[2]), 
+      ylab = "Density", 
+      xlim = c(-5, 5))
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+![Figure [twodist]: Distribution of the difference between two means. ](figure/unnamed-chunk-5-1.png)
+
+
+According to CLT, the mean:
+
+$$\mu_{\bar x_1 - \bar x_2} = \mu_1 - \mu_2$$
+For simplicity, we use $\mu_d$ for $\mu_1 - \mu_2$, i.e.:
+
+$$\mu_{\bar x_1 - \bar x_2} = \mu_d$$
+
+The standard deviation (the standard error of the difference between means):
+
+$$\sigma_{\bar x_1 - \bar x_2} = \sqrt {\frac{\sigma_1^2}{n} + \frac{\sigma_2^2}{m}}$$ 
+
+Compared to the standard deviation we learnt from CLT:
+
+$$\sigma_{\bar x} = \sigma \sqrt {\frac{1}{N}}$$ 
+
+According to CLT, 
+
+- If the populations are normally distributed, the sampling distribution of $\bar x_1 - \bar x_2$ is a normal distribution, no matter the sample sizes are small or large: Apply the $z$ test.
+- If the populations are not normally distributed:
+  - If the sample sizes are large ($\ge 30$), the sampling distribution of $\bar x_1 - \bar x_2$ is a normal distribution: The $z$ test.
+  - If the sample sizes are small ( < 30), the sampling distribution of $\bar x_1 - \bar x_2$ is a $t$ distribution: The $t$ test.
+
+
+# Two-sample $z$ test
+
+$$z_\mathrm{score} = \frac{x - \mu}{\sigma}$$
+
+$$z_\mathrm{score} = \frac{\bar x_d - \mu_d}{\sigma _ {\bar x_1 - \bar x_2}}= \frac{(\bar x_1 - \bar x_2) - (\mu_1 - \mu_2)}{\sigma _ {\bar x_1 - \bar x_2}}$$
+
+1. Question and hypotheses. 
+
+|        $H_0$        |        $H_1$        | Tails |
+| :-----------------: | :-----------------: | :---: |
+| $\mu_1 - \mu_2 = d$ | $\mu_1 - \mu_2 ≠ d$ |   2   |
+| $\mu_1 - \mu_2 > d$ | $\mu_1 - \mu_2 < d$ |   1   |
+| $\mu_1 - \mu_2 < d$ | $\mu_1 - \mu_2 > d$ |   1   |
+
+2. Collect data. Suppose  we collect two samples of IQ from two normally distributed populations, respectively.
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~ r linenumbers
+sample1 <- c(100, 118, 97, 92, 118, 125, 136, 95, 111)
+sample2 <- c(91, 109, 83, 88, 115, 108, 127, 102, 86)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+3. Calculate a test statistic.
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~ r linenumbers
+n <- length(sample1)
+m <- length(sample2)
+sigma1 <- 15
+sigma2 <- 15
+xbar1 <- mean(sample1)
+xbar2 <- mean(sample2)
+mu_d <- 0
+x_d <- xbar1 - xbar2
+se <- sqrt(sigma1 ^ 2 / n + sigma2 ^ 2 / m)
+z_score <- (x_d - mu_d) / se
+z_score
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## [1] 1.304219
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+4. Decision. Reject $H_0$?
+
+What if you don't know the distribution of the population and your sample sizes are small?
+
+# Two-sample $t$ test
+
+Calculate a test statistic.
+
+$$t =  \frac{(\bar x_1 - \bar x_2) - (\mu_1 - \mu_2)}{\sqrt{\frac{(n-1)s_1^2 + (m - 1)s_2^2}{(n - 1) + (m -1)} (\frac{1}{n} + \frac{1}{m})}}$$
+
+Let's make it a little easier to understand.
+
+Estimate the population standard deviation  with the two sample standard deviations (pooled):
+
+$$\frac{(n-1)s_1^2 + (m - 1)s_2^2}{(n - 1) + (m -1)} = \frac{\nu_1s_1^2 + \nu_2s_2^2}{\nu_1 + \nu_2} = s_p^2$$
+
+$$\frac{1}{n} + \frac{1}{m} = \frac{1}{n_p}$$ 
+
+$$\bar x_1 - \bar x_2 = \bar x_d $$
+
+$$ \mu_1 - \mu_2 = \mu_d$$
+
+$$t = \frac{\bar x_d -\mu_d}{s_p\sqrt{\frac{1}{n_p}}}$$
+
+Compare it with the one-sample test:
+
+$$t =\frac{\bar x - \mu}{s / \sqrt{n}} = \frac{\bar x - \mu}{s \sqrt{\frac{1}{n}}} $$
+
+Demo: Two 3D printers.
+
+A scientist wants to choose between two 3D printers to produce a 3D model. The printing times are 24.58, 22.09, 23.70, 18.89, 22.02, 28.71, 24.44, 20.91, 23.83, 20.83 hours for Printer 1, and 21.61, 19.06, 20.72, 15.77, 19, 25.88, 21.48, 17.85, 20.86, 17.77 hours for Printer 2. Do they have the same performance?
+
+1. Question:
+   - $H_0: \mu_1 - \mu_2 = 0$
+   - $H_1: \mu_1 - \mu_2 \ne 0$
+   - Reject $H_0$?
+2. Collect data:
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~ r linenumbers
+x1 <- c(24.58, 22.09, 23.70, 18.89, 22.02, 28.71, 24.44, 20.91, 23.83, 20.83)
+x2 <- c(21.61, 19.06, 20.72, 15.77, 19, 25.88, 21.48, 17.85, 20.86, 17.77)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+3. Calculate a test statistic:
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~ r linenumbers
+n <- length(x1)
+m <- length(x2)
+xbar1 <- mean(x1)
+xbar2 <- mean(x2)
+s1 <- sd(x1)
+s2 <- sd(x2)
+sp <- sqrt(((n-1) * s1 ^ 2 + (m-1) * s2 ^ 2) /((n-1) + (m - 1)))
+np <- 1 / (1/n + 1/m)
+xbar_d <- xbar1 - xbar2
+mu_d <- 0
+t_score <- (xbar_d - mu_d) / (sp / sqrt(np))
+t_score
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## [1] 2.439594
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~ r linenumbers
+(t_critical <- qt(0.95, df = n - 1 + m - 1))
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## [1] 1.734064
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~ r linenumbers
+pt(t_score, df = n -1 + m -1, lower.tail = FALSE) * 2
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## [1] 0.02528077
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+4. Decision
+
+As $t_{\mathrm{score}} > t_{\mathrm{critical}, 1-\alpha}$ at $\alpha = 0.05$, we can reject $H_0$ at a 95 % confidence interval. 
+
+One step:
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~ r linenumbers
+t.test(x1, x2, var.equal = TRUE, alternative = "two.sided", mu = 0)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## 
+## 	Two Sample t-test
+## 
+## data:  x1 and x2
+## t = 2.4396, df = 18, p-value = 0.02528
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  0.4164695 5.5835305
+## sample estimates:
+## mean of x mean of y 
+##        23        20
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In a data frame:
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~ r linenumbers
+dtf <- data.frame(x = c(x1, x2), 
+                 printer = rep(c("Printer1", "Printer2"), 
+                               c(length(x1), length(x2))))
+t.test(x ~ printer, var.equal = TRUE, alternative = "two.sided", mu = 0, data = dtf)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## 
+## 	Two Sample t-test
+## 
+## data:  x by printer
+## t = 2.4396, df = 18, p-value = 0.02528
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  0.4164695 5.5835305
+## sample estimates:
+## mean in group Printer1 mean in group Printer2 
+##                     23                     20
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+# Visualization
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~ r linenumbers
+boxplot(x ~ printer, data = dtf, horizontal = TRUE, notch = TRUE)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+![](figure/unnamed-chunk-12-1.png)
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~ r linenumbers
+library(ggplot2)
+ggplot(dtf) + 
+  geom_boxplot(aes(printer, x, fill = printer), notch = TRUE) + 
+  coord_flip()
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+![](figure/unnamed-chunk-13-1.png)
+
+# Unequal variances
+
+If the variances of the two populations are unequal:
+
+$$t = \frac{\bar x_d - \mu_d}{\sqrt{\frac{s_1^2}{n} + \frac{s_2^2}{m}}}$$
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~ r linenumbers
+t_score <- (xbar_d - mu_d) /sqrt(s1^2/n + s2^2/m)
+t_score
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## [1] 2.439594
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~ r linenumbers
+(t_critical <- qt(0.95, df = n - 1 + m -1))
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## [1] 1.734064
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~ r linenumbers
+pt(t_score, df = n -1 + m -1, lower.tail = FALSE) * 2
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## [1] 0.02528077
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~ r linenumbers
+t.test(x ~ printer, var.equal = FALSE, alternative = "two.sided", mu = 0, data = dtf)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## 
+## 	Welch Two Sample t-test
+## 
+## data:  x by printer
+## t = 2.4396, df = 17.985, p-value = 0.02529
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  0.4163193 5.5836807
+## sample estimates:
+## mean in group Printer1 mean in group Printer2 
+##                     23                     20
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+# Test two variances
+
+How do we know if the variances are unequal? $F$-test.
+
+1. Question:
+  - $H_0: \frac{\sigma_1^2}{\sigma_2^2} = 1$
+  - $H_1: \frac{\sigma_1^2}{\sigma_2^2} \ne 1$
+  - Reject $H_0$?
+
+2. Collect data: done.
+
+3. Calculate a test statistic:
+
+$$F = \frac{s_\mathrm{large}^2}{s_\mathrm{small}^2}$$
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~ r linenumbers
+(F_score <- s2^2 / s1^2)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## [1] 1.058632
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~ r linenumbers
+(F_critical <- qf(0.975, df1 = m-1, df2 = n-1)) 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## [1] 4.025994
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~ r linenumbers
+# df1 numerator, df2 denominator
+pf(F_score, df1 = m-1, df2 = n-1) * 2
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## [1] 1.066247
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+4. Decision:
+
+As $F_\mathrm{score} < F_\mathrm{critical, 1 - \alpha}$, we cannot reject $H_0$ at a 95 % confidence interval.
+
+One step:
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~ r linenumbers
+var.test(x1, x2, ratio = 1, alternative = "two.sided")
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## 
+## 	F test to compare two variances
+## 
+## data:  x1 and x2
+## F = 0.94462, num df = 9, denom df = 9, p-value = 0.9338
+## alternative hypothesis: true ratio of variances is not equal to 1
+## 95 percent confidence interval:
+##  0.2346291 3.8030156
+## sample estimates:
+## ratio of variances 
+##          0.9446153
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+# $F$ distribution
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~ r linenumbers
+par(mfrow = c(1, 2))
+n <- c(5, 10, 15, 20)
+m <- n
+
+coln <- 1
+curve(df(x, df1 = n[1], df2 = m[1]), xlim = c(0, 5), ylim = c(0, 0.7), 
+      xlab = "F", ylab = "Density", col = coln)
+for (nn in n[2:4]) {
+  coln <- coln + 1
+  curve(df(x, df1 = nn, df2 = m[1]), add = TRUE, col = coln)
+}
+legend("topright", legend = paste(n, m[1]), col = 1:4, lty = 1)
+
+coln <- 1
+curve(df(x, df1 = n[1], df2 = m[1]), xlim = c(0, 5), ylim = c(0, 0.7),
+      xlab = "F", ylab = "Density", col = coln)
+for (mm in m[2:4]) {
+  coln <- coln + 1
+  curve(df(x, df1 = n[1], df2 = mm), add = TRUE, col = coln)
+}
+legend("topright", legend = paste(n[1], m), col = 1:4, lty = 1)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+![](figure/unnamed-chunk-17-1.png)
+
+# Paired samples
+
+When the samples are matched, treat the differences as a one-sample $t$ test.
+
+Demo: Weight-loss program.
+
+Ten people take part in a weight-loss program. They weigh in before starting the program, and weigh again after the one-month program. Do they really lose weight?
+
+1. Question:
+  - $H_0: \mu_\mathrm{diff} \le 0, H_1: \mu_\mathrm{diff} > 0$
+  - Question: reject $H_0$?
+
+2. Collect data.
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~ r linenumbers
+wl <- data.frame(
+  id = LETTERS[1:10],
+  before = c(198, 201, 210, 185, 204, 156, 167, 197, 220, 186),
+  after = c(194, 203, 200, 183, 200, 153, 166, 197, 215, 184))
+wl$diff <- wl$before - wl$after
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Table [weight-loss]: Data of the weight-loss program.
+
+
+|id | before| after| diff|
+|:--|------:|-----:|----:|
+|A  |    198|   194|    4|
+|B  |    201|   203|   -2|
+|C  |    210|   200|   10|
+|D  |    185|   183|    2|
+|E  |    204|   200|    4|
+|F  |    156|   153|    3|
+|G  |    167|   166|    1|
+|H  |    197|   197|    0|
+|I  |    220|   215|    5|
+|J  |    186|   184|    2|
+
+3. Calculate a test statistic.
+
+$$t = \frac{\bar d - \mu_d}{s_d}$$
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~ r linenumbers
+d_bar <- mean(wl$diff)
+mu_d <- 0
+s_d <- sd(wl$diff) / sqrt(nrow(wl))
+(t_score <- (d_bar - mu_d) / s_d)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## [1] 2.82414
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~ r linenumbers
+(t_critical <- qt(0.95, df = nrow(wl) - 1))
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## [1] 1.833113
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~ r linenumbers
+pt(t_score, df = nrow(wl) - 1, lower.tail = FALSE)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## [1] 0.009955992
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+4. Decision.
+
+As $t_\mathrm{score} > t_\mathrm{critical, 1-\alpha}$, we can reject $H_0$ at a confidence interval of 95%.
+
+One step:
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~ r linenumbers
+t.test(wl$before, wl$after, alternative = "greater", paired = TRUE)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## 
+## 	Paired t-test
+## 
+## data:  wl$before and wl$after
+## t = 2.8241, df = 9, p-value = 0.009956
+## alternative hypothesis: true difference in means is greater than 0
+## 95 percent confidence interval:
+##  1.017647      Inf
+## sample estimates:
+## mean of the differences 
+##                     2.9
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+# Distribution functions
+
+| Distribution                                                                                 | `p-`      | `q-`      | `d-`      | `r-`      |
+| :------------------------------------------------------------------------------------------- | :-------- | :-------- | :-------- | :-------- |
+| [Beta](http://rweb.stat.umn.edu/R/library/base/html/Beta.html)                               | `pbeta    ` | `qbeta    ` | `dbeta    ` | `rbeta    ` |
+| [Binomial](http://rweb.stat.umn.edu/R/library/base/html/Binomial.html)                       | `pbinom   ` | `qbinom   ` | `dbinom   ` | `rbinom   ` |
+| [Cauchy](http://rweb.stat.umn.edu/R/library/base/html/Cauchy.html)                           | `pcauchy  ` | `qcauchy  ` | `dcauchy  ` | `rcauchy  ` |
+| [Chi-Square](http://rweb.stat.umn.edu/R/library/base/html/Chisquare.html)                    | `pchisq   ` | `qchisq   ` | `dchisq   ` | `rchisq   ` |
+| [Exponential](http://rweb.stat.umn.edu/R/library/base/html/Exponential.html)                 | `pexp     ` | `qexp     ` | `dexp     ` | `rexp     ` |
+| [F](http://rweb.stat.umn.edu/R/library/base/html/FDist.html)                                 | `pf       ` | `qf       ` | `df       ` | `rf       ` |
+| [Gamma](http://rweb.stat.umn.edu/R/library/base/html/GammaDist.html)                         | `pgamma   ` | `qgamma   ` | `dgamma   ` | `rgamma   ` |
+| [Geometric](http://rweb.stat.umn.edu/R/library/base/html/Geometric.html)                     | `pgeom    ` | `qgeom    ` | `dgeom    ` | `rgeom    ` |
+| [Hypergeometric](http://rweb.stat.umn.edu/R/library/base/html/Hypergeometric.html)           | `phyper   ` | `qhyper   ` | `dhyper   ` | `rhyper   ` |
+| [Logistic](http://rweb.stat.umn.edu/R/library/base/html/Logistic.html)                       | `plogis   ` | `qlogis   ` | `dlogis   ` | `rlogis   ` |
+| [Log Normal](http://rweb.stat.umn.edu/R/library/base/html/Lognormal.html)                    | `plnorm   ` | `qlnorm   ` | `dlnorm   ` | `rlnorm   ` |
+| [Negative Binomial](http://rweb.stat.umn.edu/R/library/base/html/NegBinomial.html)           | `pnbinom  ` | `qnbinom  ` | `dnbinom  ` | `rnbinom  ` |
+| [Normal](http://rweb.stat.umn.edu/R/library/base/html/Normal.html)                           | `pnorm    ` | `qnorm    ` | `dnorm    ` | `rnorm    ` |
+| [Poisson](http://rweb.stat.umn.edu/R/library/base/html/Poisson.html)                         | `ppois    ` | `qpois    ` | `dpois    ` | `rpois    ` |
+| [Student t](http://rweb.stat.umn.edu/R/library/base/html/TDist.html)                         | `pt       ` | `qt       ` | `dt       ` | `rt       ` |
+| [Studentized Range](http://rweb.stat.umn.edu/R/library/base/html/Tukey.html)                 | `ptukey   ` | `qtukey   ` | `dtukey   ` | `rtukey   ` |
+| [Uniform](http://rweb.stat.umn.edu/R/library/base/html/Uniform.html)                         | `punif    ` | `qunif    ` | `dunif    ` | `runif    ` |
+| [Weibull](http://rweb.stat.umn.edu/R/library/base/html/Weibull.html)                         | `pweibull ` | `qweibull ` | `dweibull ` | `rweibull ` |
+| [Wilcoxon Rank Sum Statistic](http://rweb.stat.umn.edu/R/library/base/html/Wilcoxon.html)    | `pwilcox  ` | `qwilcox  ` | `dwilcox  ` | `rwilcox  ` |
+| [Wilcoxon Signed Rank Statistic](http://rweb.stat.umn.edu/R/library/base/html/SignRank.html) | `psignrank` | `qsignrank` | `dsignrank` | `rsignrank` |
+
+Every distribution that R handles has four functions. There is a root name, for example, the root name for the normal distribution is `norm`. This root is prefixed by one of the letters
+
+- `d` for "density", the density function (PDF).
+- `p` for "probability", the cumulative distribution function (CDF).
+- `q` for "quantile", the inverse of CDF.
+- `r` for "random", a random variable having the specified distribution
+
+Demo: Four functions for each distribution.
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~ r linenumbers
+x_axis <- c(-10, 10)
+# d
+curve(dnorm(x), xlim = x_axis)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+![](figure/unnamed-chunk-22-1.png)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~ r linenumbers
+curve(df(x, df1 = 5, df2 = 20), xlim = x_axis)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+![](figure/unnamed-chunk-22-2.png)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~ r linenumbers
+curve(dchisq(x, df = 5), xlim = x_axis)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+![](figure/unnamed-chunk-22-3.png)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~ r linenumbers
+# p
+curve(pnorm(x), xlim = x_axis)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+![](figure/unnamed-chunk-22-4.png)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~ r linenumbers
+curve(pf(x, df1 = 5, df2 = 20), xlim = x_axis)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+![](figure/unnamed-chunk-22-5.png)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~ r linenumbers
+curve(pchisq(x, df = 5), xlim = x_axis)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+![](figure/unnamed-chunk-22-6.png)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~ r linenumbers
+# q
+x_axis <- c(0, 1)
+curve(qnorm(x), xlim = x_axis)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+![](figure/unnamed-chunk-22-7.png)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~ r linenumbers
+curve(qf(x, df1 = 5, df2 = 20), xlim = x_axis)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+![](figure/unnamed-chunk-22-8.png)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~ r linenumbers
+curve(qchisq(x, df = 5), xlim = x_axis)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+![](figure/unnamed-chunk-22-9.png)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~ r linenumbers
+# r
+x_axis <- c(-10, 10)
+n <- 100
+hist(rnorm(n), xlim = x_axis)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+![](figure/unnamed-chunk-22-10.png)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~ r linenumbers
+hist(rf(n, df1 = 5, df2 = 20), xlim = x_axis)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+![](figure/unnamed-chunk-22-11.png)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~ r linenumbers
+hist(rchisq(n, df = 5), xlim = x_axis)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+![](figure/unnamed-chunk-22-12.png)
+
+Demo: Relationship between four distribution functions.
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~ r linenumbers
+# norm
+
+## d vs. p
+par(mfrow = c(2, 1))
+curve(dnorm(x), xlim = x_axis)
+curve(pnorm(x), xlim = x_axis)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+![](figure/unnamed-chunk-23-1.png)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~ r linenumbers
+## p vs. q
+par(mfrow = c(1, 2))
+curve(pnorm(x), xlim = c(-2, 2))
+curve(qnorm(x), ylim = c(-2, 2))
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+![](figure/unnamed-chunk-23-2.png)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~ r linenumbers
+## d vs. r
+par(mfrow = c(2, 1))
+curve(dnorm(x), xlim = x_axis)
+hist(rnorm(100), xlim = x_axis)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+![](figure/unnamed-chunk-23-3.png)
+
+# Assignments
+
+!!!note: Readings
+    
+    - Comparing Data Using Statistical Tests
+    - Probability and Sampling Distributions
+
+# Exercises
+
+!!! note: Cd in two rivers
+    A researcher is concerned in comparing the concentration of cadmium (Cd) in the sediment obtained from two rivers. Ten sampling points are chosen from each river, and the Cd concentration (mg/L) is measured as follows: 
+    
+    - River A: 1.91, 1.92, 1.95, 2.02, 1.90, 1.93, 1.94, 2.00, 2.00, 1.95
+    - River B: 1.60, 1.69, 1.62, 1.64, 1.66, 1.68, 1.76, 1.75, 1.71, 1.73
+    
+    Use a significance level of $\alpha = 0.05$ to carry out the analysis regarding the difference of mean concentration of Cd in the two rivers. 
+
+!!! note: Air pollution
+    Air pollution is studied during the summer and winter seasons in a city. Atomic absorption spectrophotometry is used for collecting $\mathrm{PM}_{10}$ with an average time of 24 hours. 28 records from summer and winter are as follows:
+    
+    - Summer: 37.71, 48.03, 67.87, 39.01, 38.33, 29.70, 53.66, 132.28, 66.31, 69.20, 78.17, 31.63, 66.73, 113.56, 123.40, 72.39, 51.85, 77.59, 30.30, 100.40, 132.98, 126.38, 31.82, 110.53, 38.41, 124.26, 53.62, 23.30
+    - Winter: 82.87, 138.25, 82.67, 46.08, 15.33, 30.78, 155.00, 61.75, 88.90, 38.47, 24.46, 14.29, 65.52, 63.33, 62.28, 65.87, 122.83, 50.18, 60.19, 28.28, 42.50, 49.68, 39.91, 37.94, 27.97, 45.34, 58.45, 43.30
+    
+    Do different seasons influence the concentration of $\mathrm{PM}_{10}$ in the air? Use a significance level of $\alpha = 0.05$ to carry out the analysis.
+
+!!! note: Groundwater TCE
+    Trichloroethylene (TCE) is reported by the EPA to be the most prevalent solvent contaminating groundwater at superfund sites in the United States. Exposure can result in effects to the immune and reproductive systems, liver, kidneys, central nervous system, and may affect fetal development during pregnancy. Long term exposures to TCE can increase the risk of kidney cancer. There is also evidencethat TCE exposure can increase the risk for non-Hodgkin’s lymphoma and liver cancer.
+    
+    The "tce" dataset shows the TCE concentrations (mg/L) at 10 randomly selected groundwater monitoring wells before remediation and the same wells after remediation. Download the tce.csv file from the Learning Mall. 
+    
+    Does the remediation have effect on the goundwater regarding the TCE concentration? Use a significance level of $\alpha = 0.05$ to carry out the analysis.
+
+!!! note: Four functions
+    Practice the distribution functions.
+
+    1. Plot the curves of the four functions for the $t$ distribution family, when $df = 3, 5, 15, 30$.
+    2. plot the curves of the four functions for the Weibull distribution.
+    3. Visualize the relationship between the `d-` function and the `p-` function, `p-` function and `q-` function, `d-` function and the `r-` function, for the $F$ distribution and $\chi^2$ distribution.
+<!-- Markdeep js: -->
+<script src="D:/Program Files/R/R-4.0.1/library/deepdown/js/deepdown.min.js" charset="utf-8"></script>
+<!-- Markdeep Options: -->
+<script>markdeepOptions={inlineCodeLang:'R', tocStyle:'short'};</script>
+
+<!-- FALLBACK: -->
+<style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace}</style>
+
+<script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible")</script>
+
+<!-- Inverse the color: -->
+<style>
+.md .inverse svg.diagram {
+  background: #333;
+  stroke: #FFF;
+  fill: #FFF;
+}
+
+.md .inverse svg.diagram .opendot {
+  fill: #333;
+}
+</style>
+
+<!-- Markdeep: --><style class="fallback">body{visibility:hidden}</style><script src="https://morgan3d.github.io/markdeep/latest/markdeep.min.js?" charset="utf-8"></script>
