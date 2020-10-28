@@ -12,6 +12,13 @@
 
 
 
+# Issues in Coursework 1
+
+## Submission requirements
+
+## Something confusing
+
+## How to correctly use R Markdown
 
 # Ice breaking
 
@@ -47,7 +54,6 @@ animation::clt.ani()
 1. Use the $z$ test and the $t$ test for two-sample hypothesis testing in environmental research. 
 2. Understand the $F$ test.
 3. Plot graphs to display the test results.
-4. Learn the R functions which are often used in distributions.
 
 # Revisit one-sample test
 
@@ -415,11 +421,11 @@ $$F = \frac{s_\mathrm{large}^2}{s_\mathrm{small}^2}$$
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~ r linenumbers
 # df1 numerator, df2 denominator
-pf(F_score, df1 = m-1, df2 = n-1) * 2
+pf(F_score, df1 = m-1, df2 = n-1, lower.tail = FALSE) * 2
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-## [1] 1.066247
+## [1] 0.9337528
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 4. Decision:
@@ -430,21 +436,22 @@ One step:
 
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~ r linenumbers
-var.test(x1, x2, ratio = 1, alternative = "two.sided")
+var.test(x2, x1, ratio = 1, alternative = "two.sided", conf.level = 0.95)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ## 
 ## 	F test to compare two variances
 ## 
-## data:  x1 and x2
-## F = 0.94462, num df = 9, denom df = 9, p-value = 0.9338
+## data:  x2 and x1
+## F = 1.0586, num df = 9, denom df = 9, p-value =
+## 0.9338
 ## alternative hypothesis: true ratio of variances is not equal to 1
 ## 95 percent confidence interval:
-##  0.2346291 3.8030156
+##  0.2629492 4.2620464
 ## sample estimates:
 ## ratio of variances 
-##          0.9446153
+##           1.058632
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 # $F$ distribution
@@ -572,152 +579,6 @@ t.test(wl$before, wl$after, alternative = "greater", paired = TRUE)
 ##                     2.9
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-# Distribution functions
-
-| Distribution                                                                                 | `p-`      | `q-`      | `d-`      | `r-`      |
-| :------------------------------------------------------------------------------------------- | :-------- | :-------- | :-------- | :-------- |
-| [Beta](http://rweb.stat.umn.edu/R/library/base/html/Beta.html)                               | `pbeta    ` | `qbeta    ` | `dbeta    ` | `rbeta    ` |
-| [Binomial](http://rweb.stat.umn.edu/R/library/base/html/Binomial.html)                       | `pbinom   ` | `qbinom   ` | `dbinom   ` | `rbinom   ` |
-| [Cauchy](http://rweb.stat.umn.edu/R/library/base/html/Cauchy.html)                           | `pcauchy  ` | `qcauchy  ` | `dcauchy  ` | `rcauchy  ` |
-| [Chi-Square](http://rweb.stat.umn.edu/R/library/base/html/Chisquare.html)                    | `pchisq   ` | `qchisq   ` | `dchisq   ` | `rchisq   ` |
-| [Exponential](http://rweb.stat.umn.edu/R/library/base/html/Exponential.html)                 | `pexp     ` | `qexp     ` | `dexp     ` | `rexp     ` |
-| [F](http://rweb.stat.umn.edu/R/library/base/html/FDist.html)                                 | `pf       ` | `qf       ` | `df       ` | `rf       ` |
-| [Gamma](http://rweb.stat.umn.edu/R/library/base/html/GammaDist.html)                         | `pgamma   ` | `qgamma   ` | `dgamma   ` | `rgamma   ` |
-| [Geometric](http://rweb.stat.umn.edu/R/library/base/html/Geometric.html)                     | `pgeom    ` | `qgeom    ` | `dgeom    ` | `rgeom    ` |
-| [Hypergeometric](http://rweb.stat.umn.edu/R/library/base/html/Hypergeometric.html)           | `phyper   ` | `qhyper   ` | `dhyper   ` | `rhyper   ` |
-| [Logistic](http://rweb.stat.umn.edu/R/library/base/html/Logistic.html)                       | `plogis   ` | `qlogis   ` | `dlogis   ` | `rlogis   ` |
-| [Log Normal](http://rweb.stat.umn.edu/R/library/base/html/Lognormal.html)                    | `plnorm   ` | `qlnorm   ` | `dlnorm   ` | `rlnorm   ` |
-| [Negative Binomial](http://rweb.stat.umn.edu/R/library/base/html/NegBinomial.html)           | `pnbinom  ` | `qnbinom  ` | `dnbinom  ` | `rnbinom  ` |
-| [Normal](http://rweb.stat.umn.edu/R/library/base/html/Normal.html)                           | `pnorm    ` | `qnorm    ` | `dnorm    ` | `rnorm    ` |
-| [Poisson](http://rweb.stat.umn.edu/R/library/base/html/Poisson.html)                         | `ppois    ` | `qpois    ` | `dpois    ` | `rpois    ` |
-| [Student t](http://rweb.stat.umn.edu/R/library/base/html/TDist.html)                         | `pt       ` | `qt       ` | `dt       ` | `rt       ` |
-| [Studentized Range](http://rweb.stat.umn.edu/R/library/base/html/Tukey.html)                 | `ptukey   ` | `qtukey   ` | `dtukey   ` | `rtukey   ` |
-| [Uniform](http://rweb.stat.umn.edu/R/library/base/html/Uniform.html)                         | `punif    ` | `qunif    ` | `dunif    ` | `runif    ` |
-| [Weibull](http://rweb.stat.umn.edu/R/library/base/html/Weibull.html)                         | `pweibull ` | `qweibull ` | `dweibull ` | `rweibull ` |
-| [Wilcoxon Rank Sum Statistic](http://rweb.stat.umn.edu/R/library/base/html/Wilcoxon.html)    | `pwilcox  ` | `qwilcox  ` | `dwilcox  ` | `rwilcox  ` |
-| [Wilcoxon Signed Rank Statistic](http://rweb.stat.umn.edu/R/library/base/html/SignRank.html) | `psignrank` | `qsignrank` | `dsignrank` | `rsignrank` |
-
-Every distribution that R handles has four functions. There is a root name, for example, the root name for the normal distribution is `norm`. This root is prefixed by one of the letters
-
-- `d` for "density", the density function (PDF).
-- `p` for "probability", the cumulative distribution function (CDF).
-- `q` for "quantile", the inverse of CDF.
-- `r` for "random", a random variable having the specified distribution
-
-Demo: Four functions for each distribution.
-
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~ r linenumbers
-x_axis <- c(-10, 10)
-# d
-curve(dnorm(x), xlim = x_axis)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-![](figure/unnamed-chunk-22-1.png)
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~ r linenumbers
-curve(df(x, df1 = 5, df2 = 20), xlim = x_axis)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-![](figure/unnamed-chunk-22-2.png)
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~ r linenumbers
-curve(dchisq(x, df = 5), xlim = x_axis)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-![](figure/unnamed-chunk-22-3.png)
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~ r linenumbers
-# p
-curve(pnorm(x), xlim = x_axis)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-![](figure/unnamed-chunk-22-4.png)
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~ r linenumbers
-curve(pf(x, df1 = 5, df2 = 20), xlim = x_axis)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-![](figure/unnamed-chunk-22-5.png)
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~ r linenumbers
-curve(pchisq(x, df = 5), xlim = x_axis)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-![](figure/unnamed-chunk-22-6.png)
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~ r linenumbers
-# q
-x_axis <- c(0, 1)
-curve(qnorm(x), xlim = x_axis)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-![](figure/unnamed-chunk-22-7.png)
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~ r linenumbers
-curve(qf(x, df1 = 5, df2 = 20), xlim = x_axis)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-![](figure/unnamed-chunk-22-8.png)
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~ r linenumbers
-curve(qchisq(x, df = 5), xlim = x_axis)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-![](figure/unnamed-chunk-22-9.png)
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~ r linenumbers
-# r
-x_axis <- c(-10, 10)
-n <- 100
-hist(rnorm(n), xlim = x_axis)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-![](figure/unnamed-chunk-22-10.png)
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~ r linenumbers
-hist(rf(n, df1 = 5, df2 = 20), xlim = x_axis)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-![](figure/unnamed-chunk-22-11.png)
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~ r linenumbers
-hist(rchisq(n, df = 5), xlim = x_axis)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-![](figure/unnamed-chunk-22-12.png)
-
-Demo: Relationship between four distribution functions.
-
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~ r linenumbers
-# norm
-
-## d vs. p
-par(mfrow = c(2, 1))
-curve(dnorm(x), xlim = x_axis)
-curve(pnorm(x), xlim = x_axis)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-![](figure/unnamed-chunk-23-1.png)
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~ r linenumbers
-## p vs. q
-par(mfrow = c(1, 2))
-curve(pnorm(x), xlim = c(-2, 2))
-curve(qnorm(x), ylim = c(-2, 2))
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-![](figure/unnamed-chunk-23-2.png)
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~ r linenumbers
-## d vs. r
-par(mfrow = c(2, 1))
-curve(dnorm(x), xlim = x_axis)
-hist(rnorm(100), xlim = x_axis)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-![](figure/unnamed-chunk-23-3.png)
 
 # Assignments
 
@@ -750,15 +611,8 @@ hist(rnorm(100), xlim = x_axis)
     The "tce" dataset shows the TCE concentrations (mg/L) at 10 randomly selected groundwater monitoring wells before remediation and the same wells after remediation. Download the tce.csv file from the Learning Mall. 
     
     Does the remediation have effect on the goundwater regarding the TCE concentration? Use a significance level of $\alpha = 0.05$ to carry out the analysis.
-
-!!! note: Four functions
-    Practice the distribution functions.
-
-    1. Plot the curves of the four functions for the $t$ distribution family, when $df = 3, 5, 15, 30$.
-    2. plot the curves of the four functions for the Weibull distribution.
-    3. Visualize the relationship between the `d-` function and the `p-` function, `p-` function and `q-` function, `d-` function and the `r-` function, for the $F$ distribution and $\chi^2$ distribution.
 <!-- Markdeep js: -->
-<script src="D:/Program Files/R/R-4.0.1/library/deepdown/js/deepdown.min.js" charset="utf-8"></script>
+<script src="D:/Program Files/R/R-4.0.2/library/deepdown/js/deepdown.min.js" charset="utf-8"></script>
 <!-- Markdeep Options: -->
 <script>markdeepOptions={inlineCodeLang:'R', tocStyle:'short'};</script>
 
