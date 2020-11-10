@@ -1,0 +1,550 @@
+<meta charset="utf-8">
+
+**Week 09**
+ ANOVA
+ Dr. Peng Zhao
+ 2020-11-11
+
+
+
+
+
+
+
+
+# Ice breaking
+
+Learn R with the **swirl** packages.
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+install.packages("swirl")
+library(swirl)
+swirl()
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+# Q & A
+
+!!! Tip: Q1. What should I do if I don't understand what you are talking about?
+    
+
+    A1. Only half of this semester has passed. Attendance. Ask questions. Exercises. Don't try learning everything in the final week. Revisit the [syllabus](https://pzhao.org/teaching/env203-2020/w01/). Join [external trainings](https://libcal.lib.xjtlu.edu.cn/calendar/workshops?cid=4714&t=d&d=0000-00-00&cal=4714&inc=0).
+
+!!! Tip: Q2. How could I improve the work file?
+    
+
+    A2. Google’s R Style Guide ([1](https://google.github.io/styleguide/Rguide.html), [2](http://web.stanford.edu/class/cs109l/unrestricted/resources/google-style.html)). [R Markdown](https://rmarkdown.rstudio.com/).
+
+# Objectives
+
+1. Understand the concept of the analysis of variance.
+2. Carry out one-way and two-way ANOVA in Environmental Science.
+3. Learn how to choose the hypothesis tests we learnt so far.
+
+# A more complicated study
+
+Demo: Rats on diets
+
+A biologist  studies the weight gain of male lab rats on diets over a 4-week period. Three different diets are applied. The results are shown in Table [tab-rats].
+
+Table [tab-rats]: Weight gain of male lab rats
+
+| Diet 1 | Diet2 | Diet3 |
+| ------ | ----- | ----- |
+| 90     | 120   | 125   |
+| 95     | 125   | 130   |
+| 100    | 130   | 135   |
+
+Do the diets have influence on the weight gain?
+
+If we do the $t$-test between each two groups...
+
+Table [tab-alpha]: The increasing number of samples and the probability that at least one of the $t$-tests results in a significant difference
+
+| Number of Samples | Number of Tests | $P$  |
+| ----------------- | --------------- | ---- |
+| 3                 | 3               | 0.14 |
+| 4                 | 6               | 0.26 |
+| 5                 | 10              | 0.40 |
+| 6                 | 15              | 0.54 |
+| 7                 | 21              | 0.66 |
+| 8                 | 28              | 0.76 |
+| 9                 | 36              | 0.84 |
+| 10                | 45              | 0.90 |
+
+Instead of $t$-test for testing the means, we test the variances. Remember [$F$-test](https://pzhao.org/teaching/env203-2020/w07/#testtwovariances)?
+
+# One-way ANOVA
+
+Analysis of variance (ANOVA)
+: One of the most widely used statistical techniques. The test partitions the total variation present in a set of data into two or more components. Associated with each of these components is a specific source of variation, so that it is possible to ascertain the contributions of each of these sources to the total variation.
+
+One-way ANOVA
+: A test that concerns only one independent variable ($x$), which is called a factor and has multiple levels (settings, groups).
+
+
+
+1. Hypotheses and question:
+   - $H_0: \mu _1 = \mu _2 = \mu _3 = ... = \mu_k$
+   - $H_1$: at least one mean is different from others
+   - Reject $H_0$?
+   
+2. Collect data. Suppose we have $k$ samples. The $i$-th sample has $n_i$ observations. 
+
+Table [tab-dataset]: A data set which has only one independent variable with of multiple levels
+
+|      | Level 1      | Level 2      | Level 3     | ...  | Level $k$    |
+| ---- | ------------ | ------------ | ----------- | ---- | ------------ |
+|      | $x_{1,1}$    | $x_{2, 1}$   | $x_{3,1}$   | ...  | $x_{k,1}$    |
+|      | $x_{1,2}$    | $x_{2,2}$    | $x_{3,2}$   | ...  | $x_{k,2}$    |
+|      | $x_{1,3}$    | $x_{2, 3}$   | $x_{3,3}$   | ...  | $x_{k, 3}$   |
+|      | .            | .            | .           | .    | .            |
+|      | .            | $x_{2, n_2}$ | .           | .    | .            |
+|      | .            |              | $x_{3,n_3}$ | .    | .            |
+|      | $x_{1, n_1}$ |              |             | ...  | $x_{k, n_k}$ |
+| Mean | $\bar x_1$   | $\bar x_2$   | $\bar x_3$  |      | $\bar x_k$   |
+
+
+3. Calculate a test statistic: $F$-test.
+
+   According to Table [tab-anova].
+
+Table [tab-anova]: The Entries of One-Way ANOVA Table
+
+| Source          | $df$           | $SS$                                                         | $MS$                        | $F$                     |
+| --------------- | -------------- | ------------------------------------------------------------ | --------------------------- | ----------------------- |
+| Within samples  | $df_W = N - k$ | $SS_W = \sum_{i=1}^{k} \sum_{j=1}^{n_i}(x_{ij}-\bar x_i)^2$  | $MS_W = \frac{SS_W}{df_W}$   | $F = \frac{MS_B}{MS_W}$ |
+| Between samples | $df_B = k - 1$ | $SS_B = \sum_{i = 1}^k n_i(\bar x_i - \bar x)^2$             | $MS_B = \frac {SS_B}{df_B}$ |                         |
+| Total           | $df_T = N - 1$ | $SS_T = \sum_{i = 1}^k \sum _{j=1}^{n_i} (x_{ij}-\bar x) ^2$ | $MS_T = \frac{SS_T}{df_T}$ |                         |
+
+$N$
+: The total number of the observations. $N = \sum n_i$
+
+$x_{ij}$
+: The $j$-th observation in the $i$-th sample
+
+$\bar x$
+: Overall/grand mean of all the observations. $\bar x = \frac{\sum x_{ij}}{N}$
+
+$MS$
+:  Mean ~~of~~ square~~d deviation from the mean~~
+
+$SS$
+: Sum ~~of~~ square~~d deviation from the mean~~
+
+$df$
+: degrees of freedom
+
+If $H_0$ is true, then any difference you see between the $k$ samples are due to chance, i.e. $MS_B = MS_T = MS_W$. ==> $F$-test.
+
+From Table [tab-anova], we can get:
+
+$$df_T = df_W+ df_B$$
+
+$$SS_T = SS_W  + SS_B$$
+
+which can be used for double-check.
+
+
+4. Decision. 
+
+
+
+Demo: Rats on diets
+
+1. Hypotheses and question:
+   - $H_0: \mu _1 = \mu _2 = \mu _3$
+   - $H_1$:  at least one mean is different from others
+   - Reject $H_0$?
+
+2. Collect data:
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+dtf <- data.frame(diet1 = c(90, 95, 100),
+                  diet2 = c(120, 125, 130),
+                  diet3 = c(125, 130, 135))
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+3. Calculate a test statistic: $F$ test.
+
+!!!
+    Calculate them (10 minutes) and fill in the ANOVA table. 
+
+Table [tab-anova-tats]: The ANOVA  table for the weight gain experiment
+
+| Source            | $df$ | $SS$ | $MS$ | $F$  |
+| ----------------- | ---- | ---- | ---- | ---- |
+| Within samples  |      |      |      |      |
+| Between samples |      |      |      |      |
+| Total           |      |      |      |      |
+
+
+4. Decision. 
+
+
+# Understanding ANOVA
+
+## The model
+
+$$
+x_{i j}=\mu+\tau_{j}+\epsilon_{i j} ; \quad i=1,2, \ldots, n_{j} ; \quad j=1,2, \ldots, k
+$$
+
+$\mu$ 
+: The grand mean. The mean of all $k$ population means.
+
+$\tau_{j}$
+: The treatment effect. The difference between the mean of the *j*-th population and the grand mean ($\bar x_j - \mu$).
+
+$\epsilon_{i j}$
+: The error term. The amount by which an individual measurement differs from the mean of the population to which it belongs ($x_{ij} - \bar x_j$).
+
+
+$H_{0}: \mu_{1}=\mu_{2}=\cdots=\mu_{k}$
+
+$H_{A}:$ not all $\mu_{k}$ are equal
+
+## Assumptions
+
+- The $k$ sets of observed data constitute $k$ independent random samples from the respective populations.
+- Each of the populations from which the samples come is normally distributed with mean $\mu_{j}$ and variance $\sigma_{j}^{2}$. 
+- Each of the populations has the same variance. That is, $\sigma_{1}^{2}=\sigma_{2}^{2}=\cdots=\sigma_{k}^{2}=\sigma^{2},$ the common variance.
+- The $\tau_{j}$ are unknown constants and $\sum \tau_{j}=0$ since the sum of all deviations of the $\mu_{j}$ from their mean, $\mu,$ is zero.
+- The $\epsilon_{i j}$ have a mean of $0,$ since the mean of $x_{i j}$ is $\mu_{j}$
+- The $\epsilon_{i j}$ have a variance equal to the variance of the $x_{i j},$ since the $\epsilon_{i j}$ and $x_{i j}$ differ only by a constant; that is, the error variance is equal to $\sigma^{2},$ the common variance specified in the assumption above.
+- The $\epsilon_{i j}$ are normally (and independently) distributed.
+
+## Estimating the statistics
+
+The population variance $\sigma^{2}$ may be estimated in two ways:
+
+- The first way uses the $S S W$: $\sigma ^2 = MS_W = \frac{SS_W}{df_W}$
+- The second way uses the $S S B$: $\sigma ^2 = MS_B = \frac {SS_B}{df_B}$
+
+We can compare the two estimates of the population variance using the variance ratio: $F_\mathrm {score} = MSB/MSW$. The numerator degrees of freedom is $k − 1$. The denominator degrees of freedom is $N - k$.
+
+# Repeated measures
+
+Just like paired $t$-test, sometimes we compare matched samples with ANOVA, which is called *repeated measures*, or *randomized blocks*, or *within subjects*.
+
+Suppose we have $k$ samples. Each sample has $n$ observations. 
+
+
+
+Table: A data set which has repeated measures with only one independent variable with of multiple levels
+
+| ID   | Level 1    | Level 2    | Level 3     | ...  | Level $k$  |
+| ---- | ---------- | ---------- | ----------- | ---- | ---------- |
+| 1    | $x_{1,1}$  | $x_{2, 1}$ | $x_{3,1}$   | ...  | $x_{k,1}$  |
+| 2    | $x_{1,2}$  | $x_{2,2}$  | $x_{3,2}$   | ...  | $x_{k,2}$  |
+| 3    | $x_{1,3}$  | $x_{2, 3}$ | $x_{3,3}$   | ...  | $x_{k, 3}$ |
+| .    | .          | .          | .           | .    | .          |
+| n    | $x_{1, n}$ | $x_{2, n}$ | $x_{3, n}$. | ...  | $x_{k, n}$ |
+
+
+
+Table [tab-anova-matched]: The Entries of One-Way ANOVA Table for Repeated Measures
+
+| Source           | $df$                      | $SS$                                                       | $MS$                                         | $F$                           |
+| ---------------- | ------------------------- | ---------------------------------------------------------- | -------------------------------------------- | ----------------------------- |
+| Within samples   | $df_W = nk - k$           | $SS_W = \sum_{i=1}^{k} \sum_{j=1}^{n}(x_{ij}-\bar x_i)^2$  | $MS_W = \frac{SS_W}{df_W}$                   | $F = \frac{MS_B}{MS_{Wcorr}}$ |
+| Between samples  | $df_B = k - 1$            | $SS_B = \sum_{i = 1}^k n(\bar x_i - \bar x)^2$             | $MS_B = \frac {SS_B}{df_B}$                  |                               |
+| Subjects (Row)   | $df_S = n-1$              | $SS_S = k\sum _{j=1}^{n} (\bar x_j - \bar x)$              |                                              |                               |
+| Within Corrected | $df_{Wcorr} = df_W- df_S$ | $SS_{Wcorr} = SS_W-SS_S$                                   | $MS_{Wcorr} = \frac{SS_{Wcorr}}{df_{Wcorr}}$ |                               |
+| Total            | $df_T = nk - 1$           | $SS_T = \sum_{i = 1}^k \sum _{j=1}^{n} (x_{ij}-\bar x) ^2$ | $MS_T = \frac{SS_T}{df_T}$                   |                               |
+
+Demo: [Weight-loss program](https://pzhao.org/teaching/env203-2020/w07/#pairedsamples)
+
+| id   | before | one month | two months | three months |
+| --- | ----- | -------- | ---------- | ------------ |
+| A    |    198 |       194 | 191        | 188          |
+| B    |    201 |       203 | 200        | 196          |
+| C    |    210 |       200 | 192        | 188          |
+| D    |    185 |       183 | 180        | 178          |
+| E    |    204 |       200 | 195        | 191          |
+| F    |    156 |       153 | 150        | 145          |
+| G    |    167 |       166 | 167        | 166          |
+| H    |    197 |       197 | 195        | 192          |
+| I    |    220 |       215 | 209        | 205          |
+| J    |    186 |       184 | 179        | 175          |
+
+Is the weight-loss program effective?
+
+!!!
+    Follow the steps and fill in the ANOVA table (15 minutes).
+
+1. Hypotheses and question:
+   - $H_0: \mu_1 = \mu_2 = \mu_3$
+   - $H_1:$ Not $H_0$
+   - Question: Reject $H_0$?
+2. Collect data
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+dtf <- data.frame(
+  # id = LETTERS[1:10],
+  before = c(198, 201, 210, 185, 204, 156, 167, 197, 220, 186),
+  one = c(194, 203, 200, 183, 200, 153, 166, 197, 215, 184),
+  two = c(191, 200, 192, 180, 195, 150, 167, 195, 209, 179),
+  three = c(188, 196, 188, 178, 191, 145, 166, 192, 205, 175)
+)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+3. Calculate a test statistic.
+
+Table [tab-anova-wl]: The ANOVA  table for the Weight-loss program
+
+| Source           | $df$        | $SS$        | $MS$        | $F$         |
+| ---------------- | ----------- | ----------- | ----------- | ----------- |
+| Within samples   |      |      |      |      |
+| Between samples  |      |      |      |             |
+| Subjects (Row)   |      |      |             |             |
+| Within Corrected |      |      |      |             |
+| Total            |      |      |     |             |
+
+4. Decision.
+
+   
+
+# Two-way ANOVA
+
+Demo: Rats on diets
+
+A biologist  studies the weight gain of lab rats dependently on diets and gender over a 4-week period. Three different diets are applied. The results are shown in Table [tab-rats2]. Do diet and gender have an effect on weight gain?
+
+Table [tab-rats2]: Weight gain of male and female lab rats
+
+|        | Diet 1 | Diet2 | Diet3 |
+| ------ | ------ | ----- | ----- |
+| Male   | 90     | 120   | 125   |
+|        | 95     | 125   | 130   |
+|        | 100    | 130   | 135   |
+| Female | 75     | 100   | 118   |
+|        | 78     | 118   | 125   |
+|        | 90     | 112   | 132   |
+
+Can we apply a one-way ANOVA for diet effect, then another one-way ANOVA for gender effect?
+
+Interaction (Figure [fig-interaction]).
+
+![](figure/unnamed-chunk-5-1.png)
+
+Figure [fig-interaction]: The concept of interaction
+
+A
+: 
+
+ - No significant effect of diet,
+ - No significant effect of gender,
+ - No interaction
+
+B
+: 
+ - No significant effect of diet,
+ - Effect of gender,
+ - No interaction
+
+C
+: 
+ - Effect of diet,
+ - Effect of gender,
+ - No interaction
+
+D
+: 
+ - Effect of diet in males
+ - No significant effect of diet in females,
+ - Effect of gender,
+ - Interaction (positive)
+
+E
+: 
+ - Effect of diet in males,
+ - No significant effect of diet in females,
+ - Effect of gender,
+ - Interaction (negative)
+
+F
+: 
+ - Effect of diet in male,
+ - Effect of diet in female,
+ - Effect of gender,
+ - Interaction (negative)
+
+Table [tab-dataset-two]: A data set which has two independent variable with of multiple levels. Suppose we have $K$ levels for independent variable 1 (columns) and $M$ categories for independent variable 2. 
+
+|            | Level 1      | Level 2      | ...  | Level $k$ | ...  | Level $K$     |
+| ---------- | ------------ | ------------ | ---- | --------- | ---- | ------------- |
+| Category 1 | $x_{1,1,1}$  | $x_{1,2,1}$  | ...  | $x_{1,k,1}$   | ...  | $x_{1, K, 1}$ |
+|            | $x_{1,1,2}$  | $x_{1,2,2}$  | ...  | $x_{1,k,2}$   | ...  | $x_{1,K,2}$   |
+|            | ...          | ...          | ...  | ...           | ...  | ...           |
+|            | $x_{1,1, j}$ | $x_{1,2, j}$ | ...  | $x_{1,k, j}$  | ...  | $x_{1,K,j}$   |
+|            | ...          | ...          | ...  | ...           | ...  | ...           |
+|            | $x_{1,1, J}$ | $x_{1,2, J}$ | ...  | $x_{1,k, J}$  | ...  | $x_{1,K,J}$   |
+| Category 2 | $x_{2,1,1}$  | $x_{2,2,1}$  | ...  | $x_{2,k,1}$   | ...  | $x_{2, K, 1}$ |
+|            | $x_{2,1,2}$  | $x_{2,2,2}$  | ...  | $x_{2,k,2}$   | ...  | $x_{2,K,2}$   |
+|            | ...          | ...          | ...  | ...           | ...  | ...           |
+|            | $x_{2,1, j}$ | $x_{2,2, j}$ | ...  | $x_{2,k, j}$  | ...  | $x_{2,K,j}$   |
+|            | ...          | ...          | ...  | ...           | ...  | ...           |
+|            | $x_{2,1, J}$ | $x_{2,2, J}$ | ...  | $x_{2,k, J}$  | ...  | $x_{2,K,J}$   |
+| ...        | ...          | ...          | ...  | ...           | ...  | ...           |
+| Category m | $x_{m,1,1}$  | $x_{m,2,1}$  | ...  | $x_{m,k,1}$   | ...  | $x_{m, K, 1}$ |
+|            | $x_{m,1,2}$  | $x_{m,2,2}$  | ...  | $x_{m,k,2}$   | ...  | $x_{m,K,2}$   |
+|            | ...          | ...          | ...  | ...           | ...  | ...           |
+|            | $x_{m,1, j}$ | $x_{m,2, j}$ | ...  | $x_{m,k, j}$  | ...  | $x_{m,K,j}$   |
+|            | ...          | ...          | ...  | ...           | ...  | ...           |
+|            | $x_{m,1, J}$ | $x_{m,2, J}$ | ...  | $x_{m,k, J}$  | ...  | $x_{m,K,J}$   |
+| ...        | ...          | ...          | ...  | ...           | ...  | ...           |
+| Category M | $x_{M,1,1}$  | $x_{M,2,1}$  | ...  | $x_{M,k,1}$   | ...  | $x_{M, K, 1}$ |
+|            | $x_{M,1,2}$  | $x_{M,2,2}$  | ...  | $x_{M,k,2}$   | ...  | $x_{M,K,2}$   |
+|            | ...          | ...          | ...  | ...           | ...  | ...           |
+|            | $x_{M,1, j}$ | $x_{M,2, j}$ | ...  | $x_{M,k, j}$  | ...  | $x_{M,K,j}$   |
+|            | ...          | ...          | ...  | ...           | ...  | ...           |
+|            | $x_{M,1, J}$ | $x_{M,2, J}$ | ...  | $x_{M,k, J}$  | ...  | $x_{M,K,J}$   |
+
+
+
+Table [tab-anova-two]: The Entries of Two-Way ANOVA Table
+
+| Source          | $df$             | $SS$                                                         | $MS$                        | $F$                       |
+| --------------- | ---------------- | ------------------------------------------------------------ | --------------------------- | ------------------------- |
+| V1 (row)        | $df_r = M-1$     | $SS_r = \sum_{m = 1}^{M} (\bar x_{m} - \bar x)^2$            | $MS_r = \frac{SS_r}{df_r}$  | $F_r = \frac{MS_r}{MS_W}$ |
+| V2 (column)     | $df_c = K - 1$   | $SS_c = \sum_{k = 1}^K (\bar x_k - \bar x)^2$                | $MS_c = \frac{SS_c}{df_c}$  | $F_c = \frac{MS_c}{MS_W}$ |
+| Interaction     | $df_I=df_r df_c$ | $SS_I = SS_B-SS_-SS_r$                                       | $MS_I = \frac{SS_I}{df_I}$  | $F_I = \frac{MS_I}{MS_W}$ |
+| Within samples  | $df_W = MK(J-1)$ | $SS_W = \sum_{m=1}^{M} \sum_{k=1}^{K}(x_{m,k,j}-\bar x_{m,k})^2$ | $MS_W = \frac{SS_W}{df_W}$  |                           |
+| Between samples | $df_B = MK - 1$  | $SS_B = J\sum_{m = 1}^M \sum_{k=1}^{K}(\bar x_{m,k} - \bar x)^2$ | $MS_B = \frac {SS_B}{df_B}$ |                           |
+| Total           | $df_T = MKJ - 1$ | $SS_T = \sum(x-\bar x) ^2$                                   | $MS_T = \frac{SS_T}{df_T}$  |                           |
+
+!!!
+    Fill in the ANOVA table on the basis of the following data (15 minutes).
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+dtf <- data.frame(
+  w = c(90,95,100,75,78,90,120,125,130,100,118,112,125,130,135,118,125,132),
+  diet = rep(c("Diet1", "Diet2", "Diet3"), each = 6),
+  gender = rep(c("Male", "Female"), each = 3)
+)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Table [tab-anova-wg]: The ANOVA  table for the weight gain experiment
+
+| Source          | $df$   | $SS$   | $MS$   | $F$   |
+| --------------- | ------ | ------ | ------ | ----- |
+| V1 (row)        |      |      |      |      |
+| V2 (column)     |      |      |      |      |
+| Interaction     |      |      |      |      |
+| Within samples  |      |      |      |       |
+| Between samples |      |      |      |       |
+| Total           |      |      |   |       |
+
+# Choose the hypothesis tests
+
+- One-sample test: Test the difference between a population mean and a hypothesized value.
+  - One-sample $z$ test
+  - One-sample $t$ test
+  
+- Two-sample test:  Test the difference between two population means.
+  - Two-sample $z$ test
+  - Two-sample $t$ test
+    - un-paired
+      - equal variance: tests two sample means drawn independently, both of which have similar variances
+      - unequal variance – tests two sample means drawn independently, both of which have different variances
+    - Paired – tests the means of paired or dependent samples
+  
+- Multiple-sample test: Test the difference between more than two population means.
+
+  - One-way ANOVA
+
+    - un-matched
+    - matched (repeated measures)
+
+  - Two-way ANOVA
+
+    
+
+
+![](figure/diff_means.png)
+
+
+***More hypothesis tests are coming soon...***
+
+# Assignments
+
+!!! note: Readings
+    
+
+    - Inference on More than Two Populations
+    - Role play: *Manga Guide to Statistics: Hypothesis Test*
+    
+    ```r
+    groups <- paste0(LETTERS[1:7], rep(c(1, 4, 7), each = 7))
+    groups <- groups[!groups %in% c("A1", "B4", "C7", "D1", "D7")]
+    sample(groups, 1)
+    ```
+
+!!! note: Haematocrit measurements
+    
+
+    Water from three sources in Suzhou – Dushu Lake, Jinji Lake and control – were fed to Sprague-Dawley rats and the level of packed red blood cells after centrifugation (called the *haematocrit*) was measured after 48 hours. The results were as follows:
+    
+    - Control: 38, 40, 32, 36, 40, 40, 38, 40, 38, 40, 36, 40, 40, 35, 45
+    - Dushu Lake: 56, 60, 50, 50, 50, 35, 40, 40, 55, 35
+    - Jinji Lake: 40, 42, 38, 46, 36
+    
+    Are the haematocrit measurements the same for all water sources? Answer the question with the correct hypothesis test step by step.
+    
+    Instructions:
+    
+    1. Make your hypotheses for $H_0$ and $H_1$.
+    2. Organize the data in a proper way.
+    3. Fill in the ANOVA table and calculate the test statistics.
+    4. Draw the conclusion with an explaination.
+
+!!! note: egg mass production
+    
+    A scientist manipulated the density of adults limpets within enclosures (6, 12 and 24 individuals per enclosure) during two seasons (winter-spring and summer-autumn) so as to investigate the effects of adult density and season on egg mass production. Three replicate enclosures per density/season combination were used, and both density and season were considered fixed factors. Use hypothesis test step-by-step to study if the adult density and the season have effect on egg mass production. 
+    
+    Instructions:
+    
+    1. Make your hypotheses for $H_0$ and $H_1$.
+    2. Download the data quinn.csv from the Learning Mall.
+    3. Fill in the ANOVA table and calculate the test statistics.
+    4. Draw the conclusion with an explaination.
+
+!!! note: Immune response
+    
+    A researcher studies the immune response to a particular angigen. Three different preparations of antigen are each administered to 10 subjects on three separate occasions and the antibody titre (arbitrary units) measured. Use hypothesis test step-by-step to study if there is a difference between the values in three groups. 
+    
+    Instructions:
+    
+    1. Make your hypotheses for $H_0$ and $H_1$.
+    2. Download the data immune.xlsx from the Learning Mall.
+    3. Fill in the ANOVA table and calculate the test statistics.
+    4. Draw the conclusion with an explaination.
+<!-- Markdeep js: -->
+<script src="D:/Program Files/R/R-4.0.1/library/deepdown/js/deepdown-doc.js" charset="utf-8"></script>
+<!-- Markdeep Options: -->
+<script>markdeepOptions={inlineCodeLang:"R", tocStyle:"short"};</script>
+
+<!-- FALLBACK: -->
+<style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace}</style>
+
+<script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible")</script>
+
+<!-- Inverse the color: -->
+<style>
+.md .inverse svg.diagram {
+  background: #333;
+  stroke: #FFF;
+  fill: #FFF;
+}
+
+.md .inverse svg.diagram .opendot {
+  fill: #333;
+}
+</style>
+
+<!-- Markdeep: --><style class="fallback">body{visibility:hidden}</style><script src="https://pzhao.org/js/deepdown-doc.js?" charset="utf-8"></script>
