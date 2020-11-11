@@ -31,7 +31,7 @@ swirl()
 
 !!! Tip: Q2. How could I improve the work file?
     
-    A2. Google’s R Style Guide ([1](https://google.github.io/styleguide/Rguide.html), [2](http://web.stanford.edu/class/cs109l/unrestricted/resources/google-style.html)). [R Markdown](https://rmarkdown.rstudio.com/).
+    A2. [Efficient collaboration](https://csgillespie.github.io/efficientR/collaboration.html). Google’s R Style Guide ([1](https://google.github.io/styleguide/Rguide.html), [2](http://web.stanford.edu/class/cs109l/unrestricted/resources/google-style.html)). [R Markdown](https://rmarkdown.rstudio.com/).
 
 # Objectives
 
@@ -400,8 +400,7 @@ summary(wg_aov)
 ## diet         2   2150    1075      43 0.000277 ***
 ## Residuals    6    150      25                     
 ## ---
-## Signif. codes:  
-## 0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 # Understanding ANOVA
@@ -471,7 +470,7 @@ Table [tab-anova-matched]: The Entries of One-Way ANOVA Table for Repeated Measu
 | ---------------- | ------------------------- | ---------------------------------------------------------- | -------------------------------------------- | ----------------------------- |
 | Within samples   | $df_W = nk - k$           | $SS_W = \sum_{i=1}^{k} \sum_{j=1}^{n}(x_{ij}-\bar x_i)^2$  | $MS_W = \frac{SS_W}{df_W}$                   | $F = \frac{MS_B}{MS_{Wcorr}}$ |
 | Between samples  | $df_B = k - 1$            | $SS_B = \sum_{i = 1}^k n(\bar x_i - \bar x)^2$             | $MS_B = \frac {SS_B}{df_B}$                  |                               |
-| Subjects (Row)   | $df_S = n-1$              | $SS_S = k\sum _{j=1}^{n} (\bar x_j - \bar x)$              |                                              |                               |
+| Subjects (Row)   | $df_S = n-1$              | $SS_S = k\sum _{j=1}^{n} (\bar x_j - \bar x)^2$              |                                              |                               |
 | Within Corrected | $df_{Wcorr} = df_W- df_S$ | $SS_{Wcorr} = SS_W-SS_S$                                   | $MS_{Wcorr} = \frac{SS_{Wcorr}}{df_{Wcorr}}$ |                               |
 | Total            | $df_T = nk - 1$           | $SS_T = \sum_{i = 1}^k \sum _{j=1}^{n} (x_{ij}-\bar x) ^2$ | $MS_T = \frac{SS_T}{df_T}$                   |                               |
 
@@ -596,8 +595,7 @@ dtf <- data.frame(
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-##  [1] 192.75 200.00 197.50 181.50 197.50 151.00 166.50 195.25
-##  [9] 212.25 181.00
+##  [1] 192.75 200.00 197.50 181.50 197.50 151.00 166.50 195.25 212.25 181.00
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
@@ -829,8 +827,7 @@ summary(w_aov2)
 ## level      3  569.1  189.69   24.48 7.3e-08 ***
 ## Residuals 27  209.2    7.75                    
 ## ---
-## Signif. codes:  
-## 0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 # Two-way ANOVA
@@ -854,7 +851,7 @@ Can we apply a one-way ANOVA for diet effect, then another one-way ANOVA for gen
 
 Interaction (Figure [fig-interaction]).
 
-![](figure/unnamed-chunk-8-1.png)
+![](figure/unnamed-chunk-10-1.png)
 
 Figure [fig-interaction]: The concept of interaction
 
@@ -1289,8 +1286,7 @@ summary(aov_wg)
 ## diet:gender  2     91    45.5   1.007   0.3941    
 ## Residuals   12    542    45.2                     
 ## ---
-## Signif. codes:  
-## 0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
