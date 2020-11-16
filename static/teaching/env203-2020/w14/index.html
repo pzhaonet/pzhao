@@ -1,0 +1,162 @@
+<meta charset="utf-8">
+
+**Statistical Graphics**
+ Dr. Peng Zhao
+
+
+
+
+
+
+# Ice breaking
+
+<iframe seamless src="https://openr.pzhao.org/slides/cufe2020/resource/nw.html" width = "600" height="150" frameborder="0"></iframe>
+
+Download an R script from <https://pzhao.org/r/graphics.R>
+
+Install packages:
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+source("graphics.R")
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+# Use R
+
+![](https://pzhao.org/img/concept_r_usages.jpg)
+
+# 1-D Graphs
+
+## Categorical data
+
+### 1. Word cloud
+
+![](figure/unnamed-chunk-3-1.png)
+
+!!! Tip
+    packages, help
+
+
+### 2. Bar plot
+
+![](figure/unnamed-chunk-4-1.png)![](figure/unnamed-chunk-4-2.png)
+
+!!! Tip
+    base R and par(), ggplot2, flip the coordinate, colors
+
+## Numerical data
+
+### 3. Violin plot
+
+![](figure/unnamed-chunk-5-1.png)![](figure/unnamed-chunk-5-2.png)
+
+# 2-D Graphs
+
+## Categorical data
+
+### 4. Wind rose
+
+![](figure/unnamed-chunk-6-1.png)![](figure/unnamed-chunk-6-2.png)![](figure/unnamed-chunk-6-3.png)
+
+## Numerical data
+
+### 5. Advanced Scatter Plot
+
+![](figure/unnamed-chunk-7-1.png)![](figure/unnamed-chunk-7-2.png)
+
+![](figure/unnamed-chunk-8-1.png)![](figure/unnamed-chunk-8-2.png)
+
+![](figure/unnamed-chunk-9-1.png)![](figure/unnamed-chunk-9-2.png)
+
+![](figure/unnamed-chunk-10-1.png)![](figure/unnamed-chunk-10-2.png)
+
+
+
+# Multi-D
+
+## 6. Pair plot
+
+![](figure/unnamed-chunk-12-1.png)
+
+![](figure/unnamed-chunk-13-1.png)
+
+![](figure/unnamed-chunk-14-1.png)![](figure/unnamed-chunk-14-2.png)
+
+![](figure/unnamed-chunk-15-1.png)![](figure/unnamed-chunk-15-2.png)
+
+![](figure/unnamed-chunk-16-1.png)![](figure/unnamed-chunk-16-2.png)
+
+![](figure/unnamed-chunk-17-1.png)![](figure/unnamed-chunk-17-2.png)
+
+![](figure/unnamed-chunk-18-1.png)
+
+
+
+## 7. Faces
+
+![](figure/unnamed-chunk-20-1.png)
+
+## 8. Perspective plot
+
+![](figure/unnamed-chunk-21-1.png)
+
+## 9. Map
+
+![](figure/unnamed-chunk-22-1.png)![](figure/unnamed-chunk-22-2.png)
+
+<iframe seamless src="https://ncov2020.org/leaflet/leafmap-city-2020-02-14.html" width = "600" height="150" frameborder="0"></iframe>
+
+
+
+
+#  Interactive and animated
+
+## 10. plotly
+
+![](figure/unnamed-chunk-24-1.png)![](figure/unnamed-chunk-24-2.png)
+
+![](https://ncov2020.org/animation/map_animation.gif)
+
+# Help
+
+## Choose Graphs
+
+
+|X1          |1D                         |2D                                            |mD                                                                                                                                                                                                                                                         |Matrix                                  |
+|:-----------|:--------------------------|:---------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------|
+|Categorical |bar                        |mosaic, coplot, fourfold                      |mosaic                                                                                                                                                                                                                                                     |NA                                      |
+|Numerical   |histogram, box, dot, strip |scatter                                       |<U+5E73><U+884C><U+5750><U+6807><U+56FE><U+3001>pair, 3D scatter, <U+4E09><U+7EF4><U+900F><U+89C6><U+56FE><U+3001><U+5E73><U+6ED1><U+6563><U+70B9><U+56FE><U+3001><U+661F><U+72B6><U+56FE><U+3001><U+7B26><U+53F7><U+56FE><U+3001><U+8138><U+8C31><U+56FE> |color, hotmap, <U+7B49><U+9AD8><U+56FE> |
+|Mixed       |NA                         |conditional density, <U+68D8><U+72B6><U+56FE> |<U+6761><U+4EF6><U+5206><U+5272><U+56FE>                                                                                                                                                                                                                   |NA                                      |
+
+## The **beginr** package:
+
+
+
+# Further info
+
+<img src="https://pzhao.org/slides/mess/resource/book-xuer.jpg" width="50%" /><img src="https://images-na.ssl-images-amazon.com/images/I/51qZFt20VFL._SX331_BO1,204,203,200_.jpg" width="50%" />
+
+<img src="https://ggplot2-book.org/cover.jpg" width="50%" /><img src="https://pzhao.org/img/bookcover_msg.png" width="50%" />
+<!-- Markdeep js: -->
+<script src="D:/Program Files/R/R-4.0.1/library/deepdown/js/deepdown-doc.js" charset="utf-8"></script>
+<script>markdeepOptions={inlineCodeLang:"R", tocStyle:"short"};</script>
+
+<!-- FALLBACK: -->
+<style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace}</style>
+
+<script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible")</script>
+
+<!-- Inverse the color: -->
+<style>
+.md .inverse svg.diagram {
+  background: #333;
+  stroke: #FFF;
+  fill: #FFF;
+}
+
+.md .inverse svg.diagram .opendot {
+  fill: #333;
+}
+</style>
+
+<!-- Markdeep: --><style class="fallback">body{visibility:hidden}</style><script src="https://pzhao.org/js/deepdown-doc.js?" charset="utf-8"></script>

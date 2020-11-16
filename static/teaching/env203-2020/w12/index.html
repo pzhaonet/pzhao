@@ -1,0 +1,334 @@
+<meta charset="utf-8">
+
+**Correlation**
+ Dr. Peng Zhao
+
+
+
+
+
+
+
+
+# Ice breaking
+
+Organize your project with the **rosr** package.
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+install.packages("rosr")
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+# Objectives
+
+1. Understand what correlation is all about.
+2. Discover how correlation connects to regression.
+3. Visualize correlations.
+
+# Revist the regression graph
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+dtf <- data.frame(
+  id = 1:16,
+  env = c(56, 74, 56, 81, 75, 84, 68, 52, 57, 82, 73, 90, 67, 79, 70, 66))
+dtf$gaokao <- c(45, 81, 65, 87, 68, 91, 77, 61, 55, 66, 82, 93, 76, 83, 61, 74)
+library(ggplot2)
+ggplot(dtf, aes(gaokao, env)) +
+  geom_point() +
+  geom_smooth(method = "lm")
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+![](figure/unnamed-chunk-3-1.png)
+
+# Basic Concepts
+
+Consider two random variables *F* and *G* , both of which are continuously scaled. How can we assess the relationship between the two?
+
+Correlation
+:    The technique used to assess two variables that have a co-relationship with one another. That is, there is no meaningful way to decide which is the dependent and which is the independent variable.
+
+Positive correlation
+:    High values on one are associated with high values on the other.
+
+Negative correlation
+:   High values on one are associated with low values on the other.
+
+# Correlation Coefficient
+
+The parameter $\rho$ is the correlation coefficient which measures the strength of the linear relationship. The parameter $\rho$ varies between -1 and +1.
+
+If $\rho = −1$ there is a perfect negative correlation between the two variables, while $\rho = 1$ is a perfect positive correlation.
+
+If $\rho = 0$ the two variables are not linearly correlated.
+
+The sample correlation coefficient $r$ is:
+
+
+$$r = \frac{\frac{1}{N-1} \sum(x-\bar x)(y - \bar y)}{s_x s_y}$$
+
+or:
+
+$$ r = \frac{\mathrm{cov}(x,y)}{s_x s_y}$$
+
+$\mathrm{cov}(x,y)$
+:    covariance, which represents $x$ and $y$ varying together.
+
+!!! note: Exercise
+    Calculate the correlation coefficient using the equations above.
+
+
+
+What does it mean?
+
+# Revisit the regression
+
+
+| Source                                    | $df$           | $SS$                                                         | $MS$                        | $F$                     |
+| ----------------------------------------- | -------------- | ------------------------------------------------------------ | --------------------------- | ----------------------- |
+| between the point and the mean            | $df_\mathrm{total} = N - 1$    | $SS_\mathrm{total} = \sum(y -\bar y)^2$      | $MS_\mathrm{total} = \frac{SS_\mathrm{total}}{df_\mathrm{total}}$   | $F = \frac{MS_\mathrm{regression}}{MS_\mathrm{residual}}$ |
+| between the point and the regression line | $df_\mathrm{residual} = N - 2$ | $SS_\mathrm{residual} = \sum(y-y')^2$        | $MS_\mathrm{residual} = \frac {SS_\mathrm{residual}}{df_\mathrm{residual}}$ |                         |
+| between the regression line and the mean  | $df_\mathrm{regression} = 1$   | $SS_\mathrm{regression} = \sum(y'-\bar y)^2$ | $MS_\mathrm{regression} = \frac{SS_\mathrm{regression}}{df_\mathrm{regression}}$ |                         |
+
+Alternatively, we compare $SS_\mathrm{regression}$ with $SS_\mathrm{total}$. If the ratio of them is large, it tells us the $x$-$y$ relationship is strong.
+
+!!! note: Exercise
+    Calculate $\frac{SS_\mathrm{regression}}{SS_\mathrm{total}}$.
+    Calculate $r^2$.
+
+
+
+
+$r^2$
+: Coefficient of determination.
+
+
+
+
+$SS_\mathrm{regression}$ explains 61% of $SS_\mathrm{total}$. Is it a large proportion?
+
+# Hypothesis test about correlation
+
+- Sample statistic: $r$
+- Population parameter: $\rho$
+
+1. Hypotheses
+  - $H_0: \rho = 0$
+  - $H_1: \rho \ne 0$
+  - Questioin: Reject $H_0$
+  
+2. Collect data
+
+3. Calculate a test statistic.
+
+$$t = \frac{r - \rho}{s_r}$$
+
+$$s_r = \sqrt {\frac{1 - r ^2}{N-2}}$$
+
+$$t=r \sqrt{\frac{N-2}{1-r^{2}}}$$
+
+!!! note: Exercise
+    Calculate the $t$ score of the hypothesis test about correlation.
+    
+
+
+4. Decision.
+
+# Fast calculations in R
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+cor(dtf$gaokao, dtf$env)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## [1] 0.7827927
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+cor(dtf$gaokao, dtf$env) ^ 2
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## [1] 0.6127645
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+env_lm <- lm(env ~ gaokao, data = dtf)
+env_lm
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## 
+## Call:
+## lm(formula = env ~ gaokao, data = dtf)
+## 
+## Coefficients:
+## (Intercept)       gaokao  
+##     23.0299       0.6537
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+summary(env_lm)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## 
+## Call:
+## lm(formula = env ~ gaokao, data = dtf)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -10.9036  -5.3720  -0.4379   4.2111  15.8281 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)  23.0299    10.2732   2.242 0.041697 *  
+## gaokao        0.6537     0.1389   4.707 0.000337 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 7.249 on 14 degrees of freedom
+## Multiple R-squared:  0.6128,	Adjusted R-squared:  0.5851 
+## F-statistic: 22.15 on 1 and 14 DF,  p-value: 0.0003368
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+!!! note: Iris data.
+    Use your own iris data in Coursework 1. Calculate $r$ between Sepal.Length, Sepal.Width, Petal.Length, and Petal.Width.
+
+
+
+
+# Visualization
+
+The **beginr** package:
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+library(beginr)
+plotlm(dtf$gaokao, dtf$env)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+![](figure/unnamed-chunk-11-1.png)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## [[1]]
+##              Estimate Std. Error  t value     Pr(>|t|)
+## (Intercept) 23.029869  10.273158 2.241752 0.0416970916
+## x            0.653667   0.138878 4.706772 0.0003368488
+## 
+## [[2]]
+## [1] 0.6127645
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+The **corrplot** package:
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+library(corrplot)
+corrplot(icor)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+![](figure/unnamed-chunk-12-1.png)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+corrplot(icor, order = "AOE")
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+![](figure/unnamed-chunk-12-2.png)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+corrplot(icor, order = "AOE", method = "number")
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+![](figure/unnamed-chunk-12-3.png)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+corrplot(icor, order = "AOE", method = "ellipse")
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+![](figure/unnamed-chunk-12-4.png)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+corrplot(icor, order = "AOE", method = "shade")
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+![](figure/unnamed-chunk-12-5.png)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+corrplot(icor, order = "AOE", method = "pie")
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+![](figure/unnamed-chunk-12-6.png)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+corrplot(icor, order = "AOE", addCoef.col = "grey")
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+![](figure/unnamed-chunk-12-7.png)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+corrplot(icor, order = "AOE", type = "upper")
+corrplot(icor, order = "AOE", type = "lower", method = "ell", 
+         diag = FALSE, tl.pos = "n", cl.pos = "n", add = TRUE)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+![](figure/unnamed-chunk-12-8.png)
+
+The **GGally** package:
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+library(GGally)
+ggpairs(dtf[, 2:3])
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+![](figure/unnamed-chunk-13-1.png)
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+ggpairs(iris, aes(fill = Species, color = Species, alpha = 0.5))
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+![](figure/unnamed-chunk-14-1.png)
+
+# Assignments
+
+!!!note: Readings
+    
+    - Data Regression
+    - [Visualize correlation matrix using correlogram in R Programming](https://www.geeksforgeeks.org/visualize-correlation-matrix-using-correlogram-in-r-programming)
+
+
+!!! note: Iris data
+    Use the iris data in your Coursework 1 and do the following exercises.
+
+    1. Calculate the correlation coefficients between the sepal length and width, and the petal length and width for each species separately, step by step.
+    2. Do the hypothesis test about correlation in Ex. 1 step by step.
+    3. Make a table showing the correlation coefficients.
+    4. Visualize the correlation coefficients in graphs.
+<!-- Markdeep js: -->
+<script src="D:/Program Files/R/R-4.0.1/library/deepdown/js/deepdown-doc.js" charset="utf-8"></script>
+<script>markdeepOptions={inlineCodeLang:"R", tocStyle:"short"};</script>
+
+<!-- FALLBACK: -->
+<style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace}</style>
+
+<script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible")</script>
+
+<!-- Inverse the color: -->
+<style>
+.md .inverse svg.diagram {
+  background: #333;
+  stroke: #FFF;
+  fill: #FFF;
+}
+
+.md .inverse svg.diagram .opendot {
+  fill: #333;
+}
+</style>
+
+<!-- Markdeep: --><style class="fallback">body{visibility:hidden}</style><script src="https://pzhao.org/js/deepdown-doc.js?" charset="utf-8"></script>

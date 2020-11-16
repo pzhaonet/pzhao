@@ -16,7 +16,8 @@ require2 <- function(pkgs){
   y <- lapply(basename(pkgs), require, character.only = TRUE)
   return(unlist(y))
 }
-require2("beginr", "corrplot", "ggplot2", "openair", "psych", "plotly", "TeachingDemos", 
-         "vioplot", "wordcloud2",
-         "pzhaonet/xjtlu", "yihui/MSG")
+require2(c("beginr", "corrplot", "ggplot2", "openair", 
+           "psych", "plotly", "TeachingDemos", 
+           "vioplot", "wordcloud2",
+           "pzhaonet/xjtlu", "yihui/MSG"))
 Sys.setlocale("LC_CTYPE", "Chinese")
