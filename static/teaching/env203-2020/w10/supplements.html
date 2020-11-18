@@ -1,0 +1,320 @@
+<meta charset="utf-8">
+
+**Qualitative data and $\chi^2$ test**
+ Supplements
+ Dr. Peng Zhao
+
+
+
+
+
+
+(#) Qualitative data and contingency tables
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+env203 <- read.csv("data/students203.csv")
+env203$Hometown <- c("SC", "NC")[env203$Hometown]
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+How many students are male and how many female?
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+sum(env203$Gender == "Male")
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## [1] 12
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+sum(env203$Gender == "Female")
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## [1] 38
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+table(env203$Gender)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## 
+## Female   Male 
+##     38     12
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+How many are from South China, and how many from North?
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+table(env203$Hometown)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## 
+## NC SC 
+## 21 29
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+How many boys/girls from South China, and how many from North?
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+table(env203$Hometown, env203$Gender)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##     
+##      Female Male
+##   NC     18    3
+##   SC     20    9
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+tb <- table(env203$Hometown, env203$Gender)
+data.frame(tb)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##   Var1   Var2 Freq
+## 1   NC Female   18
+## 2   SC Female   20
+## 3   NC   Male    3
+## 4   SC   Male    9
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+(#) One-category $\chi^2$ test
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+dtf <- data.frame(colour = c("red", "white", "pink"),
+                  observed = c(72, 63, 125))
+sum(dtf$observed)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## [1] 260
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+dtf$expected <- sum(dtf$observed) * c(1, 1, 2) / 4
+dtf$o_e <- dtf$observed - dtf$expected
+dtf$O_e_s <- dtf$o_e ^ 2
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Table:
+
+
+|colour | observed| expected| o_e| O_e_s|
+|:------|--------:|--------:|---:|-----:|
+|red    |       72|       65|   7|    49|
+|white  |       63|       65|  -2|     4|
+|pink   |      125|      130|  -5|    25|
+
+$\chi ^ 2$:
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+(chi_sq <- sum(dtf$O_e_s / dtf$expected))
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## [1] 1.007692
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+(df <- nrow(dtf) - 1)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## [1] 2
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+qchisq(0.95, df)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## [1] 5.991465
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+pchisq(chi_sq, df)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## [1] 0.3957977
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Decision.
+
+As $\chi ^2 _\mathrm{score} \le \chi ^2_\mathrm{critical}$, we cannot reject $H_0$. The experimental results support this mode of inheritance.
+
+(#) Multiple-category $\chi ^2$ test
+
+Demo: GAD
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+gad <- read.csv("data/gad.csv")
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+3. Calculate a test statistic.
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+(tb_gad <- table(gad$status, gad$antibody))
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##         
+##          negative positive
+##   normal      125       55
+##   sm          150      220
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+tb_gad2 <- matrix(nrow = 2, ncol = 2)
+tb_gad2[1, 1] <- sum(tb_gad[1, ]) / sum(tb_gad) * sum(tb_gad[, 1])
+tb_gad2[1, 2] <- sum(tb_gad[1, ]) / sum(tb_gad) * sum(tb_gad[, 2])
+tb_gad2[2, 1] <- sum(tb_gad[2, ]) / sum(tb_gad) * sum(tb_gad[, 1])
+tb_gad2[2, 2] <- sum(tb_gad[2, ]) / sum(tb_gad) * sum(tb_gad[, 2])
+tb_gad2
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##      [,1] [,2]
+## [1,]   90   90
+## [2,]  185  185
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+(chi_sq <- sum((tb_gad2 - tb_gad) ^ 2 / tb_gad2))
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## [1] 40.46547
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Decision.
+
+For $df = (2 -1)\times(2-1) = 1$, in the $\chi^2$ table, the critical value of $\chi^2 (\alpha=0.05, df=1) = 3.841$, which is much smaller than our calculated $\chi^2$. Thus, we reject $H_0$ and conclude that there is a significant association between the presence of GAD antibodies and the occurrence of stiff-man syndrome.
+
+Calculate $\chi^2$ in R:
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+pchisq(chi_sq, 1, lower.tail = FALSE)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## [1] 2.001221e-10
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+One-step:
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+chisq.test(tb_gad)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## 
+## 	Pearson's Chi-squared test with Yates' continuity correction
+## 
+## data:  tb_gad
+## X-squared = 39.318, df = 1, p-value = 3.602e-10
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+chit <- chisq.test(tb_gad)
+str(chit)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## List of 9
+##  $ statistic: Named num 39.3
+##   ..- attr(*, "names")= chr "X-squared"
+##  $ parameter: Named int 1
+##   ..- attr(*, "names")= chr "df"
+##  $ p.value  : num 3.6e-10
+##  $ method   : chr "Pearson's Chi-squared test with Yates' continuity correction"
+##  $ data.name: chr "tb_gad"
+##  $ observed : 'table' int [1:2, 1:2] 125 150 55 220
+##   ..- attr(*, "dimnames")=List of 2
+##   .. ..$ : chr [1:2] "normal" "sm"
+##   .. ..$ : chr [1:2] "negative" "positive"
+##  $ expected : num [1:2, 1:2] 90 185 90 185
+##   ..- attr(*, "dimnames")=List of 2
+##   .. ..$ : chr [1:2] "normal" "sm"
+##   .. ..$ : chr [1:2] "negative" "positive"
+##  $ residuals: 'table' num [1:2, 1:2] 3.69 -2.57 -3.69 2.57
+##   ..- attr(*, "dimnames")=List of 2
+##   .. ..$ : chr [1:2] "normal" "sm"
+##   .. ..$ : chr [1:2] "negative" "positive"
+##  $ stdres   : 'table' num [1:2, 1:2] 6.36 -6.36 -6.36 6.36
+##   ..- attr(*, "dimnames")=List of 2
+##   .. ..$ : chr [1:2] "normal" "sm"
+##   .. ..$ : chr [1:2] "negative" "positive"
+##  - attr(*, "class")= chr "htest"
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+chit$statistic
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## X-squared 
+##  39.31757
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Why different?
+
+(#) Yates' correction
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+(chi_sq2 <- sum((abs(tb_gad2 - tb_gad) - 0.5) ^ 2 / tb_gad2))
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## [1] 39.31757
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+pchisq(chi_sq2, 1, lower.tail = FALSE)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## [1] 3.601861e-10
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+<!-- Markdeep js: -->
+<script src="D:/Program Files/R/R-4.0.1/library/deepdown/js/deepdown-doc.js" charset="utf-8"></script>
+<script>markdeepOptions={inlineCodeLang:"R", tocStyle:"short"};</script>
+
+<!-- FALLBACK: -->
+<style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace}</style>
+
+<script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible")</script>
+
+<!-- Inverse the color: -->
+<style>
+.md .inverse svg.diagram {
+  background: #333;
+  stroke: #FFF;
+  fill: #FFF;
+}
+
+.md .inverse svg.diagram .opendot {
+  fill: #333;
+}
+</style>
+
+<!-- Markdeep: --><style class="fallback">body{visibility:hidden}</style><script src="https://pzhao.org/js/deepdown-doc.js?" charset="utf-8"></script>
