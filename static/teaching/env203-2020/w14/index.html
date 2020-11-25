@@ -32,7 +32,19 @@ source("g.R")
 
 # References
 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+knitr::include_graphics(c("https://pzhao.org/slides/mess/resource/book-xuer.jpg",
+                      "https://images-na.ssl-images-amazon.com/images/I/51qZFt20VFL._SX331_BO1,204,203,200_.jpg"))
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 <img src="https://pzhao.org/slides/mess/resource/book-xuer.jpg" width="50%" /><img src="https://images-na.ssl-images-amazon.com/images/I/51qZFt20VFL._SX331_BO1,204,203,200_.jpg" width="50%" />
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+knitr::include_graphics(c("https://ggplot2-book.org/cover.jpg", 
+                          "https://pzhao.org/img/bookcover_msg.png"))
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 <img src="https://ggplot2-book.org/cover.jpg" width="50%" /><img src="https://pzhao.org/img/bookcover_msg.png" width="50%" />
 
@@ -42,18 +54,109 @@ source("g.R")
 
 ### Word cloud (1)
 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+rws <- readRDS("data/rworkshop2.RDS")
+
+library(wordcloud2)
+
+tab_d <- table(rws$Department)
+wordcloud2(tab_d)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 ![](figure/unnamed-chunk-5-1.png)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+# Extended
+# install.packages("wordcloud")
+# install.packages("tm")
+# library(wordcloud)
+# wordcloud(words = names(tab_d), freq = tab_d)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ![](figure/yihui-name-wordle.png)
 
 ### Bar plot (2)
 
-![](figure/unnamed-chunk-6-1.png)![](figure/unnamed-chunk-6-2.png)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+tab_d <- sort(tab_d)
+oldpar <- par(las = 1, mar = c(3, 12, 0.1, 0.5))
+barplot(height = tab_d, 
+        horiz = TRUE, 
+        col = 1:6, 
+        border = NA)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+![](figure/unnamed-chunk-6-1.png)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+par(oldpar)
+
+library(ggplot2)
+rws$Department <- factor(rws$Department, 
+                         levels = names(tab_d))
+ggplot(data = rws) + 
+  geom_bar(mapping = aes(x = Department, fill = Department)) + 
+  coord_flip() +
+  theme(legend.position = "")
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+![](figure/unnamed-chunk-6-2.png)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+# Extended
+# library(MSG)
+# msg("3.8") # rotated bar plot
+# msg("4.14") # pie chart
+
+# ### Pie chart
+# pie(tab_d, col = rainbow(6))
+# beginr::plotcolorbar()
+# 
+# library(plotrix)
+# pie3D(tab_d, labels = names(tab_d))
+# 
+# ggplot(data = data.frame(tab_d)) + 
+#   geom_bar(mapping = aes(x = "", y = Freq, fill = Var1), stat = "identity", color = "white") +
+#   coord_polar("y", start = 0) +
+#   theme_void() +
+#   theme(legend.title = element_blank())
+#### Tips: colors, polar, theme
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ## Numerical data
 
 ### Violin plot (3)
 
-![](figure/unnamed-chunk-7-1.png)![](figure/unnamed-chunk-7-2.png)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+# msg("4.4") # Histogram
+# msg("4.8") # Box plot
+
+library(vioplot)
+mu <- 2
+si <- 0.6
+bimodal <- c(rnorm(1000, -mu, si), rnorm(1000, mu, si))
+vioplot(bimodal)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+![](figure/unnamed-chunk-7-1.png)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+par(mfrow = c(3, 1))
+vioplot(bimodal, ylim = c(-4, 4), horizontal = TRUE)
+boxplot(bimodal, ylim = c(-4, 4), horizontal = TRUE)
+hist(bimodal, xlim = c(-4, 4), freq = FALSE)
+lines(density(bimodal), xlim = c(-4, 4))
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+![](figure/unnamed-chunk-7-2.png)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+# # Extended 
+# msg("4.10")
+# msg("24.10")
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 # 2-D Graphs
 
@@ -61,70 +164,296 @@ source("g.R")
 
 ### Wind rose (4)
 
-![](figure/unnamed-chunk-8-1.png)![](figure/unnamed-chunk-8-2.png)![](figure/unnamed-chunk-8-3.png)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+# msg("4.1") # Bar plot
+
+library(openair)
+windRose(mydata)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+![](figure/unnamed-chunk-8-1.png)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+windRose(mydata = mydata, ws = "ws", wd = "wd",
+         key.position = "right", paddle = FALSE, seg = 0.9,
+         angle = 22.5, ws.int = 0.5,
+         cex = 3, breaks = c(seq(0,5,1), 21))
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+![](figure/unnamed-chunk-8-2.png)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+rws$clock_rose <- as.integer(format(rws$`Booking Time`, "%H")) / 24 * 360
+rws$one <- 1
+windRose(mydata = rws, wd = "clock_rose", ws = "one", paddle = FALSE, seg = 0.9, angle = 15)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+![](figure/unnamed-chunk-8-3.png)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+# msg("5.5") # Windrose
+# msg("7.12") # Association Plots
+# msg("7.13") # fourfoldplot
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ## Numerical data
 
 ### Advanced Scatter Plot (5)
 
-![](figure/unnamed-chunk-9-1.png)![](figure/unnamed-chunk-9-2.png)
 
-![](figure/unnamed-chunk-10-1.png)![](figure/unnamed-chunk-10-2.png)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+plot(x = iris$Petal.Length, y = iris$Petal.Width)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-![](figure/unnamed-chunk-11-1.png)![](figure/unnamed-chunk-11-2.png)
+![](figure/unnamed-chunk-9-1.png)
 
-![](figure/unnamed-chunk-12-1.png)![](figure/unnamed-chunk-12-2.png)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+plot(x = iris$Petal.Length, y = iris$Petal.Width, pch = 16, cex = 3)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+![](figure/unnamed-chunk-9-2.png)
 
 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+plot(x = iris$Petal.Length, y = iris$Petal.Width, pch = 16, cex = 3, 
+     col = rgb(0, 0, 0, alpha = .1))
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+![](figure/unnamed-chunk-10-1.png)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+sunflowerplot(x = iris$Petal.Length, y = iris$Petal.Width)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+![](figure/unnamed-chunk-10-2.png)
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+ggplot(iris, aes(x = Petal.Length, y = Petal.Width)) +
+  geom_point() + 
+  geom_smooth(method = "lm")
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+![](figure/unnamed-chunk-11-1.png)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+ggplot(iris, aes(x = Petal.Length, y = Petal.Width)) +
+  geom_bin2d()
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+![](figure/unnamed-chunk-11-2.png)
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+ggplot(iris, aes(x = Petal.Length, y = Petal.Width)) +
+  geom_hex()
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+![](figure/unnamed-chunk-12-1.png)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+ggplot(iris, aes(x = Petal.Length, y = Petal.Width)) +
+  geom_hex() +
+  geom_point(color = "yellow") + 
+  geom_smooth(color = "red")
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+![](figure/unnamed-chunk-12-2.png)
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+# msg("5.1") # scatter plot
+# msg("5.3") # Sunflower
+# 
+# msg("5.9") # 2-D bag plot
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 # Multi-D
 
 ## Pair plot (6)
 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+pairs(iris[, -5])
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 ![](figure/unnamed-chunk-14-1.png)
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+beginr::plotpairs2(iris[, -5])
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ![](figure/unnamed-chunk-15-1.png)
 
-![](figure/unnamed-chunk-16-1.png)![](figure/unnamed-chunk-16-2.png)
 
-![](figure/unnamed-chunk-17-1.png)![](figure/unnamed-chunk-17-2.png)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+icor <- cor(iris[, -5])
+library(corrplot)
+corrplot(icor)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-![](figure/unnamed-chunk-18-1.png)![](figure/unnamed-chunk-18-2.png)
+![](figure/unnamed-chunk-16-1.png)
 
-![](figure/unnamed-chunk-19-1.png)![](figure/unnamed-chunk-19-2.png)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+corrplot(icor, order = "AOE")
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+![](figure/unnamed-chunk-16-2.png)
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+corrplot(icor, order = "AOE", method = "number")
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+![](figure/unnamed-chunk-17-1.png)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+corrplot(icor, order = "AOE", method = "ellipse")
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+![](figure/unnamed-chunk-17-2.png)
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+corrplot(icor, order = "AOE", method = "shade")
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+![](figure/unnamed-chunk-18-1.png)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+corrplot(icor, order = "AOE", method = "pie")
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+![](figure/unnamed-chunk-18-2.png)
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+corrplot(icor, order = "AOE", addCoef.col = "grey")
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+![](figure/unnamed-chunk-19-1.png)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+corrplot(icor, order = "AOE", type = "upper")
+corrplot(icor, order = "AOE", type = "lower", method = "ell", 
+         diag = FALSE, tl.pos = "n", cl.pos = "n", add = TRUE)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+![](figure/unnamed-chunk-19-2.png)
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+library(GGally)
+ggpairs(iris, aes(fill = Species, color = Species, alpha = 0.5))
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ![](figure/unnamed-chunk-20-1.png)
 
 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+# msg("6.1") # pairs 
+# msg("6.2") # ggpairs
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ## Faces (7)
 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+library(TeachingDemos)
+faces2(mtcars[, c("hp", "disp", "mpg", "qsec", "wt")], which = c(14, 9, 11, 6, 5), ncols = 8)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 ![](figure/unnamed-chunk-22-1.png)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+# msg("6.7") # faces
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ## Perspective plot (8)
 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+z = volcano
+x = 4 * (1:nrow(z))
+y = 4 * (1:ncol(z))
+persp(x, y, z, theta = 150, phi = 30, col = "green3", ltheta = -120,
+      shade = 0.75, scale = FALSE, border = NA, box = FALSE)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 ![](figure/unnamed-chunk-23-1.png)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+# msg("7.7") # perspective plots of a surface 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ## Map (9)
 
-![](figure/unnamed-chunk-24-1.png)![](figure/unnamed-chunk-24-2.png)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+library(xjtlu)
+get_map()
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+![](figure/unnamed-chunk-24-1.png)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+get_map(english = TRUE)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+![](figure/unnamed-chunk-24-2.png)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+# msg("6.16")
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 <iframe seamless src="https://ncov2020.org/leaflet/leafmap-city-2020-02-14.html" width = "600" height="150" frameborder="0"></iframe>
 
 
 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+# msg("7.3")  # Contours of a 2D density
+
+# msg("7.11") # heatmap
+
+# msg("7.6") # contour
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #  Interactive and animated
 
 ## Interactive (10)
 
-![](figure/unnamed-chunk-26-1.png)![](figure/unnamed-chunk-26-2.png)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+library(plotly)
+ggplot(iris, aes(x = Petal.Length, y = Petal.Width)) +
+  geom_hex() +
+  geom_point(color = "yellow")
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+![](figure/unnamed-chunk-26-1.png)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+ggplotly()
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+![](figure/unnamed-chunk-26-2.png)
 
 ## Animated
 
 ![](https://ncov2020.org/animation/map_animation.gif)
 
 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
+# library(VennDiagram)
+# venn.diagram(list(A = 1:100, B = 96:140), "test.tif")
+# venn.diagram(list(A = 1:100, B = 96:140), 
+#              col = "transparent",
+#              fill = c("red", "blue"),
+#              alpha = 0.2,
+#              "test.tif")
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 # Help
 
@@ -149,7 +478,7 @@ plotcolorbar()
 |Numerical   |histogram, box, dot, strip |scatter                        |parallel coordinate plots, pair, 3D scatter, perspective plots, smooth scatter, star, sign, face |color, hotmap, contour |
 |Mixed       |                           |conditional density, spinogram |conditioning Plots                                                                               |                       |
 <!-- Markdeep js: -->
-<script src="D:/Program Files/R/R-4.0.2/library/deepdown/js/deepdown-doc.js" charset="utf-8"></script>
+<script src="D:/Program Files/R/R-4.0.3/library/deepdown/js/deepdown-doc.js" charset="utf-8"></script>
 <script>markdeepOptions={inlineCodeLang:"R", tocStyle:"short"};</script>
 
 <!-- FALLBACK: -->
