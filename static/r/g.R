@@ -17,7 +17,7 @@ require2 <- function(pkgs){
   return(unlist(y))
 }
 require2(c("beginr", "corrplot", "ggplot2", "openair", 
-           "psych", "plotly", "TeachingDemos", 
+           "psych", "plotly", "TeachingDemos", "VennDiagram",
            "vioplot", "wordcloud2",
-           "pzhaonet/xjtlu", "yihui/MSG"))
+           "pzhaonet/xjtlu", "MSG"))
 Sys.setlocale("LC_CTYPE", "Chinese")
