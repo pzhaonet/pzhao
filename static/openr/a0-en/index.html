@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Introduction to R:</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Dr. Peng Zhao" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style/extra.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Introduction to R:
+## A language which talks about more than statistics
+### Dr. Peng Zhao
+### <p>✉ <a href="mailto:peng.zhao@xjtlu.edu.cn" class="email">peng.zhao@xjtlu.edu.cn</a></p>
+<a href="https://pzhao.org/openr/a0-en" class="uri">https://pzhao.org/openr/a0-en</a>
+
+---
+
+
+
+
+
+
+# Overview &amp; Preparation
+
+Tools: Pocket Calculator (undergraduate)
+--
+&amp;#10142; Excel (FYP) 
+--
+&amp;#10142; OriginLab (graduate) 
+--
+&amp;#10142; Visual Basic (staff) 
+--
+&amp;#10142; R (PhD) 
+--
+&amp;#10142; R (post-doc) &amp;#10142; R (present) &amp;#10142; ...
+
+![](https://pzhao.org/image/book-xuershixizhi.png)
+What tool do you use for calculation?
+
+---
+
+## Features of R
+
+![](https://pzhao.org/image/concept_r_usage.jpg)
+
+Free, powerful, community-friendly
+
+---
+
+## Installation
+
+.pull-left[
+
+### R
+
+- [Windows](https://cran.r-project.org/bin/windows/base/R-3.5.1-win.exe)
+- [macOS](https://cran.r-project.org/bin/macosx/R-3.5.1.pkg)
+- [Linux](https://cran.r-project.org/bin/linux/)
+
+### RStudio
+
+- [Download](https://www.rstudio.com/products/rstudio/download/#download)
+
+
+### Text editors (Recommended)
+
+- [Notepad++](https://notepad-plus-plus.org/download)
+- [Typora](https://typora.io/)
+- [StackEdit](https://stackedit.io/)
+]
+
+--
+
+.pull-right[
+
+### Demo dataset
+
+
+```r
+# Create a dataset
+write.csv(iris, "dtf.csv")
+```
+
+![](https://pzhao.org/image/data-iris.jpg)
+
+]
+
+---
+
+# Statistics/calculation with R
+
+
+```r
+# Import data
+dtf &lt;- read.csv("dtf.csv")
+
+# Summarized data
+summary(dtf)
+
+# t test
+sepel_length1 &lt;- dtf$Sepal.Length[dtf$Species == "setosa"]
+sepel_length2 &lt;- dtf$Sepal.Length[dtf$Species == "versicolor"]
+t.test(sepel_length1, sepel_length2)
+
+# ANOVA
+myaov &lt;- aov(Sepal.Length ~ Species, data = dtf)
+summary(myaov)
+
+# Insert a column
+dtf$Sepal.Length.m &lt;- dtf$Sepal.Length / 100
+
+# Export data
+write.csv(dtf, "dtf2.csv")
+
+# Quit R
+```
+
+---
+
+# Graphing with R
+
+
+```r
+# Basic
+plot(x = dtf$Petal.Width, y = dtf$Petal.Length)
+boxplot(dtf$Sepal.Length)
+
+# Install a package
+install.packages("ggplot2")
+# Load a package
+library("ggplot2")
+# Use functions
+ggplot(dtf, aes(Petal.Length, Petal.Width)) + geom_point()
+
+# Install a package
+install.packages("GGally")
+# Load a package
+library("GGally")
+# Use a function
+ggpairs(dtf[, 2:6])
+ggpairs(dtf[, 2:6], aes(color = Species, alpha = 0.1))
+```
+
+---
+
+# Modeling with R
+
+
+```r
+# A linear model
+lm(Petal.Width ~ Petal.Length, data = dtf)
+mylm &lt;- lm(Petal.Width ~ Petal.Length, data = dtf)
+summary(mylm)
+
+# Visualization
+plot(x = dtf$Petal.Length, y = dtf$Petal.Width)
+abline(mylm)
+
+ggplot(dtf, aes(x = Petal.Length, y = Petal.Width)) + 
+  geom_point() + 
+  geom_smooth(method = "lm")
+```
+
+---
+
+# Communication with R
+
+## Markdown
+
+| You type                    |     You get |
+| --------------------------- | ----------- |
+| `*italic*`                  |   *italic*  |
+| `**bold**`                  |    **bold** |
+| `PM~2.5~`                   | subscript `\(\text{PM}_{2.5}\)` |
+| `R^2^`                      | superscript `\(\text{R}^2\)` |
+| `$E = mc^2$`                | equations: `\(E = mc^2\)`, `\(G = \sqrt[n]{\prod_{i = 1}^{n} x_i}\)` |
+| `[link](http://mpic.de)`    | hyperlink [link](http://mpic.de) |
+| `![](image)`                | insert an image |
+| `# Chapter 1`               | headings |
+| `1. list...`                | numbered list |
+| `- list...`                 | unnumbered list |
+
+---
+
+## R Markdown
+
+.pull-left[
+
+- [html report](https://pzhao.org/demo/xjtlu_html_report) (the **xjtlu** package).
+
+- MS Word document.
+
+- Manuscript for a journal (the **rticles** package).
+
+- Thesis (the **bookdown** package)
+
+- [Slides](https://pzhao.org/slides/a0) (the **xaringan** package)
+
+- [Poster](https://pzhao.org/demo/xjtlu_poster) (the **pagedown** package)
+
+- [Website](https://green-ear-rabbit.github.io/blog/) (the **blogdown** package)
+
+]
+
+---
+
+# Recommended books
+
+.pull-left[
+
+![](https://pzhao.org/image/book-xuer.png)
+
+]
+
+.pull-right[
+
+![](https://pzhao.org/image/book-beginners-guide-to-r.png)
+
+]
+
+---
+
+.pull-left[
+
+.center[Before]
+
+![](https://slides.yihui.name/gif/latex-tweak.gif)
+]
+
+
+.pull-right[
+
+.center[After]
+
+![](https://slides.yihui.name/gif/git-push-force.gif)
+
+]
+
+.center[.large[May the foRce be with you]]
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script src="style/macro.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
