@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Introduction to R:</title>
+    <title>Introduction to R</title>
     <meta charset="utf-8" />
     <meta name="author" content="Dr. Peng Zhao" />
     <script src="libs/header-attrs/header-attrs.js"></script>
@@ -14,8 +14,8 @@
     <textarea id="source">
 class: center, middle, inverse, title-slide
 
-# Introduction to R:
-## A language which talks about more than statistics
+# Introduction to R
+## a language which talks about more than statistics
 ### Dr. Peng Zhao
 ### <p>✉ <a href="mailto:peng.zhao@xjtlu.edu.cn" class="email">peng.zhao@xjtlu.edu.cn</a></p>
 <a href="https://pzhao.org/openr/a0-en" class="uri">https://pzhao.org/openr/a0-en</a>
@@ -27,13 +27,23 @@ class: center, middle, inverse, title-slide
 
 
 
-# Overview &amp; Preparation
+# Why me
 
-Tools: Pocket Calculator (undergraduate)
+.center[
+![:width 60%](https://pzhao.org/image/book-xuershixizhi.png)
+]
+
+&gt; Is it not pleasant to learn (R) with a constant perseverance and application?
+&gt;
+&gt; -- Confucius
+&gt;
+
+Tools for calculation: Pocket Calculator (undergraduate)
 --
 &amp;#10142; Excel (FYP) 
 --
-&amp;#10142; OriginLab (graduate) 
+&amp;#10142; OriginLab (graduate)  
+
 --
 &amp;#10142; Visual Basic (staff) 
 --
@@ -41,20 +51,24 @@ Tools: Pocket Calculator (undergraduate)
 --
 &amp;#10142; R (post-doc) &amp;#10142; R (present) &amp;#10142; ...
 
-![](https://pzhao.org/image/book-xuershixizhi.png)
-What tool do you use for calculation?
+What tool do you use for calculation/statistics?
 
 ---
 
-## Features of R
+# Why R
 
-![](https://pzhao.org/image/concept_r_usage.jpg)
+.center[
+
+
+![:width 60%](https://pzhao.org/image/concept-r-usages.jpg)
 
 Free, powerful, community-friendly
 
+]
+
 ---
 
-## Installation
+# Installation
 
 .pull-left[
 
@@ -101,13 +115,16 @@ write.csv(iris, "dtf.csv")
 # Import data
 dtf &lt;- read.csv("dtf.csv")
 
+# Simple Calculation
+mean(dtf$Petal.Length)
+
 # Summarized data
 summary(dtf)
 
 # t test
-sepel_length1 &lt;- dtf$Sepal.Length[dtf$Species == "setosa"]
-sepel_length2 &lt;- dtf$Sepal.Length[dtf$Species == "versicolor"]
-t.test(sepel_length1, sepel_length2)
+sepal_length1 &lt;- dtf$Sepal.Length[dtf$Species == "setosa"]
+sepal_length2 &lt;- dtf$Sepal.Length[dtf$Species == "versicolor"]
+t.test(sepal_length1, sepal_length2)
 
 # ANOVA
 myaov &lt;- aov(Sepal.Length ~ Species, data = dtf)
@@ -118,8 +135,6 @@ dtf$Sepal.Length.m &lt;- dtf$Sepal.Length / 100
 
 # Export data
 write.csv(dtf, "dtf2.csv")
-
-# Quit R
 ```
 
 ---
@@ -174,6 +189,8 @@ ggplot(dtf, aes(x = Petal.Length, y = Petal.Width)) +
 
 ## Markdown
 
+.small[
+
 | You type                    |     You get |
 | --------------------------- | ----------- |
 | `*italic*`                  |   *italic*  |
@@ -186,6 +203,8 @@ ggplot(dtf, aes(x = Petal.Length, y = Petal.Width)) +
 | `# Chapter 1`               | headings |
 | `1. list...`                | numbered list |
 | `- list...`                 | unnumbered list |
+
+]
 
 ---
 
@@ -201,7 +220,7 @@ ggplot(dtf, aes(x = Petal.Length, y = Petal.Width)) +
 
 - Thesis (the **bookdown** package)
 
-- [Slides](https://pzhao.org/slides/a0) (the **xaringan** package)
+- [Slides](https://pzhao.org/openr/a0-en) (the **xaringan** package)
 
 - [Poster](https://pzhao.org/demo/xjtlu_poster) (the **pagedown** package)
 
@@ -210,22 +229,45 @@ ggplot(dtf, aes(x = Petal.Length, y = Petal.Width)) +
 ]
 
 ---
+class: center, middle
 
 # Recommended books
 
+## For plain beginners
+
 .pull-left[
 
-![](https://pzhao.org/image/book-xuer.png)
+![:height 400px](https://pzhao.org/image/book-xuer.jpg)
 
 ]
 
 .pull-right[
 
-![](https://pzhao.org/image/book-beginners-guide-to-r.png)
+![:height 400px](https://pzhao.org/image/book-beginners-guide-to-r.png)
 
 ]
 
 ---
+class: center, middle
+
+# Recommended books
+
+## For genius
+
+.pull-left[
+
+![:height 400px](https://pzhao.org/image/book-the-r-book.jpg)
+
+]
+
+.pull-right[
+
+![:height 400px](https://pzhao.org/image/book-r4ds.jpg)
+
+]
+
+---
+class: center, middle
 
 .pull-left[
 
