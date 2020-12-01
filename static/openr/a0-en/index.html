@@ -59,7 +59,6 @@ What tool do you use for calculation/statistics?
 
 .center[
 
-
 ![:width 60%](https://pzhao.org/image/concept-r-usages.jpg)
 
 Free, powerful, community-friendly
@@ -108,6 +107,30 @@ write.csv(iris, "dtf.csv")
 
 ---
 
+# Do you hate programming?
+
+.pull-left[
+
+![](https://pzhao.org/image/funny-programming-reality.gif)
+
+]
+
+--
+
+.pull-right[
+
+Well, it is not the reason why you hate R.
+
+
+```r
+install.packages("Rcmdr")
+library(Rcmdr)
+```
+
+]
+
+---
+
 # Statistics/calculation with R
 
 
@@ -120,11 +143,6 @@ mean(dtf$Petal.Length)
 
 # Summarized data
 summary(dtf)
-
-# t test
-sepal_length1 &lt;- dtf$Sepal.Length[dtf$Species == "setosa"]
-sepal_length2 &lt;- dtf$Sepal.Length[dtf$Species == "versicolor"]
-t.test(sepal_length1, sepal_length2)
 
 # ANOVA
 myaov &lt;- aov(Sepal.Length ~ Species, data = dtf)
@@ -228,6 +246,11 @@ ggplot(dtf, aes(x = Petal.Length, y = Petal.Width)) +
 
 ]
 
+.pull-right[
+
+&lt;iframe src="https://pzhao.org/demo/xjtlu_html_report/" width="100%" height="400px"&gt;&lt;/iframe&gt;
+
+]
 ---
 class: center, middle
 
