@@ -127,6 +127,8 @@ library(Rcmdr)
 
 # Statistics/calculation with R
 
+.pull-left[
+
 
 ```r
 # Import data
@@ -139,7 +141,7 @@ mean(dtf$Petal.Length)
 summary(dtf)
 
 # ANOVA
-myaov &lt;- aov(Sepal.Length ~ Species, data = dtf)
+myaov = aov(Sepal.Length~Species,data = dtf)
 summary(myaov)
 
 # Insert a column
@@ -149,14 +151,29 @@ dtf$Sepal.Length.m &lt;- dtf$Sepal.Length / 100
 write.csv(dtf, "dtf2.csv")
 ```
 
+]
+
+.pull-right[
+
+Hotkeys:
+
+- Ctrl + Enter
+- TAB
+- F1
+
+]
+
 ---
 
 # Graphing with R
 
+.pull-left[
+
 
 ```r
 # Basic
-plot(x = dtf$Petal.Width, y = dtf$Petal.Length)
+plot(x = dtf$Petal.Width, 
+     y = dtf$Petal.Length)
 boxplot(dtf$Sepal.Length)
 
 # Install a package
@@ -164,7 +181,8 @@ install.packages("ggplot2")
 # Load a package
 library("ggplot2")
 # Use functions
-ggplot(dtf, aes(Petal.Length, Petal.Width)) + geom_point()
+ggplot(dtf,aes(Petal.Length, Petal.Width))+ 
+  geom_point()
 
 # Install a package
 install.packages("GGally")
@@ -172,28 +190,85 @@ install.packages("GGally")
 library("GGally")
 # Use a function
 ggpairs(dtf[, 2:6])
-ggpairs(dtf[, 2:6], aes(color = Species, alpha = 0.1))
+ggpairs(dtf[, 2:6], 
+        aes(color = Species, alpha = 0.1))
 ```
+
+]
+
+.pull-right[
+
+Show time:
+
+
+```r
+# Basic
+demo(graphics)
+demo(persp)
+demo(image)
+demo(plotmath)
+
+# ggplot2
+example(qplot)
+
+# GGally
+example(ggpairs)
+
+# MSG (Modern Statistical Graphs)
+install.packages("MSG")
+library(MSG)
+demo(basketball)
+demo(pointArts)
+```
+
+- [The R Graph Gallery](https://www.r-graph-gallery.com/)
+
+]
+
+
 
 ---
 
 # Modeling with R
 
+.pull-left[
+
 
 ```r
 # A linear model
 lm(Petal.Width ~ Petal.Length, data = dtf)
-mylm &lt;- lm(Petal.Width ~ Petal.Length, data = dtf)
+mylm &lt;- lm(Petal.Width ~ Petal.Length, 
+           data = dtf)
 summary(mylm)
 
 # Visualization
-plot(x = dtf$Petal.Length, y = dtf$Petal.Width)
+plot(x = dtf$Petal.Length, 
+     y = dtf$Petal.Width)
 abline(mylm)
 
-ggplot(dtf, aes(x = Petal.Length, y = Petal.Width)) + 
+ggplot(dtf, aes(Petal.Length,Petal.Width))+ 
   geom_point() + 
   geom_smooth(method = "lm")
 ```
+
+]
+
+.pull-right[
+
+Show time:
+
+
+```r
+# basic
+demo(nlm)
+demo(lm.glm)
+demo(smooth)
+
+library(MSG)
+demo(gradArrows1) # Gradient descent method
+```
+
+]
 
 ---
 
@@ -238,13 +313,16 @@ ggplot(dtf, aes(x = Petal.Length, y = Petal.Width)) +
 
 - [Website](https://green-ear-rabbit.github.io/blog/) (the **blogdown** package)
 
-- See: &lt;https://rmd.pzhao.org&gt;
-
 ]
 
 .pull-right[
 
+Show time:
+
 &lt;iframe src="https://pzhao.org/openr/a0-en" width="100%" height="400px"&gt;&lt;/iframe&gt;
+
+- [R Markdown Gallery](https://rmd.pzhao.org)
+
 
 ]
 
@@ -272,7 +350,7 @@ class: center, middle
 
 # Recommended books
 
-## For genius
+## For geniuses
 
 .pull-left[
 
