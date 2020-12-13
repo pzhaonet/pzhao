@@ -55,8 +55,6 @@
 
 # Preparation for plotting graphs
 
-![](figure/qr-talk-msg.png)
-
 - Create a R project with RStudio
 
 - Download a dataset:
@@ -67,8 +65,8 @@
 
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
-download.file("https://pzhao.org/r/g.R", "g.R", method = "libcurl")
-source("g.R")
+options(url.method="libcurl")
+source("https://pzhao.org/r/g.R")
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ![](figure/venn.png)
