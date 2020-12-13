@@ -10,6 +10,51 @@
 
 # Ice breaking
 
+- The R `mailR` package (and how to write an email).
+- HES Christmas Party: Today 12:00-14:00 ES123. Lunch buffet available. Prepare a gift (packed) for gift exchange.
+- [Friday Salon](https://pzhao.org/en/post/fs)
+- MQ
+
+> Dear XJTLU teaching staff,
+>
+> The Student Module Feedback Questionnaire (MQ) for this semester will go live on Learning Mall Online from Monday, 14th December to Thursday, 31st December.
+>
+> Students will receive an auto email from the MQ system with a link to the MQ page on Monday, 14th December and can start to fill in the MQs accordingly; they can also go directly to the MQ page on Learning Mall Online for this purpose during the opening period.
+>
+> All staff can check daily MQ response rates and previous MQ reports on the Learning Mall Online MQ page.
+>
+> MQs are a valuable source of student feedback. The higher the response rate is, the more meaningful the feedback will be. Given the importance of this, and based on practice from previous semesters, the University strongly encourages staff to take steps to ensure high response rates by adopting the following actions:
+>
+> 1)      Tell your students that you and the University value their honest and constructive feedback, and that student feedback will be used to make improvements to modules, programmes and teaching practice.
+>
+> 2)      Announce a pre-set date and set aside 20 minutes of class-time during the MQ period to encourage students to complete MQs.
+>
+> 3)      Check your module response rate(s) on Learning Mall Online regularly during the MQ period. Remind your students in class, via email, Learning Mall Online or other channels you prefer.
+>
+> If you have any questions or comments, please do not hesitate to contact xxx.
+> 
+> Regards,
+> 
+> Student Administration Team, Registry
+>
+
+# Objectives
+
+1. Summarize CW2.
+2. Choose hypothesis tests.
+3. Learn how to plot statistical graphics.
+
+# Summarize CW2
+
+- [$t$ test](https://pzhao.org/teaching/env203-2020/w07/#revisitone-sampletest)
+- [ANOVA](https://pzhao.org/teaching/env203-2020/w09/#one-wayanova)
+
+# Choose hypothesis tests
+
+![](https://pzhao.org/image/concept-choose-hypothesis-test.png)
+
+# Preparation for plotting graphs
+
 ![](figure/qr-talk-msg.png)
 
 - Create a R project with RStudio
@@ -30,12 +75,6 @@ source("g.R")
 
 ![](https://pzhao.org/img/concept_r_usages.jpg)
 
-# References
-
-<img src="https://pzhao.org/slides/mess/resource/book-xuer.jpg" width="50%" /><img src="https://images-na.ssl-images-amazon.com/images/I/51qZFt20VFL._SX331_BO1,204,203,200_.jpg" width="50%" />
-
-<img src="https://ggplot2-book.org/cover.jpg" width="50%" /><img src="https://pzhao.org/img/bookcover_msg.png" width="50%" />
-
 # 1-D Graphs
 
 ## Categorical data
@@ -52,7 +91,7 @@ tab_d <- table(rws$Department)
 wordcloud2(tab_d)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-![](figure/unnamed-chunk-5-1.png)
+![](figure/unnamed-chunk-3-1.png)
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
 # Extended
@@ -75,7 +114,7 @@ barplot(height = tab_d,
         border = NA)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-![](figure/unnamed-chunk-6-1.png)
+![](figure/unnamed-chunk-4-1.png)
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
 par(oldpar)
@@ -89,7 +128,7 @@ ggplot(data = rws) +
   theme(legend.position = "")
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-![](figure/unnamed-chunk-6-2.png)
+![](figure/unnamed-chunk-4-2.png)
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
 # Extended
@@ -128,7 +167,7 @@ bimodal <- c(rnorm(1000, -mu, si), rnorm(1000, mu, si))
 vioplot(bimodal)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-![](figure/unnamed-chunk-7-1.png)
+![](figure/unnamed-chunk-5-1.png)
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
 par(mfrow = c(3, 1))
@@ -138,7 +177,7 @@ hist(bimodal, xlim = c(-4, 4), freq = FALSE)
 lines(density(bimodal), xlim = c(-4, 4))
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-![](figure/unnamed-chunk-7-2.png)
+![](figure/unnamed-chunk-5-2.png)
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
 # # Extended 
@@ -160,7 +199,7 @@ library(openair)
 windRose(mydata)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-![](figure/unnamed-chunk-8-1.png)
+![](figure/unnamed-chunk-6-1.png)
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
 windRose(mydata = mydata, ws = "ws", wd = "wd",
@@ -169,7 +208,7 @@ windRose(mydata = mydata, ws = "ws", wd = "wd",
          cex = 3, breaks = c(seq(0,5,1), 21))
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-![](figure/unnamed-chunk-8-2.png)
+![](figure/unnamed-chunk-6-2.png)
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
 rws$clock_rose <- as.integer(format(rws$`Booking Time`, "%H")) / 24 * 360
@@ -177,7 +216,7 @@ rws$one <- 1
 windRose(mydata = rws, wd = "clock_rose", ws = "one", paddle = FALSE, seg = 0.9, angle = 15)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-![](figure/unnamed-chunk-8-3.png)
+![](figure/unnamed-chunk-6-3.png)
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
 # msg("5.5") # Windrose
@@ -194,13 +233,13 @@ windRose(mydata = rws, wd = "clock_rose", ws = "one", paddle = FALSE, seg = 0.9,
 plot(x = iris$Petal.Length, y = iris$Petal.Width)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-![](figure/unnamed-chunk-9-1.png)
+![](figure/unnamed-chunk-7-1.png)
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
 plot(x = iris$Petal.Length, y = iris$Petal.Width, pch = 16, cex = 3)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-![](figure/unnamed-chunk-9-2.png)
+![](figure/unnamed-chunk-7-2.png)
 
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
@@ -208,13 +247,13 @@ plot(x = iris$Petal.Length, y = iris$Petal.Width, pch = 16, cex = 3,
      col = rgb(0, 0, 0, alpha = .1))
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-![](figure/unnamed-chunk-10-1.png)
+![](figure/unnamed-chunk-8-1.png)
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
 sunflowerplot(x = iris$Petal.Length, y = iris$Petal.Width)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-![](figure/unnamed-chunk-10-2.png)
+![](figure/unnamed-chunk-8-2.png)
 
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
@@ -223,14 +262,14 @@ ggplot(iris, aes(x = Petal.Length, y = Petal.Width)) +
   geom_smooth(method = "lm")
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-![](figure/unnamed-chunk-11-1.png)
+![](figure/unnamed-chunk-9-1.png)
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
 ggplot(iris, aes(x = Petal.Length, y = Petal.Width)) +
   geom_bin2d()
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-![](figure/unnamed-chunk-11-2.png)
+![](figure/unnamed-chunk-9-2.png)
 
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
@@ -238,7 +277,7 @@ ggplot(iris, aes(x = Petal.Length, y = Petal.Width)) +
   geom_hex()
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-![](figure/unnamed-chunk-12-1.png)
+![](figure/unnamed-chunk-10-1.png)
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
 ggplot(iris, aes(x = Petal.Length, y = Petal.Width)) +
@@ -247,7 +286,7 @@ ggplot(iris, aes(x = Petal.Length, y = Petal.Width)) +
   geom_smooth(color = "red")
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-![](figure/unnamed-chunk-12-2.png)
+![](figure/unnamed-chunk-10-2.png)
 
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
@@ -266,14 +305,14 @@ ggplot(iris, aes(x = Petal.Length, y = Petal.Width)) +
 pairs(iris[, -5])
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-![](figure/unnamed-chunk-14-1.png)
+![](figure/unnamed-chunk-12-1.png)
 
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
 beginr::plotpairs2(iris[, -5])
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-![](figure/unnamed-chunk-15-1.png)
+![](figure/unnamed-chunk-13-1.png)
 
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
@@ -282,46 +321,46 @@ library(corrplot)
 corrplot(icor)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-![](figure/unnamed-chunk-16-1.png)
+![](figure/unnamed-chunk-14-1.png)
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
 corrplot(icor, order = "AOE")
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-![](figure/unnamed-chunk-16-2.png)
+![](figure/unnamed-chunk-14-2.png)
 
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
 corrplot(icor, order = "AOE", method = "number")
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-![](figure/unnamed-chunk-17-1.png)
+![](figure/unnamed-chunk-15-1.png)
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
 corrplot(icor, order = "AOE", method = "ellipse")
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-![](figure/unnamed-chunk-17-2.png)
+![](figure/unnamed-chunk-15-2.png)
 
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
 corrplot(icor, order = "AOE", method = "shade")
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-![](figure/unnamed-chunk-18-1.png)
+![](figure/unnamed-chunk-16-1.png)
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
 corrplot(icor, order = "AOE", method = "pie")
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-![](figure/unnamed-chunk-18-2.png)
+![](figure/unnamed-chunk-16-2.png)
 
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
 corrplot(icor, order = "AOE", addCoef.col = "grey")
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-![](figure/unnamed-chunk-19-1.png)
+![](figure/unnamed-chunk-17-1.png)
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
 corrplot(icor, order = "AOE", type = "upper")
@@ -329,7 +368,7 @@ corrplot(icor, order = "AOE", type = "lower", method = "ell",
          diag = FALSE, tl.pos = "n", cl.pos = "n", add = TRUE)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-![](figure/unnamed-chunk-19-2.png)
+![](figure/unnamed-chunk-17-2.png)
 
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
@@ -337,7 +376,7 @@ library(GGally)
 ggpairs(iris, aes(fill = Species, color = Species, alpha = 0.5))
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-![](figure/unnamed-chunk-20-1.png)
+![](figure/unnamed-chunk-18-1.png)
 
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
@@ -353,7 +392,7 @@ library(TeachingDemos)
 faces2(mtcars[, c("hp", "disp", "mpg", "qsec", "wt")], which = c(14, 9, 11, 6, 5), ncols = 8)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-![](figure/unnamed-chunk-22-1.png)
+![](figure/unnamed-chunk-20-1.png)
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
 # msg("6.7") # faces
@@ -370,7 +409,7 @@ persp(x, y, z, theta = 150, phi = 30, col = "green3", ltheta = -120,
       shade = 0.75, scale = FALSE, border = NA, box = FALSE)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-![](figure/unnamed-chunk-23-1.png)
+![](figure/unnamed-chunk-21-1.png)
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
 # msg("7.7") # perspective plots of a surface 
@@ -384,13 +423,13 @@ library(xjtlu)
 get_map()
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-![](figure/unnamed-chunk-24-1.png)
+![](figure/unnamed-chunk-22-1.png)
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
 get_map(english = TRUE)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-![](figure/unnamed-chunk-24-2.png)
+![](figure/unnamed-chunk-22-2.png)
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
 # msg("6.16")
@@ -420,13 +459,13 @@ ggplot(iris, aes(x = Petal.Length, y = Petal.Width)) +
   geom_point(color = "yellow")
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-![](figure/unnamed-chunk-26-1.png)
+![](figure/unnamed-chunk-24-1.png)
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~r linenumbers
 ggplotly()
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-![](figure/unnamed-chunk-26-2.png)
+![](figure/unnamed-chunk-24-2.png)
 
 ## Animated
 
@@ -465,6 +504,35 @@ plotcolorbar()
 |Categorical |bar                        |mosaic, coplot, fourfold       |mosaic                                                                                           |                       |
 |Numerical   |histogram, box, dot, strip |scatter                        |parallel coordinate plots, pair, 3D scatter, perspective plots, smooth scatter, star, sign, face |color, hotmap, contour |
 |Mixed       |                           |conditional density, spinogram |conditioning Plots                                                                               |                       |
+
+
+## Books
+
+<img src="https://pzhao.org/slides/mess/resource/book-xuer.jpg" width="50%" /><img src="https://images-na.ssl-images-amazon.com/images/I/51qZFt20VFL._SX331_BO1,204,203,200_.jpg" width="50%" />
+
+<img src="https://ggplot2-book.org/cover.jpg" width="50%" /><img src="https://pzhao.org/img/bookcover_msg.png" width="50%" />
+
+## Next semester
+
+DPH206: Methods for Analyzing Public Health IV: Working in the Field: Data
+
+| Week | Lecture                                                      |
+| ---- | ------------------------------------------------------------ |
+| 1    | Course Review. Preparation of required materials.            |
+| 2    | Software for data analysis. R essentials. R packages for public health. |
+| 3    | Data visualization basic.                                    |
+| 4    | Data import, cleaning, and transformation.                   |
+| 5    | Hypotheses. Research Plan. Data sampling.                    |
+| 6    | Present data in slides.                                      |
+| 7    | Make a questionnaire.                                        |
+| 8    | Data visualization advanced.                                 |
+| 9    | Epidemiological data. Build websites.                        |
+| 10   | Dealing with characters. Data analysis in journal articles.  |
+| 11   | Time series. Make posters.                                   |
+| 12   | Maps. Bibliography.                                          |
+| 13   | Data management.                                             |
+
+# Luck draw
 <!-- Markdeep js: -->
 <script src="D:/Program Files/R/R-4.0.3/library/deepdown/js/deepdown-doc.js" charset="utf-8"></script>
 <script>markdeepOptions={inlineCodeLang:"R", tocStyle:"short"};</script>
