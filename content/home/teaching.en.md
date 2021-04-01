@@ -14,10 +14,14 @@ weight = 40
 
 +++
 
+### 2021, Xi'an Jiaotong-Liverpool University
+- DPH206: *Methods for Analysing Public Health IV: Working in the Field: Data* (Leader)
+- ENV201: *Research Design* (Involved)
+
 ### 2020, Xi'an Jiaotong-Liverpool University
 - ENV203: *Statistics for Environmental Scientists* (Leader)
-- DPH101: *Methods for Analysing Public Health II: Biostatistics I* (Leader)
 - DPH206: *Methods for Analysing Public Health IV: Working in the Field: Data* (Leader)
+- FYP (Involved)
 
 ### 2019, Central University of Economics and Finance
 - *R language Supports Scientific Research* (Leader) ([poster](ttps://openr.pzhao.org/slides/cufe2019/))
