@@ -18,8 +18,8 @@ weight = 65
 
 ### 网站
 
+- [HES](https://hes.pzhao.org)：健康与环境科学研究团队。
 - [个人网站](https://pzhao.org)。
-- [ZPGroup](https://zpgroup.pzhao.org)：研究小组。
 - [HESLAB](https://pzhaonet.github.io/hes/): 西交利物浦大学健康与环境科学系实验室在线展示平台。
 - [现代统计图形](https://msg2020.pzhao.org/): 印刷版的官方网站。
 - [学 R](https://xuer.pzhao.org/): 《学 R：零基础学习 R 语言》一书的官方网站。
