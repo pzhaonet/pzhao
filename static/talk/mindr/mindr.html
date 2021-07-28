@@ -16,7 +16,7 @@ class: center, middle, inverse, title-slide
 # mindr: an R package for creating mind maps via markdown
 ### Peng Zhao
 ### 2018/11/16 
-(updated: 2018-12-11)
+(updated: 2019-02-22)
 
 ---
 
@@ -102,7 +102,7 @@ class: animated, rotateIn
 
 ### when md2mm() was born
 
-- The first function of mindr &lt;a name=cite-R-mindr&gt;&lt;/a&gt;([Zhao, 2018](mindr.html#37)) 
+- The first function of mindr ([Zhao, 2018](mindr.html#37)) 
  
 [![](img/mindr_blogdown.jpg)](img/mindr_blogdown.jpg)
 
@@ -399,8 +399,8 @@ citation('mindr')
 ## 
 ## To cite package 'mindr' in publications use:
 ## 
-##   Peng Zhao (2018). mindr: Convert Files Between Markdown or
-##   Rmarkdown Files and Mindmaps. R package version 1.1.9.
+##   Peng Zhao (2019). mindr: Convert Files Between Markdown or
+##   Rmarkdown Files and Mindmaps. R package version 1.2.1.
 ##   https://github.com/pzhaonet/mindr
 ## 
 ## A BibTeX entry for LaTeX users is
@@ -408,8 +408,8 @@ citation('mindr')
 ##   @Manual{,
 ##     title = {mindr: Convert Files Between Markdown or Rmarkdown Files and Mindmaps},
 ##     author = {Peng Zhao},
-##     year = {2018},
-##     note = {R package version 1.1.9},
+##     year = {2019},
+##     note = {R package version 1.2.1},
 ##     url = {https://github.com/pzhaonet/mindr},
 ##   }
 ## 
@@ -440,6 +440,7 @@ rmd2r()
 
 ```r
 example(function_name)
+mm()
 ```
 
 --
@@ -478,7 +479,7 @@ background-position: 95% 5%
 
 # Acknowledgements
 
-## [**xaringan**](https://github.com/yihui/xaringan) &lt;a name=cite-R-xaringan&gt;&lt;/a&gt;([Xie, 2018](mindr.html#37)) 
+## [**xaringan**](https://github.com/yihui/xaringan) ([Xie, 2018](mindr.html#37)) 
 
 
 ```r
@@ -489,17 +490,17 @@ citation('xaringan')
 ## 
 ## To cite package 'xaringan' in publications use:
 ## 
-##   Yihui Xie (2018). xaringan: Presentation Ninja. R package
-##   version 0.8. https://CRAN.R-project.org/package=xaringan
+##   Yihui Xie (2019). xaringan: Presentation Ninja. R package
+##   version 0.8.14. https://github.com/yihui/xaringan
 ## 
 ## A BibTeX entry for LaTeX users is
 ## 
 ##   @Manual{,
 ##     title = {xaringan: Presentation Ninja},
 ##     author = {Yihui Xie},
-##     year = {2018},
-##     note = {R package version 0.8},
-##     url = {https://CRAN.R-project.org/package=xaringan},
+##     year = {2019},
+##     note = {R package version 0.8.14},
+##     url = {https://github.com/yihui/xaringan},
 ##   }
 ```
 
@@ -675,6 +676,7 @@ package version 1.1.8. URL:
 [https://github.com/pzhaonet/mindr](https://github.com/pzhaonet/mindr).
 ]
     </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
 <script src="macro/macro.js"></script>
 <script>var slideshow = remark.create({
@@ -685,11 +687,41 @@ package version 1.1.8. URL:
 if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   window.dispatchEvent(new Event('resize'));
 });
-(function() {
-  var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
   if (!r) return;
   s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
   d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
 })();</script>
 <video autoplay id="webcam" width="200" height="200" style="position:absolute;top:0;right:0;z-index:100;cursor:move;" draggable="true"></video>
 
@@ -733,7 +765,18 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
 
 <script>
 (function() {
-  var i, text, code, codes = document.getElementsByTagName('code');
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
   for (i = 0; i < codes.length;) {
     code = codes[i];
     if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
@@ -747,7 +790,8 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     }
     i++;
   }
-})();
+};
+slideshow._releaseMath(document);
 </script>
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
