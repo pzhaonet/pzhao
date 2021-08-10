@@ -21,7 +21,7 @@ weight = 65
 - [HES](https://hes.pzhao.org)：健康与环境科学研究团队。
 - [个人网站](https://pzhao.org)。
 - [HESLAB](https://pzhaonet.github.io/hes/): 西交利物浦大学健康与环境科学系实验室在线展示平台。
-- [现代统计图形](https://msg2020.pzhao.org/): 印刷版的官方网站。
+- [现代统计图形](https://msg2020.pzhao.org/): 该书印刷版的官方网站。
 - [学 R](https://xuer.pzhao.org/): 《学 R：零基础学习 R 语言》一书的官方网站。
 - ZTGroup BBS（停用）：朱彤教授科研小组 BBS。
 - [OpenR](https://openr.pzhao.org/): R 语言与开放科学。
@@ -42,12 +42,12 @@ weight = 65
 ### 书稿
 
 #### 已出版
-- 学 R：零基础学习 R 语言。赵鹏，李怡。研究出版社，北京，2018。最浅显的 R 语言入门指南。([官网](https://xuer.pzhao.org/))
+- 现代统计图形。赵鹏，谢益辉，黄湘云。人民邮电出版社，北京，2021。ISBN 9787115566904。304 页，16 开，单色印刷附彩页。以 R 语言作图为例，介绍各类统计图形。（[官网](https://msg2020.pzhao.org/)）
+- 学 R：零基础学习 R 语言。赵鹏，李怡。研究出版社，北京，2018。ISBN 9787519902940。343 页，16 开，彩印。最浅显的 R 语言入门指南。([官网](https://xuer.pzhao.org/))
 - 留学德国 DIY：从计划到启程。赵鹏。收进《选择德国：德国留学工作定居全攻略》，徐徐编，红旗出版社，北京，2014。（[在线阅读](https://weread.qq.com/web/reader/aea327205df1c2aea6eed14ka87322c014a87ff679a21ea)）
 
 #### 已完稿
 - 我要当个气象学家。Felicia Law （著）, 赵鹏（译）。科学猫头鹰出版社，北京，2019。面向中小学生和家长的科普读物。
-- 现代统计图形。谢益辉，黄湘云，赵鹏。2019。以 R 语言作图为例，介绍各类统计图形。（[在线阅读](https://msg-book.netlify.com/)）
 - Steem 基础与开发指南。赵鹏（主编）。2018。([在线阅读](https://bookdown.org/baydap/steemh))
 - 群英谱。范晓太，赵鹏。2017。中学生活文集。([在线阅读](https://bookdown.org/baydap/qyp/))
 
@@ -78,6 +78,9 @@ weight = 65
 - biber ([docs](https://pzhao.org/pkg/biber)): R 语言包，用于文献计量。
 
 #### 技术类
+
+- MSG (谢益辉，赵鹏。[[CRAN](https://CRAN.R-project.org/package=MSG), GitHub](https://github.com/yihui/MSG)): R 语言包，为《现代统计图形》一书服务。
+![MSG](http://cranlogs.r-pkg.org/badges/grand-total/MSG)
 - xjtlu ([docs](https://pzhao.org/pkg/xjtlu), [GitHub](https://github.com/pzhaonet/xjtlu)): R 语言包，西交利物浦大学专用。
 - rchive ([GitHub](https://github.com/pzhaonet/rchive))：R 语言包，洛阳铲，展示统计之都论坛和 R 邮件列表及统计数据。
 - sinx ([docs](https://pzhao.org/pkg/sinx), [CRAN](https://CRAN.R-project.org/package=sinx), [GitHub](https://github.com/pzhaonet/sinx)): R 语言包，R 语言中文社区语录火花集锦。

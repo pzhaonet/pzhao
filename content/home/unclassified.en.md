@@ -41,13 +41,13 @@ weight = 65
 
 ### Books
 
-- Zhao, P.; Li, Y.. 2018. *Learning R*. Yanjiu Press, Beijing ([website](https://xuer.pzhao.org/)). 
+- Zhao, P.; Xie, Y.; Huang, X.. 2021. *Modern Statistical Graphics*. Post & Telecom Press, Beijing. ISBN 9787115566904. ([fulltext](https://msg-book.netlify.com/)).
+- Zhao, P.; Li, Y.. 2018. *Learning R*. Yanjiu Press, Beijing. ISBN 9787519902940. ([website](https://xuer.pzhao.org/)). 
 - Zhao, P., 2020. Textbook for Processing Data in Public Health.
 - Xie, Y.; Huang, X.; Zhao, P.; Zhang, L.. 2019. Modern Statistical Graphics with Tidyverse ([fulltext](https://pzhaonet.github.io/msgtv/)).
 - Zhao, P.. 2019. 100 Q & A in R ([fulltext](https://pzhao.org/book/r100q/)).
 - Zhao, P.. 2017. *R bookdownplus Textbook*. A guide to the R 'bookdownplus' package ([fulltext](https://bookdown.org/baydap/bookdownplus/)).
 - Law, F. (author); Zhao, P. (translator). 2019. *I'm Going to Be a Meteorologist*.
-- Xie, Y.; Huang, X.; Zhao, P.. 2019. *Modern Statistical Graphics* ([fulltext](https://msg-book.netlify.com/)).
 - Zhao, P.. 2019. *Tidyverse vs. Non-TidyVerse* ([fulltext](https://pzhaonet.github.io/btcookbook/)).
 - Zhao, P.. 2017. *R bookdownplus Textbook* ([fulltext](https://bookdown.org/baydap/bookdownplus/)).
 - ZHao, P.. 2017. *Papa's Three Laws* ([fulltext](https://bookdown.org/baydap/papasdiary/))
@@ -72,6 +72,8 @@ weight = 65
 - biber ([docs](https://pzhao.org/pkg/biber)): A tool for bibliometrics.
 
 #### Technical
+- MSG (Xie, Y.; Zhao, P.. [[CRAN](https://CRAN.R-project.org/package=MSG), GitHub](https://github.com/yihui/MSG)): An R package for the book **Modern Statistical Graphs**.
+![MSG](http://cranlogs.r-pkg.org/badges/grand-total/MSG)
 - xjtlu ([docs](https://pzhao.org/pkg/xjtlu), [GitHub](https://github.com/pzhaonet/xjtlu)): An R package for Xi'an Jiaotong-Liverpool University.
 - rchive ([GitHub](https://github.com/pzhaonet/rchive))：An R package for displaying the public discussion list on COS, R development and R help.
 - sinx ([docs](https://pzhao.org/pkg/sinx), [CRAN](https://CRAN.R-project.org/package=sinx), [GitHub](https://github.com/pzhaonet/sinx)): R fortunes in Chinese.
