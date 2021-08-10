@@ -16,8 +16,8 @@ categories: []
 看我，看我就知道了。
 
 <center>
-<a href="image/book-msg-online-release.png">
-  <img src="image/book-msg-online-release.png" style="zoom: 50%;" align="middle" alt="现代统计图形新书发布会" />
+<a href="../../../image/book-msg-online-release.png">
+  <img src="../../../image/book-msg-online-release.png" style="zoom: 50%;" align="middle" alt="现代统计图形新书发布会" />
 </a>
 </center>
 
