@@ -18,9 +18,9 @@ weight = 65
 
 ### Websites
 
-- [***HES***](https://hes.pzhao.org): Research groups for Health and Environmental Sciences.
+- [***HES***](https://hes.pzhao.org): Research groups for Health and Environmental Sciences ([internal](http://10.10.34.30:3838/hes/)).
 - [***Personal website***](https://pzhao.org).
-- [***HESLAB***](https://pzhaonet.github.io/hes/): Gallery for the laboratory, Department of Health and Environmental Sciences, Xi'an-Jiaotong-Liverpool University.
+- [***HESLAB***](https://pzhaonet.github.io/hes/): Gallery for the laboratory, Department of Health and Environmental Sciences, Xi'an-Jiaotong-Liverpool University ([internal](http://10.10.34.30:3838/lab/)).
 - [***Modern Statistical Graphics***](https://msg2020.pzhao.org/).
 - [***Learning R***](https://xuer.pzhao.org/): Official website of the book *Learning R: From the Very Beginning*.
 - ZTGroup BBS (deactivated). 

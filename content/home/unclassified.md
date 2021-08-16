@@ -18,9 +18,9 @@ weight = 65
 
 ### 网站
 
-- [HES](https://hes.pzhao.org)：健康与环境科学研究团队。
+- [HES](https://hes.pzhao.org)：健康与环境科学研究团队（[内网访问](http://10.10.34.30:3838/hes/)）。
 - [个人网站](https://pzhao.org)。
-- [HESLAB](https://pzhaonet.github.io/hes/): 西交利物浦大学健康与环境科学系实验室在线展示平台。
+- [HESLAB](https://pzhaonet.github.io/hes/): 西交利物浦大学健康与环境科学系实验室在线展示平台（[内网访问](http://10.10.34.30:3838/lab/)）。
 - [现代统计图形](https://msg2020.pzhao.org/): 该书印刷版的官方网站。
 - [学 R](https://xuer.pzhao.org/): 《学 R：零基础学习 R 语言》一书的官方网站。
 - ZTGroup BBS（停用）：朱彤教授科研小组 BBS。
