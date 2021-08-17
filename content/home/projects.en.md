@@ -23,7 +23,7 @@ view = 1
 # To remove toolbar, delete/comment all instances of `[[filter]]` below.
 [[filter]]
   name = "Open"
-  tag = "open"
+  tag = ".open"
 
 [[filter]]
   name = "All"

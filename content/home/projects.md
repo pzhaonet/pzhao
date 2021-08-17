@@ -22,11 +22,11 @@ view = 1
 # Use "*" tag to show all projects or an existing tag prefixed with "." to filter by specific tag.
 # To remove toolbar, delete/comment all instances of `[[filter]]` below.
 [[filter]]
-  name = "开放"
-  tag = "open"
+  name = "进行中"
+  tag = ".open"
 
 [[filter]]
-  name = "All"
+  name = "全部"
   tag = "*"
 
 +++
