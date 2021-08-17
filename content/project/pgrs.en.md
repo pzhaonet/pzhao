@@ -13,10 +13,10 @@ image_preview = "pj-pgrs.jpg"
 
 # Tags: can be used for filtering projects.
 # Example: `tags = ["machine-learning", "deep-learning"]`
-tags = [""]
+tags = ["open"]
 
 # Optional external URL for project (replaces project detail page).
-external_link = "https://www.xjtlu.edu.cn/en/study/phd/health-and-environmental-sciences"
+external_link = ""
 
 # Does the project detail page use math formatting?
 math = false
@@ -27,6 +27,8 @@ image = ""
 caption = ""
 
 +++
+
+See the [XJTLU website](https://www.xjtlu.edu.cn/en/study/phd/health-and-environmental-sciences).
 
 ## Requirements
 

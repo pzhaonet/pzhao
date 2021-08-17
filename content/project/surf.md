@@ -13,10 +13,10 @@ image_preview = "pj-surf.jpg"
 
 # Tags: can be used for filtering projects.
 # Example: `tags = ["machine-learning", "deep-learning"]`
-tags = [""]
+tags = ["open"]
 
 # Optional external URL for project (replaces project detail page).
-external_link = "https://www.xjtlu.edu.cn/zh/events/summer-undergraduate-research-fellowships/"
+external_link = ""
 
 # Does the project detail page use math formatting?
 math = false
@@ -27,6 +27,8 @@ image = ""
 caption = ""
 
 +++
+
+详见[西浦网页](https://www.xjtlu.edu.cn/zh/events/summer-undergraduate-research-fellowships/)。
 
 ## 目的
 

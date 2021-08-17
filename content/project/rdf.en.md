@@ -13,7 +13,7 @@ image_preview = "pj-rdf.jpg"
 
 # Tags: can be used for filtering projects.
 # Example: `tags = ["machine-learning", "deep-learning"]`
-tags = [""]
+tags = ["open"]
 
 # Optional external URL for project (replaces project detail page).
 external_link = "https://www.xjtlu.edu.cn/en/study/phd/health-and-environmental-sciences"
