@@ -3,9 +3,9 @@ date = "2021-08-12T00:00:00"
 title = "校媒访谈：关于《现代统计图形》"
 abstract = ""
 abstract_short = ""
-event = ""
+event = "采访"
 event_url = "https://www.xjtlu.edu.cn/zh/news/2021/08/xipuxuezhechubanxinshu"
-location = "Online"
+location = ""
 
 selected = false
 math = true
@@ -21,6 +21,6 @@ caption = "My caption :smile:"
 
 +++
 
-来自西浦校媒的王璐谣记者的访谈。
+来自西浦校媒的王璐谣记者的[访谈](https://www.xjtlu.edu.cn/zh/news/2021/08/xipuxuezhechubanxinshu)。
 
 ![](https://www.xjtlu.edu.cn/assets/images/department_resource/science/news/2021/08/WechatIMG95.jpeg)
