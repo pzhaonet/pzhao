@@ -1,0 +1,13 @@
+# One-sample
+
+$$t =\frac{\bar x - \mu}{s / \sqrt{n}}$$
+
+# Two-sample
+
+## With equal variances
+
+$$t =  \frac{(\bar x_1 - \bar x_2) - (\mu_1 - \mu_2)}{\sqrt{\frac{(n-1)s_1^2 + (m - 1)s_2^2}{(n - 1) + (m -1)} (\frac{1}{n} + \frac{1}{m})}}$$
+
+## With unequal varicances
+
+$$t = \frac{\bar x_d - \mu_d}{\sqrt{\frac{s_1^2}{n} + \frac{s_2^2}{m}}}$$

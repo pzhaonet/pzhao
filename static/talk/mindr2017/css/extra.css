@@ -2,12 +2,6 @@
 .large { font-size: 130% }
 .small { font-size: 70% }
 
-
-.title-slide {
-  background-image: url(../img/xjtlu-cover-169.png);
-  background-size: cover;
-}
-
 <!--  progress bar instead of slide numbers
 
 .remark-slide-number {
@@ -15,7 +9,7 @@
 }
 
  -->
-
+ 
 .remark-slide-number .progress-bar-container {
   position: absolute;
   bottom: 0;
