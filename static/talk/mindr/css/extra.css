@@ -2,10 +2,10 @@
 .large { font-size: 130% }
 .small { font-size: 70% }
 
-
 .title-slide {
-  background-image: url(../img/xjtlu-cover-169.png);
-  background-size: cover;
+  background-image: url(../img/logo-china-r.jpg), url(../img/xjtlu-cover-169.png);
+  background-position: 50% 5%, 50% 50%;
+  background-size: 100px, cover;
 }
 
 <!--  progress bar instead of slide numbers
