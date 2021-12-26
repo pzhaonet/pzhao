@@ -35,10 +35,4 @@ weight = 1
  
 +++
 
-# Profile
-
-Dr. Peng Zhao is a scientific researcher. He worked as an assistant research scientist at the Chinese Academy of Meteorological Sciences (China), a post-doc at the Institute of Ecology, University of Innsbruck (Austria), and a post-doc at the Max Planck Institute for Chemistry (Germany). In 2020, he joined Xi'an Jiaotong-Liverpool University (China).
-
-His research focuses on the ecosystem-atmosphere interaction, the cycles and transformations of atmospheric pollutants, especially carbon and nitrogen compounds, as well as bioaerosols in the upper troposphere and the lowermost stratosphere.
-
-He is a fan of R language and kids' education.
+My site has been moved to a new [site](https://connect.xjtlu.edu.cn/user/pengzhao). Thanks!

@@ -122,150 +122,151 @@ defaultContentLanguageInSubdir = true
   #
   #   Full list: https://jpswalsh.github.io/academicons/
 
-  [[params.social]]
-    icon = "envelope"
-    icon_pack = "fa"
-    link = "mailto:pzhao@pzhao.net"
-
-#  [[params.social]]
-#    icon = "google-scholar"
-#    icon_pack = "ai"
-#    link = "https://scholar.google.at/citations?user=EFeUfDwAAAAJ&hl=zh-CN"
-
-  [[params.social]]
-    icon = "github"
-    icon_pack = "fa"
-    link = "//github.com/pzhaonet"
-
-  [[params.social]]
-    icon = "youtube"
-    icon_pack = "fa"
-    link = "https://www.youtube.com/channel/UCs76tyulNUTPSzagsuTA8UA"
-
-  [[params.social]]
-    icon = "commenting"
-    icon_pack = "fa"
-    link = "https://disqus.com/by/pzhao/"
-
-  [[params.social]]
-    icon = "music"
-    icon_pack = "fa"
-    link = "http://kg.qq.com/node/personal?uid=649d9d85212c3489"
-
-  [[params.social]]
-    icon = "video-camera"
-    icon_pack = "fa"
-    link = "http://v.qq.com/vplus/0f8190586a3f2f22a25e9827b38c171e"
-
-  [[params.social]]
-    icon = "rss"
-    icon_pack = "fa"
-    link = "http://www.pzhao.org/zh/index.xml"
-
-# Navigation Links
-#   To link a homepage widget, specify the URL as a hash `#` followed by the filename of the
-#     desired widget in your `content/home/` folder.
-#   The weight parameter defines the order that the links will appear in.
-
-[[menu.main]]
-  name = "Profile"
-  url = "#about"
-  weight = 10
-
-[[menu.main]]
-  name = "News"
-  url = "#news"
-  weight = 30
-
-[[menu.main]]
-  name = "Posts"
-  url = "#posts"
-  weight = 20
-
-[[menu.main]]
-  name = "Publications"
-  url = "#publications"
-  weight = 40
-
-[[menu.main]]
-  name = "Talks"
-  url = "#talks"
-  weight = 45
-
-[[menu.main]]
-  name = "Projects"
-  url = "#projects"
-  weight = 60
-
-[[menu.main]]
-  name = "Teaching"
-  url = "#teaching"
-  weight = 50
-
-[[menu.main]]
-  name = "Unclassified"
-  url = "#unclassified"
-  weight = 65
-  
-[[menu.main]]
-  name = "Search"
-  url = "https://cse.google.com/cse/publicurl?cx=006346710622437628329:tdbwt2rsqrs"
-  weight = 70
-  
-[[menu.main]]
-  name = "中文"
-  url = "../zh"
-  weight = 80
-
-[[languages.zh.menu.main]]
-  name = "简介"
-  url = "#about"
-  weight = 10
-
-[[languages.zh.menu.main]]
-  name = "新闻"
-  url = "#news"
-  weight = 30
-
-[[languages.zh.menu.main]]
-  name = "日志"
-  url = "#posts"
-  weight = 20
-
-[[languages.zh.menu.main]]
-  name = "论文"
-  url = "#publications"
-  weight = 40
-
-[[languages.zh.menu.main]]
-  name = "报告"
-  url = "#talks"
-  weight = 45
-  
-[[languages.zh.menu.main]]
-  name = "项目"
-  url = "#projects"
-  weight = 60
-
-[[languages.zh.menu.main]]
-  name = "教学"
-  url = "#teaching"
-  weight = 50
-
-[[languages.zh.menu.main]]
-  name = "其他"
-  url = "#unclassified"
-  weight = 65
-  
-[[languages.zh.menu.main]]
-  name = "搜索"
-  url = "https://cse.google.com/cse/publicurl?cx=006346710622437628329:nxozn9fijm0"
-  weight = 70
-
-[[languages.zh.menu.main]]
-  name = "EN"
-  url = "../en"
-  weight = 80
+### Move to connect.xjtlu.edu.cn. Hide almost everything.
+###   [[params.social]]
+###     icon = "envelope"
+###     icon_pack = "fa"
+###     link = "mailto:pzhao@pzhao.net"
+### 
+### #  [[params.social]]
+### #    icon = "google-scholar"
+### #    icon_pack = "ai"
+### #    link = "https://scholar.google.at/citations?user=EFeUfDwAAAAJ&hl=zh-CN"
+### 
+###   [[params.social]]
+###     icon = "github"
+###     icon_pack = "fa"
+###     link = "//github.com/pzhaonet"
+### 
+###   [[params.social]]
+###     icon = "youtube"
+###     icon_pack = "fa"
+###     link = "https://www.youtube.com/channel/UCs76tyulNUTPSzagsuTA8UA"
+### 
+###   [[params.social]]
+###     icon = "commenting"
+###     icon_pack = "fa"
+###     link = "https://disqus.com/by/pzhao/"
+### 
+###   [[params.social]]
+###     icon = "music"
+###     icon_pack = "fa"
+###     link = "http://kg.qq.com/node/personal?uid=649d9d85212c3489"
+### 
+###   [[params.social]]
+###     icon = "video-camera"
+###     icon_pack = "fa"
+###     link = "http://v.qq.com/vplus/0f8190586a3f2f22a25e9827b38c171e"
+### 
+###   [[params.social]]
+###     icon = "rss"
+###     icon_pack = "fa"
+###     link = "http://www.pzhao.org/zh/index.xml"
+### 
+### # Navigation Links
+### #   To link a homepage widget, specify the URL as a hash `#` followed by the filename of the
+### #     desired widget in your `content/home/` folder.
+### #   The weight parameter defines the order that the links will appear in.
+### 
+### [[menu.main]]
+###   name = "Profile"
+###   url = "#about"
+###   weight = 10
+### 
+### [[menu.main]]
+###   name = "News"
+###   url = "#news"
+###   weight = 30
+### 
+### [[menu.main]]
+###   name = "Posts"
+###   url = "#posts"
+###   weight = 20
+### 
+### [[menu.main]]
+###   name = "Publications"
+###   url = "#publications"
+###   weight = 40
+### 
+### [[menu.main]]
+###   name = "Talks"
+###   url = "#talks"
+###   weight = 45
+### 
+### [[menu.main]]
+###   name = "Projects"
+###   url = "#projects"
+###   weight = 60
+### 
+### [[menu.main]]
+###   name = "Teaching"
+###   url = "#teaching"
+###   weight = 50
+### 
+### [[menu.main]]
+###   name = "Unclassified"
+###   url = "#unclassified"
+###   weight = 65
+###   
+### [[menu.main]]
+###   name = "Search"
+###   url = "https://cse.google.com/cse/publicurl?cx=006346710622437628329:tdbwt2rsqrs"
+###   weight = 70
+###   
+### [[menu.main]]
+###   name = "中文"
+###   url = "../zh"
+###   weight = 80
+### 
+### [[languages.zh.menu.main]]
+###   name = "简介"
+###   url = "#about"
+###   weight = 10
+### 
+### [[languages.zh.menu.main]]
+###   name = "新闻"
+###   url = "#news"
+###   weight = 30
+### 
+### [[languages.zh.menu.main]]
+###   name = "日志"
+###   url = "#posts"
+###   weight = 20
+### 
+### [[languages.zh.menu.main]]
+###   name = "论文"
+###   url = "#publications"
+###   weight = 40
+### 
+### [[languages.zh.menu.main]]
+###   name = "报告"
+###   url = "#talks"
+###   weight = 45
+###   
+### [[languages.zh.menu.main]]
+###   name = "项目"
+###   url = "#projects"
+###   weight = 60
+### 
+### [[languages.zh.menu.main]]
+###   name = "教学"
+###   url = "#teaching"
+###   weight = 50
+### 
+### [[languages.zh.menu.main]]
+###   name = "其他"
+###   url = "#unclassified"
+###   weight = 65
+###   
+### [[languages.zh.menu.main]]
+###   name = "搜索"
+###   url = "https://cse.google.com/cse/publicurl?cx=006346710622437628329:nxozn9fijm0"
+###   weight = 70
+### 
+### [[languages.zh.menu.main]]
+###   name = "EN"
+###   url = "../en"
+###   weight = 80
 
 # Taxonomies.
 [taxonomies]
