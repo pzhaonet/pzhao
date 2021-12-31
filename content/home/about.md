@@ -35,6 +35,6 @@ weight = 1
  
 +++
 
-因为国内访问速度和某些众所周知的原因，我的主页移至[新址](https://connect.xjtlu.edu.cn/user/pengzhao)。本站暂时不再更新。谢谢。
+因为国内访问速度和某些众所周知的原因，本站不再更新，保留旧内容照常访问。以后的更新移至[新址](https://connect.xjtlu.edu.cn/user/pengzhao)。谢谢关注。
 
 [![](https://connect.xjtlu.edu.cn/artefact/file/download.php?file=269028&view=16290&embedded=1&text=248525)](https://connect.xjtlu.edu.cn/user/pengzhao)

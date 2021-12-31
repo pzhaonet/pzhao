@@ -35,6 +35,6 @@ weight = 1
  
 +++
 
-My site has been moved to a new [site](https://connect.xjtlu.edu.cn/user/pengzhao). Thanks!
+This site is suspended due to the slow speed from Mainland China. The updates go to a new [site](https://connect.xjtlu.edu.cn/user/pengzhao). Thanks for your attention!
 
 [![](https://connect.xjtlu.edu.cn/artefact/file/download.php?file=269028&view=16290&embedded=1&text=248525)](https://connect.xjtlu.edu.cn/user/pengzhao)
