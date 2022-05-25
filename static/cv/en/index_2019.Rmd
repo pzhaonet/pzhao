@@ -1,0 +1,802 @@
+---
+title: "Peng Zhao' CV"
+author: Peng Zhao
+date: "`r Sys.Date()`"
+output:
+  pagedown::html_resume:
+    # set it to true for a self-contained HTML page but it'll take longer to render
+    self_contained: false
+---
+
+# Aside
+
+<!--
+![Peng Zhao](https://github.com/rbind/pzhao/raw/master/static/img/zhao2.jpg){width=80%}
+-->
+
+##  <i class="fa fa-user"></i> Profile {#contact}
+
+- <i class="fa fa-calendar"></i> Date of birth: 1979-04-07
+- <i class="fa fa-map-marker"></i> Country of citizenship: China
+- <i class="fa fa-graduation-cap"></i> Highest degree level: PhD
+
+## <i class="fa fa-address-card"></i> Contact {#contact}
+
+- <i class="fa fa-envelope"></i> pzhao@pzhao.net
+- <i class="fa fa-home"></i> https://pzhao.org
+- <i class="fa fa-phone"></i> +49(6131)305-7202
+
+## <i class="fa fa-hand-o-right"></i> Majors {#contact}
+- <i class="fa fa-dot-circle-o"></i> Environmental Science
+- <i class="fa fa-dot-circle-o"></i> Atmospheric Science
+- <i class="fa fa-dot-circle-o"></i> Micrometeorology
+
+## <i class="fa fa-star"></i> Highlights {#contact}
+
+- <i class="fa fa-dot-circle-o"></i> Experienced in University level teaching
+- <i class="fa fa-dot-circle-o"></i> Skilled in field campaigns and model development
+- <i class="fa fa-dot-circle-o"></i> Chinese, English (fluent), German (intermediate)
+- <i class="fa fa-dot-circle-o"></i> Highly skilled in R language
+
+## Disclaimer {#disclaimer}
+
+Updated on `r Sys.Date()`.
+
+See the latest CV at <https://www.pzhao.org/cv>.
+
+# Main
+
+## Peng Zhao {#title}
+
+### Postdoc, Max Planck Institute for Chemistry
+
+## Education {data-icon=graduation-cap data-concise=true}
+
+### University of Bayreuth, Department of Micrometeorology
+
+PhD in Geoecology
+
+Bayreuth, Germany
+
+2014
+
+- Dissertation: Ecosystem-atmosphere exchange of carbon dioxide and water vapour in typical East-Asian croplands
+- Related Courses: Experimental micrometeorology. Terrestrial ecosystems, land use and global change. Bayesian Modeling. 
+
+### Peking University, College of Environmental Sciences
+
+MSc in Environmental Sciences
+
+Beijing, China
+
+2005
+
+- Thesis: Relaxed eddy accumulation method for measuring aerosol particle fluxes.
+- Related Courses: Environmental science. Atmospheric chemistry. Environmental Mathematics.
+
+### Peking University, Department of Chemistry
+
+BSc in Chemistry
+
+Beijing, China
+
+2002
+
+- Related Courses: Environmental chemistry. Inorganic/organic/analytical/physical/structural/polymer chemistry. <!--, with related experiment courses.-->
+
+
+
+## Work Experience {data-icon=institution}
+
+### Postdoc at the Max Planck Institute for Chemistry
+
+Ecosystem-atmosphere exchange of reactive gases. Source and transportation of airborn bioaerosols.
+
+Mainz, Germany
+
+Present - 2018
+
+### Postdoc at the Institute of Ecology, University of Innsbruck
+
+Advective contribution to ecosystem-atmosphere exchange of CO~2~.
+
+Innsbruck, Austria
+
+2017 - 2014
+
+### Research assistant at the Chinese Academy of Meteorological Sciences
+
+Technical support for China Meteorological Administration Atmosphere Watch Network (CAWNET).
+
+Beijing, China
+
+2009 - 2005
+
+## Teaching Experience {data-icon=chalkboard-teacher}
+
+### R, Open Science, and Reproducible Research (Creator & Leader)
+
+Doctoral Lecture at Max Planck Institute for Chemistry
+
+Mainz, Germany
+
+2018
+
+- Processing scientific data and producing publication-ready plots. 
+- Writing documentations, manuscripts and dissertations with R markdown.
+
+### Field Experiments in Atmospheric Science (Assistant)
+
+Postgraduate module 707741 (Institute of Ecology, University of Innsbruck)
+
+Innsbruck, Austria
+
+2016
+
+- Micrometeorological methods. 
+- Eddy-covariance technique.
+
+::: aside
+
+### <i class="fa fa-chalkboard-teacher"></i> Teaching interests {#ti}
+
+- <i class="fa fa-dot-circle-o"></i> Data processing and visualization in scientific research
+
+- <i class="fa fa-dot-circle-o"></i> Atmospheric Science
+
+- <i class="fa fa-dot-circle-o"></i> Micrometeorology
+
+- <i class="fa fa-dot-circle-o"></i> Atmospheric Pollution
+
+:::
+
+### Applied Meteorology (Assistant)
+
+Postgraduate module 28205 (Department of Micrometeorology, University of Bayreuth)
+
+Bayreuth, Germany
+
+2011
+
+- Using micrometeorological methods for ecosystem-atmosphere exchange of energy and matter.
+
+### Monitoring atmosphere composition (Leader)
+
+Professional training (Chinese Academy of Meteorological Sciences)
+
+Beijing, China
+
+2009 - 2005
+
+- The principles and operations of observations on atmospheric greenhouse gases, reactive gases, and aerosol particles.
+
+## Peer-reviewed articles {data-icon=pencil-square}
+
+<!--
+### Advective CO~2~ fluxes at a grassland site in the Alps. *Agricultural and Forest Meteorology*, submitted.
+
+Zhao, P., Hammerle, A., Scholz, K., Wohlfahrt, G.
+
+N/A
+
+2019
+
+-->
+
+### On the calculation of daytime CO~2~ fluxes measured by automated closed transparent chambers. *Agricultural and Forest Meteorology*, 263, 267-275.
+
+Zhao, P., Hammerle, A., Zeeman, M., Wohlfahrt, G.
+
+N/A
+
+2018
+
+::: aside
+### <i class="fa fa-area-chart"></i> Research interests 
+
+- <i class="fa fa-dot-circle-o"></i> Cycles and transformations of Carbon and Nitrogen
+
+- <i class="fa fa-dot-circle-o"></i> Atmospheric kinetic model
+
+- <i class="fa fa-dot-circle-o"></i> Flux measurements of atmospheric trace species
+
+:::
+
+### Two-source energy balance modeling of evapotranspiration in Alpine grasslands.  *Remote Sensing of Environment*, 209, 327 - 342.
+
+Castelli, M., Anderson, M., Yang, Y., Wohlfahrt, G., Bertoldi, G., Niedrist, G., Hammerle, A., Zhao, P., Zebisch, M., Notarnicola, C.
+
+N/A
+
+2018
+
+### Parameterization of Evapotranspiration Estimation for Two Typical East Asian Crops. *Atmosphere*, 8(6): 111.
+
+Zhao, P., Lüers J.
+
+N/A
+
+2017
+
+### On the energy balance closure and net radiation in complex terrain. *Agricultural and Forest Meteorology*, 226-- 227, 37–49.
+
+Wohlfahrt, G., Hammerle, A., Niedrist, G., Scholz, K., Tomelleri, E., Zhao, P.
+
+N/A
+
+2016
+
+::: aside 
+
+### <i class="fa fa-pencil-square"></i> Related Journals
+
+- <i class="fa fa-dot-circle-o"></i> *Remote Sensing of Environment*, IF 6.457
+
+- <i class="fa fa-dot-circle-o"></i> *Agricultural and Forest Meteorology*, IF 4.039
+
+- <i class="fa fa-dot-circle-o"></i> *Environmental Sciences*, IF 2.937
+
+- <i class="fa fa-dot-circle-o"></i> *Tellus B*, IF 2.931
+
+- <i class="fa fa-dot-circle-o"></i> *Science China Earth Sciences*, IF 2.058
+
+- <i class="fa fa-dot-circle-o"></i> *Atmosphere*, IF 1.704
+
+:::
+
+### Improved data gap-filling schemes for estimation of net ecosystem exchange in typical East-Asian croplands. *Science China Earth Sciences*, 1–13.
+
+Zhao, P., Lüers, J.
+
+N/A
+
+2016
+
+### Performance Evaluation of Four Different Land Surface Models in WRF. *Asian Journal of Atmospheric Environment*, 10(1): 42–50.
+
+Lee, C. B., Kim, J. C., Belorid, M., Zhao, P.*
+
+N/A
+
+2016
+
+### OutlierFlag: A Tool for Scientific Data Quality Control by Outlier Data Flagging. *Journal of Open Research Software*, 4: e20.
+
+Huang, S., Wang Y., Xie, Y., Zhao, P.*, Lüers, J.
+
+N/A
+
+2016
+
+
+　
+
+
+### Aerosol monitoring at multiple locations in China: contributions of EC and dust to aerosol light absorption. *Tellus B*, 60: 647–656.
+
+Zhang, X., Wang, Y., Zhang, X., Guo, W., Niu, T., Gong, S., Yin, Y., Zhao, P., Jin, J., Yu, M. 
+
+N/A
+
+2008
+
+### Characteristics of mass distributions of aerosol particle and its inorganic water-soluble ions in summer over a suburb farmland in Beijing. *Environmental Sciences*, 27(2): 193–199.
+
+Zhao, P., Zhu, T., Liang, B., Hu, M., Kang, L., Gong, J.
+
+N/A
+
+2006
+
+
+## Books (selected) {data-icon=book}
+
+### Careers in science: I’m going to be a meteorologist (by Felicia Law). 
+
+Zhao, P. (Chinese translation. To be published.)
+
+Sci. Owl Press, Beijing
+
+2019
+
+### Learning R. ISBN 978-7-5199-0294-0, 343 pp.
+
+Zhao, P., Li, Y.
+
+Research Press. Beijing
+
+2018
+
+Around 5000 hardcopies sold so far.
+
+### China Meteorological Professional Standards (QX/T 174-2012): Site selection for atmospheric composition monitoring stations. ISBN 135029-5587.
+
+Zhang, X. C., Zhou, L., Xu, X., Sun, J., Zhang, X. Y., Shi, C., Zhang, S., Jin, J., Zhao, P.
+
+Meteorology Press. Beijing
+
+2012
+
+### China Meteorological Professional Standards (QX/T 124-2011): Data Classifying and coding for atmospheric composition observation. ISBN 135029-5478.
+
+Zhang, X. C., Zhao, P., Jin, J., Sun, J., Zhang, X. Y.
+
+Meteorology Press. Beijing
+
+2011
+
+<!--
+### China Meteorological Professional Standards (QX/T 173-2012): Monitoring method of PM~10~/PM~2.5~/ PM~1~ with GRIMM 180. ISBN 135029-5589
+
+Zhang, X. C., Zhao, P., Sun, J., Zhang, X. Y.
+
+Meteorology Press. Beijing
+
+2012
+
+### China Meteorological Professional Standards (QX/T 174-2012): Site selection for atmospheric composition monitoring stations. ISBN 135029-5587.
+
+Zhang, X. C., Zhou, L., Xu, X., Sun, J., Zhang, X. Y., Shi, C., Zhang, S., Jin, J., Zhao, P.
+
+Meteorology Press. Beijing
+
+2012
+-->
+
+## Non-peer reviewed (selected) {data-icon=file}
+
+### GaFiR: a gap-filling package for ecosystem-atmosphere carbon dioxide flux and evapotranspiration data. ISSN 1614-8916, Work Report 59, 22 pp.
+
+Zhao, P., Foken, T., Lüers, J.
+
+University of Bayreuth
+
+2014
+<!--
+::: aside
+
+### <i class="fa fa-file-text"></i> Report types
+
+- <i class="fa fa-file-text"></i> Documentation for field campaigns.
+
+- <i class="fa fa-file-text"></i> Documentation for model development.
+
+- <i class="fa fa-file-text"></i> Professional standards
+
+:::
+-->
+
+### Application of a multi-step error filter for post-processing atmospheric flux and meteorological basic data. ISSN 1614-8916, Work Report 58, 22 pp.
+
+Lüers, J., Detsch, F., Zhao, P.
+
+University of Bayreuth
+
+2014
+
+<!--
+### Documentation of the EVENT-HMMS experiment 2012: microclimatological effects of rain-out shelters within EVENT II. ISSN 1614-8916, Work Report 55, 32 pp.
+
+Babel, W., Schaller, C., Eigenmann, R., Foken, T., Hübner, J., Jentsch, A., Kreyling, J., Sultana, F., Zhao, P.
+
+University of Bayreuth
+
+2013
+-->
+
+### TERRECO WP 1-02: Documentation of the observation 2010, Haean, South Korea. ISSN 1614-8916, Work Report 45, 43 pp.
+
+Zhao, P., Lüers, J., Olesch, J., Foken, T.
+
+University of Bayreuth
+
+2011
+
+## Model/App Development (selected)  {data-icon=laptop}
+
+### Rchive: An online tool to display the public discussion list on R development and R help. <https://sciwis.shinyapps.io/rdev-shiny>
+
+Zhao, P.
+
+N/A
+
+2019
+
+
+### wibsr: Processing bioaerosol data from Wideband Integrated Bioaerosol Sensors (WIBS-NEO). R package version 0.0.1. <https://pzhao.org/pkg/wibsr>
+
+Zhao, P., Kuhn, W., Cheng, Y., Pöschl, U., Su, H. 
+
+N/A
+
+Present
+
+### et: An atmospheric kinetic model for evaluating the aerodynamic gradient method in reactive species flux measurement. <https://pzhao.org/pkg/et>
+
+Zhao, P., Li, M., Cheng, Y., Pöschl, U., Su, H. 
+
+N/A
+
+Present - 2018
+
+::: aside
+### <i class="fa fa-star"></i> Development interests
+
+- <i class="fa fa-dot-circle-o"></i> Atmospheric kinetic model
+
+- <i class="fa fa-dot-circle-o"></i> Online processing and visualization of atmospheric data
+
+- <i class="fa fa-dot-circle-o"></i> Open science and reproducible research
+:::
+
+<!--
+### rosr: Create Reproducible Research Projects. R package version 0.0.6. <https://CRAN.R-project.org/package=rosr>
+
+Zhao, P.
+
+N/A
+
+Present - 2018
+-->
+
+### rmd:  R Markdown family for Create Reproducible Research Projects. R package version 0.1.4. <https://CRAN.R-project.org/package=rmd>
+
+Zhao, P.
+
+N/A
+
+Present - 2018
+
+![rmd](http://cranlogs.r-pkg.org/badges/grand-total/rmd)
+
+### eddyr: Post-processing eddy covariance data. R package version 0.0.0. <https://pzhao.org/pkg/eddyr>
+
+Zhao P.
+
+N/A
+
+Present - 2018
+
+### biber: A web-based tool for bibliometric analysis in scientific literature. R package version 0.0.0. <https://pzhao.org/pkg/biber>
+
+Zhao P., Liu Y.
+
+N/A
+
+Present - 2018
+
+
+::: aside
+### <i class="fa fa-github-square"></i> Development Tools
+
+- <i class="fa fa-dot-circle-o"></i> R
+
+- <i class="fa fa-dot-circle-o"></i> MatLab
+
+- <i class="fa fa-dot-circle-o"></i> python
+:::
+
+### advr: Processing advective flux data. R package version 0.0.0. <https://pzhao.org/pkg/advr>
+
+Zhao P.
+
+N/A
+
+Present - 2018
+
+### bookdownplus: Collection of multiple templates for academic journal articles, dissertations, books, etc.. R package version 1.5.6. https://CRAN.R-project.org/package=bookdownplus
+
+Zhao, P.
+
+N/A
+
+Present - 2017
+
+![bookdownplus](http://cranlogs.r-pkg.org/badges/grand-total/bookdownplus)
+
+### mf: Functions in Micrometeorology and Environmental Sciences. R package version 0.0.1. <https://pzhao.org/pkg/mf>
+
+Zhao, P.
+
+N/A
+
+2017
+
+### mindr: creating scientific Mind Maps with R Markdown. R package version 1.2.1. https://CRAN.R-project.org/package=mindr
+
+Zhao P.
+
+N/A
+
+2019 - 2017
+
+![mindr](http://cranlogs.r-pkg.org/badges/grand-total/mindr)
+
+### beginr: beginr: Functions for R Beginners. R package version 0.1.6. https://CRAN.R-project.org/package=beginr
+
+Zhao P.
+
+N/A
+
+2019 - 2017
+
+![mindr](http://cranlogs.r-pkg.org/badges/grand-total/beginr)
+
+## Presentations (Selected) {data-icon=line-chart}
+
+### Energy and Matter Exchange between Agricultural Ecosystem and the Atmosphere (Invited)
+
+International Seminar, South China Botanic Garden, Chinese Adademy of Sciences (oral)
+
+Guangzhou, China
+
+2018.08
+
+### On the calculation of daytime CO~2~ fluxes measured by automated closed transparent chambers
+
+EGU General Assembly (poster)
+
+Vienna, Austria
+
+2018.04
+
+::: aside
+
+### <i class="fa fa-group"></i> Attended conferences
+
+- <i class="fa fa-dot-circle-o"></i> European Geosciences Union (EGU) General Assemblies
+
+- <i class="fa fa-dot-circle-o"></i> East Asian Federation of Ecological Societies (EAFES) Annual Conferences
+
+- <i class="fa fa-dot-circle-o"></i> Workshops of international interdisciplinary collaborated projects 
+:::
+
+### Role of advection for the ecosystem-atmosphere carbon dioxide exchange of alpine grasslands
+
+ACINN seminar, Institute of Atmospheric and Cryospheric Sciences (oral)
+
+University of Innsbruck, Austria
+
+2018.01
+
+### Role of advection for the ecosystem-atmosphere CO~2~ exchange of alpine grasslands
+
+EGU General Assembly (poster)
+
+Vienna, Austria.
+
+2017.04
+
+### Contribution of the advection terms for NEE in short-statured ecosystems
+
+ScaleX Workshop (oral)
+
+Garmisch-Partenkirchen, Germany
+
+2017.03
+
+### Energy and CO~2~ Exchange between Agricultural Ecosystem and the Atmosphere (Invited)
+
+110th Anniversity Seminar, Institute of Mass Spectrometer and Atmospheric Environment, Jinan University (oral)
+
+Guangzhou, China
+
+2016.12
+
+### The role of advection for CO~2~ exchange ﬂux over a mountainous grassland in the Alps
+
+EGU General Assembly (oral)
+
+Vienna, Austria
+
+2016.04
+
+### Contribution of the advection term for NEE in short-statured ecosystems
+
+ScaleX Workshop (oral)
+
+Garmisch-Partenkirchen, Germany
+
+2016.02
+
+
+### Measurement of advection of CO~2~ over grasslands in complex terrain in the Alps
+
+EGU General Assembly (poster)
+
+Vienna, Austria.
+
+2015.04
+
+### Dynamics of CO~2~ exchange in croplands in Haean Catchment, South Korea
+
+TERRECO Workshop (oral)
+
+Bayreuth, Germany
+
+2013,01
+
+<!--
+### Energy and CO~2~ exchange between agro-ecosystems and the atmosphere over a complex terrain in Korea
+
+TERRECO Workshop (oral)
+
+Bayreuth, Germany
+
+2012.01
+-->
+
+### Gap-filling strategy for daytime net ecosystem exchange of carbon dioxide at a fast-growing cropland in South Korea. 
+
+3rd iLEAPS Science Conference (poster)
+
+Garmisch- Partenkirchen, Germany
+
+2011.10
+
+
+### Energy and matter exchange in an atmosphere-ecosystem over a complex terrain in Korea
+
+EGU General Assembly (poster)
+
+Vienna, Austria. 
+
+2011.04
+
+<!--
+### Oral: The 2010 experiment in South Korea
+
+Seminar of the Department of Micrometeorolgoy
+
+Bayreuth, Germany
+
+2011.01
+-->
+
+　
+
+### Spatial assessment of atmosphere- ecosystem exchanges via micrometeorological measurements and footprint modelling 
+
+East Asian Federation of Ecological Societies (EAFES) 4th International Congress (oral)
+
+Sangju, South Korea. 
+
+2010.07
+
+### Atmosphere-ecosystem exchanges via micrometeorological measurements and footprint modelling
+
+EGU General Assembly (poster)
+
+Vienna, Austria.
+
+2010.04
+
+## Services {data-icon=handshake-o}
+
+### Reviewer
+
+N/A
+
+N/A
+
+Present - 2016
+
+- of the journal *Agricultural and Forest Meteorology*
+- of the journal *Atmospheric Measurement Techniques*
+- of the journal *Atmosphere*
+- of the EGU Outstanding Student Poster and PICO (OSPP) Awards (2016)
+- of *Capital of Statistics* <https://cosx.org>
+
+### Member
+
+N/A
+
+N/A
+
+Present - 2010
+
+-  of EGU
+
+### Founder or maintainer
+
+N/A
+
+N/A
+
+Present - 2015
+
+- of *OpenR*, a bilingual website for open science, R language, and reproducible research. <https://openr.netlify.com>
+- of *Eddyposter*, a web-based app for post-processing and visualization of micrometeorological data. <https://sciwis.shinyapps.io/eddyposter>
+- of *Bookdown Gallery*, a web-based app for collecting and displaying R bookdown templates. <https://bookdownplus.netlify.com>
+- of *Meteorobot*, a web-based app for processing and visualizing meteorological data. <https://sciwis.shinyapps.io/meteorobot>
+
+<!--
+
+## Training (selected) {data-icon=bicycle}
+
+### GAWTEC (the GAW Training and Education Centre in Germany) XIV training, 
+
+N/A
+
+Garmisch-Partenkirchen, Germany
+
+2008
+
+### Training of GRIMM 180 Environment Dust Monitor
+
+N/A
+
+GRIMM Aerosol Technik GmbH, Germany
+
+2007
+
+### Training of Aethalometer in Aerosol d.o.o.
+
+N/A
+
+Slovenia
+
+2007
+
+-->
+
+## Honours & awards {data-icon=trophy}
+
+### Max Planck Society Scholarship
+
+N/A
+
+N/A
+
+Present - 2018
+
+### Honorable Mention Prizes of 1st Bookdown Contest by RStudio Inc.
+
+N/A
+
+N/A
+
+2018
+
+### Austrian Science Fund Scholarship
+
+N/A
+
+N/A
+
+2017 - 2014
+
+### German Research Foundation Scholarship
+
+N/A
+
+N/A
+
+2013 - 2009 
+
+　
+
+### Award of Excellent Employee (Top 10%) of Chinese Academy of Meteorological Sciences 
+
+N/A
+
+N/A
+
+2008
+
+### Award of Excellent Employee (Top 10%) of Chinese Academy of Meteorological Sciences 
+
+N/A
+
+N/A
+
+2007
+
+### Excellent Youth Scholarships of Peking University
+
+N/A
+
+N/A
+
+2001
+
