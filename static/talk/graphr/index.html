@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>R 语言作图</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="赵鹏" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <script src="libs/htmlwidgets/htmlwidgets.js"></script>
+    <script src="libs/plotly-binding/plotly.js"></script>
+    <script src="libs/typedarray/typedarray.min.js"></script>
+    <script src="libs/jquery/jquery.min.js"></script>
+    <link href="libs/crosstalk/css/crosstalk.min.css" rel="stylesheet" />
+    <script src="libs/crosstalk/js/crosstalk.min.js"></script>
+    <link href="libs/plotly-htmlwidgets-css/plotly-htmlwidgets.css" rel="stylesheet" />
+    <script src="libs/plotly-main/plotly-latest.min.js"></script>
+    <link href="libs/leaflet/leaflet.css" rel="stylesheet" />
+    <script src="libs/leaflet/leaflet.js"></script>
+    <link href="libs/leafletfix/leafletfix.css" rel="stylesheet" />
+    <script src="libs/proj4/proj4.min.js"></script>
+    <script src="libs/Proj4Leaflet/proj4leaflet.js"></script>
+    <link href="libs/rstudio_leaflet/rstudio_leaflet.css" rel="stylesheet" />
+    <script src="libs/leaflet-binding/leaflet.js"></script>
+    <link href="libs/leaflet-awesomemarkers/leaflet.awesome-markers.css" rel="stylesheet" />
+    <script src="libs/leaflet-awesomemarkers/leaflet.awesome-markers.min.js"></script>
+    <link href="libs/fontawesome/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/zh-CN.css" type="text/css" />
+    <link rel="stylesheet" href="style/extra.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css" type="text/css" />
+    <link rel="stylesheet" href="style/animate.min.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+
+
+
+
+background-image: url(resource/xjtlu-cover-169.png)
+background-size: cover
+class: center, middle, animated, fadeIn
+
+# R 语言作图
+
+## 赵鹏
+
+西交利物浦大学
+
+&lt;img src="img/qr.png" width="20%" /&gt;
+
+
+---
+class: animated, fadeIn
+
+## 小目标
+
+.large[
+
+- 了解常见的科技图形，以及哪些科技图形可以使用 R 语言绘制；
+
+- 熟悉 R 语言作图包，包括基础作图包、**ggplot2**、**plotly** 和 **rgl** 等；
+
+- 以柱状图为例，掌握使用 R 语言绘制常见科技图形的方法。
+
+]
+
+.pull-right[
+![](img/target.jpg)
+]
+
+---
+background-image: url(img/graphs.png)
+background-size: cover
+class: animated, fadeIn
+
+---
+background-image: url(img/graphs.png)
+background-size: cover
+class: animated, fadeIn
+
+.pull-left[
+
+
+<div id="htmlwidget-dceb4686b5272da4ea0c" style="width:100%;height:300px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-dceb4686b5272da4ea0c">{"x":{"data":[{"x":[3.69111835304969,3.47837128685849,3.0124834262036,3.50716177034781,2.87121498358872,2.74515544499733,3.25125676748187,3.04507811557752,3.05460729073385,3.06915101836112,2.90078062155373,3.51310821042633,3.40101028408395,3.48879895792208,3.44490216214739,2.98162238872728,2.7039391611549,2.74570576546197,4.3373708614867,2.94682314869669,2.99704718642708,2.94185210799775,2.88350583493768,3.10298675433845,2.87237164152654,2.8063987207202,4.34145849934605,3.18871158763867,2.82166002181421,2.83657428165302,3.17536457562432,3.56948896052176,3.37486193965761,2.70098023955392,3.58843821514052,2.90789326381397,3.29709308978461,3.6354640490023,2.82612704524949,3.23994022438144,3.19361683040004,3.12978175413031,3.16166517152032,3.90464260358686,3.34301221488094,3.57765383934322,2.9833972607425,3.185478974435,3.49427662628827,2.92620510614229,3.20103869689067,2.83606300605042],"y":[58.014,39.483,49.19,59.319,46.137,45.91,49.355,46.775,47.383,50.939,47.804,55.625,52.374,46.519,53.319,42.024,44.535,44.51,52.79,41.842,51.756,40.762,37.465,56.155,52.208,43.764,57.442,46.881,43.767,41.714,50.852,64.93,55.73,42.495,56.437,41.291,44.514,67.064,45,58.55,48.879,36.788,41.974,55.527,47.8,52.537,49.919,52.887,59.837,50.35,51.386,57.674],"text":["gdpPercap:  4910.4168<br />lifeExp: 58.01400<br />pop:  17152804<br />continent: Africa","gdpPercap:  3008.6474<br />lifeExp: 39.48300<br />pop:   6162675<br />continent: Africa","gdpPercap:  1029.1613<br />lifeExp: 49.19000<br />pop:   3168267<br />continent: Africa","gdpPercap:  3214.8578<br />lifeExp: 59.31900<br />pop:    781472<br />continent: Africa","gdpPercap:   743.3870<br />lifeExp: 46.13700<br />pop:   5889574<br />continent: Africa","gdpPercap:   556.1033<br />lifeExp: 45.91000<br />pop:   3834415<br />continent: Africa","gdpPercap:  1783.4329<br />lifeExp: 49.35500<br />pop:   7959865<br />continent: Africa","gdpPercap:  1109.3743<br />lifeExp: 46.77500<br />pop:   2167533<br />continent: Africa","gdpPercap:  1133.9850<br />lifeExp: 47.38300<br />pop:   4388260<br />continent: Africa","gdpPercap:  1172.6030<br />lifeExp: 50.93900<br />pop:    304739<br />continent: Africa","gdpPercap:   795.7573<br />lifeExp: 47.80400<br />pop:  26480870<br />continent: Africa","gdpPercap:  3259.1790<br />lifeExp: 55.62500<br />pop:   1536769<br />continent: Africa","gdpPercap:  2517.7365<br />lifeExp: 52.37400<br />pop:   7459574<br />continent: Africa","gdpPercap:  3081.7610<br />lifeExp: 46.51900<br />pop:    228694<br />continent: Africa","gdpPercap:  2785.4936<br />lifeExp: 53.31900<br />pop:  38783863<br />continent: Africa","gdpPercap:   958.5668<br />lifeExp: 42.02400<br />pop:    192675<br />continent: Africa","gdpPercap:   505.7538<br />lifeExp: 44.53500<br />pop:   2512642<br />continent: Africa","gdpPercap:   556.8084<br />lifeExp: 44.51000<br />pop:  34617799<br />continent: Africa","gdpPercap: 21745.5733<br />lifeExp: 52.79000<br />pop:    706367<br />continent: Africa","gdpPercap:   884.7553<br />lifeExp: 41.84200<br />pop:    608274<br />continent: Africa","gdpPercap:   993.2240<br />lifeExp: 51.75600<br />pop:  10538093<br />continent: Africa","gdpPercap:   874.6859<br />lifeExp: 40.76200<br />pop:   4227026<br />continent: Africa","gdpPercap:   764.7260<br />lifeExp: 37.46500<br />pop:    745228<br />continent: Africa","gdpPercap:  1267.6132<br />lifeExp: 56.15500<br />pop:  14500404<br />continent: Africa","gdpPercap:   745.3695<br />lifeExp: 52.20800<br />pop:   1251524<br />continent: Africa","gdpPercap:   640.3224<br />lifeExp: 43.76400<br />pop:   1703617<br />continent: Africa","gdpPercap: 21951.2118<br />lifeExp: 57.44200<br />pop:   2721783<br />continent: Africa","gdpPercap:  1544.2286<br />lifeExp: 46.88100<br />pop:   8007166<br />continent: Africa","gdpPercap:   663.2237<br />lifeExp: 43.76700<br />pop:   5637246<br />continent: Africa","gdpPercap:   686.3953<br />lifeExp: 41.71400<br />pop:   6491649<br />continent: Africa","gdpPercap:  1497.4922<br />lifeExp: 50.85200<br />pop:   1456688<br />continent: Africa","gdpPercap:  3710.9830<br />lifeExp: 64.93000<br />pop:    913025<br />continent: Africa","gdpPercap:  2370.6200<br />lifeExp: 55.73000<br />pop:  18396941<br />continent: Africa","gdpPercap:   502.3197<br />lifeExp: 42.49500<br />pop:  11127868<br />continent: Africa","gdpPercap:  3876.4860<br />lifeExp: 56.43700<br />pop:    977026<br />continent: Africa","gdpPercap:   808.8971<br />lifeExp: 41.29100<br />pop:   5682086<br />continent: Africa","gdpPercap:  1981.9518<br />lifeExp: 44.51400<br />pop:  62209173<br />continent: Africa","gdpPercap:  4319.8041<br />lifeExp: 67.06400<br />pop:    492095<br />continent: Africa","gdpPercap:   670.0806<br />lifeExp: 45.00000<br />pop:   4657072<br />continent: Africa","gdpPercap:  1737.5617<br />lifeExp: 58.55000<br />pop:     86796<br />continent: Africa","gdpPercap:  1561.7691<br />lifeExp: 48.87900<br />pop:   5260855<br />continent: Africa","gdpPercap:  1348.2852<br />lifeExp: 36.78800<br />pop:   3140897<br />continent: Africa","gdpPercap:  1450.9925<br />lifeExp: 41.97400<br />pop:   4353666<br />continent: Africa","gdpPercap:  8028.6514<br />lifeExp: 55.52700<br />pop:  27129932<br />continent: Africa","gdpPercap:  2202.9884<br />lifeExp: 47.80000<br />pop:  17104986<br />continent: Africa","gdpPercap:  3781.4106<br />lifeExp: 52.53700<br />pop:    551425<br />continent: Africa","gdpPercap:   962.4923<br />lifeExp: 49.91900<br />pop:  17129565<br />continent: Africa","gdpPercap:  1532.7770<br />lifeExp: 52.88700<br />pop:   2308582<br />continent: Africa","gdpPercap:  3120.8768<br />lifeExp: 59.83700<br />pop:   6005061<br />continent: Africa","gdpPercap:   843.7331<br />lifeExp: 50.35000<br />pop:  11457758<br />continent: Africa","gdpPercap:  1588.6883<br />lifeExp: 51.38600<br />pop:   5216550<br />continent: Africa","gdpPercap:   685.5877<br />lifeExp: 57.67400<br />pop:   6642107<br />continent: Africa"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(248,118,109,1)","opacity":1,"size":[6.32127781530702,5.29612899121632,4.85958274371316,4.29233940761101,5.26165272498491,4.97061767194295,5.5059176412168,4.66704214356912,5.05559917855771,4.06676322554192,6.94049569932146,4.52040583610645,5.45016604603988,4.01129639562885,7.60694585246374,3.97973112975184,4.73782100329548,7.39505365224446,4.26382530133105,4.22383634289638,5.76860640347983,5.03145493864573,4.27878249624843,6.11542223529683,4.44354450304809,4.56187177172394,4.77827606357594,5.51109590728372,5.22907021838905,5.3366454219231,4.49965617393791,4.33879188894232,6.41229679974379,5.82395887424691,4.36004866819238,5.23491359575959,8.62896025232351,4.17122854948148,5.09486783222961,3.77952755905512,5.17905878226218,4.854775454452,5.05045749460444,6.97912565512447,6.31771439639559,4.19891947998289,6.31954665895726,4.69663035294985,5.27632870617264,5.85427629024999,5.17305387000117,5.35482857766587],"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(248,118,109,1)"}},"hoveron":"points","name":"Africa","legendgroup":"Africa","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[4.00341859740172,3.54999558616307,3.82348196645535,4.34421307668719,3.67731159008544,3.58158649939174,3.77282591203612,3.80485437036137,3.42845697609622,3.82475196835622,3.71087205749874,3.68841917661215,3.27283885748582,3.50558514939778,3.82283441748743,3.88507437266432,3.7392851792172,3.72850897552038,3.51166593362054,3.7980489038637,3.98991789679654,3.89760258369119,4.38152357914239,3.81320321246222,4.11872592974958],"y":[68.481,50.023,61.489,74.21,67.052,63.837,70.75,72.649,61.788,61.31,56.696,56.029,49.923,57.402,70.11,65.032,57.47,68.681,66.353,58.447,73.44,68.3,73.38,69.481,67.456],"text":["gdpPercap: 10079.0267<br />lifeExp: 68.48100<br />pop:  26983828<br />continent: Americas","gdpPercap:  3548.0978<br />lifeExp: 50.02300<br />pop:   5079716<br />continent: Americas","gdpPercap:  6660.1187<br />lifeExp: 61.48900<br />pop: 114313951<br />continent: Americas","gdpPercap: 22090.8831<br />lifeExp: 74.21000<br />pop:  23796400<br />continent: Americas","gdpPercap:  4756.7638<br />lifeExp: 67.05200<br />pop:  10599793<br />continent: Americas","gdpPercap:  3815.8079<br />lifeExp: 63.83700<br />pop:  25094412<br />continent: Americas","gdpPercap:  5926.8770<br />lifeExp: 70.75000<br />pop:   2108457<br />continent: Americas","gdpPercap:  6380.4950<br />lifeExp: 72.64900<br />pop:   9537988<br />continent: Americas","gdpPercap:  2681.9889<br />lifeExp: 61.78800<br />pop:   5302800<br />continent: Americas","gdpPercap:  6679.6233<br />lifeExp: 61.31000<br />pop:   7278866<br />continent: Americas","gdpPercap:  5138.9224<br />lifeExp: 56.69600<br />pop:   4282586<br />continent: Americas","gdpPercap:  4879.9927<br />lifeExp: 56.02900<br />pop:   5703430<br />continent: Americas","gdpPercap:  1874.2989<br />lifeExp: 49.92300<br />pop:   4908554<br />continent: Americas","gdpPercap:  3203.2081<br />lifeExp: 57.40200<br />pop:   3055235<br />continent: Americas","gdpPercap:  6650.1956<br />lifeExp: 70.11000<br />pop:   2156814<br />continent: Americas","gdpPercap:  7674.9291<br />lifeExp: 65.03200<br />pop:  63759976<br />continent: Americas","gdpPercap:  5486.3711<br />lifeExp: 57.47000<br />pop:   2554598<br />continent: Americas","gdpPercap:  5351.9121<br />lifeExp: 68.68100<br />pop:   1839782<br />continent: Americas","gdpPercap:  3248.3733<br />lifeExp: 66.35300<br />pop:   2984494<br />continent: Americas","gdpPercap:  6281.2909<br />lifeExp: 58.44700<br />pop:  15990099<br />continent: Americas","gdpPercap:  9770.5249<br />lifeExp: 73.44000<br />pop:   3080828<br />continent: Americas","gdpPercap:  7899.5542<br />lifeExp: 68.30000<br />pop:   1039009<br />continent: Americas","gdpPercap: 24072.6321<br />lifeExp: 73.38000<br />pop: 220239000<br />continent: Americas","gdpPercap:  6504.3397<br />lifeExp: 69.48100<br />pop:   2873520<br />continent: Americas","gdpPercap: 13143.9510<br />lifeExp: 67.45600<br />pop:  13503563<br />continent: Americas"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(163,165,0,1)","opacity":1,"size":[6.97047083068522,5.15434238640086,10.3553727984455,6.77543956769576,5.77446910007444,6.85635435789675,4.65435232683653,5.6710443310913,5.18472018302092,5.42956521861593,5.0398270921093,5.23768683822733,5.13057191783969,4.83958883002819,4.66475315834704,8.68911697083458,4.74607251669638,4.59414954550014,4.82688148286866,6.23316601826461,4.84414878929001,4.37991825947829,12.9086371873162,4.80663028657321,6.03320025163606],"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(163,165,0,1)"}},"hoveron":"points","name":"Americas","legendgroup":"Americas","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2.89548517717506,4.28645875933068,2.81946314412135,2.72013629197205,2.86995736499049,4.048680298964,2.91027070197067,3.14072860861607,4.07513053543838,4.16696961434647,4.12406772903255,4.22037948985684,3.45520305365965,3.61345080718246,3.66812684894598,null,3.93750268823479,3.58296303108212,3.21682849824462,2.56937390961505,2.84142982784579,4.07365765189317,3.07037821749517,3.37533512418369,4.53361654092087,4.04960907918865,3.12993971717703,3.50453672644772,3.74791804661293,3.29252733979409,2.85341657088882,3.56618184839601,3.26239535810376],"y":[38.438,65.593,46.923,31.22,63.96736,73.6,54.208,52.702,57.702,60.413,73.06,75.38,61.134,67.159,64.766,69.343,66.099,65.256,55.491,56.059,46.748,57.367,54.043,60.06,58.69,70.795,65.949,61.195,70.59,62.494,55.764,60.765,44.175],"text":["gdpPercap:   786.1134<br />lifeExp: 38.43800<br />pop:  14880372<br />continent: Asia","gdpPercap: 19340.1020<br />lifeExp: 65.59300<br />pop:    297410<br />continent: Asia","gdpPercap:   659.8772<br />lifeExp: 46.92300<br />pop:  80428306<br />continent: Asia","gdpPercap:   524.9722<br />lifeExp: 31.22000<br />pop:   6978607<br />continent: Asia","gdpPercap:   741.2375<br />lifeExp: 63.96736<br />pop: 943455000<br />continent: Asia","gdpPercap: 11186.1413<br />lifeExp: 73.60000<br />pop:   4583700<br />continent: Asia","gdpPercap:   813.3373<br />lifeExp: 54.20800<br />pop: 634000000<br />continent: Asia","gdpPercap:  1382.7021<br />lifeExp: 52.70200<br />pop: 136725000<br />continent: Asia","gdpPercap: 11888.5951<br />lifeExp: 57.70200<br />pop:  35480679<br />continent: Asia","gdpPercap: 14688.2351<br />lifeExp: 60.41300<br />pop:  11882916<br />continent: Asia","gdpPercap: 13306.6192<br />lifeExp: 73.06000<br />pop:   3495918<br />continent: Asia","gdpPercap: 16610.3770<br />lifeExp: 75.38000<br />pop: 113872473<br />continent: Asia","gdpPercap:  2852.3516<br />lifeExp: 61.13400<br />pop:   1937652<br />continent: Asia","gdpPercap:  4106.3012<br />lifeExp: 67.15900<br />pop:  16325320<br />continent: Asia","gdpPercap:  4657.2210<br />lifeExp: 64.76600<br />pop:  36436000<br />continent: Asia","gdpPercap: 59265.4771<br />lifeExp: 69.34300<br />pop:   1140357<br />continent: Asia","gdpPercap:  8659.6968<br />lifeExp: 66.09900<br />pop:   3115787<br />continent: Asia","gdpPercap:  3827.9216<br />lifeExp: 65.25600<br />pop:  12845381<br />continent: Asia","gdpPercap:  1647.5117<br />lifeExp: 55.49100<br />pop:   1528000<br />continent: Asia","gdpPercap:   371.0000<br />lifeExp: 56.05900<br />pop:  31528087<br />continent: Asia","gdpPercap:   694.1124<br />lifeExp: 46.74800<br />pop:  13933198<br />continent: Asia","gdpPercap: 11848.3439<br />lifeExp: 57.36700<br />pop:   1004533<br />continent: Asia","gdpPercap:  1175.9212<br />lifeExp: 54.04300<br />pop:  78152686<br />continent: Asia","gdpPercap:  2373.2043<br />lifeExp: 60.06000<br />pop:  46850962<br />continent: Asia","gdpPercap: 34167.7626<br />lifeExp: 58.69000<br />pop:   8128505<br />continent: Asia","gdpPercap: 11210.0895<br />lifeExp: 70.79500<br />pop:   2325300<br />continent: Asia","gdpPercap:  1348.7757<br />lifeExp: 65.94900<br />pop:  14116836<br />continent: Asia","gdpPercap:  3195.4846<br />lifeExp: 61.19500<br />pop:   7932503<br />continent: Asia","gdpPercap:  5596.5198<br />lifeExp: 70.59000<br />pop:  16785196<br />continent: Asia","gdpPercap:  1961.2246<br />lifeExp: 62.49400<br />pop:  44148285<br />continent: Asia","gdpPercap:   713.5371<br />lifeExp: 55.76400<br />pop:  50533506<br />continent: Asia","gdpPercap:  3682.8315<br />lifeExp: 60.76500<br />pop:   1261091<br />continent: Asia","gdpPercap:  1829.7652<br />lifeExp: 44.17500<br />pop:   8403990<br />continent: Asia"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,191,125,1)","opacity":1,"size":[6.14601109401926,4.06189233680308,9.29441811927379,5.39475462377927,22.6771653543307,5.08426676230058,19.2706113323364,10.9715821633898,7.43994831281003,5.89270757284543,4.9155533082844,10.342652961876,4.61658106384004,6.25889092142746,7.4890188516279,4.41106157328659,4.85034613145665,5.97722629927717,4.51816213431315,7.2295116202132,6.06899974449858,4.36894912815136,9.21575428359059,7.98702151037774,5.52430918996644,4.70007429187427,6.08413180764231,5.50291508915639,6.29375367739212,7.86362869673143,8.14954658274176,4.44626602186696,5.5539430462659],"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(0,191,125,1)"}},"hoveron":"points","name":"Asia","legendgroup":"Asia","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[3.54814411807184,4.29555439638822,4.28144187754483,3.54758782074795,3.88151249733011,4.05328536317461,4.17026642863828,4.31011744274222,4.19327554039949,4.26227627214274,4.31202751232983,4.15215143685527,4.06725083957618,4.29347221889702,4.04731308089082,4.15399722211687,3.98208706693409,4.32652140433408,4.36756741361793,3.97809563416623,4.00742708886894,3.97110865215781,4.11329709452241,4.03832857580155,4.18403893629866,4.12178698250771,4.27544324046184,4.43107881405245,3.63033859911073,4.24126620200209],"y":[68.93,72.17,72.8,69.86,70.81,70.64,70.71,74.69,72.52,73.83,72.5,73.68,69.95,76.11,72.03,73.48,73.066,75.24,75.37,70.67,70.41,69.46,70.3,70.45,70.97,74.39,75.44,75.39,59.507,72.76],"text":["gdpPercap:  3533.0039<br />lifeExp: 68.93000<br />pop:   2509048<br />continent: Europe","gdpPercap: 19749.4223<br />lifeExp: 72.17000<br />pop:   7568430<br />continent: Europe","gdpPercap: 19117.9745<br />lifeExp: 72.80000<br />pop:   9821800<br />continent: Europe","gdpPercap:  3528.4813<br />lifeExp: 69.86000<br />pop:   4086000<br />continent: Europe","gdpPercap:  7612.2404<br />lifeExp: 70.81000<br />pop:   8797022<br />continent: Europe","gdpPercap: 11305.3852<br />lifeExp: 70.64000<br />pop:   4318673<br />continent: Europe","gdpPercap: 14800.1606<br />lifeExp: 70.71000<br />pop:  10161915<br />continent: Europe","gdpPercap: 20422.9015<br />lifeExp: 74.69000<br />pop:   5088419<br />continent: Europe","gdpPercap: 15605.4228<br />lifeExp: 72.52000<br />pop:   4738902<br />continent: Europe","gdpPercap: 18292.6351<br />lifeExp: 73.83000<br />pop:  53165019<br />continent: Europe","gdpPercap: 20512.9212<br />lifeExp: 72.50000<br />pop:  78160773<br />continent: Europe","gdpPercap: 14195.5243<br />lifeExp: 73.68000<br />pop:   9308479<br />continent: Europe","gdpPercap: 11674.8374<br />lifeExp: 69.95000<br />pop:  10637171<br />continent: Europe","gdpPercap: 19654.9625<br />lifeExp: 76.11000<br />pop:    221823<br />continent: Europe","gdpPercap: 11150.9811<br />lifeExp: 72.03000<br />pop:   3271900<br />continent: Europe","gdpPercap: 14255.9847<br />lifeExp: 73.48000<br />pop:  56059245<br />continent: Europe","gdpPercap:  9595.9299<br />lifeExp: 73.06600<br />pop:    560073<br />continent: Europe","gdpPercap: 21209.0592<br />lifeExp: 75.24000<br />pop:  13852989<br />continent: Europe","gdpPercap: 23311.3494<br />lifeExp: 75.37000<br />pop:   4043205<br />continent: Europe","gdpPercap:  9508.1415<br />lifeExp: 70.67000<br />pop:  34621254<br />continent: Europe","gdpPercap: 10172.4857<br />lifeExp: 70.41000<br />pop:   9662600<br />continent: Europe","gdpPercap:  9356.3972<br />lifeExp: 69.46000<br />pop:  21658597<br />continent: Europe","gdpPercap: 12980.6696<br />lifeExp: 70.30000<br />pop:   8686367<br />continent: Europe","gdpPercap: 10922.6640<br />lifeExp: 70.45000<br />pop:   4827803<br />continent: Europe","gdpPercap: 15277.0302<br />lifeExp: 70.97000<br />pop:   1746919<br />continent: Europe","gdpPercap: 13236.9212<br />lifeExp: 74.39000<br />pop:  36439000<br />continent: Europe","gdpPercap: 18855.7252<br />lifeExp: 75.44000<br />pop:   8251648<br />continent: Europe","gdpPercap: 26982.2905<br />lifeExp: 75.39000<br />pop:   6316424<br />continent: Europe","gdpPercap:  4269.1223<br />lifeExp: 59.50700<br />pop:  42404033<br />continent: Europe","gdpPercap: 17428.7485<br />lifeExp: 72.76000<br />pop:  56179000<br />continent: Europe"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,176,246,1)","opacity":1,"size":[4.73711086274366,5.46245399673978,5.69923465730081,5.00994841135964,5.59538443706805,5.04523525790558,5.73248147708556,5.15554006271282,5.10659105931128,8.26207702648979,9.21603585103979,5.64793676344929,5.77801236958701,4.00561540333621,4.87759423629259,8.38266622872152,4.20280449359801,6.06235892227666,5.00334741211677,7.39523452347783,5.68347312501541,6.63718460047671,5.58381321630558,5.11921103857739,4.57227899402677,7.48917192574021,5.53761739047554,5.31519777193933,7.78197424302696,8.38758788519898],"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(0,176,246,1)"}},"hoveron":"points","name":"Europe","legendgroup":"Europe","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[4.26326190559163,4.21041798943211],"y":[73.49,72.22],"text":["gdpPercap: 18334.1975<br />lifeExp: 73.49000<br />pop:  14074100<br />continent: Oceania","gdpPercap: 16233.7177<br />lifeExp: 72.22000<br />pop:   3164900<br />continent: Oceania"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(231,107,243,1)","opacity":1,"size":[6.08061917751821,4.85899251590851],"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(231,107,243,1)"}},"hoveron":"points","name":"Oceania","legendgroup":"Oceania","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":23.3059360730594,"r":7.30593607305936,"b":37.2602739726027,"l":37.2602739726027},"plot_bgcolor":"rgba(255,255,255,1)","paper_bgcolor":"rgba(255,255,255,1)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[2.36602881723884,4.81006244181684],"tickmode":"array","ticktext":["300","1000","3000","10000","30000"],"tickvals":[2.47712125471966,3,3.47712125471966,4,4.47712125471966],"categoryorder":"array","categoryarray":["300","1000","3000","10000","30000"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"人均 GDP","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[27,93],"tickmode":"array","ticktext":["40","60","80"],"tickvals":[40,60,80],"categoryorder":"array","categoryarray":["40","60","80"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"期望寿命","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":"transparent","line":{"color":"rgba(51,51,51,1)","width":0.66417600664176,"linetype":"solid"},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":false,"legend":{"bgcolor":"rgba(255,255,255,1)","bordercolor":"transparent","borderwidth":1.88976377952756,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"3c2c1caf2b50":{"x":{},"y":{},"size":{},"colour":{},"type":"scatter"}},"cur_data":"3c2c1caf2b50","visdat":{"3c2c1caf2b50":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+
+]
+
+
+.pull-right[
+
+
+
+&lt;img src="img/271-ggplot2-animated-gif-chart-with-gganimate1.gif" width="100%" height="300px" /&gt;
+
+]
+
+
+.pull-left[
+ 
+ 
+
+
+
+&lt;iframe src="img/3dscatter.html" width="100%" height="300px" data-external="1"&gt;&lt;/iframe&gt;
+
+]
+
+.pull-right[
+
+<div id="htmlwidget-0b76e9751fc154e27b86" style="width:100%;height:300px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-0b76e9751fc154e27b86">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addAwesomeMarkers","args":[31.273,120.7385,{"icon":"flag","markerColor":"red","iconColor":"black","spin":false,"squareMarker":false,"iconRotate":0,"font":"monospace","prefix":"fa"},null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addTiles","args":["http://webrd02.is.autonavi.com/appmaptile?lang=zh_cn&size=1&scale=1&style=8&x={x}&y={y}&z={z}",{"minZoom":3,"maxZoom":17,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false},null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://amap.com\">amap.com<\/a >"}]}],"limits":{"lat":[31.273,31.273],"lng":[120.7385,120.7385]},"setView":[[31.273,120.7385],16,[]]},"evals":[],"jsHooks":[]}</script>
+
+]
+
+
+
+
+
+
+---
+class: animated, fadeIn
+
+.pull-left[
+
+## ggplot2 作图
+
+![](r2022_files/figure-html/unnamed-chunk-9-1.png)&lt;!-- --&gt;
+
+.small[
+
+
+```r
+ggplot() +
+  geom_col() +
+  其他
+```
+
+]
+
+]
+
+
+--
+
+.pull-right[
+
+.small[
+
+
+```r
+ggplot() +      # 必选：数据映射
+  geom_xxx() +  # 必选：几何形状
+  coordinate_xxx() + ## 坐标系
+  theme() +          ## 主题
+  facet_xxx() +      ## 分面
+  ...
+```
+
+]
+
+.small[
+
+| 编号 | 函数           | 用途           |
+| ---- | -------------- | -------------- |
+| 1    | `geom_point()`     | 散点图         |
+| 2    | `geom_line()`      | 折线图         |
+| 3    | `geom_bar()`       | 条形图         |
+| 4    | `geom_histogram()` | 直方图         |
+| 5    | `geom_freqpoly()`  | 频率多边形图   |
+| 6    | `geom_density()`   | 密度分布图     |
+| 7    | `geom_boxplot()`   | 箱线图         |
+| 8    | `geom_bin2d()`     | 二维直方图     |
+| 9    | `geom_density2d()` | 二维密度分布图 |
+| 10   | `geom_contour()`   | 等值线图       |
+| 11   | `geom_abline()`    | 添加直线       |
+| 12   | `geom_text()`      | 添加文字       |
+| 13   | `geom_errorbar()`  | 添加误差线     |
+| 14   | `geom_polygon()`   | 添加多边形     |
+| 15   | `geom_rect()`      | 添加长方形     |
+| 16   | `geom_smooth()`    | 添加平滑线     |
+
+]
+
+]
+
+---
+class: animated, fadeIn
+
+.pull-left[
+
+## 基础作图包
+
+![](r2022_files/figure-html/unnamed-chunk-12-1.png)&lt;!-- --&gt;
+
+.small[
+
+
+```r
+barplot(gdp$gdp)
+box()
+```
+
+]
+
+]
+
+
+--
+
+.pull-right[
+
+.small[
+
+| 编号 | 函数           | 用途                 |
+| -- | -------------- | -------------------- |
+|1 | `plot()`       | 主要用作散点图       |
+|2 | `pairs()`      | 散点图矩阵           |
+|3 | `symbols()`    | 气泡图               |
+|4 | `hist()`       | 直方图               |
+|5 | `curve()`      | 函数曲线图           |
+|6 | `barplot()`    | 柱状图               |
+|7 | `boxplot()`    | 箱式图               |
+|8 | `coplot()`     | 条件散点图           |
+|9 | `dotchart()`   | 点图 |
+|10 | `stripchart()` | 一维散点图           |
+|11 | `image()`      | 矩阵方格图           |
+|12 | `contour()`    | 等高线图             |
+|13 | `lines()` |  添加线 | 
+|14 | `points()` | 添加点 | 
+|15 | `abline()` | 添加直线  | 
+|16 | `axis()` | 添加坐标轴  | 
+|17 | `legend()` | 添加图例  | 
+|18 | `text()` | 添加绘图区内文字  | 
+|19 | `mtext()` | 添加绘图区外文字 | 
+|20 | `layout()` | 多图布局 |
+
+]
+
+]
+
+---
+class: animated, fadeIn
+
+## 其他作图包
+
+.pull-left[
+
+## **plotly**
+
+<div id="htmlwidget-d77df4d86a33e1251de4" style="width:100%;height:300px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-d77df4d86a33e1251de4">{"x":{"data":[{"orientation":"v","width":0.9,"base":0,"x":[1],"y":[8026.78],"text":"country: 土耳其<br />gdp:   8026.78<br />gdp:   8026.78","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(19,43,67,1)","line":{"width":1.88976377952756,"color":"transparent"}},"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.9,"base":0,"x":[2],"y":[8124.29],"text":"country: 瑞士<br />gdp:   8124.29<br />gdp:   8124.29","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(19,43,67,1)","line":{"width":1.88976377952756,"color":"transparent"}},"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.9,"base":0,"x":[3],"y":[8335],"text":"country: 沙特阿拉伯<br />gdp:   8335.00<br />gdp:   8335.00","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(19,43,67,1)","line":{"width":1.88976377952756,"color":"transparent"}},"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.9,"base":0,"x":[4],"y":[10161.7],"text":"country: 荷兰<br />gdp:  10161.70<br />gdp:  10161.70","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(20,44,69,1)","line":{"width":1.88976377952756,"color":"transparent"}},"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.9,"base":0,"x":[5],"y":[10814],"text":"country: 伊朗<br />gdp:  10814.00<br />gdp:  10814.00","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(20,44,69,1)","line":{"width":1.88976377952756,"color":"transparent"}},"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.9,"base":0,"x":[6],"y":[11858],"text":"country: 印度尼西亚<br />gdp:  11858.00<br />gdp:  11858.00","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(20,45,70,1)","line":{"width":1.88976377952756,"color":"transparent"}},"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.9,"base":0,"x":[7],"y":[12924.1],"text":"country: 墨西哥<br />gdp:  12924.10<br />gdp:  12924.10","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(20,46,70,1)","line":{"width":1.88976377952756,"color":"transparent"}},"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.899999999999999,"base":0,"x":[8],"y":[14228.3],"text":"country: 西班牙<br />gdp:  14228.30<br />gdp:  14228.30","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(21,46,71,1)","line":{"width":1.88976377952756,"color":"transparent"}},"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.899999999999999,"base":0,"x":[9],"y":[16081],"text":"country: 巴西<br />gdp:  16081.00<br />gdp:  16081.00","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(21,47,73,1)","line":{"width":1.88976377952756,"color":"transparent"}},"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.899999999999999,"base":0,"x":[10],"y":[16338.7],"text":"country: 澳大利亚<br />gdp:  16338.70<br />gdp:  16338.70","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(21,47,73,1)","line":{"width":1.88976377952756,"color":"transparent"}},"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.899999999999999,"base":0,"x":[11],"y":[17754.6],"text":"country: 俄罗斯<br />gdp:  17754.60<br />gdp:  17754.60","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(22,48,74,1)","line":{"width":1.88976377952756,"color":"transparent"}},"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.899999999999999,"base":0,"x":[12],"y":[17985],"text":"country: 韩国<br />gdp:  17985.00<br />gdp:  17985.00","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(22,48,74,1)","line":{"width":1.88976377952756,"color":"transparent"}},"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.899999999999999,"base":0,"x":[13],"y":[19913.2],"text":"country: 加拿大<br />gdp:  19913.20<br />gdp:  19913.20","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(22,49,75,1)","line":{"width":1.88976377952756,"color":"transparent"}},"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.899999999999999,"base":0,"x":[14],"y":[21013],"text":"country: 意大利<br />gdp:  21013.00<br />gdp:  21013.00","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(23,50,76,1)","line":{"width":1.88976377952756,"color":"transparent"}},"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.899999999999999,"base":0,"x":[15],"y":[29374.5],"text":"country: 法国<br />gdp:  29374.50<br />gdp:  29374.50","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(25,54,82,1)","line":{"width":1.88976377952756,"color":"transparent"}},"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.899999999999999,"base":0,"x":[16],"y":[30798.7],"text":"country: 印度<br />gdp:  30798.70<br />gdp:  30798.70","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(25,55,83,1)","line":{"width":1.88976377952756,"color":"transparent"}},"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.899999999999999,"base":0,"x":[17],"y":[31885.8],"text":"country: 英国<br />gdp:  31885.80<br />gdp:  31885.80","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(25,56,84,1)","line":{"width":1.88976377952756,"color":"transparent"}},"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.899999999999999,"base":0,"x":[18],"y":[42189.3],"text":"country: 德国<br />gdp:  42189.30<br />gdp:  42189.30","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(28,61,92,1)","line":{"width":1.88976377952756,"color":"transparent"}},"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.899999999999999,"base":0,"x":[19],"y":[49347.2],"text":"country: 日本<br />gdp:  49347.20<br />gdp:  49347.20","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(30,65,97,1)","line":{"width":1.88976377952756,"color":"transparent"}},"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.899999999999999,"base":0,"x":[20],"y":[177272],"text":"country: 中国<br />gdp: 177272.00<br />gdp: 177272.00","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(69,143,201,1)","line":{"width":1.88976377952756,"color":"transparent"}},"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.899999999999999,"base":0,"x":[21],"y":[229935],"text":"country: 美国<br />gdp: 229935.00<br />gdp: 229935.00","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(86,177,247,1)","line":{"width":1.88976377952756,"color":"transparent"}},"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1],"y":[0],"name":"99_a9af69b945ec2d9248438a60cb25d4cc","type":"scatter","mode":"markers","opacity":0,"hoverinfo":"skip","showlegend":false,"marker":{"color":[0,1],"colorscale":[[0,"#132B43"],[0.00334448160535117,"#132B44"],[0.00668896321070234,"#132C44"],[0.0100334448160535,"#142C45"],[0.0133779264214047,"#142D45"],[0.0167224080267559,"#142D46"],[0.020066889632107,"#142D46"],[0.0234113712374582,"#142E47"],[0.0267558528428094,"#152E47"],[0.0301003344481605,"#152F48"],[0.0334448160535117,"#152F48"],[0.0367892976588629,"#152F49"],[0.040133779264214,"#153049"],[0.0434782608695652,"#16304A"],[0.0468227424749164,"#16304A"],[0.0501672240802676,"#16314B"],[0.0535117056856187,"#16314B"],[0.0568561872909699,"#16324C"],[0.0602006688963211,"#17324D"],[0.0635451505016722,"#17324D"],[0.0668896321070234,"#17334E"],[0.0702341137123746,"#17334E"],[0.0735785953177258,"#17344F"],[0.0769230769230769,"#18344F"],[0.0802675585284281,"#183450"],[0.0836120401337793,"#183550"],[0.0869565217391304,"#183551"],[0.0903010033444816,"#183651"],[0.0936454849498328,"#193652"],[0.0969899665551839,"#193652"],[0.100334448160535,"#193753"],[0.103678929765886,"#193754"],[0.107023411371237,"#193854"],[0.110367892976589,"#1A3855"],[0.11371237458194,"#1A3955"],[0.117056856187291,"#1A3956"],[0.120401337792642,"#1A3956"],[0.123745819397993,"#1A3A57"],[0.127090301003344,"#1B3A57"],[0.130434782608696,"#1B3B58"],[0.133779264214047,"#1B3B59"],[0.137123745819398,"#1B3B59"],[0.140468227424749,"#1C3C5A"],[0.1438127090301,"#1C3C5A"],[0.147157190635452,"#1C3D5B"],[0.150501672240803,"#1C3D5B"],[0.153846153846154,"#1C3D5C"],[0.157190635451505,"#1D3E5C"],[0.160535117056856,"#1D3E5D"],[0.163879598662207,"#1D3F5D"],[0.167224080267559,"#1D3F5E"],[0.17056856187291,"#1D3F5F"],[0.173913043478261,"#1E405F"],[0.177257525083612,"#1E4060"],[0.180602006688963,"#1E4160"],[0.183946488294314,"#1E4161"],[0.187290969899666,"#1E4261"],[0.190635451505017,"#1F4262"],[0.193979933110368,"#1F4263"],[0.197324414715719,"#1F4363"],[0.20066889632107,"#1F4364"],[0.204013377926421,"#1F4464"],[0.207357859531773,"#204465"],[0.210702341137124,"#204465"],[0.214046822742475,"#204566"],[0.217391304347826,"#204566"],[0.220735785953177,"#214667"],[0.224080267558528,"#214668"],[0.22742474916388,"#214768"],[0.230769230769231,"#214769"],[0.234113712374582,"#214769"],[0.237458193979933,"#22486A"],[0.240802675585284,"#22486A"],[0.244147157190635,"#22496B"],[0.247491638795987,"#22496C"],[0.250836120401338,"#224A6C"],[0.254180602006689,"#234A6D"],[0.25752508361204,"#234A6D"],[0.260869565217391,"#234B6E"],[0.264214046822743,"#234B6E"],[0.267558528428094,"#244C6F"],[0.270903010033445,"#244C70"],[0.274247491638796,"#244C70"],[0.277591973244147,"#244D71"],[0.280936454849498,"#244D71"],[0.28428093645485,"#254E72"],[0.287625418060201,"#254E72"],[0.290969899665552,"#254F73"],[0.294314381270903,"#254F74"],[0.297658862876254,"#254F74"],[0.301003344481605,"#265075"],[0.304347826086957,"#265075"],[0.307692307692308,"#265176"],[0.311036789297659,"#265176"],[0.31438127090301,"#275277"],[0.317725752508361,"#275278"],[0.321070234113712,"#275278"],[0.324414715719064,"#275379"],[0.327759197324415,"#275379"],[0.331103678929766,"#28547A"],[0.334448160535117,"#28547B"],[0.337792642140468,"#28557B"],[0.341137123745819,"#28557C"],[0.344481605351171,"#28567C"],[0.347826086956522,"#29567D"],[0.351170568561873,"#29567D"],[0.354515050167224,"#29577E"],[0.357859531772575,"#29577F"],[0.361204013377926,"#2A587F"],[0.364548494983278,"#2A5880"],[0.367892976588629,"#2A5980"],[0.37123745819398,"#2A5981"],[0.374581939799331,"#2A5982"],[0.377926421404682,"#2B5A82"],[0.381270903010033,"#2B5A83"],[0.384615384615385,"#2B5B83"],[0.387959866220736,"#2B5B84"],[0.391304347826087,"#2C5C85"],[0.394648829431438,"#2C5C85"],[0.397993311036789,"#2C5D86"],[0.40133779264214,"#2C5D86"],[0.404682274247492,"#2C5D87"],[0.408026755852843,"#2D5E87"],[0.411371237458194,"#2D5E88"],[0.414715719063545,"#2D5F89"],[0.418060200668896,"#2D5F89"],[0.421404682274247,"#2E608A"],[0.424749163879599,"#2E608A"],[0.42809364548495,"#2E618B"],[0.431438127090301,"#2E618C"],[0.434782608695652,"#2E618C"],[0.438127090301003,"#2F628D"],[0.441471571906354,"#2F628D"],[0.444816053511706,"#2F638E"],[0.448160535117057,"#2F638F"],[0.451505016722408,"#30648F"],[0.454849498327759,"#306490"],[0.45819397993311,"#306590"],[0.461538461538462,"#306591"],[0.464882943143813,"#306592"],[0.468227424749164,"#316692"],[0.471571906354515,"#316693"],[0.474916387959866,"#316793"],[0.478260869565217,"#316794"],[0.481605351170569,"#326895"],[0.48494983277592,"#326895"],[0.488294314381271,"#326996"],[0.491638795986622,"#326996"],[0.494983277591973,"#326997"],[0.498327759197324,"#336A98"],[0.501672240802676,"#336A98"],[0.505016722408027,"#336B99"],[0.508361204013378,"#336B99"],[0.511705685618729,"#346C9A"],[0.51505016722408,"#346C9B"],[0.518394648829431,"#346D9B"],[0.521739130434783,"#346D9C"],[0.525083612040134,"#346E9D"],[0.528428093645485,"#356E9D"],[0.531772575250836,"#356E9E"],[0.535117056856187,"#356F9E"],[0.538461538461538,"#356F9F"],[0.54180602006689,"#3670A0"],[0.545150501672241,"#3670A0"],[0.548494983277592,"#3671A1"],[0.551839464882943,"#3671A1"],[0.555183946488294,"#3772A2"],[0.558528428093646,"#3772A3"],[0.561872909698997,"#3773A3"],[0.565217391304348,"#3773A4"],[0.568561872909699,"#3773A4"],[0.57190635451505,"#3874A5"],[0.575250836120401,"#3874A6"],[0.578595317725753,"#3875A6"],[0.581939799331104,"#3875A7"],[0.585284280936455,"#3976A8"],[0.588628762541806,"#3976A8"],[0.591973244147157,"#3977A9"],[0.595317725752508,"#3977A9"],[0.59866220735786,"#3978AA"],[0.602006688963211,"#3A78AB"],[0.605351170568562,"#3A79AB"],[0.608695652173913,"#3A79AC"],[0.612040133779264,"#3A79AC"],[0.615384615384615,"#3B7AAD"],[0.618729096989967,"#3B7AAE"],[0.622073578595318,"#3B7BAE"],[0.625418060200669,"#3B7BAF"],[0.62876254180602,"#3C7CB0"],[0.632107023411371,"#3C7CB0"],[0.635451505016722,"#3C7DB1"],[0.638795986622074,"#3C7DB1"],[0.642140468227425,"#3C7EB2"],[0.645484949832776,"#3D7EB3"],[0.648829431438127,"#3D7FB3"],[0.652173913043478,"#3D7FB4"],[0.655518394648829,"#3D7FB5"],[0.658862876254181,"#3E80B5"],[0.662207357859532,"#3E80B6"],[0.665551839464883,"#3E81B6"],[0.668896321070234,"#3E81B7"],[0.672240802675585,"#3F82B8"],[0.675585284280936,"#3F82B8"],[0.678929765886288,"#3F83B9"],[0.682274247491639,"#3F83BA"],[0.68561872909699,"#4084BA"],[0.688963210702341,"#4084BB"],[0.692307692307692,"#4085BB"],[0.695652173913043,"#4085BC"],[0.698996655518395,"#4086BD"],[0.702341137123746,"#4186BD"],[0.705685618729097,"#4186BE"],[0.709030100334448,"#4187BF"],[0.712374581939799,"#4187BF"],[0.71571906354515,"#4288C0"],[0.719063545150502,"#4288C1"],[0.722408026755853,"#4289C1"],[0.725752508361204,"#4289C2"],[0.729096989966555,"#438AC2"],[0.732441471571906,"#438AC3"],[0.735785953177257,"#438BC4"],[0.739130434782609,"#438BC4"],[0.74247491638796,"#438CC5"],[0.745819397993311,"#448CC6"],[0.749163879598662,"#448DC6"],[0.752508361204013,"#448DC7"],[0.755852842809364,"#448EC8"],[0.759197324414716,"#458EC8"],[0.762541806020067,"#458FC9"],[0.765886287625418,"#458FC9"],[0.769230769230769,"#458FCA"],[0.77257525083612,"#4690CB"],[0.775919732441471,"#4690CB"],[0.779264214046823,"#4691CC"],[0.782608695652174,"#4691CD"],[0.785953177257525,"#4792CD"],[0.789297658862876,"#4792CE"],[0.792642140468227,"#4793CF"],[0.795986622073579,"#4793CF"],[0.79933110367893,"#4894D0"],[0.802675585284281,"#4894D0"],[0.806020066889632,"#4895D1"],[0.809364548494983,"#4895D2"],[0.812709030100334,"#4896D2"],[0.816053511705686,"#4996D3"],[0.819397993311037,"#4997D4"],[0.822742474916388,"#4997D4"],[0.826086956521739,"#4998D5"],[0.82943143812709,"#4A98D6"],[0.832775919732441,"#4A99D6"],[0.836120401337793,"#4A99D7"],[0.839464882943144,"#4A9AD8"],[0.842809364548495,"#4B9AD8"],[0.846153846153846,"#4B9BD9"],[0.849498327759197,"#4B9BDA"],[0.852842809364548,"#4B9BDA"],[0.8561872909699,"#4C9CDB"],[0.859531772575251,"#4C9CDB"],[0.862876254180602,"#4C9DDC"],[0.866220735785953,"#4C9DDD"],[0.869565217391304,"#4D9EDD"],[0.872909698996655,"#4D9EDE"],[0.876254180602007,"#4D9FDF"],[0.879598662207358,"#4D9FDF"],[0.882943143812709,"#4DA0E0"],[0.88628762541806,"#4EA0E1"],[0.889632107023411,"#4EA1E1"],[0.892976588628763,"#4EA1E2"],[0.896321070234114,"#4EA2E3"],[0.899665551839465,"#4FA2E3"],[0.903010033444816,"#4FA3E4"],[0.906354515050167,"#4FA3E5"],[0.909698996655518,"#4FA4E5"],[0.91304347826087,"#50A4E6"],[0.916387959866221,"#50A5E7"],[0.919732441471572,"#50A5E7"],[0.923076923076923,"#50A6E8"],[0.926421404682274,"#51A6E8"],[0.929765886287625,"#51A7E9"],[0.933110367892977,"#51A7EA"],[0.936454849498328,"#51A8EA"],[0.939799331103679,"#52A8EB"],[0.94314381270903,"#52A9EC"],[0.946488294314381,"#52A9EC"],[0.949832775919732,"#52AAED"],[0.953177257525084,"#53AAEE"],[0.956521739130435,"#53ABEE"],[0.959866220735786,"#53ABEF"],[0.963210702341137,"#53ACF0"],[0.966555183946488,"#54ACF0"],[0.969899665551839,"#54ADF1"],[0.973244147157191,"#54ADF2"],[0.976588628762542,"#54AEF2"],[0.979933110367893,"#55AEF3"],[0.983277591973244,"#55AFF4"],[0.986622073578595,"#55AFF4"],[0.989966555183946,"#55B0F5"],[0.993311036789298,"#56B0F6"],[0.996655518394649,"#56B1F6"],[1,"#56B1F7"]],"colorbar":{"bgcolor":"rgba(255,255,255,1)","bordercolor":"transparent","borderwidth":1.88976377952756,"thickness":23.04,"title":"gdp","titlefont":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"tickmode":"array","ticktext":["50000","100000","150000","200000"],"tickvals":[0.18914675625806,0.414465133378115,0.639783510498169,0.865101887618223],"tickfont":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895},"ticklen":2,"len":0.5}},"xaxis":"x","yaxis":"y","frame":null}],"layout":{"margin":{"t":23.3059360730594,"r":7.30593607305936,"b":37.2602739726027,"l":60.6392694063927},"plot_bgcolor":"rgba(235,235,235,1)","paper_bgcolor":"rgba(255,255,255,1)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.4,21.6],"tickmode":"array","ticktext":["土耳其","瑞士","沙特阿拉伯","荷兰","伊朗","印度尼西亚","墨西哥","西班牙","巴西","澳大利亚","俄罗斯","韩国","加拿大","意大利","法国","印度","英国","德国","日本","中国","美国"],"tickvals":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21],"categoryorder":"array","categoryarray":["土耳其","瑞士","沙特阿拉伯","荷兰","伊朗","印度尼西亚","墨西哥","西班牙","巴西","澳大利亚","俄罗斯","韩国","加拿大","意大利","法国","印度","英国","德国","日本","中国","美国"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"country","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-11496.75,241431.75],"tickmode":"array","ticktext":["0","50000","100000","150000","200000"],"tickvals":[0,50000,100000,150000,200000],"categoryorder":"array","categoryarray":["0","50000","100000","150000","200000"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"gdp","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":false,"legend":{"bgcolor":"rgba(255,255,255,1)","bordercolor":"transparent","borderwidth":1.88976377952756,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895},"title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"3c2c741f51d":{"x":{},"y":{},"fill":{},"type":"bar"}},"cur_data":"3c2c741f51d","visdat":{"3c2c741f51d":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+
+
+```r
+library(plotly)
+ggplotly()
+```
+
+
+]
+
+.pull-right[
+
+## **rgl**
+
+
+
+&lt;iframe src="img/heart/heart.html" width="100%" height="400px" data-external="1"&gt;&lt;/iframe&gt;
+
+
+```r
+library(rgl)
+persp3d()
+```
+
+
+]
+
+
+---
+class: animated, fadeIn
+
+## 作业
+
+.pull-left[
+
+### 复习
+
+- [获取本课的代码](https://connect.xjtlu.edu.cn/artefact/artefact.php?artefact=281026&amp;view=55168&amp;block=267898)，重现展示的图形。
+
+### 思考题
+
+1. 使用 **ggplot2** 包 和基础作图包绘制 `iris$Sepal.Length` 数据的箱线图。
+
+2. **plotly** 包制作的交互图形可用于哪些场景？
+
+3. 三维图（如本课演示的 **rgl** 包）有哪些利弊？
+
+]
+
+.pull-right[
+
+### 扩展阅读
+
+![](img/books.jpg)
+
+- 赵鹏，谢益辉，黄湘云：《现代统计图形》
+
+- 哈德利·威克姆：《**ggplot2**：数据分析与图形艺术（第 2 版）》
+
+]
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="libs/remark-latest.min.js"></script>
+<script src="style/macro.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "4:3"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
