@@ -1,0 +1,148 @@
+---
+title: "R, Open Access and RepRoducible ReseaRch"
+author: ["<span class=\"presenter\">Peng Zhao<sup>1</sup></span>, Someone Else<sup>1, 2</sup><ol class=\"affiliations\"><li>Max Planck Institute for Chemistry, Mainz, Germany peng.zhao@mpic.de</li><li>Far Far Away</li></ol>"]
+output:
+  drposter::drposter_poster:
+    self_contained: false
+    css: custom.css
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE, signif = 3)
+```
+
+
+# {.col-2}
+
+## *What* is this
+
+R, a fully **open access** environment for data analysis, which is open source, reproducible,  accessible online, interactive (try Table 1 and Fig. 3). 
+
+R created this poster with me. Wanna know how to make it? Join this **4.5-hour training course**, if you are:
+
+  - a beginner without a programming background,
+  - a student or an early career scientist who is interested in R language, or
+  - a senior scientist who is interested in reproducible research.
+
+## *How* to participate
+
+- **Four (or five) parts** (see the headings in this post). Feel free to take part in any one or all of them. 
+- Send a **registration email** to peng.zhao@mpic.de by Monday morning, 3 Dec., 2018. Please mention which part you would participate.
+- Bring a **laptop for live practice**. Examples are give on Windows, while other OS will be compatible. Install R and RStudio in advance if you can.
+
+## *Why* this course
+
+| ![](https://slides.yihui.name/gif/latex-tweak.gif) | ![](https://slides.yihui.name/gif/git-push-force.gif) |
+| -------------------------------------------------- | ----------------------------------------------------- |
+| Fig. 1: Before this course.                        | Fig.2: After this course.                             |
+
+## *Part 0*: Preparation (Mon. 13:30)
+
+- Install R: [Windows](https://cran.r-project.org/bin/windows/base/R-3.5.1-win.exe), [macOS](https://cran.r-project.org/bin/macosx/R-3.5.1.pkg),[Linux](https://cran.r-project.org/bin/linux/)
+- Install RStudio: [download](https://www.rstudio.com/products/rstudio/download/#download)
+- Recommended: [Typora](https://typora.io/), [StackEdit](https://stackedit.io/), [Notepad++](https://notepad-plus-plus.org/download), [Sublime Text](https://www.sublimetext.com/)...
+- Table 1. A data set for practice (interactive).
+
+```{r}
+airquality$Month <- as.factor(airquality$Month)
+DT::datatable(
+  airquality, 
+  fillContainer = FALSE, options = list(pageLength = 4)
+)
+
+```
+
+
+# {.col-2}
+
+
+## *Where* and *when*
+
+- Max Planck Institute for Chemistry, Mainz, Germany.
+- Monday (3^*th*^ Dec. 2018) afternoon 13:30, **Seminar Room 1** on the ground floor.
+- Tuesday (4^*th*^ Dec.) morning 10:00, **Conference Room** on the first floor.
+
+
+## *Part 1*: Basic operations (Mon. 14:00)
+
+### Maths
+
+- Fundamental calculation
+- Data structure
+- Statistics
+
+### Programming
+
+- Read and save data
+- Conditional statements: `if`...`else`...
+- Loop: `for`
+
+## *Part 2*: Plot diagrams (Mon. 15:00)
+
+
+```{r fig3, echo=FALSE, message=FALSE, fig.cap='Fig. 3: An interactive map of the air quality in China on 2016-12-30, 14:00 (use your mouse to zoom in).', out.width= '100%', fig.height=8}
+# library(GGally)
+# ggpairs(airquality[, 1:5], aes(color = Month, alpha = 0.4))
+aqi <- read.csv("data/aqi.csv")
+aqstandard <- c(0, 50, 100, 150, 200, 300, 500, Inf)
+# aqilevel <- cut(aqi$aqi[match(levels(cm$NAME),aqi$province)], aqstandard)
+require(leafletCN)
+aqi$aqi[aqi$aqi == -1] <- NA
+pvs <- regionNames("china")
+loc <- match(pvs, aqi$province)
+aqi2 <- data.frame(name = pvs, value = aqi$aqi[loc])
+geojsonMap(dat = aqi2, mapName = "china", palette = rev(heat.colors(2)),
+           popup =  paste(aqi2$name, aqi2$value),
+           legendTitle = "AQI")
+```
+
+## *Part 3*: Reproducible Research (Tue. 10:00)
+
+### Journal articles
+
+- Introduction to R rticle package
+- Write a draft for ACP
+
+### Dissertations/books
+- Introduction to R bookdown/bookdownplus packages
+- Write a dissertation of PKU/UBT
+
+### Slides
+- Introduction to R xaringan package
+- Make slides
+
+### Posters
+- Introduction to R drposter package
+- A live example: this poster
+
+### Mindmaps
+- Introduction to R mindr package
+- Create mindmpas from a dissertation
+
+### Research websites
+- Introduction to R blogdown package
+- A live example
+
+## *Part 4*: Project Management (Tue. 11:00)
+
+Manage a project, including data, programming scripts, documents, slides, posters, etc., in an R way.
+
+# {.col-2}
+
+## Contact {style="--header-color:darkred; --other-color-for-h2-gradient:red;"}
+
+<p class="qr">
+![QR code](img/qr-code.png)
+Scan this QR code to visit this poster online. 
+</p>
+
+- &#9993; peng.zhao@mpic.de. 
+- &#10174; [AG Cheng](https://www.mpic.de/en/research/further-groups/cheng-group.html) and [AG Su](https://www.mpic.de/en/research/multiphase-chemistry/su-group.html). 
+
+
+# {.col-2}
+
+## Acknowledgements
+
+Many thanks to Dr.David Walter, Dr. Jiandong Wang, Dr. Yihui Xie, Prof. Yafang Cheng, Prof. Hang Su for inspiring the idea of this course and sharing their experience.
+

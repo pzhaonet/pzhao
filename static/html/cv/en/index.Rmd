@@ -1,0 +1,382 @@
+---
+title: "Peng Zhao' CV"
+author: Peng Zhao
+date: "`r Sys.Date()`"
+output:
+  pagedown::html_resume:
+    # set it to true for a self-contained HTML page but it'll take longer to render
+    self_contained: false
+# knit: pagedown::chrome_print
+---
+
+# Aside
+
+<!--
+![Peng Zhao](https://github.com/rbind/pzhao/raw/master/static/img/zhao2.jpg){width=80%}
+-->
+
+## <i class="fa fa-address-card"></i> Contact {#contact}
+
+- <i class="fa fa-envelope"></i> peng.zhao@xjtlu.edu.cn
+- <i class="fa fa-envelope"></i> pengzhao.net@gmail.com
+- <i class="fa fa-home"></i> https://pzhao.org
+<!-- - <i class="fa fa-phone"></i> +49(6131)305-7202 -->
+
+## <i class="fa fa-star"></i> Highlights {#contact}
+
+- <i class="fa fa-dot-circle-o"></i> Experienced in University level teaching
+- <i class="fa fa-dot-circle-o"></i> Skilled in field campaigns and model development
+- <i class="fa fa-dot-circle-o"></i> Chinese, English (fluent), German (intermediate)
+- <i class="fa fa-dot-circle-o"></i> Highly skilled in R language
+
+## <i class="fa fa-hand-o-right"></i> Majors {#contact}
+- <i class="fa fa-dot-circle-o"></i> Environmental Science
+- <i class="fa fa-dot-circle-o"></i> Atmospheric Science
+- <i class="fa fa-dot-circle-o"></i> Micrometeorology
+
+## Disclaimer {#disclaimer}
+
+[![](qr_pengzhao_connect.png){width=60%}](https://connect.xjtlu.edu.cn/user/pengzhao)
+
+Updated on `r Sys.Date()`.
+
+See the latest CV in [English](https://www.pzhao.org/cv/en/index.html) or [Chinese](https://www.pzhao.org/cv/zh/index.html).
+
+# Main
+
+## Dr. Peng Zhao {#title}
+
+### Assistant Professor, Xi'an Jiaotong-Liverpool University
+
+## Education {data-icon=graduation-cap data-concise=true}
+
+### University of Bayreuth, Department of Micrometeorology
+
+PhD in Geoecology
+
+Bayreuth, Germany
+
+2014
+
+### Peking University, College of Environmental Sciences
+
+MSc in Environmental Sciences
+
+Beijing, China
+
+2005
+
+### Peking University, Department of Chemistry
+
+BSc in Chemistry
+
+Beijing, China
+
+2002
+
+## Work Experience {data-icon=institution}
+
+### Assistant Professor, Xi'an Jiaotong-Liverpool University
+
+　
+
+Suzhou, China
+
+Present - 2020
+
+### Postdoc at the Max Planck Institute for Chemistry
+
+　
+
+Mainz, Germany
+
+2020 - 2018
+
+### Postdoc at the Institute of Ecology, University of Innsbruck
+
+　
+
+Innsbruck, Austria
+
+2017 - 2014
+
+### Research assistant at the Chinese Academy of Meteorological Sciences
+
+　
+
+Beijing, China
+
+2009 - 2005
+
+## Teaching Experience {data-icon=chalkboard-teacher}
+
+### Statistics for Environmental Scientists (in English, as Module Leader)
+
+Undergraduate modules at Xi'an Jiaotong-Liverpool University (ENV203, ENV221, ENV222)
+
+Suzhou, China
+
+Present - 2020
+
+### R Language in Scientific Research (in Chinese, as Leader)
+
+Invited training for postgraduates at South China University of Technology
+
+Guangzhou, China
+
+2020-12
+
+### R language Supports Scientific Research (in Chinese, as Leader)
+
+Invited training at the Central University of Economics and Finance
+
+Beijing, China
+
+2019-09
+
+### R, Open Science, and Reproducible Research (in English, as Creator & Leader)
+
+Doctoral Lecture at Max Planck Institute for Chemistry
+
+Mainz, Germany
+
+2018
+
+### Field Experiments in Atmospheric Science (in English, as Assistant)
+
+Postgraduate module 707741 (Institute of Ecology, University of Innsbruck)
+
+Innsbruck, Austria
+
+2016
+
+### Applied Meteorology (in English, as Assistant)
+
+Postgraduate module 28205 (Department of Micrometeorology, University of Bayreuth)
+
+Bayreuth, Germany
+
+2011
+
+::: aside
+[![](https://msg2020.pzhao.org/image/msg2020-bookcover.png){width=80%}](https://msg2020.pzhao.org/)
+:::
+
+### Monitoring atmosphere composition (in Chinese, as Leader)
+
+Professional training (Chinese Academy of Meteorological Sciences)
+
+Beijing, China
+
+2009 - 2005
+
+## Books (selected) {data-icon=book}
+
+### [Modern Statistical Graphs](https://msg2020.pzhao.org/). In Chinese. ISBN 9787115566904. 304 pp.
+
+Zhao, P., Xie, Y., Huang, X.
+
+Posts & Telecom Press, Beijing
+
+2021
+
+### [Learning R](https://xuer.pzhao.org/). In Chinese. ISBN 978-7-5199-0294-0. 343 pp.
+
+Zhao, P., Li, Y.
+
+Research Press. Beijing
+
+2018
+
+::: aside
+[![](https://pzhao.org/image/book-xuer.jpg){width=80%}](https://xuer.pzhao.org/)
+:::
+
+## Model/App Development (selected)  {data-icon=laptop}
+
+### [Rchive: An online tool to display the public discussion list on R development and R help.](https://sciwis.shinyapps.io/rchive/)
+
+N/A
+
+N/A
+
+2019
+
+### [R package wibsr: Processing bioaerosol data from Wideband Integrated Bioaerosol Sensors (WIBS-NEO)](https://pzhao.org/pkg/wibsr)
+
+Zhao, P., Kuhn, W., Cheng, Y., Pöschl, U., Su, H. 
+
+N/A
+
+Present
+
+### [R package et: An atmospheric kinetic model for evaluating the aerodynamic gradient method in reactive species flux measurement.](https://pzhao.org/pkg/et)
+
+Zhao, P., Li, M., Cheng, Y., Pöschl, U., Su, H. 
+
+N/A
+
+Present - 2018
+
+### [R package rmd: R Markdown family for Create Reproducible Research Projects](https://CRAN.R-project.org/package=rmd)
+
+N/A
+
+N/A
+
+Present - 2018
+
+::: aside
+![rmd](http://cranlogs.r-pkg.org/badges/grand-total/rmd)
+:::
+
+### [R package eddyr: Post-processing eddy covariance data](https://pzhao.org/pkg/eddyr)
+
+N/A
+
+N/A
+
+Present - 2018
+
+### [R package advr: Processing advective flux data](https://pzhao.org/pkg/advr)
+
+N/A
+
+N/A
+
+Present - 2018
+
+### [R package bookdownplus: Collection of multiple templates for academic journal articles, dissertations, books, etc.](https://CRAN.R-project.org/package=bookdownplus)
+
+N/A
+
+N/A
+
+Present - 2017
+
+::: aside
+![bookdownplus](http://cranlogs.r-pkg.org/badges/grand-total/bookdownplus)
+:::
+
+### [R package mf: Functions in Micrometeorology and Environmental Sciences]( https://pzhao.org/pkg/mf)
+
+N/A
+
+N/A
+
+2017
+
+### [R package mindr: creating scientific Mind Maps with R Markdown]( https://CRAN.R-project.org/package=mindr)
+
+N/A
+
+N/A
+
+2019 - 2017
+
+::: aside
+![mindr](http://cranlogs.r-pkg.org/badges/grand-total/mindr)
+:::
+
+### [R package beginr: beginr: Functions for R Beginners]( https://CRAN.R-project.org/package=beginr)
+
+N/A
+
+N/A
+
+2019 - 2017
+
+::: aside
+![beginr](http://cranlogs.r-pkg.org/badges/grand-total/beginr)
+:::
+
+## Peer-reviewed articles {data-icon=pencil-square}
+
+### See [my Google Scholar page](https://scholar.google.com/citations?user=EFeUfDwAAAAJ&hl=en).
+
+N/A
+
+N/A
+
+N/A
+
+::: aside
+
+Google Scholar link: <https://scholar.google.com/citations?user=EFeUfDwAAAAJ&hl=en>
+
+:::
+
+## Presentations (Selected) {data-icon=line-chart}
+
+### See [my personnel page](https://connect.xjtlu.edu.cn/user/pengzhao/talks)
+
+N/A
+
+N/A
+
+N/A
+
+::: aside
+
+Presentation link: <https://connect.xjtlu.edu.cn/user/pengzhao/talks>
+
+:::
+
+## Honours & awards {data-icon=trophy}
+
+### Max Planck Society Scholarship
+
+N/A
+
+N/A
+
+2020 - 2018
+
+### Honorable Mention Prizes of 1st Bookdown Contest by RStudio Inc.
+
+N/A
+
+N/A
+
+2018
+
+### Austrian Science Fund Scholarship
+
+N/A
+
+N/A
+
+2017 - 2014
+
+### German Research Foundation Scholarship
+
+N/A
+
+N/A
+
+2013 - 2009 
+
+### Award of Excellent Employee (Top 10%) of Chinese Academy of Meteorological Sciences 
+
+N/A
+
+N/A
+
+2008
+
+### Award of Excellent Employee (Top 10%) of Chinese Academy of Meteorological Sciences 
+
+N/A
+
+N/A
+
+2007
+
+### Excellent Youth Scholarships of Peking University
+
+N/A
+
+N/A
+
+2001
+
