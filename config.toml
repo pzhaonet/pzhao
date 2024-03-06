@@ -21,10 +21,10 @@ defaultContentLanguageInSubdir = true
 
 [params]
   name = "Dr. Peng Zhao"
-  role = "Assistant Professor"
-  organization = "Xi'an Jiaotong-Liverpool University"
-  organization_url = "https://www.xjtlu.edu.cn/en/departments/academic-departments/health-and-environmental-sciences/staff/peng-zhao"
-  avatar = "zhao2.jpg"
+#  role = "Assistant Professor"
+#  organization = "Xi'an Jiaotong-Liverpool University"
+#  organization_url = "https://www.xjtlu.edu.cn/en/departments/academic-departments/health-and-environmental-sciences/staff/peng-zhao"
+#  avatar = "zhao2.jpg"
   email = ""
   address = ""
   office_hours = ""
