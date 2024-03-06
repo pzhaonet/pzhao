@@ -268,35 +268,35 @@ defaultContentLanguageInSubdir = true
 ###   url = "../en"
 ###   weight = 80
 
-[[menu.main]]
-  name = "Posts"
-  url = "https://pzhao.org/en/post"
-  weight = 20
+# [[menu.main]]
+#   name = "Posts"
+#   url = "https://pzhao.org/en/post"
+#   weight = 20
 
-[[menu.main]]
-  name = "Search"
-  url = "https://cse.google.com/cse/publicurl?cx=006346710622437628329:tdbwt2rsqrs"
-  weight = 70
+# [[menu.main]]
+#   name = "Search"
+#   url = "https://cse.google.com/cse/publicurl?cx=006346710622437628329:tdbwt2rsqrs"
+#   weight = 70
   
-[[menu.main]]
-  name = "中文"
-  url = "../zh"
-  weight = 80
+# [[menu.main]]
+#   name = "中文"
+#   url = "../zh"
+#   weight = 80
 
-[[languages.zh.menu.main]]
-  name = "日志"
-  url = "https://pzhao.org/zh/post"
-  weight = 20
+# [[languages.zh.menu.main]]
+#   name = "日志"
+#   url = "https://pzhao.org/zh/post"
+#   weight = 20
 
-[[languages.zh.menu.main]]
-  name = "搜索"
-  url = "https://cse.google.com/cse/publicurl?cx=006346710622437628329:nxozn9fijm0"
-  weight = 70
+# [[languages.zh.menu.main]]
+#   name = "搜索"
+#   url = "https://cse.google.com/cse/publicurl?cx=006346710622437628329:nxozn9fijm0"
+#   weight = 70
 
-[[languages.zh.menu.main]]
-  name = "EN"
-  url = "../en"
-  weight = 80
+# [[languages.zh.menu.main]]
+#   name = "EN"
+#   url = "../en"
+#   weight = 80
 
 # Taxonomies.
 [taxonomies]
