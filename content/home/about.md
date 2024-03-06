@@ -10,7 +10,7 @@ widget = "about"
 weight = 1
 
 # List your academic interests.
-[interests]
+# [interests]
 #  interests = [
 #    "大气科学",
 #    "微气象学",
@@ -18,17 +18,17 @@ weight = 1
 #  ]
 
 # List your qualifications (such as academic degrees).
-[[education.courses]]
+# [[education.courses]]
 #  course = "地理生态学博士 | 拜罗伊特大学"
 #  institution = "拜罗伊特大学"
 #  year = 2014
 
-[[education.courses]]
+# [[education.courses]]
 #  course = "环境科学硕士 | 北京大学"
 #  institution = "北京大学"
 #  year = 2005
 
-[[education.courses]]
+# [[education.courses]]
 #  course = "化学学士 | 北京大学"
 #  institution = "北京大学"
 #  year = 2002
